@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080a0f">
+<title>慢慢 MànMàn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #080a0f;
+  --bg2:      #0e1118;
+  --surface:  #141720;
+  --surface2: #1c2030;
+  --border:   #252a3a;
+  --border2:  #2e3550;
+  --text:     #e8eaf2;
+  --text2:    #7a80a0;
+  --text3:    #3a4060;
+  --t1: #6ab4f5;   /* tone 1 – blue  */
+  --t2: #6dd9a0;   /* tone 2 – green */
+  --t3: #f5c842;   /* tone 3 – gold  */
+  --t4: #f07070;   /* tone 4 – red   */
+  --tn: #8a90b0;   /* neutral        */
+  --accent: #7b6cf6;
+  --accent2: #a06cf5;
+  --green: #5ccb8a;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bot: env(safe-area-inset-bottom, 0px);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+html, body {
+  height:100%; width:100%;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Sora',sans-serif;
+  overflow:hidden;
+  user-select:none;
+}
+
+#app {
+  height:100vh; height:100dvh;
+  max-width:430px;
+  margin:0 auto;
+  display:flex; flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ── SCREENS ── */
+.screen {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  opacity:0; pointer-events:none;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  transform: translateY(16px);
+  overflow:hidden;
+}
+.screen.active { opacity:1; pointer-events:all; transform:translateY(0); }
+.scrollable { overflow-y:auto; flex:1; }
+.scrollable::-webkit-scrollbar { width:0; }
+
+/* ── NAV ── */
+.nav {
+  display:flex;
+  padding: 10px 16px calc(var(--safe-bot) + 8px);
+  background: rgba(8,10,15,0.96);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid var(--border);
+  flex-shrink:0; z-index:20;
+}
+.nav-item {
+  flex:1; display:flex; flex-direction:column; align-items:center;
+  gap:3px; cursor:pointer; padding:6px 4px; border-radius:12px;
+  transition: background 0.15s;
+  position:relative;
+}
+.nav-item:active { background:var(--surface2); }
+.nav-icon { font-size:20px; line-height:1; }
+.nav-label { font-size:10px; color:var(--text2); font-weight:400; letter-spacing:0.02em; transition:color 0.2s; }
+.nav-item.active .nav-label { color:var(--accent2); }
+.nav-pip {
+  position:absolute; bottom:4px; width:4px; height:4px;
+  background:var(--accent); border-radius:50%; opacity:0;
+  transition:opacity 0.2s;
+}
+.nav-item.active .nav-pip { opacity:1; }
+
+/* ══════════════════════════════
+   HOME
+══════════════════════════════ */
+#home { padding-bottom:0; }
+.home-scroll { padding: calc(var(--safe-top) + 52px) 20px 100px; }
+
+.home-top {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  margin-bottom:28px;
+}
+.home-eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--text3); margin-bottom:6px; }
+.home-title { font-family:'Noto Serif SC',serif; font-size:26px; line-height:1.25; }
+.home-title em { font-style:normal; color:var(--text2); font-size:16px; font-family:'Sora',sans-serif; font-weight:300; }
+
+.streak {
+  background:var(--surface2); border:1px solid var(--border2);
+  border-radius:40px; padding:8px 14px;
+  font-size:14px; font-weight:500;
+  display:flex; align-items:center; gap:5px;
+  flex-shrink:0;
+}
+
+/* Today's pattern card */
+.pattern-card {
+  background: linear-gradient(145deg, #12152a 0%, #0e1020 100%);
+  border:1px solid var(--border2);
+  border-radius:var(--radius);
+  padding:22px;
+  margin-bottom:16px;
+  cursor:pointer;
+  position:relative; overflow:hidden;
+  transition:transform 0.15s;
+}
+.pattern-card:active { transform:scale(0.985); }
+.pattern-card::after {
+  content:'';
+  position:absolute; top:-60px; right:-60px;
+  width:180px; height:180px;
+  background:radial-gradient(circle, rgba(123,108,246,0.12) 0%, transparent 65%);
+  pointer-events:none;
+}
+.pc-label { font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent2); margin-bottom:14px; font-weight:600; }
+.pc-sentence {
+  font-family:'Noto Serif SC',serif;
+  font-size:28px; line-height:1.3;
+  margin-bottom:10px; letter-spacing:0.05em;
+}
+.pc-pinyin { font-size:14px; color:var(--text2); margin-bottom:6px; font-weight:300; letter-spacing:0.08em; }
+.pc-meaning { font-size:13px; color:var(--text2); }
+.pc-pattern-badge {
+  display:inline-block; margin-top:12px;
+  background:rgba(123,108,246,0.15); border:1px solid rgba(123,108,246,0.3);
+  color:var(--accent2); font-size:11px; padding:4px 10px; border-radius:20px;
+  font-weight:500;
+}
+.pc-arrow {
+  position:absolute; bottom:20px; right:20px;
+  width:32px; height:32px; border-radius:50%;
+  background:var(--accent); display:flex; align-items:center; justify-content:center;
+  font-size:14px;
+}
+
+/* Session ring */
+.session-row {
+  display:flex; align-items:center; gap:14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:16px 18px;
+  margin-bottom:16px;
+}
+.ring-svg { width:52px; height:52px; flex-shrink:0; }
+.ring-bg { fill:none; stroke:var(--border); stroke-width:4; }
+.ring-fg { fill:none; stroke:var(--green); stroke-width:4; stroke-linecap:round;
+  stroke-dasharray:138; stroke-dashoffset:138;
+  transform:rotate(-90deg); transform-origin:50% 50%;
+  transition:stroke-dashoffset 0.8s ease; }
+.ring-info { flex:1; }
+.ring-val { font-size:20px; font-weight:500; line-height:1; margin-bottom:3px; }
+.ring-sub { font-size:12px; color:var(--text2); }
+
+.start-btn {
+  background:var(--accent); color:#fff;
+  border:none; border-radius:30px;
+  padding:10px 18px; font-family:'Sora',sans-serif;
+  font-size:13px; font-weight:600; cursor:pointer;
+  transition:transform 0.15s, opacity 0.15s;
+  flex-shrink:0;
+}
+.start-btn:active { transform:scale(0.95); }
+
+/* Quick stats */
+.quick-stats {
+  display:grid; grid-template-columns:1fr 1fr 1fr;
+  gap:10px; margin-bottom:16px;
+}
+.qs-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:14px 12px;
+  text-align:center;
+}
+.qs-val { font-size:22px; font-weight:600; line-height:1; margin-bottom:3px; }
+.qs-lbl { font-size:11px; color:var(--text2); }
+
+/* burnout home pill */
+.burnout-pill {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:14px 18px;
+  display:flex; align-items:center; gap:14px;
+}
+.bp-bar-bg { flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+.bp-bar-fill { height:100%; border-radius:3px; background:linear-gradient(90deg,var(--green),#a8e063); width:28%; }
+.bp-status { font-size:12px; color:var(--green); font-weight:500; flex-shrink:0; }
+
+/* ══════════════════════════════
+   SENTENCE SESSION
+══════════════════════════════ */
+#session { background:var(--bg); }
+
+.sess-header {
+  display:flex; align-items:center; padding:calc(var(--safe-top) + 12px) 18px 10px;
+  gap:12px; flex-shrink:0;
+}
+.back-btn {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--surface); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:15px;
+  transition:background 0.15s;
+  flex-shrink:0;
+}
+.back-btn:active { background:var(--surface2); }
+.sess-prog-wrap { flex:1; }
+.sess-prog-label { display:flex; justify-content:space-between; font-size:11px; color:var(--text2); margin-bottom:5px; }
+.prog-bar { height:3px; background:var(--border); border-radius:2px; overflow:hidden; }
+.prog-fill { height:100%; background:var(--accent); border-radius:2px; transition:width 0.5s ease; }
+.sess-timer { font-size:13px; color:var(--text2); background:var(--surface); border:1px solid var(--border); padding:5px 11px; border-radius:20px; font-weight:500; flex-shrink:0; }
+.sess-timer.warn { color:var(--t4); border-color:var(--t4); }
+
+/* Pattern label */
+.pattern-label-bar {
+  display:flex; align-items:center; justify-content:center;
+  padding:0 20px 8px; gap:8px; flex-shrink:0;
+}
+.pattern-tag {
+  background:rgba(123,108,246,0.12); border:1px solid rgba(123,108,246,0.25);
+  color:var(--accent2); font-size:11px; padding:5px 12px; border-radius:20px; font-weight:600;
+  letter-spacing:0.05em;
+}
+
+/* Main sentence card */
+.sentence-stage {
+  flex:1; display:flex; align-items:center; justify-content:center;
+  padding:8px 20px;
+}
+
+.sentence-card {
+  width:100%; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 24px; position:relative;
+  cursor:pointer;
+  transition:transform 0.12s;
+}
+.sentence-card:active { transform:scale(0.99); }
+
+/* The main Chinese sentence */
+.sent-chinese {
+  font-family:'Noto Serif SC',serif;
+  font-size:34px; line-height:1.4;
+  letter-spacing:0.06em; text-align:center;
+  margin-bottom:20px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:4px;
+}
+
+/* Each word chunk */
+.word-chunk {
+  display:inline-flex; flex-direction:column; align-items:center;
+  gap:4px; cursor:pointer; padding:4px 6px; border-radius:8px;
+  transition:background 0.15s;
+  position:relative;
+}
+.word-chunk:active { background:var(--surface2); }
+
+.chunk-char { font-family:'Noto Serif SC',serif; font-size:30px; line-height:1; }
+.chunk-pinyin {
+  font-size:12px; font-weight:400; letter-spacing:0.05em;
+  opacity:0; transition:opacity 0.3s;
+  white-space:nowrap;
+}
+.chunk-pinyin.visible { opacity:1; }
+
+/* tone colors */
+.t1 { color:var(--t1); }
+.t2 { color:var(--t2); }
+.t3 { color:var(--t3); }
+.t4 { color:var(--t4); }
+.tn { color:var(--tn); }
+
+/* Revealed state */
+.reveal-section {
+  opacity:0; pointer-events:none;
+  transition:opacity 0.4s ease;
+  margin-top:4px;
+}
+.reveal-section.visible { opacity:1; pointer-events:all; }
+
+.divider { height:1px; background:var(--border); margin:16px 0; }
+
+/* Translation */
+.sent-translation {
+  font-size:17px; color:var(--text); text-align:center;
+  font-weight:500; margin-bottom:16px; line-height:1.4;
+}
+
+/* Grammar breakdown */
+.grammar-section { }
+.grammar-title {
+  font-size:11px; text-transform:uppercase; letter-spacing:0.1em;
+  color:var(--text3); margin-bottom:10px; font-weight:600;
+}
+.grammar-pieces { display:flex; flex-wrap:wrap; gap:8px; }
+
+.gp {
+  display:flex; flex-direction:column;
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:10px; padding:9px 12px; gap:2px;
+  position:relative; overflow:hidden;
+}
+.gp::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:3px;
+}
+.gp.role-subj::before { background:var(--t1); }
+.gp.role-verb::before { background:var(--t4); }
+.gp.role-obj::before  { background:var(--t2); }
+.gp.role-adv::before  { background:var(--t3); }
+.gp.role-part::before { background:var(--tn); }
+.gp.role-adj::before  { background:var(--accent2); }
+
+.gp-char { font-family:'Noto Serif SC',serif; font-size:18px; line-height:1; }
+.gp-pinyin { font-size:11px; color:var(--text2); }
+.gp-role { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.06em; font-weight:600; }
+
+/* tone flow viz */
+.tone-flow {
+  margin-top:14px;
+  display:flex; align-items:flex-end; gap:3px;
+  height:36px; padding:0 4px;
+}
+.tf-syllable {
+  flex:1; display:flex; flex-direction:column; align-items:center;
+  gap:3px;
+}
+.tf-curve {
+  width:100%; height:24px;
+}
+.tf-label { font-size:9px; color:var(--text3); white-space:nowrap; overflow:hidden; }
+
+/* tap hint */
+.tap-hint-bar {
+  text-align:center; padding:6px 0 2px;
+  font-size:11px; color:var(--text3);
+  animation:blink 2.5s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes blink { 0%,100%{opacity:.3} 50%{opacity:.8} }
+
+/* Rating */
+.rating-area {
+  padding:10px 18px calc(var(--safe-bot) + 10px);
+  flex-shrink:0;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.35s; transform:translateY(8px);
+}
+.rating-area.visible { opacity:1; pointer-events:all; transform:translateY(0); }
+
+.ra-label { font-size:12px; color:var(--text2); text-align:center; margin-bottom:10px; }
+.ra-btns { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+
+.ra-btn {
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  padding:13px 8px; border-radius:var(--radius-sm);
+  border:1px solid var(--border); background:var(--surface);
+  cursor:pointer; font-family:'Sora',sans-serif;
+  transition:transform 0.12s, background 0.12s;
+}
+.ra-btn:active { transform:scale(0.95); }
+.ra-btn.r-again { border-color:rgba(240,112,112,0.4); }
+.ra-btn.r-again:active { background:rgba(240,112,112,0.1); }
+.ra-btn.r-good  { border-color:rgba(92,203,138,0.4); }
+.ra-btn.r-good:active  { background:rgba(92,203,138,0.1); }
+.ra-lbl { font-size:13px; font-weight:500; }
+.ra-sub { font-size:10px; color:var(--text2); }
+
+/* ══════════════════════════════
+   PATTERNS LIBRARY
+══════════════════════════════ */
+#patterns { }
+.patterns-scroll { padding:calc(var(--safe-top) + 16px) 18px 100px; }
+.page-title { font-family:'Noto Serif SC',serif; font-size:22px; margin-bottom:4px; }
+.page-sub { font-size:13px; color:var(--text2); margin-bottom:22px; }
+
+.pat-group { margin-bottom:24px; }
+.pat-group-label { font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--text3); font-weight:600; margin-bottom:10px; }
+
+.pat-item {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:16px;
+  margin-bottom:8px; cursor:pointer;
+  transition:transform 0.12s, background 0.12s;
+  display:flex; align-items:center; gap:14px;
+}
+.pat-item:active { transform:scale(0.98); background:var(--surface2); }
+.pat-icon {
+  width:42px; height:42px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Noto Serif SC',serif; font-size:20px;
+  flex-shrink:0;
+}
+.pat-info { flex:1; }
+.pat-name { font-size:14px; font-weight:500; margin-bottom:2px; }
+.pat-formula { font-size:12px; color:var(--text2); margin-bottom:3px; }
+.pat-eg { font-size:12px; color:var(--text3); }
+.pat-count {
+  background:rgba(123,108,246,0.12); color:var(--accent2);
+  font-size:11px; padding:4px 9px; border-radius:20px;
+  font-weight:600; flex-shrink:0;
+}
+
+/* ══════════════════════════════
+   PROGRESS
+══════════════════════════════ */
+#progress { }
+.progress-scroll { padding:calc(var(--safe-top) + 16px) 18px 100px; }
+
+.stat-grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px; }
+.stat-card2 {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:18px;
+}
+.sc-val { font-size:34px; font-weight:600; line-height:1; margin-bottom:4px; }
+.sc-lbl { font-size:12px; color:var(--text2); }
+
+/* Heatmap */
+.heatmap-box { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px; margin-bottom:12px; }
+.hm-title { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text2); margin-bottom:10px; font-weight:600; }
+.heatmap { display:grid; grid-template-columns:repeat(13,1fr); gap:4px; }
+.hm-c { aspect-ratio:1; border-radius:3px; background:var(--surface2); }
+.hm-c.l1 { background:#1a3a2a; }
+.hm-c.l2 { background:#2a6040; }
+.hm-c.l3 { background:var(--green); }
+
+/* Tone mastery */
+.tone-mastery { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px; margin-bottom:12px; }
+.tm-title { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text2); margin-bottom:12px; font-weight:600; }
+.tm-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.tm-label { font-size:13px; width:60px; flex-shrink:0; }
+.tm-bar-bg { flex:1; height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+.tm-bar-fill { height:100%; border-radius:3px; }
+.tm-pct { font-size:12px; color:var(--text2); width:32px; text-align:right; flex-shrink:0; }
+
+/* burnout full */
+.burnout-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:18px; }
+.bo-title { font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text2); margin-bottom:8px; font-weight:600; }
+.bo-bar-bg { height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-bottom:10px; }
+.bo-bar-fill { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--green),#a8e063); width:28%; transition:width 0.6s; }
+.bo-status { font-size:13px; color:var(--green); font-weight:500; margin-bottom:6px; }
+.bo-advice { font-size:12px; color:var(--text3); line-height:1.5; }
+
+/* ══════════════════════════════
+   SESSION COMPLETE
+══════════════════════════════ */
+#complete {
+  align-items:center; justify-content:center;
+  padding:40px 28px calc(var(--safe-bot) + 40px);
+  text-align:center;
+}
+.done-emoji { font-size:72px; margin-bottom:12px; }
+.done-title { font-family:'Noto Serif SC',serif; font-size:28px; margin-bottom:8px; }
+.done-sub { font-size:14px; color:var(--text2); line-height:1.7; margin-bottom:36px; }
+.done-stats { display:flex; gap:28px; margin-bottom:36px; }
+.ds-item { }
+.ds-val { font-size:38px; font-weight:600; line-height:1; margin-bottom:4px; }
+.ds-lbl { font-size:12px; color:var(--text2); }
+.primary-btn {
+  width:100%; max-width:300px;
+  padding:17px; background:var(--accent); color:#fff;
+  border:none; border-radius:var(--radius-sm);
+  font-family:'Sora',sans-serif; font-size:15px; font-weight:600;
+  cursor:pointer; transition:transform 0.15s, opacity 0.15s;
+}
+.primary-btn:active { transform:scale(0.97); opacity:0.9; }
+
+/* confetti */
+.cp { position:absolute; width:7px; height:7px; border-radius:2px; pointer-events:none; animation:cf 2s ease-in forwards; }
+@keyframes cf { 0%{transform:translateY(-20px) rotate(0); opacity:1;} 100%{transform:translateY(110vh) rotate(720deg); opacity:0;} }
+
+/* glow pulse on pattern card */
+@keyframes glow { 0%,100%{box-shadow:0 0 0 rgba(123,108,246,0)} 50%{box-shadow:0 0 24px rgba(123,108,246,0.12)} }
+.pattern-card { animation:glow 5s ease-in-out infinite; }
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- ══ HOME ══ -->
+<div class="screen active" id="home">
+  <div class="scrollable">
+    <div class="home-scroll">
+
+      <div class="home-top">
+        <div>
+          <div class="home-eyebrow">慢慢来 — take it slow</div>
+          <div class="home-title">你好，<br><em>Ready to learn?</em></div>
+        </div>
+        <div class="streak">🔥 <span>7</span></div>
+      </div>
+
+      <!-- Today's pattern -->
+      <div class="pattern-card" onclick="startSession()">
+        <div class="pc-label">✦ Today's Pattern</div>
+        <div class="pc-sentence">我很喜欢吃饺子。</div>
+        <div class="pc-pinyin">Wǒ hěn xǐhuān chī jiǎozi.</div>
+        <div class="pc-meaning">I really like eating dumplings.</div>
+        <div class="pc-pattern-badge">Subject + 很 + Verb + Object</div>
+        <div class="pc-arrow">→</div>
+      </div>
+
+      <!-- Session ring -->
+      <div class="session-row">
+        <svg class="ring-svg" viewBox="0 0 48 48">
+          <circle class="ring-bg" cx="24" cy="24" r="22"/>
+          <circle class="ring-fg" id="ringFg" cx="24" cy="24" r="22"/>
+        </svg>
+        <div class="ring-info">
+          <div class="ring-val"><span id="ringMin">0</span><span style="font-size:13px;color:var(--text2);font-weight:300"> / 15 min</span></div>
+          <div class="ring-sub" id="ringStatus">Session not started</div>
+        </div>
+        <button class="start-btn" onclick="startSession()">Start →</button>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="quick-stats">
+        <div class="qs-card">
+          <div class="qs-val" style="color:var(--accent2)">24</div>
+          <div class="qs-lbl">Patterns</div>
+        </div>
+        <div class="qs-card">
+          <div class="qs-val" style="color:var(--t2)">186</div>
+          <div class="qs-lbl">Sentences</div>
+        </div>
+        <div class="qs-card">
+          <div class="qs-val" style="color:var(--t3)">72%</div>
+          <div class="qs-lbl">Retention</div>
+        </div>
+      </div>
+
+      <!-- Burnout pill -->
+      <div class="burnout-pill">
+        <span style="font-size:18px">🛡️</span>
+        <div class="bp-bar-bg"><div class="bp-bar-fill"></div></div>
+        <div class="bp-status">Low load ✓</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ SESSION ══ -->
+<div class="screen" id="session">
+
+  <!-- Header -->
+  <div class="sess-header">
+    <div class="back-btn" onclick="endSession()">←</div>
+    <div class="sess-prog-wrap">
+      <div class="sess-prog-label">
+        <span id="sessCardLabel">Sentence 1 of 6</span>
+        <span id="sessPct">0%</span>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="sessProg" style="width:0%"></div></div>
+    </div>
+    <div class="sess-timer" id="sessTimer">15:00</div>
+  </div>
+
+  <!-- Pattern tag -->
+  <div class="pattern-label-bar">
+    <div class="pattern-tag" id="sessPatternTag">Subject + 很 + Verb + Object</div>
+  </div>
+
+  <!-- Sentence card -->
+  <div class="sentence-stage">
+    <div class="sentence-card" id="sentenceCard" onclick="revealCard()">
+
+      <!-- Chinese with per-word tone coloring -->
+      <div class="sent-chinese" id="sentChinese"><!-- built by JS --></div>
+
+      <!-- Revealed content -->
+      <div class="reveal-section" id="revealSection">
+        <div class="divider"></div>
+
+        <!-- Translation -->
+        <div class="sent-translation" id="sentTranslation"></div>
+
+        <!-- Grammar breakdown -->
+        <div class="grammar-section">
+          <div class="grammar-title">Grammar Breakdown</div>
+          <div class="grammar-pieces" id="grammarPieces"><!-- built by JS --></div>
+        </div>
+
+        <!-- Tone flow -->
+        <div class="divider"></div>
+        <div class="grammar-title">Tone Flow</div>
+        <div class="tone-flow" id="toneFlow"><!-- built by JS --></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tap hint -->
+  <div class="tap-hint-bar" id="tapHint">tap card to reveal</div>
+
+  <!-- Rating -->
+  <div class="rating-area" id="ratingArea">
+    <div class="ra-label">Did this feel natural?</div>
+    <div class="ra-btns">
+      <button class="ra-btn r-again" onclick="rate('again')">
+        <span class="ra-lbl">Again</span>
+        <span class="ra-sub">Still unsure</span>
+      </button>
+      <button class="ra-btn" onclick="rate('hard')">
+        <span class="ra-lbl">Hard</span>
+        <span class="ra-sub">Getting there</span>
+      </button>
+      <button class="ra-btn r-good" onclick="rate('good')">
+        <span class="ra-lbl">Natural</span>
+        <span class="ra-sub">Felt easy</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ PATTERNS ══ -->
+<div class="screen" id="patterns">
+  <div class="scrollable">
+    <div class="patterns-scroll">
+      <div class="page-title">Grammar Patterns</div>
+      <div class="page-sub">Learn sentences by structure, not by rote.</div>
+
+      <div class="pat-group">
+        <div class="pat-group-label">Foundation — Level 1</div>
+
+        <div class="pat-item" onclick="startSessionPattern(0)">
+          <div class="pat-icon" style="background:rgba(107,180,245,0.1);color:var(--t1)">是</div>
+          <div class="pat-info">
+            <div class="pat-name">To Be — 是 (shì)</div>
+            <div class="pat-formula">Subject + 是 + Noun</div>
+            <div class="pat-eg">我是学生。I am a student.</div>
+          </div>
+          <div class="pat-count">8</div>
+        </div>
+
+        <div class="pat-item" onclick="startSessionPattern(1)">
+          <div class="pat-icon" style="background:rgba(109,217,160,0.1);color:var(--t2)">有</div>
+          <div class="pat-info">
+            <div class="pat-name">To Have — 有 (yǒu)</div>
+            <div class="pat-formula">Subject + 有 + Object</div>
+            <div class="pat-eg">我有一个朋友。I have a friend.</div>
+          </div>
+          <div class="pat-count">7</div>
+        </div>
+
+        <div class="pat-item" onclick="startSessionPattern(2)">
+          <div class="pat-icon" style="background:rgba(245,200,66,0.1);color:var(--t3)">很</div>
+          <div class="pat-info">
+            <div class="pat-name">Degree — 很 (hěn)</div>
+            <div class="pat-formula">Subject + 很 + Adj/Verb</div>
+            <div class="pat-eg">她很漂亮。She is very pretty.</div>
+          </div>
+          <div class="pat-count">9</div>
+        </div>
+
+        <div class="pat-item" onclick="startSessionPattern(3)">
+          <div class="pat-icon" style="background:rgba(240,112,112,0.1);color:var(--t4)">在</div>
+          <div class="pat-info">
+            <div class="pat-name">Location — 在 (zài)</div>
+            <div class="pat-formula">Subject + 在 + Place</div>
+            <div class="pat-eg">我在家。I am at home.</div>
+          </div>
+          <div class="pat-count">8</div>
+        </div>
+      </div>
+
+      <div class="pat-group">
+        <div class="pat-group-label">Intermediate — Level 2</div>
+
+        <div class="pat-item">
+          <div class="pat-icon" style="background:rgba(123,108,246,0.1);color:var(--accent2)">想</div>
+          <div class="pat-info">
+            <div class="pat-name">Want to — 想 (xiǎng)</div>
+            <div class="pat-formula">Subject + 想 + Verb + Obj</div>
+            <div class="pat-eg">我想吃饭。I want to eat.</div>
+          </div>
+          <div class="pat-count">6</div>
+        </div>
+
+        <div class="pat-item">
+          <div class="pat-icon" style="background:rgba(109,217,160,0.1);color:var(--t2)">了</div>
+          <div class="pat-info">
+            <div class="pat-name">Completion — 了 (le)</div>
+            <div class="pat-formula">Verb + 了 + Object</div>
+            <div class="pat-eg">我吃了饭。I ate (the meal).</div>
+          </div>
+          <div class="pat-count">10</div>
+        </div>
+
+        <div class="pat-item">
+          <div class="pat-icon" style="background:rgba(245,200,66,0.1);color:var(--t3)">把</div>
+          <div class="pat-info">
+            <div class="pat-name">Disposal — 把 (bǎ)</div>
+            <div class="pat-formula">Subject + 把 + Obj + Verb</div>
+            <div class="pat-eg">把书放在桌子上。Put the book on the table.</div>
+          </div>
+          <div class="pat-count">8</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROGRESS ══ -->
+<div class="screen" id="progress">
+  <div class="scrollable">
+    <div class="progress-scroll">
+      <div class="page-title">进步 Progress</div>
+      <div class="page-sub" style="margin-bottom:18px">Your fluency journey</div>
+
+      <div class="stat-grid2">
+        <div class="stat-card2">
+          <div class="sc-val" style="color:var(--accent2)">24</div>
+          <div class="sc-lbl">Patterns mastered</div>
+        </div>
+        <div class="stat-card2">
+          <div class="sc-val" style="color:var(--t2)">7</div>
+          <div class="sc-lbl">Day streak 🔥</div>
+        </div>
+        <div class="stat-card2">
+          <div class="sc-val">186</div>
+          <div class="sc-lbl">Sentences reviewed</div>
+        </div>
+        <div class="stat-card2">
+          <div class="sc-val" style="color:var(--t1)">72%</div>
+          <div class="sc-lbl">Retention rate</div>
+        </div>
+      </div>
+
+      <!-- Activity heatmap -->
+      <div class="heatmap-box">
+        <div class="hm-title">Activity — 13 weeks</div>
+        <div class="heatmap" id="heatmap"></div>
+      </div>
+
+      <!-- Tone mastery -->
+      <div class="tone-mastery">
+        <div class="tm-title">Tone Recognition</div>
+        <div class="tm-row">
+          <div class="tm-label" style="color:var(--t1)">Tone 1 ā</div>
+          <div class="tm-bar-bg"><div class="tm-bar-fill" style="width:82%;background:var(--t1)"></div></div>
+          <div class="tm-pct">82%</div>
+        </div>
+        <div class="tm-row">
+          <div class="tm-label" style="color:var(--t2)">Tone 2 á</div>
+          <div class="tm-bar-bg"><div class="tm-bar-fill" style="width:67%;background:var(--t2)"></div></div>
+          <div class="tm-pct">67%</div>
+        </div>
+        <div class="tm-row">
+          <div class="tm-label" style="color:var(--t3)">Tone 3 ǎ</div>
+          <div class="tm-bar-bg"><div class="tm-bar-fill" style="width:54%;background:var(--t3)"></div></div>
+          <div class="tm-pct">54%</div>
+        </div>
+        <div class="tm-row">
+          <div class="tm-label" style="color:var(--t4)">Tone 4 à</div>
+          <div class="tm-bar-bg"><div class="tm-bar-fill" style="width:75%;background:var(--t4)"></div></div>
+          <div class="tm-pct">75%</div>
+        </div>
+      </div>
+
+      <!-- Burnout card -->
+      <div class="burnout-card" style="margin-top:12px">
+        <div class="bo-title">🛡️ Burnout Protection</div>
+        <div class="bo-bar-bg"><div class="bo-bar-fill"></div></div>
+        <div class="bo-status">✓ You're in the green zone</div>
+        <div class="bo-advice">7-day avg: 14 min/day — perfect sustainable pace. Your brain is consolidating during sleep. Keep it consistent, not intense.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ COMPLETE ══ -->
+<div class="screen" id="complete">
+  <div class="done-emoji">🎉</div>
+  <div class="done-title">Session Complete</div>
+  <div class="done-sub">Your brain is now consolidating.<br>Sleep is the real teacher tonight.<br><span style="color:var(--accent2);font-family:'Noto Serif SC',serif">慢慢来。</span></div>
+  <div class="done-stats">
+    <div class="ds-item">
+      <div class="ds-val" style="color:var(--t3)" id="doneCards">6</div>
+      <div class="ds-lbl">Sentences</div>
+    </div>
+    <div class="ds-item">
+      <div class="ds-val" style="color:var(--t2)" id="doneGood">4</div>
+      <div class="ds-lbl">Natural</div>
+    </div>
+    <div class="ds-item">
+      <div class="ds-val" style="color:var(--t4)" id="doneAgain">2</div>
+      <div class="ds-lbl">Retry</div>
+    </div>
+  </div>
+  <button class="primary-btn" onclick="showScreen('home')">Back to Home</button>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-item active" id="nav-home" onclick="navTo('home')">
+    <div class="nav-icon">🏠</div>
+    <div class="nav-label">Home</div>
+    <div class="nav-pip"></div>
+  </div>
+  <div class="nav-item" id="nav-patterns" onclick="navTo('patterns')">
+    <div class="nav-icon">📐</div>
+    <div class="nav-label">Patterns</div>
+    <div class="nav-pip"></div>
+  </div>
+  <div class="nav-item" id="nav-progress" onclick="navTo('progress')">
+    <div class="nav-icon">📊</div>
+    <div class="nav-label">Progress</div>
+    <div class="nav-pip"></div>
+  </div>
+</nav>
+
+<script>
+// ══ SENTENCE DATA ══
+// Each word: { c: char, p: pinyin, t: tone(1-4|0=neutral), role, meaning }
+const SESSIONS = [
+  {
+    pattern: 'Subject + 很 + Verb + Object',
+    sentences: [
+      {
+        words: [
+          {c:'我',   p:'Wǒ',    t:3, role:'subj', meaning:'I'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'喜欢', p:'xǐhuān',t:3, role:'verb',  meaning:'like'},
+          {c:'吃',   p:'chī',   t:1, role:'verb',  meaning:'eat'},
+          {c:'饺子', p:'jiǎozi',t:3, role:'obj',   meaning:'dumplings'},
+        ],
+        translation: 'I really like eating dumplings.'
+      },
+      {
+        words: [
+          {c:'她',   p:'tā',    t:1, role:'subj', meaning:'she'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'喜欢', p:'xǐhuān',t:3, role:'verb',  meaning:'likes'},
+          {c:'学',   p:'xué',   t:2, role:'verb',  meaning:'study'},
+          {c:'中文', p:'zhōngwén',t:1,role:'obj',  meaning:'Chinese'},
+        ],
+        translation: 'She really likes studying Chinese.'
+      },
+      {
+        words: [
+          {c:'我',   p:'wǒ',    t:3, role:'subj', meaning:'I'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'想',   p:'xiǎng', t:3, role:'verb',  meaning:'want'},
+          {c:'喝',   p:'hē',    t:1, role:'verb',  meaning:'drink'},
+          {c:'茶',   p:'chá',   t:2, role:'obj',   meaning:'tea'},
+        ],
+        translation: 'I really want to drink tea.'
+      },
+      {
+        words: [
+          {c:'他',   p:'tā',    t:1, role:'subj', meaning:'he'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'会',   p:'huì',   t:4, role:'verb',  meaning:'can/knows how'},
+          {c:'说',   p:'shuō',  t:1, role:'verb',  meaning:'speak'},
+          {c:'中文', p:'zhōngwén',t:1,role:'obj',  meaning:'Chinese'},
+        ],
+        translation: 'He is very good at speaking Chinese.'
+      },
+      {
+        words: [
+          {c:'我们', p:'wǒmen', t:3, role:'subj', meaning:'we'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'喜欢', p:'xǐhuān',t:3, role:'verb',  meaning:'like'},
+          {c:'去',   p:'qù',    t:4, role:'verb',  meaning:'go to'},
+          {c:'北京', p:'Běijīng',t:3,role:'obj',   meaning:'Beijing'},
+        ],
+        translation: 'We really like going to Beijing.'
+      },
+      {
+        words: [
+          {c:'她',   p:'tā',    t:1, role:'subj', meaning:'she'},
+          {c:'很',   p:'hěn',   t:3, role:'adv',  meaning:'very'},
+          {c:'喜欢', p:'xǐhuān',t:3, role:'verb',  meaning:'likes'},
+          {c:'看',   p:'kàn',   t:4, role:'verb',  meaning:'watch'},
+          {c:'电影', p:'diànyǐng',t:4,role:'obj',  meaning:'movies'},
+        ],
+        translation: 'She really likes watching movies.'
+      }
+    ]
+  }
+];
+
+const TONE_COLORS = { 1:'var(--t1)', 2:'var(--t2)', 3:'var(--t3)', 4:'var(--t4)', 0:'var(--tn)' };
+const TONE_LABELS = { 1:'Tone 1', 2:'Tone 2', 3:'Tone 3', 4:'Tone 4', 0:'Neutral' };
+
+// Tone SVG paths (viewBox 0 0 40 28)
+const TONE_PATHS = {
+  1: 'M4,22 L36,8',
+  2: 'M4,26 Q16,24 36,6',
+  3: 'M4,8 Q14,26 22,26 Q30,26 36,10',
+  4: 'M4,6 Q14,8 36,26',
+  0: 'M16,18 L24,18'
+};
+
+let curSession = null;
+let curIdx = 0;
+let isRevealed = false;
+let goodCnt = 0, againCnt = 0;
+let sessionSecs = 0;
+let timerInterval = null;
+let sessionStarted = false;
+
+// ── SCREEN ──
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const hideNav = ['session','complete'].includes(id);
+  document.getElementById('mainNav').style.display = hideNav ? 'none' : 'flex';
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const ni = document.getElementById('nav-'+id);
+  if(ni) ni.classList.add('active');
+}
+
+function navTo(id) {
+  if(id==='session') { startSession(); return; }
+  showScreen(id);
+}
+
+// ── SESSION ──
+function startSession(patIdx=0) {
+  curSession = SESSIONS[patIdx];
+  curIdx = 0; isRevealed = false; goodCnt = 0; againCnt = 0;
+  showScreen('session');
+  loadSentence(0);
+  if(!sessionStarted) { sessionStarted=true; startTimer(); }
+}
+
+function startSessionPattern(idx) { startSession(idx % SESSIONS.length); }
+
+function loadSentence(idx) {
+  const data = curSession.sentences[idx];
+  const total = curSession.sentences.length;
+  const pct = Math.round((idx/total)*100);
+
+  document.getElementById('sessCardLabel').textContent = `Sentence ${idx+1} of ${total}`;
+  document.getElementById('sessPct').textContent = pct+'%';
+  document.getElementById('sessProg').style.width = pct+'%';
+  document.getElementById('sessPatternTag').textContent = curSession.pattern;
+  document.getElementById('sentTranslation').textContent = data.translation;
+
+  isRevealed = false;
+  document.getElementById('revealSection').classList.remove('visible');
+  document.getElementById('ratingArea').classList.remove('visible');
+  document.getElementById('tapHint').style.opacity='1';
+
+  // Build Chinese with tone-colored pinyin
+  const sentEl = document.getElementById('sentChinese');
+  sentEl.innerHTML = '';
+  data.words.forEach((w,i) => {
+    const chunk = document.createElement('div');
+    chunk.className = 'word-chunk';
+    chunk.innerHTML = `
+      <span class="chunk-char">${w.c}</span>
+      <span class="chunk-pinyin t${w.t}">${w.p}</span>
+    `;
+    chunk.onclick = e => { e.stopPropagation(); togglePinyin(chunk); };
+    sentEl.appendChild(chunk);
+  });
+
+  // Grammar breakdown
+  const gp = document.getElementById('grammarPieces');
+  gp.innerHTML = '';
+  data.words.forEach(w => {
+    const el = document.createElement('div');
+    el.className = `gp role-${w.role}`;
+    el.innerHTML = `
+      <span class="gp-char">${w.c}</span>
+      <span class="gp-pinyin t${w.t}">${w.p}</span>
+      <span class="gp-role">${w.role}</span>
+      <span style="font-size:11px;color:var(--text2)">${w.meaning}</span>
+    `;
+    gp.appendChild(el);
+  });
+
+  // Tone flow
+  const tf = document.getElementById('toneFlow');
+  tf.innerHTML = '';
+  data.words.forEach(w => {
+    // Each word might have multiple syllables — split pinyin by space or treat as one
+    const syllables = w.p.split(' ');
+    syllables.forEach((syl,si) => {
+      const tone = si === 0 ? w.t : w.t; // all syllables same tone for simplicity
+      const div = document.createElement('div');
+      div.className = 'tf-syllable';
+      div.innerHTML = `
+        <svg class="tf-curve" viewBox="0 0 40 28" preserveAspectRatio="none">
+          <path d="${TONE_PATHS[tone]}" stroke="${TONE_COLORS[tone]}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="tf-label" style="color:${TONE_COLORS[tone]}">${syl}</div>
+      `;
+      tf.appendChild(div);
+    });
+  });
+}
+
+function togglePinyin(chunk) {
+  const py = chunk.querySelector('.chunk-pinyin');
+  py.classList.toggle('visible');
+}
+
+function revealCard() {
+  if(isRevealed) return;
+  isRevealed = true;
+  // Show all pinyins
+  document.querySelectorAll('.chunk-pinyin').forEach(el=>el.classList.add('visible'));
+  document.getElementById('revealSection').classList.add('visible');
+  document.getElementById('tapHint').style.opacity='0';
+  setTimeout(()=>{
+    document.getElementById('ratingArea').classList.add('visible');
+  }, 300);
+}
+
+function rate(r) {
+  if(r==='good') goodCnt++;
+  else if(r==='again') againCnt++;
+  curIdx++;
+  if(curIdx >= curSession.sentences.length) {
+    finishSession(); return;
+  }
+  loadSentence(curIdx);
+}
+
+function finishSession() {
+  clearInterval(timerInterval);
+  document.getElementById('doneCards').textContent = curSession.sentences.length;
+  document.getElementById('doneGood').textContent = goodCnt;
+  document.getElementById('doneAgain').textContent = againCnt;
+  showScreen('complete');
+  confetti();
+  updateRing(sessionSecs);
+}
+
+function endSession() {
+  showScreen('home');
+}
+
+// ── TIMER ──
+function startTimer() {
+  timerInterval = setInterval(()=>{
+    sessionSecs++;
+    const rem = Math.max(0, 15*60 - sessionSecs);
+    const m = Math.floor(rem/60), s = rem%60;
+    const el = document.getElementById('sessTimer');
+    el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if(rem<=120) el.classList.add('warn');
+    if(rem<=0) { clearInterval(timerInterval); finishSession(); }
+    updateRing(sessionSecs);
+  },1000);
+}
+
+function updateRing(secs) {
+  const pct = Math.min(secs/(15*60),1);
+  document.getElementById('ringFg').style.strokeDashoffset = 138 - pct*138;
+  document.getElementById('ringMin').textContent = Math.floor(secs/60);
+  if(secs>0) document.getElementById('ringStatus').textContent = 'Session in progress';
+}
+
+// ── HEATMAP ──
+function buildHeatmap() {
+  const levels=[0,0,1,1,2,1,0,1,2,3,2,1,0,1,1,2,3,3,2,1,1,2,2,3,2,1,0,0,1,2,2,3,3,2,3,2,1,1,0,1,2,3,3,2,1,2,3,3,2,1,0,1,1,2,3,3,2,1,1,2,2,3,3,2,1,1,0,1,2,2,3,2,1,1,0,0,1,2,3,2,1,0,0,0,1,1,0,0,0,0,0,0,0];
+  const hm = document.getElementById('heatmap');
+  levels.forEach(l=>{
+    const c=document.createElement('div');
+    c.className='hm-c'+(l>0?` l${l}`:'');
+    hm.appendChild(c);
+  });
+}
+
+// ── CONFETTI ──
+function confetti() {
+  const colors=['#7b6cf6','#6dd9a0','#f5c842','#f07070','#6ab4f5'];
+  const stage = document.getElementById('complete');
+  for(let i=0;i<28;i++){
+    const el=document.createElement('div');
+    el.className='cp';
+    el.style.cssText=`left:${Math.random()*100}%;top:-10px;background:${colors[i%colors.length]};animation-delay:${Math.random()*1.2}s;animation-duration:${1.4+Math.random()*1}s;`;
+    stage.appendChild(el);
+    setTimeout(()=>el.remove(),3000);
+  }
+}
+
+buildHeatmap();
+</script>
+</body>
+</html>

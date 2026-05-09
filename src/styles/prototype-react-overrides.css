@@ -1,0 +1,485 @@
+/* Tailwind preflight resets heading weight; the static V15 prototype used browser-bold headings. */
+.page-title h1,
+.page-title h2,
+.page-heading h1 {
+  font-weight: 700;
+}
+
+.hero h2,
+.section-title h3,
+.card h3,
+.practice-layout h3,
+.settings-group h3,
+.sheet-head h3,
+.detail-section h4 {
+  font-weight: 700;
+}
+
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: toast-in 180ms ease-out;
+  pointer-events: none;
+}
+
+.toast-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.setting-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.setting-row > div:first-child {
+  min-width: 0;
+}
+
+.setting-row .setting-value {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 8px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.setting-row .setting-arrow {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 768px) {
+  .toast {
+    left: auto;
+    right: calc((100vw - min(1200px, calc(100vw - 36px))) / 2 + 24px);
+    bottom: calc((100vh - min(820px, calc(100vh - 36px))) / 2 + 24px);
+    transform: none;
+    border-radius: 16px;
+  }
+
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .prototype-stage {
+    height: 100svh;
+    min-height: 100svh;
+    place-items: stretch;
+  }
+
+  .app-frame {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  @supports (height: 100dvh) {
+    .prototype-stage,
+    .app-frame {
+      height: 100dvh;
+      min-height: 100dvh;
+    }
+  }
+
+  .app-shell {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  .screen {
+    height: 100%;
+    padding-bottom: calc(112px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 40;
+  }
+
+  .toast {
+    bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #20242d;
+  --surface-soft: #20242d;
+  --ink: #f8fafc;
+  --ink-2: #eef2f7;
+  --text-main: #f8fafc;
+  --text-muted: #a1a1aa;
+  --muted: #a1a1aa;
+  --faint: #71717a;
+  --line: #2a2f3a;
+  --line-2: #3a414f;
+  --border: #2a2f3a;
+  --border-strong: #3a414f;
+  --primary: #f8fafc;
+  --primary-soft: #242936;
+  --accent: #f97316;
+  --accent-soft: rgba(249, 115, 22, 0.16);
+  --accent-dark: #fb923c;
+  --jade: #34d399;
+  --jade-soft: rgba(16, 185, 129, 0.14);
+  --success: #34d399;
+  --success-soft: rgba(16, 185, 129, 0.14);
+  --danger: #f87171;
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --warning-soft: rgba(245, 158, 11, 0.14);
+  --purple-soft: rgba(139, 92, 246, 0.18);
+  --stage-learning: #5b6472;
+  --stage-familiar: #a49382;
+  --stage-strong: #f97316;
+  --stage-mastered: #c08b6d;
+  --stage-longterm: #f8fafc;
+  --bar-track: #2a2f3a;
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+html.dark,
+html.dark body,
+html.dark #root {
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+html.dark .prototype-stage {
+  background: radial-gradient(circle at 15% 0%, #1d222c 0 20%, var(--bg) 56%, #090b0f 100%);
+}
+
+html.dark .app-frame,
+html.dark .app-shell,
+html.dark .onboarding {
+  background: var(--surface-2);
+}
+
+html.dark .screen,
+html.dark .sidebar,
+html.dark .bottom-nav,
+html.dark .onboarding-card,
+html.dark .card,
+html.dark .flat-card,
+html.dark .hero,
+html.dark .study-top,
+html.dark .hanzi-focus,
+html.dark .review-card,
+html.dark .settings-group,
+html.dark .detail-panel,
+html.dark .option-sheet,
+html.dark .stat-card,
+html.dark .mini-box,
+html.dark .item-card,
+html.dark .picker-row,
+html.dark .search-input,
+html.dark .tab-pill,
+html.dark .option-card,
+html.dark .sheet-option,
+html.dark .report-note textarea,
+html.dark .content-chip,
+html.dark .report-menu {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text-main);
+}
+
+html.dark .setting-row,
+html.dark .meta-chip,
+html.dark .path-item,
+html.dark .tone-helper,
+html.dark .sheet-close {
+  background: var(--surface-2);
+  border-color: var(--line);
+  color: var(--text-main);
+}
+
+html.dark .page-title h1,
+html.dark .page-title h2,
+html.dark .page-heading h1,
+html.dark .hero h2,
+html.dark .section-title h3,
+html.dark .card h3,
+html.dark .practice-layout h3,
+html.dark .settings-group h3,
+html.dark .sheet-head h3,
+html.dark .detail-section h4,
+html.dark .study-top-row b,
+html.dark .mode-label,
+html.dark .hanzi-large,
+html.dark .detail-main-char,
+html.dark .review-char,
+html.dark .detail-pinyin,
+html.dark .strength-row span,
+html.dark .path-item b,
+html.dark .setting-row b,
+html.dark .picker-row b,
+html.dark .option-card strong,
+html.dark .sheet-option strong,
+html.dark .report-note span {
+  color: var(--text-main);
+}
+
+html.dark .page-title p,
+html.dark .section-title p,
+html.dark .card p,
+html.dark .muted,
+html.dark .tiny,
+html.dark .detail-meaning,
+html.dark .detail-section p,
+html.dark .meta-chip small,
+html.dark .path-item small,
+html.dark .setting-row small,
+html.dark .setting-row .value,
+html.dark .picker-row span,
+html.dark .option-card small,
+html.dark .sheet-head p,
+html.dark .sheet-option small,
+html.dark .report-note small,
+html.dark .item-card p,
+html.dark .study-top-row span {
+  color: var(--text-muted);
+}
+
+html.dark .primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(249, 115, 22, 0.18);
+}
+
+html.dark .secondary,
+html.dark .ghost {
+  background: var(--surface-2);
+  color: var(--text-main);
+  border-color: var(--line-2);
+}
+
+html.dark .danger-btn {
+  background: var(--danger-soft);
+  color: #fecaca;
+}
+
+html.dark .pill,
+html.dark .session-summary span,
+html.dark .item-card em,
+html.dark .path-item em {
+  background: var(--primary-soft);
+  color: var(--text-main);
+}
+
+html.dark .pill.accent,
+html.dark .streak-pill,
+html.dark .path-item.done .path-icon,
+html.dark .path-item.done em,
+html.dark .path-item.available .path-icon,
+html.dark .path-item.available em {
+  background: var(--accent-soft) !important;
+  color: #fdba74 !important;
+}
+
+html.dark .pill.jade,
+html.dark .feedback.good {
+  background: var(--success-soft);
+  color: #86efac;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+html.dark .feedback.bad {
+  background: var(--danger-soft);
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.32);
+}
+
+html.dark .answer-grid button {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--text-main);
+}
+
+html.dark .answer-grid button.correct {
+  background: var(--success-soft);
+  border-color: rgba(52, 211, 153, 0.42);
+  color: #86efac;
+}
+
+html.dark .answer-grid button.wrong {
+  background: var(--danger-soft);
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #fca5a5;
+}
+
+html.dark .search-input::placeholder,
+html.dark .report-note textarea::placeholder {
+  color: #71717a;
+}
+
+html.dark .tab-pill.active,
+html.dark .side-btn.active,
+html.dark .nav-btn.active,
+html.dark .path-item.current .path-icon,
+html.dark .path-item.current em {
+  background: var(--primary-soft) !important;
+  color: var(--text-main) !important;
+  border-color: var(--line) !important;
+}
+
+html.dark .side-btn,
+html.dark .nav-btn {
+  color: var(--text-muted);
+}
+
+html.dark .bottom-nav {
+  background: rgba(23, 26, 33, 0.96);
+}
+
+html.dark .brand-mark,
+html.dark .path-icon {
+  background: var(--surface-2);
+  border-color: var(--line);
+  color: var(--text-main);
+}
+
+html.dark .option-card.selected,
+html.dark .sheet-option.selected,
+html.dark .item-card.active,
+html.dark .path-item.current {
+  border-color: var(--line-2) !important;
+  background: var(--surface-2) !important;
+  box-shadow: inset 0 0 0 1px var(--line-2) !important;
+}
+
+html.dark .focus-list span,
+html.dark .content-chip {
+  background: var(--surface-2) !important;
+  border-color: var(--line) !important;
+  color: var(--text-main) !important;
+}
+
+html.dark .path-item.locked {
+  background: #151922 !important;
+  border-color: var(--line) !important;
+  opacity: 0.86;
+}
+
+html.dark .path-item.locked .path-icon,
+html.dark .path-item.locked em {
+  background: #242936 !important;
+  color: #c4c7cf !important;
+  border-color: var(--line) !important;
+}
+
+html.dark .path-item.locked b,
+html.dark .path-item.locked small {
+  color: #c4c7cf !important;
+}
+
+html.dark .report-menu {
+  background: var(--surface-2) !important;
+  border-color: var(--line) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28) !important;
+}
+
+html.dark .option-card.recommended::after {
+  background: var(--accent-soft) !important;
+  color: #fdba74 !important;
+}
+
+html.dark .progressbar,
+html.dark .strength-track {
+  background: var(--bar-track) !important;
+}
+
+html.dark .progressbar i,
+html.dark .readable-bars .bar i {
+  background: var(--text-main) !important;
+}
+
+html.dark .bar-value {
+  color: var(--text-main);
+}
+
+html.dark .logout-row {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border-color: rgba(248, 113, 113, 0.32) !important;
+  color: #fca5a5 !important;
+}
+
+html.dark .logout-row small,
+html.dark .logout-row .value {
+  color: #fca5a5 !important;
+}
+
+html.dark .switch {
+  background: #3a414f;
+}
+
+html.dark .switch.on {
+  background: var(--accent);
+}
+
+html.dark .modal-layer {
+  background: rgba(0, 0, 0, 0.58);
+}
+
+html.dark .toast {
+  background: #11141a;
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .toast-check {
+  background: rgba(249, 115, 22, 0.18);
+  color: #fdba74;
+}
+
+html.dark button:focus-visible,
+html.dark input:focus-visible,
+html.dark textarea:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, 0.42);
+}

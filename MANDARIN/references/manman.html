@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0f0f">
+<title>慢慢 MànMàn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #242424;
+    --border: #2e2e2e;
+    --text: #f0ede8;
+    --text2: #8a8580;
+    --text3: #4a4845;
+    --accent: #e8a838;
+    --accent2: #d4724a;
+    --green: #5cb87a;
+    --red: #e05c5c;
+    --blue: #5b9cf6;
+    --radius: 20px;
+    --radius-sm: 12px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html, body {
+    height: 100%; width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  #app {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── SCREENS ── */
+  .screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(12px);
+  }
+  .screen.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  /* ── HOME SCREEN ── */
+  #home {
+    padding: calc(var(--safe-top) + 56px) 24px 0;
+    overflow-y: auto;
+    gap: 0;
+  }
+
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .greeting {
+    font-size: 13px;
+    color: var(--text2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .home-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .streak-badge {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .streak-badge span { color: var(--accent); font-size: 18px; }
+
+  /* Daily card */
+  .daily-card {
+    background: linear-gradient(135deg, #1e1a14 0%, #1a1410 100%);
+    border: 1px solid #3a2e1a;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .daily-card:active { transform: scale(0.98); }
+  .daily-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(232,168,56,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .daily-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .daily-char {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .daily-pinyin {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-weight: 300;
+  }
+
+  .daily-meaning {
+    font-size: 14px;
+    color: var(--text2);
+  }
+
+  .daily-arrow {
+    position: absolute;
+    bottom: 24px; right: 24px;
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+
+  /* Session timer ring */
+  .session-ring-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ring-svg { width: 56px; height: 56px; flex-shrink: 0; }
+  .ring-bg { fill: none; stroke: var(--border); stroke-width: 4; }
+  .ring-fg { fill: none; stroke: var(--green); stroke-width: 4; stroke-linecap: round;
+    stroke-dasharray: 138; stroke-dashoffset: 138;
+    transform: rotate(-90deg); transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1s ease; }
+
+  .ring-info { flex: 1; }
+  .ring-label { font-size: 12px; color: var(--text2); margin-bottom: 2px; }
+  .ring-val { font-size: 22px; font-weight: 500; }
+  .ring-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+  /* Module grid */
+  .section-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .module-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 16px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .module-card:active { transform: scale(0.96); background: var(--surface2); }
+
+  .module-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .module-name { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+  .module-sub { font-size: 12px; color: var(--text2); }
+  .module-dot {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .module-dot.warn { background: var(--accent); }
+
+  /* ── NAV BAR ── */
+  .nav {
+    display: flex;
+    padding: 10px 24px calc(var(--safe-bottom) + 10px);
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    gap: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 6px 0;
+    border-radius: 12px;
+    transition: background 0.15s;
+  }
+  .nav-item:active { background: var(--surface2); }
+
+  .nav-icon { font-size: 22px; line-height: 1; }
+  .nav-label { font-size: 10px; color: var(--text2); letter-spacing: 0.03em; }
+  .nav-item.active .nav-icon { filter: none; }
+  .nav-item.active .nav-label { color: var(--accent); }
+  .nav-item.active .nav-indicator {
+    width: 4px; height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6px;
+  }
+
+  /* ── FLASHCARD SCREEN ── */
+  #cards {
+    padding-top: calc(var(--safe-top) + 0px);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px 12px;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .back-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 16px;
+    transition: background 0.15s;
+  }
+  .back-btn:active { background: var(--surface2); }
+
+  .card-progress-wrap { flex: 1; }
+  .card-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+  .progress-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .timer-badge {
+    font-size: 13px;
+    color: var(--text2);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .timer-badge.warn { color: var(--accent); border-color: var(--accent); }
+
+  /* Flip card */
+  .card-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 340px;
+    height: 340px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+
+  .flip-inner {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flip-inner.flipped { transform: rotateY(180deg); }
+
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border: 1px solid var(--border);
+  }
+
+  .flip-front {
+    background: var(--surface);
+  }
+
+  .flip-back {
+    background: var(--surface2);
+    transform: rotateY(180deg);
+  }
+
+  .card-char {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 96px;
+    line-height: 1;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .card-hint {
+    font-size: 13px;
+    color: var(--text3);
+    text-align: center;
+  }
+
+  .card-pinyin {
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .card-meaning {
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .card-example {
+    font-size: 14px;
+    color: var(--text2);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .card-example-pinyin {
+    font-size: 12px;
+    color: var(--text3);
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .tone-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .tone-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  .tone-dot.t1 { background: var(--blue); }
+  .tone-dot.t2 { background: var(--green); }
+  .tone-dot.t3 { background: var(--accent); }
+  .tone-dot.t4 { background: var(--red); }
+  .tone-dot.active { opacity: 1; width: 10px; height: 10px; }
+
+  /* Rating buttons */
+  .rating-wrap {
+    padding: 16px 24px calc(var(--safe-bottom) + 16px);
+    flex-shrink: 0;
+  }
+
+  .rating-hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+    margin-bottom: 12px;
+  }
+
+  .rating-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .rating-btn {
+    padding: 14px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: transform 0.15s ease, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .rating-btn:active { transform: scale(0.96); }
+
+  .rating-btn.again { border-color: var(--red); }
+  .rating-btn.again:active { background: rgba(224,92,92,0.15); }
+  .rating-btn.hard { border-color: var(--text3); }
+  .rating-btn.good { border-color: var(--green); }
+  .rating-btn.good:active { background: rgba(92,184,122,0.15); }
+
+  .r-label { font-size: 13px; color: var(--text); font-weight: 500; }
+  .r-sub { font-size: 11px; color: var(--text2); }
+
+  /* Tap hint pulse */
+  .tap-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: var(--text3);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* ── TONES SCREEN ── */
+  #tones {
+    padding-top: calc(var(--safe-top) + 0px);
+    overflow-y: auto;
+  }
+
+  .tones-header {
+    padding: 20px 24px 0;
+  }
+
+  .screen-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .screen-sub {
+    font-size: 14px;
+    color: var(--text2);
+    margin-bottom: 24px;
+  }
+
+  .tone-cards {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 100px;
+  }
+
+  .tone-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .tone-card:active { transform: scale(0.98); }
+
+  .tone-number {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .tone-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .tone-char-big {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .tone-info { flex: 1; }
+  .tone-name { font-size: 16px; font-weight: 500; margin-bottom: 2px; }
+  .tone-desc { font-size: 13px; color: var(--text2); line-height: 1.4; }
+
+  .tone-curve {
+    width: 60px; height: 30px;
+    flex-shrink: 0;
+  }
+
+  /* ── PROGRESS SCREEN ── */
+  #progress {
+    padding-top: calc(var(--safe-top) + 0px);
+    overflow-y: auto;
+  }
+
+  .progress-header {
+    padding: 20px 24px 0;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 24px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px;
+  }
+
+  .stat-val {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .heatmap-wrap {
+    padding: 0 24px;
+    margin-bottom: 20px;
+  }
+
+  .heatmap-title {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .heatmap {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 3px;
+  }
+
+  .hm-cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: var(--surface);
+  }
+  .hm-cell.l1 { background: #2a3d1e; }
+  .hm-cell.l2 { background: #3d6127; }
+  .hm-cell.l3 { background: #5cb87a; }
+
+  .burnout-section {
+    margin: 0 24px 100px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+  }
+
+  .burnout-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text2);
+    margin-bottom: 12px;
+  }
+
+  .burnout-bar-bg {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .burnout-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--green), var(--accent));
+    width: 35%;
+    transition: width 0.6s ease;
+  }
+
+  .burnout-status {
+    font-size: 13px;
+    color: var(--green);
+  }
+
+  /* ── SESSION COMPLETE ── */
+  #complete {
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .complete-char {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 80px;
+    margin-bottom: 8px;
+  }
+
+  .complete-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .complete-sub {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .complete-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .cs-item { text-align: center; }
+  .cs-val { font-size: 32px; font-weight: 500; }
+  .cs-lbl { font-size: 12px; color: var(--text2); }
+
+  .primary-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--accent);
+    color: #0f0f0f;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+    max-width: 320px;
+  }
+  .primary-btn:active { transform: scale(0.97); opacity: 0.9; }
+
+  /* Confetti */
+  .confetti-piece {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    animation: confetti-fall 2s ease-in forwards;
+    pointer-events: none;
+  }
+
+  @keyframes confetti-fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* Glow animation for daily card */
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(232,168,56,0); }
+    50% { box-shadow: 0 0 20px 4px rgba(232,168,56,0.1); }
+  }
+  .daily-card { animation: glow 4s ease-in-out infinite; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 0; }
+
+  /* Install banner */
+  .install-banner {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin: 0 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .install-banner.hidden { display: none; }
+  .install-icon { font-size: 24px; }
+  .install-text { flex: 1; }
+  .install-title { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+  .install-sub { font-size: 11px; color: var(--text2); }
+  .install-close { font-size: 18px; color: var(--text2); padding: 4px; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ══ HOME SCREEN ══ -->
+  <div class="screen active" id="home">
+    <div class="home-header">
+      <div>
+        <div class="greeting">Good morning</div>
+        <div class="home-title">慢慢来<br><span style="font-size:18px;color:var(--text2);font-family:'DM Sans',sans-serif;font-weight:300">Take it slow</span></div>
+      </div>
+      <div class="streak-badge">
+        <span>🔥</span> 7
+      </div>
+    </div>
+
+    <!-- Install Banner -->
+    <div class="install-banner" id="installBanner">
+      <div class="install-icon">📲</div>
+      <div class="install-text">
+        <div class="install-title">Add to Home Screen</div>
+        <div class="install-sub">Use like a native app, offline ready</div>
+      </div>
+      <div class="install-close" onclick="document.getElementById('installBanner').classList.add('hidden')">×</div>
+    </div>
+
+    <!-- Daily Word -->
+    <div class="daily-card" onclick="startCards()">
+      <div class="daily-label">✦ Today's Focus</div>
+      <div class="daily-char" id="homeChar">学</div>
+      <div class="daily-pinyin" id="homePinyin">xué</div>
+      <div class="daily-meaning" id="homeMeaning">to study / to learn</div>
+      <div class="daily-arrow">→</div>
+    </div>
+
+    <!-- Session ring -->
+    <div class="session-ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 48 48">
+        <circle class="ring-bg" cx="24" cy="24" r="22"/>
+        <circle class="ring-fg" id="ringFg" cx="24" cy="24" r="22"/>
+      </svg>
+      <div class="ring-info">
+        <div class="ring-label">Today's session</div>
+        <div class="ring-val"><span id="sessionMin">0</span><span style="font-size:14px;color:var(--text2)"> / 15 min</span></div>
+        <div class="ring-sub" id="sessionStatus">Not started yet</div>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <div class="section-label">Modules</div>
+    <div class="modules">
+      <div class="module-card" onclick="showScreen('cards')">
+        <div class="module-dot warn"></div>
+        <span class="module-icon">🃏</span>
+        <div class="module-name">Flashcards</div>
+        <div class="module-sub">12 due today</div>
+      </div>
+      <div class="module-card" onclick="showScreen('tones')">
+        <div class="module-dot"></div>
+        <span class="module-icon">🎵</span>
+        <div class="module-name">Tones</div>
+        <div class="module-sub">4 tones guide</div>
+      </div>
+      <div class="module-card" onclick="showScreen('progress')">
+        <span class="module-icon">📊</span>
+        <div class="module-name">Progress</div>
+        <div class="module-sub">143 chars learned</div>
+      </div>
+      <div class="module-card">
+        <span class="module-icon">🎧</span>
+        <div class="module-name">Listen</div>
+        <div class="module-sub">Coming soon</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FLASHCARD SCREEN ══ -->
+  <div class="screen" id="cards">
+    <div class="card-header">
+      <div class="back-btn" onclick="showScreen('home')">←</div>
+      <div class="card-progress-wrap">
+        <div class="card-progress-label">
+          <span id="cardCount">Card 1 of 8</span>
+          <span id="cardPct">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="timer-badge" id="sessionTimer">15:00</div>
+    </div>
+
+    <div class="card-stage">
+      <div class="flip-card" onclick="flipCard()">
+        <div class="flip-inner" id="flipInner">
+          <!-- Front -->
+          <div class="flip-face flip-front">
+            <div class="card-char" id="cardChar">学</div>
+            <div class="tone-bar" id="toneDots"></div>
+            <div class="card-hint">Tap to reveal</div>
+            <div class="tap-hint">tap anywhere</div>
+          </div>
+          <!-- Back -->
+          <div class="flip-face flip-back">
+            <div class="card-pinyin" id="cardPinyin">xué</div>
+            <div class="card-meaning" id="cardMeaning">to study / to learn</div>
+            <div class="card-example" id="cardExample">我学中文。</div>
+            <div class="card-example-pinyin" id="cardExamplePY">Wǒ xué zhōngwén.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rating-wrap" id="ratingWrap" style="opacity:0;pointer-events:none;transition:opacity 0.3s">
+      <div class="rating-hint">How well did you know this?</div>
+      <div class="rating-btns">
+        <button class="rating-btn again" onclick="rateCard('again')">
+          <span class="r-label">Again</span>
+          <span class="r-sub">&lt; 1 min</span>
+        </button>
+        <button class="rating-btn hard" onclick="rateCard('hard')">
+          <span class="r-label">Hard</span>
+          <span class="r-sub">3 days</span>
+        </button>
+        <button class="rating-btn good" onclick="rateCard('good')">
+          <span class="r-label">Good</span>
+          <span class="r-sub">7 days</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TONES SCREEN ══ -->
+  <div class="screen" id="tones">
+    <div class="tones-header">
+      <div style="display:flex;align-items:center;gap:12px;padding-top:20px">
+        <div class="back-btn" onclick="showScreen('home')">←</div>
+        <div>
+          <div class="screen-title">四声 Tones</div>
+          <div class="screen-sub">The 4 tones of Mandarin</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tone-cards">
+      <!-- Tone 1 -->
+      <div class="tone-card" style="border-color:#3a4a5e">
+        <div class="tone-number" style="color:var(--blue)">First Tone — Flat ā</div>
+        <div class="tone-row">
+          <div class="tone-char-big">妈</div>
+          <div class="tone-info">
+            <div class="tone-name">High & Level</div>
+            <div class="tone-desc">Hold a high steady pitch. Like singing a long note. māmā = mother.</div>
+          </div>
+          <svg class="tone-curve" viewBox="0 0 60 30">
+            <path d="M5,25 L55,5" stroke="#5b9cf6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Tone 2 -->
+      <div class="tone-card" style="border-color:#1e3a28">
+        <div class="tone-number" style="color:var(--green)">Second Tone — Rising á</div>
+        <div class="tone-row">
+          <div class="tone-char-big">麻</div>
+          <div class="tone-info">
+            <div class="tone-name">Rising</div>
+            <div class="tone-desc">Rise like asking a question in English. "Really?" Má = hemp.</div>
+          </div>
+          <svg class="tone-curve" viewBox="0 0 60 30">
+            <path d="M5,28 Q30,25 55,5" stroke="#5cb87a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Tone 3 -->
+      <div class="tone-card" style="border-color:#3a2e10">
+        <div class="tone-number" style="color:var(--accent)">Third Tone — Dip ǎ</div>
+        <div class="tone-row">
+          <div class="tone-char-big">马</div>
+          <div class="tone-info">
+            <div class="tone-name">Falling-Rising</div>
+            <div class="tone-desc">Dip down then rise. Like saying "oh?" with hesitation. Mǎ = horse.</div>
+          </div>
+          <svg class="tone-curve" viewBox="0 0 60 30">
+            <path d="M5,8 Q20,28 35,28 Q45,28 55,8" stroke="#e8a838" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Tone 4 -->
+      <div class="tone-card" style="border-color:#3a1e1e">
+        <div class="tone-number" style="color:var(--red)">Fourth Tone — Falling à</div>
+        <div class="tone-row">
+          <div class="tone-char-big">骂</div>
+          <div class="tone-info">
+            <div class="tone-name">Sharply Falling</div>
+            <div class="tone-desc">Drop firmly like giving a command. "Stop!" Mà = to scold.</div>
+          </div>
+          <svg class="tone-curve" viewBox="0 0 60 30">
+            <path d="M5,5 Q15,6 55,28" stroke="#e05c5c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Neutral -->
+      <div class="tone-card">
+        <div class="tone-number" style="color:var(--text2)">Neutral Tone — a</div>
+        <div class="tone-row">
+          <div class="tone-char-big">吗</div>
+          <div class="tone-info">
+            <div class="tone-name">Light & Short</div>
+            <div class="tone-desc">Quick, light, unstressed. Often at end of sentences. Ma = question particle.</div>
+          </div>
+          <svg class="tone-curve" viewBox="0 0 60 30">
+            <circle cx="30" cy="18" r="3" fill="#8a8580"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Memory trick -->
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;">
+        <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:10px">Memory Trick</div>
+        <div style="font-family:'Noto Serif SC',serif;font-size:20px;margin-bottom:8px;color:var(--accent)">妈麻马骂</div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.6">Mother (1) scolded (4) the horse (3) hemp (2) — one sentence, all 4 tones using the same sound mā.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PROGRESS SCREEN ══ -->
+  <div class="screen" id="progress">
+    <div class="progress-header">
+      <div style="display:flex;align-items:center;gap:12px;padding-top:20px;margin-bottom:20px">
+        <div class="back-btn" onclick="showScreen('home')">←</div>
+        <div>
+          <div class="screen-title">进步 Progress</div>
+          <div class="screen-sub">Your learning journey</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-val" style="color:var(--accent)">143</div>
+        <div class="stat-label">Characters learned</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:var(--green)">7</div>
+        <div class="stat-label">Day streak 🔥</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">18</div>
+        <div class="stat-label">Min avg / day</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" style="color:var(--blue)">64%</div>
+        <div class="stat-label">Retention rate</div>
+      </div>
+    </div>
+
+    <!-- Heatmap -->
+    <div class="heatmap-wrap">
+      <div class="heatmap-title">Activity — last 13 weeks</div>
+      <div class="heatmap" id="heatmap"></div>
+    </div>
+
+    <!-- Burnout meter -->
+    <div class="burnout-section">
+      <div class="burnout-label">🛡️ Burnout Protection</div>
+      <div class="burnout-bar-bg">
+        <div class="burnout-fill" id="burnoutFill"></div>
+      </div>
+      <div class="burnout-status" id="burnoutStatus">✓ You're in the green zone — keep the pace</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:8px">Rest is part of learning. Your brain consolidates during sleep.</div>
+    </div>
+  </div>
+
+  <!-- ══ SESSION COMPLETE ══ -->
+  <div class="screen" id="complete">
+    <div class="complete-char">🎉</div>
+    <div class="complete-title">Session Complete</div>
+    <div class="complete-sub">Your brain is now consolidating.<br>Come back tomorrow — 慢慢来.</div>
+    <div class="complete-stats">
+      <div class="cs-item">
+        <div class="cs-val" style="color:var(--accent)" id="cCards">8</div>
+        <div class="cs-lbl">Cards</div>
+      </div>
+      <div class="cs-item">
+        <div class="cs-val" style="color:var(--green)" id="cGood">6</div>
+        <div class="cs-lbl">Good</div>
+      </div>
+      <div class="cs-item">
+        <div class="cs-val" style="color:var(--red)" id="cAgain">2</div>
+        <div class="cs-lbl">Again</div>
+      </div>
+    </div>
+    <button class="primary-btn" onclick="showScreen('home')">Back to Home</button>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-item active" id="nav-home" onclick="navTo('home')">
+      <div class="nav-icon">🏠</div>
+      <div class="nav-label">Home</div>
+    </div>
+    <div class="nav-item" id="nav-cards" onclick="navTo('cards')">
+      <div class="nav-icon">🃏</div>
+      <div class="nav-label">Cards</div>
+    </div>
+    <div class="nav-item" id="nav-tones" onclick="navTo('tones')">
+      <div class="nav-icon">🎵</div>
+      <div class="nav-label">Tones</div>
+    </div>
+    <div class="nav-item" id="nav-progress" onclick="navTo('progress')">
+      <div class="nav-icon">📊</div>
+      <div class="nav-label">Progress</div>
+    </div>
+  </nav>
+</div>
+
+<script>
+// ── DATA ──
+const vocab = [
+  { char:'学', pinyin:'xué', tone:2, meaning:'to study / to learn', ex:'我学中文。', expy:'Wǒ xué zhōngwén.' },
+  { char:'好', pinyin:'hǎo', tone:3, meaning:'good / well', ex:'你好！', expy:'Nǐ hǎo!' },
+  { char:'人', pinyin:'rén', tone:2, meaning:'person / people', ex:'这个人很好。', expy:'Zhège rén hěn hǎo.' },
+  { char:'爱', pinyin:'ài', tone:4, meaning:'to love / love', ex:'我爱你。', expy:'Wǒ ài nǐ.' },
+  { char:'吃', pinyin:'chī', tone:1, meaning:'to eat', ex:'我吃饭。', expy:'Wǒ chī fàn.' },
+  { char:'水', pinyin:'shuǐ', tone:3, meaning:'water', ex:'我喝水。', expy:'Wǒ hē shuǐ.' },
+  { char:'来', pinyin:'lái', tone:2, meaning:'to come', ex:'请进来。', expy:'Qǐng jìnlái.' },
+  { char:'大', pinyin:'dà', tone:4, meaning:'big / large', ex:'这个很大。', expy:'Zhège hěn dà.' },
+];
+
+let currentCard = 0;
+let isFlipped = false;
+let sessionSeconds = 0;
+let sessionTimerInterval = null;
+let goodCount = 0, againCount = 0;
+let sessionStarted = false;
+const MAX_SESSION = 15 * 60;
+
+// ── SCREEN NAV ──
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  const nav = document.getElementById('mainNav');
+  const hideNav = id === 'complete';
+  nav.style.display = hideNav ? 'none' : 'flex';
+
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const ni = document.getElementById('nav-' + id);
+  if (ni) ni.classList.add('active');
+}
+
+function navTo(id) {
+  if (id === 'cards') { startCards(); return; }
+  showScreen(id);
+}
+
+// ── CARDS ──
+function startCards() {
+  currentCard = 0;
+  isFlipped = false;
+  goodCount = 0; againCount = 0;
+  showScreen('cards');
+  loadCard(currentCard);
+  if (!sessionStarted) {
+    sessionStarted = true;
+    startSessionTimer();
+  }
+}
+
+function loadCard(idx) {
+  const v = vocab[idx % vocab.length];
+  document.getElementById('cardChar').textContent = v.char;
+  document.getElementById('cardPinyin').textContent = v.pinyin;
+  document.getElementById('cardMeaning').textContent = v.meaning;
+  document.getElementById('cardExample').textContent = v.ex;
+  document.getElementById('cardExamplePY').textContent = v.expy;
+
+  // tone dots
+  const dots = document.getElementById('toneDots');
+  dots.innerHTML = ['t1','t2','t3','t4'].map((t,i) =>
+    `<div class="tone-dot ${t} ${i+1 === v.tone ? 'active' : ''}"></div>`
+  ).join('');
+
+  // progress
+  const pct = Math.round((idx / vocab.length) * 100);
+  document.getElementById('cardCount').textContent = `Card ${idx+1} of ${vocab.length}`;
+  document.getElementById('cardPct').textContent = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  // reset flip
+  isFlipped = false;
+  document.getElementById('flipInner').classList.remove('flipped');
+  document.getElementById('ratingWrap').style.opacity = '0';
+  document.getElementById('ratingWrap').style.pointerEvents = 'none';
+}
+
+function flipCard() {
+  if (isFlipped) return;
+  isFlipped = true;
+  document.getElementById('flipInner').classList.add('flipped');
+  setTimeout(() => {
+    document.getElementById('ratingWrap').style.opacity = '1';
+    document.getElementById('ratingWrap').style.pointerEvents = 'all';
+  }, 300);
+}
+
+function rateCard(rating) {
+  if (rating === 'good') goodCount++;
+  else if (rating === 'again') againCount++;
+
+  currentCard++;
+  if (currentCard >= vocab.length) {
+    finishSession();
+    return;
+  }
+  loadCard(currentCard);
+}
+
+function finishSession() {
+  clearInterval(sessionTimerInterval);
+  document.getElementById('cCards').textContent = vocab.length;
+  document.getElementById('cGood').textContent = goodCount;
+  document.getElementById('cAgain').textContent = againCount;
+  showScreen('complete');
+  spawnConfetti();
+
+  // Update home ring
+  const elapsed = Math.min(sessionSeconds, MAX_SESSION);
+  updateRing(elapsed);
+}
+
+// ── SESSION TIMER ──
+function startSessionTimer() {
+  sessionTimerInterval = setInterval(() => {
+    sessionSeconds++;
+    const remaining = MAX_SESSION - sessionSeconds;
+    const m = Math.floor(remaining / 60);
+    const s = remaining % 60;
+    const el = document.getElementById('sessionTimer');
+    el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if (remaining <= 120) el.classList.add('warn');
+    if (remaining <= 0) {
+      clearInterval(sessionTimerInterval);
+      finishSession();
+    }
+    updateRing(sessionSeconds);
+  }, 1000);
+}
+
+function updateRing(elapsed) {
+  const pct = Math.min(elapsed / MAX_SESSION, 1);
+  const circ = 138;
+  const offset = circ - (pct * circ);
+  document.getElementById('ringFg').style.strokeDashoffset = offset;
+  const mins = Math.floor(elapsed / 60);
+  document.getElementById('sessionMin').textContent = mins;
+  if (mins > 0) document.getElementById('sessionStatus').textContent = 'Great work, keep going!';
+}
+
+// ── HEATMAP ──
+function buildHeatmap() {
+  const hm = document.getElementById('heatmap');
+  const levels = [0,0,1,1,2,1,0,1,2,3,2,1,0,1,1,2,3,3,2,1,1,2,2,3,2,1,0,0,1,2,2,3,3,2,3,2,1,1,0,1,2,3,3,2,1,2,3,3,2,1,0,1,1,2,3,3,2,1,1,2,2,3,3,2,1,1,0,1,2,2,3,2,1,1,0,0,1,2,3,2,1,0,0,0,1,1,0,0,0,0,0,0,0];
+  levels.forEach(l => {
+    const cell = document.createElement('div');
+    cell.className = 'hm-cell' + (l > 0 ? ` l${l}` : '');
+    hm.appendChild(cell);
+  });
+}
+
+// ── CONFETTI ──
+function spawnConfetti() {
+  const colors = ['#e8a838','#5cb87a','#5b9cf6','#e05c5c','#d4724a'];
+  for (let i = 0; i < 30; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.cssText = `
+      left:${Math.random()*100}%;
+      top:-10px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      animation-delay:${Math.random()*1.5}s;
+      animation-duration:${1.5+Math.random()*1}s;
+      transform:rotate(${Math.random()*360}deg);
+    `;
+    document.getElementById('complete').appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  }
+}
+
+// ── INIT ──
+buildHeatmap();
+</script>
+</body>
+</html>
