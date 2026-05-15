@@ -1,13 +1,17 @@
-import type { ContentItem } from '../../data/mockContent';
+﻿import type { ContentItem } from '../../data/mockContent';
 import { typeLabel } from '../../data/mockContent';
+import { useTranslation } from '../../i18n/useTranslation';
 
 interface LibraryItemCardProps {
   item: ContentItem;
   active: boolean;
+  showPinyin: boolean;
   onSelect: (id: string) => void;
 }
 
-export function LibraryItemCard({ item, active, onSelect }: LibraryItemCardProps) {
+export function LibraryItemCard({ item, active, showPinyin, onSelect }: LibraryItemCardProps) {
+  const { language } = useTranslation();
+
   return (
     <button
       className={`item-card item-${item.type.toLowerCase()}${active ? ' active' : ''}`}
@@ -17,10 +21,10 @@ export function LibraryItemCard({ item, active, onSelect }: LibraryItemCardProps
       <span>
         <h4>{item.title}</h4>
         <p>
-          {item.pinyin.join(' ')} · {item.meaning}
+          {showPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
         </p>
       </span>
-      <em>{typeLabel(item.type)}</em>
+      <em>{typeLabel(item.type, language)}</em>
     </button>
   );
 }

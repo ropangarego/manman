@@ -4,29 +4,67 @@ export type StudyStep = 'intro' | 'learn' | 'practice' | 'review' | 'summary' | 
 
 interface StudyState {
   step: StudyStep;
+  sessionIndex: number;
+  learnIndex: number;
+  reviewIndex: number;
+  sessionCorrect: number;
+  sessionAttempts: number;
   selectedPractice: string | null;
   selectedReview: string | null;
   feedback: string;
   startSession: () => void;
+  startNextSession: () => void;
   setStep: (step: StudyStep) => void;
-  choosePracticeAnswer: (answer: string) => void;
-  chooseReviewAnswer: (answer: string) => void;
-  finishReview: () => void;
+  choosePracticeAnswer: (
+    answer: string,
+    correctAnswer: string,
+    correctFeedback: string,
+    wrongFeedback: string,
+  ) => void;
+  chooseReviewAnswer: (
+    answer: string,
+    correctAnswer: string,
+    correctFeedback: string,
+    wrongFeedback: string,
+  ) => void;
+  finishPractice: (hasMoreLearnItems: boolean) => void;
+  finishReview: (hasMoreReviewItems: boolean) => void;
   resetInteractions: () => void;
 }
 
 export const useStudyStore = create<StudyState>((set) => ({
   step: 'intro',
+  sessionIndex: 0,
+  learnIndex: 0,
+  reviewIndex: 0,
+  sessionCorrect: 0,
+  sessionAttempts: 0,
   selectedPractice: null,
   selectedReview: null,
   feedback: '',
   startSession: () =>
     set({
       step: 'intro',
+      learnIndex: 0,
+      reviewIndex: 0,
+      sessionCorrect: 0,
+      sessionAttempts: 0,
       selectedPractice: null,
       selectedReview: null,
       feedback: '',
     }),
+  startNextSession: () =>
+    set((state) => ({
+      step: 'intro',
+      sessionIndex: state.sessionIndex + 1,
+      learnIndex: 0,
+      reviewIndex: 0,
+      sessionCorrect: 0,
+      sessionAttempts: 0,
+      selectedPractice: null,
+      selectedReview: null,
+      feedback: '',
+    })),
   setStep: (step) =>
     set({
       step,
@@ -34,31 +72,41 @@ export const useStudyStore = create<StudyState>((set) => ({
       selectedReview: null,
       feedback: '',
     }),
-  choosePracticeAnswer: (answer) =>
-    set({
+  choosePracticeAnswer: (answer, correctAnswer, correctFeedback, wrongFeedback) =>
+    set((state) => ({
       selectedPractice: answer,
-      feedback: answer === 'hello' ? 'Correct. 你好 means hello.' : 'Almost. Try again - 你好 means hello.',
-    }),
-  chooseReviewAnswer: (answer) =>
+      feedback: answer === correctAnswer ? correctFeedback : wrongFeedback,
+      sessionAttempts: state.sessionAttempts + 1,
+      sessionCorrect: state.sessionCorrect + (answer === correctAnswer ? 1 : 0),
+    })),
+  chooseReviewAnswer: (answer, correctAnswer, correctFeedback, wrongFeedback) =>
     set((state) => {
       if (state.selectedReview) {
         return state;
       }
 
       return {
-      selectedReview: answer,
-      feedback:
-        answer === 'go home'
-          ? 'Correct. 回家 means go home.'
-          : 'Almost. 回家 means go home. We’ll show it again sooner.',
+        selectedReview: answer,
+        feedback: answer === correctAnswer ? correctFeedback : wrongFeedback,
+        sessionAttempts: state.sessionAttempts + 1,
+        sessionCorrect: state.sessionCorrect + (answer === correctAnswer ? 1 : 0),
       };
     }),
-  finishReview: () =>
-    set({
-      step: 'summary',
+  finishPractice: (hasMoreLearnItems) =>
+    set((state) => ({
+      step: hasMoreLearnItems ? 'learn' : 'review',
+      learnIndex: hasMoreLearnItems ? state.learnIndex + 1 : state.learnIndex,
+      selectedPractice: null,
       selectedReview: null,
       feedback: '',
-    }),
+    })),
+  finishReview: (hasMoreReviewItems) =>
+    set((state) => ({
+      step: hasMoreReviewItems ? 'review' : 'summary',
+      reviewIndex: hasMoreReviewItems ? state.reviewIndex + 1 : state.reviewIndex,
+      selectedReview: null,
+      feedback: '',
+    })),
   resetInteractions: () =>
     set({
       selectedPractice: null,

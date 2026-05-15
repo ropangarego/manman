@@ -1,13 +1,21 @@
-import { AnswerGrid } from '../components/study/AnswerGrid';
+﻿import { AnswerGrid } from '../components/study/AnswerGrid';
 import { StudyItemCard } from '../components/study/StudyItemCard';
 import { StudyProgress } from '../components/study/StudyProgress';
 import { ToneDots } from '../components/study/ToneDots';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
-import { sessionPlans } from '../data/mockContent';
+import {
+  getStarterStudySession,
+  sessionPlans,
+  studyQuestionForItem,
+  typeLabel,
+  type ContentItem,
+} from '../data/mockContent';
 import { useAppStore } from '../stores/appStore';
+import { useProgressStore } from '../stores/progressStore';
 import { useStudyStore } from '../stores/studyStore';
+import { useTranslation } from '../i18n/useTranslation';
 
 function PinyinLine({ pinyin, tones, show = true }: { pinyin: string[]; tones: number[]; show?: boolean }) {
   if (!show) {
@@ -17,8 +25,8 @@ function PinyinLine({ pinyin, tones, show = true }: { pinyin: string[]; tones: n
   return (
     <>
       <div className="pinyin-line">
-        {pinyin.map((syllable) => (
-          <span key={syllable}>{syllable}</span>
+        {pinyin.map((syllable, index) => (
+          <span key={`${syllable}-${index}`}>{syllable}</span>
         ))}
       </div>
       <ToneDots tones={tones} />
@@ -26,47 +34,139 @@ function PinyinLine({ pinyin, tones, show = true }: { pinyin: string[]; tones: n
   );
 }
 
+function ExampleBlock({ item, showPinyin }: { item: ContentItem; showPinyin: boolean }) {
+  return (
+    <p>
+      <b>{item.example[0]}</b>
+      <br />
+      {showPinyin ? (
+        <>
+          {item.example[1]}
+          <br />
+        </>
+      ) : null}
+      {item.example[2]}
+    </p>
+  );
+}
+
+function progressMode(step: ReturnType<typeof useStudyStore.getState>['step'], t: ReturnType<typeof useTranslation>['t']) {
+  if (step === 'intro') {
+    return t('study.sessionPlan');
+  }
+
+  if (step === 'learn') {
+    return t('study.learningNew');
+  }
+
+  if (step === 'practice') {
+    return t('study.quickPractice');
+  }
+
+  if (step === 'review') {
+    return t('study.reviewDue');
+  }
+
+  if (step === 'summary') {
+    return t('study.summary');
+  }
+
+  return t('study.unlockedContent');
+}
+
+function completedCount(
+  step: ReturnType<typeof useStudyStore.getState>['step'],
+  learnIndex: number,
+  reviewIndex: number,
+  learnCount: number,
+  total: number,
+) {
+  if (step === 'intro') {
+    return 0;
+  }
+
+  if (step === 'learn') {
+    return learnIndex * 2;
+  }
+
+  if (step === 'practice') {
+    return learnIndex * 2 + 1;
+  }
+
+  if (step === 'review') {
+    return learnCount * 2 + reviewIndex;
+  }
+
+  return total;
+}
+
 export function StudyScreen() {
+  const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
   const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
   const hints = useAppStore((state) => state.settings.hints);
   const openSheet = useAppStore((state) => state.openSheet);
   const setScreen = useAppStore((state) => state.setScreen);
   const step = useStudyStore((state) => state.step);
+  const sessionIndex = useStudyStore((state) => state.sessionIndex);
+  const learnIndex = useStudyStore((state) => state.learnIndex);
+  const reviewIndex = useStudyStore((state) => state.reviewIndex);
+  const sessionCorrect = useStudyStore((state) => state.sessionCorrect);
+  const sessionAttempts = useStudyStore((state) => state.sessionAttempts);
   const selectedPractice = useStudyStore((state) => state.selectedPractice);
   const selectedReview = useStudyStore((state) => state.selectedReview);
   const feedback = useStudyStore((state) => state.feedback);
   const setStep = useStudyStore((state) => state.setStep);
+  const startNextSession = useStudyStore((state) => state.startNextSession);
   const choosePracticeAnswer = useStudyStore((state) => state.choosePracticeAnswer);
   const chooseReviewAnswer = useStudyStore((state) => state.chooseReviewAnswer);
+  const finishPractice = useStudyStore((state) => state.finishPractice);
   const finishReview = useStudyStore((state) => state.finishReview);
+  const recordAnswer = useProgressStore((state) => state.recordAnswer);
+  const completeSession = useProgressStore((state) => state.completeSession);
   const plan = sessionPlans[sessionSize];
-  const showLearningPinyin = pinyinDisplay !== 'Hidden in review';
+  const showLearningPinyin = pinyinDisplay !== 'Hidden in review' && pinyinDisplay !== 'Off';
   const showReviewPinyin = pinyinDisplay === 'Always';
+  const session = getStarterStudySession(sessionSize, sessionIndex, language);
+  const learnItem = session.learnItems[learnIndex] ?? session.learnItems[0];
+  const reviewItem = session.reviewItems[reviewIndex] ?? session.reviewItems[0];
+  const practice = studyQuestionForItem(learnItem, t('study.quickPractice'), true, language);
+  const review = studyQuestionForItem(reviewItem, t('study.reviewDue'), false, language);
+  const totalTasks = session.learnItems.length * 2 + session.reviewItems.length;
+  const completed = completedCount(step, learnIndex, reviewIndex, session.learnItems.length, totalTasks);
+  const hasMoreLearnItems = learnIndex < session.learnItems.length - 1;
+  const hasMoreReviewItems = reviewIndex < session.reviewItems.length - 1;
+  const sessionAccuracy = sessionAttempts > 0 ? `${Math.round((sessionCorrect / sessionAttempts) * 100)}%` : '100%';
 
   return (
     <div className="study-shell">
-      <StudyProgress step={step} />
+      <StudyProgress
+        completed={completed}
+        total={totalTasks}
+        mode={progressMode(step, t)}
+        completedLabel={t('study.completed')}
+        sessionLabel={t('study.session')}
+      />
 
       {step === 'intro' ? (
         <Card className="study-card session-intro">
-          <span className="pill accent">Pack 1 · Foundations</span>
+          <span className="pill accent">{session.packLabel}</span>
           <div>
-            <h3>Today you’ll learn, practice, then review.</h3>
+            <h3>{session.introTitle}</h3>
             <p>
-              {plan.newWords} new words · {plan.reviews} reviews
+              {session.learnItems.length} {t('study.new').toLowerCase()} · {session.reviewItems.length} {t('study.reviews').toLowerCase()}
               <br />
-              <span className="duration-line">Duration: {plan.duration}</span>
+              <span className="duration-line">{t('home.duration')}: {plan.duration}</span>
             </p>
-            <p>The app handles the order so you don’t need separate Learn and Review tabs.</p>
+            <p>{session.introDescription}</p>
           </div>
           <div className="intro-stats">
-            <StatCard value={plan.newWords} label="New" />
-            <StatCard value={plan.reviews} label="Reviews" />
-            <StatCard value={plan.duration.replace('~', '')} label="Duration" />
+            <StatCard value={session.learnItems.length} label={t('study.new')} />
+            <StatCard value={session.reviewItems.length} label={t('study.reviews')} />
+            <StatCard value={plan.duration.replace('~', '')} label={t('home.duration')} />
           </div>
           <Button type="button" onClick={() => setStep('learn')}>
-            Start
+            {t('study.start')}
           </Button>
         </Card>
       ) : null}
@@ -74,52 +174,40 @@ export function StudyScreen() {
       {step === 'learn' ? (
         <section className="study-card desktop-wide learn-layout">
           <StudyItemCard
-            type="Word"
-            title="你好"
-            pinyin={['nǐ', 'hǎo']}
-            tones={[3, 3]}
-            meaning="hello"
+            type={typeLabel(learnItem.type, language)}
+            title={learnItem.title}
+            pinyin={learnItem.pinyin}
+            tones={learnItem.tones}
+            meaning={learnItem.meaning}
             showPinyin={showLearningPinyin}
           />
           <div className="study-card learn-side">
-            {hints ? (
+            {hints && showLearningPinyin ? (
               <div className="tone-helper">
-                <b>Tip</b>
-                <span>Colored dots under pinyin show the tone of each syllable.</span>
+                <b>{t('study.tip')}</b>
+                <span>{t('study.tipText')}</span>
               </div>
             ) : null}
             <Card className="study-info-card">
-              <h3>Build the greeting</h3>
+              <h3>{t('study.buildGreeting')}</h3>
               <div className="component-grid">
-                <div className="mini-box">
-                  <b>你</b>
-                  <small>you</small>
-                </div>
-                <div className="mini-box">
-                  <b>好</b>
-                  <small>good</small>
-                </div>
-                <div className="mini-box">
-                  <b>吗</b>
-                  <small>question</small>
-                </div>
+                {learnItem.components.map(([label, meaning]) => (
+                  <div className="mini-box" key={`${label}-${meaning}`}>
+                    <b>{label}</b>
+                    <small>{meaning}</small>
+                  </div>
+                ))}
               </div>
               <p>
-                <b>你好</b> means hello. Literally, it is close to “you good”.
+                <b>{learnItem.title}</b> {language === 'Indonesian' ? 'berarti' : 'means'} {learnItem.meaning}. {learnItem.mnemonic}
               </p>
             </Card>
             <Card className="study-info-card">
-              <h3>Example</h3>
-              <p>
-                <b>你好！</b>
-                <br />
-                Nǐ hǎo!
-                <br />
-                Hello!
-              </p>
+              <h3>{language === 'Indonesian' ? 'Contoh' : 'Example'}</h3>
+              <ExampleBlock item={learnItem} showPinyin={showLearningPinyin} />
             </Card>
             <Button type="button" onClick={() => setStep('practice')}>
-              Practice this
+              {t('study.practiceThis')}
             </Button>
           </div>
         </section>
@@ -128,25 +216,34 @@ export function StudyScreen() {
       {step === 'practice' ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
-            <p className="muted">Quick practice new item</p>
-            <div className="review-char">你好</div>
-            <PinyinLine pinyin={['nǐ', 'hǎo']} tones={[3, 3]} show={showLearningPinyin} />
-            <h3>What does this mean?</h3>
+            <p className="muted">{practice.modeLabel}</p>
+            <div className="review-char">{learnItem.title}</div>
+            <PinyinLine pinyin={learnItem.pinyin} tones={learnItem.tones} show={showLearningPinyin} />
+            <h3>{practice.prompt}</h3>
             <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
               ⋯
             </button>
           </div>
           <div className="practice-side">
             <AnswerGrid
-              answers={['hello', 'thank you', 'go home', 'water']}
-              correctAnswer="hello"
+              answers={practice.answers}
+              correctAnswer={practice.correctAnswer}
               selectedAnswer={selectedPractice}
-              onSelect={choosePracticeAnswer}
+              disabled={selectedPractice === practice.correctAnswer}
+              onSelect={(answer) => {
+                choosePracticeAnswer(
+                  answer,
+                  practice.correctAnswer,
+                  practice.correctFeedback,
+                  practice.wrongFeedback,
+                );
+                recordAnswer(learnItem, answer === practice.correctAnswer);
+              }}
             />
-            {feedback ? <div className={`feedback ${feedback.startsWith('Correct') ? 'good' : 'bad'}`}>{feedback}</div> : null}
-            {selectedPractice === 'hello' ? (
-              <Button type="button" onClick={() => setStep('review')}>
-                Next
+            {feedback ? <div className={`feedback ${selectedPractice === practice.correctAnswer ? 'good' : 'bad'}`}>{feedback}</div> : null}
+            {selectedPractice === practice.correctAnswer ? (
+              <Button type="button" onClick={() => finishPractice(hasMoreLearnItems)}>
+                {t('common.next')}
               </Button>
             ) : null}
           </div>
@@ -156,26 +253,38 @@ export function StudyScreen() {
       {step === 'review' ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
-            <p className="muted">Due review</p>
-            <div className="review-char">回家</div>
-            <PinyinLine pinyin={['huí', 'jiā']} tones={[2, 1]} show={showReviewPinyin} />
-            <h3>What does this mean?</h3>
+            <p className="muted">{review.modeLabel}</p>
+            <div className="review-char">{reviewItem.title}</div>
+            <PinyinLine pinyin={reviewItem.pinyin} tones={reviewItem.tones} show={showReviewPinyin} />
+            <h3>{review.prompt}</h3>
             <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
               ⋯
             </button>
           </div>
           <div className="practice-side">
             <AnswerGrid
-              answers={['drink water', 'go home', 'eat rice', 'say hello']}
-              correctAnswer="go home"
+              answers={review.answers}
+              correctAnswer={review.correctAnswer}
               selectedAnswer={selectedReview}
               disabled={Boolean(selectedReview)}
-              onSelect={chooseReviewAnswer}
+              onSelect={(answer) => {
+                chooseReviewAnswer(answer, review.correctAnswer, review.correctFeedback, review.wrongFeedback);
+                recordAnswer(reviewItem, answer === review.correctAnswer);
+              }}
             />
-            {feedback ? <div className={`feedback ${feedback.startsWith('Correct') ? 'good' : 'bad'}`}>{feedback}</div> : null}
+            {feedback ? <div className={`feedback ${selectedReview === review.correctAnswer ? 'good' : 'bad'}`}>{feedback}</div> : null}
             {selectedReview ? (
-              <Button type="button" onClick={finishReview}>
-                Next
+              <Button
+                type="button"
+                onClick={() => {
+                  if (!hasMoreReviewItems) {
+                    completeSession(plan.minutes);
+                  }
+
+                  finishReview(hasMoreReviewItems);
+                }}
+              >
+                {t('common.next')}
               </Button>
             ) : null}
           </div>
@@ -184,49 +293,51 @@ export function StudyScreen() {
 
       {step === 'summary' ? (
         <Card className="study-card">
-          <span className="pill jade">Session complete</span>
+          <span className="pill jade">{t('study.complete')}</span>
           <div>
-            <h3>Nice work. You’re done for today.</h3>
-            <p>Your new items were saved and your reviews were refreshed.</p>
+            <h3>{t('study.niceWork', { number: session.sessionNumber })}</h3>
+            <p>{t('study.saved')}</p>
           </div>
           <div className="summary-grid">
-            <StatCard value={15} label="Studied" />
-            <StatCard value="87%" label="Accuracy" />
-            <StatCard value={3} label="Moved up" />
-            <StatCard value={1} label="Focus" />
+            <StatCard value={totalTasks} label={t('study.studied')} />
+            <StatCard value={sessionAccuracy} label={t('common.accuracy')} />
+            <StatCard value={session.unlocks.length} label={t('study.unlocked')} />
+            <StatCard value={session.learnItems.length} label={t('study.new')} />
           </div>
           <Button type="button" onClick={() => setStep('unlocks')}>
-            View unlocks
+            {t('study.viewUnlocks')}
           </Button>
         </Card>
       ) : null}
 
       {step === 'unlocks' ? (
         <Card className="study-card">
-          <span className="pill jade">Unlocked</span>
+          <span className="pill jade">{t('study.unlocked')}</span>
           <div>
-            <h3>New words and sentence practice are ready.</h3>
-            <p>Because 你好 reached Familiar, related content can now appear in future sessions.</p>
+            <h3>{t('study.unlockTitle')}</h3>
+            <p>{t('study.unlockCopy')}</p>
           </div>
           <div className="item-list">
-            <article className="item-card">
-              <div>
-                <h4>好吗</h4>
-                <p>hǎo ma · are you okay?</p>
-              </div>
-              <em>Word</em>
-            </article>
-            <article className="item-card">
-              <div>
-                <h4>你好吗？</h4>
-                <p>Nǐ hǎo ma? · how are you?</p>
-              </div>
-              <em>Sentence</em>
-            </article>
+            {session.unlocks.map((item) => (
+              <article className="item-card" key={item.id}>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>
+                    {showLearningPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
+                  </p>
+                </div>
+                <em>{typeLabel(item.type, language)}</em>
+              </article>
+            ))}
           </div>
-          <Button type="button" onClick={() => setScreen('home')}>
-            Done
-          </Button>
+          <div className="session-actions">
+            <Button type="button" onClick={startNextSession}>
+              {t('study.another')}
+            </Button>
+            <Button variant="secondary" type="button" onClick={() => setScreen('home')}>
+              {t('study.done')}
+            </Button>
+          </div>
         </Card>
       ) : null}
     </div>

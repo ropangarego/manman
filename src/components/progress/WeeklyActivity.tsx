@@ -1,18 +1,24 @@
-import { weeklyActivity } from '../../data/mockContent';
 import { Card } from '../ui/Card';
+import { useTranslation } from '../../i18n/useTranslation';
 
-export function WeeklyActivity() {
+interface WeeklyActivityProps {
+  activity: { day: string; minutes: number }[];
+}
+
+export function WeeklyActivity({ activity }: WeeklyActivityProps) {
+  const { t } = useTranslation();
+
   return (
     <Card>
       <div className="section-title">
         <div>
-          <h3>Weekly activity</h3>
-          <p>Minutes per day.</p>
+          <h3>{t('progress.weeklyActivity')}</h3>
+          <p>{t('progress.weeklyActivitySub')}</p>
         </div>
       </div>
       <div className="bars readable-bars">
-        {weeklyActivity.map((day) => (
-          <div className="bar-wrap" key={`${day.day}-${day.minutes}`}>
+        {activity.map((day, index) => (
+          <div className="bar-wrap" key={`${day.day}-${index}`}>
             <span className="bar-value">{day.minutes}m</span>
             <div className="bar" aria-hidden="true">
               <i style={{ height: `${day.minutes * 3.2}px` }} />
@@ -24,4 +30,3 @@ export function WeeklyActivity() {
     </Card>
   );
 }
-

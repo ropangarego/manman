@@ -1,4 +1,6 @@
-import type { LibraryTab, Stage } from '../../data/mockContent';
+﻿import type { LibraryTab, Stage } from '../../data/mockContent';
+import { optionLabel } from '../../i18n/copy';
+import { useTranslation } from '../../i18n/useTranslation';
 import { useAppStore } from '../../stores/appStore';
 
 const tabs: LibraryTab[] = ['All', 'Hanzi', 'Words', 'Sentences'];
@@ -12,6 +14,7 @@ interface LibraryFiltersProps {
 }
 
 export function LibraryFilters({ search, tab, stage, onSearch, onTabChange }: LibraryFiltersProps) {
+  const { language, t } = useTranslation();
   const openSheet = useAppStore((state) => state.openSheet);
 
   return (
@@ -19,11 +22,11 @@ export function LibraryFilters({ search, tab, stage, onSearch, onTabChange }: Li
       <input
         className="search-input"
         value={search}
-        placeholder="Search hanzi, pinyin, meaning..."
+        placeholder={t('library.search')}
         onChange={(event) => onSearch(event.target.value)}
       />
 
-      <div className="tabs" role="tablist" aria-label="Content type">
+      <div className="tabs" role="tablist" aria-label={t('library.contentType')}>
         {tabs.map((item) => (
           <button
             className={`tab-pill${tab === item ? ' active' : ''}`}
@@ -33,14 +36,14 @@ export function LibraryFilters({ search, tab, stage, onSearch, onTabChange }: Li
             aria-selected={tab === item}
             onClick={() => onTabChange(item)}
           >
-            {item}
+            {optionLabel(language, item)}
           </button>
         ))}
       </div>
 
       <button className="picker-row" type="button" onClick={() => openSheet('stage')}>
-        <b>Stage</b>
-        <span>{stage} ›</span>
+        <b>{t('common.stage')}</b>
+        <span>{optionLabel(language, stage)} ›</span>
       </button>
     </>
   );

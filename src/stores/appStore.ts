@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { createJSONStorage, persist, type PersistStorage } from 'zustand/middleware';
 import type {
   Familiarity,
   LibraryTab,
@@ -8,6 +9,7 @@ import type {
   SessionSize,
   Stage,
 } from '../data/mockContent';
+import { optionLabel, translate, type AppLanguage } from '../i18n/copy';
 
 export type Screen = 'home' | 'study' | 'library' | 'progress' | 'settings';
 export type OnboardingStep = 'welcome' | 'script' | 'familiarity' | 'session' | 'placement' | 'recommend';
@@ -20,6 +22,7 @@ export type SheetType =
   | 'language'
   | 'downloads'
   | 'report'
+  | 'resetApp'
   | 'logout';
 
 interface SettingsState {
@@ -28,46 +31,189 @@ interface SettingsState {
   toneColors: boolean;
   sound: boolean;
   hints: boolean;
-  language: 'English' | 'Indonesian';
+  language: AppLanguage;
   dark: boolean;
   offline: boolean;
 }
 
 type ToggleSettingKey = 'toneColors' | 'sound' | 'hints' | 'dark' | 'offline';
 
-const THEME_STORAGE_KEY = 'mandarin-theme';
+export const PREFERENCES_STORAGE_KEY = 'mandarin-app-preferences';
+const PREFERENCES_VERSION = 1;
+const LEGACY_THEME_STORAGE_KEY = 'mandarin-theme';
+const PROGRESS_STORAGE_KEY = 'mandarin-learning-progress';
 
-function getInitialDarkMode() {
+const SESSION_SIZES = ['Light', 'Standard', 'Intense'] as const;
+const SCRIPT_CHOICES = ['Simplified', 'Traditional', 'Not sure'] as const;
+const PINYIN_OPTIONS = ['Always', 'Lesson only', 'Hidden in review', 'Off'] as const;
+const REVIEW_STYLES = ['Simple', 'Mixed', 'Typed'] as const;
+const LANGUAGES = ['English', 'Indonesian'] as const;
+
+const DEFAULT_SETTINGS: SettingsState = {
+  pinyinDisplay: 'Always',
+  reviewStyle: 'Simple',
+  toneColors: true,
+  sound: true,
+  hints: true,
+  language: 'English',
+  dark: false,
+  offline: true,
+};
+
+interface PersistedAppState {
+  onboarded: boolean;
+  scriptChoice: ScriptChoice;
+  sessionSize: SessionSize;
+  settings: SettingsState;
+}
+
+function createDefaultPersistedState(): PersistedAppState {
+  return {
+    onboarded: false,
+    scriptChoice: 'Simplified',
+    sessionSize: 'Standard',
+    settings: { ...DEFAULT_SETTINGS },
+  };
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function pickOption<T extends string>(value: unknown, options: readonly T[], fallback: T): T {
+  return typeof value === 'string' && options.includes(value as T) ? (value as T) : fallback;
+}
+
+function pickBoolean(value: unknown, fallback: boolean) {
+  return typeof value === 'boolean' ? value : fallback;
+}
+
+function normalizeScriptPreference(script: ScriptChoice): ScriptChoice {
+  return script === 'Traditional' ? 'Traditional' : 'Simplified';
+}
+
+function sanitizeSettings(value: unknown): SettingsState {
+  const saved = isRecord(value) ? value : {};
+
+  return {
+    pinyinDisplay: pickOption(saved.pinyinDisplay, PINYIN_OPTIONS, DEFAULT_SETTINGS.pinyinDisplay),
+    reviewStyle: pickOption(saved.reviewStyle, REVIEW_STYLES, DEFAULT_SETTINGS.reviewStyle),
+    toneColors: pickBoolean(saved.toneColors, DEFAULT_SETTINGS.toneColors),
+    sound: pickBoolean(saved.sound, DEFAULT_SETTINGS.sound),
+    hints: pickBoolean(saved.hints, DEFAULT_SETTINGS.hints),
+    language: pickOption(saved.language, LANGUAGES, DEFAULT_SETTINGS.language),
+    dark: pickBoolean(saved.dark, DEFAULT_SETTINGS.dark),
+    offline: pickBoolean(saved.offline, DEFAULT_SETTINGS.offline),
+  };
+}
+
+function sanitizePersistedState(value: unknown): PersistedAppState | null {
+  if (!isRecord(value)) {
+    return null;
+  }
+
+  const scriptChoice = pickOption(value.scriptChoice, SCRIPT_CHOICES, 'Simplified');
+
+  return {
+    onboarded: value.onboarded === true,
+    scriptChoice: normalizeScriptPreference(scriptChoice),
+    sessionSize: pickOption(value.sessionSize, SESSION_SIZES, 'Standard'),
+    settings: sanitizeSettings(value.settings),
+  };
+}
+
+function readStoredDarkMode() {
   if (typeof window === 'undefined') {
     return false;
   }
 
-  return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark';
+  try {
+    const rawPreferences = window.localStorage.getItem(PREFERENCES_STORAGE_KEY);
+
+    if (rawPreferences) {
+      const preferences = JSON.parse(rawPreferences) as unknown;
+
+      if (isRecord(preferences) && preferences.version === PREFERENCES_VERSION) {
+        const persisted = sanitizePersistedState(preferences.state);
+        return persisted?.settings.dark ?? false;
+      }
+    }
+
+    return window.localStorage.getItem(LEGACY_THEME_STORAGE_KEY) === 'dark';
+  } catch {
+    return false;
+  }
 }
 
-function syncDarkMode(enabled: boolean) {
-  if (typeof document === 'undefined' || typeof window === 'undefined') {
+function clearStoredPreferences() {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.removeItem(PREFERENCES_STORAGE_KEY);
+    window.localStorage.removeItem(LEGACY_THEME_STORAGE_KEY);
+    window.localStorage.removeItem(PROGRESS_STORAGE_KEY);
+  } catch {
+    // Storage can be unavailable in private or restricted browser contexts.
+  }
+}
+
+function getInitialDarkMode() {
+  return readStoredDarkMode();
+}
+
+function applyDarkMode(enabled: boolean) {
+  if (typeof document === 'undefined') {
     return;
   }
 
   document.documentElement.classList.toggle('dark', enabled);
-  window.localStorage.setItem(THEME_STORAGE_KEY, enabled ? 'dark' : 'light');
+
+  if (typeof window !== 'undefined') {
+    try {
+      window.localStorage.removeItem(LEGACY_THEME_STORAGE_KEY);
+    } catch {
+      // Theme still applies even if storage cleanup is unavailable.
+    }
+  }
 }
 
-function toggleToast(key: ToggleSettingKey, enabled: boolean) {
-  const labels: Record<ToggleSettingKey, string> = {
-    toneColors: 'Tone colors',
-    sound: 'Sound',
-    hints: 'Tutorial hints',
-    dark: enabled ? 'Dark mode' : 'Light mode',
-    offline: 'Offline mode',
-  };
+function createPreferencesStorage(): PersistStorage<PersistedAppState> | undefined {
+  const storage = createJSONStorage<PersistedAppState>(() => window.localStorage);
 
-  if (key === 'dark') {
-    return `${labels.dark} enabled`;
+  if (!storage) {
+    return undefined;
   }
 
-  return `${labels[key]} turned ${enabled ? 'on' : 'off'}`;
+  return {
+    getItem: storage.getItem,
+    setItem: (name, value) => {
+      if (!value.state.onboarded) {
+        clearStoredPreferences();
+        return;
+      }
+
+      return storage.setItem(name, value);
+    },
+    removeItem: storage.removeItem,
+  };
+}
+
+function toggleToast(key: ToggleSettingKey, enabled: boolean, language: AppLanguage) {
+  if (key === 'dark') {
+    return translate(language, enabled ? 'toast.darkEnabled' : 'toast.lightEnabled');
+  }
+
+  const toastKeys: Record<ToggleSettingKey, [Parameters<typeof translate>[1], Parameters<typeof translate>[1]]> = {
+    toneColors: ['toast.toneColorsOn', 'toast.toneColorsOff'],
+    sound: ['toast.soundOn', 'toast.soundOff'],
+    hints: ['toast.hintsOn', 'toast.hintsOff'],
+    dark: ['toast.darkEnabled', 'toast.lightEnabled'],
+    offline: ['toast.offlineOn', 'toast.offlineOff'],
+  };
+
+  return translate(language, enabled ? toastKeys[key][0] : toastKeys[key][1]);
 }
 
 interface AppState {
@@ -78,6 +224,7 @@ interface AppState {
   familiarity: Familiarity;
   sessionSize: SessionSize;
   placementAnswer: string;
+  placementAnswers: Record<string, string>;
   placementScore: number;
   libraryTab: LibraryTab;
   libraryStage: Stage | 'All';
@@ -92,7 +239,7 @@ interface AppState {
   chooseScript: (script: ScriptChoice) => void;
   chooseFamiliarity: (familiarity: Familiarity) => void;
   chooseSessionSize: (size: SessionSize) => void;
-  answerPlacement: (answer: string) => void;
+  answerPlacement: (questionId: string, answer: string, correctAnswer: string) => void;
   finishOnboarding: () => void;
   openSheet: (sheet: SheetType) => void;
   closeSheet: () => void;
@@ -104,10 +251,13 @@ interface AppState {
   toggleSetting: (key: ToggleSettingKey) => void;
   showToast: (message: string) => void;
   clearToast: () => void;
+  resetAppState: () => void;
   confirmLogout: () => void;
 }
 
-export const useAppStore = create<AppState>((set) => ({
+export const useAppStore = create<AppState>()(
+  persist<AppState, [], [], PersistedAppState>(
+    (set) => ({
   onboarded: false,
   onboardingStep: 'welcome',
   screen: 'home',
@@ -115,6 +265,7 @@ export const useAppStore = create<AppState>((set) => ({
   familiarity: 'beginner',
   sessionSize: 'Standard',
   placementAnswer: '',
+  placementAnswers: {},
   placementScore: 0,
   libraryTab: 'All',
   libraryStage: 'All',
@@ -124,14 +275,8 @@ export const useAppStore = create<AppState>((set) => ({
   activeSheet: null,
   toast: '',
   settings: {
-    pinyinDisplay: 'Always',
-    reviewStyle: 'Simple',
-    toneColors: true,
-    sound: true,
-    hints: true,
-    language: 'English',
+    ...DEFAULT_SETTINGS,
     dark: getInitialDarkMode(),
-    offline: true,
   },
   setScreen: (screen) =>
     set({
@@ -142,17 +287,28 @@ export const useAppStore = create<AppState>((set) => ({
   chooseScript: (scriptChoice) => set({ scriptChoice }),
   chooseFamiliarity: (familiarity) => set({ familiarity }),
   chooseSessionSize: (sessionSize) => set({ sessionSize }),
-  answerPlacement: (placementAnswer) =>
-    set({
-      placementAnswer,
-      placementScore: placementAnswer === 'hello' ? 2 : 0,
+  answerPlacement: (questionId, placementAnswer, correctAnswer) =>
+    set((state) => {
+      const previousAnswer = state.placementAnswers[questionId];
+      const previousScore = previousAnswer === correctAnswer ? 1 : 0;
+      const nextScore = placementAnswer === correctAnswer ? 1 : 0;
+
+      return {
+        placementAnswer,
+        placementAnswers: {
+          ...state.placementAnswers,
+          [questionId]: placementAnswer,
+        },
+        placementScore: Math.max(0, state.placementScore - previousScore + nextScore),
+      };
     }),
   finishOnboarding: () =>
-    set({
+    set((state) => ({
       onboarded: true,
       screen: 'home',
       activeSheet: null,
-    }),
+      scriptChoice: normalizeScriptPreference(state.scriptChoice),
+    })),
   openSheet: (activeSheet) => set({ activeSheet }),
   closeSheet: () => set({ activeSheet: null }),
   chooseSheetValue: (sheet, value) =>
@@ -171,10 +327,12 @@ export const useAppStore = create<AppState>((set) => ({
           return { activeSheet: null };
         }
 
+        const language = state.settings.language;
+
         return {
           sessionSize: value as SessionSize,
           activeSheet: null,
-          toast: `Session size updated to ${value}`,
+          toast: translate(language, 'toast.sessionSize', { value: optionLabel(language, value) }),
         };
       }
 
@@ -183,10 +341,12 @@ export const useAppStore = create<AppState>((set) => ({
           return { activeSheet: null };
         }
 
+        const language = state.settings.language;
+
         return {
           scriptChoice: value as ScriptChoice,
           activeSheet: null,
-          toast: `Script changed to ${value}`,
+          toast: translate(language, 'toast.script', { value: optionLabel(language, value) }),
         };
       }
 
@@ -195,10 +355,12 @@ export const useAppStore = create<AppState>((set) => ({
           return { activeSheet: null };
         }
 
+        const language = state.settings.language;
+
         return {
           settings: { ...state.settings, pinyinDisplay: value as PinyinDisplay },
           activeSheet: null,
-          toast: `Pinyin display updated to ${value}`,
+          toast: translate(language, 'toast.pinyin', { value: optionLabel(language, value) }),
         };
       }
 
@@ -207,10 +369,12 @@ export const useAppStore = create<AppState>((set) => ({
           return { activeSheet: null };
         }
 
+        const language = state.settings.language;
+
         return {
           settings: { ...state.settings, reviewStyle: value as ReviewStyle },
           activeSheet: null,
-          toast: `Review style updated to ${value}`,
+          toast: translate(language, 'toast.reviewStyle', { value: optionLabel(language, value) }),
         };
       }
 
@@ -219,10 +383,12 @@ export const useAppStore = create<AppState>((set) => ({
           return { activeSheet: null };
         }
 
+        const nextLanguage = value as SettingsState['language'];
+
         return {
-          settings: { ...state.settings, language: value as SettingsState['language'] },
+          settings: { ...state.settings, language: nextLanguage },
           activeSheet: null,
-          toast: `Language changed to ${value}`,
+          toast: translate(nextLanguage, 'toast.language', { value: optionLabel(nextLanguage, value) }),
         };
       }
 
@@ -233,7 +399,7 @@ export const useAppStore = create<AppState>((set) => ({
 
         return {
           activeSheet: null,
-          toast: 'Offline content refreshed.',
+          toast: translate(state.settings.language, 'toast.offlineRefresh'),
         };
       }
 
@@ -258,7 +424,7 @@ export const useAppStore = create<AppState>((set) => ({
       const nextValue = !state.settings[key];
 
       if (key === 'dark') {
-        syncDarkMode(nextValue);
+        applyDarkMode(nextValue);
       }
 
       return {
@@ -266,17 +432,101 @@ export const useAppStore = create<AppState>((set) => ({
           ...state.settings,
           [key]: nextValue,
         },
-        toast: toggleToast(key, nextValue),
+        toast: toggleToast(key, nextValue, state.settings.language),
       };
     }),
   showToast: (toast) => set({ toast }),
   clearToast: () => set({ toast: '' }),
-  confirmLogout: () =>
+  resetAppState: () => {
+    applyDarkMode(false);
+
     set({
       onboarded: false,
       onboardingStep: 'welcome',
       screen: 'home',
+      scriptChoice: 'Simplified',
+      familiarity: 'beginner',
+      sessionSize: 'Standard',
+      placementAnswer: '',
+      placementAnswers: {},
+      placementScore: 0,
+      libraryTab: 'All',
+      libraryStage: 'All',
+      librarySearch: '',
+      selectedItemId: null,
+      libraryLimit: 5,
       activeSheet: null,
-      toast: 'Logged out.',
-    }),
-}));
+      settings: { ...DEFAULT_SETTINGS },
+      toast: translate('English', 'toast.reset'),
+    });
+
+    clearStoredPreferences();
+  },
+  confirmLogout: () => {
+    applyDarkMode(false);
+
+    set({
+      onboarded: false,
+      onboardingStep: 'welcome',
+      screen: 'home',
+      scriptChoice: 'Simplified',
+      familiarity: 'beginner',
+      sessionSize: 'Standard',
+      placementAnswer: '',
+      placementAnswers: {},
+      placementScore: 0,
+      libraryTab: 'All',
+      libraryStage: 'All',
+      librarySearch: '',
+      selectedItemId: null,
+      libraryLimit: 5,
+      activeSheet: null,
+      settings: { ...DEFAULT_SETTINGS },
+      toast: translate('English', 'toast.logout'),
+    });
+
+    clearStoredPreferences();
+  },
+}),
+    {
+      name: PREFERENCES_STORAGE_KEY,
+      version: PREFERENCES_VERSION,
+      storage: createPreferencesStorage(),
+      partialize: (state) => ({
+        onboarded: state.onboarded,
+        scriptChoice: normalizeScriptPreference(state.scriptChoice),
+        sessionSize: state.sessionSize,
+        settings: state.settings,
+      }),
+      migrate: (persistedState) => sanitizePersistedState(persistedState) ?? createDefaultPersistedState(),
+      merge: (persistedState, currentState) => {
+        const saved = sanitizePersistedState(persistedState);
+
+        if (!saved) {
+          return currentState;
+        }
+
+        return {
+          ...currentState,
+          onboarded: saved.onboarded,
+          onboardingStep: 'welcome',
+          screen: 'home',
+          scriptChoice: saved.scriptChoice,
+          sessionSize: saved.sessionSize,
+          activeSheet: null,
+          toast: '',
+          settings: saved.settings,
+        };
+      },
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          clearStoredPreferences();
+          applyDarkMode(DEFAULT_SETTINGS.dark);
+          return;
+        }
+
+        applyDarkMode(state?.settings.dark ?? DEFAULT_SETTINGS.dark);
+      },
+    },
+  ),
+);

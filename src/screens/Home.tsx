@@ -1,29 +1,38 @@
-import { PageHeader } from '../components/shell/PageHeader';
+﻿import { PageHeader } from '../components/shell/PageHeader';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
-import { sessionPlans } from '../data/mockContent';
+import { contentItems, getCurrentFocus, sessionPlans } from '../data/mockContent';
+import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
+import { progressStats, useProgressStore } from '../stores/progressStore';
 import { useStudyStore } from '../stores/studyStore';
 
 export function HomeScreen() {
+  const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
   const setScreen = useAppStore((state) => state.setScreen);
   const startSession = useStudyStore((state) => state.startSession);
+  const progressItems = useProgressStore((state) => state.items);
+  const totalCorrect = useProgressStore((state) => state.totalCorrect);
+  const totalAttempts = useProgressStore((state) => state.totalAttempts);
+  const dailyActivity = useProgressStore((state) => state.dailyActivity);
   const plan = sessionPlans[sessionSize];
+  const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
+  const currentFocus = getCurrentFocus(language);
 
   return (
     <>
-      <PageHeader title="Nǐ hǎo, Learner" subtitle="Ready for today’s Mandarin?" />
+      <PageHeader title={t('home.title')} subtitle={t('home.subtitle')} />
 
       <section className="hero">
         <div className="hero-top">
-          <span className="pill accent">Today’s Session</span>
+          <span className="pill accent">{t('home.todaySession')}</span>
           <h2>
-            {plan.newWords} new words · {plan.reviews} reviews
+            {plan.newWords} {t('study.new').toLowerCase()} · {plan.reviews} {t('study.reviews').toLowerCase()}
           </h2>
-          <p className="duration-line">Duration: {plan.duration}</p>
-          <p>Learn new words, practice them once, then review what is due.</p>
+          <p className="duration-line">{t('home.duration')}: {plan.duration}</p>
+          <p>{t('home.description')}</p>
         </div>
         <Button
           type="button"
@@ -32,35 +41,35 @@ export function HomeScreen() {
             setScreen('study');
           }}
         >
-          Start Study
+          {t('home.startStudy')}
         </Button>
       </section>
 
       <Card className="stats-card">
         <div className="section-title">
           <div>
-            <h3>Quick stats</h3>
-            <p>Your latest study snapshot.</p>
+            <h3>{t('home.quickStats')}</h3>
+            <p>{t('home.quickStatsSub')}</p>
           </div>
         </div>
         <div className="grid-3 stats-row">
-          <StatCard value={3} label="Streak" />
-          <StatCard value="87%" label="Accuracy" />
-          <StatCard value={24} label="Words" />
+          <StatCard value={stats.streak} label={t('home.streak')} />
+          <StatCard value={stats.accuracy} label={t('common.accuracy')} />
+          <StatCard value={stats.learnedWords} label={t('home.words')} />
         </div>
       </Card>
 
       <Card>
         <div className="section-title">
           <div>
-            <h3>Current focus</h3>
-            <p>We’ll mix these into reviews.</p>
+            <h3>{t('home.currentFocus')}</h3>
+            <p>{t('home.currentFocusSub')}</p>
           </div>
         </div>
         <div className="focus-list">
-          <span>3rd tone</span>
-          <span>Measure words</span>
-          <span>了 / 的</span>
+          {currentFocus.map((focus) => (
+            <span key={focus}>{focus}</span>
+          ))}
         </div>
       </Card>
     </>

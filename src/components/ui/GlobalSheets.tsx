@@ -1,77 +1,14 @@
-import { sessionPlans } from '../../data/mockContent';
+import { sessionPlanDescription } from '../../data/mockContent';
+import { optionLabel } from '../../i18n/copy';
+import { useTranslation } from '../../i18n/useTranslation';
 import { useAppStore, type SheetType } from '../../stores/appStore';
+import { useProgressStore } from '../../stores/progressStore';
 import { Button } from './Button';
 import { OptionSheet, type SheetOption } from './OptionSheet';
 import { ReportIssueSheet } from '../study/ReportIssueSheet';
 
-const sheetConfigs: Partial<
-  Record<SheetType, { title: string; sub?: string; current: string; options: SheetOption[] }>
-> = {
-  stage: {
-    title: 'Choose stage',
-    sub: 'Filter Library by memory strength.',
-    current: 'All',
-    options: ['All', 'Learning', 'Familiar', 'Strong', 'Mastered', 'Long-term'].map((value) => ({
-      label: value,
-      value,
-    })),
-  },
-  sessionSize: {
-    title: 'Session size',
-    sub: 'Choose duration and daily load together.',
-    current: 'Standard',
-    options: [
-      { label: 'Light', value: 'Light', sub: sessionPlans.Light.description },
-      { label: 'Standard', value: 'Standard', sub: sessionPlans.Standard.description },
-      { label: 'Intense', value: 'Intense', sub: sessionPlans.Intense.description },
-    ],
-  },
-  script: {
-    title: 'Script',
-    current: 'Simplified',
-    options: [
-      { label: 'Simplified', value: 'Simplified', sub: 'Mainland China, Singapore, Malaysia.' },
-      { label: 'Traditional', value: 'Traditional', sub: 'Taiwan, Hong Kong, Macau.' },
-    ],
-  },
-  pinyin: {
-    title: 'Pinyin display',
-    current: 'Always',
-    options: [
-      { label: 'Always', value: 'Always', sub: 'Show pinyin in lessons and reviews.' },
-      { label: 'Lesson only', value: 'Lesson only', sub: 'Show pinyin while learning, hide in reviews.' },
-      { label: 'Hidden in review', value: 'Hidden in review', sub: 'Hide pinyin during review questions.' },
-    ],
-  },
-  reviewStyle: {
-    title: 'Review style',
-    current: 'Simple',
-    options: [
-      { label: 'Simple', value: 'Simple', sub: 'Multiple choice with automatic feedback.' },
-      { label: 'Mixed', value: 'Mixed', sub: 'Meaning, pinyin, tone, and sentence checks.' },
-      { label: 'Typed', value: 'Typed', sub: 'Coming later.' },
-    ],
-  },
-  language: {
-    title: 'Language',
-    current: 'English',
-    options: [
-      { label: 'English', value: 'English' },
-      { label: 'Indonesian', value: 'Indonesian' },
-    ],
-  },
-  downloads: {
-    title: 'Manage downloads',
-    sub: 'Offline pack storage.',
-    current: 'Downloaded',
-    options: [
-      { label: 'Downloaded', value: 'Downloaded', sub: 'Foundations pack is ready offline.' },
-      { label: 'Refresh offline content', value: 'Refresh', sub: 'Update the saved practice pack.' },
-    ],
-  },
-};
-
 export function GlobalSheets() {
+  const { language, t } = useTranslation();
   const activeSheet = useAppStore((state) => state.activeSheet);
   const closeSheet = useAppStore((state) => state.closeSheet);
   const chooseSheetValue = useAppStore((state) => state.chooseSheetValue);
@@ -79,7 +16,77 @@ export function GlobalSheets() {
   const sessionSize = useAppStore((state) => state.sessionSize);
   const scriptChoice = useAppStore((state) => state.scriptChoice);
   const settings = useAppStore((state) => state.settings);
+  const resetAppState = useAppStore((state) => state.resetAppState);
   const confirmLogout = useAppStore((state) => state.confirmLogout);
+  const resetProgress = useProgressStore((state) => state.resetProgress);
+
+  const sheetConfigs: Partial<
+    Record<SheetType, { title: string; sub?: string; current: string; options: SheetOption[] }>
+  > = {
+    stage: {
+      title: t('sheets.stageTitle'),
+      sub: t('sheets.stageSub'),
+      current: 'All',
+      options: ['All', 'Learning', 'Familiar', 'Strong', 'Mastered', 'Long-term'].map((value) => ({
+        label: optionLabel(language, value),
+        value,
+      })),
+    },
+    sessionSize: {
+      title: language === 'Indonesian' ? 'Ukuran sesi' : 'Session size',
+      sub: t('sheets.sessionSizeSub'),
+      current: 'Standard',
+      options: ['Light', 'Standard', 'Intense'].map((value) => ({
+        label: optionLabel(language, value),
+        value,
+        sub: sessionPlanDescription(value as 'Light' | 'Standard' | 'Intense', language),
+      })),
+    },
+    script: {
+      title: t('sheets.scriptTitle'),
+      current: 'Simplified',
+      options: [
+        { label: optionLabel(language, 'Simplified'), value: 'Simplified', sub: t('onboarding.simplifiedSub') },
+        { label: optionLabel(language, 'Traditional'), value: 'Traditional', sub: t('onboarding.traditionalSub') },
+      ],
+    },
+    pinyin: {
+      title: language === 'Indonesian' ? 'Tampilan pinyin' : 'Pinyin display',
+      current: 'Always',
+      options: [
+        { label: t('sheets.pinyinAlways'), value: 'Always', sub: t('sheets.pinyinAlwaysSub') },
+        { label: t('sheets.pinyinLessonOnly'), value: 'Lesson only', sub: t('sheets.pinyinLessonOnlySub') },
+        { label: t('sheets.pinyinHidden'), value: 'Hidden in review', sub: t('sheets.pinyinHiddenSub') },
+        { label: t('sheets.pinyinOff'), value: 'Off', sub: t('sheets.pinyinOffSub') },
+      ],
+    },
+    reviewStyle: {
+      title: language === 'Indonesian' ? 'Gaya review' : 'Review style',
+      current: 'Simple',
+      options: [
+        { label: t('sheets.reviewSimple'), value: 'Simple', sub: t('sheets.reviewSimpleSub') },
+        { label: t('sheets.reviewMixed'), value: 'Mixed', sub: t('sheets.reviewMixedSub') },
+        { label: optionLabel(language, 'Typed'), value: 'Typed', sub: t('sheets.reviewTypedSub') },
+      ],
+    },
+    language: {
+      title: language === 'Indonesian' ? 'Bahasa' : 'Language',
+      current: 'English',
+      options: [
+        { label: optionLabel(language, 'English'), value: 'English' },
+        { label: optionLabel(language, 'Indonesian'), value: 'Indonesian' },
+      ],
+    },
+    downloads: {
+      title: t('sheets.downloadTitle'),
+      sub: t('sheets.downloadSub'),
+      current: 'Downloaded',
+      options: [
+        { label: t('sheets.downloaded'), value: 'Downloaded', sub: t('sheets.downloadedSub') },
+        { label: t('sheets.refreshOffline'), value: 'Refresh', sub: t('sheets.refreshOfflineSub') },
+      ],
+    },
+  };
 
   if (activeSheet === 'report') {
     return <ReportIssueSheet open onClose={closeSheet} />;
@@ -89,17 +96,53 @@ export function GlobalSheets() {
     return (
       <OptionSheet
         open
-        title="Logout?"
-        sub="You can sign back in later. This will return to onboarding."
+        title={t('sheets.logoutTitle')}
+        sub={t('sheets.logoutSub')}
         className="logout-sheet"
         onClose={closeSheet}
         footer={
           <div className="sheet-actions">
             <Button variant="secondary" type="button" onClick={closeSheet}>
-              Cancel
+              {t('common.cancel')}
             </Button>
-            <Button variant="danger" type="button" onClick={confirmLogout}>
-              Logout
+            <Button
+              variant="danger"
+              type="button"
+              onClick={() => {
+                resetProgress();
+                confirmLogout();
+              }}
+            >
+              {t('common.logout')}
+            </Button>
+          </div>
+        }
+      />
+    );
+  }
+
+  if (activeSheet === 'resetApp') {
+    return (
+      <OptionSheet
+        open
+        title={t('sheets.resetTitle')}
+        sub={t('sheets.resetSub')}
+        className="logout-sheet"
+        onClose={closeSheet}
+        footer={
+          <div className="sheet-actions">
+            <Button variant="secondary" type="button" onClick={closeSheet}>
+              {t('common.cancel')}
+            </Button>
+            <Button
+              variant="danger"
+              type="button"
+              onClick={() => {
+                resetProgress();
+                resetAppState();
+              }}
+            >
+              {t('common.reset')}
             </Button>
           </div>
         }

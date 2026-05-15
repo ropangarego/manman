@@ -1,4 +1,11 @@
-import { effectiveScript, type SessionSize } from '../data/mockContent';
+import {
+  effectiveScript,
+  getPlacementQuestions,
+  sessionPlanDescription,
+  type SessionSize,
+} from '../data/mockContent';
+import { optionLabel } from '../i18n/copy';
+import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore, type OnboardingStep } from '../stores/appStore';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
@@ -31,11 +38,12 @@ function OptionCard({
 }
 
 export function OnboardingScreen() {
+  const { language, t } = useTranslation();
   const onboardingStep = useAppStore((state) => state.onboardingStep);
   const scriptChoice = useAppStore((state) => state.scriptChoice);
   const familiarity = useAppStore((state) => state.familiarity);
   const sessionSize = useAppStore((state) => state.sessionSize);
-  const placementAnswer = useAppStore((state) => state.placementAnswer);
+  const placementAnswers = useAppStore((state) => state.placementAnswers);
   const placementScore = useAppStore((state) => state.placementScore);
   const setStep = useAppStore((state) => state.setOnboardingStep);
   const chooseScript = useAppStore((state) => state.chooseScript);
@@ -43,9 +51,18 @@ export function OnboardingScreen() {
   const chooseSessionSize = useAppStore((state) => state.chooseSessionSize);
   const answerPlacement = useAppStore((state) => state.answerPlacement);
   const finishOnboarding = useAppStore((state) => state.finishOnboarding);
-
+  const placementQuestions = getPlacementQuestions(language);
+  const placementAnswered = placementQuestions.every((question) => placementAnswers[question.id]);
   const visibleSteps = allSteps.filter((step) => !(step === 'placement' && familiarity === 'beginner'));
   const stepIndex = Math.max(0, visibleSteps.indexOf(onboardingStep));
+  const recommendedTitle =
+    familiarity === 'some' && placementScore >= Math.ceil(placementQuestions.length * 0.7)
+      ? language === 'Indonesian'
+        ? 'Foundations review'
+        : 'Foundations review'
+      : language === 'Indonesian'
+        ? 'Foundations'
+        : 'Foundations';
 
   return (
     <section className="onboarding">
@@ -59,11 +76,11 @@ export function OnboardingScreen() {
         {onboardingStep === 'welcome' ? (
           <>
             <div className="page-title">
-              <h1>Mandarin!</h1>
-              <p>Learn practical Mandarin in short daily sessions. Lessons, quick practice, reviews, and unlocks in one guided flow.</p>
+              <h1>Manman!</h1>
+              <p>{t('onboarding.welcomeCopy')}</p>
             </div>
             <Button type="button" onClick={() => setStep('script')}>
-              Get started
+              {t('onboarding.getStarted')}
             </Button>
           </>
         ) : null}
@@ -71,35 +88,35 @@ export function OnboardingScreen() {
         {onboardingStep === 'script' ? (
           <>
             <div className="page-title">
-              <h2>Which Chinese script do you want?</h2>
-              <p>You can change this later in Settings.</p>
+              <h2>{t('onboarding.scriptTitle')}</h2>
+              <p>{t('onboarding.scriptSub')}</p>
             </div>
             <div className="option-list">
               <OptionCard
-                title="Simplified"
-                subtitle="Used in Mainland China, Singapore, and Malaysia."
+                title={optionLabel(language, 'Simplified')}
+                subtitle={t('onboarding.simplifiedSub')}
                 selected={scriptChoice === 'Simplified'}
                 onClick={() => chooseScript('Simplified')}
               />
               <OptionCard
-                title="Traditional"
-                subtitle="Used in Taiwan, Hong Kong, and Macau."
+                title={optionLabel(language, 'Traditional')}
+                subtitle={t('onboarding.traditionalSub')}
                 selected={scriptChoice === 'Traditional'}
                 onClick={() => chooseScript('Traditional')}
               />
               <OptionCard
-                title="Not sure"
-                subtitle="We’ll start with Simplified for now."
+                title={language === 'Indonesian' ? 'Belum yakin' : 'Not sure'}
+                subtitle={t('onboarding.notSureSub')}
                 selected={scriptChoice === 'Not sure'}
                 onClick={() => chooseScript('Not sure')}
               />
             </div>
             <div className="onboarding-actions">
               <Button variant="secondary" type="button" onClick={() => setStep('welcome')}>
-                Back
+                {t('common.back')}
               </Button>
               <Button type="button" onClick={() => setStep('familiarity')}>
-                Next
+                {t('common.next')}
               </Button>
             </div>
           </>
@@ -108,29 +125,29 @@ export function OnboardingScreen() {
         {onboardingStep === 'familiarity' ? (
           <>
             <div className="page-title">
-              <h2>How familiar are you with Mandarin?</h2>
-              <p>This helps us choose your starting point.</p>
+              <h2>{t('onboarding.familiarityTitle')}</h2>
+              <p>{t('onboarding.familiaritySub')}</p>
             </div>
             <div className="option-list">
               <OptionCard
-                title="Absolute beginner"
-                subtitle="Start from zero."
+                title={t('onboarding.beginner')}
+                subtitle={t('onboarding.beginnerSub')}
                 selected={familiarity === 'beginner'}
                 onClick={() => chooseFamiliarity('beginner')}
               />
               <OptionCard
-                title="I know some basics"
-                subtitle="I know a few words, greetings, or simple sentences."
+                title={t('onboarding.some')}
+                subtitle={t('onboarding.someSub')}
                 selected={familiarity === 'some'}
                 onClick={() => chooseFamiliarity('some')}
               />
             </div>
             <div className="onboarding-actions">
               <Button variant="secondary" type="button" onClick={() => setStep('script')}>
-                Back
+                {t('common.back')}
               </Button>
               <Button type="button" onClick={() => setStep('session')}>
-                Next
+                {t('common.next')}
               </Button>
             </div>
           </>
@@ -139,21 +156,15 @@ export function OnboardingScreen() {
         {onboardingStep === 'session' ? (
           <>
             <div className="page-title">
-              <h2>How much do you want per session?</h2>
-              <p>This controls daily session size, not a long-term goal.</p>
+              <h2>{t('onboarding.sessionTitle')}</h2>
+              <p>{t('onboarding.sessionSub')}</p>
             </div>
             <div className="option-list">
               {(['Light', 'Standard', 'Intense'] as SessionSize[]).map((size) => (
                 <OptionCard
                   key={size}
-                  title={size}
-                  subtitle={
-                    size === 'Light'
-                      ? '3 new words · ~5 min'
-                      : size === 'Standard'
-                        ? '5 new words · ~10 min'
-                        : '8 new words · ~15 min'
-                  }
+                  title={optionLabel(language, size)}
+                  subtitle={sessionPlanDescription(size, language)}
                   selected={sessionSize === size}
                   recommended={size === 'Standard'}
                   onClick={() => chooseSessionSize(size)}
@@ -162,10 +173,10 @@ export function OnboardingScreen() {
             </div>
             <div className="onboarding-actions">
               <Button variant="secondary" type="button" onClick={() => setStep('familiarity')}>
-                Back
+                {t('common.back')}
               </Button>
               <Button type="button" onClick={() => setStep(familiarity === 'some' ? 'placement' : 'recommend')}>
-                Next
+                {t('common.next')}
               </Button>
             </div>
           </>
@@ -174,37 +185,45 @@ export function OnboardingScreen() {
         {onboardingStep === 'placement' ? (
           <>
             <div className="page-title">
-              <h2>Quick check</h2>
-              <p>Just a few questions to avoid starting too basic.</p>
+              <h2>{t('onboarding.quickCheck')}</h2>
+              <p>{t('onboarding.quickCheckSub')}</p>
             </div>
-            <Card>
-              <div className="section-title">
-                <div>
-                  <h3>What does 你好 mean?</h3>
-                  <p>Choose the closest answer.</p>
-                </div>
-              </div>
-              <div className="answer-grid">
-                {['hello', 'thank you', 'go home', 'eat rice'].map((answer) => (
-                  <button
-                    className={
-                      placementAnswer === answer ? (answer === 'hello' ? 'correct' : 'wrong') : undefined
-                    }
-                    key={answer}
-                    type="button"
-                    onClick={() => answerPlacement(answer)}
-                  >
-                    {answer}
-                  </button>
-                ))}
-              </div>
-            </Card>
+            <div className="placement-list">
+              {placementQuestions.map((question) => (
+                <Card key={question.id}>
+                  <div className="section-title">
+                    <div>
+                      <h3>{question.title}</h3>
+                      <p>{question.pinyin.join(' ')}</p>
+                    </div>
+                  </div>
+                  <p>{t('onboarding.chooseClosest')}</p>
+                  <div className="answer-grid">
+                    {question.answers.map((answer) => {
+                      const selected = placementAnswers[question.id] === answer;
+                      const isCorrect = selected && answer === question.correctAnswer;
+
+                      return (
+                        <button
+                          className={selected ? (isCorrect ? 'correct' : 'wrong') : undefined}
+                          key={answer}
+                          type="button"
+                          onClick={() => answerPlacement(question.id, answer, question.correctAnswer)}
+                        >
+                          {answer}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </Card>
+              ))}
+            </div>
             <div className="onboarding-actions">
               <Button variant="secondary" type="button" onClick={() => setStep('session')}>
-                Back
+                {t('common.back')}
               </Button>
-              <Button type="button" onClick={() => setStep('recommend')}>
-                See recommendation
+              <Button type="button" disabled={!placementAnswered} onClick={() => setStep('recommend')}>
+                {t('onboarding.seeRecommendation')}
               </Button>
             </div>
           </>
@@ -213,22 +232,19 @@ export function OnboardingScreen() {
         {onboardingStep === 'recommend' ? (
           <>
             <div className="page-title">
-              <h2>Recommended start</h2>
-              <p>
-                {familiarity === 'some'
-                  ? 'Based on your quick check, start here and adjust later if needed.'
-                  : 'We’ll start from the basics and build up gradually.'}
-              </p>
+              <h2>{t('onboarding.recommendTitle')}</h2>
+              <p>{familiarity === 'some' ? t('onboarding.recommendSome') : t('onboarding.recommendBeginner')}</p>
             </div>
             <Card>
-              <span className="pill accent">{familiarity === 'some' && placementScore > 1 ? 'Pack 2' : 'Pack 1'}</span>
-              <h3>{familiarity === 'some' && placementScore > 1 ? 'Daily Basics' : 'Foundations'}</h3>
+              <span className="pill accent">Pack 1</span>
+              <h3>{recommendedTitle}</h3>
               <p>
-                Script: {effectiveScript(scriptChoice)} · Intensity: {sessionSize}
+                {t('sheets.scriptTitle')}: {optionLabel(language, effectiveScript(scriptChoice))} ·{' '}
+                {language === 'Indonesian' ? 'Sesi' : 'Session'}: {optionLabel(language, sessionSize)}
               </p>
             </Card>
             <Button type="button" onClick={finishOnboarding}>
-              Start learning
+              {t('onboarding.startLearning')}
             </Button>
           </>
         ) : null}

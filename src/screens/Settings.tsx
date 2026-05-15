@@ -1,10 +1,13 @@
-import { effectiveScript, sessionPlans } from '../data/mockContent';
+import { effectiveScript, sessionPlanDescription } from '../data/mockContent';
+import { optionLabel } from '../i18n/copy';
+import { useTranslation } from '../i18n/useTranslation';
 import { PageHeader } from '../components/shell/PageHeader';
 import { SettingRow } from '../components/settings/SettingRow';
 import { SettingsGroup } from '../components/settings/SettingsGroup';
 import { useAppStore } from '../stores/appStore';
 
 export function SettingsScreen() {
+  const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
   const scriptChoice = useAppStore((state) => state.scriptChoice);
   const settings = useAppStore((state) => state.settings);
@@ -13,31 +16,31 @@ export function SettingsScreen() {
 
   return (
     <>
-      <PageHeader title="Settings" subtitle="Keep learning preferences simple and adjustable." />
+      <PageHeader title={t('nav.settings')} subtitle={t('settings.subtitle')} />
 
       <section className="settings-layout">
-        <SettingsGroup title="Learning">
+        <SettingsGroup title={t('settings.learning')}>
           <SettingRow
-            title="Session size"
-            subtitle={sessionPlans[sessionSize].description}
-            value={sessionSize}
+            title={t('settings.sessionSize')}
+            subtitle={sessionPlanDescription(sessionSize, language)}
+            value={optionLabel(language, sessionSize)}
             onClick={() => openSheet('sessionSize')}
           />
           <SettingRow
-            title="Script"
-            subtitle="Chinese character set."
-            value={effectiveScript(scriptChoice)}
+            title={t('settings.script')}
+            subtitle={t('settings.scriptSub')}
+            value={optionLabel(language, effectiveScript(scriptChoice))}
             onClick={() => openSheet('script')}
           />
           <SettingRow
-            title="Pinyin display"
-            subtitle="Control how much help you see."
-            value={settings.pinyinDisplay}
+            title={t('settings.pinyinDisplay')}
+            subtitle={t('settings.pinyinSub')}
+            value={optionLabel(language, settings.pinyinDisplay)}
             onClick={() => openSheet('pinyin')}
           />
           <SettingRow
-            title="Tone colors"
-            subtitle="Show tone dots and tone hints."
+            title={t('settings.toneColors')}
+            subtitle={t('settings.toneColorsSub')}
             toggle={{
               checked: settings.toneColors,
               onChange: () => toggleSetting('toneColors'),
@@ -45,24 +48,24 @@ export function SettingsScreen() {
           />
         </SettingsGroup>
 
-        <SettingsGroup title="Study">
+        <SettingsGroup title={t('settings.study')}>
           <SettingRow
-            title="Review style"
-            subtitle="Choose how reviews feel."
-            value={settings.reviewStyle}
+            title={t('settings.reviewStyle')}
+            subtitle={t('settings.reviewStyleSub')}
+            value={optionLabel(language, settings.reviewStyle)}
             onClick={() => openSheet('reviewStyle')}
           />
           <SettingRow
-            title="Sound"
-            subtitle="Play pronunciation audio."
+            title={t('settings.sound')}
+            subtitle={t('settings.soundSub')}
             toggle={{
               checked: settings.sound,
               onChange: () => toggleSetting('sound'),
             }}
           />
           <SettingRow
-            title="Tutorial hints"
-            subtitle="Show helper tips for beginners."
+            title={t('settings.hints')}
+            subtitle={t('settings.hintsSub')}
             toggle={{
               checked: settings.hints,
               onChange: () => toggleSetting('hints'),
@@ -70,16 +73,16 @@ export function SettingsScreen() {
           />
         </SettingsGroup>
 
-        <SettingsGroup title="Display">
+        <SettingsGroup title={t('settings.display')}>
           <SettingRow
-            title="Language"
-            subtitle="App interface language."
-            value={settings.language}
+            title={t('settings.language')}
+            subtitle={t('settings.languageSub')}
+            value={optionLabel(language, settings.language)}
             onClick={() => openSheet('language')}
           />
           <SettingRow
-            title="Dark mode"
-            subtitle="Prototype placeholder."
+            title={t('settings.darkMode')}
+            subtitle={t('settings.darkModeSub')}
             toggle={{
               checked: settings.dark,
               onChange: () => toggleSetting('dark'),
@@ -87,18 +90,18 @@ export function SettingsScreen() {
           />
         </SettingsGroup>
 
-        <SettingsGroup title="Offline">
+        <SettingsGroup title={t('settings.offline')}>
           <SettingRow
-            title="Offline mode"
-            subtitle="Download lessons and reviews."
+            title={t('settings.offlineMode')}
+            subtitle={t('settings.offlineModeSub')}
             toggle={{
               checked: settings.offline,
               onChange: () => toggleSetting('offline'),
             }}
           />
           <SettingRow
-            title="Manage downloads"
-            subtitle="Storage use and offline packs."
+            title={t('settings.downloads')}
+            subtitle={t('settings.downloadsSub')}
             onClick={() => openSheet('downloads')}
           />
         </SettingsGroup>
@@ -106,8 +109,14 @@ export function SettingsScreen() {
         <>
           <SettingRow
             danger
-            title="Logout"
-            subtitle="Sign out on this device."
+            title={t('settings.resetApp')}
+            subtitle={t('settings.resetAppSub')}
+            onClick={() => openSheet('resetApp')}
+          />
+          <SettingRow
+            danger
+            title={t('common.logout')}
+            subtitle={t('settings.logoutSub')}
             onClick={() => openSheet('logout')}
           />
         </>

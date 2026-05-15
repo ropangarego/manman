@@ -509,6 +509,7 @@
 /* V6 polish: library flow, report confirmation, warmer strength scale. */
 .streak-pill{background:var(--accent-soft)!important;color:#9A3412!important;border:1px solid #FED7AA!important}
 .library-left{gap:14px!important}.library-left .search-input{margin-bottom:0}.library-left .tabs{margin:0}.library-left .picker-row{margin:0}.item-list{margin-top:2px}.load-more{width:100%;margin-top:2px}.empty-state{box-shadow:none;text-align:center}.detail-head{padding-top:10px}.detail-panel .tone-dots{margin-top:2px;margin-bottom:2px}.mobile-detail-back{margin-bottom:2px}.report-note{display:grid;gap:8px}.report-note span{font-size:13px;font-weight:900;color:var(--ink)}.report-note small{color:var(--muted);font-weight:700}.report-note textarea{width:100%;min-height:104px;resize:vertical;border:1px solid var(--line);border-radius:14px;padding:12px;font:inherit;font-size:13px;color:var(--ink);outline:none;background:#fff}.report-note textarea:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(17,24,39,.06)}.sheet-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.primary:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}.report-options{gap:8px}.report-options .sheet-option{padding:11px 12px}.strength-row{grid-template-columns:86px minmax(0,1fr) 70px}.strength-track{background:#EEF0F2}.strength-track i{transition:.2s}.path-item.done .path-icon{background:var(--accent-soft);color:#9A3412}.path-item.current .path-icon{background:var(--ink);color:#fff}
+.placement-list{display:grid;gap:12px;max-height:min(56vh,520px);overflow:auto;padding-right:2px}.placement-list .card{box-shadow:none}.placement-list .section-title{margin-bottom:8px}.placement-list .section-title h3{font-family:"Noto Serif SC",Georgia,serif;font-size:26px}.placement-list .section-title p{font-weight:800;color:var(--muted)}
 @media (max-width:767px){
   .library-layout{gap:16px!important}.library-left{gap:14px!important}.library-layout .detail-panel{display:none}.library-layout.detail-open .library-left{display:none}.library-layout.detail-open .detail-panel{display:grid;position:static;max-height:none;overflow:visible;border-radius:18px;padding:16px}.library-layout.detail-open{display:grid}.mobile-detail-back{display:block;width:100%;margin-bottom:8px}.detail-head{padding-top:6px}.detail-main-char{font-size:68px}.library-left .tabs{padding-bottom:0}.item-list{gap:12px}.item-card{padding:16px}.filter-row,.picker-row{min-height:56px}.sheet-actions{grid-template-columns:1fr}.report-note textarea{min-height:92px}
 }
@@ -530,6 +531,7 @@
 .report-menu:hover{border-color:var(--ink);color:var(--ink)}
 .review-card{position:relative}
 .practice-layout .primary{width:100%}
+.session-actions{display:grid;gap:10px}
 .pattern-detail .detail-main-char{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:clamp(34px,5.6vw,54px)!important;line-height:1.08!important;letter-spacing:-.04em;font-weight:800!important;max-width:620px;margin-inline:auto}
 .pattern-detail .detail-head{gap:6px;padding-top:18px!important}
 .pattern-detail .detail-pinyin{font-size:18px}

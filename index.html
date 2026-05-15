@@ -4,14 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#111827" />
-    <title>Mandarin! Static Prototype V15</title>
+    <title>Manman!</title>
     <script>
       try {
-        if (localStorage.getItem('mandarin-theme') === 'dark') {
+        var rawPreferences = localStorage.getItem('mandarin-app-preferences');
+        var prefersDark = false;
+
+        if (rawPreferences) {
+          var preferences = JSON.parse(rawPreferences);
+          prefersDark = preferences && preferences.version === 1 && preferences.state && preferences.state.settings && preferences.state.settings.dark === true;
+        } else {
+          prefersDark = localStorage.getItem('mandarin-theme') === 'dark';
+        }
+
+        if (prefersDark) {
           document.documentElement.classList.add('dark');
         }
       } catch {
-        // Keep the static prototype usable if storage is unavailable.
+        // Keep the app usable if storage is unavailable or malformed.
       }
     </script>
     <link

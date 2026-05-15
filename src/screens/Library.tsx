@@ -5,10 +5,13 @@ import { LibraryItemCard } from '../components/library/LibraryItemCard';
 import { PageHeader } from '../components/shell/PageHeader';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { contentItems } from '../data/mockContent';
+import { contentItems, localizeContentItem } from '../data/mockContent';
+import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
+import { useProgressStore, withProgress } from '../stores/progressStore';
 
 export function LibraryScreen() {
+  const { language, t } = useTranslation();
   const search = useAppStore((state) => state.librarySearch);
   const tab = useAppStore((state) => state.libraryTab);
   const stage = useAppStore((state) => state.libraryStage);
@@ -18,16 +21,23 @@ export function LibraryScreen() {
   const setTab = useAppStore((state) => state.setLibraryTab);
   const selectItem = useAppStore((state) => state.selectLibraryItem);
   const loadMore = useAppStore((state) => state.loadMoreLibraryItems);
+  const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
+  const progressItems = useProgressStore((state) => state.items);
+  const showPinyin = pinyinDisplay !== 'Off';
+  const itemsWithProgress = useMemo(
+    () => withProgress(contentItems.map((item) => localizeContentItem(item, language)), progressItems),
+    [language, progressItems],
+  );
 
   const filteredItems = useMemo(() => {
     const query = search.trim().toLowerCase();
-    return contentItems.filter((item) => {
+    return itemsWithProgress.filter((item) => {
       const matchesTab = tab === 'All' || item.type === tab;
       const matchesStage = stage === 'All' || item.stage === stage;
       const searchable = `${item.title} ${item.pinyin.join(' ')} ${item.meaning}`.toLowerCase();
       return matchesTab && matchesStage && searchable.includes(query);
     });
-  }, [search, stage, tab]);
+  }, [itemsWithProgress, search, stage, tab]);
 
   const shownItems = filteredItems.slice(0, limit);
   const selectedItem = filteredItems.find((item) => item.id === selectedItemId) ?? filteredItems[0];
@@ -35,7 +45,7 @@ export function LibraryScreen() {
 
   return (
     <>
-      <PageHeader title="Library" subtitle="Search and review details without starting a study session." />
+      <PageHeader title={t('library.title')} subtitle={t('library.subtitle')} />
 
       <section className={`library-layout${isDetailOpen ? ' detail-open' : ''}`}>
         <div className="library-left">
@@ -47,6 +57,7 @@ export function LibraryScreen() {
                 active={selectedItemId === item.id}
                 item={item}
                 key={item.id}
+                showPinyin={showPinyin}
                 onSelect={selectItem}
               />
             ))}
@@ -54,21 +65,20 @@ export function LibraryScreen() {
 
           {filteredItems.length === 0 ? (
             <Card className="empty-state">
-              <h3>No items found</h3>
-              <p>Try a different search or filter.</p>
+              <h3>{t('library.noItems')}</h3>
+              <p>{t('library.noItemsSub')}</p>
             </Card>
           ) : null}
 
           {filteredItems.length > limit ? (
             <Button variant="secondary" className="load-more" type="button" onClick={loadMore}>
-              Load more
+              {t('library.loadMore')}
             </Button>
           ) : null}
         </div>
 
-        {selectedItem ? <LibraryDetail item={selectedItem} onBack={() => selectItem(null)} /> : null}
+        {selectedItem ? <LibraryDetail item={selectedItem} showPinyin={showPinyin} onBack={() => selectItem(null)} /> : null}
       </section>
     </>
   );
 }
-

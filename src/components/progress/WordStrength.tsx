@@ -1,27 +1,34 @@
-import { wordStrength } from '../../data/mockContent';
+import type { Stage } from '../../data/mockContent';
+import { optionLabel } from '../../i18n/copy';
+import { useTranslation } from '../../i18n/useTranslation';
 import { Card } from '../ui/Card';
 
-export function WordStrength() {
+interface WordStrengthProps {
+  strength: { stage: Stage; count: number; width: number; color: string }[];
+}
+
+export function WordStrength({ strength }: WordStrengthProps) {
+  const { language, t } = useTranslation();
+
   return (
     <Card>
       <div className="section-title">
         <div>
-          <h3>Word strength</h3>
-          <p>Counts words only.</p>
+          <h3>{t('progress.wordStrength')}</h3>
+          <p>{t('progress.wordStrengthSub')}</p>
         </div>
       </div>
       <div className="strength-list">
-        {wordStrength.map((item) => (
+        {strength.map((item) => (
           <div className="strength-row" key={item.stage}>
-            <span>{item.stage}</span>
+            <span>{optionLabel(language, item.stage)}</span>
             <div className="strength-track" aria-hidden="true">
               <i style={{ width: `${item.width}%`, background: item.color }} />
             </div>
-            <span>{item.count} words</span>
+            <span>{item.count} {t('home.words').toLowerCase()}</span>
           </div>
         ))}
       </div>
     </Card>
   );
 }
-
