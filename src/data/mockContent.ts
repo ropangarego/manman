@@ -1,5 +1,5 @@
-﻿import starterPackJson from './packs/pack_001_foundations_greetings_prototype_id.json';
 import { textFor, type AppLanguage } from '../i18n/copy';
+import { rawContentPacks } from './packs';
 
 export type SessionSize = 'Light' | 'Standard' | 'Intense';
 export type ScriptChoice = 'Simplified' | 'Traditional' | 'Not sure';
@@ -12,15 +12,18 @@ export type LibraryTab = 'All' | 'Hanzi' | 'Words' | 'Sentences';
 
 export interface ContentItem {
   id: string;
+  packId: string;
   type: ContentType;
   stage: Stage;
   accuracy: number;
   title: string;
   titleId?: string;
+  traditionalTitle?: string;
   pinyin: string[];
   tones: number[];
   meaning: string;
   meaningId?: string;
+  audioUrl?: string;
   components: [string, string][];
   componentsId?: [string, string][];
   mnemonic: string;
@@ -29,6 +32,8 @@ export interface ContentItem {
   example: [string, string, string];
   exampleId?: [string, string, string];
   nextReview: string;
+  orderIndex: number;
+  reviewable: boolean;
 }
 
 export interface StudyQuestion {
@@ -42,6 +47,7 @@ export interface StudyQuestion {
 
 export interface StarterStudySession {
   sessionNumber: number;
+  packId: string;
   packLabel: string;
   introTitle: string;
   introDescription: string;
@@ -66,6 +72,11 @@ interface RawPackInfo {
   title_id: string;
   subtitle: string;
   subtitle_id: string;
+  level: number;
+  theme: string;
+  order_index: number;
+  pack_type?: string;
+  is_srs_enabled?: boolean;
   learning_goal: string;
   learning_goal_id: string;
   content_summary: {
@@ -86,33 +97,48 @@ interface RawComponent {
   id: string;
   simplified: string;
   traditional: string;
+  name?: string;
+  name_id?: string;
   meaning: string;
   meaning_id: string;
-  mnemonic_id: string;
-  examples: string[];
+  mnemonic?: string | null;
+  mnemonic_id?: string | null;
+  examples?: string[] | null;
   order_index: number;
-}
-
-interface RawComponentReference {
-  id: string;
-  character: string;
-  meaning: string;
-  meaning_id: string;
 }
 
 interface RawLearningItem {
   id: string;
+  type: 'hanzi' | 'word' | 'sentence';
   simplified: string;
   traditional: string;
   meaning: string;
-  meaning_id?: string;
+  meaning_id: string;
   pinyin: string;
   pinyin_syllables: RawSyllable[];
-  components?: RawComponentReference[];
-  mnemonic_id?: string;
-  examples?: string[];
-  notes_id?: string;
+  tone_number?: number;
+  tone_pattern?: string;
+  components?: { id: string; character: string; meaning: string; meaning_id?: string | null }[] | null;
+  hanzi_ids?: string[] | null;
+  focus_word_ids?: string[] | null;
+  pattern_ids?: string[] | null;
+  mnemonic?: string | null;
+  mnemonic_id?: string | null;
+  tone_mnemonic?: string | null;
+  tone_mnemonic_id?: string | null;
+  tone_note?: string | null;
+  tone_note_id?: string | null;
+  usage_note?: string | null;
+  usage_note_id?: string | null;
+  literal_meaning?: string | null;
+  literal_meaning_id?: string | null;
+  notes?: string | null;
+  notes_id?: string | null;
+  audio_url?: string | null;
+  examples?: string[] | null;
   order_index: number;
+  is_reviewable: boolean;
+  is_core_word?: boolean;
 }
 
 interface RawPatternExample {
@@ -120,11 +146,12 @@ interface RawPatternExample {
   traditional: string;
   pinyin: string;
   meaning: string;
-  meaning_id: string;
+  meaning_id?: string | null;
 }
 
 interface RawPattern {
   id: string;
+  type: 'pattern';
   title: string;
   title_id: string;
   meaning: string;
@@ -132,8 +159,9 @@ interface RawPattern {
   structure: string;
   explanation: string;
   explanation_id: string;
-  examples: RawPatternExample[];
+  examples?: RawPatternExample[] | null;
   order_index: number;
+  is_reviewable?: boolean;
 }
 
 interface RawPrerequisite {
@@ -141,7 +169,25 @@ interface RawPrerequisite {
   prerequisite_item_id: string;
 }
 
-interface StarterPackData {
+interface RawStudyFlow {
+  intro_only?: boolean;
+  creates_srs_items?: boolean;
+  new_items?: string[];
+  quick_practice?: { item_id: string; question_type: string }[];
+  unlock_items?: string[];
+}
+
+interface RawIntroCard {
+  id: string;
+  title: string;
+  title_id: string;
+  body: string;
+  body_id: string;
+  example: RawPatternExample | null;
+  order_index: number;
+}
+
+interface RawContentPack {
   pack: RawPackInfo;
   components: RawComponent[];
   hanzi: RawLearningItem[];
@@ -149,12 +195,22 @@ interface StarterPackData {
   sentences: RawLearningItem[];
   patterns: RawPattern[];
   item_prerequisites: RawPrerequisite[];
-  study_flow: Record<string, { focus: string[]; goal_id: string }>;
+  study_flow: RawStudyFlow;
+  intro_cards?: RawIntroCard[];
 }
 
-const starterPackData = starterPackJson as StarterPackData;
+interface PackEntry {
+  raw: RawContentPack;
+  items: ContentItem[];
+}
 
-export const starterPack = starterPackData.pack;
+export const contentPacks = (rawContentPacks as RawContentPack[])
+  .slice()
+  .sort((a, b) => a.pack.order_index - b.pack.order_index);
+
+export const introPack = contentPacks.find((pack) => pack.study_flow.intro_only);
+export const standardPacks = contentPacks.filter((pack) => !pack.study_flow.intro_only && pack.pack.is_srs_enabled);
+export const starterPack = standardPacks[0]?.pack ?? contentPacks[0].pack;
 
 export const sessionPlans: Record<
   SessionSize,
@@ -165,21 +221,21 @@ export const sessionPlans: Record<
     reviews: 8,
     minutes: 5,
     duration: '~5 min',
-    description: '~5 min Â· 3 new words Â· fewer reviews',
+    description: '~5 min - 3 new words - fewer reviews',
   },
   Standard: {
     newWords: 5,
     reviews: 12,
     minutes: 10,
     duration: '~10 min',
-    description: '~10 min Â· 5 new words Â· balanced reviews',
+    description: '~10 min - 5 new words - balanced reviews',
   },
   Intense: {
     newWords: 8,
     reviews: 18,
     minutes: 15,
     duration: '~15 min',
-    description: '~15 min Â· 8 new words Â· more reviews',
+    description: '~15 min - 8 new words - more reviews',
   },
 };
 
@@ -222,125 +278,23 @@ const nextReviewByStage: Record<Stage, string> = {
   'Long-term': 'In 1 month',
 };
 
-const hanziByCharacter = new Map(starterPackData.hanzi.map((item) => [item.simplified, item]));
-const sentencesByCharacter = new Map(starterPackData.sentences.map((item) => [item.simplified, item]));
-
-const titleById = new Map<string, string>([
-  ...starterPackData.components.map((item) => [item.id, item.simplified] as const),
-  ...starterPackData.hanzi.map((item) => [item.id, item.simplified] as const),
-  ...starterPackData.words.map((item) => [item.id, item.simplified] as const),
-  ...starterPackData.sentences.map((item) => [item.id, item.simplified] as const),
-  ...starterPackData.patterns.map((item) => [item.id, item.title] as const),
-]);
-
-const meaningById = new Map<string, string>([
-  ...starterPackData.components.map((item) => [item.id, item.meaning] as const),
-  ...starterPackData.hanzi.map((item) => [item.id, item.meaning] as const),
-  ...starterPackData.words.map((item) => [item.id, item.meaning] as const),
-  ...starterPackData.sentences.map((item) => [item.id, item.meaning] as const),
-  ...starterPackData.patterns.map((item) => [item.id, item.meaning] as const),
-]);
-
-const meaningIdById = new Map<string, string>([
-  ...starterPackData.components.map((item) => [item.id, item.meaning_id] as const),
-  ...starterPackData.hanzi.map((item) => [item.id, item.meaning_id ?? item.meaning] as const),
-  ...starterPackData.words.map((item) => [item.id, item.meaning_id ?? item.meaning] as const),
-  ...starterPackData.sentences.map((item) => [item.id, item.meaning_id ?? item.meaning] as const),
-  ...starterPackData.patterns.map((item) => [item.id, item.meaning_id] as const),
-]);
-
-function stageForOrder(type: ContentType, orderIndex: number): Stage {
-  if (type === 'Patterns') {
-    return orderIndex <= 2 ? 'Learning' : 'Familiar';
-  }
-
-  if (orderIndex <= 2) {
-    return 'Familiar';
-  }
-
-  if (orderIndex <= 4) {
-    return 'Learning';
-  }
-
-  if (orderIndex <= 6) {
-    return 'Strong';
-  }
-
-  return 'Learning';
+function optionalText(value?: string | null) {
+  return value ?? undefined;
 }
 
-function pinyinParts(pinyin: string) {
-  return pinyin
+function pinyinParts(pinyin?: string | null) {
+  return (pinyin ?? '')
     .trim()
     .split(/\s+/)
     .filter(Boolean);
 }
 
-function tonesFromSyllables(syllables: RawSyllable[] = []) {
-  return syllables.map((syllable) => syllable.tone);
+function tonesFromSyllables(syllables: RawSyllable[] | null | undefined = []) {
+  return (syllables ?? []).map((syllable) => syllable.tone);
 }
 
 function unique(values: string[]) {
   return Array.from(new Set(values.filter(Boolean)));
-}
-
-function prerequisiteRows(itemId: string): [string, string][] {
-  return starterPackData.item_prerequisites
-    .filter((item) => item.item_id === itemId)
-    .map((item) => [
-      titleById.get(item.prerequisite_item_id) ?? item.prerequisite_item_id,
-      meaningById.get(item.prerequisite_item_id) ?? 'Prerequisite',
-    ] as [string, string]);
-}
-
-function prerequisiteRowsId(itemId: string): [string, string][] {
-  return starterPackData.item_prerequisites
-    .filter((item) => item.item_id === itemId)
-    .map((item) => [
-      titleById.get(item.prerequisite_item_id) ?? item.prerequisite_item_id,
-      meaningIdById.get(item.prerequisite_item_id) ??
-        meaningById.get(item.prerequisite_item_id) ??
-        'Prasyarat',
-    ] as [string, string]);
-}
-
-function characterRows(text: string): [string, string][] {
-  return Array.from(text)
-    .map((character) => {
-      const hanzi = hanziByCharacter.get(character);
-      return hanzi ? ([character, hanzi.meaning] as [string, string]) : null;
-    })
-    .filter((row): row is [string, string] => Boolean(row));
-}
-
-function characterRowsId(text: string): [string, string][] {
-  return Array.from(text)
-    .map((character) => {
-      const hanzi = hanziByCharacter.get(character);
-      return hanzi ? ([character, hanzi.meaning_id ?? hanzi.meaning] as [string, string]) : null;
-    })
-    .filter((row): row is [string, string] => Boolean(row));
-}
-
-function componentsForItem(item: RawLearningItem): [string, string][] {
-  const directComponents =
-    item.components?.map((component) => [component.character, component.meaning] as [string, string]) ?? [];
-  const prerequisites = prerequisiteRows(item.id);
-  const characters = characterRows(item.simplified);
-
-  return uniqueRows([...directComponents, ...prerequisites, ...characters]).slice(0, 4);
-}
-
-function componentsForItemId(item: RawLearningItem): [string, string][] {
-  const directComponents =
-    item.components?.map((component) => [
-      component.character,
-      component.meaning_id ?? component.meaning,
-    ] as [string, string]) ?? [];
-  const prerequisites = prerequisiteRowsId(item.id);
-  const characters = characterRowsId(item.simplified);
-
-  return uniqueRows([...directComponents, ...prerequisites, ...characters]).slice(0, 4);
 }
 
 function uniqueRows(rows: [string, string][]) {
@@ -358,9 +312,144 @@ function uniqueRows(rows: [string, string][]) {
   });
 }
 
+function stageForOrder(type: ContentType, orderIndex: number): Stage {
+  if (type === 'Patterns') {
+    return orderIndex <= 1 ? 'Learning' : 'Familiar';
+  }
+
+  if (orderIndex <= 2) {
+    return 'Familiar';
+  }
+
+  if (orderIndex <= 4) {
+    return 'Learning';
+  }
+
+  if (orderIndex <= 6) {
+    return 'Strong';
+  }
+
+  return 'Learning';
+}
+
+const allComponents = contentPacks.flatMap((pack) => pack.components);
+const allLearningRows = contentPacks.flatMap((pack) => [...pack.hanzi, ...pack.words, ...pack.sentences]);
+const allPatterns = contentPacks.flatMap((pack) => pack.patterns);
+
+const componentById = new Map(allComponents.map((item) => [item.id, item]));
+const learningById = new Map(allLearningRows.map((item) => [item.id, item]));
+const patternById = new Map(allPatterns.map((item) => [item.id, item]));
+const hanziByCharacter = new Map(contentPacks.flatMap((pack) => pack.hanzi.map((item) => [item.simplified, item] as const)));
+const sentenceByText = new Map(contentPacks.flatMap((pack) => pack.sentences.map((item) => [item.simplified, item] as const)));
+
+function titleForId(id: string) {
+  return componentById.get(id)?.simplified ?? learningById.get(id)?.simplified ?? patternById.get(id)?.title ?? id;
+}
+
+function meaningForId(id: string) {
+  return componentById.get(id)?.meaning ?? learningById.get(id)?.meaning ?? patternById.get(id)?.meaning ?? 'Related';
+}
+
+function meaningIdForId(id: string) {
+  return (
+    componentById.get(id)?.meaning_id ??
+    learningById.get(id)?.meaning_id ??
+    patternById.get(id)?.meaning_id ??
+    meaningForId(id)
+  );
+}
+
+function prerequisiteRows(pack: RawContentPack, itemId: string): [string, string][] {
+  return pack.item_prerequisites
+    .filter((item) => item.item_id === itemId)
+    .map((item) => [titleForId(item.prerequisite_item_id), meaningForId(item.prerequisite_item_id)] as [string, string]);
+}
+
+function prerequisiteRowsId(pack: RawContentPack, itemId: string): [string, string][] {
+  return pack.item_prerequisites
+    .filter((item) => item.item_id === itemId)
+    .map((item) => [titleForId(item.prerequisite_item_id), meaningIdForId(item.prerequisite_item_id)] as [string, string]);
+}
+
+function characterRows(text: string): [string, string][] {
+  return Array.from(text)
+    .map((character) => {
+      const hanzi = hanziByCharacter.get(character);
+      return hanzi ? ([character, hanzi.meaning] as [string, string]) : null;
+    })
+    .filter((row): row is [string, string] => Boolean(row));
+}
+
+function characterRowsId(text: string): [string, string][] {
+  return Array.from(text)
+    .map((character) => {
+      const hanzi = hanziByCharacter.get(character);
+      return hanzi ? ([character, hanzi.meaning_id] as [string, string]) : null;
+    })
+    .filter((row): row is [string, string] => Boolean(row));
+}
+
+function componentRows(item: RawLearningItem): [string, string][] {
+  const directRows = item.components?.map((component) => [component.character, component.meaning] as [string, string]) ?? [];
+  const hanziRows =
+    item.hanzi_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.simplified, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const focusRows =
+    item.focus_word_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.simplified, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const patternRows =
+    item.pattern_ids
+      ?.map((id) => {
+        const row = patternById.get(id);
+        return row ? ([row.title, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+
+  return uniqueRows([...directRows, ...hanziRows, ...focusRows, ...patternRows, ...characterRows(item.simplified)]).slice(0, 4);
+}
+
+function componentRowsId(item: RawLearningItem): [string, string][] {
+  const directRows =
+    item.components?.map((component) => [
+      component.character,
+      component.meaning_id ?? component.meaning,
+    ] as [string, string]) ?? [];
+  const hanziRows =
+    item.hanzi_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.simplified, row.meaning_id] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const focusRows =
+    item.focus_word_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.simplified, row.meaning_id] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const patternRows =
+    item.pattern_ids
+      ?.map((id) => {
+        const row = patternById.get(id);
+        return row ? ([row.title, row.meaning_id] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+
+  return uniqueRows([...directRows, ...hanziRows, ...focusRows, ...patternRows, ...characterRowsId(item.simplified)]).slice(0, 4);
+}
+
 function exampleForLearningItem(item: RawLearningItem): [string, string, string] {
   const exampleText = item.examples?.[0] ?? item.simplified;
-  const matchingSentence = sentencesByCharacter.get(exampleText);
+  const matchingSentence = sentenceByText.get(exampleText);
 
   return [
     exampleText,
@@ -371,50 +460,61 @@ function exampleForLearningItem(item: RawLearningItem): [string, string, string]
 
 function exampleForLearningItemId(item: RawLearningItem): [string, string, string] {
   const exampleText = item.examples?.[0] ?? item.simplified;
-  const matchingSentence = sentencesByCharacter.get(exampleText);
+  const matchingSentence = sentenceByText.get(exampleText);
 
   return [
     exampleText,
     matchingSentence?.pinyin ?? item.pinyin,
-    matchingSentence?.meaning_id ?? item.meaning_id ?? item.meaning,
+    matchingSentence?.meaning_id ?? item.meaning_id,
   ];
 }
 
-function relatedForLearningItem(item: RawLearningItem) {
-  const prerequisites = prerequisiteRows(item.id).map(([label]) => label);
-  return unique([...(item.examples ?? []), ...prerequisites]).slice(0, 5);
+function relatedForLearningItem(pack: RawContentPack, item: RawLearningItem) {
+  const prerequisites = prerequisiteRows(pack, item.id).map(([label]) => label);
+  const structuralIds = [...(item.hanzi_ids ?? []), ...(item.focus_word_ids ?? []), ...(item.pattern_ids ?? [])].map(titleForId);
+
+  return unique([...(item.examples ?? []), ...structuralIds, ...prerequisites]).slice(0, 5);
 }
 
-function toLearningContentItem(item: RawLearningItem, type: ContentType): ContentItem {
+function toLearningContentItem(pack: RawContentPack, item: RawLearningItem, type: ContentType): ContentItem {
   const stage = stageForOrder(type, item.order_index);
+  const note = item.usage_note ?? item.tone_note ?? item.literal_meaning ?? item.notes;
+  const noteId = item.usage_note_id ?? item.tone_note_id ?? item.literal_meaning_id ?? item.notes_id;
 
   return {
     id: item.id,
+    packId: pack.pack.id,
     type,
     stage,
     accuracy: accuracyByStage[stage],
     title: item.simplified,
+    traditionalTitle: item.traditional,
     pinyin: pinyinParts(item.pinyin),
     tones: tonesFromSyllables(item.pinyin_syllables),
     meaning: item.meaning,
-    meaningId: item.meaning_id,
-    components: componentsForItem(item),
-    componentsId: componentsForItemId(item),
-    mnemonic: `${item.simplified} means ${item.meaning}.`,
-    mnemonicId: item.mnemonic_id ?? item.notes_id,
-    related: relatedForLearningItem(item),
+    meaningId: optionalText(item.meaning_id),
+    audioUrl: optionalText(item.audio_url),
+    components: componentRows(item).length > 0 ? componentRows(item) : prerequisiteRows(pack, item.id),
+    componentsId: componentRowsId(item).length > 0 ? componentRowsId(item) : prerequisiteRowsId(pack, item.id),
+    mnemonic: item.mnemonic ?? note ?? `${item.simplified} means ${item.meaning}.`,
+    mnemonicId: optionalText(item.mnemonic_id ?? noteId),
+    related: relatedForLearningItem(pack, item),
     example: exampleForLearningItem(item),
     exampleId: exampleForLearningItemId(item),
     nextReview: nextReviewByStage[stage],
+    orderIndex: item.order_index,
+    reviewable: item.is_reviewable,
   };
 }
 
-function toPatternContentItem(item: RawPattern): ContentItem {
+function toPatternContentItem(pack: RawContentPack, item: RawPattern): ContentItem {
   const stage = stageForOrder('Patterns', item.order_index);
-  const example = item.examples[0];
+  const examples = item.examples ?? [];
+  const example = examples[0];
 
   return {
     id: item.id,
+    packId: pack.pack.id,
     type: 'Patterns',
     stage,
     accuracy: accuracyByStage[stage],
@@ -428,29 +528,38 @@ function toPatternContentItem(item: RawPattern): ContentItem {
     componentsId: [[item.structure, item.explanation_id]],
     mnemonic: item.explanation,
     mnemonicId: item.explanation_id,
-    related: item.examples.map((patternExample) => patternExample.simplified),
+    related: examples.map((patternExample) => patternExample.simplified),
     example: example
       ? [example.simplified, example.pinyin, example.meaning]
       : [item.structure, item.structure, item.meaning],
     exampleId: example
-      ? [example.simplified, example.pinyin, example.meaning_id]
+      ? [example.simplified, example.pinyin, example.meaning_id ?? example.meaning]
       : [item.structure, item.structure, item.meaning_id],
     nextReview: nextReviewByStage[stage],
+    orderIndex: item.order_index,
+    reviewable: item.is_reviewable ?? false,
   };
 }
 
-export const contentItems: ContentItem[] = [
-  ...starterPackData.words.map((item) => toLearningContentItem(item, 'Words')),
-  ...starterPackData.hanzi.map((item) => toLearningContentItem(item, 'Hanzi')),
-  ...starterPackData.sentences.map((item) => toLearningContentItem(item, 'Sentences')),
-  ...starterPackData.patterns.map(toPatternContentItem),
-];
+const packEntries: PackEntry[] = contentPacks.map((pack) => ({
+  raw: pack,
+  items: [
+    ...pack.words.map((item) => toLearningContentItem(pack, item, 'Words')),
+    ...pack.hanzi.map((item) => toLearningContentItem(pack, item, 'Hanzi')),
+    ...pack.sentences.map((item) => toLearningContentItem(pack, item, 'Sentences')),
+    ...pack.patterns.map((item) => toPatternContentItem(pack, item)),
+  ],
+}));
 
+const standardPackEntries = packEntries.filter((entry) => standardPacks.some((pack) => pack.pack.id === entry.raw.pack.id));
+
+export const contentItems: ContentItem[] = packEntries.flatMap((entry) => entry.items);
+
+const contentItemById = new Map(contentItems.map((item) => [item.id, item]));
 const wordItems = contentItems.filter((item) => item.type === 'Words');
-const reviewSourceItems = contentItems.filter((item) => item.type !== 'Patterns');
 const defaultAnswers: Record<AppLanguage, string[]> = {
-  English: ['hello', 'thank you', 'goodbye', 'sorry'],
-  Indonesian: ['halo', 'terima kasih', 'sampai jumpa', 'maaf'],
+  English: ['I / me', 'you', 'to be', 'to have', 'go', 'eat', 'big', 'like'],
+  Indonesian: ['aku / saya', 'kamu', 'adalah', 'punya', 'pergi', 'makan', 'besar', 'suka'],
 };
 
 function takeCycled<T>(items: T[], count: number, startIndex = 0) {
@@ -459,6 +568,10 @@ function takeCycled<T>(items: T[], count: number, startIndex = 0) {
   }
 
   return Array.from({ length: count }, (_, index) => items[(startIndex + index) % items.length]);
+}
+
+function takeUniqueCycled<T>(items: T[], count: number, startIndex = 0) {
+  return takeCycled(items, Math.min(count, items.length), startIndex);
 }
 
 export function localizeContentItem(item: ContentItem, language: AppLanguage): ContentItem {
@@ -489,7 +602,7 @@ function answerChoicesForItem(item: ContentItem, language: AppLanguage) {
   const wrongAnswers = answerPool.filter((answer) => answer !== localizedItem.meaning);
   const orderedAnswers = unique([localizedItem.meaning, ...wrongAnswers]).slice(0, 4);
   const fallbackAnswers = unique([...orderedAnswers, ...fallbackOptions]).slice(0, 4);
-  const offset = item.id.length % fallbackAnswers.length;
+  const offset = fallbackAnswers.length > 0 ? item.id.length % fallbackAnswers.length : 0;
 
   return [...fallbackAnswers.slice(offset), ...fallbackAnswers.slice(0, offset)];
 }
@@ -526,50 +639,77 @@ export function studyQuestionForItem(
   };
 }
 
+function packForSession(sessionIndex: number) {
+  if (standardPackEntries.length === 0) {
+    return packEntries[0];
+  }
+
+  return standardPackEntries[sessionIndex % standardPackEntries.length];
+}
+
+function sessionCycle(sessionIndex: number) {
+  return standardPackEntries.length === 0 ? 0 : Math.floor(sessionIndex / standardPackEntries.length);
+}
+
 export function getStarterStudySession(
   sessionSize: SessionSize,
   sessionIndex: number,
   language: AppLanguage = 'English',
 ): StarterStudySession {
   const plan = sessionPlans[sessionSize];
-  const learnPool = wordItems.length > 0 ? wordItems : contentItems;
-  const newWordCount = Math.min(plan.newWords, learnPool.length);
-  const learnStart = sessionIndex * newWordCount;
-  const learnItems = takeCycled(learnPool, newWordCount, learnStart);
+  const packEntry = packForSession(sessionIndex);
+  const activePackIndex = Math.max(0, standardPackEntries.findIndex((entry) => entry.raw.pack.id === packEntry.raw.pack.id));
+  const cycle = sessionCycle(sessionIndex);
+  const plannedNewItems =
+    packEntry.raw.study_flow.new_items
+      ?.map((id) => contentItemById.get(id))
+      .filter((item): item is ContentItem => Boolean(item)) ?? [];
+  const packWords = packEntry.items.filter((item) => item.type === 'Words');
+  const newPool = plannedNewItems.length > 0 ? plannedNewItems : packWords;
+  const newWordCount = Math.min(plan.newWords, newPool.length);
+  const learnItems = takeUniqueCycled(newPool, newWordCount, cycle * Math.max(newWordCount, 1));
   const learnIds = new Set(learnItems.map((item) => item.id));
-  const reviewPool = reviewSourceItems.filter((item) => !learnIds.has(item.id));
-  const reviewItems = takeCycled(
-    reviewPool.length > 0 ? reviewPool : reviewSourceItems,
-    plan.reviews,
-    sessionIndex * plan.reviews,
+  const availablePackIds = new Set(standardPackEntries.slice(0, activePackIndex + 1).map((entry) => entry.raw.pack.id));
+  const reviewPool = contentItems.filter(
+    (item) => availablePackIds.has(item.packId) && item.reviewable && item.type !== 'Patterns' && !learnIds.has(item.id),
   );
-  const reviewIds = new Set(reviewItems.map((item) => item.id));
-  const unlockPool = contentItems.filter((item) => !learnIds.has(item.id) && !reviewIds.has(item.id));
-  const unlocks = takeCycled(unlockPool.length > 0 ? unlockPool : contentItems, 2, learnStart + newWordCount);
+  const reviewItems = takeUniqueCycled(reviewPool, plan.reviews, sessionIndex * plan.reviews);
+  const unlocks =
+    packEntry.raw.study_flow.unlock_items
+      ?.map((id) => contentItemById.get(id))
+      .filter((item): item is ContentItem => Boolean(item))
+      .slice(0, 3) ?? [];
+  const fallbackUnlocks = packEntry.items.filter((item) => item.type === 'Sentences' || item.type === 'Patterns').slice(0, 3);
+  const packNumber = activePackIndex + 1;
 
   return {
     sessionNumber: sessionIndex + 1,
-    packLabel: textFor(language, `Pack 1 - ${starterPack.title}`, `Pack 1 - ${starterPack.title_id}`),
+    packId: packEntry.raw.pack.id,
+    packLabel: textFor(
+      language,
+      `Pack ${packNumber} - ${packEntry.raw.pack.title}`,
+      `Pack ${packNumber} - ${packEntry.raw.pack.title_id}`,
+    ),
     introTitle: textFor(
       language,
-      `Session ${sessionIndex + 1}: learn, practice, then review.`,
-      `Sesi ${sessionIndex + 1}: belajar, latihan, lalu review.`,
+      `Session ${sessionIndex + 1}: ${packEntry.raw.pack.title}`,
+      `Sesi ${sessionIndex + 1}: ${packEntry.raw.pack.title_id}`,
     ),
-    introDescription: textFor(language, starterPack.subtitle, starterPack.subtitle_id),
-    dayGoal: starterPackData.study_flow.day_1.goal_id,
+    introDescription: textFor(language, packEntry.raw.pack.subtitle, packEntry.raw.pack.subtitle_id),
+    dayGoal: textFor(language, packEntry.raw.pack.learning_goal, packEntry.raw.pack.learning_goal_id),
     learnItems: learnItems.map((item) => localizeContentItem(item, language)),
     reviewItems: reviewItems.map((item) => localizeContentItem(item, language)),
-    unlocks: unlocks.map((item) => localizeContentItem(item, language)),
+    unlocks: (unlocks.length > 0 ? unlocks : fallbackUnlocks).map((item) => localizeContentItem(item, language)),
   };
 }
 
 export const starterStudySession = getStarterStudySession('Standard', 0);
 
-const placementSourceIds = ['word_nihao', 'word_xiexie', 'word_zaijian', 'word_duibuqi', 'word_hao_ma'];
+const placementSourceIds = ['word_wo', 'word_ni', 'word_shi', 'word_qu', 'word_ma'];
 
 export function getPlacementQuestions(language: AppLanguage = 'English'): PlacementQuestion[] {
   return placementSourceIds
-    .map((id) => contentItems.find((item) => item.id === id))
+    .map((id) => contentItemById.get(id))
     .filter((item): item is ContentItem => Boolean(item))
     .map((item) => {
       const localizedItem = localizeContentItem(item, language);
@@ -586,28 +726,27 @@ export function getPlacementQuestions(language: AppLanguage = 'English'): Placem
 }
 
 export const starterStats = {
-  streak: 3,
-  accuracy: '87%',
-  learnedWords: starterPack.content_summary.words,
-  reviewsDone: 42,
+  streak: 0,
+  accuracy: '0%',
+  learnedWords: contentItems.filter((item) => item.type === 'Words').length,
+  reviewsDone: 0,
 } as const;
 
-export function getCurrentFocus(language: AppLanguage = 'English') {
-  return [
-    textFor(language, '3rd tone', 'Nada ke-3'),
-    textFor(language, 'Greetings', 'Sapaan'),
-    textFor(language, 'ma questions', 'Pertanyaan ma'),
-  ];
+export function getCurrentFocus(language: AppLanguage = 'English', sessionIndex = 0) {
+  const session = getStarterStudySession('Standard', sessionIndex, language);
+  const focusItems = session.learnItems.length > 0 ? session.learnItems : contentItems.slice(0, 3);
+
+  return focusItems.slice(0, 3).map((item) => item.meaning);
 }
 
 export const weeklyActivity = [
-  { day: 'M', minutes: 10 },
-  { day: 'T', minutes: 15 },
-  { day: 'W', minutes: 12 },
-  { day: 'T', minutes: 18 },
-  { day: 'F', minutes: 10 },
-  { day: 'S', minutes: 20 },
-  { day: 'S', minutes: 14 },
+  { day: 'M', minutes: 0 },
+  { day: 'T', minutes: 0 },
+  { day: 'W', minutes: 0 },
+  { day: 'T', minutes: 0 },
+  { day: 'F', minutes: 0 },
+  { day: 'S', minutes: 0 },
+  { day: 'S', minutes: 0 },
 ];
 
 const wordStageCounts = stageOrder.map((stage) => ({
@@ -623,53 +762,29 @@ export const wordStrength = wordStageCounts.map((item) => ({
   color: stageColors[item.stage],
 }));
 
-export const learningPath = [
-  {
-    status: 'done',
-    icon: '部',
-    title: 'Components',
-    titleId: 'Komponen',
-    description: `${starterPack.content_summary.components} greeting building blocks`,
-    descriptionId: `${starterPack.content_summary.components} blok pembentuk sapaan`,
-    label: 'Done',
-  },
-  {
-    status: 'current',
-    icon: '字',
-    title: 'Hanzi',
-    titleId: 'Hanzi',
-    description: `${starterPack.content_summary.hanzi} characters for starter greetings`,
-    descriptionId: `${starterPack.content_summary.hanzi} karakter untuk sapaan awal`,
-    label: 'Now',
-  },
-  {
-    status: 'available',
-    icon: '词',
-    title: 'Words',
-    titleId: 'Kata',
-    description: `${starterPack.content_summary.words} practical greetings and replies`,
-    descriptionId: `${starterPack.content_summary.words} sapaan dan balasan praktis`,
-    label: 'Available',
-  },
-  {
-    status: 'locked',
-    icon: '句',
-    title: 'Sentences',
-    titleId: 'Kalimat',
-    description: `${starterPack.content_summary.sentences} examples unlock after words strengthen`,
-    descriptionId: `${starterPack.content_summary.sentences} contoh terbuka setelah kata menguat`,
-    label: 'Locked',
-  },
-  {
-    status: 'locked',
-    icon: '法',
-    title: 'Patterns',
-    titleId: 'Pola',
-    description: `${starterPack.content_summary.patterns} greeting patterns later`,
-    descriptionId: `${starterPack.content_summary.patterns} pola sapaan nanti`,
-    label: 'Locked',
-  },
-] as const;
+export function getLearningPath(sessionIndex = 0) {
+  const currentPack = packForSession(sessionIndex).raw.pack;
+
+  return contentPacks.map((pack) => {
+    const isIntro = pack.study_flow.intro_only;
+    const isCurrent = pack.pack.id === currentPack.id;
+    const status = isIntro ? 'done' : isCurrent ? 'current' : pack.pack.order_index < currentPack.order_index ? 'done' : pack.pack.order_index === currentPack.order_index + 1 ? 'available' : 'locked';
+    const label = status === 'done' ? 'Done' : status === 'current' ? 'Now' : status === 'available' ? 'Available' : 'Locked';
+    const icon = isIntro ? '入' : String(pack.pack.order_index);
+
+    return {
+      status,
+      icon,
+      title: pack.pack.title,
+      titleId: pack.pack.title_id,
+      description: pack.pack.subtitle,
+      descriptionId: pack.pack.subtitle_id,
+      label,
+    };
+  });
+}
+
+export const learningPath = getLearningPath(0);
 
 export function typeLabel(type: ContentType, language: AppLanguage = 'English') {
   if (type === 'Words') {

@@ -1,0 +1,176 @@
+{
+  "pack": {
+    "id": "pack_000_introduction_to_mandarin",
+    "title": "Introduction to Mandarin",
+    "title_id": "Pengenalan Mandarin",
+    "subtitle": "Learn pinyin, tones, hanzi, and how this app works.",
+    "subtitle_id": "Kenali pinyin, nada, hanzi, dan cara kerja app ini.",
+    "level": 0,
+    "phase": "prototype",
+    "theme": "introduction",
+    "script_priority": "both",
+    "estimated_days": 1,
+    "estimated_minutes_per_day": 5,
+    "order_index": 0,
+    "pack_type": "introduction",
+    "is_srs_enabled": false,
+    "learning_goal": "Learn pinyin, tones, hanzi, and how this app works.",
+    "learning_goal_id": "Kenali pinyin, nada, hanzi, dan cara kerja app ini.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 0,
+      "words": 0,
+      "sentences": 0,
+      "patterns": 0
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [],
+  "words": [],
+  "sentences": [],
+  "patterns": [],
+  "item_prerequisites": [],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [],
+    "examples": []
+  },
+  "study_flow": {
+    "intro_only": true,
+    "creates_srs_items": false,
+    "new_items": [],
+    "quick_practice": [],
+    "unlock_items": []
+  },
+  "intro_cards": [
+    {
+      "id": "intro_001_what_is_mandarin",
+      "title": "What is Mandarin?",
+      "title_id": "Apa itu Mandarin?",
+      "body": "Mandarin is built from sounds, tones, and characters.",
+      "body_id": "Mandarin terdiri dari bunyi, nada, dan karakter.",
+      "example": null,
+      "order_index": 1
+    },
+    {
+      "id": "intro_002_pinyin",
+      "title": "Pinyin",
+      "title_id": "Pinyin",
+      "body": "Pinyin helps you read Mandarin pronunciation using Latin letters.",
+      "body_id": "Pinyin membantu kamu membaca pelafalan Mandarin dengan huruf Latin.",
+      "example": {
+        "simplified": "你好",
+        "traditional": "你好",
+        "pinyin": "nǐ hǎo",
+        "meaning": "hello",
+        "meaning_id": "halo"
+      },
+      "order_index": 2
+    },
+    {
+      "id": "intro_003_tones",
+      "title": "Tones",
+      "title_id": "Nada",
+      "body": "Mandarin uses tones. The same sound can mean different things if the tone changes.",
+      "body_id": "Mandarin memakai nada. Bunyi yang sama bisa punya arti berbeda kalau nadanya berubah.",
+      "example": {
+        "pinyin": [
+          "mā",
+          "má",
+          "mǎ",
+          "mà",
+          "ma"
+        ],
+        "tones": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      },
+      "order_index": 3
+    },
+    {
+      "id": "intro_004_tone_sandhi",
+      "title": "Tone sandhi",
+      "title_id": "Tone sandhi",
+      "body": "Sometimes tones shift in natural speech. The app will point this out when it matters.",
+      "body_id": "Kadang nada berubah saat diucapkan natural. App ini akan memberi catatan saat hal itu penting.",
+      "example": {
+        "written": "nǐ hǎo = 3-3",
+        "spoken_note": "often sounds closer to 2-3"
+      },
+      "order_index": 4
+    },
+    {
+      "id": "intro_005_hanzi",
+      "title": "Hanzi",
+      "title_id": "Hanzi",
+      "body": "Hanzi are Mandarin characters. Some are built from smaller components.",
+      "body_id": "Hanzi adalah karakter Mandarin. Beberapa tersusun dari komponen kecil.",
+      "example": {
+        "simplified": "好",
+        "components": [
+          "女",
+          "子"
+        ],
+        "meaning": "good"
+      },
+      "order_index": 5
+    },
+    {
+      "id": "intro_006_app_flow",
+      "title": "How this app works",
+      "title_id": "Cara kerja app ini",
+      "body": "Short lessons, quick practice, reviews, and unlocks help you build Mandarin step by step.",
+      "body_id": "Pelajaran singkat, latihan cepat, review, dan unlock membantu kamu belajar bertahap.",
+      "example": null,
+      "order_index": 6
+    }
+  ]
+}

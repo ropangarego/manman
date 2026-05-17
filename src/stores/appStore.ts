@@ -10,24 +10,44 @@ import type {
   Stage,
 } from '../data/mockContent';
 import { optionLabel, translate, type AppLanguage } from '../i18n/copy';
+import {
+  languageToDb,
+  pinyinDisplayToDb,
+  reviewStyleToDb,
+  scriptToDb,
+  sessionSizeToDb,
+  speechSpeedToDb,
+  updateCurrentProfile,
+  type AppProfileState,
+  type ProfileUpdate,
+} from '../lib/profileSync';
+import type { SpeechSpeed } from '../utils/audio';
 
 export type Screen = 'home' | 'study' | 'library' | 'progress' | 'settings';
 export type OnboardingStep = 'welcome' | 'script' | 'familiarity' | 'session' | 'placement' | 'recommend';
+export type AuthMode = 'signin' | 'signup';
 export type SheetType =
   | 'stage'
   | 'sessionSize'
   | 'script'
   | 'pinyin'
   | 'reviewStyle'
+  | 'speechSpeed'
   | 'language'
   | 'downloads'
+  | 'installApp'
+  | 'forgotPassword'
+  | 'editProfile'
+  | 'changePassword'
+  | 'resetLearningProgress'
   | 'report'
   | 'resetApp'
   | 'logout';
 
-interface SettingsState {
+export interface SettingsState {
   pinyinDisplay: PinyinDisplay;
   reviewStyle: ReviewStyle;
+  speechSpeed: SpeechSpeed;
   toneColors: boolean;
   sound: boolean;
   hints: boolean;
@@ -39,19 +59,22 @@ interface SettingsState {
 type ToggleSettingKey = 'toneColors' | 'sound' | 'hints' | 'dark' | 'offline';
 
 export const PREFERENCES_STORAGE_KEY = 'mandarin-app-preferences';
-const PREFERENCES_VERSION = 1;
+const PREFERENCES_VERSION = 2;
 const LEGACY_THEME_STORAGE_KEY = 'mandarin-theme';
 const PROGRESS_STORAGE_KEY = 'mandarin-learning-progress';
+const STUDY_STORAGE_KEY = 'mandarin-study-position';
 
 const SESSION_SIZES = ['Light', 'Standard', 'Intense'] as const;
 const SCRIPT_CHOICES = ['Simplified', 'Traditional', 'Not sure'] as const;
 const PINYIN_OPTIONS = ['Always', 'Lesson only', 'Hidden in review', 'Off'] as const;
 const REVIEW_STYLES = ['Simple', 'Mixed', 'Typed'] as const;
+const SPEECH_SPEEDS = ['Slow', 'Normal', 'Fast'] as const;
 const LANGUAGES = ['English', 'Indonesian'] as const;
 
 const DEFAULT_SETTINGS: SettingsState = {
   pinyinDisplay: 'Always',
   reviewStyle: 'Simple',
+  speechSpeed: 'Normal',
   toneColors: true,
   sound: true,
   hints: true,
@@ -61,6 +84,9 @@ const DEFAULT_SETTINGS: SettingsState = {
 };
 
 interface PersistedAppState {
+  signedIn: boolean;
+  authName: string;
+  authEmail: string;
   onboarded: boolean;
   scriptChoice: ScriptChoice;
   sessionSize: SessionSize;
@@ -69,6 +95,9 @@ interface PersistedAppState {
 
 function createDefaultPersistedState(): PersistedAppState {
   return {
+    signedIn: false,
+    authName: '',
+    authEmail: '',
     onboarded: false,
     scriptChoice: 'Simplified',
     sessionSize: 'Standard',
@@ -98,6 +127,7 @@ function sanitizeSettings(value: unknown): SettingsState {
   return {
     pinyinDisplay: pickOption(saved.pinyinDisplay, PINYIN_OPTIONS, DEFAULT_SETTINGS.pinyinDisplay),
     reviewStyle: pickOption(saved.reviewStyle, REVIEW_STYLES, DEFAULT_SETTINGS.reviewStyle),
+    speechSpeed: pickOption(saved.speechSpeed, SPEECH_SPEEDS, DEFAULT_SETTINGS.speechSpeed),
     toneColors: pickBoolean(saved.toneColors, DEFAULT_SETTINGS.toneColors),
     sound: pickBoolean(saved.sound, DEFAULT_SETTINGS.sound),
     hints: pickBoolean(saved.hints, DEFAULT_SETTINGS.hints),
@@ -115,6 +145,9 @@ function sanitizePersistedState(value: unknown): PersistedAppState | null {
   const scriptChoice = pickOption(value.scriptChoice, SCRIPT_CHOICES, 'Simplified');
 
   return {
+    signedIn: value.signedIn === true,
+    authName: typeof value.authName === 'string' ? value.authName : '',
+    authEmail: typeof value.authEmail === 'string' ? value.authEmail : '',
     onboarded: value.onboarded === true,
     scriptChoice: normalizeScriptPreference(scriptChoice),
     sessionSize: pickOption(value.sessionSize, SESSION_SIZES, 'Standard'),
@@ -154,6 +187,7 @@ function clearStoredPreferences() {
     window.localStorage.removeItem(PREFERENCES_STORAGE_KEY);
     window.localStorage.removeItem(LEGACY_THEME_STORAGE_KEY);
     window.localStorage.removeItem(PROGRESS_STORAGE_KEY);
+    window.localStorage.removeItem(STUDY_STORAGE_KEY);
   } catch {
     // Storage can be unavailable in private or restricted browser contexts.
   }
@@ -217,6 +251,10 @@ function toggleToast(key: ToggleSettingKey, enabled: boolean, language: AppLangu
 }
 
 interface AppState {
+  signedIn: boolean;
+  authMode: AuthMode;
+  authName: string;
+  authEmail: string;
   onboarded: boolean;
   onboardingStep: OnboardingStep;
   screen: Screen;
@@ -234,6 +272,12 @@ interface AppState {
   activeSheet: SheetType | null;
   toast: string;
   settings: SettingsState;
+  setAuthMode: (mode: AuthMode) => void;
+  completeAuth: (payload: { mode: AuthMode; name?: string; email: string }) => void;
+  syncAuthenticatedUser: (payload: { name?: string; email: string }) => void;
+  applyRemoteProfile: (profile: AppProfileState) => void;
+  syncSignedOut: () => void;
+  updateProfile: (payload: { name: string; email: string }) => void;
   setScreen: (screen: Screen) => void;
   setOnboardingStep: (step: OnboardingStep) => void;
   chooseScript: (script: ScriptChoice) => void;
@@ -255,9 +299,26 @@ interface AppState {
   confirmLogout: () => void;
 }
 
+function syncProfilePatch(
+  patch: ProfileUpdate,
+  set: (partial: Partial<AppState> | ((state: AppState) => Partial<AppState>)) => void,
+) {
+  void updateCurrentProfile(patch).then(({ error }) => {
+    if (!error) {
+      return;
+    }
+
+    set((state) => ({ toast: translate(state.settings.language, 'toast.profileSyncError') }));
+  });
+}
+
 export const useAppStore = create<AppState>()(
   persist<AppState, [], [], PersistedAppState>(
     (set) => ({
+  signedIn: false,
+  authMode: 'signin',
+  authName: '',
+  authEmail: '',
   onboarded: false,
   onboardingStep: 'welcome',
   screen: 'home',
@@ -278,15 +339,67 @@ export const useAppStore = create<AppState>()(
     ...DEFAULT_SETTINGS,
     dark: getInitialDarkMode(),
   },
+  setAuthMode: (authMode) => set({ authMode }),
+  completeAuth: ({ mode, name, email }) =>
+    set((state) => ({
+      signedIn: true,
+      authMode: mode,
+      authName: name?.trim() || email.split('@')[0] || 'Learner',
+      authEmail: email.trim(),
+      toast: translate(state.settings.language, mode === 'signup' ? 'toast.accountCreated' : 'toast.signedIn'),
+    })),
+  syncAuthenticatedUser: ({ name, email }) =>
+    set({
+      signedIn: true,
+      authMode: 'signin',
+      authName: name?.trim() || email.split('@')[0] || 'Learner',
+      authEmail: email.trim(),
+    }),
+  applyRemoteProfile: (profile) =>
+    set((state) => {
+      applyDarkMode(profile.settings.dark);
+
+      return {
+        signedIn: true,
+        authMode: 'signin',
+        authName: profile.authName || state.authName,
+        authEmail: profile.authEmail || state.authEmail,
+        onboarded: profile.onboarded,
+        scriptChoice: normalizeScriptPreference(profile.scriptChoice),
+        sessionSize: profile.sessionSize,
+        settings: profile.settings,
+        activeSheet: null,
+      };
+    }),
+  syncSignedOut: () =>
+    set({
+      signedIn: false,
+      authMode: 'signin',
+      authName: '',
+      authEmail: '',
+      activeSheet: null,
+    }),
+  updateProfile: ({ name, email }) =>
+    set((state) => ({
+      authName: name.trim() || state.authName,
+      authEmail: email.trim() || state.authEmail,
+      toast: translate(state.settings.language, 'toast.profileUpdated'),
+    })),
   setScreen: (screen) =>
     set({
       screen,
       activeSheet: null,
     }),
   setOnboardingStep: (onboardingStep) => set({ onboardingStep }),
-  chooseScript: (scriptChoice) => set({ scriptChoice }),
+  chooseScript: (scriptChoice) => {
+    syncProfilePatch({ script: scriptToDb(scriptChoice) }, set);
+    set({ scriptChoice });
+  },
   chooseFamiliarity: (familiarity) => set({ familiarity }),
-  chooseSessionSize: (sessionSize) => set({ sessionSize }),
+  chooseSessionSize: (sessionSize) => {
+    syncProfilePatch({ session_size: sessionSizeToDb(sessionSize) }, set);
+    set({ sessionSize });
+  },
   answerPlacement: (questionId, placementAnswer, correctAnswer) =>
     set((state) => {
       const previousAnswer = state.placementAnswers[questionId];
@@ -303,12 +416,25 @@ export const useAppStore = create<AppState>()(
       };
     }),
   finishOnboarding: () =>
-    set((state) => ({
-      onboarded: true,
-      screen: 'home',
-      activeSheet: null,
-      scriptChoice: normalizeScriptPreference(state.scriptChoice),
-    })),
+    set((state) => {
+      const scriptChoice = normalizeScriptPreference(state.scriptChoice);
+
+      syncProfilePatch(
+        {
+          onboarded: true,
+          script: scriptToDb(scriptChoice),
+          session_size: sessionSizeToDb(state.sessionSize),
+        },
+        set,
+      );
+
+      return {
+        onboarded: true,
+        screen: 'home',
+        activeSheet: null,
+        scriptChoice,
+      };
+    }),
   openSheet: (activeSheet) => set({ activeSheet }),
   closeSheet: () => set({ activeSheet: null }),
   chooseSheetValue: (sheet, value) =>
@@ -328,9 +454,12 @@ export const useAppStore = create<AppState>()(
         }
 
         const language = state.settings.language;
+        const sessionSize = value as SessionSize;
+
+        syncProfilePatch({ session_size: sessionSizeToDb(sessionSize) }, set);
 
         return {
-          sessionSize: value as SessionSize,
+          sessionSize,
           activeSheet: null,
           toast: translate(language, 'toast.sessionSize', { value: optionLabel(language, value) }),
         };
@@ -342,9 +471,12 @@ export const useAppStore = create<AppState>()(
         }
 
         const language = state.settings.language;
+        const scriptChoice = value as ScriptChoice;
+
+        syncProfilePatch({ script: scriptToDb(scriptChoice) }, set);
 
         return {
-          scriptChoice: value as ScriptChoice,
+          scriptChoice,
           activeSheet: null,
           toast: translate(language, 'toast.script', { value: optionLabel(language, value) }),
         };
@@ -356,9 +488,12 @@ export const useAppStore = create<AppState>()(
         }
 
         const language = state.settings.language;
+        const pinyinDisplay = value as PinyinDisplay;
+
+        syncProfilePatch({ pinyin_display: pinyinDisplayToDb(pinyinDisplay) }, set);
 
         return {
-          settings: { ...state.settings, pinyinDisplay: value as PinyinDisplay },
+          settings: { ...state.settings, pinyinDisplay },
           activeSheet: null,
           toast: translate(language, 'toast.pinyin', { value: optionLabel(language, value) }),
         };
@@ -370,11 +505,31 @@ export const useAppStore = create<AppState>()(
         }
 
         const language = state.settings.language;
+        const reviewStyle = value as ReviewStyle;
+
+        syncProfilePatch({ review_style: reviewStyleToDb(reviewStyle) }, set);
 
         return {
-          settings: { ...state.settings, reviewStyle: value as ReviewStyle },
+          settings: { ...state.settings, reviewStyle },
           activeSheet: null,
           toast: translate(language, 'toast.reviewStyle', { value: optionLabel(language, value) }),
+        };
+      }
+
+      if (sheet === 'speechSpeed') {
+        if (state.settings.speechSpeed === value) {
+          return { activeSheet: null };
+        }
+
+        const language = state.settings.language;
+        const speechSpeed = value as SpeechSpeed;
+
+        syncProfilePatch({ speech_speed: speechSpeedToDb(speechSpeed) }, set);
+
+        return {
+          settings: { ...state.settings, speechSpeed },
+          activeSheet: null,
+          toast: translate(language, 'toast.speechSpeed', { value: optionLabel(language, value) }),
         };
       }
 
@@ -384,6 +539,8 @@ export const useAppStore = create<AppState>()(
         }
 
         const nextLanguage = value as SettingsState['language'];
+
+        syncProfilePatch({ language: languageToDb(nextLanguage) }, set);
 
         return {
           settings: { ...state.settings, language: nextLanguage },
@@ -422,10 +579,19 @@ export const useAppStore = create<AppState>()(
   toggleSetting: (key) =>
     set((state) => {
       const nextValue = !state.settings[key];
+      const profilePatchByKey: Record<ToggleSettingKey, ProfileUpdate> = {
+        toneColors: { tone_colors_enabled: nextValue },
+        sound: { sound_enabled: nextValue },
+        hints: { tutorial_hints_enabled: nextValue },
+        dark: { dark_mode_enabled: nextValue },
+        offline: { offline_mode_enabled: nextValue },
+      };
 
       if (key === 'dark') {
         applyDarkMode(nextValue);
       }
+
+      syncProfilePatch(profilePatchByKey[key], set);
 
       return {
         settings: {
@@ -442,6 +608,10 @@ export const useAppStore = create<AppState>()(
 
     set({
       onboarded: false,
+      signedIn: false,
+      authMode: 'signin',
+      authName: '',
+      authEmail: '',
       onboardingStep: 'welcome',
       screen: 'home',
       scriptChoice: 'Simplified',
@@ -467,6 +637,10 @@ export const useAppStore = create<AppState>()(
 
     set({
       onboarded: false,
+      signedIn: false,
+      authMode: 'signin',
+      authName: '',
+      authEmail: '',
       onboardingStep: 'welcome',
       screen: 'home',
       scriptChoice: 'Simplified',
@@ -493,6 +667,9 @@ export const useAppStore = create<AppState>()(
       version: PREFERENCES_VERSION,
       storage: createPreferencesStorage(),
       partialize: (state) => ({
+        signedIn: state.signedIn,
+        authName: state.authName,
+        authEmail: state.authEmail,
         onboarded: state.onboarded,
         scriptChoice: normalizeScriptPreference(state.scriptChoice),
         sessionSize: state.sessionSize,
@@ -508,6 +685,10 @@ export const useAppStore = create<AppState>()(
 
         return {
           ...currentState,
+          signedIn: saved.signedIn,
+          authName: saved.authName,
+          authEmail: saved.authEmail,
+          authMode: 'signin',
           onboarded: saved.onboarded,
           onboardingStep: 'welcome',
           screen: 'home',

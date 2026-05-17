@@ -3,7 +3,9 @@ import { typeLabel } from '../../data/mockContent';
 import { optionLabel } from '../../i18n/copy';
 import { useTranslation } from '../../i18n/useTranslation';
 import { useAppStore } from '../../stores/appStore';
+import { speakMandarin, speechRateForSpeed } from '../../utils/audio';
 import { Button } from '../ui/Button';
+import { AudioButton } from '../ui/AudioButton';
 import { ToneDots } from '../study/ToneDots';
 
 interface LibraryDetailProps {
@@ -27,6 +29,8 @@ function sectionTitle(item: ContentItem, language: 'English' | 'Indonesian') {
 export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) {
   const { language, t } = useTranslation();
   const openSheet = useAppStore((state) => state.openSheet);
+  const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
+  const speechRate = speechRateForSpeed(speechSpeed);
   const isPattern = item.type === 'Patterns';
 
   return (
@@ -36,14 +40,22 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
       </Button>
 
       <div className="detail-head">
-        <div className="detail-main-char">{item.title}</div>
-        {showPinyin ? (
-          <>
-            <div className="detail-pinyin">{item.pinyin.join(' ')}</div>
-            <ToneDots tones={item.tones} />
-          </>
-        ) : null}
-        <div className="detail-meaning">{item.meaning}</div>
+        <div className="pronunciation-stack detail-pronunciation">
+          <div className="detail-main-char mandarin-text">{item.title}</div>
+          {showPinyin ? (
+            <>
+              <div className="detail-pinyin">{item.pinyin.join(' ')}</div>
+              <ToneDots tones={item.tones} />
+            </>
+          ) : null}
+          <div className="detail-meaning">{item.meaning}</div>
+          <AudioButton
+            audioSrc={item.audioUrl}
+            variant="centeredBelow"
+            label={`Play pronunciation for ${item.title}`}
+            onPlay={() => speakMandarin(item.title, speechRate)}
+          />
+        </div>
       </div>
 
       <div className="meta-row">

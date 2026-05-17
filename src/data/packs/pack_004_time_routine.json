@@ -1,0 +1,639 @@
+{
+  "pack": {
+    "id": "pack_004_time_routine",
+    "title": "Time & Routine",
+    "title_id": "Waktu & Rutinitas",
+    "subtitle": "Talk about today, tomorrow, now, and simple routines.",
+    "subtitle_id": "Bicara tentang hari ini, besok, sekarang, dan rutinitas sederhana.",
+    "level": 1,
+    "phase": "prototype",
+    "theme": "time_routine",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 4,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about today, tomorrow, now, and simple routines.",
+    "learning_goal_id": "Bicara tentang hari ini, besok, sekarang, dan rutinitas sederhana.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 5,
+      "words": 5,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_jin",
+      "type": "hanzi",
+      "simplified": "今",
+      "traditional": "今",
+      "meaning": "now / current",
+      "meaning_id": "sekarang / saat ini",
+      "accepted_meanings": [
+        "now / current"
+      ],
+      "accepted_meanings_id": [
+        "sekarang / saat ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jīn",
+      "pinyin_numbered": "jin1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "The day right in front of you, not yesterday not tomorrow — *now*, *today*. jīn ≈ \"jean\" flat like a steady clock. Tone 1 high and even.",
+      "mnemonic_id": "Hari yang ada di depan mata, bukan kemarin bukan besok — *sekarang* ini. jīn ≈ \"jin\" flat kayak hari yang berjalan tenang. Nada 1 tinggi rata, stabil kayak jarum jam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_tian",
+      "type": "hanzi",
+      "simplified": "天",
+      "traditional": "天",
+      "meaning": "day / sky",
+      "meaning_id": "hari / langit",
+      "accepted_meanings": [
+        "day / sky"
+      ],
+      "accepted_meanings_id": [
+        "hari / langit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tiān",
+      "pinyin_numbered": "tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "The wide sky above — one full *day* from morning to night. tiān ≈ \"tyen\" flat and open. Tone 1 high and steady, like a sky that stretches.",
+      "mnemonic_id": "Langit luas di atas — satu *hari* penuh dari pagi ke malam. tiān ≈ \"tyen\" flat dan luas. Nada 1 tinggi rata, kayak langit yang membentang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 2,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ming",
+      "type": "hanzi",
+      "simplified": "明",
+      "traditional": "明",
+      "meaning": "bright / tomorrow part",
+      "meaning_id": "terang / bagian besok",
+      "accepted_meanings": [
+        "bright / tomorrow part"
+      ],
+      "accepted_meanings_id": [
+        "terang / bagian besok"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "míng",
+      "pinyin_numbered": "ming2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "明",
+          "text": "míng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "日 sun + 月 moon shining together — *bright*, full of hope, like *tomorrow*. míng ≈ \"ming\" rising like a sunrise. Tone 2 climbs, like morning energy.",
+      "mnemonic_id": "日 matahari + 月 bulan bersinar bareng — *terang* dan penuh harapan, kayak hari *besok*. míng ≈ \"ming\" naik kayak matahari terbit. Nada 2 naik terus, kayak semangat pagi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 3,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xian",
+      "type": "hanzi",
+      "simplified": "现",
+      "traditional": "現",
+      "meaning": "current",
+      "meaning_id": "saat ini",
+      "accepted_meanings": [
+        "current"
+      ],
+      "accepted_meanings_id": [
+        "saat ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xiàn",
+      "pinyin_numbered": "xian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "现",
+          "text": "xiàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Something appearing, real and right in front of you — *right now*, not later. xiàn ≈ \"shyen!\" sharp. Tone 4 drops fast, like \"here it is, now!\"",
+      "mnemonic_id": "Sesuatu yang muncul dan nyata di depan mata — ini *saat ini*, bukan nanti. xiàn ≈ \"syen!\" tegas. Nada 4 turun tajam, kayak \"ini dia, sekarang!\"",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 4,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zai_now",
+      "type": "hanzi",
+      "simplified": "在",
+      "traditional": "在",
+      "meaning": "currently / at",
+      "meaning_id": "sedang / di",
+      "accepted_meanings": [
+        "currently / at"
+      ],
+      "accepted_meanings_id": [
+        "sedang / di"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zài",
+      "pinyin_numbered": "zai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "在",
+          "text": "zài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "You're standing at one point, right there — *currently* at that spot. zài ≈ \"zai!\" like confirming \"yes, right here!\" Tone 4 drops sharp, certain.",
+      "mnemonic_id": "Kamu ada di satu titik, berdiri di sana — *sedang* di situ. zài ≈ \"zai!\" kayak konfirmasi \"iya, di sini!\" Nada 4 turun tajam, pasti.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 5,
+      "tags": [],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_jintian",
+      "type": "word",
+      "simplified": "今天",
+      "traditional": "今天",
+      "meaning": "today",
+      "meaning_id": "hari ini",
+      "accepted_meanings": [
+        "today"
+      ],
+      "accepted_meanings_id": [
+        "hari ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jīn tiān",
+      "pinyin_numbered": "jin1 tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1",
+      "hanzi_ids": [],
+      "part_of_speech": "time word",
+      "mnemonic": "今 now + 天 day — *today*, the day you're actually living.",
+      "mnemonic_id": "今 sekarang + 天 hari — *hari ini*, bukan kemarin bukan besok.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 1,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_mingtian",
+      "type": "word",
+      "simplified": "明天",
+      "traditional": "明天",
+      "meaning": "tomorrow",
+      "meaning_id": "besok",
+      "accepted_meanings": [
+        "tomorrow"
+      ],
+      "accepted_meanings_id": [
+        "besok"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "míng tiān",
+      "pinyin_numbered": "ming2 tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "明",
+          "text": "míng",
+          "tone": 2
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "2-1",
+      "hanzi_ids": [],
+      "part_of_speech": "time word",
+      "mnemonic": "明 bright + 天 day — *tomorrow*, the bright day still ahead.",
+      "mnemonic_id": "明 terang + 天 hari — *besok*, hari yang masih terang di depan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 2,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xianzai",
+      "type": "word",
+      "simplified": "现在",
+      "traditional": "現在",
+      "meaning": "now",
+      "meaning_id": "sekarang",
+      "accepted_meanings": [
+        "now"
+      ],
+      "accepted_meanings_id": [
+        "sekarang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xiàn zài",
+      "pinyin_numbered": "xian4 zai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "现",
+          "text": "xiàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "在",
+          "text": "zài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [],
+      "part_of_speech": "time word",
+      "mnemonic": "现 appearing + 在 here — *now*, the moment that's happening.",
+      "mnemonic_id": "现 muncul + 在 di sini — *sekarang* juga, momen yang lagi terjadi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 3,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_meitian",
+      "type": "word",
+      "simplified": "每天",
+      "traditional": "每天",
+      "meaning": "every day",
+      "meaning_id": "setiap hari",
+      "accepted_meanings": [
+        "every day"
+      ],
+      "accepted_meanings_id": [
+        "setiap hari"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "měi tiān",
+      "pinyin_numbered": "mei3 tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "每",
+          "text": "měi",
+          "tone": 3
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1",
+      "hanzi_ids": [],
+      "part_of_speech": "time word",
+      "mnemonic": "每 every + 天 day — *every day*, no exceptions.",
+      "mnemonic_id": "每 setiap + 天 hari — *setiap hari*, tanpa kecuali.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 4,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zao",
+      "type": "word",
+      "simplified": "早",
+      "traditional": "早",
+      "meaning": "early / morning",
+      "meaning_id": "pagi / awal",
+      "accepted_meanings": [
+        "early / morning"
+      ],
+      "accepted_meanings_id": [
+        "pagi / awal"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zǎo",
+      "pinyin_numbered": "zao3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "早",
+          "text": "zǎo",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [],
+      "part_of_speech": "time word",
+      "mnemonic": "The sun barely up, air still fresh — that's *morning*.",
+      "mnemonic_id": "Matahari baru sepenggalah, udara masih segar — inilah *pagi*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 5,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_jintian_wo_qu",
+      "type": "sentence",
+      "simplified": "今天我去。",
+      "traditional": "今天我去。",
+      "meaning": "Today I’m going.",
+      "meaning_id": "Hari ini saya pergi.",
+      "literal_meaning": null,
+      "literal_meaning_id": null,
+      "pinyin": "jīn tiān wǒ qù",
+      "pinyin_numbered": "jin1 tian1 wo3 qu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "去",
+          "text": "qù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-1-3-4",
+      "focus_word_ids": [
+        "word_jintian"
+      ],
+      "pattern_ids": [
+        "pattern_time_first"
+      ],
+      "notes": null,
+      "notes_id": null,
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_xianzai_wo_kan",
+      "type": "sentence",
+      "simplified": "现在我看。",
+      "traditional": "現在我看。",
+      "meaning": "Now I watch.",
+      "meaning_id": "Sekarang saya lihat.",
+      "literal_meaning": null,
+      "literal_meaning_id": null,
+      "pinyin": "xiàn zài wǒ kàn",
+      "pinyin_numbered": "xian4 zai4 wo3 kan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "现",
+          "text": "xiàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "在",
+          "text": "zài",
+          "tone": 4
+        },
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "看",
+          "text": "kàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4-3-4",
+      "focus_word_ids": [
+        "word_jintian"
+      ],
+      "pattern_ids": [
+        "pattern_time_first"
+      ],
+      "notes": null,
+      "notes_id": null,
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_time_first",
+      "type": "pattern",
+      "title": "Time + action",
+      "title_id": "Waktu + aksi",
+      "meaning": "time before action",
+      "meaning_id": "waktu sebelum aksi",
+      "structure": "Time + subject + verb",
+      "explanation": "Put simple time words before the action.",
+      "explanation_id": "Letakkan kata waktu sederhana sebelum aksi.",
+      "examples": [],
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": []
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_jintian",
+      "word_mingtian",
+      "word_xianzai",
+      "word_meitian",
+      "word_zao"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_jintian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_mingtian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xianzai",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_jintian_wo_qu",
+      "sentence_xianzai_wo_kan"
+    ]
+  }
+}

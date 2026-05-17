@@ -12,9 +12,11 @@ import {
   weeklyActivityFromProgress,
   wordStrengthFromProgress,
 } from '../stores/progressStore';
+import { useStudyStore } from '../stores/studyStore';
 
 export function ProgressScreen() {
   const { language, t } = useTranslation();
+  const sessionIndex = useStudyStore((state) => state.sessionIndex);
   const progressItems = useProgressStore((state) => state.items);
   const totalCorrect = useProgressStore((state) => state.totalCorrect);
   const totalAttempts = useProgressStore((state) => state.totalAttempts);
@@ -22,7 +24,7 @@ export function ProgressScreen() {
   const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
   const weeklyActivity = weeklyActivityFromProgress(dailyActivity);
   const wordStrength = wordStrengthFromProgress(contentItems, progressItems);
-  const currentFocus = getCurrentFocus(language);
+  const currentFocus = getCurrentFocus(language, sessionIndex);
   const showWeakAreas = totalAttempts >= 8;
 
   return (

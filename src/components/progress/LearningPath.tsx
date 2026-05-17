@@ -1,10 +1,13 @@
-import { learningPath } from '../../data/mockContent';
+import { getLearningPath } from '../../data/mockContent';
 import { textFor } from '../../i18n/copy';
 import { useTranslation } from '../../i18n/useTranslation';
+import { useStudyStore } from '../../stores/studyStore';
 import { Card } from '../ui/Card';
 
 export function LearningPath() {
   const { language, t } = useTranslation();
+  const sessionIndex = useStudyStore((state) => state.sessionIndex);
+  const learningPath = getLearningPath(sessionIndex);
   const statusLabel = (label: string) => {
     if (language !== 'Indonesian') {
       return label;

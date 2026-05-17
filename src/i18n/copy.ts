@@ -23,6 +23,25 @@ type CopyKey =
   | 'common.related'
   | 'common.example'
   | 'common.soon'
+  | 'common.saving'
+  | 'common.updating'
+  | 'common.sending'
+  | 'auth.signInTitle'
+  | 'auth.signInSub'
+  | 'auth.signUpTitle'
+  | 'auth.signUpSub'
+  | 'auth.email'
+  | 'auth.name'
+  | 'auth.password'
+  | 'auth.signIn'
+  | 'auth.signUp'
+  | 'auth.forgotPassword'
+  | 'auth.noAccount'
+  | 'auth.hasAccount'
+  | 'auth.createAccount'
+  | 'auth.useExisting'
+  | 'auth.mockNote'
+  | 'auth.working'
   | 'home.title'
   | 'home.subtitle'
   | 'home.todaySession'
@@ -58,10 +77,18 @@ type CopyKey =
   | 'progress.weakAreasSub'
   | 'settings.title'
   | 'settings.subtitle'
+  | 'settings.profile'
+  | 'settings.profileDetails'
+  | 'settings.profileDetailsSub'
+  | 'settings.changePassword'
+  | 'settings.changePasswordSub'
+  | 'settings.resetLearningProgress'
+  | 'settings.resetLearningProgressSub'
   | 'settings.learning'
   | 'settings.study'
   | 'settings.display'
   | 'settings.offline'
+  | 'settings.account'
   | 'settings.sessionSize'
   | 'settings.script'
   | 'settings.scriptSub'
@@ -73,6 +100,8 @@ type CopyKey =
   | 'settings.reviewStyleSub'
   | 'settings.sound'
   | 'settings.soundSub'
+  | 'settings.speechSpeed'
+  | 'settings.speechSpeedSub'
   | 'settings.hints'
   | 'settings.hintsSub'
   | 'settings.language'
@@ -83,6 +112,8 @@ type CopyKey =
   | 'settings.offlineModeSub'
   | 'settings.downloads'
   | 'settings.downloadsSub'
+  | 'settings.installApp'
+  | 'settings.installAppSub'
   | 'settings.resetApp'
   | 'settings.resetAppSub'
   | 'settings.logoutSub'
@@ -130,6 +161,7 @@ type CopyKey =
   | 'onboarding.sessionSub'
   | 'onboarding.quickCheck'
   | 'onboarding.quickCheckSub'
+  | 'onboarding.questionProgress'
   | 'onboarding.chooseClosest'
   | 'onboarding.seeRecommendation'
   | 'onboarding.recommendTitle'
@@ -153,12 +185,40 @@ type CopyKey =
   | 'sheets.reviewMixed'
   | 'sheets.reviewMixedSub'
   | 'sheets.reviewTypedSub'
+  | 'sheets.speechSpeedTitle'
+  | 'sheets.speechSpeedSub'
+  | 'sheets.speedSlowSub'
+  | 'sheets.speedNormalSub'
+  | 'sheets.speedFastSub'
   | 'sheets.downloadTitle'
   | 'sheets.downloadSub'
   | 'sheets.downloaded'
   | 'sheets.downloadedSub'
   | 'sheets.refreshOffline'
   | 'sheets.refreshOfflineSub'
+  | 'sheets.installTitle'
+  | 'sheets.installSub'
+  | 'sheets.installReady'
+  | 'sheets.installReadySub'
+  | 'sheets.installUnavailable'
+  | 'sheets.installUnavailableSub'
+  | 'sheets.installButton'
+  | 'sheets.passwordResetTitle'
+  | 'sheets.passwordResetSub'
+  | 'sheets.passwordResetButton'
+  | 'sheets.profileTitle'
+  | 'sheets.profileSub'
+  | 'sheets.profileName'
+  | 'sheets.profileEmail'
+  | 'sheets.saveProfile'
+  | 'sheets.changePasswordTitle'
+  | 'sheets.changePasswordSub'
+  | 'sheets.currentPassword'
+  | 'sheets.newPassword'
+  | 'sheets.confirmPassword'
+  | 'sheets.updatePassword'
+  | 'sheets.resetLearningTitle'
+  | 'sheets.resetLearningSub'
   | 'sheets.logoutTitle'
   | 'sheets.logoutSub'
   | 'sheets.resetTitle'
@@ -176,6 +236,7 @@ type CopyKey =
   | 'toast.script'
   | 'toast.pinyin'
   | 'toast.reviewStyle'
+  | 'toast.speechSpeed'
   | 'toast.language'
   | 'toast.offlineRefresh'
   | 'toast.toneColorsOn'
@@ -187,7 +248,17 @@ type CopyKey =
   | 'toast.darkEnabled'
   | 'toast.lightEnabled'
   | 'toast.offlineOn'
-  | 'toast.offlineOff';
+  | 'toast.offlineOff'
+  | 'toast.signedIn'
+  | 'toast.accountCreated'
+  | 'toast.checkEmail'
+  | 'toast.profileUpdated'
+  | 'toast.profileSyncError'
+  | 'toast.changePasswordPlaceholder'
+  | 'toast.learningProgressReset'
+  | 'toast.passwordResetPlaceholder'
+  | 'toast.installOpened'
+  | 'toast.installUnavailable';
 
 const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'nav.home': { English: 'Home', Indonesian: 'Beranda' },
@@ -212,28 +283,56 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'common.related': { English: 'Related', Indonesian: 'Terkait' },
   'common.example': { English: 'Example', Indonesian: 'Contoh' },
   'common.soon': { English: 'Soon', Indonesian: 'Nanti' },
+  'common.saving': { English: 'Saving...', Indonesian: 'Menyimpan...' },
+  'common.updating': { English: 'Updating...', Indonesian: 'Memperbarui...' },
+  'common.sending': { English: 'Sending...', Indonesian: 'Mengirim...' },
+  'auth.signInTitle': { English: 'Welcome back', Indonesian: 'Selamat datang lagi' },
+  'auth.signInSub': {
+    English: 'Sign in to continue your Mandarin practice on this device.',
+    Indonesian: 'Masuk untuk melanjutkan latihan Mandarin di perangkat ini.',
+  },
+  'auth.signUpTitle': { English: 'Create your account', Indonesian: 'Buat akun' },
+  'auth.signUpSub': {
+    English: 'Create a Manman! account to save your learning progress later.',
+    Indonesian: 'Buat akun Manman! untuk menyimpan progres belajar nanti.',
+  },
+  'auth.email': { English: 'Email', Indonesian: 'Email' },
+  'auth.name': { English: 'Name', Indonesian: 'Nama' },
+  'auth.password': { English: 'Password', Indonesian: 'Password' },
+  'auth.signIn': { English: 'Sign in', Indonesian: 'Masuk' },
+  'auth.signUp': { English: 'Sign up', Indonesian: 'Daftar' },
+  'auth.forgotPassword': { English: 'Forgot password?', Indonesian: 'Lupa password?' },
+  'auth.noAccount': { English: 'New here?', Indonesian: 'Baru di sini?' },
+  'auth.hasAccount': { English: 'Already have an account?', Indonesian: 'Sudah punya akun?' },
+  'auth.createAccount': { English: 'Create account', Indonesian: 'Buat akun' },
+  'auth.useExisting': { English: 'Use existing account', Indonesian: 'Pakai akun yang ada' },
+  'auth.mockNote': {
+    English: 'Use a real email and a password with at least 6 characters.',
+    Indonesian: 'Gunakan email asli dan password minimal 6 karakter.',
+  },
+  'auth.working': { English: 'Working...', Indonesian: 'Memproses...' },
   'home.title': { English: 'Nǐ hǎo, Learner', Indonesian: 'Nǐ hǎo, Pelajar' },
   'home.subtitle': { English: 'Ready for today’s Mandarin?', Indonesian: 'Siap belajar Mandarin hari ini?' },
   'home.todaySession': { English: 'Today’s Session', Indonesian: 'Sesi Hari Ini' },
   'home.duration': { English: 'Duration', Indonesian: 'Durasi' },
   'home.description': {
-    English: 'Learn new words, practice them once, then review what is due.',
-    Indonesian: 'Pelajari kata baru, latihan sebentar, lalu review yang sudah jatuh tempo.',
+    English: 'A short plan with new words, quick practice, and due reviews.',
+    Indonesian: 'Rencana singkat berisi kata baru, latihan cepat, dan review jatuh tempo.',
   },
   'home.startStudy': { English: 'Start Study', Indonesian: 'Mulai Belajar' },
   'home.quickStats': { English: 'Quick stats', Indonesian: 'Ringkasan' },
-  'home.quickStatsSub': { English: 'Your latest study snapshot.', Indonesian: 'Gambaran belajar terbarumu.' },
+  'home.quickStatsSub': { English: 'A simple snapshot from your local practice.', Indonesian: 'Ringkasan sederhana dari latihan lokalmu.' },
   'home.streak': { English: 'Streak', Indonesian: 'Runtun' },
   'home.words': { English: 'Words', Indonesian: 'Kata' },
   'home.currentFocus': { English: 'Current focus', Indonesian: 'Fokus sekarang' },
   'home.currentFocusSub': {
-    English: 'We’ll mix these into reviews.',
-    Indonesian: 'Ini akan dicampur ke sesi review.',
+    English: 'These will appear naturally during study sessions.',
+    Indonesian: 'Ini akan muncul secara alami saat sesi belajar.',
   },
   'library.title': { English: 'Library', Indonesian: 'Koleksi' },
   'library.subtitle': {
-    English: 'Search and review details without starting a study session.',
-    Indonesian: 'Cari dan lihat detail tanpa memulai sesi belajar.',
+    English: 'Browse learned items, examples, and review timing.',
+    Indonesian: 'Lihat item belajar, contoh, dan jadwal review.',
   },
   'library.search': {
     English: 'Search hanzi, pinyin, meaning...',
@@ -247,8 +346,8 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'library.report': { English: 'Report an issue', Indonesian: 'Laporkan masalah' },
   'progress.title': { English: 'Progress', Indonesian: 'Progres' },
   'progress.subtitle': {
-    English: 'Useful progress only — no heavy dashboard.',
-    Indonesian: 'Progres penting saja — tanpa dashboard berat.',
+    English: 'Track word strength, activity, and what unlocks next.',
+    Indonesian: 'Pantau kekuatan kata, aktivitas, dan konten berikutnya.',
   },
   'progress.wordsLearned': { English: 'Words learned', Indonesian: 'Kata dipelajari' },
   'progress.reviewsDue': { English: 'Reviews due', Indonesian: 'Review jatuh tempo' },
@@ -257,18 +356,32 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'progress.weeklyActivity': { English: 'Weekly activity', Indonesian: 'Aktivitas mingguan' },
   'progress.weeklyActivitySub': { English: 'Minutes per day.', Indonesian: 'Menit per hari.' },
   'progress.learningPath': { English: 'Learning path', Indonesian: 'Jalur belajar' },
-  'progress.learningPathSub': { English: 'Your content unlock path.', Indonesian: 'Jalur terbukanya kontenmu.' },
+  'progress.learningPathSub': { English: 'How starter content opens up.', Indonesian: 'Cara konten awal terbuka bertahap.' },
   'progress.weakAreas': { English: 'Weak areas', Indonesian: 'Area lemah' },
   'progress.weakAreasSub': { English: 'Shown after enough reviews.', Indonesian: 'Muncul setelah review cukup.' },
   'settings.title': { English: 'Settings', Indonesian: 'Pengaturan' },
   'settings.subtitle': {
-    English: 'Keep learning preferences simple and adjustable.',
-    Indonesian: 'Atur preferensi belajar dengan sederhana.',
+    English: 'Tune study, display, offline, and account options.',
+    Indonesian: 'Atur belajar, tampilan, offline, dan akun.',
+  },
+  'settings.profile': { English: 'Profile', Indonesian: 'Profil' },
+  'settings.profileDetails': { English: 'Name & email', Indonesian: 'Nama & email' },
+  'settings.profileDetailsSub': { English: 'Local learner profile for now.', Indonesian: 'Profil learner lokal untuk sementara.' },
+  'settings.changePassword': { English: 'Change password', Indonesian: 'Ubah password' },
+  'settings.changePasswordSub': {
+    English: 'Update your account password.',
+    Indonesian: 'Ubah password akunmu.',
+  },
+  'settings.resetLearningProgress': { English: 'Reset learning progress', Indonesian: 'Reset progres belajar' },
+  'settings.resetLearningProgressSub': {
+    English: 'Clear local SRS, stats, and activity only.',
+    Indonesian: 'Hapus SRS, statistik, dan aktivitas lokal saja.',
   },
   'settings.learning': { English: 'Learning', Indonesian: 'Belajar' },
   'settings.study': { English: 'Study', Indonesian: 'Sesi' },
   'settings.display': { English: 'Display', Indonesian: 'Tampilan' },
   'settings.offline': { English: 'Offline', Indonesian: 'Offline' },
+  'settings.account': { English: 'Account & data', Indonesian: 'Akun & data' },
   'settings.sessionSize': { English: 'Session size', Indonesian: 'Ukuran sesi' },
   'settings.script': { English: 'Script', Indonesian: 'Aksara' },
   'settings.scriptSub': { English: 'Chinese character set.', Indonesian: 'Pilihan aksara Mandarin.' },
@@ -280,6 +393,11 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.reviewStyleSub': { English: 'Choose how reviews feel.', Indonesian: 'Pilih rasa sesi review.' },
   'settings.sound': { English: 'Sound', Indonesian: 'Suara' },
   'settings.soundSub': { English: 'Play pronunciation audio.', Indonesian: 'Putar audio pelafalan.' },
+  'settings.speechSpeed': { English: 'Speech speed', Indonesian: 'Kecepatan suara' },
+  'settings.speechSpeedSub': {
+    English: 'Preview Mandarin pronunciation speed.',
+    Indonesian: 'Coba kecepatan pelafalan Mandarin.',
+  },
   'settings.hints': { English: 'Tutorial hints', Indonesian: 'Petunjuk belajar' },
   'settings.hintsSub': { English: 'Show helper tips for beginners.', Indonesian: 'Tampilkan petunjuk untuk pemula.' },
   'settings.language': { English: 'Language', Indonesian: 'Bahasa' },
@@ -287,9 +405,11 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.darkMode': { English: 'Dark mode', Indonesian: 'Mode gelap' },
   'settings.darkModeSub': { English: 'Switch app appearance.', Indonesian: 'Ubah tampilan aplikasi.' },
   'settings.offlineMode': { English: 'Offline mode', Indonesian: 'Mode offline' },
-  'settings.offlineModeSub': { English: 'Download lessons and reviews.', Indonesian: 'Unduh pelajaran dan review.' },
+  'settings.offlineModeSub': { English: 'Keep starter content available on this device.', Indonesian: 'Simpan konten awal di perangkat ini.' },
   'settings.downloads': { English: 'Manage downloads', Indonesian: 'Kelola unduhan' },
-  'settings.downloadsSub': { English: 'Storage use and offline packs.', Indonesian: 'Penyimpanan dan pack offline.' },
+  'settings.downloadsSub': { English: 'Refresh the saved starter pack.', Indonesian: 'Segarkan starter pack tersimpan.' },
+  'settings.installApp': { English: 'Add app shortcut', Indonesian: 'Tambah shortcut app' },
+  'settings.installAppSub': { English: 'Open Manman! from your home screen.', Indonesian: 'Buka Manman! dari home screen.' },
   'settings.resetApp': { English: 'Reset app state', Indonesian: 'Reset status app' },
   'settings.resetAppSub': { English: 'Clear local storage and restart onboarding.', Indonesian: 'Hapus data lokal dan ulang onboarding.' },
   'settings.logoutSub': { English: 'Sign out on this device.', Indonesian: 'Keluar dari perangkat ini.' },
@@ -349,6 +469,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'onboarding.sessionSub': { English: 'This controls daily session size, not a long-term goal.', Indonesian: 'Ini mengatur ukuran sesi harian, bukan target jangka panjang.' },
   'onboarding.quickCheck': { English: 'Quick check', Indonesian: 'Cek cepat' },
   'onboarding.quickCheckSub': { English: 'A few questions to avoid starting too basic.', Indonesian: 'Beberapa pertanyaan agar tidak mulai terlalu dasar.' },
+  'onboarding.questionProgress': { English: 'Question {{current}} of {{total}}', Indonesian: 'Pertanyaan {{current}} dari {{total}}' },
   'onboarding.chooseClosest': { English: 'Choose the closest answer.', Indonesian: 'Pilih jawaban yang paling dekat.' },
   'onboarding.seeRecommendation': { English: 'See recommendation', Indonesian: 'Lihat rekomendasi' },
   'onboarding.recommendTitle': { English: 'Recommended start', Indonesian: 'Rekomendasi mulai' },
@@ -372,12 +493,64 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'sheets.reviewMixed': { English: 'Mixed', Indonesian: 'Campuran' },
   'sheets.reviewMixedSub': { English: 'Meaning, pinyin, tone, and sentence checks.', Indonesian: 'Cek arti, pinyin, nada, dan kalimat.' },
   'sheets.reviewTypedSub': { English: 'Coming later.', Indonesian: 'Nanti.' },
+  'sheets.speechSpeedTitle': { English: 'Speech speed', Indonesian: 'Kecepatan suara' },
+  'sheets.speechSpeedSub': {
+    English: 'Preview with 你好吗, then choose the speed that feels easiest to follow.',
+    Indonesian: 'Coba dengan 你好吗, lalu pilih kecepatan yang paling mudah diikuti.',
+  },
+  'sheets.speedSlowSub': { English: 'Best for first exposure.', Indonesian: 'Cocok untuk pertama kali dengar.' },
+  'sheets.speedNormalSub': { English: 'Natural learning pace.', Indonesian: 'Kecepatan belajar natural.' },
+  'sheets.speedFastSub': { English: 'Closer to everyday speech.', Indonesian: 'Lebih dekat ke percakapan sehari-hari.' },
   'sheets.downloadTitle': { English: 'Manage downloads', Indonesian: 'Kelola unduhan' },
   'sheets.downloadSub': { English: 'Offline pack storage.', Indonesian: 'Penyimpanan pack offline.' },
   'sheets.downloaded': { English: 'Downloaded', Indonesian: 'Terunduh' },
   'sheets.downloadedSub': { English: 'Foundations pack is ready offline.', Indonesian: 'Pack Foundations siap offline.' },
   'sheets.refreshOffline': { English: 'Refresh offline content', Indonesian: 'Segarkan konten offline' },
   'sheets.refreshOfflineSub': { English: 'Update the saved practice pack.', Indonesian: 'Perbarui pack latihan tersimpan.' },
+  'sheets.installTitle': { English: 'Add app shortcut', Indonesian: 'Tambah shortcut app' },
+  'sheets.installSub': {
+    English: 'Install Manman! so it opens like a native app.',
+    Indonesian: 'Pasang Manman! agar terbuka seperti app native.',
+  },
+  'sheets.installReady': { English: 'Install from this browser', Indonesian: 'Pasang dari browser ini' },
+  'sheets.installReadySub': {
+    English: 'Use the browser install prompt when it appears.',
+    Indonesian: 'Gunakan prompt instal dari browser saat muncul.',
+  },
+  'sheets.installUnavailable': { English: 'Browser menu shortcut', Indonesian: 'Shortcut dari menu browser' },
+  'sheets.installUnavailableSub': {
+    English: 'If the install button is unavailable, use your browser menu and choose Add to Home Screen or Install app.',
+    Indonesian: 'Jika tombol instal belum tersedia, gunakan menu browser lalu pilih Add to Home Screen atau Install app.',
+  },
+  'sheets.installButton': { English: 'Install app', Indonesian: 'Pasang app' },
+  'sheets.passwordResetTitle': { English: 'Reset password', Indonesian: 'Reset password' },
+  'sheets.passwordResetSub': {
+    English: 'Enter your account email and we will send a reset link.',
+    Indonesian: 'Masukkan email akunmu dan kami akan mengirim link reset.',
+  },
+  'sheets.passwordResetButton': { English: 'Send reset link', Indonesian: 'Kirim link reset' },
+  'sheets.profileTitle': { English: 'Edit profile', Indonesian: 'Edit profil' },
+  'sheets.profileSub': {
+    English: 'Update the learner name and account email.',
+    Indonesian: 'Ubah nama pelajar dan email akun.',
+  },
+  'sheets.profileName': { English: 'Name', Indonesian: 'Nama' },
+  'sheets.profileEmail': { English: 'Email', Indonesian: 'Email' },
+  'sheets.saveProfile': { English: 'Save profile', Indonesian: 'Simpan profil' },
+  'sheets.changePasswordTitle': { English: 'Change password', Indonesian: 'Ubah password' },
+  'sheets.changePasswordSub': {
+    English: 'Use at least 6 characters for the new password.',
+    Indonesian: 'Gunakan minimal 6 karakter untuk password baru.',
+  },
+  'sheets.currentPassword': { English: 'Current password', Indonesian: 'Password sekarang' },
+  'sheets.newPassword': { English: 'New password', Indonesian: 'Password baru' },
+  'sheets.confirmPassword': { English: 'Confirm password', Indonesian: 'Konfirmasi password' },
+  'sheets.updatePassword': { English: 'Update password', Indonesian: 'Update password' },
+  'sheets.resetLearningTitle': { English: 'Reset learning progress?', Indonesian: 'Reset progres belajar?' },
+  'sheets.resetLearningSub': {
+    English: 'This clears local word strength, reviews, activity, and session stats. Your profile and settings stay unchanged.',
+    Indonesian: 'Ini menghapus kekuatan kata, review, aktivitas, dan statistik sesi lokal. Profil dan pengaturan tetap aman.',
+  },
   'sheets.logoutTitle': { English: 'Logout?', Indonesian: 'Keluar?' },
   'sheets.logoutSub': { English: 'You can sign back in later. This will return to onboarding.', Indonesian: 'Kamu bisa masuk lagi nanti. Ini akan kembali ke onboarding.' },
   'sheets.resetTitle': { English: 'Reset app state?', Indonesian: 'Reset status app?' },
@@ -398,6 +571,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'toast.script': { English: 'Script changed to {{value}}', Indonesian: 'Aksara diubah ke {{value}}' },
   'toast.pinyin': { English: 'Pinyin display updated to {{value}}', Indonesian: 'Tampilan pinyin diubah ke {{value}}' },
   'toast.reviewStyle': { English: 'Review style updated to {{value}}', Indonesian: 'Gaya review diubah ke {{value}}' },
+  'toast.speechSpeed': { English: 'Speech speed updated to {{value}}', Indonesian: 'Kecepatan suara diubah ke {{value}}' },
   'toast.language': { English: 'Language changed to {{value}}', Indonesian: 'Bahasa diubah ke {{value}}' },
   'toast.offlineRefresh': { English: 'Offline content refreshed.', Indonesian: 'Konten offline diperbarui.' },
   'toast.toneColorsOn': { English: 'Tone colors turned on', Indonesian: 'Warna nada dinyalakan' },
@@ -410,6 +584,31 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'toast.lightEnabled': { English: 'Light mode enabled', Indonesian: 'Mode terang aktif' },
   'toast.offlineOn': { English: 'Offline mode enabled', Indonesian: 'Mode offline aktif' },
   'toast.offlineOff': { English: 'Offline mode disabled', Indonesian: 'Mode offline mati' },
+  'toast.signedIn': { English: 'Signed in', Indonesian: 'Sudah masuk' },
+  'toast.accountCreated': { English: 'Account created', Indonesian: 'Akun dibuat' },
+  'toast.checkEmail': {
+    English: 'Account created. Check your email to confirm sign in.',
+    Indonesian: 'Akun dibuat. Cek email untuk konfirmasi masuk.',
+  },
+  'toast.profileUpdated': { English: 'Profile updated', Indonesian: 'Profil diperbarui' },
+  'toast.profileSyncError': {
+    English: 'Saved locally. Could not sync profile yet.',
+    Indonesian: 'Tersimpan lokal. Profil belum bisa disinkronkan.',
+  },
+  'toast.changePasswordPlaceholder': {
+    English: 'Password updated.',
+    Indonesian: 'Password diperbarui.',
+  },
+  'toast.learningProgressReset': { English: 'Learning progress reset', Indonesian: 'Progres belajar direset' },
+  'toast.passwordResetPlaceholder': {
+    English: 'Password reset link sent.',
+    Indonesian: 'Link reset password terkirim.',
+  },
+  'toast.installOpened': { English: 'Install prompt opened', Indonesian: 'Prompt instal dibuka' },
+  'toast.installUnavailable': {
+    English: 'Use your browser menu to add Manman! to your home screen.',
+    Indonesian: 'Gunakan menu browser untuk menambahkan Manman! ke home screen.',
+  },
 };
 
 export function translate(language: AppLanguage, key: CopyKey, values: Record<string, string | number> = {}) {
@@ -451,6 +650,9 @@ export function optionLabel(language: AppLanguage, value: string) {
     Simple: { English: 'Simple', Indonesian: 'Sederhana' },
     Mixed: { English: 'Mixed', Indonesian: 'Campuran' },
     Typed: { English: 'Typed', Indonesian: 'Ketik' },
+    Slow: { English: 'Slow', Indonesian: 'Pelan' },
+    Normal: { English: 'Normal', Indonesian: 'Normal' },
+    Fast: { English: 'Fast', Indonesian: 'Cepat' },
   };
 
   return labels[value]?.[language] ?? value;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   effectiveScript,
   getPlacementQuestions,
@@ -51,8 +52,12 @@ export function OnboardingScreen() {
   const chooseSessionSize = useAppStore((state) => state.chooseSessionSize);
   const answerPlacement = useAppStore((state) => state.answerPlacement);
   const finishOnboarding = useAppStore((state) => state.finishOnboarding);
+  const [placementIndex, setPlacementIndex] = useState(0);
   const placementQuestions = getPlacementQuestions(language);
-  const placementAnswered = placementQuestions.every((question) => placementAnswers[question.id]);
+  const safePlacementIndex = Math.min(placementIndex, Math.max(placementQuestions.length - 1, 0));
+  const currentPlacementQuestion = placementQuestions[safePlacementIndex];
+  const currentPlacementAnswer = currentPlacementQuestion ? placementAnswers[currentPlacementQuestion.id] : '';
+  const isLastPlacementQuestion = safePlacementIndex >= placementQuestions.length - 1;
   const visibleSteps = allSteps.filter((step) => !(step === 'placement' && familiarity === 'beginner'));
   const stepIndex = Math.max(0, visibleSteps.indexOf(onboardingStep));
   const recommendedTitle =
@@ -186,44 +191,72 @@ export function OnboardingScreen() {
           <>
             <div className="page-title">
               <h2>{t('onboarding.quickCheck')}</h2>
-              <p>{t('onboarding.quickCheckSub')}</p>
+              <p>
+                {t('onboarding.quickCheckSub')}<br />
+                <span className="placement-progress">
+                  {t('onboarding.questionProgress', {
+                    current: safePlacementIndex + 1,
+                    total: placementQuestions.length,
+                  })}
+                </span>
+              </p>
             </div>
-            <div className="placement-list">
-              {placementQuestions.map((question) => (
-                <Card key={question.id}>
-                  <div className="section-title">
-                    <div>
-                      <h3>{question.title}</h3>
-                      <p>{question.pinyin.join(' ')}</p>
-                    </div>
+            {currentPlacementQuestion ? (
+              <Card className="placement-question-card">
+                <div className="section-title">
+                  <div>
+                    <h3>{currentPlacementQuestion.title}</h3>
+                    <p>{currentPlacementQuestion.pinyin.join(' ')}</p>
                   </div>
-                  <p>{t('onboarding.chooseClosest')}</p>
-                  <div className="answer-grid">
-                    {question.answers.map((answer) => {
-                      const selected = placementAnswers[question.id] === answer;
-                      const isCorrect = selected && answer === question.correctAnswer;
+                </div>
+                <p>{t('onboarding.chooseClosest')}</p>
+                <div className="answer-grid">
+                  {currentPlacementQuestion.answers.map((answer) => {
+                    const selected = currentPlacementAnswer === answer;
+                    const isCorrect = selected && answer === currentPlacementQuestion.correctAnswer;
 
-                      return (
-                        <button
-                          className={selected ? (isCorrect ? 'correct' : 'wrong') : undefined}
-                          key={answer}
-                          type="button"
-                          onClick={() => answerPlacement(question.id, answer, question.correctAnswer)}
-                        >
-                          {answer}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </Card>
-              ))}
-            </div>
+                    return (
+                      <button
+                        className={selected ? (isCorrect ? 'correct' : 'wrong') : undefined}
+                        key={answer}
+                        type="button"
+                        onClick={() => answerPlacement(currentPlacementQuestion.id, answer, currentPlacementQuestion.correctAnswer)}
+                      >
+                        {answer}
+                      </button>
+                    );
+                  })}
+                </div>
+              </Card>
+            ) : null}
             <div className="onboarding-actions">
-              <Button variant="secondary" type="button" onClick={() => setStep('session')}>
+              <Button
+                variant="secondary"
+                type="button"
+                onClick={() => {
+                  if (safePlacementIndex > 0) {
+                    setPlacementIndex((index) => Math.max(0, index - 1));
+                    return;
+                  }
+
+                  setStep('session');
+                }}
+              >
                 {t('common.back')}
               </Button>
-              <Button type="button" disabled={!placementAnswered} onClick={() => setStep('recommend')}>
-                {t('onboarding.seeRecommendation')}
+              <Button
+                type="button"
+                disabled={!currentPlacementAnswer}
+                onClick={() => {
+                  if (isLastPlacementQuestion) {
+                    setStep('recommend');
+                    return;
+                  }
+
+                  setPlacementIndex((index) => Math.min(placementQuestions.length - 1, index + 1));
+                }}
+              >
+                {isLastPlacementQuestion ? t('onboarding.seeRecommendation') : t('common.next')}
               </Button>
             </div>
           </>

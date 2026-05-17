@@ -10,6 +10,22 @@ import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
 import { useProgressStore, withProgress } from '../stores/progressStore';
 
+function scrollMainContainerToTopOnNarrowView() {
+  if (typeof window === 'undefined' || !window.matchMedia('(max-width: 767px)').matches) {
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    const scrollContainer = document.querySelector<HTMLElement>('.screen');
+    const fallback = document.scrollingElement ?? document.documentElement;
+
+    (scrollContainer ?? fallback).scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+}
+
 export function LibraryScreen() {
   const { language, t } = useTranslation();
   const search = useAppStore((state) => state.librarySearch);
@@ -42,6 +58,10 @@ export function LibraryScreen() {
   const shownItems = filteredItems.slice(0, limit);
   const selectedItem = filteredItems.find((item) => item.id === selectedItemId) ?? filteredItems[0];
   const isDetailOpen = Boolean(selectedItemId && selectedItem);
+  const handleSelectItem = (id: string) => {
+    selectItem(id);
+    scrollMainContainerToTopOnNarrowView();
+  };
 
   return (
     <>
@@ -58,7 +78,7 @@ export function LibraryScreen() {
                 item={item}
                 key={item.id}
                 showPinyin={showPinyin}
-                onSelect={selectItem}
+                onSelect={handleSelectItem}
               />
             ))}
           </div>

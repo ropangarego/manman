@@ -12,7 +12,7 @@
 
         if (rawPreferences) {
           var preferences = JSON.parse(rawPreferences);
-          prefersDark = preferences && preferences.version === 1 && preferences.state && preferences.state.settings && preferences.state.settings.dark === true;
+          prefersDark = preferences && preferences.version === 2 && preferences.state && preferences.state.settings && preferences.state.settings.dark === true;
         } else {
           prefersDark = localStorage.getItem('mandarin-theme') === 'dark';
         }

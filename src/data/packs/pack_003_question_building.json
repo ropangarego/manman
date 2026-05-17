@@ -1,0 +1,698 @@
+{
+  "pack": {
+    "id": "pack_003_question_building",
+    "title": "Question Building",
+    "title_id": "Membuat Pertanyaan",
+    "subtitle": "Ask yes/no, who, what, and where questions.",
+    "subtitle_id": "Bertanya ya/tidak, siapa, apa, dan di mana.",
+    "level": 1,
+    "phase": "prototype",
+    "theme": "questions",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 3,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Ask yes/no, who, what, and where questions.",
+    "learning_goal_id": "Bertanya ya/tidak, siapa, apa, dan di mana.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_ma",
+      "type": "hanzi",
+      "simplified": "吗",
+      "traditional": "嗎",
+      "meaning": "question particle",
+      "meaning_id": "partikel tanya",
+      "accepted_meanings": [
+        "question particle"
+      ],
+      "accepted_meanings_id": [
+        "partikel tanya"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ma",
+      "pinyin_numbered": "ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "口 mouth open, waiting for an answer — this character *asks*. ma is light at the end of a sentence, like a question hanging in the air. Tone 0 neutral and brief.",
+      "mnemonic_id": "口 mulut terbuka, nunggu jawaban — ini karakter yang *nanya*. ma ringan di ujung kalimat, kayak nada tanya yang gantung. Nada 0 netral, pendek, numpang lewat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ne",
+      "type": "hanzi",
+      "simplified": "呢",
+      "traditional": "呢",
+      "meaning": "and you / what about",
+      "meaning_id": "bagaimana dengan",
+      "accepted_meanings": [
+        "and you / what about"
+      ],
+      "accepted_meanings_id": [
+        "bagaimana dengan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ne",
+      "pinyin_numbered": "ne0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "呢",
+          "text": "ne",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "口 mouth half open, casually tossing the question back — \"*what about you*?\" ne is soft at the end. Tone 0 light and easy.",
+      "mnemonic_id": "口 mulut setengah terbuka, nanya balik dengan santai — kayak \"*kamu* gimana?\" ne ringan di ujung, kayak lempar pertanyaan balik. Nada 0 netral dan ringan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 2,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shei",
+      "type": "hanzi",
+      "simplified": "谁",
+      "traditional": "誰",
+      "meaning": "who",
+      "meaning_id": "siapa",
+      "accepted_meanings": [
+        "who"
+      ],
+      "accepted_meanings_id": [
+        "siapa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shéi",
+      "pinyin_numbered": "shei2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "谁",
+          "text": "shéi",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A 讠 voice calling out, eyes scanning the room — *who* is that? shuí ≈ \"shway\" like a puzzled \"who?\" Tone 2 rises, like the question is still unanswered.",
+      "mnemonic_id": "讠 ucapan keluar sambil mata nyari-nyari — *siapa* ini? shuí ≈ \"shway\" kayak nanya bingung. Nada 2 naik terus, kayak pertanyaan yang belum terjawab.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 3,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shen",
+      "type": "hanzi",
+      "simplified": "什",
+      "traditional": "什",
+      "meaning": "what part",
+      "meaning_id": "bagian apa",
+      "accepted_meanings": [
+        "what part"
+      ],
+      "accepted_meanings_id": [
+        "bagian apa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shén",
+      "pinyin_numbered": "shen2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "什",
+          "text": "shén",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Half of a question — meaningless alone, needs 么 to become *what*. shén ≈ \"shun\" rising. Tone 2 goes up, like a question hanging open.",
+      "mnemonic_id": "Karakter setengah dari kata tanya — sendirian belum bermakna, butuh 么 untuk jadi *apa*. shén ≈ \"shen\" kayak \"then\" tapi lebih depan. Nada 2 naik, kayak pertanyaan yang menggantung.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 4,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_me",
+      "type": "hanzi",
+      "simplified": "么",
+      "traditional": "麼",
+      "meaning": "what suffix",
+      "meaning_id": "akhiran apa",
+      "accepted_meanings": [
+        "what suffix"
+      ],
+      "accepted_meanings_id": [
+        "akhiran apa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "me",
+      "pinyin_numbered": "me0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "么",
+          "text": "me",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "什's loyal partner — only becomes *what* when joined as 什么. me is light, riding behind 什. Tone 0 neutral.",
+      "mnemonic_id": "Pasangan setia 什 — dua-duanya baru jadi *apa* kalau digabung jadi 什么. me ringan, numpang di belakang 什. Nada 0 netral.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 5,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_na",
+      "type": "hanzi",
+      "simplified": "哪",
+      "traditional": "哪",
+      "meaning": "which / where",
+      "meaning_id": "yang mana / mana",
+      "accepted_meanings": [
+        "which / where"
+      ],
+      "accepted_meanings_id": [
+        "yang mana / mana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nǎ",
+      "pinyin_numbered": "na3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "口 mouth asking while pointing in no clear direction — *which* one? nǎ ≈ \"nah\" like \"nah, which one?\" Tone 3 dips then rises, like confusion becoming clarity.",
+      "mnemonic_id": "口 mulut nanya sambil nunjuk ke arah yang tidak pasti — *mana* sih? nǎ ≈ \"na\" kayak \"nah, yang mana?\" Nada 3 turun terus naik, kayak bingung lalu sadar.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 6,
+      "tags": [],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_ma",
+      "type": "word",
+      "simplified": "吗",
+      "traditional": "嗎",
+      "meaning": "question particle",
+      "meaning_id": "partikel tanya",
+      "accepted_meanings": [
+        "question particle"
+      ],
+      "accepted_meanings_id": [
+        "partikel tanya"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ma",
+      "pinyin_numbered": "ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "0",
+      "hanzi_ids": [],
+      "part_of_speech": "particle",
+      "mnemonic": "吗 at the end flips any statement into a question — that simple.",
+      "mnemonic_id": "吗 di ujung kalimat, pernyataan langsung jadi pertanyaan — sesimpel itu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 1,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ne",
+      "type": "word",
+      "simplified": "呢",
+      "traditional": "呢",
+      "meaning": "and you / what about",
+      "meaning_id": "bagaimana dengan",
+      "accepted_meanings": [
+        "and you / what about"
+      ],
+      "accepted_meanings_id": [
+        "bagaimana dengan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ne",
+      "pinyin_numbered": "ne0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "呢",
+          "text": "ne",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "0",
+      "hanzi_ids": [],
+      "part_of_speech": "particle",
+      "mnemonic": "呢 tosses the question back casually — \"and *what about you*?\"",
+      "mnemonic_id": "呢 kayak nanya balik dengan santai — \"terus kamu *gimana*?\"",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 2,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shei",
+      "type": "word",
+      "simplified": "谁",
+      "traditional": "誰",
+      "meaning": "who",
+      "meaning_id": "siapa",
+      "accepted_meanings": [
+        "who"
+      ],
+      "accepted_meanings_id": [
+        "siapa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shéi",
+      "pinyin_numbered": "shei2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "谁",
+          "text": "shéi",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [],
+      "part_of_speech": "question word",
+      "mnemonic": "*Who* — one word for any question about a person.",
+      "mnemonic_id": "*Siapa* — satu kata untuk semua pertanyaan tentang orang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 3,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shenme",
+      "type": "word",
+      "simplified": "什么",
+      "traditional": "什麼",
+      "meaning": "what",
+      "meaning_id": "apa",
+      "accepted_meanings": [
+        "what"
+      ],
+      "accepted_meanings_id": [
+        "apa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shén me",
+      "pinyin_numbered": "shen2 me0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "什",
+          "text": "shén",
+          "tone": 2
+        },
+        {
+          "hanzi": "么",
+          "text": "me",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-0",
+      "hanzi_ids": [],
+      "part_of_speech": "question word",
+      "mnemonic": "*What* — 什+么 together, the most common question word in conversation.",
+      "mnemonic_id": "*Apa* — kombinasi 什+么, kata tanya paling sering muncul dalam percakapan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 4,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_nali",
+      "type": "word",
+      "simplified": "哪里",
+      "traditional": "哪裡",
+      "meaning": "where",
+      "meaning_id": "di mana",
+      "accepted_meanings": [
+        "where"
+      ],
+      "accepted_meanings_id": [
+        "di mana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nǎ lǐ",
+      "pinyin_numbered": "na3 li3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "里",
+          "text": "lǐ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-3",
+      "hanzi_ids": [],
+      "part_of_speech": "question word",
+      "mnemonic": "*Where* — 哪 which + 里 inside, asking about location naturally.",
+      "mnemonic_id": "*Di mana* — 哪 mana + 里 di dalam, nanya lokasi dengan natural.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 5,
+      "tags": [
+        "location"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_dui",
+      "type": "word",
+      "simplified": "对",
+      "traditional": "對",
+      "meaning": "correct / right",
+      "meaning_id": "benar",
+      "accepted_meanings": [
+        "correct / right"
+      ],
+      "accepted_meanings_id": [
+        "benar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "duì",
+      "pinyin_numbered": "dui4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "对",
+          "text": "duì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [],
+      "part_of_speech": "adjective",
+      "mnemonic": "*Correct* or *right* — works as a short answer or confirmation.",
+      "mnemonic_id": "*Betul* atau *benar* — bisa jadi jawaban singkat atau konfirmasi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [],
+      "order_index": 6,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_ni_qu_ma",
+      "type": "sentence",
+      "simplified": "你去吗？",
+      "traditional": "你去嗎？",
+      "meaning": "Are you going?",
+      "meaning_id": "Kamu pergi?",
+      "literal_meaning": null,
+      "literal_meaning_id": null,
+      "pinyin": "nǐ qù ma",
+      "pinyin_numbered": "ni3 qu4 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "去",
+          "text": "qù",
+          "tone": 4
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-4-0",
+      "focus_word_ids": [
+        "word_ma"
+      ],
+      "pattern_ids": [
+        "pattern_yes_no_ma"
+      ],
+      "notes": null,
+      "notes_id": null,
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_shi_shei",
+      "type": "sentence",
+      "simplified": "你是谁？",
+      "traditional": "你是誰？",
+      "meaning": "Who are you?",
+      "meaning_id": "Kamu siapa?",
+      "literal_meaning": null,
+      "literal_meaning_id": null,
+      "pinyin": "nǐ shì shéi",
+      "pinyin_numbered": "ni3 shi4 shei2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "是",
+          "text": "shì",
+          "tone": 4
+        },
+        {
+          "hanzi": "谁",
+          "text": "shéi",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-4-2",
+      "focus_word_ids": [
+        "word_ma"
+      ],
+      "pattern_ids": [
+        "pattern_yes_no_ma"
+      ],
+      "notes": null,
+      "notes_id": null,
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_yes_no_ma",
+      "type": "pattern",
+      "title": "Statement + 吗?",
+      "title_id": "Pernyataan + 吗?",
+      "meaning": "yes/no question",
+      "meaning_id": "pertanyaan ya/tidak",
+      "structure": "Statement + 吗?",
+      "explanation": "Add 吗 to make a yes/no question.",
+      "explanation_id": "Tambahkan 吗 untuk membuat pertanyaan ya/tidak.",
+      "examples": [],
+      "order_index": 1,
+      "tags": [],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": []
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_ma",
+      "word_ne",
+      "word_shei",
+      "word_shenme",
+      "word_nali",
+      "word_dui"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_ma",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_ne",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shei",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_ni_qu_ma",
+      "sentence_ni_shi_shei"
+    ]
+  }
+}

@@ -2,6 +2,7 @@
 import { StudyItemCard } from '../components/study/StudyItemCard';
 import { StudyProgress } from '../components/study/StudyProgress';
 import { ToneDots } from '../components/study/ToneDots';
+import { AudioButton } from '../components/ui/AudioButton';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
@@ -16,6 +17,7 @@ import { useAppStore } from '../stores/appStore';
 import { useProgressStore } from '../stores/progressStore';
 import { useStudyStore } from '../stores/studyStore';
 import { useTranslation } from '../i18n/useTranslation';
+import { speakMandarin, speechRateForSpeed } from '../utils/audio';
 
 function PinyinLine({ pinyin, tones, show = true }: { pinyin: string[]; tones: number[]; show?: boolean }) {
   if (!show) {
@@ -104,6 +106,7 @@ export function StudyScreen() {
   const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
   const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
+  const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
   const hints = useAppStore((state) => state.settings.hints);
   const openSheet = useAppStore((state) => state.openSheet);
   const setScreen = useAppStore((state) => state.setScreen);
@@ -127,6 +130,7 @@ export function StudyScreen() {
   const plan = sessionPlans[sessionSize];
   const showLearningPinyin = pinyinDisplay !== 'Hidden in review' && pinyinDisplay !== 'Off';
   const showReviewPinyin = pinyinDisplay === 'Always';
+  const speechRate = speechRateForSpeed(speechSpeed);
   const session = getStarterStudySession(sessionSize, sessionIndex, language);
   const learnItem = session.learnItems[learnIndex] ?? session.learnItems[0];
   const reviewItem = session.reviewItems[reviewIndex] ?? session.reviewItems[0];
@@ -154,7 +158,9 @@ export function StudyScreen() {
           <div>
             <h3>{session.introTitle}</h3>
             <p>
-              {session.learnItems.length} {t('study.new').toLowerCase()} · {session.reviewItems.length} {t('study.reviews').toLowerCase()}
+              {language === 'Indonesian'
+                ? `${session.learnItems.length} kata baru · ${session.reviewItems.length} review`
+                : `${session.learnItems.length} new words · ${session.reviewItems.length} reviews`}
               <br />
               <span className="duration-line">{t('home.duration')}: {plan.duration}</span>
             </p>
@@ -179,6 +185,7 @@ export function StudyScreen() {
             pinyin={learnItem.pinyin}
             tones={learnItem.tones}
             meaning={learnItem.meaning}
+            audioUrl={learnItem.audioUrl}
             showPinyin={showLearningPinyin}
           />
           <div className="study-card learn-side">
@@ -217,9 +224,17 @@ export function StudyScreen() {
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{practice.modeLabel}</p>
-            <div className="review-char">{learnItem.title}</div>
-            <PinyinLine pinyin={learnItem.pinyin} tones={learnItem.tones} show={showLearningPinyin} />
             <h3>{practice.prompt}</h3>
+            <div className="pronunciation-stack review-pronunciation">
+              <div className="review-char mandarin-text">{learnItem.title}</div>
+              <PinyinLine pinyin={learnItem.pinyin} tones={learnItem.tones} show={showLearningPinyin} />
+              <AudioButton
+                audioSrc={learnItem.audioUrl}
+                variant="centeredBelow"
+                label={`Play pronunciation for ${learnItem.title}`}
+                onPlay={() => speakMandarin(learnItem.title, speechRate)}
+              />
+            </div>
             <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
               ⋯
             </button>
@@ -254,9 +269,17 @@ export function StudyScreen() {
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{review.modeLabel}</p>
-            <div className="review-char">{reviewItem.title}</div>
-            <PinyinLine pinyin={reviewItem.pinyin} tones={reviewItem.tones} show={showReviewPinyin} />
             <h3>{review.prompt}</h3>
+            <div className="pronunciation-stack review-pronunciation">
+              <div className="review-char mandarin-text">{reviewItem.title}</div>
+              <PinyinLine pinyin={reviewItem.pinyin} tones={reviewItem.tones} show={showReviewPinyin} />
+              <AudioButton
+                audioSrc={reviewItem.audioUrl}
+                variant="centeredBelow"
+                label={`Play pronunciation for ${reviewItem.title}`}
+                onPlay={() => speakMandarin(reviewItem.title, speechRate)}
+              />
+            </div>
             <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
               ⋯
             </button>
@@ -320,11 +343,17 @@ export function StudyScreen() {
           <div className="item-list">
             {session.unlocks.map((item) => (
               <article className="item-card" key={item.id}>
-                <div>
-                  <h4>{item.title}</h4>
+                <div className="unlock-pronunciation">
+                  <h4 className="mandarin-text">{item.title}</h4>
                   <p>
                     {showLearningPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
                   </p>
+                  <AudioButton
+                    audioSrc={item.audioUrl}
+                    variant="centeredBelow"
+                    label={`Play pronunciation for ${item.title}`}
+                    onPlay={() => speakMandarin(item.title, speechRate)}
+                  />
                 </div>
                 <em>{typeLabel(item.type, language)}</em>
               </article>

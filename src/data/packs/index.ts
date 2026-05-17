@@ -1,0 +1,23 @@
+import pack000 from './pack_000_introduction_to_mandarin.json';
+import pack001 from './pack_001_i_you_to_be_have.json';
+import pack002 from './pack_002_daily_actions.json';
+import pack003 from './pack_003_question_building.json';
+import pack004 from './pack_004_time_routine.json';
+import pack005 from './pack_005_location_movement.json';
+import pack006 from './pack_006_eating_buying.json';
+import pack007 from './pack_007_people_family.json';
+import pack008 from './pack_008_describing_things.json';
+import pack009 from './pack_009_basic_opinions.json';
+
+export const rawContentPacks = [
+  pack000,
+  pack001,
+  pack002,
+  pack003,
+  pack004,
+  pack005,
+  pack006,
+  pack007,
+  pack008,
+  pack009,
+] as unknown[];

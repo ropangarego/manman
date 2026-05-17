@@ -2,7 +2,7 @@
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
-import { contentItems, getCurrentFocus, sessionPlans } from '../data/mockContent';
+import { contentItems, getCurrentFocus, getStarterStudySession, sessionPlans } from '../data/mockContent';
 import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
 import { progressStats, useProgressStore } from '../stores/progressStore';
@@ -13,13 +13,15 @@ export function HomeScreen() {
   const sessionSize = useAppStore((state) => state.sessionSize);
   const setScreen = useAppStore((state) => state.setScreen);
   const startSession = useStudyStore((state) => state.startSession);
+  const sessionIndex = useStudyStore((state) => state.sessionIndex);
   const progressItems = useProgressStore((state) => state.items);
   const totalCorrect = useProgressStore((state) => state.totalCorrect);
   const totalAttempts = useProgressStore((state) => state.totalAttempts);
   const dailyActivity = useProgressStore((state) => state.dailyActivity);
   const plan = sessionPlans[sessionSize];
+  const sessionPreview = getStarterStudySession(sessionSize, sessionIndex, language);
   const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
-  const currentFocus = getCurrentFocus(language);
+  const currentFocus = getCurrentFocus(language, sessionIndex);
 
   return (
     <>
@@ -29,7 +31,9 @@ export function HomeScreen() {
         <div className="hero-top">
           <span className="pill accent">{t('home.todaySession')}</span>
           <h2>
-            {plan.newWords} {t('study.new').toLowerCase()} · {plan.reviews} {t('study.reviews').toLowerCase()}
+            {language === 'Indonesian'
+              ? `${sessionPreview.learnItems.length} kata baru · ${sessionPreview.reviewItems.length} review`
+              : `${sessionPreview.learnItems.length} new words · ${sessionPreview.reviewItems.length} reviews`}
           </h2>
           <p className="duration-line">{t('home.duration')}: {plan.duration}</p>
           <p>{t('home.description')}</p>

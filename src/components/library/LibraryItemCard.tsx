@@ -1,4 +1,4 @@
-﻿import type { ContentItem } from '../../data/mockContent';
+import type { ContentItem } from '../../data/mockContent';
 import { typeLabel } from '../../data/mockContent';
 import { useTranslation } from '../../i18n/useTranslation';
 
@@ -13,18 +13,18 @@ export function LibraryItemCard({ item, active, showPinyin, onSelect }: LibraryI
   const { language } = useTranslation();
 
   return (
-    <button
-      className={`item-card item-${item.type.toLowerCase()}${active ? ' active' : ''}`}
-      type="button"
-      onClick={() => onSelect(item.id)}
-    >
-      <span>
-        <h4>{item.title}</h4>
-        <p>
-          {showPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
-        </p>
+    <article className={`item-card item-${item.type.toLowerCase()}${active ? ' active' : ''}`}>
+      <button className="item-main-button" type="button" onClick={() => onSelect(item.id)}>
+        <span className="item-text">
+          <h4 className="mandarin-text">{item.title}</h4>
+          <p>
+            {showPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
+          </p>
+        </span>
+      </button>
+      <span className="item-actions">
+        <em>{typeLabel(item.type, language)}</em>
       </span>
-      <em>{typeLabel(item.type, language)}</em>
-    </button>
+    </article>
   );
 }
