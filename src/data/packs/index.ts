@@ -8,6 +8,12 @@ import pack006 from './pack_006_eating_buying.json';
 import pack007 from './pack_007_people_family.json';
 import pack008 from './pack_008_describing_things.json';
 import pack009 from './pack_009_basic_opinions.json';
+import pack010 from './pack_010_numbers_0_10.json';
+import pack011 from './pack_011_numbers_11_100.json';
+import pack012 from './pack_012_days_weeks_months.json';
+import pack013 from './pack_013_basic_measure_words.json';
+import pack014 from './pack_014_this_that_which.json';
+import pack015 from './pack_015_food_expansion.json';
 
 export const rawContentPacks = [
   pack000,
@@ -20,4 +26,10 @@ export const rawContentPacks = [
   pack007,
   pack008,
   pack009,
+  pack010,
+  pack011,
+  pack012,
+  pack013,
+  pack014,
+  pack015,
 ] as unknown[];
