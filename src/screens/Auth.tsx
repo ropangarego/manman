@@ -140,7 +140,7 @@ export function AuthScreen() {
           </Button>
         </form>
 
-        <div className="auth-secondary-actions">
+        <div className={`auth-secondary-actions${isSignUp ? ' single' : ''}`}>
           <div className="auth-switch">
             <span>{isSignUp ? t('auth.hasAccount') : t('auth.noAccount')}</span>
             <button type="button" onClick={() => setAuthMode(isSignUp ? 'signin' : 'signup')}>
