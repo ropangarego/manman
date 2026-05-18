@@ -2,16 +2,19 @@ import { useState } from 'react';
 import {
   effectiveScript,
   getPlacementQuestions,
+  packLabelForSessionIndex,
+  recommendedSessionIndexForPlacement,
   sessionPlanDescription,
   type SessionSize,
 } from '../data/mockContent';
 import { optionLabel } from '../i18n/copy';
 import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore, type OnboardingStep } from '../stores/appStore';
+import { useStudyStore } from '../stores/studyStore';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 
-const allSteps: OnboardingStep[] = ['welcome', 'script', 'familiarity', 'session', 'placement', 'recommend'];
+const allSteps: OnboardingStep[] = ['welcome', 'script', 'familiarity', 'session', 'placement', 'recommend', 'introChoice'];
 
 function OptionCard({
   title,
@@ -52,22 +55,32 @@ export function OnboardingScreen() {
   const chooseSessionSize = useAppStore((state) => state.chooseSessionSize);
   const answerPlacement = useAppStore((state) => state.answerPlacement);
   const finishOnboarding = useAppStore((state) => state.finishOnboarding);
+  const setSessionIndex = useStudyStore((state) => state.setSessionIndex);
   const [placementIndex, setPlacementIndex] = useState(0);
   const placementQuestions = getPlacementQuestions(language);
   const safePlacementIndex = Math.min(placementIndex, Math.max(placementQuestions.length - 1, 0));
   const currentPlacementQuestion = placementQuestions[safePlacementIndex];
   const currentPlacementAnswer = currentPlacementQuestion ? placementAnswers[currentPlacementQuestion.id] : '';
   const isLastPlacementQuestion = safePlacementIndex >= placementQuestions.length - 1;
-  const visibleSteps = allSteps.filter((step) => !(step === 'placement' && familiarity === 'beginner'));
+  const visibleSteps = allSteps.filter(
+    (step) =>
+      !(step === 'placement' && familiarity === 'beginner') &&
+      !(step === 'introChoice' && familiarity === 'beginner'),
+  );
   const stepIndex = Math.max(0, visibleSteps.indexOf(onboardingStep));
-  const recommendedTitle =
-    familiarity === 'some' && placementScore >= Math.ceil(placementQuestions.length * 0.7)
-      ? language === 'Indonesian'
-        ? 'Foundations review'
-        : 'Foundations review'
-      : language === 'Indonesian'
-        ? 'Foundations'
-        : 'Foundations';
+  const recommendedSessionIndex =
+    familiarity === 'some' ? recommendedSessionIndexForPlacement(placementScore, placementQuestions.length) : 0;
+  const recommendedLabel = packLabelForSessionIndex(recommendedSessionIndex, language);
+  const recommendedPackNumber = recommendedSessionIndex + 1;
+  const completeOnboarding = (startWithIntro: boolean) => {
+    setSessionIndex(recommendedSessionIndex);
+    finishOnboarding({
+      startWithIntro,
+      recommendedSessionIndex,
+      introStatus: startWithIntro ? (familiarity === 'beginner' ? 'required' : 'optional') : 'skipped',
+      placementTotal: familiarity === 'some' ? placementQuestions.length : 0,
+    });
+  };
 
   return (
     <section className="onboarding">
@@ -269,16 +282,48 @@ export function OnboardingScreen() {
               <p>{familiarity === 'some' ? t('onboarding.recommendSome') : t('onboarding.recommendBeginner')}</p>
             </div>
             <Card>
-              <span className="pill accent">Pack 1</span>
-              <h3>{recommendedTitle}</h3>
+              <span className="pill accent">
+                {familiarity === 'beginner' ? 'Pack 000' : `Pack ${recommendedPackNumber}`}
+              </span>
+              <h3>{familiarity === 'beginner' ? t('onboarding.introPackTitle') : recommendedLabel}</h3>
               <p>
                 {t('sheets.scriptTitle')}: {optionLabel(language, effectiveScript(scriptChoice))} ·{' '}
                 {language === 'Indonesian' ? 'Sesi' : 'Session'}: {optionLabel(language, sessionSize)}
               </p>
             </Card>
-            <Button type="button" onClick={finishOnboarding}>
+            <Button type="button" onClick={() => (familiarity === 'some' ? setStep('introChoice') : completeOnboarding(true))}>
               {t('onboarding.startLearning')}
             </Button>
+          </>
+        ) : null}
+
+        {onboardingStep === 'introChoice' ? (
+          <>
+            <div className="page-title">
+              <h2>{language === 'Indonesian' ? 'Mau lihat pengenalan singkat dulu?' : 'Want a quick intro first?'}</h2>
+              <p>
+                {language === 'Indonesian'
+                  ? 'Kami akan jelaskan cara nada, pinyin, Hanzi, dan review bekerja di Manman.'
+                  : 'We’ll show you how tones, pinyin, Hanzi, and reviews work in Manman.'}
+              </p>
+            </div>
+            <Card>
+              <span className="pill accent">{recommendedLabel}</span>
+              <h3>{language === 'Indonesian' ? 'Rekomendasi mulai kamu sudah siap.' : 'Your starting recommendation is ready.'}</h3>
+              <p>
+                {language === 'Indonesian'
+                  ? 'Kamu bisa lihat pengenalan dulu, atau langsung mulai dari pack rekomendasi.'
+                  : 'You can take the quick intro first, or jump straight into your recommended pack.'}
+              </p>
+            </Card>
+            <div className="onboarding-actions">
+              <Button variant="secondary" type="button" onClick={() => completeOnboarding(false)}>
+                {language === 'Indonesian' ? 'Lewati dan mulai belajar' : 'Skip and start learning'}
+              </Button>
+              <Button type="button" onClick={() => completeOnboarding(true)}>
+                {language === 'Indonesian' ? 'Ya, lihat dulu' : 'Yes, show intro'}
+              </Button>
+            </div>
           </>
         ) : null}
       </div>

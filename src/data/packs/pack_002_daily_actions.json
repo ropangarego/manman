@@ -94,9 +94,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我去。",
+          "pinyin": "Wǒ qù.",
+          "meaning": "I am going.",
+          "meaning_id": "Aku pergi."
+        },
+        {
+          "simplified": "你去吗？",
+          "pinyin": "Nǐ qù ma?",
+          "meaning": "Are you going?",
+          "meaning_id": "Kamu pergi?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -130,9 +147,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你来。",
+          "pinyin": "Nǐ lái.",
+          "meaning": "You come.",
+          "meaning_id": "Kamu datang."
+        },
+        {
+          "simplified": "我来看。",
+          "pinyin": "Wǒ lái kàn.",
+          "meaning": "I come to look.",
+          "meaning_id": "Aku datang untuk lihat."
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -166,9 +200,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我看。",
+          "pinyin": "Wǒ kàn.",
+          "meaning": "I look.",
+          "meaning_id": "Aku lihat."
+        },
+        {
+          "simplified": "你看！",
+          "pinyin": "Nǐ kàn!",
+          "meaning": "Look!",
+          "meaning_id": "Lihat!"
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -202,9 +253,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我想去。",
+          "pinyin": "Wǒ xiǎng qù.",
+          "meaning": "I want to go.",
+          "meaning_id": "Aku mau pergi."
+        },
+        {
+          "simplified": "你想来吗？",
+          "pinyin": "Nǐ xiǎng lái ma?",
+          "meaning": "Do you want to come?",
+          "meaning_id": "Kamu mau datang?"
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -238,9 +306,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我吃。",
+          "pinyin": "Wǒ chī.",
+          "meaning": "I eat.",
+          "meaning_id": "Aku makan."
+        },
+        {
+          "simplified": "你吃吗？",
+          "pinyin": "Nǐ chī ma?",
+          "meaning": "Are you eating?",
+          "meaning_id": "Kamu makan?"
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -274,9 +359,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喝。",
+          "pinyin": "Wǒ hē.",
+          "meaning": "I drink.",
+          "meaning_id": "Aku minum."
+        },
+        {
+          "simplified": "你喝吗？",
+          "pinyin": "Nǐ hē ma?",
+          "meaning": "Are you drinking?",
+          "meaning_id": "Kamu minum?"
+        }
+      ],
       "order_index": 6,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     }
   ],
@@ -306,7 +408,9 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_qu"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Go* — one word, one direction, leaving where you are.",
       "mnemonic_id": "*Pergi* — satu kata, satu arah, meninggalkan tempat sekarang.",
@@ -315,7 +419,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我想去。",
+          "pinyin": "Wǒ xiǎng qù.",
+          "meaning": "I want to go.",
+          "meaning_id": "Aku mau pergi."
+        }
+      ],
       "order_index": 1,
       "tags": [
         "action"
@@ -348,7 +459,9 @@
         }
       ],
       "tone_pattern": "2",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_lai"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Come* — the opposite of 去, moving toward instead of away.",
       "mnemonic_id": "*Datang* ke sini — kebalikan dari 去, gerakannya mendekat bukan menjauh.",
@@ -357,7 +470,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你来吗？",
+          "pinyin": "Nǐ lái ma?",
+          "meaning": "Are you coming?",
+          "meaning_id": "Kamu datang?"
+        }
+      ],
       "order_index": 2,
       "tags": [
         "action"
@@ -390,16 +510,25 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_kan"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Look* or *watch* — 看 works for watching TV or just glancing over.",
       "mnemonic_id": "*Lihat* atau *tonton* — 看 bisa buat nonton TV atau sekedar melirik.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Can mean look, watch, or read depending on context.",
+      "usage_note_id": "Bisa berarti lihat, tonton, atau baca tergantung konteks.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你看！",
+          "pinyin": "Nǐ kàn!",
+          "meaning": "Look!",
+          "meaning_id": "Lihat!"
+        }
+      ],
       "order_index": 3,
       "tags": [
         "action"
@@ -432,16 +561,25 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_xiang"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Want* or *miss* — 想 can mean craving something or missing someone.",
       "mnemonic_id": "*Mau* atau *kangen* — 想 bisa berarti ingin sesuatu atau merindukan seseorang.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Place before another verb to mean \"want to\".",
+      "usage_note_id": "Letakkan sebelum kata kerja lain untuk berarti \"mau/ingin\".",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我想去。",
+          "pinyin": "Wǒ xiǎng qù.",
+          "meaning": "I want to go.",
+          "meaning_id": "Aku mau pergi."
+        }
+      ],
       "order_index": 4,
       "tags": [
         "action"
@@ -474,7 +612,9 @@
         }
       ],
       "tone_pattern": "1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_chi"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Eat* — 口 mouth is right there, because it's all about putting food in.",
       "mnemonic_id": "*Makan* — 口 mulut ada di sana, karena emang soal masukin makanan.",
@@ -483,7 +623,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我吃好。",
+          "pinyin": "Wǒ chī hǎo.",
+          "meaning": "I eat well.",
+          "meaning_id": "Aku makan dengan baik."
+        }
+      ],
       "order_index": 5,
       "tags": [
         "food"
@@ -516,7 +663,9 @@
         }
       ],
       "tone_pattern": "1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_he"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Drink* — same idea as 吃, 口 mouth, but this time for liquids.",
       "mnemonic_id": "*Minum* — sama kayak 吃, ada 口 mulut, tapi kali ini untuk cairan.",
@@ -525,7 +674,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喝。",
+          "pinyin": "Wǒ hē.",
+          "meaning": "I drink.",
+          "meaning_id": "Aku minum."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "drink"
@@ -542,8 +698,8 @@
       "traditional": "我去。",
       "meaning": "I’m going.",
       "meaning_id": "Saya pergi.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I go.",
+      "literal_meaning_id": "Aku pergi.",
       "pinyin": "wǒ qù",
       "pinyin_numbered": "wo3 qu4",
       "pinyin_syllables": [
@@ -565,11 +721,14 @@
       "pattern_ids": [
         "pattern_subject_verb"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "Simple subject + verb sentence.",
+      "notes_id": "Kalimat subjek + kata kerja sederhana.",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "action",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -579,8 +738,8 @@
       "traditional": "我想去。",
       "meaning": "I want to go.",
       "meaning_id": "Saya ingin pergi.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I want go.",
+      "literal_meaning_id": "Aku mau pergi.",
       "pinyin": "wǒ xiǎng qù",
       "pinyin_numbered": "wo3 xiang3 qu4",
       "pinyin_syllables": [
@@ -607,11 +766,14 @@
       "pattern_ids": [
         "pattern_subject_verb"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "想 before a verb expresses wanting to do something.",
+      "notes_id": "想 sebelum kata kerja menyatakan keinginan melakukan sesuatu.",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "desire",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -626,13 +788,80 @@
       "structure": "Subject + verb",
       "explanation": "Mandarin can make simple action sentences without am/is/are.",
       "explanation_id": "Mandarin bisa membuat kalimat aksi sederhana tanpa am/is/are.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我去。",
+          "traditional": "我去。",
+          "pinyin": "Wǒ qù.",
+          "meaning": "I go.",
+          "meaning_id": "Aku pergi."
+        },
+        {
+          "simplified": "你来。",
+          "traditional": "你来。",
+          "pinyin": "Nǐ lái.",
+          "meaning": "You come.",
+          "meaning_id": "Kamu datang."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "sentence_structure",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_lai",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ni",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_qu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_xiang",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_qu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_chi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_chi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_he",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_he",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_lai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_lai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_qu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_qu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xiang",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xiang",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -648,7 +877,33 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "去 means?",
+        "prompt_id": "Arti 去?",
+        "answer": "go",
+        "answer_id": "pergi"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "想 means?",
+        "prompt_id": "Arti 想?",
+        "answer": "want / miss",
+        "answer_id": "mau / kangen"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__去。(I want to go)",
+        "answer": "想"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你来吗？",
+        "answer": "Are you coming?",
+        "answer_id": "Kamu datang?"
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

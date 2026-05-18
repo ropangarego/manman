@@ -4,4 +4,5 @@ dist
 .env.local
 .DS_Store
 *.local
-
+dev-server*.log
+dev-server*.err.log

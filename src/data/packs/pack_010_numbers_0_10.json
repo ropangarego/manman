@@ -1,0 +1,1466 @@
+{
+  "pack": {
+    "id": "pack_010_numbers_0_10",
+    "title": "Numbers 0–10",
+    "title_id": "Angka 0–10",
+    "subtitle": "Count from zero to ten and recognize basic numbers.",
+    "subtitle_id": "Menghitung dari nol sampai sepuluh dan mengenali angka dasar.",
+    "level": 1,
+    "phase": "mvp",
+    "theme": "numbers",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 10,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Count from zero to ten and recognize basic numbers.",
+    "learning_goal_id": "Menghitung dari nol sampai sepuluh dan mengenali angka dasar.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 11,
+      "words": 11,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_ling",
+      "type": "hanzi",
+      "simplified": "零",
+      "traditional": "零",
+      "meaning": "zero",
+      "meaning_id": "nol",
+      "accepted_meanings": [
+        "zero"
+      ],
+      "accepted_meanings_id": [
+        "nol"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "líng",
+      "pinyin_numbered": "ling2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "零",
+          "text": "líng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Rain drops falling — each drop is nothing, *zero*. líng ≈ \"ling\" rising, like asking \"how many?\" Tone 2 goes up.",
+      "mnemonic_id": "Tetes hujan jatuh satu-satu — tapi hasilnya tetap *nol*. líng ≈ \"ling\" naik kayak nanya \"berapa?\" Nada 2 naik terus.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "零个。",
+          "pinyin": "Líng ge.",
+          "meaning": "Zero items.",
+          "meaning_id": "Nol buah."
+        },
+        {
+          "simplified": "零。",
+          "pinyin": "Líng.",
+          "meaning": "Zero.",
+          "meaning_id": "Nol."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yi_one",
+      "type": "hanzi",
+      "simplified": "一",
+      "traditional": "一",
+      "meaning": "one",
+      "meaning_id": "satu",
+      "accepted_meanings": [
+        "one"
+      ],
+      "accepted_meanings_id": [
+        "satu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī",
+      "pinyin_numbered": "yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "One single horizontal stroke — nothing more, nothing less. *One*. yī ≈ \"ee\" flat and clean. Tone 1 high and steady.",
+      "mnemonic_id": "Satu garis lurus — tidak lebih, tidak kurang. *Satu*. yī ≈ \"yi\" flat. Nada 1 tinggi rata, sesimpel angkanya.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个。",
+          "pinyin": "Yí ge.",
+          "meaning": "One item.",
+          "meaning_id": "Satu buah."
+        },
+        {
+          "simplified": "我有一。",
+          "pinyin": "Wǒ yǒu yī.",
+          "meaning": "I have one.",
+          "meaning_id": "Aku punya satu."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_er",
+      "type": "hanzi",
+      "simplified": "二",
+      "traditional": "二",
+      "meaning": "two",
+      "meaning_id": "dua",
+      "accepted_meanings": [
+        "two"
+      ],
+      "accepted_meanings_id": [
+        "dua"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "èr",
+      "pinyin_numbered": "er4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "二",
+          "text": "èr",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Two horizontal strokes stacked — *two* lines for *two*. èr ≈ \"ar!\" sharp. Tone 4 drops fast, like counting firmly.",
+      "mnemonic_id": "Dua garis horizontal ditumpuk — *dua* garis untuk *dua*. èr ≈ \"er!\" Nada 4 turun tajam, kayak ngitung dengan tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "二个。",
+          "pinyin": "Èr ge.",
+          "meaning": "Two items.",
+          "meaning_id": "Dua buah."
+        },
+        {
+          "simplified": "我有二。",
+          "pinyin": "Wǒ yǒu èr.",
+          "meaning": "I have two.",
+          "meaning_id": "Aku punya dua."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_san",
+      "type": "hanzi",
+      "simplified": "三",
+      "traditional": "三",
+      "meaning": "three",
+      "meaning_id": "tiga",
+      "accepted_meanings": [
+        "three"
+      ],
+      "accepted_meanings_id": [
+        "tiga"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sān",
+      "pinyin_numbered": "san1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "三",
+          "text": "sān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Three horizontal strokes — one for each. *Three*, stacked neatly. sān ≈ \"sahn\" flat. Tone 1 high and steady.",
+      "mnemonic_id": "Tiga garis horizontal — satu untuk masing-masing. *Tiga*, tersusun rapi. sān ≈ \"san\" flat. Nada 1 tinggi rata.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "三个。",
+          "pinyin": "Sān ge.",
+          "meaning": "Three items.",
+          "meaning_id": "Tiga buah."
+        },
+        {
+          "simplified": "我有三个。",
+          "pinyin": "Wǒ yǒu sān ge.",
+          "meaning": "I have three.",
+          "meaning_id": "Aku punya tiga."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_si",
+      "type": "hanzi",
+      "simplified": "四",
+      "traditional": "四",
+      "meaning": "four",
+      "meaning_id": "empat",
+      "accepted_meanings": [
+        "four"
+      ],
+      "accepted_meanings_id": [
+        "empat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sì",
+      "pinyin_numbered": "si4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "四",
+          "text": "sì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A box with two strokes inside — cramped, *four* things squeezed in. sì ≈ \"suh!\" sharp. Tone 4 drops hard.",
+      "mnemonic_id": "Kotak dengan dua garis di dalam — penuh sesak, *empat* hal tersumpal. sì ≈ \"sz!\" Nada 4 turun tajam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "四个。",
+          "pinyin": "Sì ge.",
+          "meaning": "Four items.",
+          "meaning_id": "Empat buah."
+        },
+        {
+          "simplified": "我有四。",
+          "pinyin": "Wǒ yǒu sì.",
+          "meaning": "I have four.",
+          "meaning_id": "Aku punya empat."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_wu",
+      "type": "hanzi",
+      "simplified": "五",
+      "traditional": "五",
+      "meaning": "five",
+      "meaning_id": "lima",
+      "accepted_meanings": [
+        "five"
+      ],
+      "accepted_meanings_id": [
+        "lima"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wǔ",
+      "pinyin_numbered": "wu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "五",
+          "text": "wǔ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A hand with all fingers stretched — *five* fingers, five strokes. wǔ ≈ \"woo\" dipping then rising. Tone 3 like counting on your hand.",
+      "mnemonic_id": "Tangan dengan semua jari terbuka — *lima* jari. wǔ ≈ \"wu\" turun terus naik. Nada 3 kayak ngitung pakai jari.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "五个。",
+          "pinyin": "Wǔ ge.",
+          "meaning": "Five items.",
+          "meaning_id": "Lima buah."
+        },
+        {
+          "simplified": "我有五。",
+          "pinyin": "Wǒ yǒu wǔ.",
+          "meaning": "I have five.",
+          "meaning_id": "Aku punya lima."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_liu",
+      "type": "hanzi",
+      "simplified": "六",
+      "traditional": "六",
+      "meaning": "six",
+      "meaning_id": "enam",
+      "accepted_meanings": [
+        "six"
+      ],
+      "accepted_meanings_id": [
+        "enam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "liù",
+      "pinyin_numbered": "liu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "六",
+          "text": "liù",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A hat on top, legs dangling below — *six* looks like someone sitting. liù ≈ \"lyoh!\" sharp. Tone 4 drops fast.",
+      "mnemonic_id": "Ada topi di atas, kaki menggantung di bawah — *enam* kayak orang duduk santai. liù ≈ \"lyo!\" Nada 4 turun tajam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "六个。",
+          "pinyin": "Liù ge.",
+          "meaning": "Six items.",
+          "meaning_id": "Enam buah."
+        },
+        {
+          "simplified": "我有六。",
+          "pinyin": "Wǒ yǒu liù.",
+          "meaning": "I have six.",
+          "meaning_id": "Aku punya enam."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_qi",
+      "type": "hanzi",
+      "simplified": "七",
+      "traditional": "七",
+      "meaning": "seven",
+      "meaning_id": "tujuh",
+      "accepted_meanings": [
+        "seven"
+      ],
+      "accepted_meanings_id": [
+        "tujuh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qī",
+      "pinyin_numbered": "qi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "七",
+          "text": "qī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A cross with a hooked bottom — *seven* cutting through. qī ≈ \"chee\" flat. Tone 1 high and clean.",
+      "mnemonic_id": "Garis silang dengan kait di bawah — *tujuh* yang tegas. qī ≈ \"chi\" flat. Nada 1 tinggi rata.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "七个。",
+          "pinyin": "Qī ge.",
+          "meaning": "Seven items.",
+          "meaning_id": "Tujuh buah."
+        },
+        {
+          "simplified": "我有七。",
+          "pinyin": "Wǒ yǒu qī.",
+          "meaning": "I have seven.",
+          "meaning_id": "Aku punya tujuh."
+        }
+      ],
+      "order_index": 8,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ba",
+      "type": "hanzi",
+      "simplified": "八",
+      "traditional": "八",
+      "meaning": "eight",
+      "meaning_id": "delapan",
+      "accepted_meanings": [
+        "eight"
+      ],
+      "accepted_meanings_id": [
+        "delapan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bā",
+      "pinyin_numbered": "ba1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "八",
+          "text": "bā",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Two strokes spreading apart — like arms opening wide for *eight*. bā ≈ \"bah\" flat. Tone 1 open and wide.",
+      "mnemonic_id": "Dua garis yang membuka lebar — kayak tangan membuka untuk *delapan*. bā ≈ \"ba\" flat. Nada 1 tinggi rata, terbuka lebar.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "八个。",
+          "pinyin": "Bā ge.",
+          "meaning": "Eight items.",
+          "meaning_id": "Delapan buah."
+        },
+        {
+          "simplified": "我有八。",
+          "pinyin": "Wǒ yǒu bā.",
+          "meaning": "I have eight.",
+          "meaning_id": "Aku punya delapan."
+        }
+      ],
+      "order_index": 9,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_jiu",
+      "type": "hanzi",
+      "simplified": "九",
+      "traditional": "九",
+      "meaning": "nine",
+      "meaning_id": "sembilan",
+      "accepted_meanings": [
+        "nine"
+      ],
+      "accepted_meanings_id": [
+        "sembilan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiǔ",
+      "pinyin_numbered": "jiu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "九",
+          "text": "jiǔ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A hook curling back on itself — almost at *ten*, just one away. jiǔ ≈ \"jyo\" dipping then rising. Tone 3 like almost there.",
+      "mnemonic_id": "Kait yang melengkung balik — hampir sampai *sepuluh*, tinggal satu lagi. jiǔ ≈ \"jyo\" turun terus naik. Nada 3 kayak \"hampir!\"",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "九个。",
+          "pinyin": "Jiǔ ge.",
+          "meaning": "Nine items.",
+          "meaning_id": "Sembilan buah."
+        },
+        {
+          "simplified": "我有九。",
+          "pinyin": "Wǒ yǒu jiǔ.",
+          "meaning": "I have nine.",
+          "meaning_id": "Aku punya sembilan."
+        }
+      ],
+      "order_index": 10,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shi_ten",
+      "type": "hanzi",
+      "simplified": "十",
+      "traditional": "十",
+      "meaning": "ten",
+      "meaning_id": "sepuluh",
+      "accepted_meanings": [
+        "ten"
+      ],
+      "accepted_meanings_id": [
+        "sepuluh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shí",
+      "pinyin_numbered": "shi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A cross — vertical meets horizontal, perfectly complete. *Ten*. shí ≈ \"shr\" rising. Tone 2 goes up, like reaching the top.",
+      "mnemonic_id": "Tanda plus — vertikal ketemu horizontal, sempurna. *Sepuluh*. shí ≈ \"shr\" naik. Nada 2 naik terus, kayak sampai di puncak.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "十个。",
+          "pinyin": "Shí ge.",
+          "meaning": "Ten items.",
+          "meaning_id": "Sepuluh buah."
+        },
+        {
+          "simplified": "我有十。",
+          "pinyin": "Wǒ yǒu shí.",
+          "meaning": "I have ten.",
+          "meaning_id": "Aku punya sepuluh."
+        }
+      ],
+      "order_index": 11,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_ling",
+      "type": "word",
+      "simplified": "零",
+      "traditional": "零",
+      "meaning": "zero",
+      "meaning_id": "nol",
+      "accepted_meanings": [
+        "zero"
+      ],
+      "accepted_meanings_id": [
+        "nol"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "líng",
+      "pinyin_numbered": "ling2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "零",
+          "text": "líng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_ling"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Zero* — the empty number, nothing to count.",
+      "mnemonic_id": "*Nol* — angka kosong, tidak ada yang dihitung.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "零个。",
+          "pinyin": "Líng ge.",
+          "meaning": "Zero items.",
+          "meaning_id": "Nol buah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yi_one",
+      "type": "word",
+      "simplified": "一",
+      "traditional": "一",
+      "meaning": "one",
+      "meaning_id": "satu",
+      "accepted_meanings": [
+        "one"
+      ],
+      "accepted_meanings_id": [
+        "satu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī",
+      "pinyin_numbered": "yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_yi"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*One* — the beginning of all counting.",
+      "mnemonic_id": "*Satu* — awal dari semua hitungan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "一 changes tone to yí before tone 4, and yì before tones 1-3.",
+      "usage_note_id": "一 berubah nada jadi yí sebelum nada 4, dan yì sebelum nada 1-3.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个。",
+          "pinyin": "Yí ge.",
+          "meaning": "One item.",
+          "meaning_id": "Satu buah."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_er",
+      "type": "word",
+      "simplified": "二",
+      "traditional": "二",
+      "meaning": "two",
+      "meaning_id": "dua",
+      "accepted_meanings": [
+        "two"
+      ],
+      "accepted_meanings_id": [
+        "dua"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "èr",
+      "pinyin_numbered": "er4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "二",
+          "text": "èr",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_er"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Two* — pair up, two of everything.",
+      "mnemonic_id": "*Dua* — sepasang, dua dari segalanya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "二个。",
+          "pinyin": "Èr ge.",
+          "meaning": "Two items.",
+          "meaning_id": "Dua buah."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_san",
+      "type": "word",
+      "simplified": "三",
+      "traditional": "三",
+      "meaning": "three",
+      "meaning_id": "tiga",
+      "accepted_meanings": [
+        "three"
+      ],
+      "accepted_meanings_id": [
+        "tiga"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sān",
+      "pinyin_numbered": "san1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "三",
+          "text": "sān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_san"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Three* — three strokes, three things.",
+      "mnemonic_id": "*Tiga* — tiga garis, tiga hal.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "三个。",
+          "pinyin": "Sān ge.",
+          "meaning": "Three items.",
+          "meaning_id": "Tiga buah."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_si",
+      "type": "word",
+      "simplified": "四",
+      "traditional": "四",
+      "meaning": "four",
+      "meaning_id": "empat",
+      "accepted_meanings": [
+        "four"
+      ],
+      "accepted_meanings_id": [
+        "empat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sì",
+      "pinyin_numbered": "si4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "四",
+          "text": "sì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_si"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Four* — four corners of a box.",
+      "mnemonic_id": "*Empat* — empat sudut kotak.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "四个。",
+          "pinyin": "Sì ge.",
+          "meaning": "Four items.",
+          "meaning_id": "Empat buah."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_wu",
+      "type": "word",
+      "simplified": "五",
+      "traditional": "五",
+      "meaning": "five",
+      "meaning_id": "lima",
+      "accepted_meanings": [
+        "five"
+      ],
+      "accepted_meanings_id": [
+        "lima"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wǔ",
+      "pinyin_numbered": "wu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "五",
+          "text": "wǔ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_wu"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Five* — one full hand of fingers.",
+      "mnemonic_id": "*Lima* — satu tangan penuh.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "五个。",
+          "pinyin": "Wǔ ge.",
+          "meaning": "Five items.",
+          "meaning_id": "Lima buah."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_liu",
+      "type": "word",
+      "simplified": "六",
+      "traditional": "六",
+      "meaning": "six",
+      "meaning_id": "enam",
+      "accepted_meanings": [
+        "six"
+      ],
+      "accepted_meanings_id": [
+        "enam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "liù",
+      "pinyin_numbered": "liu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "六",
+          "text": "liù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_liu"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Six* — past the hand, one more.",
+      "mnemonic_id": "*Enam* — lewat satu tangan, satu lagi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "六个。",
+          "pinyin": "Liù ge.",
+          "meaning": "Six items.",
+          "meaning_id": "Enam buah."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_qi",
+      "type": "word",
+      "simplified": "七",
+      "traditional": "七",
+      "meaning": "seven",
+      "meaning_id": "tujuh",
+      "accepted_meanings": [
+        "seven"
+      ],
+      "accepted_meanings_id": [
+        "tujuh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qī",
+      "pinyin_numbered": "qi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "七",
+          "text": "qī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_qi_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Seven* — lucky number, clean and sharp.",
+      "mnemonic_id": "*Tujuh* — angka keberuntungan, tegas.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "七个。",
+          "pinyin": "Qī ge.",
+          "meaning": "Seven items.",
+          "meaning_id": "Tujuh buah."
+        }
+      ],
+      "order_index": 8,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ba",
+      "type": "word",
+      "simplified": "八",
+      "traditional": "八",
+      "meaning": "eight",
+      "meaning_id": "delapan",
+      "accepted_meanings": [
+        "eight"
+      ],
+      "accepted_meanings_id": [
+        "delapan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bā",
+      "pinyin_numbered": "ba1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "八",
+          "text": "bā",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_ba_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Eight* — arms open wide, lucky in Chinese culture.",
+      "mnemonic_id": "*Delapan* — tangan terbuka lebar, angka keberuntungan dalam budaya Tionghoa.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "八个。",
+          "pinyin": "Bā ge.",
+          "meaning": "Eight items.",
+          "meaning_id": "Delapan buah."
+        }
+      ],
+      "order_index": 9,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jiu",
+      "type": "word",
+      "simplified": "九",
+      "traditional": "九",
+      "meaning": "nine",
+      "meaning_id": "sembilan",
+      "accepted_meanings": [
+        "nine"
+      ],
+      "accepted_meanings_id": [
+        "sembilan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiǔ",
+      "pinyin_numbered": "jiu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "九",
+          "text": "jiǔ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_jiu"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Nine* — one step before ten, almost complete.",
+      "mnemonic_id": "*Sembilan* — satu langkah sebelum sepuluh, hampir selesai.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "九个。",
+          "pinyin": "Jiǔ ge.",
+          "meaning": "Nine items.",
+          "meaning_id": "Sembilan buah."
+        }
+      ],
+      "order_index": 10,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shi_ten",
+      "type": "word",
+      "simplified": "十",
+      "traditional": "十",
+      "meaning": "ten",
+      "meaning_id": "sepuluh",
+      "accepted_meanings": [
+        "ten"
+      ],
+      "accepted_meanings_id": [
+        "sepuluh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shí",
+      "pinyin_numbered": "shi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_shi_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "*Ten* — the cross marks completion. Start again.",
+      "mnemonic_id": "*Sepuluh* — tanda plus menandai kesempurnaan. Mulai lagi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "十个。",
+          "pinyin": "Shí ge.",
+          "meaning": "Ten items.",
+          "meaning_id": "Sepuluh buah."
+        }
+      ],
+      "order_index": 11,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_yi_ge",
+      "type": "sentence",
+      "simplified": "一个。",
+      "traditional": "一個。",
+      "meaning": "One item/person.",
+      "meaning_id": "Satu buah/orang.",
+      "literal_meaning": "One [item].",
+      "literal_meaning_id": "Satu [benda].",
+      "pinyin": "yí ge",
+      "pinyin_numbered": "yi2 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yí",
+          "tone": 2
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-0",
+      "focus_word_ids": [
+        "word_yi_one"
+      ],
+      "pattern_ids": [
+        "pattern_counting_0_10"
+      ],
+      "notes": "个 is the general measure word. Numbers always come before the measure word.",
+      "notes_id": "个 adalah kata bantu bilangan umum. Angka selalu muncul sebelum kata bantu bilangan.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "number",
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_san_ge",
+      "type": "sentence",
+      "simplified": "三个。",
+      "traditional": "三個。",
+      "meaning": "Three items/people.",
+      "meaning_id": "Tiga buah/orang.",
+      "literal_meaning": "Three [items].",
+      "literal_meaning_id": "Tiga [benda].",
+      "pinyin": "sān ge",
+      "pinyin_numbered": "san1 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "三",
+          "text": "sān",
+          "tone": 1
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "1-0",
+      "focus_word_ids": [
+        "word_san"
+      ],
+      "pattern_ids": [
+        "pattern_counting_0_10"
+      ],
+      "notes": "Same pattern as 一个 — number + 个.",
+      "notes_id": "Pola yang sama dengan 一个 — angka + 个.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "number",
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_counting_0_10",
+      "type": "pattern",
+      "title": "Numbers 0–10",
+      "title_id": "Angka 0–10",
+      "meaning": "basic counting",
+      "meaning_id": "menghitung dasar",
+      "structure": "零，一，二，三...",
+      "explanation": "Use these for basic counting and small quantities.",
+      "explanation_id": "Gunakan ini untuk menghitung dan jumlah kecil.",
+      "examples": [
+        {
+          "simplified": "一个。",
+          "traditional": "一個。",
+          "pinyin": "Yí ge.",
+          "meaning": "One item.",
+          "meaning_id": "Satu buah."
+        },
+        {
+          "simplified": "五个。",
+          "traditional": "五個。",
+          "pinyin": "Wǔ ge.",
+          "meaning": "Five items.",
+          "meaning_id": "Lima buah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number",
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ba",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_qi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_er",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_yi_one",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_jiu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ba",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_liu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_qi",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_liu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_san",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_er",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_shi_ten",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_jiu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_si",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_san",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_wu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_si",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "五 means?",
+        "prompt_id": "Arti 五?",
+        "answer": "five",
+        "answer_id": "lima"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "十 means?",
+        "prompt_id": "Arti 十?",
+        "answer": "ten",
+        "answer_id": "sepuluh"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我有__个。(I have three)",
+        "answer": "三"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "八个。",
+        "answer": "Eight items.",
+        "answer_id": "Delapan buah."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_ling",
+      "word_yi_one",
+      "word_er",
+      "word_san",
+      "word_si",
+      "word_wu",
+      "word_liu",
+      "word_qi",
+      "word_ba",
+      "word_jiu",
+      "word_shi_ten"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_ling",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yi_one",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_er",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_yi_ge",
+      "sentence_san_ge"
+    ]
+  }
+}

@@ -1,0 +1,1056 @@
+{
+  "pack": {
+    "id": "pack_012_days_weeks_months",
+    "title": "Days, Weeks, Months",
+    "title_id": "Hari, Minggu, Bulan",
+    "subtitle": "Talk about yesterday, weeks, months, and years.",
+    "subtitle_id": "Bicara tentang kemarin, minggu, bulan, dan tahun.",
+    "level": 1,
+    "phase": "mvp",
+    "theme": "time",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 12,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about yesterday, weeks, months, and years.",
+    "learning_goal_id": "Bicara tentang kemarin, minggu, bulan, dan tahun.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_ri",
+      "type": "hanzi",
+      "simplified": "日",
+      "traditional": "日",
+      "meaning": "day / date",
+      "meaning_id": "hari / tanggal",
+      "accepted_meanings": [
+        "day / date"
+      ],
+      "accepted_meanings_id": [
+        "hari / tanggal"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "rì",
+      "pinyin_numbered": "ri4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "日",
+          "text": "rì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A rectangle with a line through — the *sun* rising, marking a *day*. rì ≈ \"rr!\" sharp. Tone 4 drops, like the day ending.",
+      "mnemonic_id": "Kotak dengan garis di tengah — *matahari* terbit, menandai satu *hari*. rì ≈ \"rr!\" Nada 4 turun tajam, kayak hari yang berakhir.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今日。",
+          "pinyin": "Jīn rì.",
+          "meaning": "Today. (formal)",
+          "meaning_id": "Hari ini. (formal)"
+        },
+        {
+          "simplified": "星期日。",
+          "pinyin": "Xīng qī rì.",
+          "meaning": "Sunday.",
+          "meaning_id": "Hari Minggu."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "time",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yue",
+      "type": "hanzi",
+      "simplified": "月",
+      "traditional": "月",
+      "meaning": "month / moon",
+      "meaning_id": "bulan",
+      "accepted_meanings": [
+        "month / moon"
+      ],
+      "accepted_meanings_id": [
+        "bulan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuè",
+      "pinyin_numbered": "yue4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "月",
+          "text": "yuè",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A crescent moon in a box — *month* measured by the *moon*. yuè ≈ \"yweh!\" sharp. Tone 4 drops, like a month closing.",
+      "mnemonic_id": "Bulan sabit dalam kotak — *bulan* diukur oleh *bulan*. yuè ≈ \"yweh!\" Nada 4 turun tajam, kayak bulan yang berakhir.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一月。",
+          "pinyin": "Yī yuè.",
+          "meaning": "January.",
+          "meaning_id": "Januari."
+        },
+        {
+          "simplified": "这个月。",
+          "pinyin": "Zhè ge yuè.",
+          "meaning": "This month.",
+          "meaning_id": "Bulan ini."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "time",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xing",
+      "type": "hanzi",
+      "simplified": "星",
+      "traditional": "星",
+      "meaning": "star / week part",
+      "meaning_id": "bintang / bagian minggu",
+      "accepted_meanings": [
+        "star / week part"
+      ],
+      "accepted_meanings_id": [
+        "bintang / bagian minggu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xīng",
+      "pinyin_numbered": "xing1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "星",
+          "text": "xīng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "日 sun on top, 生 growing below — a *star* born from light. xīng ≈ \"shing\" flat. Tone 1 high and steady, like starlight.",
+      "mnemonic_id": "日 matahari di atas, tumbuh di bawah — sebuah *bintang* yang lahir dari cahaya. xīng ≈ \"shing\" flat. Nada 1 tinggi rata, kayak cahaya bintang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "星期一。",
+          "pinyin": "Xīng qī yī.",
+          "meaning": "Monday.",
+          "meaning_id": "Senin."
+        },
+        {
+          "simplified": "星期三。",
+          "pinyin": "Xīng qī sān.",
+          "meaning": "Wednesday.",
+          "meaning_id": "Rabu."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "time",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_qi_period",
+      "type": "hanzi",
+      "simplified": "期",
+      "traditional": "期",
+      "meaning": "period / week part",
+      "meaning_id": "periode / bagian minggu",
+      "accepted_meanings": [
+        "period / week part"
+      ],
+      "accepted_meanings_id": [
+        "periode / bagian minggu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qī",
+      "pinyin_numbered": "qi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "期",
+          "text": "qī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A period, a cycle — *期* marks the span of a *week*. qī ≈ \"chee\" flat. Tone 1 high and steady, like time ticking.",
+      "mnemonic_id": "Satu periode, satu siklus — *期* menandai rentang satu *minggu*. qī ≈ \"chi\" flat. Nada 1 tinggi rata, kayak waktu yang terus berjalan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "星期一。",
+          "pinyin": "Xīng qī yī.",
+          "meaning": "Monday.",
+          "meaning_id": "Senin."
+        },
+        {
+          "simplified": "这个星期。",
+          "pinyin": "Zhè ge xīng qī.",
+          "meaning": "This week.",
+          "meaning_id": "Minggu ini."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "time",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zuo",
+      "type": "hanzi",
+      "simplified": "昨",
+      "traditional": "昨",
+      "meaning": "yesterday part",
+      "meaning_id": "bagian kemarin",
+      "accepted_meanings": [
+        "yesterday part"
+      ],
+      "accepted_meanings_id": [
+        "bagian kemarin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zuó",
+      "pinyin_numbered": "zuo2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "昨",
+          "text": "zuó",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "The sun that already passed — that's *yesterday*. zuó ≈ \"dzwoh\" rising. Tone 2 goes up, like remembering.",
+      "mnemonic_id": "Matahari yang sudah lewat — itulah *kemarin*. zuó ≈ \"dzwo\" naik. Nada 2 naik terus, kayak mengingat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "昨天我去。",
+          "pinyin": "Zuó tiān wǒ qù.",
+          "meaning": "Yesterday I went.",
+          "meaning_id": "Kemarin aku pergi."
+        },
+        {
+          "simplified": "昨天你来了。",
+          "pinyin": "Zuó tiān nǐ lái le.",
+          "meaning": "Yesterday you came.",
+          "meaning_id": "Kemarin kamu datang."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "time",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_nian",
+      "type": "hanzi",
+      "simplified": "年",
+      "traditional": "年",
+      "meaning": "year",
+      "meaning_id": "tahun",
+      "accepted_meanings": [
+        "year"
+      ],
+      "accepted_meanings_id": [
+        "tahun"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nián",
+      "pinyin_numbered": "nian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "年",
+          "text": "nián",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Strokes representing a harvest cycle — one full *year*. nián ≈ \"nyen\" rising. Tone 2 goes up like the years accumulating.",
+      "mnemonic_id": "Goresan yang mewakili siklus panen — satu *tahun* penuh. nián ≈ \"nyen\" naik. Nada 2 naik terus, kayak tahun yang terus bertambah.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今年。",
+          "pinyin": "Jīn nián.",
+          "meaning": "This year.",
+          "meaning_id": "Tahun ini."
+        },
+        {
+          "simplified": "明年你来吗？",
+          "pinyin": "Míng nián nǐ lái ma?",
+          "meaning": "Are you coming next year?",
+          "meaning_id": "Tahun depan kamu datang?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "time",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_zuotian",
+      "type": "word",
+      "simplified": "昨天",
+      "traditional": "昨天",
+      "meaning": "yesterday",
+      "meaning_id": "kemarin",
+      "accepted_meanings": [
+        "yesterday"
+      ],
+      "accepted_meanings_id": [
+        "kemarin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zuó tiān",
+      "pinyin_numbered": "zuo2 tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "昨",
+          "text": "zuó",
+          "tone": 2
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "2-1",
+      "hanzi_ids": [
+        "hanzi_zuo",
+        "hanzi_tian"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "昨 yesterday + 天 day — *yesterday*, the day just behind you.",
+      "mnemonic_id": "昨 kemarin + 天 hari — *kemarin*, hari yang baru saja lewat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "昨天我去了。",
+          "pinyin": "Zuó tiān wǒ qù le.",
+          "meaning": "Yesterday I went.",
+          "meaning_id": "Kemarin aku pergi."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xingqi",
+      "type": "word",
+      "simplified": "星期",
+      "traditional": "星期",
+      "meaning": "week",
+      "meaning_id": "minggu",
+      "accepted_meanings": [
+        "week"
+      ],
+      "accepted_meanings_id": [
+        "minggu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xīng qī",
+      "pinyin_numbered": "xing1 qi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "星",
+          "text": "xīng",
+          "tone": 1
+        },
+        {
+          "hanzi": "期",
+          "text": "qī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1",
+      "hanzi_ids": [
+        "hanzi_xing",
+        "hanzi_qi_week"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "星 star + 期 period — *week*, a cycle measured by the stars.",
+      "mnemonic_id": "星 bintang + 期 periode — *minggu*, siklus yang diukur bintang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个星期你去吗？",
+          "pinyin": "Zhè ge xīng qī nǐ qù ma?",
+          "meaning": "Are you going this week?",
+          "meaning_id": "Minggu ini kamu pergi?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xingqiyi",
+      "type": "word",
+      "simplified": "星期一",
+      "traditional": "星期一",
+      "meaning": "Monday",
+      "meaning_id": "hari Senin",
+      "accepted_meanings": [
+        "Monday"
+      ],
+      "accepted_meanings_id": [
+        "hari Senin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xīng qī yī",
+      "pinyin_numbered": "xing1 qi1 yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "星",
+          "text": "xīng",
+          "tone": 1
+        },
+        {
+          "hanzi": "期",
+          "text": "qī",
+          "tone": 1
+        },
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1-1",
+      "hanzi_ids": [
+        "hanzi_xing",
+        "hanzi_qi_week",
+        "hanzi_yi"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "星期 week + 一 one — *Monday*, the first day of the week.",
+      "mnemonic_id": "星期 minggu + 一 satu — *Senin*, hari pertama dalam seminggu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Days Mon–Sat use 星期 + number 1–6. Sunday is 星期日 or 星期天.",
+      "usage_note_id": "Hari Senin–Sabtu pakai 星期 + angka 1–6. Minggu adalah 星期日 atau 星期天.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "星期一你来吗？",
+          "pinyin": "Xīng qī yī nǐ lái ma?",
+          "meaning": "Are you coming on Monday?",
+          "meaning_id": "Senin kamu datang?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yue_month",
+      "type": "word",
+      "simplified": "月",
+      "traditional": "月",
+      "meaning": "month",
+      "meaning_id": "bulan",
+      "accepted_meanings": [
+        "month"
+      ],
+      "accepted_meanings_id": [
+        "bulan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuè",
+      "pinyin_numbered": "yue4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "月",
+          "text": "yuè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_yue"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "One character, two meanings — *month* and *moon*, both measured by the lunar cycle.",
+      "mnemonic_id": "Satu karakter, dua makna — *bulan* (waktu) dan *bulan* (benda), keduanya diukur dari siklus bulan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Months use number + 月: 一月 Jan, 二月 Feb, etc.",
+      "usage_note_id": "Bulan pakai angka + 月: 一月 Jan, 二月 Feb, dst.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一月。",
+          "pinyin": "Yī yuè.",
+          "meaning": "January.",
+          "meaning_id": "Januari."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ri_date",
+      "type": "word",
+      "simplified": "日",
+      "traditional": "日",
+      "meaning": "day / date",
+      "meaning_id": "hari / tanggal",
+      "accepted_meanings": [
+        "day / date"
+      ],
+      "accepted_meanings_id": [
+        "hari / tanggal"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "rì",
+      "pinyin_numbered": "ri4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "日",
+          "text": "rì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_ri"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "*Day* or *date* — used formally and in dates like 三月一日 March 1st.",
+      "mnemonic_id": "*Hari* atau *tanggal* — dipakai formal dan dalam tanggal seperti 三月一日 1 Maret.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "In dates: year 年 + month 月 + day 日.",
+      "usage_note_id": "Dalam tanggal: tahun 年 + bulan 月 + hari 日.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "三月一日。",
+          "pinyin": "Sān yuè yī rì.",
+          "meaning": "March 1st.",
+          "meaning_id": "1 Maret."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jinnian",
+      "type": "word",
+      "simplified": "今年",
+      "traditional": "今年",
+      "meaning": "this year",
+      "meaning_id": "tahun ini",
+      "accepted_meanings": [
+        "this year"
+      ],
+      "accepted_meanings_id": [
+        "tahun ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jīn nián",
+      "pinyin_numbered": "jin1 nian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "年",
+          "text": "nián",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "1-2",
+      "hanzi_ids": [
+        "hanzi_jin",
+        "hanzi_nian"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "今 now + 年 year — *this year*, the year you're living.",
+      "mnemonic_id": "今 sekarang + 年 tahun — *tahun ini*, tahun yang sedang dijalani.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今年你好吗？",
+          "pinyin": "Jīn nián nǐ hǎo ma?",
+          "meaning": "How are you this year?",
+          "meaning_id": "Tahun ini kamu baik?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_mingnian",
+      "type": "word",
+      "simplified": "明年",
+      "traditional": "明年",
+      "meaning": "next year",
+      "meaning_id": "tahun depan",
+      "accepted_meanings": [
+        "next year"
+      ],
+      "accepted_meanings_id": [
+        "tahun depan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "míng nián",
+      "pinyin_numbered": "ming2 nian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "明",
+          "text": "míng",
+          "tone": 2
+        },
+        {
+          "hanzi": "年",
+          "text": "nián",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2-2",
+      "hanzi_ids": [
+        "hanzi_ming",
+        "hanzi_nian"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "明 bright + 年 year — *next year*, the bright year still ahead.",
+      "mnemonic_id": "明 terang + 年 tahun — *tahun depan*, tahun cerah yang masih di depan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "明年你来吗？",
+          "pinyin": "Míng nián nǐ lái ma?",
+          "meaning": "Are you coming next year?",
+          "meaning_id": "Tahun depan kamu datang?"
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "time"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_zuotian_wo_qu",
+      "type": "sentence",
+      "simplified": "昨天我去。",
+      "traditional": "昨天我去。",
+      "meaning": "Yesterday I went.",
+      "meaning_id": "Kemarin saya pergi.",
+      "literal_meaning": "Yesterday I go.",
+      "literal_meaning_id": "Kemarin aku pergi.",
+      "pinyin": "zuó tiān wǒ qù",
+      "pinyin_numbered": "zuo2 tian1 wo3 qu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "昨",
+          "text": "zuó",
+          "tone": 2
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "去",
+          "text": "qù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-1-3-4",
+      "focus_word_ids": [
+        "word_zuotian"
+      ],
+      "pattern_ids": [
+        "pattern_date_time_words"
+      ],
+      "notes": "Time word first — 昨天 before subject. Mandarin doesn't change verb tense, context tells the time.",
+      "notes_id": "Kata waktu di depan — 昨天 sebelum subjek. Mandarin tidak mengubah kata kerja, konteks yang menunjukkan waktu.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "time",
+        "past",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_xingqiyi_ni_lai_ma",
+      "type": "sentence",
+      "simplified": "星期一你来吗？",
+      "traditional": "星期一你來嗎？",
+      "meaning": "Are you coming on Monday?",
+      "meaning_id": "Hari Senin kamu datang?",
+      "literal_meaning": "Monday you come?",
+      "literal_meaning_id": "Senin kamu datang?",
+      "pinyin": "xīng qī yī nǐ lái ma",
+      "pinyin_numbered": "xing1 qi1 yi1 ni3 lai2 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "星",
+          "text": "xīng",
+          "tone": 1
+        },
+        {
+          "hanzi": "期",
+          "text": "qī",
+          "tone": 1
+        },
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "来",
+          "text": "lái",
+          "tone": 2
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "1-1-1-3-2-0",
+      "focus_word_ids": [
+        "word_xingqiyi"
+      ],
+      "pattern_ids": [
+        "pattern_date_time_words"
+      ],
+      "notes": "Day of week comes first, then subject and verb.",
+      "notes_id": "Hari dalam seminggu di depan, baru subjek dan kata kerja.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "time",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_date_time_words",
+      "type": "pattern",
+      "title": "Time words",
+      "title_id": "Kata waktu",
+      "meaning": "using days and months",
+      "meaning_id": "memakai hari dan bulan",
+      "structure": "Time word + sentence",
+      "explanation": "Put time words before or after the subject depending on emphasis.",
+      "explanation_id": "Letakkan kata waktu sebelum atau sesudah subjek sesuai penekanan.",
+      "examples": [
+        {
+          "simplified": "昨天我去。",
+          "traditional": "昨天我去。",
+          "pinyin": "Zuó tiān wǒ qù.",
+          "meaning": "Yesterday I went.",
+          "meaning_id": "Kemarin aku pergi."
+        },
+        {
+          "simplified": "星期一你来吗？",
+          "traditional": "星期一你來嗎？",
+          "pinyin": "Xīng qī yī nǐ lái ma?",
+          "meaning": "Are you coming Monday?",
+          "meaning_id": "Senin kamu datang?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "time",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_qi_period",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_xing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_xing",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ri",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_yue",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ri",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jinnian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_nian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_mingnian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_nian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xingqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_qi_period",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xingqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xingqiyi",
+      "item_type": "word",
+      "prerequisite_item_id": "word_xingqi",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_zuotian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zuo",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "月 means?",
+        "prompt_id": "Arti 月?",
+        "answer": "month / moon",
+        "answer_id": "bulan"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "昨天 means?",
+        "prompt_id": "Arti 昨天?",
+        "answer": "yesterday",
+        "answer_id": "kemarin"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "星期__。(Monday)",
+        "answer": "一"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "昨天我去。",
+        "answer": "Yesterday I went.",
+        "answer_id": "Kemarin aku pergi."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_zuotian",
+      "word_xingqi",
+      "word_xingqiyi",
+      "word_yue_month",
+      "word_ri_date",
+      "word_jinnian",
+      "word_mingnian"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_zuotian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xingqi",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xingqiyi",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_zuotian_wo_qu",
+      "sentence_xingqiyi_ni_lai_ma"
+    ]
+  }
+}

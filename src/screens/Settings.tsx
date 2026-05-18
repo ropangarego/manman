@@ -145,12 +145,6 @@ export function SettingsScreen() {
             />
             <SettingRow
               danger
-              title={t('settings.resetApp')}
-              subtitle={t('settings.resetAppSub')}
-              onClick={() => openSheet('resetApp')}
-            />
-            <SettingRow
-              danger
               title={t('common.logout')}
               subtitle={t('settings.logoutSub')}
               onClick={() => openSheet('logout')}

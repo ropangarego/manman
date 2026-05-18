@@ -886,6 +886,31 @@
 .sheet-form input:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(17,24,39,.06);}
 .placement-progress{display:inline-block;margin-top:5px;font-size:12px;font-weight:900;color:var(--ink);}
 .placement-question-card{box-shadow:none;}
+
+.app-loading{height:100%;display:grid;place-items:center;align-content:center;gap:14px;padding:24px;background:var(--bg);color:var(--ink);text-align:center}
+.app-loading p{margin:0;color:var(--muted);font-size:13px;font-weight:800}
+.password-field{position:relative;display:block}
+.password-field input{width:100%;padding-right:48px!important}
+.password-field button{position:absolute;right:5px;top:5px;width:40px;height:40px;border:0;border-radius:12px;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+.password-field button:hover{background:var(--primary-soft);color:var(--ink)}
+.password-field button:active{transform:scale(.96)}
+.password-field button svg{width:18px;height:18px;stroke-width:2.2}
+.auth-secondary-actions{border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.auth-secondary-actions .auth-switch{border-top:0;padding-top:0}
+.intro-lesson-card{text-align:center}
+.intro-example{border:1px solid var(--line);border-radius:16px;background:var(--surface-2);padding:14px;display:grid;justify-items:center;gap:6px;color:var(--ink)}
+.intro-example b{font-size:42px;line-height:1.1}
+.intro-example small{color:var(--muted);font-size:12px;font-weight:800}
+.path-item.skipped .path-icon{background:var(--line);color:var(--muted)}
+
+@media (max-width:767px){
+  .auth-secondary-actions{display:grid;justify-items:center;text-align:center}
+  .auth-secondary-actions .auth-switch{justify-content:center}
+}
+
+@media (min-width:768px){
+  .study-shell{max-width:min(880px,100%)!important}
+}
 @media (min-width:768px){
   .auth-screen{padding:28px!important;}
 }

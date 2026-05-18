@@ -1,8 +1,8 @@
 # Manman! Ultimate App Guidelines
 
-Last updated: 2026-05-16  
+Last updated: 2026-05-17  
 Current app package version: `0.1.0`  
-Current product stage: Frontend MVP prototype with local multi-pack content loader, mock/local state, Supabase-ready but not connected
+Current product stage: Pre-release MVP frontend with Supabase Auth connected, profile/settings sync implemented, seeded starter packs 000-009, and local/fallback study progress.
 
 ## 1. Purpose
 
@@ -19,17 +19,15 @@ The app should feel calm, focused, useful, and native-app-like. The learner shou
 - Support bilingual UI and learning support in English and Indonesian.
 - Use Hanzi, pinyin, meaning, tone dots, examples, and pronunciation audio together.
 - Keep learning flow continuous: intro, learn, quick practice, review, summary, unlocks.
-- Support local/mock learning first, then Supabase persistence later.
-- Build a production-ready frontend foundation before backend integration.
+- Support practical local/fallback learning while Supabase-backed progress is prepared.
+- Keep the production frontend stable while backend integration expands in focused steps.
 
 ### Non-Goals For Current Frontend MVP
 
-- No real Supabase connection yet.
-- No real authentication yet.
-- No real password reset yet.
+- No Supabase progress/study-attempt writes yet.
+- No admin panel in this task/app.
 - No real server SRS yet.
 - No paid subscription logic.
-- No admin panel in the learner app.
 - No complex AI tutor/chat features yet.
 - No heavy gamification that distracts from study.
 
@@ -65,7 +63,7 @@ The app should feel calm, focused, useful, and native-app-like. The learner shou
 - Use CSS variables for theme tokens.
 - Use Tailwind where useful, but preserve the V15 visual style.
 - Do not use daisyUI.
-- Do not connect Supabase until the frontend behavior is stable.
+- Keep Supabase integration scoped: Auth and profile/settings sync are live; content/progress writes remain future work.
 
 ## 4. Current Tech Stack
 
@@ -79,7 +77,8 @@ The app should feel calm, focused, useful, and native-app-like. The learner shou
 - Lucide React icons
 - Browser TTS for prototype pronunciation
 - LocalStorage persistence
-- Mock/local content data
+- Supabase Auth and profile/settings sync
+- Local/fallback content and progress data
 
 ## 5. Current Project Structure
 
@@ -175,11 +174,12 @@ The prototype is a visual reference. The markdown guidelines are product/design 
 
 ### Implemented
 
-- Auth screen with local mock sign in/sign up.
-- Forgot password placeholder sheet and toast.
+- Supabase Auth sign in/sign up/logout with session restore.
+- Forgot password sends a Supabase reset email and recovery links open the update-password flow.
 - Learner profile settings:
-  - local name/email editing
-  - change password placeholder
+  - Supabase profile name/email editing
+  - change password
+  - profile/settings sync
   - reset learning progress only
 - Onboarding flow:
   - Welcome
@@ -225,15 +225,15 @@ The prototype is a visual reference. The markdown guidelines are product/design 
   - Grouped cards
   - Option sheets
   - Toggles
-  - Reset app state
+  - Reset learning progress
   - Logout confirmation
-  - Add app shortcut placeholder/installer support
+  - Add app shortcut/install support
 - Dark mode:
   - Global CSS-variable theme
   - LocalStorage persistence
 - Toast system:
   - Settings confirmations
-  - Auth placeholder actions
+  - Auth actions
   - Report issue confirmation
 - Pronunciation:
   - Reusable `AudioButton`
@@ -242,8 +242,9 @@ The prototype is a visual reference. The markdown guidelines are product/design 
   - Falls back to browser TTS when audio is missing/null
   - Speech speed setting
   - Speed preview sample: `你好吗`
-- Local persistence:
-  - Auth mock signed-in state
+- Local/Supabase persistence:
+  - Supabase session restore
+  - Supabase profile/settings sync
   - Onboarding completed
   - Script
   - Session size
@@ -261,15 +262,15 @@ The prototype is a visual reference. The markdown guidelines are product/design 
 
 ### Known Limitations
 
-- Auth is mock/local only.
-- Password reset is placeholder only.
-- Supabase schema exists but frontend is not connected.
+- Content/study/progress still use local state or bundled content fallback.
+- Supabase progress writes are not implemented yet.
+- Supabase schema exists and starter packs 000-009 have been seeded.
 - Pack loader is static/local; new pack files must be registered in `src/data/packs/index.ts`.
-- Pack 000 intro cards are registered but do not yet have a dedicated intro-card study screen.
+- Pack 000 has a dedicated intro-card study flow and does not create SRS progress.
 - Real offline support/service worker is not complete.
 - Browser TTS quality varies by device/browser.
 - No generated or native audio assets yet.
-- Typed review is marked coming later.
+- Typed review is hidden for MVP until implemented.
 - Report issue is not persisted to backend yet.
 - Admin panel is not implemented in this repo.
 
@@ -317,7 +318,7 @@ Home | Study | Library | Progress | Settings
 
 Owns durable app/UI preferences and current navigation:
 
-- signed in mock state
+- authenticated profile/session-derived state
 - onboarding state
 - current screen
 - script choice
@@ -518,9 +519,9 @@ Current:
 
 ```text
 Sign in / Sign up
-  uses local mock form
-  no backend call
-  stores signedIn locally after submit
+  uses Supabase Auth
+  restores sessions on app load
+  syncs durable profile/settings fields to public.profiles
 ```
 
 Forgot password current:
@@ -529,18 +530,25 @@ Forgot password current:
 Tap Forgot password?
   opens Reset password sheet
 Tap Send reset link
-  closes sheet
-  shows placeholder toast
+  sends Supabase reset email
+Open recovery link
+  opens update-password flow
+Submit new password
+  updates password through Supabase Auth
 ```
 
-Future:
+Profile/settings current:
 
 ```text
 Supabase Auth
   signUp
   signInWithPassword
   resetPasswordForEmail
+  updateUser password
   signOut
+Supabase profiles
+  fetch on session restore
+  update durable settings immediately after local UI changes
 ```
 
 ### Onboarding Flow
@@ -580,7 +588,7 @@ Placement:
 - Next is disabled until the current question is answered.
 - Back returns to the previous placement question before leaving placement.
 - Should test basics across meanings, pinyin, tones, and short sentences.
-- Current placement is mock/local.
+- Current placement uses local scoring and sets the recommended starting pack.
 
 ### Home Flow
 
@@ -748,12 +756,12 @@ Settings uses grouped cards:
 3. Study
 4. Display
 5. Offline
-6. Development/account actions
+6. Account actions
 
 Profile includes:
 
 - Name and email
-- Change password placeholder
+- Change password
 - Reset learning progress
 - Logout
 
@@ -768,11 +776,10 @@ Use option sheets for:
 - Stage filter
 - Report issue
 - Logout confirmation
-- Reset app state confirmation
 - Reset learning progress confirmation
 - Edit profile
-- Change password placeholder
-- Forgot password placeholder
+- Change password
+- Forgot password / update password
 
 Use toggles for:
 
@@ -786,7 +793,7 @@ Use toggles for:
 
 Persist durable preferences:
 
-- signed in mock state
+- Supabase profile/session state where available
 - auth display name/email
 - onboarding completed
 - script preference
@@ -1423,18 +1430,23 @@ Fast -> fast
 
 ### Backend Integration Order
 
+Completed for the current MVP:
+
 1. Create Supabase project.
 2. Run `supabase/schema_v1_mvp.sql`.
-3. Add missing `speech_speed`.
-4. Seed registered local packs 000-009.
+3. Include `speech_speed` in profile/settings sync.
+4. Seed registered packs 000-009.
 5. Add Supabase client.
-6. Replace mock auth with Supabase Auth.
+6. Use Supabase Auth for sign up, sign in, session restore, logout, forgot password, and password updates.
 7. Load profile into Zustand.
-8. Sync settings to profile.
-9. Load content from Supabase or bundled seed fallback.
-10. Sync progress/reviews.
-11. Persist report issue.
-12. Add offline queue for writes.
+8. Sync durable settings to profile.
+
+Next backend integration steps:
+
+1. Load content from Supabase with bundled pack fallback.
+2. Sync progress/reviews.
+3. Persist report issue.
+4. Add offline queue for writes.
 
 ## 15. Audio Strategy
 
@@ -1532,7 +1544,8 @@ Manual QA:
 
 - Auth sign in works.
 - Auth sign up works.
-- Forgot password placeholder opens/closes.
+- Forgot password sends reset email.
+- Password recovery opens update-password flow.
 - Onboarding completes.
 - Refresh after onboarding opens Home.
 - Home Start Study works.
@@ -1553,7 +1566,6 @@ Manual QA:
 - Settings option sheets work.
 - Settings toggles show toast.
 - Dark mode persists.
-- Reset app state clears local state.
 - Logout clears local state.
 - Report issue sheet opens and shows success toast.
 - Audio button plays or fails gracefully.
@@ -1674,7 +1686,7 @@ Includes:
 - Simple SRS.
 - Initial single-pack local content.
 - Browser TTS.
-- Forgot password placeholder.
+- Supabase Auth and forgot-password email flow.
 
 ### v0.2.0 - Local Multi-Pack Loader
 
@@ -1695,7 +1707,7 @@ Includes:
 
 Known gaps:
 
-- Pack 000 intro cards are not rendered as a dedicated intro-card study flow yet.
+- Supabase progress writes are not implemented yet.
 - Pack validation is not a full runtime schema validator yet.
 - Adding a pack still requires registering it in `src/data/packs/index.ts`.
 
@@ -1714,11 +1726,13 @@ Acceptance:
 - New pack JSON can be dropped into `src/data/packs/`.
 - App can show content from multiple packs.
 - Study sessions progress beyond pack 001.
-- Pack 000 intro cards can be completed without fake SRS content.
+- Pack 000 intro cards can be completed without creating SRS word progress.
 
 ### v0.4.0 - Supabase Auth And Profiles
 
-Goals:
+Status: implemented for the pre-release MVP.
+
+Includes:
 
 - Real sign up/sign in/logout.
 - Real password reset.
@@ -1730,6 +1744,7 @@ Acceptance:
 - Refresh and another browser session can restore profile.
 - Logout uses Supabase signOut.
 - Password reset sends email through Supabase.
+- Recovery links open an update-password flow.
 
 ### v0.5.0 - Supabase Content And Progress
 
@@ -1746,7 +1761,7 @@ Acceptance:
 
 - User progress survives across devices.
 - Library and Study use Supabase content.
-- Local mock fallback still works in development if configured.
+- Bundled local content fallback still works when Supabase content reads are unavailable.
 
 ### v0.6.0 - Offline MVP
 

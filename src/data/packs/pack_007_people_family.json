@@ -94,9 +94,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "他去吗？",
+          "pinyin": "Tā qù ma?",
+          "meaning": "Is he going?",
+          "meaning_id": "Dia pergi?"
+        },
+        {
+          "simplified": "他是我朋友。",
+          "pinyin": "Tā shì wǒ péng you.",
+          "meaning": "He is my friend.",
+          "meaning_id": "Dia adalah temanku."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "pronoun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -130,9 +147,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "她在家吗？",
+          "pinyin": "Tā zài jiā ma?",
+          "meaning": "Is she at home?",
+          "meaning_id": "Dia di rumah?"
+        },
+        {
+          "simplified": "她好吗？",
+          "pinyin": "Tā hǎo ma?",
+          "meaning": "Is she okay?",
+          "meaning_id": "Dia baik?"
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "pronoun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -166,9 +200,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我们去。",
+          "pinyin": "Wǒ men qù.",
+          "meaning": "We are going.",
+          "meaning_id": "Kami pergi."
+        },
+        {
+          "simplified": "他们好吗？",
+          "pinyin": "Tā men hǎo ma?",
+          "meaning": "Are they okay?",
+          "meaning_id": "Mereka baik?"
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "plural",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -202,9 +253,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "朋友来了。",
+          "pinyin": "Péng you lái le.",
+          "meaning": "The friend has come.",
+          "meaning_id": "Temannya datang."
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "noun_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -238,9 +299,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你是我朋友。",
+          "pinyin": "Nǐ shì wǒ péng you.",
+          "meaning": "You are my friend.",
+          "meaning_id": "Kamu adalah temanku."
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "noun_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -274,9 +345,20 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "妈妈在家。",
+          "pinyin": "Mā ma zài jiā.",
+          "meaning": "Mom is at home.",
+          "meaning_id": "Mama di rumah."
+        }
+      ],
       "order_index": 6,
-      "tags": [],
+      "tags": [
+        "family",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -310,9 +392,20 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "爸爸回家了。",
+          "pinyin": "Bà ba huí jiā le.",
+          "meaning": "Dad came home.",
+          "meaning_id": "Papa sudah pulang."
+        }
+      ],
       "order_index": 7,
-      "tags": [],
+      "tags": [
+        "family",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     }
   ],
@@ -342,7 +435,9 @@
         }
       ],
       "tone_pattern": "1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ta_m"
+      ],
       "part_of_speech": "pronoun",
       "mnemonic": "*He / him* — the third person you're talking about.",
       "mnemonic_id": "*Dia* (laki-laki) — orang ketiga yang lagi dibicarain.",
@@ -351,7 +446,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "他是谁？",
+          "pinyin": "Tā shì shuí?",
+          "meaning": "Who is he?",
+          "meaning_id": "Dia siapa?"
+        }
+      ],
       "order_index": 1,
       "tags": [
         "people"
@@ -384,16 +486,25 @@
         }
       ],
       "tone_pattern": "1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ta_f"
+      ],
       "part_of_speech": "pronoun",
       "mnemonic": "*She / her* — same pronunciation as 他, different character.",
       "mnemonic_id": "*Dia* (perempuan) — sama bunyinya kayak 他, tapi beda tulisan.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "他 and 她 sound identical — context tells you which.",
+      "usage_note_id": "他 dan 她 bunyinya sama — konteks yang membedakan.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "她在家吗？",
+          "pinyin": "Tā zài jiā ma?",
+          "meaning": "Is she at home?",
+          "meaning_id": "Dia di rumah?"
+        }
+      ],
       "order_index": 2,
       "tags": [
         "people"
@@ -431,7 +542,10 @@
         }
       ],
       "tone_pattern": "3-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_wo",
+        "hanzi_men"
+      ],
       "part_of_speech": "pronoun",
       "mnemonic": "我 I + 们 plural — *we / us*, depending on context.",
       "mnemonic_id": "我 aku + 们 jamak — *kami* atau *kita*, tergantung konteks.",
@@ -440,7 +554,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我们去吗？",
+          "pinyin": "Wǒ men qù ma?",
+          "meaning": "Are we going?",
+          "meaning_id": "Kita pergi?"
+        }
+      ],
       "order_index": 3,
       "tags": [
         "people"
@@ -478,7 +599,10 @@
         }
       ],
       "tone_pattern": "2-3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_peng",
+        "hanzi_you_friend"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "朋 friend + 友 companion — *friend*, two characters reinforcing each other.",
       "mnemonic_id": "朋 teman + 友 sahabat — *teman*, dua karakter yang saling nguatin maknanya.",
@@ -487,7 +611,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你是我朋友。",
+          "pinyin": "Nǐ shì wǒ péng you.",
+          "meaning": "You are my friend.",
+          "meaning_id": "Kamu adalah temanku."
+        }
+      ],
       "order_index": 4,
       "tags": [
         "people"
@@ -525,7 +656,9 @@
         }
       ],
       "tone_pattern": "1-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ma_mom"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "妈 repeated twice — *mom*, the most natural way to say it.",
       "mnemonic_id": "妈 diulang dua kali — *mama*, panggilan yang paling natural.",
@@ -534,7 +667,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "妈妈在家吗？",
+          "pinyin": "Mā ma zài jiā ma?",
+          "meaning": "Is mom at home?",
+          "meaning_id": "Mama di rumah?"
+        }
+      ],
       "order_index": 5,
       "tags": [
         "family"
@@ -572,7 +712,9 @@
         }
       ],
       "tone_pattern": "4-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ba_dad"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "爸 repeated twice — *dad*, same pattern as 妈妈.",
       "mnemonic_id": "爸 diulang dua kali — *papa*, sama polanya kayak 妈妈.",
@@ -581,7 +723,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "爸爸回家了。",
+          "pinyin": "Bà ba huí jiā le.",
+          "meaning": "Dad came home.",
+          "meaning_id": "Papa sudah pulang."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "family"
@@ -598,8 +747,8 @@
       "traditional": "他是朋友。",
       "meaning": "He is a friend.",
       "meaning_id": "Dia teman.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "He is friend.",
+      "literal_meaning_id": "Dia adalah teman.",
       "pinyin": "tā shì péng yǒu",
       "pinyin_numbered": "ta1 shi4 peng2 you3",
       "pinyin_syllables": [
@@ -631,11 +780,15 @@
       "pattern_ids": [
         "pattern_de_possession"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "No article needed — just subject + 是 + noun.",
+      "notes_id": "Tidak perlu artikel — cukup subjek + 是 + kata benda.",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "identity",
+        "people",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -645,8 +798,8 @@
       "traditional": "我們是家人。",
       "meaning": "We are family.",
       "meaning_id": "Kami/kita keluarga.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "We are family.",
+      "literal_meaning_id": "Kami adalah keluarga.",
       "pinyin": "wǒ men shì jiā rén",
       "pinyin_numbered": "wo3 men0 shi4 jia1 ren2",
       "pinyin_syllables": [
@@ -683,11 +836,14 @@
       "pattern_ids": [
         "pattern_de_possession"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "家人 means family members — 家 home + 人 person.",
+      "notes_id": "家人 berarti anggota keluarga — 家 rumah + 人 orang.",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "family",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -702,13 +858,75 @@
       "structure": "Person + 的 + noun",
       "explanation": "Use 的 to connect a person with something they have or relate to.",
       "explanation_id": "Gunakan 的 untuk menghubungkan orang dengan sesuatu yang dimiliki/terkait.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我朋友。",
+          "traditional": "我朋友。",
+          "pinyin": "Wǒ péng you.",
+          "meaning": "My friend.",
+          "meaning_id": "Temanku."
+        },
+        {
+          "simplified": "你妈妈在家吗？",
+          "traditional": "你媽媽在家嗎？",
+          "pinyin": "Nǐ mā ma zài jiā ma?",
+          "meaning": "Is your mom at home?",
+          "meaning_id": "Mama kamu di rumah?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "possession",
+        "people",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_men",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_ta_she",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ta_he",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_ta_he",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_pengyou",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_peng",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_pengyou",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_you_friend",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_women",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_men",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_women",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -724,7 +942,33 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "朋友 means?",
+        "prompt_id": "Arti 朋友?",
+        "answer": "friend",
+        "answer_id": "teman"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "我们 means?",
+        "prompt_id": "Arti 我们?",
+        "answer": "we / us",
+        "answer_id": "kami / kita"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "他是我__。(He is my friend)",
+        "answer": "朋友"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "她在家吗？",
+        "answer": "Is she at home?",
+        "answer_id": "Dia di rumah?"
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

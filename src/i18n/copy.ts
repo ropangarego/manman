@@ -40,7 +40,7 @@ type CopyKey =
   | 'auth.hasAccount'
   | 'auth.createAccount'
   | 'auth.useExisting'
-  | 'auth.mockNote'
+  | 'auth.passwordHint'
   | 'auth.working'
   | 'home.title'
   | 'home.subtitle'
@@ -69,6 +69,8 @@ type CopyKey =
   | 'progress.reviewsDue'
   | 'progress.wordStrength'
   | 'progress.wordStrengthSub'
+  | 'progress.wordStrengthEmpty'
+  | 'progress.wordStrengthEmptySub'
   | 'progress.weeklyActivity'
   | 'progress.weeklyActivitySub'
   | 'progress.learningPath'
@@ -114,8 +116,6 @@ type CopyKey =
   | 'settings.downloadsSub'
   | 'settings.installApp'
   | 'settings.installAppSub'
-  | 'settings.resetApp'
-  | 'settings.resetAppSub'
   | 'settings.logoutSub'
   | 'study.session'
   | 'study.sessionPlan'
@@ -167,6 +167,7 @@ type CopyKey =
   | 'onboarding.recommendTitle'
   | 'onboarding.recommendSome'
   | 'onboarding.recommendBeginner'
+  | 'onboarding.introPackTitle'
   | 'onboarding.startLearning'
   | 'sheets.stageTitle'
   | 'sheets.stageSub'
@@ -206,6 +207,8 @@ type CopyKey =
   | 'sheets.passwordResetTitle'
   | 'sheets.passwordResetSub'
   | 'sheets.passwordResetButton'
+  | 'sheets.updatePasswordTitle'
+  | 'sheets.updatePasswordSub'
   | 'sheets.profileTitle'
   | 'sheets.profileSub'
   | 'sheets.profileName'
@@ -221,8 +224,6 @@ type CopyKey =
   | 'sheets.resetLearningSub'
   | 'sheets.logoutTitle'
   | 'sheets.logoutSub'
-  | 'sheets.resetTitle'
-  | 'sheets.resetSub'
   | 'report.title'
   | 'report.sub'
   | 'report.describe'
@@ -230,7 +231,6 @@ type CopyKey =
   | 'report.placeholder'
   | 'report.submit'
   | 'toast.reportSent'
-  | 'toast.reset'
   | 'toast.logout'
   | 'toast.sessionSize'
   | 'toast.script'
@@ -255,6 +255,7 @@ type CopyKey =
   | 'toast.profileUpdated'
   | 'toast.profileSyncError'
   | 'toast.changePasswordPlaceholder'
+  | 'toast.passwordUpdated'
   | 'toast.learningProgressReset'
   | 'toast.passwordResetPlaceholder'
   | 'toast.installOpened'
@@ -306,7 +307,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'auth.hasAccount': { English: 'Already have an account?', Indonesian: 'Sudah punya akun?' },
   'auth.createAccount': { English: 'Create account', Indonesian: 'Buat akun' },
   'auth.useExisting': { English: 'Use existing account', Indonesian: 'Pakai akun yang ada' },
-  'auth.mockNote': {
+  'auth.passwordHint': {
     English: 'Use a real email and a password with at least 6 characters.',
     Indonesian: 'Gunakan email asli dan password minimal 6 karakter.',
   },
@@ -331,8 +332,8 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   },
   'library.title': { English: 'Library', Indonesian: 'Koleksi' },
   'library.subtitle': {
-    English: 'Browse learned items, examples, and review timing.',
-    Indonesian: 'Lihat item belajar, contoh, dan jadwal review.',
+    English: 'Explore the Mandarin content available in Manman.',
+    Indonesian: 'Jelajahi materi Mandarin yang tersedia di Manman.',
   },
   'library.search': {
     English: 'Search hanzi, pinyin, meaning...',
@@ -353,6 +354,11 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'progress.reviewsDue': { English: 'Reviews due', Indonesian: 'Review jatuh tempo' },
   'progress.wordStrength': { English: 'Word strength', Indonesian: 'Kekuatan kata' },
   'progress.wordStrengthSub': { English: 'Counts words only.', Indonesian: 'Hanya menghitung kata.' },
+  'progress.wordStrengthEmpty': { English: 'No word strength yet', Indonesian: 'Belum ada kekuatan kata' },
+  'progress.wordStrengthEmptySub': {
+    English: 'Study a few words first, then your progress will appear here.',
+    Indonesian: 'Pelajari beberapa kata dulu, lalu progresmu akan muncul di sini.',
+  },
   'progress.weeklyActivity': { English: 'Weekly activity', Indonesian: 'Aktivitas mingguan' },
   'progress.weeklyActivitySub': { English: 'Minutes per day.', Indonesian: 'Menit per hari.' },
   'progress.learningPath': { English: 'Learning path', Indonesian: 'Jalur belajar' },
@@ -410,8 +416,6 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.downloadsSub': { English: 'Refresh the saved starter pack.', Indonesian: 'Segarkan starter pack tersimpan.' },
   'settings.installApp': { English: 'Add app shortcut', Indonesian: 'Tambah shortcut app' },
   'settings.installAppSub': { English: 'Open Manman! from your home screen.', Indonesian: 'Buka Manman! dari home screen.' },
-  'settings.resetApp': { English: 'Reset app state', Indonesian: 'Reset status app' },
-  'settings.resetAppSub': { English: 'Clear local storage and restart onboarding.', Indonesian: 'Hapus data lokal dan ulang onboarding.' },
   'settings.logoutSub': { English: 'Sign out on this device.', Indonesian: 'Keluar dari perangkat ini.' },
   'study.session': { English: 'Study session', Indonesian: 'Sesi belajar' },
   'study.sessionPlan': { English: 'Session plan', Indonesian: 'Rencana sesi' },
@@ -475,6 +479,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'onboarding.recommendTitle': { English: 'Recommended start', Indonesian: 'Rekomendasi mulai' },
   'onboarding.recommendSome': { English: 'Based on your quick check, start here and adjust later if needed.', Indonesian: 'Berdasarkan cek cepat, mulai dari sini dan sesuaikan nanti jika perlu.' },
   'onboarding.recommendBeginner': { English: 'We’ll start from the basics and build up gradually.', Indonesian: 'Kita mulai dari dasar dan naik bertahap.' },
+  'onboarding.introPackTitle': { English: 'Quick Mandarin intro', Indonesian: 'Pengenalan Mandarin singkat' },
   'onboarding.startLearning': { English: 'Start learning', Indonesian: 'Mulai belajar' },
   'sheets.stageTitle': { English: 'Choose stage', Indonesian: 'Pilih tahap' },
   'sheets.stageSub': { English: 'Filter Library by memory strength.', Indonesian: 'Filter Koleksi berdasarkan kekuatan ingatan.' },
@@ -529,6 +534,11 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
     Indonesian: 'Masukkan email akunmu dan kami akan mengirim link reset.',
   },
   'sheets.passwordResetButton': { English: 'Send reset link', Indonesian: 'Kirim link reset' },
+  'sheets.updatePasswordTitle': { English: 'Set a new password', Indonesian: 'Buat password baru' },
+  'sheets.updatePasswordSub': {
+    English: 'Enter a new password for your account.',
+    Indonesian: 'Masukkan password baru untuk akunmu.',
+  },
   'sheets.profileTitle': { English: 'Edit profile', Indonesian: 'Edit profil' },
   'sheets.profileSub': {
     English: 'Update the learner name and account email.',
@@ -553,11 +563,6 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   },
   'sheets.logoutTitle': { English: 'Logout?', Indonesian: 'Keluar?' },
   'sheets.logoutSub': { English: 'You can sign back in later. This will return to onboarding.', Indonesian: 'Kamu bisa masuk lagi nanti. Ini akan kembali ke onboarding.' },
-  'sheets.resetTitle': { English: 'Reset app state?', Indonesian: 'Reset status app?' },
-  'sheets.resetSub': {
-    English: 'This clears onboarding, settings, theme, study progress, and local SRS data on this device.',
-    Indonesian: 'Ini menghapus onboarding, pengaturan, tema, progres belajar, dan data SRS lokal di perangkat ini.',
-  },
   'report.title': { English: 'Report issue', Indonesian: 'Laporkan masalah' },
   'report.sub': { English: 'What seems wrong with this item?', Indonesian: 'Apa yang salah dengan item ini?' },
   'report.describe': { English: 'Describe the issue', Indonesian: 'Jelaskan masalahnya' },
@@ -565,7 +570,6 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'report.placeholder': { English: 'Example: tone should be 3rd tone here...', Indonesian: 'Contoh: nadanya seharusnya nada 3 di sini...' },
   'report.submit': { English: 'Submit report', Indonesian: 'Kirim laporan' },
   'toast.reportSent': { English: 'Thanks — your report was sent.', Indonesian: 'Terima kasih — laporan terkirim.' },
-  'toast.reset': { English: 'App state reset.', Indonesian: 'Status app direset.' },
   'toast.logout': { English: 'Logged out.', Indonesian: 'Sudah keluar.' },
   'toast.sessionSize': { English: 'Session size updated to {{value}}', Indonesian: 'Ukuran sesi diubah ke {{value}}' },
   'toast.script': { English: 'Script changed to {{value}}', Indonesian: 'Aksara diubah ke {{value}}' },
@@ -599,6 +603,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
     English: 'Password updated.',
     Indonesian: 'Password diperbarui.',
   },
+  'toast.passwordUpdated': { English: 'Password updated.', Indonesian: 'Password diperbarui.' },
   'toast.learningProgressReset': { English: 'Learning progress reset', Indonesian: 'Progres belajar direset' },
   'toast.passwordResetPlaceholder': {
     English: 'Password reset link sent.',

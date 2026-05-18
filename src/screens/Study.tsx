@@ -7,12 +7,14 @@ import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
 import {
+  getIntroStudySession,
   getStarterStudySession,
   sessionPlans,
   studyQuestionForItem,
   typeLabel,
   type ContentItem,
 } from '../data/mockContent';
+import { textFor } from '../i18n/copy';
 import { useAppStore } from '../stores/appStore';
 import { useProgressStore } from '../stores/progressStore';
 import { useStudyStore } from '../stores/studyStore';
@@ -49,6 +51,44 @@ function ExampleBlock({ item, showPinyin }: { item: ContentItem; showPinyin: boo
       ) : null}
       {item.example[2]}
     </p>
+  );
+}
+
+function IntroExample({ example }: { example: Record<string, unknown> | null }) {
+  if (!example) {
+    return null;
+  }
+
+  const simplified = typeof example.simplified === 'string' ? example.simplified : '';
+  const pinyin = typeof example.pinyin === 'string' ? example.pinyin : '';
+  const meaning = typeof example.meaning === 'string' ? example.meaning : '';
+  const pinyinList = Array.isArray(example.pinyin) ? example.pinyin.filter((item): item is string => typeof item === 'string') : [];
+  const toneList = Array.isArray(example.tones) ? example.tones.filter((item): item is number => typeof item === 'number') : [];
+  const components = Array.isArray(example.components)
+    ? example.components.filter((item): item is string => typeof item === 'string')
+    : [];
+  const written = typeof example.written === 'string' ? example.written : '';
+  const spokenNote = typeof example.spoken_note === 'string' ? example.spoken_note : '';
+
+  return (
+    <div className="intro-example">
+      {simplified ? <b className="mandarin-text">{simplified}</b> : null}
+      {pinyin ? <span>{pinyin}</span> : null}
+      {meaning ? <small>{meaning}</small> : null}
+      {pinyinList.length > 0 ? (
+        <>
+          <div className="pinyin-line">
+            {pinyinList.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+          <ToneDots tones={toneList} />
+        </>
+      ) : null}
+      {components.length > 0 ? <span>{components.join(' + ')}</span> : null}
+      {written ? <span>{written}</span> : null}
+      {spokenNote ? <small>{spokenNote}</small> : null}
+    </div>
   );
 }
 
@@ -107,9 +147,12 @@ export function StudyScreen() {
   const sessionSize = useAppStore((state) => state.sessionSize);
   const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
   const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
+  const introStatus = useAppStore((state) => state.introStatus);
   const hints = useAppStore((state) => state.settings.hints);
   const openSheet = useAppStore((state) => state.openSheet);
   const setScreen = useAppStore((state) => state.setScreen);
+  const completeIntroPack = useAppStore((state) => state.completeIntroPack);
+  const syncStudyPosition = useAppStore((state) => state.syncStudyPosition);
   const step = useStudyStore((state) => state.step);
   const sessionIndex = useStudyStore((state) => state.sessionIndex);
   const learnIndex = useStudyStore((state) => state.learnIndex);
@@ -125,9 +168,15 @@ export function StudyScreen() {
   const chooseReviewAnswer = useStudyStore((state) => state.chooseReviewAnswer);
   const finishPractice = useStudyStore((state) => state.finishPractice);
   const finishReview = useStudyStore((state) => state.finishReview);
+  const startSession = useStudyStore((state) => state.startSession);
   const recordAnswer = useProgressStore((state) => state.recordAnswer);
   const completeSession = useProgressStore((state) => state.completeSession);
   const plan = sessionPlans[sessionSize];
+  const introActive = introStatus === 'required' || introStatus === 'optional';
+  const introSession = getIntroStudySession(language);
+  const introCards = introSession?.cards ?? [];
+  const introCard = introCards[learnIndex] ?? introCards[0];
+  const hasMoreIntroCards = learnIndex < introCards.length - 1;
   const showLearningPinyin = pinyinDisplay !== 'Hidden in review' && pinyinDisplay !== 'Off';
   const showReviewPinyin = pinyinDisplay === 'Always';
   const speechRate = speechRateForSpeed(speechSpeed);
@@ -137,7 +186,11 @@ export function StudyScreen() {
   const practice = studyQuestionForItem(learnItem, t('study.quickPractice'), true, language);
   const review = studyQuestionForItem(reviewItem, t('study.reviewDue'), false, language);
   const totalTasks = session.learnItems.length * 2 + session.reviewItems.length;
-  const completed = completedCount(step, learnIndex, reviewIndex, session.learnItems.length, totalTasks);
+  const completed = introActive
+    ? step === 'learn'
+      ? Math.min(learnIndex, introCards.length)
+      : 0
+    : completedCount(step, learnIndex, reviewIndex, session.learnItems.length, totalTasks);
   const hasMoreLearnItems = learnIndex < session.learnItems.length - 1;
   const hasMoreReviewItems = reviewIndex < session.reviewItems.length - 1;
   const sessionAccuracy = sessionAttempts > 0 ? `${Math.round((sessionCorrect / sessionAttempts) * 100)}%` : '100%';
@@ -146,13 +199,56 @@ export function StudyScreen() {
     <div className="study-shell">
       <StudyProgress
         completed={completed}
-        total={totalTasks}
-        mode={progressMode(step, t)}
+        total={introActive ? Math.max(introCards.length, 1) : totalTasks}
+        mode={introActive ? (step === 'intro' ? t('study.sessionPlan') : t('onboarding.introPackTitle')) : progressMode(step, t)}
         completedLabel={t('study.completed')}
         sessionLabel={t('study.session')}
       />
 
-      {step === 'intro' ? (
+      {introActive && step === 'intro' && introSession ? (
+        <Card className="study-card session-intro">
+          <span className="pill accent">{introSession.packLabel}</span>
+          <div>
+            <h3>{introSession.introTitle}</h3>
+            <p>
+              {introCards.length} {language === 'Indonesian' ? 'kartu pengenalan' : 'intro cards'}
+              <br />
+              <span className="duration-line">{t('home.duration')}: ~5 min</span>
+            </p>
+            <p>{introSession.introDescription}</p>
+          </div>
+          <Button type="button" onClick={() => setStep('learn')}>
+            {t('study.start')}
+          </Button>
+        </Card>
+      ) : null}
+
+      {introActive && step === 'learn' && introCard ? (
+        <Card className="study-card session-intro intro-lesson-card">
+          <span className="pill accent">{introSession?.packLabel}</span>
+          <div>
+            <h3>{textFor(language, introCard.title, introCard.titleId)}</h3>
+            <p>{textFor(language, introCard.body, introCard.bodyId)}</p>
+          </div>
+          <IntroExample example={introCard.example} />
+          <Button
+            type="button"
+            onClick={() => {
+              if (hasMoreIntroCards) {
+                finishPractice(true);
+                return;
+              }
+
+              completeIntroPack();
+              startSession();
+            }}
+          >
+            {hasMoreIntroCards ? t('common.next') : t('study.start')}
+          </Button>
+        </Card>
+      ) : null}
+
+      {!introActive && step === 'intro' ? (
         <Card className="study-card session-intro">
           <span className="pill accent">{session.packLabel}</span>
           <div>
@@ -177,7 +273,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {step === 'learn' ? (
+      {!introActive && step === 'learn' ? (
         <section className="study-card desktop-wide learn-layout">
           <StudyItemCard
             type={typeLabel(learnItem.type, language)}
@@ -220,7 +316,7 @@ export function StudyScreen() {
         </section>
       ) : null}
 
-      {step === 'practice' ? (
+      {!introActive && step === 'practice' ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{practice.modeLabel}</p>
@@ -265,7 +361,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {step === 'review' ? (
+      {!introActive && step === 'review' ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{review.modeLabel}</p>
@@ -314,7 +410,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {step === 'summary' ? (
+      {!introActive && step === 'summary' ? (
         <Card className="study-card">
           <span className="pill jade">{t('study.complete')}</span>
           <div>
@@ -333,7 +429,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {step === 'unlocks' ? (
+      {!introActive && step === 'unlocks' ? (
         <Card className="study-card">
           <span className="pill jade">{t('study.unlocked')}</span>
           <div>
@@ -360,7 +456,13 @@ export function StudyScreen() {
             ))}
           </div>
           <div className="session-actions">
-            <Button type="button" onClick={startNextSession}>
+            <Button
+              type="button"
+              onClick={() => {
+                startNextSession();
+                syncStudyPosition(sessionIndex + 1);
+              }}
+            >
               {t('study.another')}
             </Button>
             <Button variant="secondary" type="button" onClick={() => setScreen('home')}>

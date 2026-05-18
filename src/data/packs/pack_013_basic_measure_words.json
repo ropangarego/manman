@@ -1,0 +1,921 @@
+{
+  "pack": {
+    "id": "pack_013_basic_measure_words",
+    "title": "Basic Measure Words",
+    "title_id": "Kata Bantu Hitung Dasar",
+    "subtitle": "Use 个, 杯, 本, and 块 with numbers.",
+    "subtitle_id": "Memakai 个, 杯, 本, dan 块 dengan angka.",
+    "level": 1,
+    "phase": "mvp",
+    "theme": "measure_words",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 13,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Use 个, 杯, 本, and 块 with numbers.",
+    "learning_goal_id": "Memakai 个, 杯, 本, dan 块 dengan angka.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 5,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_ge",
+      "type": "hanzi",
+      "simplified": "个",
+      "traditional": "個",
+      "meaning": "general measure word",
+      "meaning_id": "kata bantu hitung umum",
+      "accepted_meanings": [
+        "general measure word"
+      ],
+      "accepted_meanings_id": [
+        "kata bantu hitung umum"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ge",
+      "pinyin_numbered": "ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "The universal counter — stick it after any number and it counts *any thing*. ge is light and neutral. Tone 0 just rides along.",
+      "mnemonic_id": "Penghitung universal — tempel setelah angka apapun untuk menghitung *benda apapun*. ge ringan dan netral. Nada 0 numpang lewat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个人。",
+          "pinyin": "Yí ge rén.",
+          "meaning": "One person.",
+          "meaning_id": "Satu orang."
+        },
+        {
+          "simplified": "三个。",
+          "pinyin": "Sān ge.",
+          "meaning": "Three items.",
+          "meaning_id": "Tiga buah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "measure_word",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_bei",
+      "type": "hanzi",
+      "simplified": "杯",
+      "traditional": "杯",
+      "meaning": "cup",
+      "meaning_id": "gelas",
+      "accepted_meanings": [
+        "cup"
+      ],
+      "accepted_meanings_id": [
+        "gelas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bēi",
+      "pinyin_numbered": "bei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "杯",
+          "text": "bēi",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A wooden base holding liquid — shaped like a *cup*. bēi ≈ \"bay\" flat. Tone 1 high and steady, like a full cup sitting still.",
+      "mnemonic_id": "Wadah kayu yang menampung cairan — bentuknya kayak *cangkir*. bēi ≈ \"bei\" flat. Nada 1 tinggi rata, kayak cangkir penuh yang diam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一杯水。",
+          "pinyin": "Yì bēi shuǐ.",
+          "meaning": "One cup of water.",
+          "meaning_id": "Satu cangkir air."
+        },
+        {
+          "simplified": "我要一杯。",
+          "pinyin": "Wǒ yào yì bēi.",
+          "meaning": "I want one cup.",
+          "meaning_id": "Aku mau satu cangkir."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "measure_word",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ben",
+      "type": "hanzi",
+      "simplified": "本",
+      "traditional": "本",
+      "meaning": "book measure / root",
+      "meaning_id": "kata bantu buku / akar",
+      "accepted_meanings": [
+        "book measure / root"
+      ],
+      "accepted_meanings_id": [
+        "kata bantu buku / akar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "běn",
+      "pinyin_numbered": "ben3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "本",
+          "text": "běn",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A tree 木 with a mark at its root — the *root*, the *origin*, and the measure for *books*. běn ≈ \"bun\" dipping then rising. Tone 3 like going back to basics.",
+      "mnemonic_id": "Pohon 木 dengan tanda di akarnya — *akar*, *asal*, dan juga kata bantu bilangan untuk *buku*. běn ≈ \"bun\" turun terus naik. Nada 3 kayak balik ke dasarnya.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一本书。",
+          "pinyin": "Yì běn shū.",
+          "meaning": "One book.",
+          "meaning_id": "Satu buku."
+        },
+        {
+          "simplified": "我有一本。",
+          "pinyin": "Wǒ yǒu yì běn.",
+          "meaning": "I have one (book).",
+          "meaning_id": "Aku punya satu (buku)."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_kuai",
+      "type": "hanzi",
+      "simplified": "块",
+      "traditional": "塊",
+      "meaning": "piece / money unit",
+      "meaning_id": "potong / satuan uang",
+      "accepted_meanings": [
+        "piece / money unit"
+      ],
+      "accepted_meanings_id": [
+        "potong / satuan uang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kuài",
+      "pinyin_numbered": "kuai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "块",
+          "text": "kuài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A solid chunk broken off — a *piece*, and in money, one *yuan*. kuài ≈ \"kwai!\" sharp. Tone 4 drops hard, like cash hitting the counter.",
+      "mnemonic_id": "Potongan padat yang terlepas — sepotong, dan dalam uang berarti satu *yuan*. kuài ≈ \"kwai!\" Nada 4 turun tajam, kayak uang dilempar ke meja.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一块钱。",
+          "pinyin": "Yí kuài qián.",
+          "meaning": "One yuan.",
+          "meaning_id": "Satu yuan."
+        },
+        {
+          "simplified": "五块。",
+          "pinyin": "Wǔ kuài.",
+          "meaning": "Five yuan.",
+          "meaning_id": "Lima yuan."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "measure_word",
+        "money",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ren",
+      "type": "hanzi",
+      "simplified": "人",
+      "traditional": "人",
+      "meaning": "person",
+      "meaning_id": "orang",
+      "accepted_meanings": [
+        "person"
+      ],
+      "accepted_meanings_id": [
+        "orang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "rén",
+      "pinyin_numbered": "ren2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "人",
+          "text": "rén",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Two strokes — two legs walking, that's a *person*. rén ≈ \"ren\" rising. Tone 2 goes up like asking \"who is that person?\"",
+      "mnemonic_id": "Dua goresan — dua kaki berjalan, itulah *orang*. rén ≈ \"ren\" naik. Nada 2 naik terus, kayak nanya \"siapa orang itu?\"",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个人。",
+          "pinyin": "Yí ge rén.",
+          "meaning": "One person.",
+          "meaning_id": "Satu orang."
+        },
+        {
+          "simplified": "你是好人。",
+          "pinyin": "Nǐ shì hǎo rén.",
+          "meaning": "You are a good person.",
+          "meaning_id": "Kamu orang baik."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_ge",
+      "type": "word",
+      "simplified": "个",
+      "traditional": "個",
+      "meaning": "general measure word",
+      "meaning_id": "kata bantu hitung umum",
+      "accepted_meanings": [
+        "general measure word"
+      ],
+      "accepted_meanings_id": [
+        "kata bantu hitung umum"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ge",
+      "pinyin_numbered": "ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "0",
+      "hanzi_ids": [
+        "hanzi_ge"
+      ],
+      "part_of_speech": "measure word",
+      "mnemonic": "The go-to measure word — when unsure, use *个*.",
+      "mnemonic_id": "Kata bantu bilangan andalan — kalau ragu, pakai *个*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "个 works for people and most objects when you're not sure of the specific measure word.",
+      "usage_note_id": "个 cocok untuk orang dan kebanyakan benda saat tidak yakin kata bantu bilangan yang spesifik.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个人。",
+          "pinyin": "Yí ge rén.",
+          "meaning": "One person.",
+          "meaning_id": "Satu orang."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "measure"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yi_ge",
+      "type": "word",
+      "simplified": "一个",
+      "traditional": "一個",
+      "meaning": "one item / one person",
+      "meaning_id": "satu buah / satu orang",
+      "accepted_meanings": [
+        "one item / one person"
+      ],
+      "accepted_meanings_id": [
+        "satu buah / satu orang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yí ge",
+      "pinyin_numbered": "yi2 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yí",
+          "tone": 2
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-0",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_ge"
+      ],
+      "part_of_speech": "measure phrase",
+      "mnemonic": "一 one + 个 item — *one* of something, the most basic count.",
+      "mnemonic_id": "一 satu + 个 buah — *satu* buah sesuatu, hitungan paling dasar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一个人。",
+          "pinyin": "Yí ge rén.",
+          "meaning": "One person.",
+          "meaning_id": "Satu orang."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "measure"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_liang_ge",
+      "type": "word",
+      "simplified": "两个",
+      "traditional": "兩個",
+      "meaning": "two items / two people",
+      "meaning_id": "dua buah / dua orang",
+      "accepted_meanings": [
+        "two items / two people"
+      ],
+      "accepted_meanings_id": [
+        "dua buah / dua orang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "liǎng ge",
+      "pinyin_numbered": "liang3 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "两",
+          "text": "liǎng",
+          "tone": 3
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-0",
+      "hanzi_ids": [
+        "hanzi_ge"
+      ],
+      "part_of_speech": "measure phrase",
+      "mnemonic": "两 two (for counting) + 个 — *two* of something. Use 两 not 二 before measure words.",
+      "mnemonic_id": "两 dua (untuk menghitung) + 个 — *dua* buah sesuatu. Pakai 两 bukan 二 sebelum kata bantu bilangan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Use 两 (liǎng) not 二 when counting with measure words.",
+      "usage_note_id": "Gunakan 两 (liǎng) bukan 二 saat menghitung dengan kata bantu bilangan.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "两个人。",
+          "pinyin": "Liǎng ge rén.",
+          "meaning": "Two people.",
+          "meaning_id": "Dua orang."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "measure"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yi_bei",
+      "type": "word",
+      "simplified": "一杯",
+      "traditional": "一杯",
+      "meaning": "one cup",
+      "meaning_id": "satu gelas",
+      "accepted_meanings": [
+        "one cup"
+      ],
+      "accepted_meanings_id": [
+        "satu gelas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì bēi",
+      "pinyin_numbered": "yi4 bei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "杯",
+          "text": "bēi",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_bei"
+      ],
+      "part_of_speech": "measure phrase",
+      "mnemonic": "一 one + 杯 cup — *one cup* of something.",
+      "mnemonic_id": "一 satu + 杯 cangkir — *satu cangkir* sesuatu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一杯水。",
+          "pinyin": "Yì bēi shuǐ.",
+          "meaning": "One cup of water.",
+          "meaning_id": "Satu cangkir air."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "measure"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yi_ben",
+      "type": "word",
+      "simplified": "一本",
+      "traditional": "一本",
+      "meaning": "one book",
+      "meaning_id": "satu buku",
+      "accepted_meanings": [
+        "one book"
+      ],
+      "accepted_meanings_id": [
+        "satu buku"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì běn",
+      "pinyin_numbered": "yi4 ben3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "本",
+          "text": "běn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_ben"
+      ],
+      "part_of_speech": "measure phrase",
+      "mnemonic": "一 one + 本 book — *one book*. 本 is the specific measure for books.",
+      "mnemonic_id": "一 satu + 本 buku — *satu buku*. 本 adalah kata bantu bilangan khusus untuk buku.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我有一本书。",
+          "pinyin": "Wǒ yǒu yì běn shū.",
+          "meaning": "I have one book.",
+          "meaning_id": "Aku punya satu buku."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "measure"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yi_kuai",
+      "type": "word",
+      "simplified": "一块",
+      "traditional": "一塊",
+      "meaning": "one piece / one yuan",
+      "meaning_id": "satu potong / satu yuan",
+      "accepted_meanings": [
+        "one piece / one yuan"
+      ],
+      "accepted_meanings_id": [
+        "satu potong / satu yuan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yí kuài",
+      "pinyin_numbered": "yi2 kuai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yí",
+          "tone": 2
+        },
+        {
+          "hanzi": "块",
+          "text": "kuài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_kuai"
+      ],
+      "part_of_speech": "measure phrase",
+      "mnemonic": "一 one + 块 piece/yuan — *one piece* or *one yuan* in spoken price.",
+      "mnemonic_id": "一 satu + 块 potong/yuan — *satu potong* atau *satu yuan* dalam harga lisan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "块 is the spoken form of yuan. 元 is formal/written.",
+      "usage_note_id": "块 adalah bentuk lisan dari yuan. 元 adalah bentuk formal/tertulis.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一块钱。",
+          "pinyin": "Yí kuài qián.",
+          "meaning": "One yuan.",
+          "meaning_id": "Satu yuan."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "measure",
+        "money"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_yi_ge_ren",
+      "type": "sentence",
+      "simplified": "一个人。",
+      "traditional": "一個人。",
+      "meaning": "One person.",
+      "meaning_id": "Satu orang.",
+      "literal_meaning": "One person.",
+      "literal_meaning_id": "Satu orang.",
+      "pinyin": "yí ge rén",
+      "pinyin_numbered": "yi2 ge0 ren2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yí",
+          "tone": 2
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        },
+        {
+          "hanzi": "人",
+          "text": "rén",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2-0-2",
+      "focus_word_ids": [
+        "word_yi_ge"
+      ],
+      "pattern_ids": [
+        "pattern_number_measure_noun"
+      ],
+      "notes": "Number + measure word + noun — the standard counting pattern.",
+      "notes_id": "Angka + kata bantu bilangan + kata benda — pola hitungan standar.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_yi_bei_shui",
+      "type": "sentence",
+      "simplified": "一杯水。",
+      "traditional": "一杯水。",
+      "meaning": "One cup of water.",
+      "meaning_id": "Satu gelas air.",
+      "literal_meaning": "One cup water.",
+      "literal_meaning_id": "Satu cangkir air.",
+      "pinyin": "yì bēi shuǐ",
+      "pinyin_numbered": "yi4 bei1 shui3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "杯",
+          "text": "bēi",
+          "tone": 1
+        },
+        {
+          "hanzi": "水",
+          "text": "shuǐ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-1-3",
+      "focus_word_ids": [
+        "word_yi_bei"
+      ],
+      "pattern_ids": [
+        "pattern_number_measure_noun"
+      ],
+      "notes": "杯 is the measure word for drinks in cups or glasses.",
+      "notes_id": "杯 adalah kata bantu bilangan untuk minuman dalam cangkir atau gelas.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "measure_word",
+        "food",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_number_measure_noun",
+      "type": "pattern",
+      "title": "Number + measure + noun",
+      "title_id": "Angka + kata bantu + benda",
+      "meaning": "basic measure words",
+      "meaning_id": "kata bantu hitung dasar",
+      "structure": "Number + measure word + noun",
+      "explanation": "Mandarin often needs a measure word between a number and a noun.",
+      "explanation_id": "Mandarin sering membutuhkan kata bantu hitung antara angka dan benda.",
+      "examples": [
+        {
+          "simplified": "一个人。",
+          "traditional": "一個人。",
+          "pinyin": "Yí ge rén.",
+          "meaning": "One person.",
+          "meaning_id": "Satu orang."
+        },
+        {
+          "simplified": "一杯水。",
+          "traditional": "一杯水。",
+          "pinyin": "Yì bēi shuǐ.",
+          "meaning": "One cup of water.",
+          "meaning_id": "Satu cangkir air."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_bei",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ge",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_ben",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ge",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_kuai",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ge",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_liang_ge",
+      "item_type": "word",
+      "prerequisite_item_id": "word_yi_ge",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_yi_bei",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bei",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yi_ben",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ben",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yi_ge",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ge",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yi_kuai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_kuai",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "个 is used for?",
+        "prompt_id": "个 dipakai untuk?",
+        "answer": "general measure word",
+        "answer_id": "kata bantu bilangan umum"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "块 means?",
+        "prompt_id": "Arti 块?",
+        "answer": "piece / yuan",
+        "answer_id": "potong / yuan"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "一__水。(one cup of water)",
+        "answer": "杯"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "一个人。",
+        "answer": "One person.",
+        "answer_id": "Satu orang."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_ge",
+      "word_yi_ge",
+      "word_liang_ge",
+      "word_yi_bei",
+      "word_yi_ben",
+      "word_yi_kuai"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_ge",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yi_ge",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_liang_ge",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_yi_ge_ren",
+      "sentence_yi_bei_shui"
+    ]
+  }
+}

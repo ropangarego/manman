@@ -174,9 +174,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我好。",
+          "pinyin": "Wǒ hǎo.",
+          "meaning": "I am good.",
+          "meaning_id": "Aku baik."
+        },
+        {
+          "simplified": "我是你。",
+          "pinyin": "Wǒ shì nǐ.",
+          "meaning": "I am you.",
+          "meaning_id": "Aku adalah kamu."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "pronoun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -210,9 +227,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好。",
+          "pinyin": "Nǐ hǎo.",
+          "meaning": "Hello.",
+          "meaning_id": "Halo."
+        },
+        {
+          "simplified": "你有。",
+          "pinyin": "Nǐ yǒu.",
+          "meaning": "You have it.",
+          "meaning_id": "Kamu punya."
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "pronoun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -246,9 +280,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我是你。",
+          "pinyin": "Wǒ shì nǐ.",
+          "meaning": "I am you.",
+          "meaning_id": "Aku adalah kamu."
+        },
+        {
+          "simplified": "你好是好。",
+          "pinyin": "Nǐ hǎo shì hǎo.",
+          "meaning": "Being good is good.",
+          "meaning_id": "Baik itu memang baik."
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -282,9 +333,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我有。",
+          "pinyin": "Wǒ yǒu.",
+          "meaning": "I have it.",
+          "meaning_id": "Aku punya."
+        },
+        {
+          "simplified": "你有好。",
+          "pinyin": "Nǐ yǒu hǎo.",
+          "meaning": "You have something good.",
+          "meaning_id": "Kamu punya sesuatu yang baik."
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -318,9 +386,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "不好。",
+          "pinyin": "Bù hǎo.",
+          "meaning": "Not good.",
+          "meaning_id": "Tidak baik."
+        },
+        {
+          "simplified": "我不是你。",
+          "pinyin": "Wǒ bù shì nǐ.",
+          "meaning": "I am not you.",
+          "meaning_id": "Aku bukan kamu."
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "negation",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -354,9 +439,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好。",
+          "pinyin": "Nǐ hǎo.",
+          "meaning": "Hello.",
+          "meaning_id": "Halo."
+        },
+        {
+          "simplified": "我好。",
+          "pinyin": "Wǒ hǎo.",
+          "meaning": "I am good.",
+          "meaning_id": "Aku baik."
+        }
+      ],
       "order_index": 6,
-      "tags": [],
+      "tags": [
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     }
   ],
@@ -386,7 +488,9 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_wo"
+      ],
       "part_of_speech": "pronoun",
       "mnemonic": "One character, one meaning — point to your own chest, that's *me*.",
       "mnemonic_id": "Satu karakter, satu makna — nunjuk ke dada sendiri, itulah *aku*.",
@@ -395,7 +499,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我好。",
+          "pinyin": "Wǒ hǎo.",
+          "meaning": "I am good.",
+          "meaning_id": "Aku baik."
+        }
+      ],
       "order_index": 1,
       "tags": [
         "self"
@@ -428,7 +539,9 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ni"
+      ],
       "part_of_speech": "pronoun",
       "mnemonic": "One character, one person — whoever is standing in front of *you* right now.",
       "mnemonic_id": "Satu karakter, satu orang — yang berdiri di depan *kamu* sekarang.",
@@ -437,7 +550,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好。",
+          "pinyin": "Nǐ hǎo.",
+          "meaning": "Hello.",
+          "meaning_id": "Halo."
+        }
+      ],
       "order_index": 2,
       "tags": [
         "self"
@@ -470,16 +590,25 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_shi"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "是 is the equals sign of Mandarin — X *is* Y, clear and direct.",
       "mnemonic_id": "是 adalah kata paling tegas untuk bilang sesuatu *adalah* sesuatu — kayak tanda sama dengan.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Used between subject and noun.",
+      "usage_note_id": "Dipakai antara subjek dan kata benda.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我是你。",
+          "pinyin": "Wǒ shì nǐ.",
+          "meaning": "I am you.",
+          "meaning_id": "Aku adalah kamu."
+        }
+      ],
       "order_index": 3,
       "tags": [
         "identity"
@@ -512,16 +641,25 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_you_have"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "To *have* or to exist — 有 attaches to anything you own or anything that exists.",
       "mnemonic_id": "Ada atau *punya* — 有 nempel di depan apapun yang kamu miliki atau yang keberadaannya mau ditegasin.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Can mean \"have\" or \"there is/are\".",
+      "usage_note_id": "Bisa berarti \"punya\" atau \"ada\".",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我有。",
+          "pinyin": "Wǒ yǒu.",
+          "meaning": "I have it.",
+          "meaning_id": "Aku punya."
+        }
+      ],
       "order_index": 4,
       "tags": [
         "basic"
@@ -565,10 +703,17 @@
       "mnemonic_id": "没 + 有 — *tidak ada*, kebalikan langsung dari 有. Kalau 有 itu \"ada\", 没有 itu \"kosong\".",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Negation of 有. Use 没有 not 不有.",
+      "usage_note_id": "Negasi dari 有. Gunakan 没有, bukan 不有.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我没有。",
+          "pinyin": "Wǒ méi yǒu.",
+          "meaning": "I don't have it.",
+          "meaning_id": "Aku tidak punya."
+        }
+      ],
       "order_index": 5,
       "tags": [
         "basic",
@@ -602,16 +747,25 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_bu"
+      ],
       "part_of_speech": "negation",
       "mnemonic": "Put 不 before any word and it flips to *not* — the most used negation button.",
       "mnemonic_id": "Taruh 不 sebelum kata apapun, langsung jadi *tidak* — tombol negatif paling sering dipakai.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Place before verbs or adjectives to negate.",
+      "usage_note_id": "Letakkan sebelum kata kerja atau sifat untuk menegasikan.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "不好。",
+          "pinyin": "Bù hǎo.",
+          "meaning": "Not good.",
+          "meaning_id": "Tidak baik."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "negation"
@@ -644,7 +798,9 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_hao"
+      ],
       "part_of_speech": "adjective",
       "mnemonic": "好 works as an answer, a compliment, or a greeting — all wrapped in one word: *good*.",
       "mnemonic_id": "好 bisa jadi jawaban, pujian, atau sapaan — semua dalam satu kata *baik*.",
@@ -653,7 +809,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好。",
+          "pinyin": "Nǐ hǎo.",
+          "meaning": "Hello.",
+          "meaning_id": "Halo."
+        }
+      ],
       "order_index": 7,
       "tags": [
         "basic"
@@ -670,8 +833,8 @@
       "traditional": "我是我。",
       "meaning": "I am me.",
       "meaning_id": "Saya adalah saya.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I am I.",
+      "literal_meaning_id": "Aku adalah aku.",
       "pinyin": "wǒ shì wǒ",
       "pinyin_numbered": "wo3 shi4 wo3",
       "pinyin_syllables": [
@@ -698,11 +861,14 @@
       "pattern_ids": [
         "pattern_a_shi_b"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "A simple identity sentence using 是.",
+      "notes_id": "Kalimat identitas sederhana menggunakan 是.",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "identity",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -712,8 +878,8 @@
       "traditional": "我有。",
       "meaning": "I have it.",
       "meaning_id": "Saya punya.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I have.",
+      "literal_meaning_id": "Aku punya.",
       "pinyin": "wǒ yǒu",
       "pinyin_numbered": "wo3 you3",
       "pinyin_syllables": [
@@ -735,11 +901,14 @@
       "pattern_ids": [
         "pattern_a_shi_b"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "Basic possession sentence. Object often comes after 有.",
+      "notes_id": "Kalimat kepemilikan dasar. Objek biasanya mengikuti 有.",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "possession",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -754,13 +923,55 @@
       "structure": "Subject + 是 + noun",
       "explanation": "Use 是 to say identity or category.",
       "explanation_id": "Gunakan 是 untuk identitas atau kategori.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我是你。",
+          "traditional": "我是你。",
+          "pinyin": "Wǒ shì nǐ.",
+          "meaning": "I am you.",
+          "meaning_id": "Aku adalah kamu."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "identity",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_shi",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_you_have",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_wo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_meiyou",
+      "item_type": "word",
+      "prerequisite_item_id": "word_you_have",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_shi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_shi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_you_have",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_you_have",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -776,7 +987,34 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "我 means?",
+        "prompt_id": "Arti 我?",
+        "answer": "I / me",
+        "answer_id": "aku / saya"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "是 means?",
+        "prompt_id": "Arti 是?",
+        "answer": "is / am / are",
+        "answer_id": "adalah"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__你。(I am you)",
+        "answer": "是"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我没有。",
+        "prompt_id": "我没有。",
+        "answer": "I don't have it.",
+        "answer_id": "Aku tidak punya."
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

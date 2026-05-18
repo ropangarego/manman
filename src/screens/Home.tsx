@@ -2,7 +2,7 @@
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
-import { contentItems, getCurrentFocus, getStarterStudySession, sessionPlans } from '../data/mockContent';
+import { contentItems, getCurrentFocus, getIntroStudySession, getStarterStudySession, sessionPlans } from '../data/mockContent';
 import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
 import { progressStats, useProgressStore } from '../stores/progressStore';
@@ -11,6 +11,7 @@ import { useStudyStore } from '../stores/studyStore';
 export function HomeScreen() {
   const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
+  const introStatus = useAppStore((state) => state.introStatus);
   const setScreen = useAppStore((state) => state.setScreen);
   const startSession = useStudyStore((state) => state.startSession);
   const sessionIndex = useStudyStore((state) => state.sessionIndex);
@@ -19,6 +20,8 @@ export function HomeScreen() {
   const totalAttempts = useProgressStore((state) => state.totalAttempts);
   const dailyActivity = useProgressStore((state) => state.dailyActivity);
   const plan = sessionPlans[sessionSize];
+  const introActive = introStatus === 'required' || introStatus === 'optional';
+  const introPreview = getIntroStudySession(language);
   const sessionPreview = getStarterStudySession(sessionSize, sessionIndex, language);
   const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
   const currentFocus = getCurrentFocus(language, sessionIndex);
@@ -30,13 +33,16 @@ export function HomeScreen() {
       <section className="hero">
         <div className="hero-top">
           <span className="pill accent">{t('home.todaySession')}</span>
+          <span className="pill">{introActive && introPreview ? introPreview.packLabel : sessionPreview.packLabel}</span>
           <h2>
-            {language === 'Indonesian'
-              ? `${sessionPreview.learnItems.length} kata baru · ${sessionPreview.reviewItems.length} review`
-              : `${sessionPreview.learnItems.length} new words · ${sessionPreview.reviewItems.length} reviews`}
+            {introActive && introPreview
+              ? introPreview.introTitle
+              : language === 'Indonesian'
+                ? `${sessionPreview.learnItems.length} kata baru · ${sessionPreview.reviewItems.length} review`
+                : `${sessionPreview.learnItems.length} new words · ${sessionPreview.reviewItems.length} reviews`}
           </h2>
-          <p className="duration-line">{t('home.duration')}: {plan.duration}</p>
-          <p>{t('home.description')}</p>
+          <p className="duration-line">{t('home.duration')}: {introActive ? '~5 min' : plan.duration}</p>
+          <p>{introActive && introPreview ? introPreview.introDescription : t('home.description')}</p>
         </div>
         <Button
           type="button"

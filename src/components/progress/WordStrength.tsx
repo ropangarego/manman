@@ -9,6 +9,7 @@ interface WordStrengthProps {
 
 export function WordStrength({ strength }: WordStrengthProps) {
   const { language, t } = useTranslation();
+  const totalWords = strength.reduce((sum, item) => sum + item.count, 0);
 
   return (
     <Card>
@@ -18,17 +19,24 @@ export function WordStrength({ strength }: WordStrengthProps) {
           <p>{t('progress.wordStrengthSub')}</p>
         </div>
       </div>
-      <div className="strength-list">
-        {strength.map((item) => (
-          <div className="strength-row" key={item.stage}>
-            <span>{optionLabel(language, item.stage)}</span>
-            <div className="strength-track" aria-hidden="true">
-              <i style={{ width: `${item.width}%`, background: item.color }} />
+      {totalWords === 0 ? (
+        <div className="empty-state">
+          <h4>{t('progress.wordStrengthEmpty')}</h4>
+          <p>{t('progress.wordStrengthEmptySub')}</p>
+        </div>
+      ) : (
+        <div className="strength-list">
+          {strength.map((item) => (
+            <div className="strength-row" key={item.stage}>
+              <span>{optionLabel(language, item.stage)}</span>
+              <div className="strength-track" aria-hidden="true">
+                <i style={{ width: `${item.width}%`, background: item.color }} />
+              </div>
+              <span>{item.count} {t('home.words').toLowerCase()}</span>
             </div>
-            <span>{item.count} {t('home.words').toLowerCase()}</span>
+          ))}
           </div>
-        ))}
-      </div>
+      )}
     </Card>
   );
 }

@@ -94,9 +94,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好吗？",
+          "pinyin": "Nǐ hǎo ma?",
+          "meaning": "How are you?",
+          "meaning_id": "Apa kabar?"
+        },
+        {
+          "simplified": "你去吗？",
+          "pinyin": "Nǐ qù ma?",
+          "meaning": "Are you going?",
+          "meaning_id": "Kamu pergi?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "particle",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -130,9 +147,25 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你呢？",
+          "pinyin": "Nǐ ne?",
+          "meaning": "What about you?",
+          "meaning_id": "Kamu gimana?"
+        },
+        {
+          "simplified": "我好，你呢？",
+          "pinyin": "Wǒ hǎo, nǐ ne?",
+          "meaning": "I'm good, what about you?",
+          "meaning_id": "Aku baik, kamu?"
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "particle",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -166,9 +199,25 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你是谁？",
+          "pinyin": "Nǐ shì shuí?",
+          "meaning": "Who are you?",
+          "meaning_id": "Kamu siapa?"
+        },
+        {
+          "simplified": "谁去？",
+          "pinyin": "Shuí qù?",
+          "meaning": "Who is going?",
+          "meaning_id": "Siapa yang pergi?"
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "question_word",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -202,9 +251,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "什么？",
+          "pinyin": "Shén me?",
+          "meaning": "What?",
+          "meaning_id": "Apa?"
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "question_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -238,9 +297,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "什么？",
+          "pinyin": "Shén me?",
+          "meaning": "What?",
+          "meaning_id": "Apa?"
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "question_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -274,9 +343,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你去哪？",
+          "pinyin": "Nǐ qù nǎ?",
+          "meaning": "Where are you going?",
+          "meaning_id": "Kamu mau ke mana?"
+        }
+      ],
       "order_index": 6,
-      "tags": [],
+      "tags": [
+        "question_word",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -306,16 +385,25 @@
         }
       ],
       "tone_pattern": "0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ma"
+      ],
       "part_of_speech": "particle",
       "mnemonic": "吗 at the end flips any statement into a question — that simple.",
       "mnemonic_id": "吗 di ujung kalimat, pernyataan langsung jadi pertanyaan — sesimpel itu.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Always goes at the end of a sentence.",
+      "usage_note_id": "Selalu di akhir kalimat.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你去吗？",
+          "pinyin": "Nǐ qù ma?",
+          "meaning": "Are you going?",
+          "meaning_id": "Kamu pergi?"
+        }
+      ],
       "order_index": 1,
       "tags": [
         "question"
@@ -348,16 +436,25 @@
         }
       ],
       "tone_pattern": "0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ne"
+      ],
       "part_of_speech": "particle",
       "mnemonic": "呢 tosses the question back casually — \"and *what about you*?\"",
       "mnemonic_id": "呢 kayak nanya balik dengan santai — \"terus kamu *gimana*?\"",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Softer than 吗, used to redirect the question.",
+      "usage_note_id": "Lebih ringan dari 吗, dipakai untuk balik bertanya.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你呢？",
+          "pinyin": "Nǐ ne?",
+          "meaning": "What about you?",
+          "meaning_id": "Kamu gimana?"
+        }
+      ],
       "order_index": 2,
       "tags": [
         "question"
@@ -390,7 +487,9 @@
         }
       ],
       "tone_pattern": "2",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_shei"
+      ],
       "part_of_speech": "question word",
       "mnemonic": "*Who* — one word for any question about a person.",
       "mnemonic_id": "*Siapa* — satu kata untuk semua pertanyaan tentang orang.",
@@ -399,7 +498,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你是谁？",
+          "pinyin": "Nǐ shì shuí?",
+          "meaning": "Who are you?",
+          "meaning_id": "Kamu siapa?"
+        }
+      ],
       "order_index": 3,
       "tags": [
         "question"
@@ -437,7 +543,10 @@
         }
       ],
       "tone_pattern": "2-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_shen",
+        "hanzi_me"
+      ],
       "part_of_speech": "question word",
       "mnemonic": "*What* — 什+么 together, the most common question word in conversation.",
       "mnemonic_id": "*Apa* — kombinasi 什+么, kata tanya paling sering muncul dalam percakapan.",
@@ -446,7 +555,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你去什么？",
+          "pinyin": "Nǐ qù shén me?",
+          "meaning": "What are you going to?",
+          "meaning_id": "Kamu pergi ke apa?"
+        }
+      ],
       "order_index": 4,
       "tags": [
         "question"
@@ -484,7 +600,9 @@
         }
       ],
       "tone_pattern": "3-3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_na"
+      ],
       "part_of_speech": "question word",
       "mnemonic": "*Where* — 哪 which + 里 inside, asking about location naturally.",
       "mnemonic_id": "*Di mana* — 哪 mana + 里 di dalam, nanya lokasi dengan natural.",
@@ -493,7 +611,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你去哪里？",
+          "pinyin": "Nǐ qù nǎ lǐ?",
+          "meaning": "Where are you going?",
+          "meaning_id": "Kamu mau ke mana?"
+        }
+      ],
       "order_index": 5,
       "tags": [
         "location"
@@ -526,16 +651,25 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_dui"
+      ],
       "part_of_speech": "adjective",
       "mnemonic": "*Correct* or *right* — works as a short answer or confirmation.",
       "mnemonic_id": "*Betul* atau *benar* — bisa jadi jawaban singkat atau konfirmasi.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Used to confirm or agree.",
+      "usage_note_id": "Dipakai untuk mengkonfirmasi atau setuju.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "对，我去。",
+          "pinyin": "Duì, wǒ qù.",
+          "meaning": "Right, I am going.",
+          "meaning_id": "Betul, aku pergi."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "question"
@@ -552,8 +686,8 @@
       "traditional": "你去嗎？",
       "meaning": "Are you going?",
       "meaning_id": "Kamu pergi?",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "You go?",
+      "literal_meaning_id": "Kamu pergi?",
       "pinyin": "nǐ qù ma",
       "pinyin_numbered": "ni3 qu4 ma0",
       "pinyin_syllables": [
@@ -580,11 +714,14 @@
       "pattern_ids": [
         "pattern_yes_no_ma"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "吗 turns any statement into a yes/no question.",
+      "notes_id": "吗 mengubah pernyataan apapun menjadi pertanyaan ya/tidak.",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "question",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -594,8 +731,8 @@
       "traditional": "你是誰？",
       "meaning": "Who are you?",
       "meaning_id": "Kamu siapa?",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "You are who?",
+      "literal_meaning_id": "Kamu adalah siapa?",
       "pinyin": "nǐ shì shéi",
       "pinyin_numbered": "ni3 shi4 shei2",
       "pinyin_syllables": [
@@ -622,11 +759,14 @@
       "pattern_ids": [
         "pattern_yes_no_ma"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "In Mandarin, question words stay in position — no inversion needed.",
+      "notes_id": "Dalam Mandarin, kata tanya tetap di posisinya — tidak perlu dibalik.",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "question",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -641,13 +781,56 @@
       "structure": "Statement + 吗?",
       "explanation": "Add 吗 to make a yes/no question.",
       "explanation_id": "Tambahkan 吗 untuk membuat pertanyaan ya/tidak.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你好吗？",
+          "traditional": "你好嗎？",
+          "pinyin": "Nǐ hǎo ma?",
+          "meaning": "How are you?",
+          "meaning_id": "Apa kabar?"
+        },
+        {
+          "simplified": "你去吗？",
+          "traditional": "你去嗎？",
+          "pinyin": "Nǐ qù ma?",
+          "meaning": "Are you going?",
+          "meaning_id": "Kamu pergi?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "question",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_shei",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_shi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_nali",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_na",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shenme",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_me",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shenme",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_shen",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -663,7 +846,33 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "谁 means?",
+        "prompt_id": "Arti 谁?",
+        "answer": "who",
+        "answer_id": "siapa"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "什么 means?",
+        "prompt_id": "Arti 什么?",
+        "answer": "what",
+        "answer_id": "apa"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "你去__？(Where are you going?)",
+        "answer": "哪里"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你是谁？",
+        "answer": "Who are you?",
+        "answer_id": "Kamu siapa?"
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

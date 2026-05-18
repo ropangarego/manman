@@ -47,6 +47,7 @@ export interface StudyQuestion {
 
 export interface StarterStudySession {
   sessionNumber: number;
+  sessionIndex: number;
   packId: string;
   packLabel: string;
   introTitle: string;
@@ -57,6 +58,24 @@ export interface StarterStudySession {
   unlocks: ContentItem[];
 }
 
+export interface IntroStudyCard {
+  id: string;
+  title: string;
+  titleId: string;
+  body: string;
+  bodyId: string;
+  example: Record<string, unknown> | null;
+  orderIndex: number;
+}
+
+export interface IntroStudySession {
+  packId: string;
+  packLabel: string;
+  introTitle: string;
+  introDescription: string;
+  cards: IntroStudyCard[];
+}
+
 export interface PlacementQuestion {
   id: string;
   title: string;
@@ -64,6 +83,7 @@ export interface PlacementQuestion {
   prompt: string;
   answers: string[];
   correctAnswer: string;
+  skill: string;
 }
 
 interface RawPackInfo {
@@ -647,6 +667,61 @@ function packForSession(sessionIndex: number) {
   return standardPackEntries[sessionIndex % standardPackEntries.length];
 }
 
+export function sessionIndexForPackId(packId?: string | null) {
+  if (!packId) {
+    return 0;
+  }
+
+  const index = standardPackEntries.findIndex((entry) => entry.raw.pack.id === packId);
+  return index >= 0 ? index : 0;
+}
+
+export function packIdForSessionIndex(sessionIndex = 0) {
+  return packForSession(sessionIndex).raw.pack.id;
+}
+
+export function packLabelForSessionIndex(sessionIndex = 0, language: AppLanguage = 'English') {
+  const packEntry = packForSession(sessionIndex);
+  const activePackIndex = Math.max(0, standardPackEntries.findIndex((entry) => entry.raw.pack.id === packEntry.raw.pack.id));
+
+  return textFor(
+    language,
+    `Pack ${activePackIndex + 1} - ${packEntry.raw.pack.title}`,
+    `Paket ${activePackIndex + 1} - ${packEntry.raw.pack.title_id}`,
+  );
+}
+
+function nearestExistingSessionIndex(targetPackNumber: number) {
+  if (standardPackEntries.length === 0) {
+    return 0;
+  }
+
+  const desiredIndex = Math.max(0, targetPackNumber - 1);
+  return Math.min(desiredIndex, standardPackEntries.length - 1);
+}
+
+export function recommendedSessionIndexForPlacement(score: number, totalQuestions: number) {
+  if (totalQuestions <= 0) {
+    return 0;
+  }
+
+  const scaledScore = (score / totalQuestions) * 10;
+
+  if (scaledScore <= 3) {
+    return nearestExistingSessionIndex(1);
+  }
+
+  if (scaledScore <= 6) {
+    return nearestExistingSessionIndex(3);
+  }
+
+  if (scaledScore <= 8) {
+    return nearestExistingSessionIndex(5);
+  }
+
+  return nearestExistingSessionIndex(7);
+}
+
 function sessionCycle(sessionIndex: number) {
   return standardPackEntries.length === 0 ? 0 : Math.floor(sessionIndex / standardPackEntries.length);
 }
@@ -684,11 +759,12 @@ export function getStarterStudySession(
 
   return {
     sessionNumber: sessionIndex + 1,
+    sessionIndex,
     packId: packEntry.raw.pack.id,
     packLabel: textFor(
       language,
       `Pack ${packNumber} - ${packEntry.raw.pack.title}`,
-      `Pack ${packNumber} - ${packEntry.raw.pack.title_id}`,
+      `Paket ${packNumber} - ${packEntry.raw.pack.title_id}`,
     ),
     introTitle: textFor(
       language,
@@ -705,24 +781,139 @@ export function getStarterStudySession(
 
 export const starterStudySession = getStarterStudySession('Standard', 0);
 
-const placementSourceIds = ['word_wo', 'word_ni', 'word_shi', 'word_qu', 'word_ma'];
-
 export function getPlacementQuestions(language: AppLanguage = 'English'): PlacementQuestion[] {
-  return placementSourceIds
-    .map((id) => contentItemById.get(id))
-    .filter((item): item is ContentItem => Boolean(item))
-    .map((item) => {
-      const localizedItem = localizeContentItem(item, language);
+  const localized = (id: string) => {
+    const item = contentItemById.get(id);
+    return item ? localizeContentItem(item, language) : null;
+  };
 
-      return {
-        id: item.id,
-        title: localizedItem.title,
-        pinyin: localizedItem.pinyin,
-        prompt: textFor(language, 'What does this mean?', 'Apa artinya?'),
-        answers: answerChoicesForItem(item, language),
-        correctAnswer: localizedItem.meaning,
-      };
-    });
+  const wordNi = localized('word_ni');
+  const wordWo = localized('word_wo');
+  const wordYou = localized('word_you_have');
+  const wordShi = localized('word_shi');
+  const wordQu = localized('word_qu');
+  const wordZai = localized('word_zai_location');
+  const wordMa = localized('word_ma');
+  const sentenceStatement = localized('sentence_wo_shi_wo');
+  const sentenceQuestion = localized('sentence_ni_qu_ma');
+  const questionParticle = localized('pattern_yes_no_ma');
+
+  const questions: Array<PlacementQuestion | null> = [
+    wordNi && {
+      id: 'placement_basic_ni',
+      title: wordNi.title,
+      pinyin: wordNi.pinyin,
+      prompt: textFor(language, 'What does this mean?', 'Apa artinya?'),
+      answers: unique([wordNi.meaning, wordWo?.meaning, wordYou?.meaning, wordShi?.meaning].filter(Boolean) as string[]),
+      correctAnswer: wordNi.meaning,
+      skill: textFor(language, 'Basic meaning', 'Arti dasar'),
+    },
+    wordWo && {
+      id: 'placement_pinyin_wo',
+      title: wordWo.pinyin.join(' '),
+      pinyin: [],
+      prompt: textFor(language, 'Which Mandarin word matches this pinyin?', 'Kata Mandarin mana yang cocok dengan pinyin ini?'),
+      answers: unique([wordWo.title, wordNi?.title, wordYou?.title, wordMa?.title].filter(Boolean) as string[]),
+      correctAnswer: wordWo.title,
+      skill: textFor(language, 'Pinyin recognition', 'Mengenali pinyin'),
+    },
+    wordYou && {
+      id: 'placement_tone_you',
+      title: wordYou.title,
+      pinyin: wordYou.pinyin,
+      prompt: textFor(language, 'Which tone pattern do you hear/read?', 'Pola nada mana yang kamu baca/dengar?'),
+      answers: ['2', '3', '4', 'neutral'],
+      correctAnswer: '3',
+      skill: textFor(language, 'Tone recognition', 'Mengenali nada'),
+    },
+    sentenceStatement && {
+      id: 'placement_sentence_hello',
+      title: sentenceStatement.title,
+      pinyin: sentenceStatement.pinyin,
+      prompt: textFor(language, 'What does this short phrase mean?', 'Apa arti frasa singkat ini?'),
+      answers: unique([
+        sentenceStatement.meaning,
+        textFor(language, 'thank you', 'terima kasih'),
+        textFor(language, 'goodbye', 'selamat tinggal'),
+        textFor(language, 'I am here', 'saya di sini'),
+      ]),
+      correctAnswer: sentenceStatement.meaning,
+      skill: textFor(language, 'Phrase comprehension', 'Memahami frasa'),
+    },
+    wordShi && {
+      id: 'placement_grammar_shi',
+      title: textFor(language, 'I ___ a student.', 'Saya ___ murid.'),
+      pinyin: [],
+      prompt: textFor(language, 'Which Mandarin word works like “to be”?', 'Kata Mandarin mana yang berarti “adalah”?'),
+      answers: unique([wordShi.meaning, wordQu?.meaning, wordZai?.meaning, wordMa?.meaning].filter(Boolean) as string[]),
+      correctAnswer: wordShi.meaning,
+      skill: textFor(language, 'Simple grammar', 'Grammar sederhana'),
+    },
+    wordMa && {
+      id: 'placement_particle_ma',
+      title: questionParticle?.title ?? '吗',
+      pinyin: wordMa.pinyin,
+      prompt: textFor(language, 'What does 吗 usually do at the end of a sentence?', 'Biasanya apa fungsi 吗 di akhir kalimat?'),
+      answers: unique([
+        textFor(language, 'turns it into a yes/no question', 'mengubahnya menjadi pertanyaan ya/tidak'),
+        textFor(language, 'marks past tense', 'menandai bentuk lampau'),
+        textFor(language, 'means very', 'berarti sangat'),
+        textFor(language, 'shows possession', 'menunjukkan kepemilikan'),
+      ]),
+      correctAnswer: textFor(language, 'turns it into a yes/no question', 'mengubahnya menjadi pertanyaan ya/tidak'),
+      skill: textFor(language, 'Particle usage', 'Penggunaan partikel'),
+    },
+    sentenceQuestion && {
+      id: 'placement_sentence_question',
+      title: sentenceQuestion.title,
+      pinyin: sentenceQuestion.pinyin,
+      prompt: textFor(language, 'What is the practical meaning?', 'Apa arti praktisnya?'),
+      answers: unique([
+        sentenceQuestion.meaning,
+        textFor(language, 'Where are you going?', 'Kamu mau pergi ke mana?'),
+        textFor(language, 'I have a question.', 'Saya punya pertanyaan.'),
+        textFor(language, 'This is mine.', 'Ini punya saya.'),
+      ]),
+      correctAnswer: sentenceQuestion.meaning,
+      skill: textFor(language, 'Practical phrase', 'Frasa praktis'),
+    },
+    wordQu && {
+      id: 'placement_verb_qu',
+      title: textFor(language, '我要___学校。', 'Saya mau ___ sekolah.'),
+      pinyin: [],
+      prompt: textFor(language, 'Which meaning best completes the sentence?', 'Arti mana yang paling cocok melengkapi kalimat?'),
+      answers: unique([wordQu.meaning, wordShi?.meaning, wordYou?.meaning, wordMa?.meaning].filter(Boolean) as string[]),
+      correctAnswer: wordQu.meaning,
+      skill: textFor(language, 'Everyday action', 'Aksi sehari-hari'),
+    },
+  ];
+
+  return questions.filter((question): question is PlacementQuestion => Boolean(question));
+}
+
+export function getIntroStudySession(language: AppLanguage = 'English'): IntroStudySession | null {
+  if (!introPack) {
+    return null;
+  }
+
+  return {
+    packId: introPack.pack.id,
+    packLabel: textFor(language, 'Pack 000 - Introduction', 'Paket 000 - Pengenalan'),
+    introTitle: textFor(language, introPack.pack.title, introPack.pack.title_id),
+    introDescription: textFor(language, introPack.pack.subtitle, introPack.pack.subtitle_id),
+    cards: (introPack.intro_cards ?? [])
+      .slice()
+      .sort((a, b) => a.order_index - b.order_index)
+      .map((card) => ({
+        id: card.id,
+        title: card.title,
+        titleId: card.title_id,
+        body: card.body,
+        bodyId: card.body_id,
+        example: card.example as Record<string, unknown> | null,
+        orderIndex: card.order_index,
+      })),
+  };
 }
 
 export const starterStats = {
@@ -762,14 +953,40 @@ export const wordStrength = wordStageCounts.map((item) => ({
   color: stageColors[item.stage],
 }));
 
-export function getLearningPath(sessionIndex = 0) {
+export type IntroPathStatus = 'required' | 'optional' | 'completed' | 'skipped' | 'not_required';
+
+export function getLearningPath(sessionIndex = 0, introStatus: IntroPathStatus = 'completed') {
   const currentPack = packForSession(sessionIndex).raw.pack;
+  const introActive = introStatus === 'required' || introStatus === 'optional';
 
   return contentPacks.map((pack) => {
     const isIntro = pack.study_flow.intro_only;
-    const isCurrent = pack.pack.id === currentPack.id;
-    const status = isIntro ? 'done' : isCurrent ? 'current' : pack.pack.order_index < currentPack.order_index ? 'done' : pack.pack.order_index === currentPack.order_index + 1 ? 'available' : 'locked';
-    const label = status === 'done' ? 'Done' : status === 'current' ? 'Now' : status === 'available' ? 'Available' : 'Locked';
+    const isCurrent = !introActive && pack.pack.id === currentPack.id;
+    const status = isIntro
+      ? introStatus === 'skipped'
+        ? 'skipped'
+        : introActive
+          ? 'current'
+          : 'done'
+      : isCurrent
+        ? 'current'
+        : pack.pack.order_index < currentPack.order_index
+          ? 'done'
+          : pack.pack.order_index === currentPack.order_index + 1
+            ? 'available'
+            : 'locked';
+    const label =
+      status === 'skipped'
+        ? 'Skipped'
+        : isIntro && status === 'current'
+          ? 'Intro'
+          : status === 'done'
+            ? 'Done'
+            : status === 'current'
+              ? 'Now'
+              : status === 'available'
+                ? 'Available'
+                : 'Locked';
     const icon = isIntro ? '入' : String(pack.pack.order_index);
 
     return {

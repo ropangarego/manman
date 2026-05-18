@@ -94,9 +94,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喜欢水。",
+          "pinyin": "Wǒ xǐ huān shuǐ.",
+          "meaning": "I like water.",
+          "meaning_id": "Aku suka air."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "verb_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -130,9 +140,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喜欢吃饭。",
+          "pinyin": "Wǒ xǐ huān chī fàn.",
+          "meaning": "I like eating.",
+          "meaning_id": "Aku suka makan."
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "verb_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -166,9 +186,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我觉得好。",
+          "pinyin": "Wǒ jué de hǎo.",
+          "meaning": "I think it is good.",
+          "meaning_id": "Aku rasa ini baik."
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "verb_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -202,9 +232,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "可以吗？",
+          "pinyin": "Kě yǐ ma?",
+          "meaning": "Is it okay?",
+          "meaning_id": "Boleh?"
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "modal_part",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -238,9 +278,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我可以去吗？",
+          "pinyin": "Wǒ kě yǐ qù ma?",
+          "meaning": "Can I go?",
+          "meaning_id": "Aku boleh pergi?"
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "modal_part",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -275,16 +325,26 @@
         }
       ],
       "tone_pattern": "3-1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_xi",
+        "hanzi_huan"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "喜 like + 欢 joy — *like*, a positive feeling stronger than just okay.",
       "mnemonic_id": "喜 suka + 欢 gembira — *suka*, perasaan positif yang lebih dari sekedar oke.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "喜欢 + noun or verb phrase to express liking.",
+      "usage_note_id": "喜欢 + kata benda atau frasa kata kerja untuk menyatakan kesukaan.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喜欢水。",
+          "pinyin": "Wǒ xǐ huān shuǐ.",
+          "meaning": "I like water.",
+          "meaning_id": "Aku suka air."
+        }
+      ],
       "order_index": 1,
       "tags": [
         "opinion"
@@ -327,7 +387,11 @@
         }
       ],
       "tone_pattern": "4-3-1",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_bu",
+        "hanzi_xi",
+        "hanzi_huan"
+      ],
       "part_of_speech": "verb phrase",
       "mnemonic": "不 not + 喜欢 like — *don't like*, direct and clear.",
       "mnemonic_id": "不 tidak + 喜欢 suka — *tidak suka*, langsung dan jelas.",
@@ -336,7 +400,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我不喜欢冷。",
+          "pinyin": "Wǒ bù xǐ huān lěng.",
+          "meaning": "I don't like cold.",
+          "meaning_id": "Aku tidak suka dingin."
+        }
+      ],
       "order_index": 2,
       "tags": [
         "opinion"
@@ -374,16 +445,26 @@
         }
       ],
       "tone_pattern": "2-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_jue",
+        "hanzi_de"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "觉 feel + 得 get — *feel* or *think*, the word for expressing opinions.",
       "mnemonic_id": "觉 merasa + 得 dapat — *merasa* atau *berpendapat*, kata untuk ngungkapin opini.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Use 觉得 to express personal opinions or feelings.",
+      "usage_note_id": "Gunakan 觉得 untuk mengungkapkan pendapat atau perasaan pribadi.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我觉得好。",
+          "pinyin": "Wǒ jué de hǎo.",
+          "meaning": "I think it is good.",
+          "meaning_id": "Aku rasa ini baik."
+        }
+      ],
       "order_index": 3,
       "tags": [
         "opinion"
@@ -421,16 +502,26 @@
         }
       ],
       "tone_pattern": "3-3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_ke",
+        "hanzi_yi"
+      ],
       "part_of_speech": "modal verb",
       "mnemonic": "可 can + 以 — *can / may*, permission or ability.",
       "mnemonic_id": "可 bisa + 以 — *boleh* atau *bisa*, izin atau kemampuan.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "可以 expresses permission or possibility.",
+      "usage_note_id": "可以 menyatakan izin atau kemungkinan.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我可以去吗？",
+          "pinyin": "Wǒ kě yǐ qù ma?",
+          "meaning": "Can I go?",
+          "meaning_id": "Aku boleh pergi?"
+        }
+      ],
       "order_index": 4,
       "tags": [
         "opinion"
@@ -473,7 +564,11 @@
         }
       ],
       "tone_pattern": "4-3-3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_bu",
+        "hanzi_ke",
+        "hanzi_yi"
+      ],
       "part_of_speech": "modal phrase",
       "mnemonic": "不 not + 可以 can — *cannot / not allowed*, a firm restriction.",
       "mnemonic_id": "不 tidak + 可以 boleh — *tidak boleh*, larangan yang tegas.",
@@ -482,7 +577,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "不可以去。",
+          "pinyin": "Bù kě yǐ qù.",
+          "meaning": "Cannot go.",
+          "meaning_id": "Tidak boleh pergi."
+        }
+      ],
       "order_index": 5,
       "tags": [
         "opinion"
@@ -520,16 +622,26 @@
         }
       ],
       "tone_pattern": "3-0",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_hao",
+        "hanzi_de"
+      ],
       "part_of_speech": "expression",
       "mnemonic": "好 good + 的 — *okay / alright*, the most casual way to agree.",
       "mnemonic_id": "好 baik + 的 — *oke* atau *baiklah*, jawaban setuju yang paling casual.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Casual agreement — more relaxed than just 好.",
+      "usage_note_id": "Persetujuan santai — lebih rileks dari sekadar 好.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "好的，我去。",
+          "pinyin": "Hǎo de, wǒ qù.",
+          "meaning": "Okay, I will go.",
+          "meaning_id": "Oke, aku pergi."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "opinion"
@@ -546,8 +658,8 @@
       "traditional": "我喜歡水。",
       "meaning": "I like water.",
       "meaning_id": "Saya suka air.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I like water.",
+      "literal_meaning_id": "Aku suka air.",
       "pinyin": "wǒ xǐ huān shuǐ",
       "pinyin_numbered": "wo3 xi3 huan1 shui3",
       "pinyin_syllables": [
@@ -579,11 +691,14 @@
       "pattern_ids": [
         "pattern_like_object"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "喜欢 + object is the standard \"like\" pattern.",
+      "notes_id": "喜欢 + objek adalah pola standar untuk \"suka\".",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "opinion",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -593,8 +708,8 @@
       "traditional": "我覺得可以。",
       "meaning": "I think it’s okay.",
       "meaning_id": "Menurut saya boleh/oke.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I feel can.",
+      "literal_meaning_id": "Aku rasa boleh.",
       "pinyin": "wǒ jué de kě yǐ",
       "pinyin_numbered": "wo3 jue2 de0 ke3 yi3",
       "pinyin_syllables": [
@@ -631,11 +746,14 @@
       "pattern_ids": [
         "pattern_like_object"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "觉得 expresses personal opinion — \"I think/feel that\".",
+      "notes_id": "觉得 menyatakan pendapat pribadi — \"aku rasa/pikir\".",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "opinion",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -650,13 +768,86 @@
       "structure": "Subject + 喜欢 + thing/action",
       "explanation": "Use 喜欢 to say what you like.",
       "explanation_id": "Gunakan 喜欢 untuk mengatakan yang kamu suka.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喜欢水。",
+          "traditional": "我喜歡水。",
+          "pinyin": "Wǒ xǐ huān shuǐ.",
+          "meaning": "I like water.",
+          "meaning_id": "Aku suka air."
+        },
+        {
+          "simplified": "我喜欢吃饭。",
+          "traditional": "我喜歡吃飯。",
+          "pinyin": "Wǒ xǐ huān chī fàn.",
+          "meaning": "I like eating.",
+          "meaning_id": "Aku suka makan."
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "opinion",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ke",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_bu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_xi",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_hao",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_bukeyi",
+      "item_type": "word",
+      "prerequisite_item_id": "word_keyi",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_bu_xihuan",
+      "item_type": "word",
+      "prerequisite_item_id": "word_xihuan",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_juede",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_jue",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_keyi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ke",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_keyi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xihuan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_huan",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xihuan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xi",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -672,7 +863,33 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "喜欢 means?",
+        "prompt_id": "Arti 喜欢?",
+        "answer": "like",
+        "answer_id": "suka"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "可以 means?",
+        "prompt_id": "Arti 可以?",
+        "answer": "can / may",
+        "answer_id": "boleh / bisa"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__水。(I like water)",
+        "answer": "喜欢"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我觉得可以。",
+        "answer": "I think it is okay.",
+        "answer_id": "Aku rasa boleh."
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

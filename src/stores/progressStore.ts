@@ -210,7 +210,9 @@ export function weeklyActivityFromProgress(dailyActivity: Record<string, DailyAc
 }
 
 export function wordStrengthFromProgress(items: ContentItem[], progress: Record<string, ItemProgress>) {
-  const words = withProgress(items, progress).filter((item) => item.type === 'Words');
+  const words = items
+    .filter((item) => item.type === 'Words' && progress[item.id])
+    .map((item) => applySrsSnapshot(item, progress[item.id]));
   const counts = srsStages.map((stage) => ({
     stage,
     count: words.filter((item) => item.stage === stage).length,

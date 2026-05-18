@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
 import { Button } from '../components/ui/Button';
+import { PasswordField } from '../components/ui/PasswordField';
 import { displayNameFromUser, isSupabaseConfigured, supabase } from '../lib/supabase';
 
 export function AuthScreen() {
@@ -50,7 +51,9 @@ export function AuthScreen() {
         }
 
         if (data.user && data.session) {
-          completeAuth({ mode: 'signup', name: displayNameFromUser(data.user), email: data.user.email ?? email });
+          if (!isSupabaseConfigured || !supabase) {
+            completeAuth({ mode: 'signup', name: displayNameFromUser(data.user), email: data.user.email ?? email });
+          }
           return;
         }
 
@@ -70,7 +73,7 @@ export function AuthScreen() {
         return;
       }
 
-      if (data.user) {
+      if (data.user && (!isSupabaseConfigured || !supabase)) {
         completeAuth({ mode: 'signin', name: displayNameFromUser(data.user), email: data.user.email ?? email });
       }
     } finally {
@@ -118,21 +121,14 @@ export function AuthScreen() {
 
           <label>
             <span>{t('auth.password')}</span>
-            <input
+            <PasswordField
               value={password}
-              type="password"
               autoComplete={isSignUp ? 'new-password' : 'current-password'}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={setPassword}
             />
           </label>
 
-          {!isSignUp ? (
-            <button className="auth-inline-action" type="button" onClick={() => openSheet('forgotPassword')}>
-              {t('auth.forgotPassword')}
-            </button>
-          ) : null}
-
-          <p className="auth-note">{t('auth.mockNote')}</p>
+          <p className="auth-note">{t('auth.passwordHint')}</p>
           {authError ? (
             <p className="auth-note auth-error" role="alert">
               {authError}
@@ -144,11 +140,18 @@ export function AuthScreen() {
           </Button>
         </form>
 
-        <div className="auth-switch">
-          <span>{isSignUp ? t('auth.hasAccount') : t('auth.noAccount')}</span>
-          <button type="button" onClick={() => setAuthMode(isSignUp ? 'signin' : 'signup')}>
-            {isSignUp ? t('auth.useExisting') : t('auth.createAccount')}
-          </button>
+        <div className="auth-secondary-actions">
+          <div className="auth-switch">
+            <span>{isSignUp ? t('auth.hasAccount') : t('auth.noAccount')}</span>
+            <button type="button" onClick={() => setAuthMode(isSignUp ? 'signin' : 'signup')}>
+              {isSignUp ? t('auth.useExisting') : t('auth.createAccount')}
+            </button>
+          </div>
+          {!isSignUp ? (
+            <button className="auth-inline-action" type="button" onClick={() => openSheet('forgotPassword')}>
+              {t('auth.forgotPassword')}
+            </button>
+          ) : null}
         </div>
       </div>
     </section>

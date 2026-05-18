@@ -16,6 +16,7 @@ import {
 import { AudioButton } from './AudioButton';
 import { Button } from './Button';
 import { OptionSheet, type SheetOption } from './OptionSheet';
+import { PasswordField } from './PasswordField';
 import { ReportIssueSheet } from '../study/ReportIssueSheet';
 
 export function GlobalSheets() {
@@ -29,8 +30,8 @@ export function GlobalSheets() {
   const settings = useAppStore((state) => state.settings);
   const authName = useAppStore((state) => state.authName);
   const authEmail = useAppStore((state) => state.authEmail);
+  const recommendedSessionIndex = useAppStore((state) => state.recommendedSessionIndex);
   const updateProfile = useAppStore((state) => state.updateProfile);
-  const resetAppState = useAppStore((state) => state.resetAppState);
   const confirmLogout = useAppStore((state) => state.confirmLogout);
   const showToast = useAppStore((state) => state.showToast);
   const resetProgress = useProgressStore((state) => state.resetProgress);
@@ -43,15 +44,13 @@ export function GlobalSheets() {
   ];
   const [profileName, setProfileName] = useState(authName);
   const [profileEmail, setProfileEmail] = useState(authEmail);
-  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [resetEmail, setResetEmail] = useState(authEmail);
   const [sheetBusy, setSheetBusy] = useState(false);
   const [sheetError, setSheetError] = useState('');
   const canSaveProfile = profileName.trim().length > 0 && profileEmail.trim().includes('@');
-  const canUpdatePassword =
-    currentPassword.trim().length >= 6 && newPassword.trim().length >= 6 && newPassword === confirmPassword;
+  const canUpdatePassword = newPassword.trim().length >= 6 && newPassword === confirmPassword;
   const canSendReset = resetEmail.trim().includes('@');
 
   useEffect(() => {
@@ -60,8 +59,7 @@ export function GlobalSheets() {
       setProfileEmail(authEmail);
     }
 
-    if (activeSheet === 'changePassword') {
-      setCurrentPassword('');
+    if (activeSheet === 'changePassword' || activeSheet === 'updatePassword') {
       setNewPassword('');
       setConfirmPassword('');
     }
@@ -120,7 +118,6 @@ export function GlobalSheets() {
       options: [
         { label: t('sheets.reviewSimple'), value: 'Simple', sub: t('sheets.reviewSimpleSub') },
         { label: t('sheets.reviewMixed'), value: 'Mixed', sub: t('sheets.reviewMixedSub') },
-        { label: optionLabel(language, 'Typed'), value: 'Typed', sub: t('sheets.reviewTypedSub') },
       ],
     },
     language: {
@@ -168,45 +165,11 @@ export function GlobalSheets() {
                 }
 
                 resetProgress();
-                resetStudyProgress();
+                resetStudyProgress(recommendedSessionIndex);
                 confirmLogout();
               }}
             >
               {t('common.logout')}
-            </Button>
-          </div>
-        }
-      />
-    );
-  }
-
-  if (activeSheet === 'resetApp') {
-    return (
-      <OptionSheet
-        open
-        title={t('sheets.resetTitle')}
-        sub={t('sheets.resetSub')}
-        className="logout-sheet"
-        onClose={closeSheet}
-        footer={
-          <div className="sheet-actions">
-            <Button variant="secondary" type="button" onClick={closeSheet}>
-              {t('common.cancel')}
-            </Button>
-            <Button
-              variant="danger"
-              type="button"
-              onClick={async () => {
-                if (isSupabaseConfigured && supabase) {
-                  await supabase.auth.signOut();
-                }
-
-                resetProgress();
-                resetStudyProgress();
-                resetAppState();
-              }}
-            >
-              {t('common.reset')}
             </Button>
           </div>
         }
@@ -232,7 +195,7 @@ export function GlobalSheets() {
               type="button"
               onClick={() => {
                 resetProgress();
-                resetStudyProgress();
+                resetStudyProgress(recommendedSessionIndex);
                 showToast(t('toast.learningProgressReset'));
                 closeSheet();
               }}
@@ -328,12 +291,14 @@ export function GlobalSheets() {
     );
   }
 
-  if (activeSheet === 'changePassword') {
+  if (activeSheet === 'changePassword' || activeSheet === 'updatePassword') {
+    const isRecoveryUpdate = activeSheet === 'updatePassword';
+
     return (
       <OptionSheet
         open
-        title={t('sheets.changePasswordTitle')}
-        sub={t('sheets.changePasswordSub')}
+        title={isRecoveryUpdate ? t('sheets.updatePasswordTitle') : t('sheets.changePasswordTitle')}
+        sub={isRecoveryUpdate ? t('sheets.updatePasswordSub') : t('sheets.changePasswordSub')}
         className="password-change-sheet"
         onClose={closeSheet}
       >
@@ -359,7 +324,7 @@ export function GlobalSheets() {
                 }
               }
 
-              showToast(t('toast.changePasswordPlaceholder'));
+              showToast(t('toast.passwordUpdated'));
               closeSheet();
             } finally {
               setSheetBusy(false);
@@ -367,31 +332,12 @@ export function GlobalSheets() {
           }}
         >
           <label>
-            <span>{t('sheets.currentPassword')}</span>
-            <input
-              value={currentPassword}
-              type="password"
-              autoComplete="current-password"
-              onChange={(event) => setCurrentPassword(event.target.value)}
-            />
-          </label>
-          <label>
             <span>{t('sheets.newPassword')}</span>
-            <input
-              value={newPassword}
-              type="password"
-              autoComplete="new-password"
-              onChange={(event) => setNewPassword(event.target.value)}
-            />
+            <PasswordField value={newPassword} autoComplete="new-password" onChange={setNewPassword} />
           </label>
           <label>
             <span>{t('sheets.confirmPassword')}</span>
-            <input
-              value={confirmPassword}
-              type="password"
-              autoComplete="new-password"
-              onChange={(event) => setConfirmPassword(event.target.value)}
-            />
+            <PasswordField value={confirmPassword} autoComplete="new-password" onChange={setConfirmPassword} />
           </label>
           <div className="sheet-actions">
             <Button variant="secondary" type="button" onClick={closeSheet}>

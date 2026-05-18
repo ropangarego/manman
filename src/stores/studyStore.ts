@@ -14,6 +14,7 @@ interface StudyState {
   selectedPractice: string | null;
   selectedReview: string | null;
   feedback: string;
+  setSessionIndex: (sessionIndex: number) => void;
   startSession: () => void;
   startNextSession: () => void;
   setStep: (step: StudyStep) => void;
@@ -32,7 +33,7 @@ interface StudyState {
   finishPractice: (hasMoreLearnItems: boolean) => void;
   finishReview: (hasMoreReviewItems: boolean) => void;
   resetInteractions: () => void;
-  resetStudyProgress: () => void;
+  resetStudyProgress: (sessionIndex?: number) => void;
 }
 
 export const useStudyStore = create<StudyState>()(
@@ -47,6 +48,18 @@ export const useStudyStore = create<StudyState>()(
       selectedPractice: null,
       selectedReview: null,
       feedback: '',
+      setSessionIndex: (sessionIndex) =>
+        set({
+          step: 'intro',
+          sessionIndex: Math.max(0, sessionIndex),
+          learnIndex: 0,
+          reviewIndex: 0,
+          sessionCorrect: 0,
+          sessionAttempts: 0,
+          selectedPractice: null,
+          selectedReview: null,
+          feedback: '',
+        }),
       startSession: () =>
         set({
           step: 'intro',
@@ -118,10 +131,10 @@ export const useStudyStore = create<StudyState>()(
           selectedReview: null,
           feedback: '',
         }),
-      resetStudyProgress: () =>
+      resetStudyProgress: (sessionIndex = 0) =>
         set({
           step: 'intro',
-          sessionIndex: 0,
+          sessionIndex: Math.max(0, sessionIndex),
           learnIndex: 0,
           reviewIndex: 0,
           sessionCorrect: 0,

@@ -94,9 +94,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我买水。",
+          "pinyin": "Wǒ mǎi shuǐ.",
+          "meaning": "I buy water.",
+          "meaning_id": "Aku beli air."
+        },
+        {
+          "simplified": "你买什么？",
+          "pinyin": "Nǐ mǎi shén me?",
+          "meaning": "What are you buying?",
+          "meaning_id": "Kamu beli apa?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -130,9 +147,20 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "多少钱？",
+          "pinyin": "Duō shao qián?",
+          "meaning": "How much?",
+          "meaning_id": "Berapa harganya?"
+        }
+      ],
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -166,9 +194,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "很多。",
+          "pinyin": "Hěn duō.",
+          "meaning": "A lot.",
+          "meaning_id": "Banyak banget."
+        },
+        {
+          "simplified": "你有多少？",
+          "pinyin": "Nǐ yǒu duō shao?",
+          "meaning": "How many do you have?",
+          "meaning_id": "Kamu punya berapa?"
+        }
+      ],
       "order_index": 3,
-      "tags": [],
+      "tags": [
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -202,9 +247,19 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "很少。",
+          "pinyin": "Hěn shǎo.",
+          "meaning": "Very few.",
+          "meaning_id": "Sangat sedikit."
+        }
+      ],
       "order_index": 4,
-      "tags": [],
+      "tags": [
+        "adjective",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -238,9 +293,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我吃饭。",
+          "pinyin": "Wǒ chī fàn.",
+          "meaning": "I eat rice / I eat a meal.",
+          "meaning_id": "Aku makan nasi."
+        },
+        {
+          "simplified": "你吃饭了吗？",
+          "pinyin": "Nǐ chī fàn le ma?",
+          "meaning": "Have you eaten?",
+          "meaning_id": "Kamu udah makan?"
+        }
+      ],
       "order_index": 5,
-      "tags": [],
+      "tags": [
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     },
     {
@@ -274,9 +346,26 @@
       "tone_mnemonic": null,
       "tone_mnemonic_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喝水。",
+          "pinyin": "Wǒ hē shuǐ.",
+          "meaning": "I drink water.",
+          "meaning_id": "Aku minum air."
+        },
+        {
+          "simplified": "你要水吗？",
+          "pinyin": "Nǐ yào shuǐ ma?",
+          "meaning": "Do you want water?",
+          "meaning_id": "Kamu mau air?"
+        }
+      ],
       "order_index": 6,
-      "tags": [],
+      "tags": [
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
       "is_reviewable": true
     }
   ],
@@ -306,7 +395,9 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_mai"
+      ],
       "part_of_speech": "verb",
       "mnemonic": "*Buy* — the action of pulling out your wallet and getting something.",
       "mnemonic_id": "*Beli* — aksi nurunin dompet dan nuker barang.",
@@ -315,7 +406,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我想买水。",
+          "pinyin": "Wǒ xiǎng mǎi shuǐ.",
+          "meaning": "I want to buy water.",
+          "meaning_id": "Aku mau beli air."
+        }
+      ],
       "order_index": 1,
       "tags": [
         "shopping"
@@ -348,7 +446,9 @@
         }
       ],
       "tone_pattern": "2",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_qian"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "*Money* — always moving, always needed.",
       "mnemonic_id": "*Uang* — selalu berpindah tangan, selalu dicari.",
@@ -357,7 +457,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "多少钱？",
+          "pinyin": "Duō shao qián?",
+          "meaning": "How much?",
+          "meaning_id": "Berapa harganya?"
+        }
+      ],
       "order_index": 2,
       "tags": [
         "shopping"
@@ -395,7 +502,10 @@
         }
       ],
       "tone_pattern": "1-3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_duo",
+        "hanzi_shao"
+      ],
       "part_of_speech": "question word",
       "mnemonic": "多 much + 少 little — *how much / how many*, asking the amount between the two.",
       "mnemonic_id": "多 banyak + 少 sedikit — *berapa*, nanya jumlah di antara banyak dan sedikit.",
@@ -404,7 +514,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "你有多少？",
+          "pinyin": "Nǐ yǒu duō shao?",
+          "meaning": "How many do you have?",
+          "meaning_id": "Kamu punya berapa?"
+        }
+      ],
       "order_index": 3,
       "tags": [
         "shopping"
@@ -447,16 +564,27 @@
         }
       ],
       "tone_pattern": "1-3-2",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_duo",
+        "hanzi_shao",
+        "hanzi_qian"
+      ],
       "part_of_speech": "question phrase",
       "mnemonic": "多少 how much + 钱 money — \"*how much does it cost*\" — the most important phrase in any shop.",
       "mnemonic_id": "多少 berapa + 钱 uang — \"*berapa harganya*\" — kalimat paling penting di toko.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "Essential phrase for shopping.",
+      "usage_note_id": "Frasa penting untuk belanja.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "这多少钱？",
+          "pinyin": "Zhè duō shao qián?",
+          "meaning": "How much is this?",
+          "meaning_id": "Ini berapa harganya?"
+        }
+      ],
       "order_index": 4,
       "tags": [
         "shopping"
@@ -489,16 +617,25 @@
         }
       ],
       "tone_pattern": "4",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_fan"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "*Rice* or food in general — 饭 can mean both depending on context.",
       "mnemonic_id": "*Nasi* atau makanan secara umum — 饭 bisa berarti keduanya tergantung konteks.",
       "tone_note": null,
       "tone_note_id": null,
-      "usage_note": null,
-      "usage_note_id": null,
+      "usage_note": "吃饭 literally means \"eat rice\" but is used for any meal.",
+      "usage_note_id": "吃饭 secara harfiah berarti \"makan nasi\" tapi dipakai untuk semua makan.",
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我吃饭。",
+          "pinyin": "Wǒ chī fàn.",
+          "meaning": "I eat.",
+          "meaning_id": "Aku makan."
+        }
+      ],
       "order_index": 5,
       "tags": [
         "food"
@@ -531,7 +668,9 @@
         }
       ],
       "tone_pattern": "3",
-      "hanzi_ids": [],
+      "hanzi_ids": [
+        "hanzi_shui"
+      ],
       "part_of_speech": "noun",
       "mnemonic": "*Water* — simple, basic, always needed.",
       "mnemonic_id": "*Air* — paling polos, paling dasar, selalu dibutuhin.",
@@ -540,7 +679,14 @@
       "usage_note": null,
       "usage_note_id": null,
       "audio_url": null,
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "我喝水。",
+          "pinyin": "Wǒ hē shuǐ.",
+          "meaning": "I drink water.",
+          "meaning_id": "Aku minum air."
+        }
+      ],
       "order_index": 6,
       "tags": [
         "drink"
@@ -557,8 +703,8 @@
       "traditional": "我要水。",
       "meaning": "I want water.",
       "meaning_id": "Saya mau air.",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "I want water.",
+      "literal_meaning_id": "Aku mau air.",
       "pinyin": "wǒ yào shuǐ",
       "pinyin_numbered": "wo3 yao4 shui3",
       "pinyin_syllables": [
@@ -585,11 +731,15 @@
       "pattern_ids": [
         "pattern_duoshaoqian"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "要 means \"want\" — you will learn this fully in a later pack.",
+      "notes_id": "要 berarti \"mau\" — kamu akan belajar ini lebih lengkap di pack berikutnya.",
       "audio_url": null,
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "food",
+        "shopping",
+        "beginner"
+      ],
       "is_reviewable": true
     },
     {
@@ -599,8 +749,8 @@
       "traditional": "多少錢？",
       "meaning": "How much is it?",
       "meaning_id": "Berapa harganya?",
-      "literal_meaning": null,
-      "literal_meaning_id": null,
+      "literal_meaning": "How much money?",
+      "literal_meaning_id": "Berapa uang?",
       "pinyin": "duō shǎo qián",
       "pinyin_numbered": "duo1 shao3 qian2",
       "pinyin_syllables": [
@@ -627,11 +777,14 @@
       "pattern_ids": [
         "pattern_duoshaoqian"
       ],
-      "notes": null,
-      "notes_id": null,
+      "notes": "The most useful shopping phrase. No subject needed.",
+      "notes_id": "Frasa belanja paling berguna. Tidak perlu subjek.",
       "audio_url": null,
       "order_index": 2,
-      "tags": [],
+      "tags": [
+        "shopping",
+        "beginner"
+      ],
       "is_reviewable": true
     }
   ],
@@ -646,13 +799,69 @@
       "structure": "Item + 多少钱?",
       "explanation": "Use 多少钱 to ask how much something costs.",
       "explanation_id": "Gunakan 多少钱 untuk bertanya harga.",
-      "examples": [],
+      "examples": [
+        {
+          "simplified": "多少钱？",
+          "traditional": "多少錢？",
+          "pinyin": "Duō shao qián?",
+          "meaning": "How much?",
+          "meaning_id": "Berapa harganya?"
+        },
+        {
+          "simplified": "这多少钱？",
+          "traditional": "這多少錢？",
+          "pinyin": "Zhè duō shao qián?",
+          "meaning": "How much is this?",
+          "meaning_id": "Ini berapa?"
+        }
+      ],
       "order_index": 1,
-      "tags": [],
+      "tags": [
+        "shopping",
+        "question",
+        "beginner"
+      ],
       "is_reviewable": false
     }
   ],
-  "item_prerequisites": [],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_fan",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_chi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_mai_buy",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_qu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_shui",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_he",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_duoshaoqian",
+      "item_type": "word",
+      "prerequisite_item_id": "word_duoshao",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_duoshaoqian",
+      "item_type": "word",
+      "prerequisite_item_id": "word_qian",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_mai_buy",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_mai_buy",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
   "unlock_rules": [
     {
       "id": "unlock_after_prerequisites_familiar",
@@ -668,7 +877,33 @@
       "tone_choice",
       "sentence_meaning"
     ],
-    "examples": []
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "饭 means?",
+        "prompt_id": "Arti 饭?",
+        "answer": "rice / meal",
+        "answer_id": "nasi / makan"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "水 means?",
+        "prompt_id": "Arti 水?",
+        "answer": "water",
+        "answer_id": "air"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我吃__。(I eat rice)",
+        "answer": "饭"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "多少钱？",
+        "answer": "How much?",
+        "answer_id": "Berapa harganya?"
+      }
+    ]
   },
   "study_flow": {
     "intro_only": false,

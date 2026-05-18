@@ -1,13 +1,15 @@
 import { getLearningPath } from '../../data/mockContent';
 import { textFor } from '../../i18n/copy';
 import { useTranslation } from '../../i18n/useTranslation';
+import { useAppStore } from '../../stores/appStore';
 import { useStudyStore } from '../../stores/studyStore';
 import { Card } from '../ui/Card';
 
 export function LearningPath() {
   const { language, t } = useTranslation();
   const sessionIndex = useStudyStore((state) => state.sessionIndex);
-  const learningPath = getLearningPath(sessionIndex);
+  const introStatus = useAppStore((state) => state.introStatus);
+  const learningPath = getLearningPath(sessionIndex, introStatus);
   const statusLabel = (label: string) => {
     if (language !== 'Indonesian') {
       return label;
@@ -18,6 +20,8 @@ export function LearningPath() {
       Now: 'Sekarang',
       Available: 'Tersedia',
       Locked: 'Terkunci',
+      Skipped: 'Dilewati',
+      Intro: 'Intro',
     };
 
     return labels[label] ?? label;

@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist, type PersistStorage } from 'zustand/middleware';
 import type {
   Familiarity,
+  IntroPathStatus,
   LibraryTab,
   PinyinDisplay,
   ReviewStyle,
@@ -9,6 +10,7 @@ import type {
   SessionSize,
   Stage,
 } from '../data/mockContent';
+import { packIdForSessionIndex, recommendedSessionIndexForPlacement } from '../data/mockContent';
 import { optionLabel, translate, type AppLanguage } from '../i18n/copy';
 import {
   languageToDb,
@@ -24,7 +26,7 @@ import {
 import type { SpeechSpeed } from '../utils/audio';
 
 export type Screen = 'home' | 'study' | 'library' | 'progress' | 'settings';
-export type OnboardingStep = 'welcome' | 'script' | 'familiarity' | 'session' | 'placement' | 'recommend';
+export type OnboardingStep = 'welcome' | 'script' | 'familiarity' | 'session' | 'placement' | 'recommend' | 'introChoice';
 export type AuthMode = 'signin' | 'signup';
 export type SheetType =
   | 'stage'
@@ -37,11 +39,11 @@ export type SheetType =
   | 'downloads'
   | 'installApp'
   | 'forgotPassword'
+  | 'updatePassword'
   | 'editProfile'
   | 'changePassword'
   | 'resetLearningProgress'
   | 'report'
-  | 'resetApp'
   | 'logout';
 
 export interface SettingsState {
@@ -59,7 +61,7 @@ export interface SettingsState {
 type ToggleSettingKey = 'toneColors' | 'sound' | 'hints' | 'dark' | 'offline';
 
 export const PREFERENCES_STORAGE_KEY = 'mandarin-app-preferences';
-const PREFERENCES_VERSION = 2;
+const PREFERENCES_VERSION = 3;
 const LEGACY_THEME_STORAGE_KEY = 'mandarin-theme';
 const PROGRESS_STORAGE_KEY = 'mandarin-learning-progress';
 const STUDY_STORAGE_KEY = 'mandarin-study-position';
@@ -90,6 +92,9 @@ interface PersistedAppState {
   onboarded: boolean;
   scriptChoice: ScriptChoice;
   sessionSize: SessionSize;
+  recommendedSessionIndex: number;
+  currentPackId: string | null;
+  introStatus: IntroPathStatus;
   settings: SettingsState;
 }
 
@@ -101,6 +106,9 @@ function createDefaultPersistedState(): PersistedAppState {
     onboarded: false,
     scriptChoice: 'Simplified',
     sessionSize: 'Standard',
+    recommendedSessionIndex: 0,
+    currentPackId: null,
+    introStatus: 'not_required',
     settings: { ...DEFAULT_SETTINGS },
   };
 }
@@ -115,6 +123,16 @@ function pickOption<T extends string>(value: unknown, options: readonly T[], fal
 
 function pickBoolean(value: unknown, fallback: boolean) {
   return typeof value === 'boolean' ? value : fallback;
+}
+
+function pickNonNegativeNumber(value: unknown, fallback: number) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
+function pickIntroStatus(value: unknown): IntroPathStatus {
+  return value === 'required' || value === 'optional' || value === 'completed' || value === 'skipped'
+    ? value
+    : 'not_required';
 }
 
 function normalizeScriptPreference(script: ScriptChoice): ScriptChoice {
@@ -151,6 +169,9 @@ function sanitizePersistedState(value: unknown): PersistedAppState | null {
     onboarded: value.onboarded === true,
     scriptChoice: normalizeScriptPreference(scriptChoice),
     sessionSize: pickOption(value.sessionSize, SESSION_SIZES, 'Standard'),
+    recommendedSessionIndex: pickNonNegativeNumber(value.recommendedSessionIndex, 0),
+    currentPackId: typeof value.currentPackId === 'string' ? value.currentPackId : null,
+    introStatus: pickIntroStatus(value.introStatus),
     settings: sanitizeSettings(value.settings),
   };
 }
@@ -166,7 +187,7 @@ function readStoredDarkMode() {
     if (rawPreferences) {
       const preferences = JSON.parse(rawPreferences) as unknown;
 
-      if (isRecord(preferences) && preferences.version === PREFERENCES_VERSION) {
+      if (isRecord(preferences)) {
         const persisted = sanitizePersistedState(preferences.state);
         return persisted?.settings.dark ?? false;
       }
@@ -264,6 +285,9 @@ interface AppState {
   placementAnswer: string;
   placementAnswers: Record<string, string>;
   placementScore: number;
+  recommendedSessionIndex: number;
+  currentPackId: string | null;
+  introStatus: IntroPathStatus;
   libraryTab: LibraryTab;
   libraryStage: Stage | 'All';
   librarySearch: string;
@@ -284,7 +308,9 @@ interface AppState {
   chooseFamiliarity: (familiarity: Familiarity) => void;
   chooseSessionSize: (size: SessionSize) => void;
   answerPlacement: (questionId: string, answer: string, correctAnswer: string) => void;
-  finishOnboarding: () => void;
+  finishOnboarding: (payload?: { startWithIntro?: boolean; recommendedSessionIndex?: number; introStatus?: IntroPathStatus; placementTotal?: number }) => void;
+  completeIntroPack: () => void;
+  syncStudyPosition: (sessionIndex: number) => void;
   openSheet: (sheet: SheetType) => void;
   closeSheet: () => void;
   chooseSheetValue: (sheet: SheetType, value: string) => void;
@@ -295,7 +321,6 @@ interface AppState {
   toggleSetting: (key: ToggleSettingKey) => void;
   showToast: (message: string) => void;
   clearToast: () => void;
-  resetAppState: () => void;
   confirmLogout: () => void;
 }
 
@@ -328,6 +353,9 @@ export const useAppStore = create<AppState>()(
   placementAnswer: '',
   placementAnswers: {},
   placementScore: 0,
+  recommendedSessionIndex: 0,
+  currentPackId: null,
+  introStatus: 'not_required',
   libraryTab: 'All',
   libraryStage: 'All',
   librarySearch: '',
@@ -367,6 +395,9 @@ export const useAppStore = create<AppState>()(
         onboarded: profile.onboarded,
         scriptChoice: normalizeScriptPreference(profile.scriptChoice),
         sessionSize: profile.sessionSize,
+        recommendedSessionIndex: profile.recommendedSessionIndex,
+        currentPackId: profile.currentPackId,
+        introStatus: profile.introStatus,
         settings: profile.settings,
         activeSheet: null,
       };
@@ -415,15 +446,35 @@ export const useAppStore = create<AppState>()(
         placementScore: Math.max(0, state.placementScore - previousScore + nextScore),
       };
     }),
-  finishOnboarding: () =>
+  finishOnboarding: (payload) =>
     set((state) => {
       const scriptChoice = normalizeScriptPreference(state.scriptChoice);
+      const placementTotal = payload?.placementTotal ?? Object.keys(state.placementAnswers).length;
+      const recommendedSessionIndex =
+        payload?.recommendedSessionIndex ??
+        (state.familiarity === 'some'
+          ? recommendedSessionIndexForPlacement(state.placementScore, placementTotal)
+          : 0);
+      const currentPackId = packIdForSessionIndex(recommendedSessionIndex);
+      const introStatus =
+        payload?.introStatus ??
+        (payload?.startWithIntro ? (state.familiarity === 'beginner' ? 'required' : 'optional') : 'skipped');
+      const placementResult = {
+        familiarity: state.familiarity,
+        score: state.placementScore,
+        total: placementTotal,
+        recommendedSessionIndex,
+        introStatus,
+      };
 
       syncProfilePatch(
         {
           onboarded: true,
           script: scriptToDb(scriptChoice),
           session_size: sessionSizeToDb(state.sessionSize),
+          current_pack_external_id: currentPackId,
+          current_session_index: recommendedSessionIndex,
+          placement_result: placementResult,
         },
         set,
       );
@@ -433,7 +484,50 @@ export const useAppStore = create<AppState>()(
         screen: 'home',
         activeSheet: null,
         scriptChoice,
+        recommendedSessionIndex,
+        currentPackId,
+        introStatus,
       };
+    }),
+  completeIntroPack: () =>
+    set((state) => {
+      const currentPackId = packIdForSessionIndex(state.recommendedSessionIndex);
+      const placementResult = {
+        familiarity: state.familiarity,
+        score: state.placementScore,
+        total: Object.keys(state.placementAnswers).length,
+        recommendedSessionIndex: state.recommendedSessionIndex,
+        introStatus: 'completed',
+      };
+
+      syncProfilePatch(
+        {
+          current_pack_external_id: currentPackId,
+          current_session_index: state.recommendedSessionIndex,
+          placement_result: placementResult,
+        },
+        set,
+      );
+
+      return {
+        currentPackId,
+        introStatus: 'completed',
+      };
+    }),
+  syncStudyPosition: (sessionIndex) =>
+    set(() => {
+      const safeSessionIndex = Math.max(0, sessionIndex);
+      const currentPackId = packIdForSessionIndex(safeSessionIndex);
+
+      syncProfilePatch(
+        {
+          current_pack_external_id: currentPackId,
+          current_session_index: safeSessionIndex,
+        },
+        set,
+      );
+
+      return { currentPackId };
     }),
   openSheet: (activeSheet) => set({ activeSheet }),
   closeSheet: () => set({ activeSheet: null }),
@@ -603,35 +697,6 @@ export const useAppStore = create<AppState>()(
     }),
   showToast: (toast) => set({ toast }),
   clearToast: () => set({ toast: '' }),
-  resetAppState: () => {
-    applyDarkMode(false);
-
-    set({
-      onboarded: false,
-      signedIn: false,
-      authMode: 'signin',
-      authName: '',
-      authEmail: '',
-      onboardingStep: 'welcome',
-      screen: 'home',
-      scriptChoice: 'Simplified',
-      familiarity: 'beginner',
-      sessionSize: 'Standard',
-      placementAnswer: '',
-      placementAnswers: {},
-      placementScore: 0,
-      libraryTab: 'All',
-      libraryStage: 'All',
-      librarySearch: '',
-      selectedItemId: null,
-      libraryLimit: 5,
-      activeSheet: null,
-      settings: { ...DEFAULT_SETTINGS },
-      toast: translate('English', 'toast.reset'),
-    });
-
-    clearStoredPreferences();
-  },
   confirmLogout: () => {
     applyDarkMode(false);
 
@@ -649,6 +714,9 @@ export const useAppStore = create<AppState>()(
       placementAnswer: '',
       placementAnswers: {},
       placementScore: 0,
+      recommendedSessionIndex: 0,
+      currentPackId: null,
+      introStatus: 'not_required',
       libraryTab: 'All',
       libraryStage: 'All',
       librarySearch: '',
@@ -673,6 +741,9 @@ export const useAppStore = create<AppState>()(
         onboarded: state.onboarded,
         scriptChoice: normalizeScriptPreference(state.scriptChoice),
         sessionSize: state.sessionSize,
+        recommendedSessionIndex: state.recommendedSessionIndex,
+        currentPackId: state.currentPackId,
+        introStatus: state.introStatus,
         settings: state.settings,
       }),
       migrate: (persistedState) => sanitizePersistedState(persistedState) ?? createDefaultPersistedState(),
@@ -694,6 +765,9 @@ export const useAppStore = create<AppState>()(
           screen: 'home',
           scriptChoice: saved.scriptChoice,
           sessionSize: saved.sessionSize,
+          recommendedSessionIndex: saved.recommendedSessionIndex,
+          currentPackId: saved.currentPackId,
+          introStatus: saved.introStatus,
           activeSheet: null,
           toast: '',
           settings: saved.settings,

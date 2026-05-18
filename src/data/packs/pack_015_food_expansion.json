@@ -1,0 +1,1053 @@
+{
+  "pack": {
+    "id": "pack_015_food_expansion",
+    "title": "Food Expansion",
+    "title_id": "Ekspansi Makanan",
+    "subtitle": "Talk about rice, noodles, meat, vegetables, fruit, and taste.",
+    "subtitle_id": "Bicara tentang nasi, mi, daging, sayur, buah, dan rasa.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "food",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 15,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about rice, noodles, meat, vegetables, fruit, and taste.",
+    "learning_goal_id": "Bicara tentang nasi, mi, daging, sayur, buah, dan rasa.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_mi",
+      "type": "hanzi",
+      "simplified": "米",
+      "traditional": "米",
+      "meaning": "rice grain",
+      "meaning_id": "beras",
+      "accepted_meanings": [
+        "rice grain"
+      ],
+      "accepted_meanings_id": [
+        "beras"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "mǐ",
+      "pinyin_numbered": "mi3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "米",
+          "text": "mǐ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Rice grains scattered in a cross pattern — *rice* in its raw form. mǐ ≈ \"me\" dipping then rising. Tone 3 like rolling a grain between your fingers.",
+      "mnemonic_id": "Biji beras tersebar dalam pola silang — *beras* dalam bentuk mentahnya. mǐ ≈ \"mi\" turun terus naik. Nada 3 kayak menggulung biji beras di jari.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "米饭很好吃。",
+          "pinyin": "Mǐ fàn hěn hǎo chī.",
+          "meaning": "Rice is tasty.",
+          "meaning_id": "Nasi enak banget."
+        },
+        {
+          "simplified": "我要米饭。",
+          "pinyin": "Wǒ yào mǐ fàn.",
+          "meaning": "I want rice.",
+          "meaning_id": "Aku mau nasi."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_mian",
+      "type": "hanzi",
+      "simplified": "面",
+      "traditional": "麵",
+      "meaning": "noodles / face",
+      "meaning_id": "mi / wajah",
+      "accepted_meanings": [
+        "noodles / face"
+      ],
+      "accepted_meanings_id": [
+        "mi / wajah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "miàn",
+      "pinyin_numbered": "mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Wheat stretched flat — *noodles* or *face*, both flat and wide. miàn ≈ \"myen!\" sharp. Tone 4 drops, like slurping noodles fast.",
+      "mnemonic_id": "Gandum yang dipipihkan — *mie* atau *wajah*, keduanya datar dan lebar. miàn ≈ \"myen!\" Nada 4 turun tajam, kayak nyeruput mie dengan cepat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要面条。",
+          "pinyin": "Wǒ yào miàn tiáo.",
+          "meaning": "I want noodles.",
+          "meaning_id": "Aku mau mie."
+        },
+        {
+          "simplified": "面条好吃吗？",
+          "pinyin": "Miàn tiáo hǎo chī ma?",
+          "meaning": "Are noodles tasty?",
+          "meaning_id": "Mie enak?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_rou",
+      "type": "hanzi",
+      "simplified": "肉",
+      "traditional": "肉",
+      "meaning": "meat",
+      "meaning_id": "daging",
+      "accepted_meanings": [
+        "meat"
+      ],
+      "accepted_meanings_id": [
+        "daging"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ròu",
+      "pinyin_numbered": "rou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "肉",
+          "text": "ròu",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Flesh layered inside a frame — that's *meat*, through and through. ròu ≈ \"roh!\" sharp. Tone 4 drops, like cutting into a thick piece.",
+      "mnemonic_id": "Daging berlapis di dalam kerangka — itulah *daging*, apa adanya. ròu ≈ \"roh!\" Nada 4 turun tajam, kayak memotong potongan tebal.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你吃肉吗？",
+          "pinyin": "Nǐ chī ròu ma?",
+          "meaning": "Do you eat meat?",
+          "meaning_id": "Kamu makan daging?"
+        },
+        {
+          "simplified": "我不吃肉。",
+          "pinyin": "Wǒ bù chī ròu.",
+          "meaning": "I don't eat meat.",
+          "meaning_id": "Aku tidak makan daging."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_cai",
+      "type": "hanzi",
+      "simplified": "菜",
+      "traditional": "菜",
+      "meaning": "dish / vegetable",
+      "meaning_id": "lauk / sayur",
+      "accepted_meanings": [
+        "dish / vegetable"
+      ],
+      "accepted_meanings_id": [
+        "lauk / sayur"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "cài",
+      "pinyin_numbered": "cai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Plants growing under a hand picking them — *vegetables* or a *dish*. cài ≈ \"tsai!\" sharp. Tone 4 drops, like picking something fresh.",
+      "mnemonic_id": "Tanaman yang tumbuh dan tangan yang memetiknya — *sayuran* atau *hidangan*. cài ≈ \"tsai!\" Nada 4 turun tajam, kayak memetik sesuatu yang segar.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你吃菜吗？",
+          "pinyin": "Nǐ chī cài ma?",
+          "meaning": "Do you eat vegetables?",
+          "meaning_id": "Kamu makan sayuran?"
+        },
+        {
+          "simplified": "这个菜很好吃。",
+          "pinyin": "Zhè ge cài hěn hǎo chī.",
+          "meaning": "This dish is very tasty.",
+          "meaning_id": "Hidangan ini enak banget."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_guo",
+      "type": "hanzi",
+      "simplified": "果",
+      "traditional": "果",
+      "meaning": "fruit",
+      "meaning_id": "buah",
+      "accepted_meanings": [
+        "fruit"
+      ],
+      "accepted_meanings_id": [
+        "buah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "guǒ",
+      "pinyin_numbered": "guo3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "果",
+          "text": "guǒ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A tree 木 with something hanging at the top — *fruit* growing on a branch. guǒ ≈ \"gwoh\" dipping then rising. Tone 3 like the weight of a ripe fruit.",
+      "mnemonic_id": "Pohon 木 dengan sesuatu yang menggantung di atas — *buah* yang tumbuh di cabang. guǒ ≈ \"gwo\" turun terus naik. Nada 3 kayak berat buah yang matang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "水果很好吃。",
+          "pinyin": "Shuǐ guǒ hěn hǎo chī.",
+          "meaning": "Fruit is very tasty.",
+          "meaning_id": "Buah enak banget."
+        },
+        {
+          "simplified": "你吃水果吗？",
+          "pinyin": "Nǐ chī shuǐ guǒ ma?",
+          "meaning": "Do you eat fruit?",
+          "meaning_id": "Kamu makan buah?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "food",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ji",
+      "type": "hanzi",
+      "simplified": "鸡",
+      "traditional": "雞",
+      "meaning": "chicken",
+      "meaning_id": "ayam",
+      "accepted_meanings": [
+        "chicken"
+      ],
+      "accepted_meanings_id": [
+        "ayam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jī",
+      "pinyin_numbered": "ji1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "鸡",
+          "text": "jī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A bird with a crest — clucking around the yard, that's a *chicken*. jī ≈ \"jee\" flat. Tone 1 high and steady, like a hen clucking evenly.",
+      "mnemonic_id": "Burung berjambul — berkotek di halaman, itulah *ayam*. jī ≈ \"ji\" flat. Nada 1 tinggi rata, kayak kotek ayam yang konsisten.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "鸡肉好吃吗？",
+          "pinyin": "Jī ròu hǎo chī ma?",
+          "meaning": "Is chicken tasty?",
+          "meaning_id": "Ayam enak?"
+        },
+        {
+          "simplified": "我吃鸡肉。",
+          "pinyin": "Wǒ chī jī ròu.",
+          "meaning": "I eat chicken.",
+          "meaning_id": "Aku makan ayam."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_mifan",
+      "type": "word",
+      "simplified": "米饭",
+      "traditional": "米飯",
+      "meaning": "cooked rice",
+      "meaning_id": "nasi",
+      "accepted_meanings": [
+        "cooked rice"
+      ],
+      "accepted_meanings_id": [
+        "nasi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "mǐ fàn",
+      "pinyin_numbered": "mi3 fan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "米",
+          "text": "mǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "饭",
+          "text": "fàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-4",
+      "hanzi_ids": [
+        "hanzi_mi",
+        "hanzi_fan"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "米 raw rice + 饭 cooked food — *cooked rice*, the staple on every table.",
+      "mnemonic_id": "米 beras mentah + 饭 makanan matang — *nasi*, makanan pokok di setiap meja.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "米饭 specifically means cooked white rice. 饭 alone can mean any meal.",
+      "usage_note_id": "米饭 khusus berarti nasi putih matang. 饭 sendiri bisa berarti makan apapun.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "米饭很好吃。",
+          "pinyin": "Mǐ fàn hěn hǎo chī.",
+          "meaning": "Rice is tasty.",
+          "meaning_id": "Nasi enak banget."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_miantiao",
+      "type": "word",
+      "simplified": "面条",
+      "traditional": "麵條",
+      "meaning": "noodles",
+      "meaning_id": "mi",
+      "accepted_meanings": [
+        "noodles"
+      ],
+      "accepted_meanings_id": [
+        "mi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "miàn tiáo",
+      "pinyin_numbered": "mian4 tiao2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "条",
+          "text": "tiáo",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_mian"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "面 noodle dough + 条 strip — *noodles*, long thin strips of dough.",
+      "mnemonic_id": "面 adonan mie + 条 potongan — *mie*, potongan adonan yang panjang dan tipis.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要面条。",
+          "pinyin": "Wǒ yào miàn tiáo.",
+          "meaning": "I want noodles.",
+          "meaning_id": "Aku mau mie."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_rou",
+      "type": "word",
+      "simplified": "肉",
+      "traditional": "肉",
+      "meaning": "meat",
+      "meaning_id": "daging",
+      "accepted_meanings": [
+        "meat"
+      ],
+      "accepted_meanings_id": [
+        "daging"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "ròu",
+      "pinyin_numbered": "rou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "肉",
+          "text": "ròu",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_rou"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Meat* — any kind of animal flesh, context tells you which.",
+      "mnemonic_id": "*Daging* — daging apapun, konteks yang membedakannya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我不吃肉。",
+          "pinyin": "Wǒ bù chī ròu.",
+          "meaning": "I don't eat meat.",
+          "meaning_id": "Aku tidak makan daging."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_cai",
+      "type": "word",
+      "simplified": "菜",
+      "traditional": "菜",
+      "meaning": "dish / vegetable",
+      "meaning_id": "lauk / sayur",
+      "accepted_meanings": [
+        "dish / vegetable"
+      ],
+      "accepted_meanings_id": [
+        "lauk / sayur"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "cài",
+      "pinyin_numbered": "cai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_cai"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Dish* or *vegetable* — 菜 covers both, context decides.",
+      "mnemonic_id": "*Hidangan* atau *sayuran* — 菜 mencakup keduanya, konteks yang menentukan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个菜很好吃。",
+          "pinyin": "Zhè ge cài hěn hǎo chī.",
+          "meaning": "This dish is very tasty.",
+          "meaning_id": "Hidangan ini enak banget."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shuiguo",
+      "type": "word",
+      "simplified": "水果",
+      "traditional": "水果",
+      "meaning": "fruit",
+      "meaning_id": "buah",
+      "accepted_meanings": [
+        "fruit"
+      ],
+      "accepted_meanings_id": [
+        "buah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shuǐ guǒ",
+      "pinyin_numbered": "shui3 guo3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "水",
+          "text": "shuǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "果",
+          "text": "guǒ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-3",
+      "hanzi_ids": [
+        "hanzi_shui",
+        "hanzi_guo"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "水 water + 果 fruit — *fruit*, the juicy water-filled kind.",
+      "mnemonic_id": "水 air + 果 buah — *buah-buahan*, yang berair dan segar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你吃水果吗？",
+          "pinyin": "Nǐ chī shuǐ guǒ ma?",
+          "meaning": "Do you eat fruit?",
+          "meaning_id": "Kamu makan buah?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jirou",
+      "type": "word",
+      "simplified": "鸡肉",
+      "traditional": "雞肉",
+      "meaning": "chicken meat",
+      "meaning_id": "daging ayam",
+      "accepted_meanings": [
+        "chicken meat"
+      ],
+      "accepted_meanings_id": [
+        "daging ayam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jī ròu",
+      "pinyin_numbered": "ji1 rou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "鸡",
+          "text": "jī",
+          "tone": 1
+        },
+        {
+          "hanzi": "肉",
+          "text": "ròu",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_ji",
+        "hanzi_rou"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "鸡 chicken + 肉 meat — *chicken meat*, specifically the flesh.",
+      "mnemonic_id": "鸡 ayam + 肉 daging — *daging ayam*, khusus dagingnya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Add 肉 after any animal to mean its meat: 鸡肉 chicken, 猪肉 pork, 牛肉 beef.",
+      "usage_note_id": "Tambah 肉 setelah hewan apapun untuk berarti dagingnya: 鸡肉 ayam, 猪肉 babi, 牛肉 sapi.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我吃鸡肉。",
+          "pinyin": "Wǒ chī jī ròu.",
+          "meaning": "I eat chicken.",
+          "meaning_id": "Aku makan ayam."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_haochi",
+      "type": "word",
+      "simplified": "好吃",
+      "traditional": "好吃",
+      "meaning": "tasty / delicious",
+      "meaning_id": "enak",
+      "accepted_meanings": [
+        "tasty / delicious"
+      ],
+      "accepted_meanings_id": [
+        "enak"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hǎo chī",
+      "pinyin_numbered": "hao3 chi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "好",
+          "text": "hǎo",
+          "tone": 3
+        },
+        {
+          "hanzi": "吃",
+          "text": "chī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1",
+      "hanzi_ids": [
+        "hanzi_hao",
+        "hanzi_chi"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "好 good + 吃 eat — *tasty*, literally \"good to eat\".",
+      "mnemonic_id": "好 baik + 吃 makan — *enak*, harfiahnya \"enak dimakan\".",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Use 好吃 for food. 好喝 (hǎo hē) means tasty for drinks.",
+      "usage_note_id": "Gunakan 好吃 untuk makanan. 好喝 (hǎo hē) berarti enak untuk minuman.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "米饭很好吃。",
+          "pinyin": "Mǐ fàn hěn hǎo chī.",
+          "meaning": "Rice is very tasty.",
+          "meaning_id": "Nasi enak banget."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "food"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_mifan_haochi",
+      "type": "sentence",
+      "simplified": "米饭很好吃。",
+      "traditional": "米飯很好吃。",
+      "meaning": "Rice is tasty.",
+      "meaning_id": "Nasinya enak.",
+      "literal_meaning": "Cooked rice very tasty.",
+      "literal_meaning_id": "Nasi sangat enak.",
+      "pinyin": "mǐ fàn hěn hǎo chī",
+      "pinyin_numbered": "mi3 fan4 hen3 hao3 chi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "米",
+          "text": "mǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "饭",
+          "text": "fàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "很",
+          "text": "hěn",
+          "tone": 3
+        },
+        {
+          "hanzi": "好",
+          "text": "hǎo",
+          "tone": 3
+        },
+        {
+          "hanzi": "吃",
+          "text": "chī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-4-3-3-1",
+      "focus_word_ids": [
+        "word_mifan"
+      ],
+      "pattern_ids": [
+        "pattern_food_preference"
+      ],
+      "notes": "Subject + 很 + 好吃 — the standard pattern for saying food is tasty.",
+      "notes_id": "Subjek + 很 + 好吃 — pola standar untuk bilang makanan enak.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "food",
+        "description",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_wo_yao_miantiao",
+      "type": "sentence",
+      "simplified": "我要面条。",
+      "traditional": "我要麵條。",
+      "meaning": "I want noodles.",
+      "meaning_id": "Saya mau mi.",
+      "literal_meaning": "I want noodles.",
+      "literal_meaning_id": "Aku mau mie.",
+      "pinyin": "wǒ yào miàn tiáo",
+      "pinyin_numbered": "wo3 yao4 mian4 tiao2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "要",
+          "text": "yào",
+          "tone": 4
+        },
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "条",
+          "text": "tiáo",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-4-4-2",
+      "focus_word_ids": [
+        "word_mifan"
+      ],
+      "pattern_ids": [
+        "pattern_food_preference"
+      ],
+      "notes": "要 means \"want\" here — a very useful ordering phrase.",
+      "notes_id": "要 berarti \"mau\" di sini — frasa memesan yang sangat berguna.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "food",
+        "ordering",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_food_preference",
+      "type": "pattern",
+      "title": "Food + 好吃",
+      "title_id": "Makanan + 好吃",
+      "meaning": "saying food is tasty",
+      "meaning_id": "mengatakan makanan enak",
+      "structure": "Food + 很/不 + 好吃",
+      "explanation": "Use 好吃 to describe food as tasty.",
+      "explanation_id": "Gunakan 好吃 untuk menyebut makanan enak.",
+      "examples": [
+        {
+          "simplified": "米饭很好吃。",
+          "traditional": "米飯很好吃。",
+          "pinyin": "Mǐ fàn hěn hǎo chī.",
+          "meaning": "Rice is very tasty.",
+          "meaning_id": "Nasi enak banget."
+        },
+        {
+          "simplified": "鸡肉好吃吗？",
+          "traditional": "雞肉好吃嗎？",
+          "pinyin": "Jī ròu hǎo chī ma?",
+          "meaning": "Is chicken tasty?",
+          "meaning_id": "Ayam enak?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "food",
+        "description",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ji",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_rou",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_mian",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_mi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_rou",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_chi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_haochi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_chi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_haochi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hao",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jirou",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ji",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_miantiao",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_mian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_mifan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_fan",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_mifan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_mi",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "好吃 means?",
+        "prompt_id": "Arti 好吃?",
+        "answer": "tasty / delicious",
+        "answer_id": "enak / lezat"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "水果 means?",
+        "prompt_id": "Arti 水果?",
+        "answer": "fruit",
+        "answer_id": "buah-buahan"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "米饭很__。(Rice is very tasty)",
+        "answer": "好吃"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我要面条。",
+        "answer": "I want noodles.",
+        "answer_id": "Aku mau mie."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_mifan",
+      "word_miantiao",
+      "word_rou",
+      "word_cai",
+      "word_shuiguo",
+      "word_jirou",
+      "word_haochi"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_mifan",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_miantiao",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_rou",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_mifan_haochi",
+      "sentence_wo_yao_miantiao"
+    ]
+  }
+}

@@ -27,7 +27,9 @@ export interface ProfileRow {
   tutorial_hints_enabled: boolean;
   dark_mode_enabled: boolean;
   offline_mode_enabled: boolean;
+  current_pack_external_id: string | null;
   current_session_index: number;
+  placement_result: Record<string, unknown>;
 }
 
 export type ProfileUpdate = Partial<
@@ -47,7 +49,9 @@ export type ProfileUpdate = Partial<
     | 'tutorial_hints_enabled'
     | 'dark_mode_enabled'
     | 'offline_mode_enabled'
+    | 'current_pack_external_id'
     | 'current_session_index'
+    | 'placement_result'
   >
 >;
 
@@ -58,6 +62,10 @@ export interface AppProfileState {
   scriptChoice: ScriptChoice;
   sessionSize: SessionSize;
   settings: SettingsState;
+  currentPackId: string | null;
+  currentSessionIndex: number;
+  recommendedSessionIndex: number;
+  introStatus: 'required' | 'optional' | 'completed' | 'skipped' | 'not_required';
 }
 
 const profileColumns = [
@@ -76,8 +84,25 @@ const profileColumns = [
   'tutorial_hints_enabled',
   'dark_mode_enabled',
   'offline_mode_enabled',
+  'current_pack_external_id',
   'current_session_index',
+  'placement_result',
 ].join(', ');
+
+function introStatusFromPlacement(value: Record<string, unknown> | null | undefined): AppProfileState['introStatus'] {
+  const status = value?.introStatus;
+
+  if (status === 'required' || status === 'optional' || status === 'completed' || status === 'skipped') {
+    return status;
+  }
+
+  return 'not_required';
+}
+
+function recommendedSessionIndexFromPlacement(value: Record<string, unknown> | null | undefined, fallback: number) {
+  const sessionIndex = value?.recommendedSessionIndex;
+  return typeof sessionIndex === 'number' && Number.isFinite(sessionIndex) && sessionIndex >= 0 ? sessionIndex : fallback;
+}
 
 export function languageToDb(value: AppLanguage): DbLanguage {
   return value === 'Indonesian' ? 'id' : 'en';
@@ -163,6 +188,10 @@ export function profileRowToAppState(row: ProfileRow, fallbackUser?: SupabaseUse
       dark: row.dark_mode_enabled === true,
       offline: row.offline_mode_enabled === true,
     },
+    currentPackId: row.current_pack_external_id,
+    currentSessionIndex: row.current_session_index ?? 0,
+    recommendedSessionIndex: recommendedSessionIndexFromPlacement(row.placement_result, row.current_session_index ?? 0),
+    introStatus: introStatusFromPlacement(row.placement_result),
   };
 }
 

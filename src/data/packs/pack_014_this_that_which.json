@@ -1,0 +1,982 @@
+{
+  "pack": {
+    "id": "pack_014_this_that_which",
+    "title": "This / That / Which",
+    "title_id": "Ini / Itu / Yang Mana",
+    "subtitle": "Point to things and ask which one.",
+    "subtitle_id": "Menunjuk benda dan bertanya yang mana.",
+    "level": 1,
+    "phase": "mvp",
+    "theme": "demonstratives",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 14,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Point to things and ask which one.",
+    "learning_goal_id": "Menunjuk benda dan bertanya yang mana.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 5,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_zhe",
+      "type": "hanzi",
+      "simplified": "这",
+      "traditional": "這",
+      "meaning": "this",
+      "meaning_id": "ini",
+      "accepted_meanings": [
+        "this"
+      ],
+      "accepted_meanings_id": [
+        "ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhè",
+      "pinyin_numbered": "zhe4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Something right here in front of you — *this* one, close and visible. zhè ≈ \"juh!\" sharp. Tone 4 drops, like pointing firmly.",
+      "mnemonic_id": "Sesuatu yang ada tepat di depanmu — *ini*, dekat dan terlihat. zhè ≈ \"juh!\" Nada 4 turun tajam, kayak menunjuk dengan tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个多少钱？",
+          "pinyin": "Zhè ge duō shao qián?",
+          "meaning": "How much is this?",
+          "meaning_id": "Ini berapa harganya?"
+        },
+        {
+          "simplified": "这好吗？",
+          "pinyin": "Zhè hǎo ma?",
+          "meaning": "Is this good?",
+          "meaning_id": "Ini bagus?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "demonstrative",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_na_that",
+      "type": "hanzi",
+      "simplified": "那",
+      "traditional": "那",
+      "meaning": "that",
+      "meaning_id": "itu",
+      "accepted_meanings": [
+        "that"
+      ],
+      "accepted_meanings_id": [
+        "itu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nà",
+      "pinyin_numbered": "na4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "那",
+          "text": "nà",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Something over there, further away — *that* one, not here. nà ≈ \"nah!\" sharp. Tone 4 drops, like gesturing to something distant.",
+      "mnemonic_id": "Sesuatu yang ada di sana, lebih jauh — *itu*, bukan di sini. nà ≈ \"nah!\" Nada 4 turun tajam, kayak menunjuk ke sesuatu yang jauh.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "那个多少钱？",
+          "pinyin": "Nà ge duō shao qián?",
+          "meaning": "How much is that?",
+          "meaning_id": "Itu berapa harganya?"
+        },
+        {
+          "simplified": "那好吗？",
+          "pinyin": "Nà hǎo ma?",
+          "meaning": "Is that good?",
+          "meaning_id": "Itu bagus?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "demonstrative",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xie",
+      "type": "hanzi",
+      "simplified": "些",
+      "traditional": "些",
+      "meaning": "some",
+      "meaning_id": "beberapa",
+      "accepted_meanings": [
+        "some"
+      ],
+      "accepted_meanings_id": [
+        "beberapa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xiē",
+      "pinyin_numbered": "xie1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "些",
+          "text": "xiē",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A small scattered bunch — not one, not many, just *some*. xiē ≈ \"syeh\" flat. Tone 1 high and steady, like a measured handful.",
+      "mnemonic_id": "Sekelompok kecil yang tersebar — bukan satu, bukan banyak, tapi *beberapa*. xiē ≈ \"syeh\" flat. Nada 1 tinggi rata, kayak segenggam yang terukur.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这些好吗？",
+          "pinyin": "Zhè xiē hǎo ma?",
+          "meaning": "Are these good?",
+          "meaning_id": "Ini bagus-bagus?"
+        },
+        {
+          "simplified": "那些是我的。",
+          "pinyin": "Nà xiē shì wǒ de.",
+          "meaning": "Those are mine.",
+          "meaning_id": "Itu-itu milikku."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "demonstrative",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_de",
+      "type": "hanzi",
+      "simplified": "的",
+      "traditional": "的",
+      "meaning": "possessive particle",
+      "meaning_id": "partikel kepunyaan",
+      "accepted_meanings": [
+        "possessive particle"
+      ],
+      "accepted_meanings_id": [
+        "partikel kepunyaan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "de",
+      "pinyin_numbered": "de0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "的",
+          "text": "de",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "The glue between owner and owned — 我的 means \"mine\", 你的 means \"yours\". de is light. Tone 0 just floats along.",
+      "mnemonic_id": "Lem antara pemilik dan miliknya — 我的 berarti \"milikku\", 你的 berarti \"milikmu\". de ringan. Nada 0 numpang lewat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我的。",
+          "pinyin": "Wǒ de.",
+          "meaning": "Mine.",
+          "meaning_id": "Milikku."
+        },
+        {
+          "simplified": "你的好吗？",
+          "pinyin": "Nǐ de hǎo ma?",
+          "meaning": "Is yours good?",
+          "meaning_id": "Milikmu bagus?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "particle",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_na_which",
+      "type": "hanzi",
+      "simplified": "哪",
+      "traditional": "哪",
+      "meaning": "which",
+      "meaning_id": "yang mana",
+      "accepted_meanings": [
+        "which"
+      ],
+      "accepted_meanings_id": [
+        "yang mana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nǎ",
+      "pinyin_numbered": "na3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Already learned — 口 mouth asking while pointing in no clear direction. *Which* one? nǎ ≈ \"nah\" dipping then rising. Tone 3.",
+      "mnemonic_id": "Sudah dipelajari — 口 mulut nanya sambil nunjuk ke arah yang tidak pasti. *Mana* sih? nǎ ≈ \"na\" turun terus naik. Nada 3.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "哪个好？",
+          "pinyin": "Nǎ ge hǎo?",
+          "meaning": "Which one is good?",
+          "meaning_id": "Yang mana yang bagus?"
+        },
+        {
+          "simplified": "你要哪个？",
+          "pinyin": "Nǐ yào nǎ ge?",
+          "meaning": "Which one do you want?",
+          "meaning_id": "Kamu mau yang mana?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "question_word",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_zhe",
+      "type": "word",
+      "simplified": "这",
+      "traditional": "這",
+      "meaning": "this",
+      "meaning_id": "ini",
+      "accepted_meanings": [
+        "this"
+      ],
+      "accepted_meanings_id": [
+        "ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhè",
+      "pinyin_numbered": "zhe4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_zhe"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "*This* — right here, close to you.",
+      "mnemonic_id": "*Ini* — tepat di sini, dekat denganmu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这好吗？",
+          "pinyin": "Zhè hǎo ma?",
+          "meaning": "Is this good?",
+          "meaning_id": "Ini bagus?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_na_that",
+      "type": "word",
+      "simplified": "那",
+      "traditional": "那",
+      "meaning": "that",
+      "meaning_id": "itu",
+      "accepted_meanings": [
+        "that"
+      ],
+      "accepted_meanings_id": [
+        "itu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nà",
+      "pinyin_numbered": "na4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "那",
+          "text": "nà",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_na_that"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "*That* — over there, further from you.",
+      "mnemonic_id": "*Itu* — di sana, lebih jauh darimu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "那好吗？",
+          "pinyin": "Nà hǎo ma?",
+          "meaning": "Is that good?",
+          "meaning_id": "Itu bagus?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zhege",
+      "type": "word",
+      "simplified": "这个",
+      "traditional": "這個",
+      "meaning": "this one",
+      "meaning_id": "yang ini",
+      "accepted_meanings": [
+        "this one"
+      ],
+      "accepted_meanings_id": [
+        "yang ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhè ge",
+      "pinyin_numbered": "zhe4 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "4-0",
+      "hanzi_ids": [
+        "hanzi_zhe",
+        "hanzi_ge"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "这 this + 个 item — *this one*, pointing at something nearby.",
+      "mnemonic_id": "这 ini + 个 buah — *yang ini*, menunjuk sesuatu yang dekat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个多少钱？",
+          "pinyin": "Zhè ge duō shao qián?",
+          "meaning": "How much is this?",
+          "meaning_id": "Ini berapa?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_nage",
+      "type": "word",
+      "simplified": "那个",
+      "traditional": "那個",
+      "meaning": "that one",
+      "meaning_id": "yang itu",
+      "accepted_meanings": [
+        "that one"
+      ],
+      "accepted_meanings_id": [
+        "yang itu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nà ge",
+      "pinyin_numbered": "na4 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "那",
+          "text": "nà",
+          "tone": 4
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "4-0",
+      "hanzi_ids": [
+        "hanzi_na_that",
+        "hanzi_ge"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "那 that + 个 item — *that one*, pointing at something further away.",
+      "mnemonic_id": "那 itu + 个 buah — *yang itu*, menunjuk sesuatu yang lebih jauh.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "那个多少钱？",
+          "pinyin": "Nà ge duō shao qián?",
+          "meaning": "How much is that?",
+          "meaning_id": "Itu berapa?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_nage_which",
+      "type": "word",
+      "simplified": "哪个",
+      "traditional": "哪個",
+      "meaning": "which one",
+      "meaning_id": "yang mana",
+      "accepted_meanings": [
+        "which one"
+      ],
+      "accepted_meanings_id": [
+        "yang mana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nǎ ge",
+      "pinyin_numbered": "na3 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-0",
+      "hanzi_ids": [
+        "hanzi_na",
+        "hanzi_ge"
+      ],
+      "part_of_speech": "question phrase",
+      "mnemonic": "哪 which + 个 item — *which one*, asking to choose.",
+      "mnemonic_id": "哪 mana + 个 buah — *yang mana*, minta pilihan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你要哪个？",
+          "pinyin": "Nǐ yào nǎ ge?",
+          "meaning": "Which one do you want?",
+          "meaning_id": "Kamu mau yang mana?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zhexie",
+      "type": "word",
+      "simplified": "这些",
+      "traditional": "這些",
+      "meaning": "these",
+      "meaning_id": "ini semua / beberapa ini",
+      "accepted_meanings": [
+        "these"
+      ],
+      "accepted_meanings_id": [
+        "ini semua / beberapa ini"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhè xiē",
+      "pinyin_numbered": "zhe4 xie1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        },
+        {
+          "hanzi": "些",
+          "text": "xiē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_zhe",
+        "hanzi_xie"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "这 this + 些 some — *these*, a group of things nearby.",
+      "mnemonic_id": "这 ini + 些 beberapa — *ini semua*, sekelompok benda yang dekat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这些好吗？",
+          "pinyin": "Zhè xiē hǎo ma?",
+          "meaning": "Are these good?",
+          "meaning_id": "Ini bagus-bagus?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_naxie",
+      "type": "word",
+      "simplified": "那些",
+      "traditional": "那些",
+      "meaning": "those",
+      "meaning_id": "itu semua / beberapa itu",
+      "accepted_meanings": [
+        "those"
+      ],
+      "accepted_meanings_id": [
+        "itu semua / beberapa itu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nà xiē",
+      "pinyin_numbered": "na4 xie1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "那",
+          "text": "nà",
+          "tone": 4
+        },
+        {
+          "hanzi": "些",
+          "text": "xiē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_na_that",
+        "hanzi_xie"
+      ],
+      "part_of_speech": "pronoun",
+      "mnemonic": "那 that + 些 some — *those*, a group of things further away.",
+      "mnemonic_id": "那 itu + 些 beberapa — *itu semua*, sekelompok benda yang lebih jauh.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "那些是我的。",
+          "pinyin": "Nà xiē shì wǒ de.",
+          "meaning": "Those are mine.",
+          "meaning_id": "Itu-itu milikku."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "demonstrative"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_zhege_duoshaoqian",
+      "type": "sentence",
+      "simplified": "这个多少钱？",
+      "traditional": "這個多少錢？",
+      "meaning": "How much is this one?",
+      "meaning_id": "Yang ini berapa harganya?",
+      "literal_meaning": "This one how much money?",
+      "literal_meaning_id": "Yang ini berapa uang?",
+      "pinyin": "zhè ge duō shǎo qián",
+      "pinyin_numbered": "zhe4 ge0 duo1 shao3 qian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        },
+        {
+          "hanzi": "多",
+          "text": "duō",
+          "tone": 1
+        },
+        {
+          "hanzi": "少",
+          "text": "shǎo",
+          "tone": 3
+        },
+        {
+          "hanzi": "钱",
+          "text": "qián",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-0-1-3-2",
+      "focus_word_ids": [
+        "word_zhege"
+      ],
+      "pattern_ids": [
+        "pattern_this_that"
+      ],
+      "notes": "这个 + 多少钱 — the most useful shopping sentence.",
+      "notes_id": "这个 + 多少钱 — kalimat belanja paling berguna.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "shopping",
+        "demonstrative",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_yao_nage",
+      "type": "sentence",
+      "simplified": "你要哪个？",
+      "traditional": "你要哪個？",
+      "meaning": "Which one do you want?",
+      "meaning_id": "Kamu mau yang mana?",
+      "literal_meaning": "You want which one?",
+      "literal_meaning_id": "Kamu mau yang mana?",
+      "pinyin": "nǐ yào nǎ ge",
+      "pinyin_numbered": "ni3 yao4 na3 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "要",
+          "text": "yào",
+          "tone": 4
+        },
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-4-3-0",
+      "focus_word_ids": [
+        "word_nage_which"
+      ],
+      "pattern_ids": [
+        "pattern_this_that"
+      ],
+      "notes": "哪个 replaces the noun when asking which one to choose.",
+      "notes_id": "哪个 menggantikan kata benda saat menanya pilihan.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "question",
+        "demonstrative",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_this_that",
+      "type": "pattern",
+      "title": "这 / 那 / 哪",
+      "title_id": "这 / 那 / 哪",
+      "meaning": "this, that, which",
+      "meaning_id": "ini, itu, yang mana",
+      "structure": "这/那/哪 + measure word",
+      "explanation": "Use 这, 那, and 哪 with measure words to point or ask which.",
+      "explanation_id": "Gunakan 这, 那, dan 哪 dengan kata bantu untuk menunjuk atau bertanya yang mana.",
+      "examples": [
+        {
+          "simplified": "这个多少钱？",
+          "traditional": "這個多少錢？",
+          "pinyin": "Zhè ge duō shao qián?",
+          "meaning": "How much is this?",
+          "meaning_id": "Ini berapa?"
+        },
+        {
+          "simplified": "那个好吗？",
+          "traditional": "那個好嗎？",
+          "pinyin": "Nà ge hǎo ma?",
+          "meaning": "Is that one good?",
+          "meaning_id": "Yang itu bagus?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "demonstrative",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_na_that",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_zhe",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_xie",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_zhe",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_nage",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_na_that",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_nage_which",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_na",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_naxie",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xie",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_zhege",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zhe",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_zhexie",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xie",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "这 means?",
+        "prompt_id": "Arti 这?",
+        "answer": "this",
+        "answer_id": "ini"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "那些 means?",
+        "prompt_id": "Arti 那些?",
+        "answer": "those",
+        "answer_id": "itu semua"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "__个多少钱？(How much is this?)",
+        "answer": "这"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你要哪个？",
+        "answer": "Which one do you want?",
+        "answer_id": "Kamu mau yang mana?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_zhe",
+      "word_na_that",
+      "word_zhege",
+      "word_nage",
+      "word_nage_which",
+      "word_zhexie",
+      "word_naxie"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_zhe",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_na_that",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_zhege",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_zhege_duoshaoqian",
+      "sentence_ni_yao_nage"
+    ]
+  }
+}

@@ -1,0 +1,751 @@
+{
+  "pack": {
+    "id": "pack_011_numbers_11_100",
+    "title": "Numbers 11–100",
+    "title_id": "Angka 11–100",
+    "subtitle": "Build common numbers from eleven to one hundred.",
+    "subtitle_id": "Membentuk angka umum dari sebelas sampai seratus.",
+    "level": 1,
+    "phase": "mvp",
+    "theme": "numbers",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 11,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Build common numbers from eleven to one hundred.",
+    "learning_goal_id": "Membentuk angka umum dari sebelas sampai seratus.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 1,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_bai",
+      "type": "hanzi",
+      "simplified": "百",
+      "traditional": "百",
+      "meaning": "hundred",
+      "meaning_id": "ratus",
+      "accepted_meanings": [
+        "hundred"
+      ],
+      "accepted_meanings_id": [
+        "ratus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bǎi",
+      "pinyin_numbered": "bai3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "百",
+          "text": "bǎi",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "White 白 on top, one stroke below — one *hundred*, a full century. bǎi ≈ \"bye\" dipping then rising. Tone 3 like counting all the way.",
+      "mnemonic_id": "白 putih di atas, satu garis di bawah — satu *ratus*, angka yang besar. bǎi ≈ \"bai\" turun terus naik. Nada 3 kayak menghitung sampai habis.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一百。",
+          "pinyin": "Yì bǎi.",
+          "meaning": "One hundred.",
+          "meaning_id": "Seratus."
+        },
+        {
+          "simplified": "我有一百。",
+          "pinyin": "Wǒ yǒu yì bǎi.",
+          "meaning": "I have one hundred.",
+          "meaning_id": "Aku punya seratus."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_shiyi",
+      "type": "word",
+      "simplified": "十一",
+      "traditional": "十一",
+      "meaning": "eleven",
+      "meaning_id": "sebelas",
+      "accepted_meanings": [
+        "eleven"
+      ],
+      "accepted_meanings_id": [
+        "sebelas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shí yī",
+      "pinyin_numbered": "shi2 yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        },
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "2-1",
+      "hanzi_ids": [
+        "hanzi_shi_num",
+        "hanzi_yi"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "十 ten + 一 one — *eleven*, just stacking numbers together.",
+      "mnemonic_id": "十 sepuluh + 一 satu — *sebelas*, tinggal tumpuk angkanya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "十一个。",
+          "pinyin": "Shí yī ge.",
+          "meaning": "Eleven items.",
+          "meaning_id": "Sebelas buah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shier",
+      "type": "word",
+      "simplified": "十二",
+      "traditional": "十二",
+      "meaning": "twelve",
+      "meaning_id": "dua belas",
+      "accepted_meanings": [
+        "twelve"
+      ],
+      "accepted_meanings_id": [
+        "dua belas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shí èr",
+      "pinyin_numbered": "shi2 er4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        },
+        {
+          "hanzi": "二",
+          "text": "èr",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_shi_num",
+        "hanzi_er"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "十 ten + 二 two — *twelve*.",
+      "mnemonic_id": "十 sepuluh + 二 dua — *dua belas*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "十二个。",
+          "pinyin": "Shí èr ge.",
+          "meaning": "Twelve items.",
+          "meaning_id": "Dua belas buah."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ershi",
+      "type": "word",
+      "simplified": "二十",
+      "traditional": "二十",
+      "meaning": "twenty",
+      "meaning_id": "dua puluh",
+      "accepted_meanings": [
+        "twenty"
+      ],
+      "accepted_meanings_id": [
+        "dua puluh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "èr shí",
+      "pinyin_numbered": "er4 shi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "二",
+          "text": "èr",
+          "tone": 4
+        },
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_er",
+        "hanzi_shi_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "二 two + 十 ten — *twenty*, two tens.",
+      "mnemonic_id": "二 dua + 十 sepuluh — *dua puluh*, dua kali sepuluh.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "For multiples of ten, put the number before 十.",
+      "usage_note_id": "Untuk kelipatan sepuluh, taruh angkanya sebelum 十.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "二十个。",
+          "pinyin": "Èr shí ge.",
+          "meaning": "Twenty items.",
+          "meaning_id": "Dua puluh buah."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_sanshi",
+      "type": "word",
+      "simplified": "三十",
+      "traditional": "三十",
+      "meaning": "thirty",
+      "meaning_id": "tiga puluh",
+      "accepted_meanings": [
+        "thirty"
+      ],
+      "accepted_meanings_id": [
+        "tiga puluh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sān shí",
+      "pinyin_numbered": "san1 shi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "三",
+          "text": "sān",
+          "tone": 1
+        },
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "1-2",
+      "hanzi_ids": [
+        "hanzi_san",
+        "hanzi_shi_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "三 three + 十 ten — *thirty*, three tens.",
+      "mnemonic_id": "三 tiga + 十 sepuluh — *tiga puluh*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "三十个。",
+          "pinyin": "Sān shí ge.",
+          "meaning": "Thirty items.",
+          "meaning_id": "Tiga puluh buah."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_wushi",
+      "type": "word",
+      "simplified": "五十",
+      "traditional": "五十",
+      "meaning": "fifty",
+      "meaning_id": "lima puluh",
+      "accepted_meanings": [
+        "fifty"
+      ],
+      "accepted_meanings_id": [
+        "lima puluh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wǔ shí",
+      "pinyin_numbered": "wu3 shi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "五",
+          "text": "wǔ",
+          "tone": 3
+        },
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-2",
+      "hanzi_ids": [
+        "hanzi_wu",
+        "hanzi_shi_num"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "五 five + 十 ten — *fifty*, halfway to a hundred.",
+      "mnemonic_id": "五 lima + 十 sepuluh — *lima puluh*, setengah dari seratus.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "五十个。",
+          "pinyin": "Wǔ shí ge.",
+          "meaning": "Fifty items.",
+          "meaning_id": "Lima puluh buah."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yibai",
+      "type": "word",
+      "simplified": "一百",
+      "traditional": "一百",
+      "meaning": "one hundred",
+      "meaning_id": "seratus",
+      "accepted_meanings": [
+        "one hundred"
+      ],
+      "accepted_meanings_id": [
+        "seratus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì bǎi",
+      "pinyin_numbered": "yi4 bai3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "百",
+          "text": "bǎi",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_bai"
+      ],
+      "part_of_speech": "number",
+      "mnemonic": "一 one + 百 hundred — exactly *one hundred*.",
+      "mnemonic_id": "一 satu + 百 ratus — tepat *seratus*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一百个。",
+          "pinyin": "Yì bǎi ge.",
+          "meaning": "One hundred items.",
+          "meaning_id": "Seratus buah."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "number"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_duoshao_number",
+      "type": "word",
+      "simplified": "多少",
+      "traditional": "多少",
+      "meaning": "how many",
+      "meaning_id": "berapa",
+      "accepted_meanings": [
+        "how many"
+      ],
+      "accepted_meanings_id": [
+        "berapa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "duō shǎo",
+      "pinyin_numbered": "duo1 shao3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "多",
+          "text": "duō",
+          "tone": 1
+        },
+        {
+          "hanzi": "少",
+          "text": "shǎo",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-3",
+      "hanzi_ids": [
+        "hanzi_duo",
+        "hanzi_shao"
+      ],
+      "part_of_speech": "question word",
+      "mnemonic": "Already learned — *how many*, asking the amount.",
+      "mnemonic_id": "Sudah dipelajari — *berapa*, nanya jumlah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你有多少？",
+          "pinyin": "Nǐ yǒu duō shao?",
+          "meaning": "How many do you have?",
+          "meaning_id": "Kamu punya berapa?"
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "number",
+        "question"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_shiyi_ge",
+      "type": "sentence",
+      "simplified": "十一个。",
+      "traditional": "十一個。",
+      "meaning": "Eleven items/people.",
+      "meaning_id": "Sebelas buah/orang.",
+      "literal_meaning": "Eleven [items].",
+      "literal_meaning_id": "Sebelas [benda].",
+      "pinyin": "shí yī ge",
+      "pinyin_numbered": "shi2 yi1 ge0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        },
+        {
+          "hanzi": "一",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-1-0",
+      "focus_word_ids": [
+        "word_shiyi"
+      ],
+      "pattern_ids": [
+        "pattern_tens"
+      ],
+      "notes": "Same number + 个 pattern, just with bigger numbers.",
+      "notes_id": "Pola angka + 个 yang sama, hanya angkanya lebih besar.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "number",
+        "measure_word",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ershi_kuai",
+      "type": "sentence",
+      "simplified": "二十块。",
+      "traditional": "二十塊。",
+      "meaning": "Twenty yuan/dollars.",
+      "meaning_id": "Dua puluh yuan/dolar.",
+      "literal_meaning": "Twenty yuan.",
+      "literal_meaning_id": "Dua puluh yuan.",
+      "pinyin": "èr shí kuài",
+      "pinyin_numbered": "er4 shi2 kuai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "二",
+          "text": "èr",
+          "tone": 4
+        },
+        {
+          "hanzi": "十",
+          "text": "shí",
+          "tone": 2
+        },
+        {
+          "hanzi": "块",
+          "text": "kuài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-2-4",
+      "focus_word_ids": [
+        "word_ershi"
+      ],
+      "pattern_ids": [
+        "pattern_tens"
+      ],
+      "notes": "块 is the spoken word for Chinese yuan — you will see it often in prices.",
+      "notes_id": "块 adalah kata lisan untuk yuan China — sering muncul saat bicara harga.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "number",
+        "money",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_tens",
+      "type": "pattern",
+      "title": "Tens with 十",
+      "title_id": "Puluhan dengan 十",
+      "meaning": "building 11–99",
+      "meaning_id": "membentuk 11–99",
+      "structure": "十 + number / number + 十",
+      "explanation": "Combine 十 with numbers to build 11–99.",
+      "explanation_id": "Gabungkan 十 dengan angka untuk membentuk 11–99.",
+      "examples": [
+        {
+          "simplified": "二十个。",
+          "traditional": "二十個。",
+          "pinyin": "Èr shí ge.",
+          "meaning": "Twenty items.",
+          "meaning_id": "Dua puluh buah."
+        },
+        {
+          "simplified": "三十块。",
+          "traditional": "三十塊。",
+          "pinyin": "Sān shí kuài.",
+          "meaning": "Thirty yuan.",
+          "meaning_id": "Tiga puluh yuan."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "number",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_bai",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_shi_ten",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_ershi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_er",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shier",
+      "item_type": "word",
+      "prerequisite_item_id": "word_shiyi",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_yibai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bai",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "百 means?",
+        "prompt_id": "Arti 百?",
+        "answer": "hundred",
+        "answer_id": "ratus"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "二十 means?",
+        "prompt_id": "Arti 二十?",
+        "answer": "twenty",
+        "answer_id": "dua puluh"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "三__。(thirty)",
+        "answer": "十"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "二十块。",
+        "answer": "Twenty yuan.",
+        "answer_id": "Dua puluh yuan."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_shiyi",
+      "word_shier",
+      "word_ershi",
+      "word_sanshi",
+      "word_wushi",
+      "word_yibai",
+      "word_duoshao_number"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_shiyi",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shier",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_ershi",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_shiyi_ge",
+      "sentence_ershi_kuai"
+    ]
+  }
+}
