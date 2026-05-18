@@ -324,6 +324,10 @@ export function GlobalSheets() {
                 }
               }
 
+              if (isRecoveryUpdate) {
+                window.history.replaceState(null, '', window.location.pathname || '/');
+              }
+
               showToast(t('toast.passwordUpdated'));
               closeSheet();
             } finally {
@@ -415,7 +419,7 @@ export function GlobalSheets() {
             try {
               if (isSupabaseConfigured && supabase) {
                 const { error } = await supabase.auth.resetPasswordForEmail(resetEmail.trim(), {
-                  redirectTo: window.location.origin,
+                  redirectTo: `${window.location.origin}?recovery=1`,
                 });
 
                 if (error) {

@@ -7,7 +7,27 @@ import { OnboardingScreen } from '../screens/Onboarding';
 import { useAppStore } from '../stores/appStore';
 import { useStudyStore } from '../stores/studyStore';
 import { fetchOrCreateProfile } from '../lib/profileSync';
-import { displayNameFromUser, isSupabaseConfigured, supabase, type SupabaseUser } from '../lib/supabase';
+import {
+  displayNameFromUser,
+  initialPasswordRecoveryUrl,
+  isSupabaseConfigured,
+  supabase,
+  type SupabaseUser,
+} from '../lib/supabase';
+
+function isPasswordRecoveryUrl() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const recoveryText = `${window.location.search}&${window.location.hash}`;
+  return (
+    initialPasswordRecoveryUrl ||
+    recoveryText.includes('type=recovery') ||
+    recoveryText.includes('PASSWORD_RECOVERY') ||
+    recoveryText.includes('recovery=1')
+  );
+}
 
 export function App() {
   const signedIn = useAppStore((state) => state.signedIn);
@@ -30,9 +50,11 @@ export function App() {
     }
 
     let active = true;
+    let recoveryRequested = isPasswordRecoveryUrl();
 
     async function restoreUser(user: SupabaseUser, options: { passwordRecovery?: boolean } = {}) {
       try {
+        recoveryRequested = recoveryRequested || options.passwordRecovery === true;
         syncAuthenticatedUser({ name: displayNameFromUser(user), email: user.email ?? '' });
 
         const { profile } = await fetchOrCreateProfile(user);
@@ -41,7 +63,7 @@ export function App() {
           useStudyStore.getState().setSessionIndex(profile.currentSessionIndex);
         }
 
-        if (active && options.passwordRecovery) {
+        if (active && recoveryRequested) {
           openSheet('updatePassword');
         }
       } finally {
@@ -51,6 +73,20 @@ export function App() {
       }
     }
 
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      const user = session?.user;
+      if (user?.email) {
+        recoveryRequested = recoveryRequested || event === 'PASSWORD_RECOVERY';
+        setAuthReady(false);
+        void restoreUser(user, { passwordRecovery: recoveryRequested });
+      } else {
+        syncSignedOut();
+        setAuthReady(true);
+      }
+    });
+
     supabase.auth.getSession().then(({ data }) => {
       if (!active) {
         return;
@@ -59,20 +95,7 @@ export function App() {
       const user = data.session?.user;
       if (user?.email) {
         setAuthReady(false);
-        void restoreUser(user);
-      } else {
-        syncSignedOut();
-        setAuthReady(true);
-      }
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, session) => {
-      const user = session?.user;
-      if (user?.email) {
-        setAuthReady(false);
-        void restoreUser(user, { passwordRecovery: event === 'PASSWORD_RECOVERY' });
+        void restoreUser(user, { passwordRecovery: recoveryRequested });
       } else {
         syncSignedOut();
         setAuthReady(true);

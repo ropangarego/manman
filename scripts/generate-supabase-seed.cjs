@@ -7,6 +7,7 @@ const path = require("node:path");
 const projectRoot = path.resolve(__dirname, "..");
 const packsDir = path.join(projectRoot, "src", "data", "packs");
 const outputPath = path.join(projectRoot, "supabase", "seed_content_packs.sql");
+const seedWarnings = [];
 
 const itemTypeByPrefix = new Map([
   ["component_", "component"],
@@ -59,6 +60,22 @@ function byId(items) {
     if (item?.id) map.set(item.id, item);
   }
   return map;
+}
+
+function collectGlobalIds(packFiles, key) {
+  const ids = new Set();
+
+  for (const { data } of packFiles) {
+    for (const item of data[key] || []) {
+      if (item?.id) ids.add(item.id);
+    }
+  }
+
+  return ids;
+}
+
+function warn(message) {
+  seedWarnings.push(message);
 }
 
 function values(rows) {
@@ -476,6 +493,8 @@ function buildSeed() {
     sentences: byId(data.sentences),
     data,
   }));
+  const globalHanziIds = collectGlobalIds(packFiles, "hanzi");
+  const globalWordIds = collectGlobalIds(packFiles, "words");
 
   const hanziComponentRows = [];
   const wordHanziRows = [];
@@ -491,7 +510,14 @@ function buildSeed() {
 
     for (const word of data.words || []) {
       for (const [index, hanziId] of (word.hanzi_ids || []).entries()) {
-        wordHanziRows.push(`  ((select id from public.words where external_id = ${sql(word.id)}), (select id from public.hanzi where external_id = ${sql(hanziId)}), ${index + 1})`);
+        if (!globalWordIds.has(word.id) || !globalHanziIds.has(hanziId)) {
+          warn(
+            `Skipped word_hanzi link: pack=${data.pack.id}, word=${word.id}, simplified=${word.simplified}, missing_hanzi=${hanziId}`
+          );
+          continue;
+        }
+
+        wordHanziRows.push(`  (${sql(word.id)}, ${sql(hanziId)}, ${index + 1})`);
       }
     }
 
@@ -511,7 +537,17 @@ function buildSeed() {
   }
 
   if (wordHanziRows.length > 0) {
-    lines.push("insert into public.word_hanzi (word_id, hanzi_id, sort_order) values", values(wordHanziRows) + ";", "");
+    lines.push(
+      "insert into public.word_hanzi (word_id, hanzi_id, sort_order)",
+      "select w.id, h.id, seed_links.sort_order",
+      "from (values",
+      values(wordHanziRows),
+      ") as seed_links(word_external_id, hanzi_external_id, sort_order)",
+      "join public.words w on w.external_id = seed_links.word_external_id",
+      "join public.hanzi h on h.external_id = seed_links.hanzi_external_id",
+      "on conflict do nothing;",
+      ""
+    );
   }
 
   if (sentenceWordRows.length > 0) {
@@ -553,3 +589,9 @@ function buildSeed() {
 const seed = buildSeed();
 fs.writeFileSync(outputPath, seed, "utf8");
 console.log(`Generated ${path.relative(projectRoot, outputPath)}`);
+if (seedWarnings.length > 0) {
+  console.warn("Seed warnings:");
+  for (const warning of seedWarnings) {
+    console.warn(`- ${warning}`);
+  }
+}
