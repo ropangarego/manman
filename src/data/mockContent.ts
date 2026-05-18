@@ -127,6 +127,14 @@ interface RawComponent {
   order_index: number;
 }
 
+interface RawLearningExample {
+  simplified?: string;
+  traditional?: string;
+  pinyin?: string;
+  meaning?: string;
+  meaning_id?: string | null;
+}
+
 interface RawLearningItem {
   id: string;
   type: 'hanzi' | 'word' | 'sentence';
@@ -155,7 +163,7 @@ interface RawLearningItem {
   notes?: string | null;
   notes_id?: string | null;
   audio_url?: string | null;
-  examples?: string[] | null;
+  examples?: Array<string | RawLearningExample> | null;
   order_index: number;
   is_reviewable: boolean;
   is_core_word?: boolean;
@@ -467,33 +475,63 @@ function componentRowsId(item: RawLearningItem): [string, string][] {
   return uniqueRows([...directRows, ...hanziRows, ...focusRows, ...patternRows, ...characterRowsId(item.simplified)]).slice(0, 4);
 }
 
+function firstExampleParts(item: RawLearningItem) {
+  const firstExample = item.examples?.[0];
+
+  if (typeof firstExample === 'string') {
+    const matchingSentence = sentenceByText.get(firstExample);
+    return {
+      text: firstExample,
+      pinyin: matchingSentence?.pinyin,
+      meaning: matchingSentence?.meaning,
+      meaningId: matchingSentence?.meaning_id,
+    };
+  }
+
+  if (firstExample && typeof firstExample === 'object') {
+    return {
+      text: firstExample.simplified ?? item.simplified,
+      pinyin: firstExample.pinyin,
+      meaning: firstExample.meaning,
+      meaningId: firstExample.meaning_id ?? undefined,
+    };
+  }
+
+  return {
+    text: item.simplified,
+    pinyin: undefined,
+    meaning: undefined,
+    meaningId: undefined,
+  };
+}
+
 function exampleForLearningItem(item: RawLearningItem): [string, string, string] {
-  const exampleText = item.examples?.[0] ?? item.simplified;
-  const matchingSentence = sentenceByText.get(exampleText);
+  const example = firstExampleParts(item);
 
   return [
-    exampleText,
-    matchingSentence?.pinyin ?? item.pinyin,
-    matchingSentence?.meaning ?? item.meaning,
+    example.text,
+    example.pinyin ?? item.pinyin,
+    example.meaning ?? item.meaning,
   ];
 }
 
 function exampleForLearningItemId(item: RawLearningItem): [string, string, string] {
-  const exampleText = item.examples?.[0] ?? item.simplified;
-  const matchingSentence = sentenceByText.get(exampleText);
+  const example = firstExampleParts(item);
 
   return [
-    exampleText,
-    matchingSentence?.pinyin ?? item.pinyin,
-    matchingSentence?.meaning_id ?? item.meaning_id,
+    example.text,
+    example.pinyin ?? item.pinyin,
+    example.meaningId ?? item.meaning_id,
   ];
 }
 
 function relatedForLearningItem(pack: RawContentPack, item: RawLearningItem) {
   const prerequisites = prerequisiteRows(pack, item.id).map(([label]) => label);
   const structuralIds = [...(item.hanzi_ids ?? []), ...(item.focus_word_ids ?? []), ...(item.pattern_ids ?? [])].map(titleForId);
+  const exampleLabels =
+    item.examples?.map((example) => (typeof example === 'string' ? example : example.simplified ?? example.meaning ?? '')).filter(Boolean) ?? [];
 
-  return unique([...(item.examples ?? []), ...structuralIds, ...prerequisites]).slice(0, 5);
+  return unique([...exampleLabels, ...structuralIds, ...prerequisites]).slice(0, 5);
 }
 
 function toLearningContentItem(pack: RawContentPack, item: RawLearningItem, type: ContentType): ContentItem {

@@ -362,11 +362,13 @@ function buildSeed() {
     }
 
     for (const item of data.item_prerequisites || []) {
+      const itemId = item.item_id || item.item_external_id;
+      const prerequisiteItemId = item.prerequisite_item_id || item.prerequisite_item_external_id;
       prerequisiteRows.push(`  (${[
-        sql(item.item_type || inferItemType(item.item_id)),
-        sql(item.item_id),
-        sql(item.prerequisite_type || inferItemType(item.prerequisite_id)),
-        sql(item.prerequisite_id),
+        sql(item.item_type || inferItemType(itemId)),
+        sql(itemId),
+        sql(item.prerequisite_item_type || item.prerequisite_type || inferItemType(prerequisiteItemId)),
+        sql(prerequisiteItemId),
         sql(item.required_stage || "familiar"),
       ].join(", ")})`);
     }
