@@ -1,0 +1,980 @@
+{
+  "pack": {
+    "id": "pack_019_simple_past_le",
+    "title": "Simple Past with 了",
+    "title_id": "Masa Lampau Sederhana dengan 了",
+    "subtitle": "Say simple completed actions with 了 and past experience with 过.",
+    "subtitle_id": "Mengatakan aksi selesai dengan 了 dan pengalaman lampau dengan 过.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "past_actions",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 19,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Say simple completed actions with 了 and past experience with 过.",
+    "learning_goal_id": "Mengatakan aksi selesai dengan 了 dan pengalaman lampau dengan 过.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 5,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_le",
+      "type": "hanzi",
+      "simplified": "了",
+      "traditional": "了",
+      "meaning": "completed action particle",
+      "meaning_id": "partikel aksi selesai",
+      "accepted_meanings": [
+        "completed action particle"
+      ],
+      "accepted_meanings_id": [
+        "partikel aksi selesai"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "le",
+      "pinyin_numbered": "le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_number": 0,
+      "components": [],
+      "mnemonic": "A tiny hook at the end — the action is *done*, hooked and complete. le is light, just floats at the end. Tone 0 neutral.",
+      "mnemonic_id": "Kait kecil di ujung — aksi sudah *selesai*, terkait dan tuntas. le ringan, numpang di ujung kalimat. Nada 0 netral.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我吃了。",
+          "pinyin": "Wǒ chī le.",
+          "meaning": "I ate.",
+          "meaning_id": "Aku sudah makan."
+        },
+        {
+          "simplified": "他去了。",
+          "pinyin": "Tā qù le.",
+          "meaning": "He went.",
+          "meaning_id": "Dia sudah pergi."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "particle",
+        "grammar",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_guo_past",
+      "type": "hanzi",
+      "simplified": "过",
+      "traditional": "過",
+      "meaning": "experienced action particle",
+      "meaning_id": "pernah / melewati",
+      "accepted_meanings": [
+        "experienced action particle"
+      ],
+      "accepted_meanings_id": [
+        "pernah / melewati"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "guò",
+      "pinyin_numbered": "guo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "过",
+          "text": "guò",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Passing through — an experience that already *passed*. guò ≈ \"gwoh!\" sharp. Tone 4 drops, like something gone by.",
+      "mnemonic_id": "Melewati sesuatu — pengalaman yang sudah *berlalu*. guò ≈ \"gwo!\" Nada 4 turun tajam, kayak sesuatu yang sudah pergi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我去过。",
+          "pinyin": "Wǒ qù guò.",
+          "meaning": "I have been there before.",
+          "meaning_id": "Aku pernah ke sana."
+        },
+        {
+          "simplified": "你看过吗？",
+          "pinyin": "Nǐ kàn guò ma?",
+          "meaning": "Have you seen it before?",
+          "meaning_id": "Kamu pernah lihat?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "particle",
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_wan_finish",
+      "type": "hanzi",
+      "simplified": "完",
+      "traditional": "完",
+      "meaning": "finish",
+      "meaning_id": "selesai",
+      "accepted_meanings": [
+        "finish"
+      ],
+      "accepted_meanings_id": [
+        "selesai"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wán",
+      "pinyin_numbered": "wan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "完",
+          "text": "wán",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A roof over something whole — everything under it is *finished*, complete. wán ≈ \"wahn\" rising. Tone 2 goes up, like ticking off the last task.",
+      "mnemonic_id": "Atap di atas sesuatu yang utuh — semua di bawahnya sudah *selesai*. wán ≈ \"wan\" naik. Nada 2 naik terus, kayak mencentang tugas terakhir.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "吃完了。",
+          "pinyin": "Chī wán le.",
+          "meaning": "Finished eating.",
+          "meaning_id": "Sudah selesai makan."
+        },
+        {
+          "simplified": "你做完了吗？",
+          "pinyin": "Nǐ zuò wán le ma?",
+          "meaning": "Are you done?",
+          "meaning_id": "Kamu sudah selesai?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "verb",
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yi_already",
+      "type": "hanzi",
+      "simplified": "已",
+      "traditional": "已",
+      "meaning": "already part",
+      "meaning_id": "bagian sudah",
+      "accepted_meanings": [
+        "already part"
+      ],
+      "accepted_meanings_id": [
+        "bagian sudah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǐ",
+      "pinyin_numbered": "yi3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "已",
+          "text": "yǐ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Half of *already* — alone it means nothing yet, needs 经 to become 已经. yǐ ≈ \"ee\" dipping. Tone 3 like something that happened a while back.",
+      "mnemonic_id": "Setengah dari *sudah* — sendiri belum bermakna, butuh 经 untuk jadi 已经. yǐ ≈ \"ee\" turun terus naik. Nada 3 kayak sesuatu yang sudah terjadi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我已经去了。",
+          "pinyin": "Wǒ yǐ jīng qù le.",
+          "meaning": "I already went.",
+          "meaning_id": "Aku sudah pergi."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_jing",
+      "type": "hanzi",
+      "simplified": "经",
+      "traditional": "經",
+      "meaning": "already part",
+      "meaning_id": "bagian sudah",
+      "accepted_meanings": [
+        "already part"
+      ],
+      "accepted_meanings_id": [
+        "bagian sudah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jīng",
+      "pinyin_numbered": "jing1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "经",
+          "text": "jīng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "已's loyal partner — together they become 已经, *already*. jīng ≈ \"jing\" flat. Tone 1 high and steady, like something long established.",
+      "mnemonic_id": "Pasangan setia 已 — bersama jadi 已经, *sudah*. jīng ≈ \"jing\" flat. Nada 1 tinggi rata, kayak sesuatu yang sudah lama terjadi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我已经吃了。",
+          "pinyin": "Wǒ yǐ jīng chī le.",
+          "meaning": "I already ate.",
+          "meaning_id": "Aku sudah makan."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_le",
+      "type": "word",
+      "simplified": "了",
+      "traditional": "了",
+      "meaning": "completed action marker",
+      "meaning_id": "penanda aksi selesai",
+      "accepted_meanings": [
+        "completed action marker"
+      ],
+      "accepted_meanings_id": [
+        "penanda aksi selesai"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "le",
+      "pinyin_numbered": "le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "0",
+      "hanzi_ids": [
+        "hanzi_le"
+      ],
+      "part_of_speech": "particle",
+      "mnemonic": "*Completed action* marker — stick it after a verb and the action is done.",
+      "mnemonic_id": "Penanda aksi *selesai* — tempel setelah kata kerja dan aksinya sudah tuntas.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "了 after a verb marks completion. At sentence end it can also mark a change of state.",
+      "usage_note_id": "了 setelah kata kerja menandai penyelesaian. Di akhir kalimat bisa juga menandai perubahan kondisi.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我去了。",
+          "pinyin": "Wǒ qù le.",
+          "meaning": "I went.",
+          "meaning_id": "Aku sudah pergi."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_guo",
+      "type": "word",
+      "simplified": "过",
+      "traditional": "過",
+      "meaning": "have experienced",
+      "meaning_id": "pernah",
+      "accepted_meanings": [
+        "have experienced"
+      ],
+      "accepted_meanings_id": [
+        "pernah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "guò",
+      "pinyin_numbered": "guo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "过",
+          "text": "guò",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_guo_past"
+      ],
+      "part_of_speech": "particle",
+      "mnemonic": "*Have experienced* — 过 means you've done it at some point in your life.",
+      "mnemonic_id": "*Pernah* — 过 berarti kamu pernah melakukannya di suatu titik dalam hidupmu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Verb + 过 = have done it before. Different from 了 which marks recent completion.",
+      "usage_note_id": "Kata kerja + 过 = pernah melakukannya. Beda dari 了 yang menandai penyelesaian baru-baru ini.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你去过吗？",
+          "pinyin": "Nǐ qù guò ma?",
+          "meaning": "Have you been there?",
+          "meaning_id": "Kamu pernah ke sana?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_wan_finish",
+      "type": "word",
+      "simplified": "完",
+      "traditional": "完",
+      "meaning": "finish",
+      "meaning_id": "selesai",
+      "accepted_meanings": [
+        "finish"
+      ],
+      "accepted_meanings_id": [
+        "selesai"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wán",
+      "pinyin_numbered": "wan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "完",
+          "text": "wán",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_wan_finish"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Finish* — put after a verb to say the action is completely done.",
+      "mnemonic_id": "*Selesai* — taruh setelah kata kerja untuk bilang aksinya benar-benar tuntas.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Verb + 完 = finished doing. Often followed by 了: 吃完了.",
+      "usage_note_id": "Kata kerja + 完 = selesai melakukan. Sering diikuti 了: 吃完了.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "吃完了。",
+          "pinyin": "Chī wán le.",
+          "meaning": "Finished eating.",
+          "meaning_id": "Sudah selesai makan."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yijing",
+      "type": "word",
+      "simplified": "已经",
+      "traditional": "已經",
+      "meaning": "already",
+      "meaning_id": "sudah",
+      "accepted_meanings": [
+        "already"
+      ],
+      "accepted_meanings_id": [
+        "sudah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǐ jīng",
+      "pinyin_numbered": "yi3 jing1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "已",
+          "text": "yǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "经",
+          "text": "jīng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1",
+      "hanzi_ids": [
+        "hanzi_yi_already",
+        "hanzi_jing"
+      ],
+      "part_of_speech": "adverb",
+      "mnemonic": "已 + 经 — *already*, something that happened before now.",
+      "mnemonic_id": "已 + 经 — *sudah*, sesuatu yang terjadi sebelum sekarang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "已经 always comes before the verb: 我已经去了.",
+      "usage_note_id": "已经 selalu muncul sebelum kata kerja: 我已经去了.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我已经吃了。",
+          "pinyin": "Wǒ yǐ jīng chī le.",
+          "meaning": "I already ate.",
+          "meaning_id": "Aku sudah makan."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_chi_le",
+      "type": "word",
+      "simplified": "吃了",
+      "traditional": "吃了",
+      "meaning": "ate / have eaten",
+      "meaning_id": "sudah makan",
+      "accepted_meanings": [
+        "ate / have eaten"
+      ],
+      "accepted_meanings_id": [
+        "sudah makan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chī le",
+      "pinyin_numbered": "chi1 le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "吃",
+          "text": "chī",
+          "tone": 1
+        },
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "1-0",
+      "hanzi_ids": [
+        "hanzi_chi",
+        "hanzi_le"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "吃 eat + 了 done — *ate*, eating that already happened.",
+      "mnemonic_id": "吃 makan + 了 selesai — *sudah makan*, makan yang sudah terjadi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我吃了。",
+          "pinyin": "Wǒ chī le.",
+          "meaning": "I ate.",
+          "meaning_id": "Aku sudah makan."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_qu_le",
+      "type": "word",
+      "simplified": "去了",
+      "traditional": "去了",
+      "meaning": "went / have gone",
+      "meaning_id": "sudah pergi",
+      "accepted_meanings": [
+        "went / have gone"
+      ],
+      "accepted_meanings_id": [
+        "sudah pergi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qù le",
+      "pinyin_numbered": "qu4 le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "去",
+          "text": "qù",
+          "tone": 4
+        },
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "4-0",
+      "hanzi_ids": [
+        "hanzi_qu",
+        "hanzi_le"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "去 go + 了 done — *went*, going that already happened.",
+      "mnemonic_id": "去 pergi + 了 selesai — *sudah pergi*, kepergian yang sudah terjadi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "他去了。",
+          "pinyin": "Tā qù le.",
+          "meaning": "He went.",
+          "meaning_id": "Dia sudah pergi."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_kan_guo",
+      "type": "word",
+      "simplified": "看过",
+      "traditional": "看過",
+      "meaning": "have seen / watched before",
+      "meaning_id": "pernah lihat / tonton",
+      "accepted_meanings": [
+        "have seen / watched before"
+      ],
+      "accepted_meanings_id": [
+        "pernah lihat / tonton"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kàn guò",
+      "pinyin_numbered": "kan4 guo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "看",
+          "text": "kàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "过",
+          "text": "guò",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_kan",
+        "hanzi_guo_past"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "看 watch + 过 experienced — *have seen before*, watched at some point.",
+      "mnemonic_id": "看 lihat + 过 pernah — *pernah lihat*, menonton di suatu waktu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你看过吗？",
+          "pinyin": "Nǐ kàn guò ma?",
+          "meaning": "Have you seen it?",
+          "meaning_id": "Kamu pernah lihat?"
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "past_actions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_chi_le",
+      "type": "sentence",
+      "simplified": "我吃了。",
+      "traditional": "我吃了。",
+      "meaning": "I ate / I have eaten.",
+      "meaning_id": "Saya sudah makan.",
+      "literal_meaning": "I eat [completed].",
+      "literal_meaning_id": "Aku makan [selesai].",
+      "pinyin": "wǒ chī le",
+      "pinyin_numbered": "wo3 chi1 le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "吃",
+          "text": "chī",
+          "tone": 1
+        },
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-1-0",
+      "focus_word_ids": [
+        "word_le"
+      ],
+      "pattern_ids": [
+        "pattern_completed_le"
+      ],
+      "notes": "Verb + 了 marks the action as done. Mandarin doesn't conjugate verbs — 了 does the work.",
+      "notes_id": "Kata kerja + 了 menandai aksi sudah selesai. Mandarin tidak mengkonjugasikan kata kerja — 了 yang bekerja.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "past",
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_kan_guo_ma",
+      "type": "sentence",
+      "simplified": "你看过吗？",
+      "traditional": "你看過嗎？",
+      "meaning": "Have you seen it before?",
+      "meaning_id": "Kamu pernah lihat?",
+      "literal_meaning": "You watch [experienced]?",
+      "literal_meaning_id": "Kamu lihat [pernah]?",
+      "pinyin": "nǐ kàn guò ma",
+      "pinyin_numbered": "ni3 kan4 guo4 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "看",
+          "text": "kàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "过",
+          "text": "guò",
+          "tone": 4
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-4-4-0",
+      "focus_word_ids": [
+        "word_le"
+      ],
+      "pattern_ids": [
+        "pattern_completed_le"
+      ],
+      "notes": "过 asks about life experience — have you ever done this? Different from 了 which is about recent events.",
+      "notes_id": "过 menanyakan pengalaman hidup — pernahkah kamu melakukan ini? Beda dari 了 yang soal kejadian baru-baru ini.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "past",
+        "question",
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_completed_le",
+      "type": "pattern",
+      "title": "Verb + 了",
+      "title_id": "Kata kerja + 了",
+      "meaning": "completed action",
+      "meaning_id": "aksi selesai",
+      "structure": "Verb + 了",
+      "explanation": "Use 了 after a verb to show a completed action in simple beginner sentences.",
+      "explanation_id": "Gunakan 了 setelah kata kerja untuk menunjukkan aksi sudah selesai dalam kalimat pemula.",
+      "examples": [
+        {
+          "simplified": "我吃了。",
+          "traditional": "我吃了。",
+          "pinyin": "Wǒ chī le.",
+          "meaning": "I ate.",
+          "meaning_id": "Aku sudah makan."
+        },
+        {
+          "simplified": "你去过吗？",
+          "traditional": "你去過嗎？",
+          "pinyin": "Nǐ qù guò ma?",
+          "meaning": "Have you been there?",
+          "meaning_id": "Kamu pernah ke sana?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "past",
+        "grammar",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_guo_past",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_le",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_jing",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_yi_already",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_wan_finish",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_le",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_chi_le",
+      "item_type": "word",
+      "prerequisite_item_id": "word_le",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_guo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_guo_past",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kan_guo",
+      "item_type": "word",
+      "prerequisite_item_id": "word_guo",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_le",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_le",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_qu_le",
+      "item_type": "word",
+      "prerequisite_item_id": "word_le",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_wan_finish",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_wan_finish",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yijing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_jing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yijing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yi_already",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "了 after a verb means?",
+        "prompt_id": "了 setelah kata kerja berarti?",
+        "answer": "completed action",
+        "answer_id": "aksi selesai"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "已经 means?",
+        "prompt_id": "Arti 已经?",
+        "answer": "already",
+        "answer_id": "sudah"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我吃__。(I ate)",
+        "answer": "了"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你看过吗？",
+        "answer": "Have you seen it before?",
+        "answer_id": "Kamu pernah lihat?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_le",
+      "word_guo",
+      "word_wan_finish",
+      "word_yijing",
+      "word_chi_le",
+      "word_qu_le",
+      "word_kan_guo"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_le",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_guo",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_wan_finish",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_chi_le",
+      "sentence_ni_kan_guo_ma"
+    ]
+  }
+}

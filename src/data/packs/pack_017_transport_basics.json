@@ -1,0 +1,1043 @@
+{
+  "pack": {
+    "id": "pack_017_transport_basics",
+    "title": "Transport Basics",
+    "title_id": "Dasar Transportasi",
+    "subtitle": "Talk about buses, subway, taxis, stations, and getting on/off.",
+    "subtitle_id": "Bicara tentang bus, metro, taksi, stasiun/halte, dan naik/turun kendaraan.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "transport",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 17,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about buses, subway, taxis, stations, and getting on/off.",
+    "learning_goal_id": "Bicara tentang bus, metro, taksi, stasiun/halte, dan naik/turun kendaraan.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_che",
+      "type": "hanzi",
+      "simplified": "车",
+      "traditional": "車",
+      "meaning": "vehicle / car",
+      "meaning_id": "kendaraan / mobil",
+      "accepted_meanings": [
+        "vehicle / car"
+      ],
+      "accepted_meanings_id": [
+        "kendaraan / mobil"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chē",
+      "pinyin_numbered": "che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Wheels and axle viewed from above — that's a *vehicle*. chē ≈ \"chuh\" flat. Tone 1 high and steady, like a car cruising.",
+      "mnemonic_id": "Roda dan poros dilihat dari atas — itulah *kendaraan*. chē ≈ \"che\" flat. Nada 1 tinggi rata, kayak mobil yang melaju.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你坐车吗？",
+          "pinyin": "Nǐ zuò chē ma?",
+          "meaning": "Are you taking a vehicle?",
+          "meaning_id": "Kamu naik kendaraan?"
+        },
+        {
+          "simplified": "我坐公交车。",
+          "pinyin": "Wǒ zuò gōng jiāo chē.",
+          "meaning": "I take the bus.",
+          "meaning_id": "Aku naik bus."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "transport",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_gong",
+      "type": "hanzi",
+      "simplified": "公",
+      "traditional": "公",
+      "meaning": "public",
+      "meaning_id": "umum",
+      "accepted_meanings": [
+        "public"
+      ],
+      "accepted_meanings_id": [
+        "umum"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gōng",
+      "pinyin_numbered": "gong1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "公",
+          "text": "gōng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Something shared equally among all — *public*, belonging to everyone. gōng ≈ \"gong\" flat. Tone 1 high and even, like a shared resource.",
+      "mnemonic_id": "Sesuatu yang dibagi rata untuk semua — *publik*, milik semua orang. gōng ≈ \"gong\" flat. Nada 1 tinggi rata, kayak fasilitas bersama.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "公交车在哪里？",
+          "pinyin": "Gōng jiāo chē zài nǎ lǐ?",
+          "meaning": "Where is the bus?",
+          "meaning_id": "Bus ada di mana?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "transport",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_jiao",
+      "type": "hanzi",
+      "simplified": "交",
+      "traditional": "交",
+      "meaning": "connect / traffic part",
+      "meaning_id": "berhubungan / lalu lintas",
+      "accepted_meanings": [
+        "connect / traffic part"
+      ],
+      "accepted_meanings_id": [
+        "berhubungan / lalu lintas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiāo",
+      "pinyin_numbered": "jiao1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "交",
+          "text": "jiāo",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Paths crossing each other — *traffic*, where routes *connect*. jiāo ≈ \"jyow\" flat. Tone 1 high and steady like a busy intersection.",
+      "mnemonic_id": "Jalur yang saling bersilangan — *lalu lintas*, di mana rute *bertemu*. jiāo ≈ \"jyao\" flat. Nada 1 tinggi rata kayak persimpangan yang ramai.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "公交车来了。",
+          "pinyin": "Gōng jiāo chē lái le.",
+          "meaning": "The bus is coming.",
+          "meaning_id": "Bus datang."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "transport",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_di",
+      "type": "hanzi",
+      "simplified": "地",
+      "traditional": "地",
+      "meaning": "ground",
+      "meaning_id": "tanah",
+      "accepted_meanings": [
+        "ground"
+      ],
+      "accepted_meanings_id": [
+        "tanah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dì",
+      "pinyin_numbered": "di4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "地",
+          "text": "dì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "土 earth below — *ground*, the base everything stands on. dì ≈ \"dee!\" sharp. Tone 4 drops, like stomping the ground.",
+      "mnemonic_id": "土 tanah di bawah — *tanah*, dasar tempat semua berdiri. dì ≈ \"di!\" Nada 4 turun tajam, kayak menghentak tanah.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "地铁在哪里？",
+          "pinyin": "Dì tiě zài nǎ lǐ?",
+          "meaning": "Where is the subway?",
+          "meaning_id": "Subway ada di mana?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "transport",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_tie",
+      "type": "hanzi",
+      "simplified": "铁",
+      "traditional": "鐵",
+      "meaning": "iron / rail",
+      "meaning_id": "besi / rel",
+      "accepted_meanings": [
+        "iron / rail"
+      ],
+      "accepted_meanings_id": [
+        "besi / rel"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tiě",
+      "pinyin_numbered": "tie3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "铁",
+          "text": "tiě",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Metal 金 that is heavy and hard — *iron*, the material of rails. tiě ≈ \"tyeh\" dipping then rising. Tone 3 like the weight of iron.",
+      "mnemonic_id": "Logam 金 yang berat dan keras — *besi*, bahan rel kereta. tiě ≈ \"tyeh\" turun terus naik. Nada 3 kayak berat besi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我坐地铁。",
+          "pinyin": "Wǒ zuò dì tiě.",
+          "meaning": "I take the subway.",
+          "meaning_id": "Aku naik subway."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "transport",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zhan",
+      "type": "hanzi",
+      "simplified": "站",
+      "traditional": "站",
+      "meaning": "station / stand",
+      "meaning_id": "stasiun / berdiri",
+      "accepted_meanings": [
+        "station / stand"
+      ],
+      "accepted_meanings_id": [
+        "stasiun / berdiri"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhàn",
+      "pinyin_numbered": "zhan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "站",
+          "text": "zhàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person standing upright at a fixed point — a *station*, where you *stand* and wait. zhàn ≈ \"jahn!\" sharp. Tone 4 drops, like stopping firmly.",
+      "mnemonic_id": "Orang berdiri tegak di satu titik tetap — sebuah *stasiun*, tempat kamu *berdiri* dan menunggu. zhàn ≈ \"jhan!\" Nada 4 turun tajam, kayak berhenti dengan tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "车站在哪里？",
+          "pinyin": "Chē zhàn zài nǎ lǐ?",
+          "meaning": "Where is the station?",
+          "meaning_id": "Stasiunnya di mana?"
+        },
+        {
+          "simplified": "下一站。",
+          "pinyin": "Xià yí zhàn.",
+          "meaning": "Next stop.",
+          "meaning_id": "Stasiun berikutnya."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "transport",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_che",
+      "type": "word",
+      "simplified": "车",
+      "traditional": "車",
+      "meaning": "vehicle / car",
+      "meaning_id": "kendaraan / mobil",
+      "accepted_meanings": [
+        "vehicle / car"
+      ],
+      "accepted_meanings_id": [
+        "kendaraan / mobil"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chē",
+      "pinyin_numbered": "che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_che"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Vehicle* — covers car, bus, bike, anything with wheels.",
+      "mnemonic_id": "*Kendaraan* — mencakup mobil, bus, sepeda, apapun yang beroda.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你坐车吗？",
+          "pinyin": "Nǐ zuò chē ma?",
+          "meaning": "Are you taking a vehicle?",
+          "meaning_id": "Kamu naik kendaraan?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_gongjiaoche",
+      "type": "word",
+      "simplified": "公交车",
+      "traditional": "公交車",
+      "meaning": "bus",
+      "meaning_id": "bus",
+      "accepted_meanings": [
+        "bus"
+      ],
+      "accepted_meanings_id": [
+        "bus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gōng jiāo chē",
+      "pinyin_numbered": "gong1 jiao1 che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "公",
+          "text": "gōng",
+          "tone": 1
+        },
+        {
+          "hanzi": "交",
+          "text": "jiāo",
+          "tone": 1
+        },
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1-1",
+      "hanzi_ids": [
+        "hanzi_gong",
+        "hanzi_jiao",
+        "hanzi_che"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "公 public + 交 traffic + 车 vehicle — *bus*, the public traffic vehicle.",
+      "mnemonic_id": "公 publik + 交 lalu lintas + 车 kendaraan — *bus*, kendaraan lalu lintas umum.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我坐公交车。",
+          "pinyin": "Wǒ zuò gōng jiāo chē.",
+          "meaning": "I take the bus.",
+          "meaning_id": "Aku naik bus."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ditie",
+      "type": "word",
+      "simplified": "地铁",
+      "traditional": "地鐵",
+      "meaning": "subway / metro",
+      "meaning_id": "kereta bawah tanah / metro",
+      "accepted_meanings": [
+        "subway / metro"
+      ],
+      "accepted_meanings_id": [
+        "kereta bawah tanah / metro"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dì tiě",
+      "pinyin_numbered": "di4 tie3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "地",
+          "text": "dì",
+          "tone": 4
+        },
+        {
+          "hanzi": "铁",
+          "text": "tiě",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_di",
+        "hanzi_tie"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "地 ground + 铁 iron — *subway*, the iron train under the ground.",
+      "mnemonic_id": "地 tanah + 铁 besi — *subway*, kereta besi di bawah tanah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你坐地铁吗？",
+          "pinyin": "Nǐ zuò dì tiě ma?",
+          "meaning": "Do you take the subway?",
+          "meaning_id": "Kamu naik subway?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_chuzuche",
+      "type": "word",
+      "simplified": "出租车",
+      "traditional": "出租車",
+      "meaning": "taxi",
+      "meaning_id": "taksi",
+      "accepted_meanings": [
+        "taxi"
+      ],
+      "accepted_meanings_id": [
+        "taksi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chū zū chē",
+      "pinyin_numbered": "chu1 zu1 che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "出",
+          "text": "chū",
+          "tone": 1
+        },
+        {
+          "hanzi": "租",
+          "text": "zū",
+          "tone": 1
+        },
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1-1",
+      "hanzi_ids": [
+        "hanzi_che"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "出 out + 租 rent + 车 vehicle — *taxi*, a vehicle you rent to go out.",
+      "mnemonic_id": "出 keluar + 租 sewa + 车 kendaraan — *taksi*, kendaraan yang disewa untuk pergi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我坐出租车去。",
+          "pinyin": "Wǒ zuò chū zū chē qù.",
+          "meaning": "I go by taxi.",
+          "meaning_id": "Aku pergi naik taksi."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_chezhan",
+      "type": "word",
+      "simplified": "车站",
+      "traditional": "車站",
+      "meaning": "station / stop",
+      "meaning_id": "stasiun / halte",
+      "accepted_meanings": [
+        "station / stop"
+      ],
+      "accepted_meanings_id": [
+        "stasiun / halte"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chē zhàn",
+      "pinyin_numbered": "che1 zhan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        },
+        {
+          "hanzi": "站",
+          "text": "zhàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_che",
+        "hanzi_zhan"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "车 vehicle + 站 stand — *station*, where vehicles stop and people stand.",
+      "mnemonic_id": "车 kendaraan + 站 berdiri — *stasiun*, tempat kendaraan berhenti dan orang menunggu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "车站在哪里？",
+          "pinyin": "Chē zhàn zài nǎ lǐ?",
+          "meaning": "Where is the station?",
+          "meaning_id": "Stasiunnya di mana?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shangche",
+      "type": "word",
+      "simplified": "上车",
+      "traditional": "上車",
+      "meaning": "get on vehicle",
+      "meaning_id": "naik kendaraan",
+      "accepted_meanings": [
+        "get on vehicle"
+      ],
+      "accepted_meanings_id": [
+        "naik kendaraan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shàng chē",
+      "pinyin_numbered": "shang4 che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "上",
+          "text": "shàng",
+          "tone": 4
+        },
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_che"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "上 up/on + 车 vehicle — *get on*, boarding any vehicle.",
+      "mnemonic_id": "上 naik + 车 kendaraan — *naik*, masuk ke kendaraan apapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "上车 get on, 下车 get off — always 上/下 + 车.",
+      "usage_note_id": "上车 naik, 下车 turun — selalu 上/下 + 车.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "上车了！",
+          "pinyin": "Shàng chē le!",
+          "meaning": "Get on!",
+          "meaning_id": "Naik!"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xiache",
+      "type": "word",
+      "simplified": "下车",
+      "traditional": "下車",
+      "meaning": "get off vehicle",
+      "meaning_id": "turun kendaraan",
+      "accepted_meanings": [
+        "get off vehicle"
+      ],
+      "accepted_meanings_id": [
+        "turun kendaraan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xià chē",
+      "pinyin_numbered": "xia4 che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "下",
+          "text": "xià",
+          "tone": 4
+        },
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_che"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "下 down/off + 车 vehicle — *get off*, leaving any vehicle.",
+      "mnemonic_id": "下 turun + 车 kendaraan — *turun*, keluar dari kendaraan apapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我下车了。",
+          "pinyin": "Wǒ xià chē le.",
+          "meaning": "I got off.",
+          "meaning_id": "Aku turun."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "transport"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_zuo_gongjiaoche",
+      "type": "sentence",
+      "simplified": "我坐公交车。",
+      "traditional": "我坐公交車。",
+      "meaning": "I take the bus.",
+      "meaning_id": "Saya naik bus.",
+      "literal_meaning": "I sit bus.",
+      "literal_meaning_id": "Aku duduk bus.",
+      "pinyin": "wǒ zuò gōng jiāo chē",
+      "pinyin_numbered": "wo3 zuo4 gong1 jiao1 che1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "坐",
+          "text": "zuò",
+          "tone": 4
+        },
+        {
+          "hanzi": "公",
+          "text": "gōng",
+          "tone": 1
+        },
+        {
+          "hanzi": "交",
+          "text": "jiāo",
+          "tone": 1
+        },
+        {
+          "hanzi": "车",
+          "text": "chē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-4-1-1-1",
+      "focus_word_ids": [
+        "word_che"
+      ],
+      "pattern_ids": [
+        "pattern_transport_take"
+      ],
+      "notes": "坐 means \"sit\" but is used for taking vehicles — 坐车 means \"take a vehicle\".",
+      "notes_id": "坐 berarti \"duduk\" tapi dipakai untuk naik kendaraan — 坐车 berarti \"naik kendaraan\".",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "transport",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_zuo_ditie_ma",
+      "type": "sentence",
+      "simplified": "你坐地铁吗？",
+      "traditional": "你坐地鐵嗎？",
+      "meaning": "Do you take the subway?",
+      "meaning_id": "Kamu naik metro?",
+      "literal_meaning": "You sit subway?",
+      "literal_meaning_id": "Kamu duduk subway?",
+      "pinyin": "nǐ zuò dì tiě ma",
+      "pinyin_numbered": "ni3 zuo4 di4 tie3 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "坐",
+          "text": "zuò",
+          "tone": 4
+        },
+        {
+          "hanzi": "地",
+          "text": "dì",
+          "tone": 4
+        },
+        {
+          "hanzi": "铁",
+          "text": "tiě",
+          "tone": 3
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-4-4-3-0",
+      "focus_word_ids": [
+        "word_che"
+      ],
+      "pattern_ids": [
+        "pattern_transport_take"
+      ],
+      "notes": "Same 坐 pattern — 坐 + any vehicle means \"take\" that vehicle.",
+      "notes_id": "Pola 坐 yang sama — 坐 + kendaraan apapun berarti \"naik\" kendaraan itu.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "transport",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_transport_take",
+      "type": "pattern",
+      "title": "坐 + transport",
+      "title_id": "坐 + transportasi",
+      "meaning": "taking transport",
+      "meaning_id": "naik transportasi",
+      "structure": "坐 + transport",
+      "explanation": "Use 坐 with transport to say you take a bus, subway, or taxi.",
+      "explanation_id": "Gunakan 坐 dengan transportasi untuk bilang naik bus, metro, atau taksi.",
+      "examples": [
+        {
+          "simplified": "我坐公交车。",
+          "traditional": "我坐公交車。",
+          "pinyin": "Wǒ zuò gōng jiāo chē.",
+          "meaning": "I take the bus.",
+          "meaning_id": "Aku naik bus."
+        },
+        {
+          "simplified": "你坐地铁吗？",
+          "traditional": "你坐地鐵嗎？",
+          "pinyin": "Nǐ zuò dì tiě ma?",
+          "meaning": "Do you take the subway?",
+          "meaning_id": "Kamu naik subway?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "transport",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_tie",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_di",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_zhan",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_che",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_chezhan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_che",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_chezhan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zhan",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_ditie",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_di",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_ditie",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_tie",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_gongjiaoche",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_che",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shangche",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_che",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xiache",
+      "item_type": "word",
+      "prerequisite_item_id": "word_shangche",
+      "prerequisite_item_type": "word"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "地铁 means?",
+        "prompt_id": "Arti 地铁?",
+        "answer": "subway / metro",
+        "answer_id": "subway / metro"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "下车 means?",
+        "prompt_id": "Arti 下车?",
+        "answer": "get off vehicle",
+        "answer_id": "turun kendaraan"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "车__在哪里？(Where is the station?)",
+        "answer": "站"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我坐公交车。",
+        "answer": "I take the bus.",
+        "answer_id": "Aku naik bus."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_che",
+      "word_gongjiaoche",
+      "word_ditie",
+      "word_chuzuche",
+      "word_chezhan",
+      "word_shangche",
+      "word_xiache"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_che",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_gongjiaoche",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_ditie",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_zuo_gongjiaoche",
+      "sentence_ni_zuo_ditie_ma"
+    ]
+  }
+}

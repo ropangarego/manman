@@ -1,0 +1,966 @@
+{
+  "pack": {
+    "id": "pack_016_drinks_ordering",
+    "title": "Drinks & Ordering",
+    "title_id": "Minuman & Memesan",
+    "subtitle": "Order tea, coffee, milk, and ask for hot or iced drinks.",
+    "subtitle_id": "Memesan teh, kopi, susu, dan minta panas atau dingin.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "drinks",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 16,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Order tea, coffee, milk, and ask for hot or iced drinks.",
+    "learning_goal_id": "Memesan teh, kopi, susu, dan minta panas atau dingin.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_cha",
+      "type": "hanzi",
+      "simplified": "茶",
+      "traditional": "茶",
+      "meaning": "tea",
+      "meaning_id": "teh",
+      "accepted_meanings": [
+        "tea"
+      ],
+      "accepted_meanings_id": [
+        "teh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chá",
+      "pinyin_numbered": "cha2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "茶",
+          "text": "chá",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Leaves floating in hot water — that's *tea*, the most Chinese of drinks. chá ≈ \"chah\" rising. Tone 2 goes up, like steam from a fresh cup.",
+      "mnemonic_id": "Daun teh mengambang di air panas — itulah *teh*, minuman paling ikonik China. chá ≈ \"cha\" naik. Nada 2 naik terus, kayak uap dari cangkir yang baru diseduh.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请一杯茶。",
+          "pinyin": "Qǐng yì bēi chá.",
+          "meaning": "A cup of tea, please.",
+          "meaning_id": "Tolong satu cangkir teh."
+        },
+        {
+          "simplified": "你要茶吗？",
+          "pinyin": "Nǐ yào chá ma?",
+          "meaning": "Do you want tea?",
+          "meaning_id": "Kamu mau teh?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "food",
+        "drink",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ka",
+      "type": "hanzi",
+      "simplified": "咖",
+      "traditional": "咖",
+      "meaning": "coffee part",
+      "meaning_id": "bagian kopi",
+      "accepted_meanings": [
+        "coffee part"
+      ],
+      "accepted_meanings_id": [
+        "bagian kopi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kā",
+      "pinyin_numbered": "ka1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "咖",
+          "text": "kā",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "口 mouth + a foreign sound — half of *coffee*, a word borrowed from abroad. kā ≈ \"kah\" flat. Tone 1 high and steady.",
+      "mnemonic_id": "口 mulut + bunyi asing — setengah dari *kopi*, kata yang dipinjam dari luar. kā ≈ \"ka\" flat. Nada 1 tinggi rata.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "咖啡好喝吗？",
+          "pinyin": "Kā fēi hǎo hē ma?",
+          "meaning": "Is the coffee good?",
+          "meaning_id": "Kopinya enak?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "drink",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_fei",
+      "type": "hanzi",
+      "simplified": "啡",
+      "traditional": "啡",
+      "meaning": "coffee part",
+      "meaning_id": "bagian kopi",
+      "accepted_meanings": [
+        "coffee part"
+      ],
+      "accepted_meanings_id": [
+        "bagian kopi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fēi",
+      "pinyin_numbered": "fei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "啡",
+          "text": "fēi",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "口 mouth + foreign sound — the other half of *coffee*. fēi ≈ \"fay\" flat. Tone 1 high and steady, just like 咖.",
+      "mnemonic_id": "口 mulut + bunyi asing — setengah lainnya dari *kopi*. fēi ≈ \"fei\" flat. Nada 1 tinggi rata, sama kayak 咖.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "咖啡好喝。",
+          "pinyin": "Kā fēi hǎo hē.",
+          "meaning": "Coffee is good.",
+          "meaning_id": "Kopi enak."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "drink",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_niu",
+      "type": "hanzi",
+      "simplified": "牛",
+      "traditional": "牛",
+      "meaning": "cow",
+      "meaning_id": "sapi",
+      "accepted_meanings": [
+        "cow"
+      ],
+      "accepted_meanings_id": [
+        "sapi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "niú",
+      "pinyin_numbered": "niu2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "牛",
+          "text": "niú",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Horns on top, a body below — that's a *cow*, standing in the field. niú ≈ \"nyoh\" rising. Tone 2 goes up, like a cow lifting its head.",
+      "mnemonic_id": "Tanduk di atas, badan di bawah — itulah *sapi*, berdiri di ladang. niú ≈ \"nyo\" naik. Nada 2 naik terus, kayak sapi mengangkat kepalanya.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "牛奶好喝。",
+          "pinyin": "Niú nǎi hǎo hē.",
+          "meaning": "Milk is good.",
+          "meaning_id": "Susu enak."
+        },
+        {
+          "simplified": "我要牛奶。",
+          "pinyin": "Wǒ yào niú nǎi.",
+          "meaning": "I want milk.",
+          "meaning_id": "Aku mau susu."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "food",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_nai",
+      "type": "hanzi",
+      "simplified": "奶",
+      "traditional": "奶",
+      "meaning": "milk",
+      "meaning_id": "susu",
+      "accepted_meanings": [
+        "milk"
+      ],
+      "accepted_meanings_id": [
+        "susu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nǎi",
+      "pinyin_numbered": "nai3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "奶",
+          "text": "nǎi",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Woman 女 providing nourishment — *milk*, the original drink. nǎi ≈ \"nye\" dipping then rising. Tone 3 like the comfort of a warm glass.",
+      "mnemonic_id": "女 perempuan yang memberi nutrisi — *susu*, minuman yang paling alami. nǎi ≈ \"nai\" turun terus naik. Nada 3 kayak kehangatan segelas susu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "牛奶好喝吗？",
+          "pinyin": "Niú nǎi hǎo hē ma?",
+          "meaning": "Is milk good?",
+          "meaning_id": "Susu enak?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "food",
+        "drink",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_bing",
+      "type": "hanzi",
+      "simplified": "冰",
+      "traditional": "冰",
+      "meaning": "ice",
+      "meaning_id": "es",
+      "accepted_meanings": [
+        "ice"
+      ],
+      "accepted_meanings_id": [
+        "es"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bīng",
+      "pinyin_numbered": "bing1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "冰",
+          "text": "bīng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Water 水 that has frozen solid — *ice*, cold and hard. bīng ≈ \"bing\" flat. Tone 1 high and steady, like frozen water staying still.",
+      "mnemonic_id": "Air 水 yang membeku keras — *es*, dingin dan padat. bīng ≈ \"bing\" flat. Nada 1 tinggi rata, kayak air beku yang diam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要冰的。",
+          "pinyin": "Wǒ yào bīng de.",
+          "meaning": "I want the iced one.",
+          "meaning_id": "Aku mau yang dingin."
+        },
+        {
+          "simplified": "冰水好喝。",
+          "pinyin": "Bīng shuǐ hǎo hē.",
+          "meaning": "Ice water is good.",
+          "meaning_id": "Air es enak."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "food",
+        "drink",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_cha",
+      "type": "word",
+      "simplified": "茶",
+      "traditional": "茶",
+      "meaning": "tea",
+      "meaning_id": "teh",
+      "accepted_meanings": [
+        "tea"
+      ],
+      "accepted_meanings_id": [
+        "teh"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chá",
+      "pinyin_numbered": "cha2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "茶",
+          "text": "chá",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_cha"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Tea* — the classic Chinese drink, hot or cold.",
+      "mnemonic_id": "*Teh* — minuman klasik China, panas atau dingin.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你要茶吗？",
+          "pinyin": "Nǐ yào chá ma?",
+          "meaning": "Do you want tea?",
+          "meaning_id": "Kamu mau teh?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_kafei",
+      "type": "word",
+      "simplified": "咖啡",
+      "traditional": "咖啡",
+      "meaning": "coffee",
+      "meaning_id": "kopi",
+      "accepted_meanings": [
+        "coffee"
+      ],
+      "accepted_meanings_id": [
+        "kopi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kā fēi",
+      "pinyin_numbered": "ka1 fei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "咖",
+          "text": "kā",
+          "tone": 1
+        },
+        {
+          "hanzi": "啡",
+          "text": "fēi",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1",
+      "hanzi_ids": [
+        "hanzi_ka",
+        "hanzi_fei"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "咖+啡 — both borrowed sounds for *coffee*, the imported drink.",
+      "mnemonic_id": "咖+啡 — dua bunyi pinjaman untuk *kopi*, minuman impor.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要咖啡。",
+          "pinyin": "Wǒ yào kā fēi.",
+          "meaning": "I want coffee.",
+          "meaning_id": "Aku mau kopi."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_niunai",
+      "type": "word",
+      "simplified": "牛奶",
+      "traditional": "牛奶",
+      "meaning": "milk",
+      "meaning_id": "susu",
+      "accepted_meanings": [
+        "milk"
+      ],
+      "accepted_meanings_id": [
+        "susu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "niú nǎi",
+      "pinyin_numbered": "niu2 nai3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "牛",
+          "text": "niú",
+          "tone": 2
+        },
+        {
+          "hanzi": "奶",
+          "text": "nǎi",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "2-3",
+      "hanzi_ids": [
+        "hanzi_niu",
+        "hanzi_nai"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "牛 cow + 奶 milk — *cow's milk*, literally from the cow.",
+      "mnemonic_id": "牛 sapi + 奶 susu — *susu sapi*, harfiahnya dari sapi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要牛奶。",
+          "pinyin": "Wǒ yào niú nǎi.",
+          "meaning": "I want milk.",
+          "meaning_id": "Aku mau susu."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_rede",
+      "type": "word",
+      "simplified": "热的",
+      "traditional": "熱的",
+      "meaning": "hot one",
+      "meaning_id": "yang panas",
+      "accepted_meanings": [
+        "hot one"
+      ],
+      "accepted_meanings_id": [
+        "yang panas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "rè de",
+      "pinyin_numbered": "re4 de0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "热",
+          "text": "rè",
+          "tone": 4
+        },
+        {
+          "hanzi": "的",
+          "text": "de",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "4-0",
+      "hanzi_ids": [
+        "hanzi_re",
+        "hanzi_de"
+      ],
+      "part_of_speech": "adjective phrase",
+      "mnemonic": "热 hot + 的 — *the hot one*, picking the warm option.",
+      "mnemonic_id": "热 panas + 的 — *yang panas*, memilih yang hangat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Add 的 after an adjective to mean \"the [adj] one\".",
+      "usage_note_id": "Tambah 的 setelah kata sifat untuk berarti \"yang [sifat]\".",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要热的。",
+          "pinyin": "Wǒ yào rè de.",
+          "meaning": "I want the hot one.",
+          "meaning_id": "Aku mau yang panas."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_bingde",
+      "type": "word",
+      "simplified": "冰的",
+      "traditional": "冰的",
+      "meaning": "cold/iced one",
+      "meaning_id": "yang dingin / pakai es",
+      "accepted_meanings": [
+        "cold/iced one"
+      ],
+      "accepted_meanings_id": [
+        "yang dingin / pakai es"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bīng de",
+      "pinyin_numbered": "bing1 de0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "冰",
+          "text": "bīng",
+          "tone": 1
+        },
+        {
+          "hanzi": "的",
+          "text": "de",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "1-0",
+      "hanzi_ids": [
+        "hanzi_bing",
+        "hanzi_de"
+      ],
+      "part_of_speech": "adjective phrase",
+      "mnemonic": "冰 ice + 的 — *the iced one*, picking the cold option.",
+      "mnemonic_id": "冰 es + 的 — *yang dingin*, memilih yang dingin.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要冰的。",
+          "pinyin": "Wǒ yào bīng de.",
+          "meaning": "I want the iced one.",
+          "meaning_id": "Aku mau yang dingin."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_qing",
+      "type": "word",
+      "simplified": "请",
+      "traditional": "請",
+      "meaning": "please",
+      "meaning_id": "silakan / tolong",
+      "accepted_meanings": [
+        "please"
+      ],
+      "accepted_meanings_id": [
+        "silakan / tolong"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qǐng",
+      "pinyin_numbered": "qing3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "请",
+          "text": "qǐng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_qing"
+      ],
+      "part_of_speech": "polite word",
+      "mnemonic": "*Please* — the polite word that softens any request instantly.",
+      "mnemonic_id": "*Tolong* / *silakan* — kata sopan yang langsung melembutkan permintaan apapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "请 at the start of a request means \"please\". It also means \"invite\".",
+      "usage_note_id": "请 di awal permintaan berarti \"tolong\". Juga bisa berarti \"mengundang\".",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请一杯茶。",
+          "pinyin": "Qǐng yì bēi chá.",
+          "meaning": "A cup of tea, please.",
+          "meaning_id": "Tolong satu cangkir teh."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "drinks"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_qing_yibei_cha",
+      "type": "sentence",
+      "simplified": "请一杯茶。",
+      "traditional": "請一杯茶。",
+      "meaning": "A cup of tea, please.",
+      "meaning_id": "Tolong segelas teh.",
+      "literal_meaning": "Please one cup tea.",
+      "literal_meaning_id": "Tolong satu cangkir teh.",
+      "pinyin": "qǐng yì bēi chá",
+      "pinyin_numbered": "qing3 yi4 bei1 cha2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "请",
+          "text": "qǐng",
+          "tone": 3
+        },
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "杯",
+          "text": "bēi",
+          "tone": 1
+        },
+        {
+          "hanzi": "茶",
+          "text": "chá",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-4-1-2",
+      "focus_word_ids": [
+        "word_cha"
+      ],
+      "pattern_ids": [
+        "pattern_ordering_qing"
+      ],
+      "notes": "请 + order — the polite way to order anything.",
+      "notes_id": "请 + pesanan — cara sopan untuk memesan apapun.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "ordering",
+        "drink",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_wo_yao_kafei",
+      "type": "sentence",
+      "simplified": "我要咖啡。",
+      "traditional": "我要咖啡。",
+      "meaning": "I want coffee.",
+      "meaning_id": "Saya mau kopi.",
+      "literal_meaning": "I want coffee.",
+      "literal_meaning_id": "Aku mau kopi.",
+      "pinyin": "wǒ yào kā fēi",
+      "pinyin_numbered": "wo3 yao4 ka1 fei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "要",
+          "text": "yào",
+          "tone": 4
+        },
+        {
+          "hanzi": "咖",
+          "text": "kā",
+          "tone": 1
+        },
+        {
+          "hanzi": "啡",
+          "text": "fēi",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-4-1-1",
+      "focus_word_ids": [
+        "word_cha"
+      ],
+      "pattern_ids": [
+        "pattern_ordering_qing"
+      ],
+      "notes": "我要 + drink — direct ordering phrase used everywhere.",
+      "notes_id": "我要 + minuman — frasa memesan langsung yang dipakai di mana-mana.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "ordering",
+        "drink",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_ordering_qing",
+      "type": "pattern",
+      "title": "请 + request",
+      "title_id": "请 + permintaan",
+      "meaning": "polite ordering",
+      "meaning_id": "memesan dengan sopan",
+      "structure": "请 + item/action",
+      "explanation": "Use 请 to make a request sound polite.",
+      "explanation_id": "Gunakan 请 agar permintaan terdengar sopan.",
+      "examples": [
+        {
+          "simplified": "请一杯茶。",
+          "traditional": "請一杯茶。",
+          "pinyin": "Qǐng yì bēi chá.",
+          "meaning": "A cup of tea, please.",
+          "meaning_id": "Tolong satu cangkir teh."
+        },
+        {
+          "simplified": "我要咖啡，冰的。",
+          "traditional": "我要咖啡，冰的。",
+          "pinyin": "Wǒ yào kā fēi, bīng de.",
+          "meaning": "I want coffee, iced.",
+          "meaning_id": "Aku mau kopi, yang dingin."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "ordering",
+        "drink",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_bing",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_shui",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_niu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_nai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_bingde",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kafei",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_fei",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kafei",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ka",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_niunai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_nai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_niunai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_niu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_rede",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_re",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "茶 means?",
+        "prompt_id": "Arti 茶?",
+        "answer": "tea",
+        "answer_id": "teh"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "冰的 means?",
+        "prompt_id": "Arti 冰的?",
+        "answer": "the iced one",
+        "answer_id": "yang dingin"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "请一杯__。(A cup of tea please)",
+        "answer": "茶"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我要咖啡。",
+        "answer": "I want coffee.",
+        "answer_id": "Aku mau kopi."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_cha",
+      "word_kafei",
+      "word_niunai",
+      "word_rede",
+      "word_bingde",
+      "word_qing"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_cha",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_kafei",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_niunai",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_qing_yibei_cha",
+      "sentence_wo_yao_kafei"
+    ]
+  }
+}

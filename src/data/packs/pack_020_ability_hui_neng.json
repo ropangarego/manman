@@ -1,0 +1,1085 @@
+{
+  "pack": {
+    "id": "pack_020_ability_hui_neng",
+    "title": "Ability with 会 / 能",
+    "title_id": "Kemampuan dengan 会 / 能",
+    "subtitle": "Say what you can do with 会 and 能.",
+    "subtitle_id": "Mengatakan apa yang kamu bisa lakukan dengan 会 dan 能.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "ability",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 20,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Say what you can do with 会 and 能.",
+    "learning_goal_id": "Mengatakan apa yang kamu bisa lakukan dengan 会 dan 能.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 8,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_hui_can",
+      "type": "hanzi",
+      "simplified": "会",
+      "traditional": "會",
+      "meaning": "can / know how",
+      "meaning_id": "bisa / tahu cara",
+      "accepted_meanings": [
+        "can / know how"
+      ],
+      "accepted_meanings_id": [
+        "bisa / tahu cara"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "huì",
+      "pinyin_numbered": "hui4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "会",
+          "text": "huì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "People gathering under a roof — sharing knowledge, *knowing how* to do something. huì ≈ \"hway!\" sharp. Tone 4 drops, like confidently saying \"I know how.\"",
+      "mnemonic_id": "Orang berkumpul di bawah atap — berbagi pengetahuan, *bisa* melakukan sesuatu karena sudah belajar. huì ≈ \"hway!\" Nada 4 turun tajam, kayak bilang \"aku bisa\" dengan yakin.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我会说中文。",
+          "pinyin": "Wǒ huì shuō zhōng wén.",
+          "meaning": "I can speak Chinese.",
+          "meaning_id": "Aku bisa berbicara bahasa Mandarin."
+        },
+        {
+          "simplified": "你会吗？",
+          "pinyin": "Nǐ huì ma?",
+          "meaning": "Can you? / Do you know how?",
+          "meaning_id": "Kamu bisa?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "modal",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_neng",
+      "type": "hanzi",
+      "simplified": "能",
+      "traditional": "能",
+      "meaning": "can / able to",
+      "meaning_id": "bisa / mampu",
+      "accepted_meanings": [
+        "can / able to"
+      ],
+      "accepted_meanings_id": [
+        "bisa / mampu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "néng",
+      "pinyin_numbered": "neng2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "能",
+          "text": "néng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A bear 熊 stripped down — raw physical *ability*, the power to do something. néng ≈ \"nung\" rising. Tone 2 goes up, like gathering strength.",
+      "mnemonic_id": "Beruang yang menunjukkan kekuatannya — *kemampuan* fisik yang nyata. néng ≈ \"nung\" naik. Nada 2 naik terus, kayak mengumpulkan tenaga.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我能去。",
+          "pinyin": "Wǒ néng qù.",
+          "meaning": "I am able to go.",
+          "meaning_id": "Aku bisa pergi."
+        },
+        {
+          "simplified": "你能吃吗？",
+          "pinyin": "Nǐ néng chī ma?",
+          "meaning": "Are you able to eat?",
+          "meaning_id": "Kamu bisa makan?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "modal",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shuo",
+      "type": "hanzi",
+      "simplified": "说",
+      "traditional": "說",
+      "meaning": "speak / say",
+      "meaning_id": "bicara / bilang",
+      "accepted_meanings": [
+        "speak / say"
+      ],
+      "accepted_meanings_id": [
+        "bicara / bilang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shuō",
+      "pinyin_numbered": "shuo1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "说",
+          "text": "shuō",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "讠 speech flowing out freely — *speaking*, words pouring out. shuō ≈ \"shwoh\" flat. Tone 1 high and steady, like speech flowing evenly.",
+      "mnemonic_id": "讠 ucapan yang mengalir bebas — *berbicara*, kata-kata yang terus keluar. shuō ≈ \"shwo\" flat. Nada 1 tinggi rata, kayak bicara yang mengalir.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你说什么？",
+          "pinyin": "Nǐ shuō shén me?",
+          "meaning": "What did you say?",
+          "meaning_id": "Kamu bilang apa?"
+        },
+        {
+          "simplified": "我会说中文。",
+          "pinyin": "Wǒ huì shuō zhōng wén.",
+          "meaning": "I can speak Chinese.",
+          "meaning_id": "Aku bisa berbicara Mandarin."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "verb",
+        "language",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ting",
+      "type": "hanzi",
+      "simplified": "听",
+      "traditional": "聽",
+      "meaning": "listen / hear",
+      "meaning_id": "dengar",
+      "accepted_meanings": [
+        "listen / hear"
+      ],
+      "accepted_meanings_id": [
+        "dengar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tīng",
+      "pinyin_numbered": "ting1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "听",
+          "text": "tīng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "耳 ear wide open — *listening*, taking in every sound. tīng ≈ \"ting\" flat. Tone 1 high and steady, like staying alert and still.",
+      "mnemonic_id": "耳 telinga terbuka lebar — *mendengarkan*, menyerap setiap suara. tīng ≈ \"ting\" flat. Nada 1 tinggi rata, kayak tetap waspada dan diam.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你听吗？",
+          "pinyin": "Nǐ tīng ma?",
+          "meaning": "Are you listening?",
+          "meaning_id": "Kamu dengar?"
+        },
+        {
+          "simplified": "我听不懂。",
+          "pinyin": "Wǒ tīng bù dǒng.",
+          "meaning": "I don't understand (by listening).",
+          "meaning_id": "Aku tidak mengerti."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "verb",
+        "language",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xie_write",
+      "type": "hanzi",
+      "simplified": "写",
+      "traditional": "寫",
+      "meaning": "write",
+      "meaning_id": "menulis",
+      "accepted_meanings": [
+        "write"
+      ],
+      "accepted_meanings_id": [
+        "menulis"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xiě",
+      "pinyin_numbered": "xie3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "写",
+          "text": "xiě",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A hand moving carefully across a surface — *writing*, stroke by stroke. xiě ≈ \"syeh\" dipping then rising. Tone 3 like the careful pace of writing.",
+      "mnemonic_id": "Tangan yang bergerak hati-hati di atas permukaan — *menulis*, goresan demi goresan. xiě ≈ \"syeh\" turun terus naik. Nada 3 kayak tempo menulis yang hati-hati.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你会写吗？",
+          "pinyin": "Nǐ huì xiě ma?",
+          "meaning": "Can you write it?",
+          "meaning_id": "Kamu bisa menulis?"
+        },
+        {
+          "simplified": "我会写。",
+          "pinyin": "Wǒ huì xiě.",
+          "meaning": "I can write it.",
+          "meaning_id": "Aku bisa menulis."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "verb",
+        "language",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_du_read",
+      "type": "hanzi",
+      "simplified": "读",
+      "traditional": "讀",
+      "meaning": "read",
+      "meaning_id": "membaca",
+      "accepted_meanings": [
+        "read"
+      ],
+      "accepted_meanings_id": [
+        "membaca"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dú",
+      "pinyin_numbered": "du2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "读",
+          "text": "dú",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "讠 speech + sell — *reading* aloud, making words come alive. dú ≈ \"doo\" rising. Tone 2 goes up, like a voice reading expressively.",
+      "mnemonic_id": "讠 ucapan yang hidup — *membaca*, membuat kata-kata menjadi nyata. dú ≈ \"du\" naik. Nada 2 naik terus, kayak suara yang membaca dengan ekspresif.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你会读吗？",
+          "pinyin": "Nǐ huì dú ma?",
+          "meaning": "Can you read it?",
+          "meaning_id": "Kamu bisa membaca?"
+        },
+        {
+          "simplified": "我在读。",
+          "pinyin": "Wǒ zài dú.",
+          "meaning": "I am reading.",
+          "meaning_id": "Aku sedang membaca."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "verb",
+        "language",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_hui_can",
+      "type": "word",
+      "simplified": "会",
+      "traditional": "會",
+      "meaning": "can / know how",
+      "meaning_id": "bisa / tahu cara",
+      "accepted_meanings": [
+        "can / know how"
+      ],
+      "accepted_meanings_id": [
+        "bisa / tahu cara"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "huì",
+      "pinyin_numbered": "hui4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "会",
+          "text": "huì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_hui"
+      ],
+      "part_of_speech": "modal verb",
+      "mnemonic": "*Know how* — 会 is ability from learning, a skill you acquired.",
+      "mnemonic_id": "*Bisa karena belajar* — 会 adalah kemampuan dari latihan, keahlian yang dipelajari.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "会 = learned ability (swim, speak, cook). 能 = situational ability (I can go today).",
+      "usage_note_id": "会 = kemampuan yang dipelajari (berenang, bicara, masak). 能 = kemampuan situasional (aku bisa pergi hari ini).",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我会说中文。",
+          "pinyin": "Wǒ huì shuō zhōng wén.",
+          "meaning": "I can speak Chinese.",
+          "meaning_id": "Aku bisa berbicara Mandarin."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_neng",
+      "type": "word",
+      "simplified": "能",
+      "traditional": "能",
+      "meaning": "can / able to",
+      "meaning_id": "bisa / mampu",
+      "accepted_meanings": [
+        "can / able to"
+      ],
+      "accepted_meanings_id": [
+        "bisa / mampu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "néng",
+      "pinyin_numbered": "neng2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "能",
+          "text": "néng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_neng"
+      ],
+      "part_of_speech": "modal verb",
+      "mnemonic": "*Able to* — 能 is physical or situational ability, can you do it right now.",
+      "mnemonic_id": "*Mampu* — 能 adalah kemampuan fisik atau situasional, bisakah kamu melakukannya sekarang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "能 often implies circumstances allow it. 我能去 = I am free to go / able to go.",
+      "usage_note_id": "能 sering menyiratkan keadaan yang memungkinkan. 我能去 = aku bebas pergi / bisa pergi.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我能去。",
+          "pinyin": "Wǒ néng qù.",
+          "meaning": "I am able to go.",
+          "meaning_id": "Aku bisa pergi."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shuo",
+      "type": "word",
+      "simplified": "说",
+      "traditional": "說",
+      "meaning": "speak / say",
+      "meaning_id": "bicara / bilang",
+      "accepted_meanings": [
+        "speak / say"
+      ],
+      "accepted_meanings_id": [
+        "bicara / bilang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shuō",
+      "pinyin_numbered": "shuo1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "说",
+          "text": "shuō",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_shuo"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Speak* or *say* — 说 is for any spoken words coming out.",
+      "mnemonic_id": "*Berbicara* atau *bilang* — 说 untuk kata-kata yang keluar secara lisan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "说 for speaking. 讲 is more formal. Both work in conversation.",
+      "usage_note_id": "说 untuk berbicara. 讲 lebih formal. Keduanya bisa dipakai dalam percakapan.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你说什么？",
+          "pinyin": "Nǐ shuō shén me?",
+          "meaning": "What did you say?",
+          "meaning_id": "Kamu bilang apa?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_ting",
+      "type": "word",
+      "simplified": "听",
+      "traditional": "聽",
+      "meaning": "listen / hear",
+      "meaning_id": "dengar",
+      "accepted_meanings": [
+        "listen / hear"
+      ],
+      "accepted_meanings_id": [
+        "dengar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tīng",
+      "pinyin_numbered": "ting1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "听",
+          "text": "tīng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_ting"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Listen* or *hear* — 听 is receiving sound, active or passive.",
+      "mnemonic_id": "*Mendengarkan* atau *mendengar* — 听 adalah menerima suara, aktif atau pasif.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你听吗？",
+          "pinyin": "Nǐ tīng ma?",
+          "meaning": "Are you listening?",
+          "meaning_id": "Kamu dengar?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xie_write",
+      "type": "word",
+      "simplified": "写",
+      "traditional": "寫",
+      "meaning": "write",
+      "meaning_id": "menulis",
+      "accepted_meanings": [
+        "write"
+      ],
+      "accepted_meanings_id": [
+        "menulis"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xiě",
+      "pinyin_numbered": "xie3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "写",
+          "text": "xiě",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_xie_write"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Write* — putting characters down on paper or screen.",
+      "mnemonic_id": "*Menulis* — membuat karakter di atas kertas atau layar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你会写吗？",
+          "pinyin": "Nǐ huì xiě ma?",
+          "meaning": "Can you write it?",
+          "meaning_id": "Kamu bisa menulis?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_du_read",
+      "type": "word",
+      "simplified": "读",
+      "traditional": "讀",
+      "meaning": "read",
+      "meaning_id": "membaca",
+      "accepted_meanings": [
+        "read"
+      ],
+      "accepted_meanings_id": [
+        "membaca"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dú",
+      "pinyin_numbered": "du2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "读",
+          "text": "dú",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_du_read"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Read* — processing written words, silent or aloud.",
+      "mnemonic_id": "*Membaca* — memproses kata-kata tertulis, diam atau bersuara.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我在读。",
+          "pinyin": "Wǒ zài dú.",
+          "meaning": "I am reading.",
+          "meaning_id": "Aku sedang membaca."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zhongwen",
+      "type": "word",
+      "simplified": "中文",
+      "traditional": "中文",
+      "meaning": "Chinese language",
+      "meaning_id": "bahasa Mandarin / Tionghoa",
+      "accepted_meanings": [
+        "Chinese language"
+      ],
+      "accepted_meanings_id": [
+        "bahasa Mandarin / Tionghoa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhōng wén",
+      "pinyin_numbered": "zhong1 wen2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "中",
+          "text": "zhōng",
+          "tone": 1
+        },
+        {
+          "hanzi": "文",
+          "text": "wén",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "1-2",
+      "hanzi_ids": [],
+      "part_of_speech": "noun",
+      "mnemonic": "中 middle/China + 文 language — *Chinese language*, the language of the Middle Kingdom.",
+      "mnemonic_id": "中 tengah/China + 文 bahasa — *bahasa Mandarin*, bahasa Kerajaan Tengah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "中文 = spoken Chinese. 汉语 is more formal. Both refer to Mandarin in most contexts.",
+      "usage_note_id": "中文 = bahasa Tionghoa lisan. 汉语 lebih formal. Keduanya merujuk ke Mandarin di sebagian besar konteks.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你会说中文吗？",
+          "pinyin": "Nǐ huì shuō zhōng wén ma?",
+          "meaning": "Can you speak Chinese?",
+          "meaning_id": "Kamu bisa berbicara Mandarin?"
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yidian",
+      "type": "word",
+      "simplified": "一点",
+      "traditional": "一點",
+      "meaning": "a little",
+      "meaning_id": "sedikit",
+      "accepted_meanings": [
+        "a little"
+      ],
+      "accepted_meanings_id": [
+        "sedikit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì diǎn",
+      "pinyin_numbered": "yi4 dian3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [],
+      "part_of_speech": "quantity phrase",
+      "mnemonic": "一 one + 点 dot/point — *a little*, just one tiny dot of something.",
+      "mnemonic_id": "一 satu + 点 titik — *sedikit*, hanya satu titik kecil dari sesuatu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "会一点 = know a little. A humble and very useful phrase when learning languages.",
+      "usage_note_id": "会一点 = bisa sedikit. Frasa rendah hati yang sangat berguna saat belajar bahasa.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我会一点。",
+          "pinyin": "Wǒ huì yì diǎn.",
+          "meaning": "I know a little.",
+          "meaning_id": "Aku bisa sedikit."
+        }
+      ],
+      "order_index": 8,
+      "tags": [
+        "ability"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_hui_shuo_zhongwen",
+      "type": "sentence",
+      "simplified": "我会说中文。",
+      "traditional": "我會說中文。",
+      "meaning": "I can speak Chinese.",
+      "meaning_id": "Saya bisa bicara Mandarin.",
+      "literal_meaning": "I know-how speak Chinese.",
+      "literal_meaning_id": "Aku bisa berbicara bahasa Mandarin.",
+      "pinyin": "wǒ huì shuō zhōng wén",
+      "pinyin_numbered": "wo3 hui4 shuo1 zhong1 wen2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "会",
+          "text": "huì",
+          "tone": 4
+        },
+        {
+          "hanzi": "说",
+          "text": "shuō",
+          "tone": 1
+        },
+        {
+          "hanzi": "中",
+          "text": "zhōng",
+          "tone": 1
+        },
+        {
+          "hanzi": "文",
+          "text": "wén",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-4-1-1-2",
+      "focus_word_ids": [
+        "word_hui_can"
+      ],
+      "pattern_ids": [
+        "pattern_hui_neng"
+      ],
+      "notes": "会 + verb = know how to do something. The most useful sentence for a learner to say.",
+      "notes_id": "会 + kata kerja = bisa melakukan sesuatu karena belajar. Kalimat paling berguna untuk pelajar.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "ability",
+        "language",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_wo_hui_yidian",
+      "type": "sentence",
+      "simplified": "我会一点。",
+      "traditional": "我會一點。",
+      "meaning": "I know a little.",
+      "meaning_id": "Saya bisa sedikit.",
+      "literal_meaning": "I know-how a little.",
+      "literal_meaning_id": "Aku bisa sedikit.",
+      "pinyin": "wǒ huì yì diǎn",
+      "pinyin_numbered": "wo3 hui4 yi4 dian3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "会",
+          "text": "huì",
+          "tone": 4
+        },
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-4-4-3",
+      "focus_word_ids": [
+        "word_hui_can"
+      ],
+      "pattern_ids": [
+        "pattern_hui_neng"
+      ],
+      "notes": "A humble way to say you have basic ability — perfect for early learners.",
+      "notes_id": "Cara rendah hati untuk bilang kamu punya kemampuan dasar — pas banget untuk pemula.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "ability",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_hui_neng",
+      "type": "pattern",
+      "title": "会 / 能 + verb",
+      "title_id": "会 / 能 + kata kerja",
+      "meaning": "ability",
+      "meaning_id": "kemampuan",
+      "structure": "Subject + 会/能 + verb",
+      "explanation": "Use 会 for learned skills and 能 for ability or possibility.",
+      "explanation_id": "Gunakan 会 untuk kemampuan yang dipelajari dan 能 untuk kemampuan atau kemungkinan.",
+      "examples": [
+        {
+          "simplified": "我会说中文。",
+          "traditional": "我會說中文。",
+          "pinyin": "Wǒ huì shuō zhōng wén.",
+          "meaning": "I can speak Chinese.",
+          "meaning_id": "Aku bisa berbicara Mandarin."
+        },
+        {
+          "simplified": "你会写吗？",
+          "traditional": "你會寫嗎？",
+          "pinyin": "Nǐ huì xiě ma?",
+          "meaning": "Can you write it?",
+          "meaning_id": "Kamu bisa menulis?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "ability",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_du_read",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_xie_write",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_neng",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_hui",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_shuo",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_hui",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_xie_write",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_shuo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_du_read",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_du_read",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_hui_can",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hui",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_neng",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_neng",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shuo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_shuo",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_ting",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ting",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xie_write",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xie_write",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "会 vs 能 — 会 means?",
+        "prompt_id": "会 artinya?",
+        "answer": "know how (learned skill)",
+        "answer_id": "bisa (karena belajar)"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "说 means?",
+        "prompt_id": "Arti 说?",
+        "answer": "speak / say",
+        "answer_id": "berbicara / bilang"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__说中文。(I can speak Chinese)",
+        "answer": "会"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我会一点。",
+        "answer": "I know a little.",
+        "answer_id": "Aku bisa sedikit."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_hui_can",
+      "word_neng",
+      "word_shuo",
+      "word_ting",
+      "word_xie_write",
+      "word_du_read",
+      "word_zhongwen",
+      "word_yidian"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_hui_can",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_neng",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shuo",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_hui_shuo_zhongwen",
+      "sentence_wo_hui_yidian"
+    ]
+  }
+}

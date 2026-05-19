@@ -1,0 +1,1025 @@
+{
+  "pack": {
+    "id": "pack_018_directions",
+    "title": "Directions",
+    "title_id": "Arah",
+    "subtitle": "Understand left, right, front, back, straight, and turn.",
+    "subtitle_id": "Memahami kiri, kanan, depan, belakang, lurus, dan belok.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "directions",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 18,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Understand left, right, front, back, straight, and turn.",
+    "learning_goal_id": "Memahami kiri, kanan, depan, belakang, lurus, dan belok.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 7,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_zuo_left",
+      "type": "hanzi",
+      "simplified": "左",
+      "traditional": "左",
+      "meaning": "left",
+      "meaning_id": "kiri",
+      "accepted_meanings": [
+        "left"
+      ],
+      "accepted_meanings_id": [
+        "kiri"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zuǒ",
+      "pinyin_numbered": "zuo3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "左",
+          "text": "zuǒ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A hand reaching to the *left* side — where the left hand works. zuǒ ≈ \"dzwoh\" dipping then rising. Tone 3 like hesitating which side, then — left.",
+      "mnemonic_id": "Tangan yang menjangkau ke sisi *kiri* — tempat tangan kiri bekerja. zuǒ ≈ \"dzwo\" turun terus naik. Nada 3 kayak ragu pilih sisi mana, terus — kiri.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "左边转。",
+          "pinyin": "Zuǒ biān zhuǎn.",
+          "meaning": "Turn left.",
+          "meaning_id": "Belok kiri."
+        },
+        {
+          "simplified": "在左边。",
+          "pinyin": "Zài zuǒ biān.",
+          "meaning": "On the left side.",
+          "meaning_id": "Di sebelah kiri."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_you_right",
+      "type": "hanzi",
+      "simplified": "右",
+      "traditional": "右",
+      "meaning": "right",
+      "meaning_id": "kanan",
+      "accepted_meanings": [
+        "right"
+      ],
+      "accepted_meanings_id": [
+        "kanan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yòu",
+      "pinyin_numbered": "you4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "右",
+          "text": "yòu",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A hand reaching to the *right* side — where the right hand works. yòu ≈ \"yoh!\" sharp. Tone 4 drops, like a firm right turn.",
+      "mnemonic_id": "Tangan yang menjangkau ke sisi *kanan* — tempat tangan kanan bekerja. yòu ≈ \"yo!\" Nada 4 turun tajam, kayak belok kanan yang tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "右边转。",
+          "pinyin": "Yòu biān zhuǎn.",
+          "meaning": "Turn right.",
+          "meaning_id": "Belok kanan."
+        },
+        {
+          "simplified": "在右边。",
+          "pinyin": "Zài yòu biān.",
+          "meaning": "On the right side.",
+          "meaning_id": "Di sebelah kanan."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_qian_front",
+      "type": "hanzi",
+      "simplified": "前",
+      "traditional": "前",
+      "meaning": "front / ahead",
+      "meaning_id": "depan",
+      "accepted_meanings": [
+        "front / ahead"
+      ],
+      "accepted_meanings_id": [
+        "depan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qián",
+      "pinyin_numbered": "qian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "前",
+          "text": "qián",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Steps moving forward — *ahead*, the direction you're heading. qián ≈ \"chyen\" rising. Tone 2 goes up, like moving forward and upward.",
+      "mnemonic_id": "Langkah yang maju ke depan — *depan*, arah yang sedang dituju. qián ≈ \"chyen\" naik. Nada 2 naik terus, kayak bergerak maju dan ke atas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "前面有什么？",
+          "pinyin": "Qián miàn yǒu shén me?",
+          "meaning": "What's ahead?",
+          "meaning_id": "Di depan ada apa?"
+        },
+        {
+          "simplified": "在前面。",
+          "pinyin": "Zài qián miàn.",
+          "meaning": "It's up ahead.",
+          "meaning_id": "Ada di depan."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_hou",
+      "type": "hanzi",
+      "simplified": "后",
+      "traditional": "後",
+      "meaning": "behind / after",
+      "meaning_id": "belakang / setelah",
+      "accepted_meanings": [
+        "behind / after"
+      ],
+      "accepted_meanings_id": [
+        "belakang / setelah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hòu",
+      "pinyin_numbered": "hou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "后",
+          "text": "hòu",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Steps slowing down, looking *behind* — what's at the back. hòu ≈ \"hoh!\" sharp. Tone 4 drops, like turning sharply to look back.",
+      "mnemonic_id": "Langkah yang melambat, melihat ke *belakang* — apa yang ada di sana. hòu ≈ \"ho!\" Nada 4 turun tajam, kayak berbalik dengan cepat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "在后面。",
+          "pinyin": "Zài hòu miàn.",
+          "meaning": "It's behind.",
+          "meaning_id": "Ada di belakang."
+        },
+        {
+          "simplified": "后面有车。",
+          "pinyin": "Hòu miàn yǒu chē.",
+          "meaning": "There's a vehicle behind.",
+          "meaning_id": "Ada kendaraan di belakang."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_bian",
+      "type": "hanzi",
+      "simplified": "边",
+      "traditional": "邊",
+      "meaning": "side",
+      "meaning_id": "sisi",
+      "accepted_meanings": [
+        "side"
+      ],
+      "accepted_meanings_id": [
+        "sisi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "biān",
+      "pinyin_numbered": "bian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "边",
+          "text": "biān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A boundary line marking the *side* — the edge between here and there. biān ≈ \"byen\" flat. Tone 1 high and steady, like a clear boundary.",
+      "mnemonic_id": "Garis batas yang menandai *sisi* — tepi antara sini dan sana. biān ≈ \"byen\" flat. Nada 1 tinggi rata, kayak batas yang jelas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "左边还是右边？",
+          "pinyin": "Zuǒ biān hái shì yòu biān?",
+          "meaning": "Left side or right side?",
+          "meaning_id": "Sisi kiri atau kanan?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zhi",
+      "type": "hanzi",
+      "simplified": "直",
+      "traditional": "直",
+      "meaning": "straight",
+      "meaning_id": "lurus",
+      "accepted_meanings": [
+        "straight"
+      ],
+      "accepted_meanings_id": [
+        "lurus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhí",
+      "pinyin_numbered": "zhi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "直",
+          "text": "zhí",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A vertical line going perfectly straight — no turns, no bends, just *straight*. zhí ≈ \"jrr\" rising. Tone 2 goes up, like a road stretching ahead.",
+      "mnemonic_id": "Garis vertikal yang lurus sempurna — tidak belok, tidak bengkok, langsung *lurus*. zhí ≈ \"jrr\" naik. Nada 2 naik terus, kayak jalan yang membentang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一直走。",
+          "pinyin": "Yì zhí zǒu.",
+          "meaning": "Go straight.",
+          "meaning_id": "Jalan terus lurus."
+        },
+        {
+          "simplified": "一直在前面。",
+          "pinyin": "Yì zhí zài qián miàn.",
+          "meaning": "It's straight ahead.",
+          "meaning_id": "Terus ada di depan."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "direction",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_zuobian",
+      "type": "word",
+      "simplified": "左边",
+      "traditional": "左邊",
+      "meaning": "left side",
+      "meaning_id": "sebelah kiri",
+      "accepted_meanings": [
+        "left side"
+      ],
+      "accepted_meanings_id": [
+        "sebelah kiri"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zuǒ biān",
+      "pinyin_numbered": "zuo3 bian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "左",
+          "text": "zuǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "边",
+          "text": "biān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1",
+      "hanzi_ids": [
+        "hanzi_zuo_left",
+        "hanzi_bian"
+      ],
+      "part_of_speech": "location word",
+      "mnemonic": "左 left + 边 side — *left side*, the direction to your left.",
+      "mnemonic_id": "左 kiri + 边 sisi — *sebelah kiri*, arah ke kiri.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "在左边。",
+          "pinyin": "Zài zuǒ biān.",
+          "meaning": "On the left.",
+          "meaning_id": "Di sebelah kiri."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_youbian",
+      "type": "word",
+      "simplified": "右边",
+      "traditional": "右邊",
+      "meaning": "right side",
+      "meaning_id": "sebelah kanan",
+      "accepted_meanings": [
+        "right side"
+      ],
+      "accepted_meanings_id": [
+        "sebelah kanan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yòu biān",
+      "pinyin_numbered": "you4 bian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "右",
+          "text": "yòu",
+          "tone": 4
+        },
+        {
+          "hanzi": "边",
+          "text": "biān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_you_right",
+        "hanzi_bian"
+      ],
+      "part_of_speech": "location word",
+      "mnemonic": "右 right + 边 side — *right side*, the direction to your right.",
+      "mnemonic_id": "右 kanan + 边 sisi — *sebelah kanan*, arah ke kanan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "在右边。",
+          "pinyin": "Zài yòu biān.",
+          "meaning": "On the right.",
+          "meaning_id": "Di sebelah kanan."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_qianmian",
+      "type": "word",
+      "simplified": "前面",
+      "traditional": "前面",
+      "meaning": "front / ahead",
+      "meaning_id": "depan",
+      "accepted_meanings": [
+        "front / ahead"
+      ],
+      "accepted_meanings_id": [
+        "depan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qián miàn",
+      "pinyin_numbered": "qian2 mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "前",
+          "text": "qián",
+          "tone": 2
+        },
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_qian_front",
+        "hanzi_mian"
+      ],
+      "part_of_speech": "location word",
+      "mnemonic": "前 front + 面 side/face — *ahead*, what's in front of you.",
+      "mnemonic_id": "前 depan + 面 sisi — *di depan*, apa yang ada di hadapanmu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "在前面。",
+          "pinyin": "Zài qián miàn.",
+          "meaning": "It's ahead.",
+          "meaning_id": "Ada di depan."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_houmian",
+      "type": "word",
+      "simplified": "后面",
+      "traditional": "後面",
+      "meaning": "behind",
+      "meaning_id": "belakang",
+      "accepted_meanings": [
+        "behind"
+      ],
+      "accepted_meanings_id": [
+        "belakang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hòu miàn",
+      "pinyin_numbered": "hou4 mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "后",
+          "text": "hòu",
+          "tone": 4
+        },
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_hou",
+        "hanzi_mian"
+      ],
+      "part_of_speech": "location word",
+      "mnemonic": "后 back + 面 side — *behind*, what's at your back.",
+      "mnemonic_id": "后 belakang + 面 sisi — *di belakang*, apa yang ada di belakangmu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "在后面。",
+          "pinyin": "Zài hòu miàn.",
+          "meaning": "It's behind.",
+          "meaning_id": "Ada di belakang."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yizhi",
+      "type": "word",
+      "simplified": "一直",
+      "traditional": "一直",
+      "meaning": "straight / continuously",
+      "meaning_id": "terus / lurus",
+      "accepted_meanings": [
+        "straight / continuously"
+      ],
+      "accepted_meanings_id": [
+        "terus / lurus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì zhí",
+      "pinyin_numbered": "yi4 zhi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "直",
+          "text": "zhí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_yi",
+        "hanzi_zhi"
+      ],
+      "part_of_speech": "adverb",
+      "mnemonic": "一 one + 直 straight — *continuously straight*, keep going without turning.",
+      "mnemonic_id": "一 satu + 直 lurus — *terus lurus*, jalan terus tanpa belok.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "一直 can mean \"straight\" for directions or \"continuously\" for time.",
+      "usage_note_id": "一直 bisa berarti \"lurus\" untuk arah atau \"terus-terusan\" untuk waktu.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "一直走。",
+          "pinyin": "Yì zhí zǒu.",
+          "meaning": "Go straight.",
+          "meaning_id": "Jalan lurus terus."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zou",
+      "type": "word",
+      "simplified": "走",
+      "traditional": "走",
+      "meaning": "walk / go",
+      "meaning_id": "jalan",
+      "accepted_meanings": [
+        "walk / go"
+      ],
+      "accepted_meanings_id": [
+        "jalan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zǒu",
+      "pinyin_numbered": "zou3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "走",
+          "text": "zǒu",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_zou"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Walk* or *go* on foot — the most basic movement forward.",
+      "mnemonic_id": "*Jalan* atau *pergi* dengan kaki — gerakan maju paling dasar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "走 is on foot. 去 is going somewhere regardless of how.",
+      "usage_note_id": "走 berarti berjalan kaki. 去 berarti pergi ke suatu tempat dengan cara apapun.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们走吧。",
+          "pinyin": "Wǒ men zǒu ba.",
+          "meaning": "Let's go.",
+          "meaning_id": "Ayo pergi."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zhuan",
+      "type": "word",
+      "simplified": "转",
+      "traditional": "轉",
+      "meaning": "turn",
+      "meaning_id": "belok",
+      "accepted_meanings": [
+        "turn"
+      ],
+      "accepted_meanings_id": [
+        "belok"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhuǎn",
+      "pinyin_numbered": "zhuan3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "转",
+          "text": "zhuǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_zhuan"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Turn* — change direction, pivot at a corner.",
+      "mnemonic_id": "*Belok* — ganti arah, berputar di tikungan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "左边转。",
+          "pinyin": "Zuǒ biān zhuǎn.",
+          "meaning": "Turn left.",
+          "meaning_id": "Belok kiri."
+        }
+      ],
+      "order_index": 7,
+      "tags": [
+        "directions"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_yizhi_zou",
+      "type": "sentence",
+      "simplified": "一直走。",
+      "traditional": "一直走。",
+      "meaning": "Go straight.",
+      "meaning_id": "Jalan terus.",
+      "literal_meaning": "Straight walk.",
+      "literal_meaning_id": "Lurus jalan.",
+      "pinyin": "yì zhí zǒu",
+      "pinyin_numbered": "yi4 zhi2 zou3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "直",
+          "text": "zhí",
+          "tone": 2
+        },
+        {
+          "hanzi": "走",
+          "text": "zǒu",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-2-3",
+      "focus_word_ids": [
+        "word_zuobian"
+      ],
+      "pattern_ids": [
+        "pattern_direction_commands"
+      ],
+      "notes": "一直 + verb = keep doing something straight/continuously. Used for giving directions.",
+      "notes_id": "一直 + kata kerja = terus melakukan sesuatu lurus/terus-menerus. Dipakai untuk memberi petunjuk arah.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "direction",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_zuobian_zhuan",
+      "type": "sentence",
+      "simplified": "左边转。",
+      "traditional": "左邊轉。",
+      "meaning": "Turn left.",
+      "meaning_id": "Belok kiri.",
+      "literal_meaning": "Left side turn.",
+      "literal_meaning_id": "Sisi kiri belok.",
+      "pinyin": "zuǒ biān zhuǎn",
+      "pinyin_numbered": "zuo3 bian1 zhuan3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "左",
+          "text": "zuǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "边",
+          "text": "biān",
+          "tone": 1
+        },
+        {
+          "hanzi": "转",
+          "text": "zhuǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-1-3",
+      "focus_word_ids": [
+        "word_zuobian"
+      ],
+      "pattern_ids": [
+        "pattern_direction_commands"
+      ],
+      "notes": "Direction + 转 — the standard way to say \"turn [direction]\".",
+      "notes_id": "Arah + 转 — cara standar bilang \"belok [arah]\".",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "direction",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_direction_commands",
+      "type": "pattern",
+      "title": "Direction commands",
+      "title_id": "Perintah arah",
+      "meaning": "simple directions",
+      "meaning_id": "arah sederhana",
+      "structure": "一直走 / 左转 / 右转",
+      "explanation": "Use direction words with 走 and 转 for basic directions.",
+      "explanation_id": "Gunakan kata arah dengan 走 dan 转 untuk petunjuk jalan dasar.",
+      "examples": [
+        {
+          "simplified": "一直走。",
+          "traditional": "一直走。",
+          "pinyin": "Yì zhí zǒu.",
+          "meaning": "Go straight.",
+          "meaning_id": "Jalan lurus."
+        },
+        {
+          "simplified": "左边转。",
+          "traditional": "左邊轉。",
+          "pinyin": "Zuǒ biān zhuǎn.",
+          "meaning": "Turn left.",
+          "meaning_id": "Belok kiri."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "direction",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_hou",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_qian_front",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_you_right",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_zuo_left",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_houmian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hou",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_qianmian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_qian_front",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yizhi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zhi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_youbian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_you_right",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_zhuan",
+      "item_type": "word",
+      "prerequisite_item_id": "word_zuobian",
+      "prerequisite_item_type": "word"
+    },
+    {
+      "item_id": "word_zuobian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_zuobian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zuo_left",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "左边 means?",
+        "prompt_id": "Arti 左边?",
+        "answer": "left side",
+        "answer_id": "sebelah kiri"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "一直 means?",
+        "prompt_id": "Arti 一直?",
+        "answer": "straight / continuously",
+        "answer_id": "lurus / terus"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "一直__。(Go straight)",
+        "answer": "走"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "左边转。",
+        "answer": "Turn left.",
+        "answer_id": "Belok kiri."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_zuobian",
+      "word_youbian",
+      "word_qianmian",
+      "word_houmian",
+      "word_yizhi",
+      "word_zou",
+      "word_zhuan"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_zuobian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_youbian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_qianmian",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_yizhi_zou",
+      "sentence_zuobian_zhuan"
+    ]
+  }
+}

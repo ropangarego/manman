@@ -17,6 +17,11 @@ import pack012 from './pack_012_days_weeks_months.json';
 import pack013 from './pack_013_basic_measure_words.json';
 import pack014 from './pack_014_this_that_which.json';
 import pack015 from './pack_015_food_expansion.json';
+import pack016 from './pack_016_drinks_ordering.json';
+import pack017 from './pack_017_transport_basics.json';
+import pack018 from './pack_018_directions.json';
+import pack019 from './pack_019_simple_past_le.json';
+import pack020 from './pack_020_ability_hui_neng.json';
 
 export const rawContentPacks = [
   pack000,
@@ -35,4 +40,9 @@ export const rawContentPacks = [
   pack013,
   pack014,
   pack015,
+  pack016,
+  pack017,
+  pack018,
+  pack019,
+  pack020,
 ] as unknown[];
