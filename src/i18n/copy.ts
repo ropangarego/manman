@@ -75,6 +75,7 @@ type CopyKey =
   | 'progress.weeklyActivitySub'
   | 'progress.learningPath'
   | 'progress.learningPathSub'
+  | 'progress.morePacksInLibrary'
   | 'progress.weakAreas'
   | 'progress.weakAreasSub'
   | 'settings.title'
@@ -363,6 +364,10 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'progress.weeklyActivitySub': { English: 'Minutes per day.', Indonesian: 'Menit per hari.' },
   'progress.learningPath': { English: 'Learning path', Indonesian: 'Jalur belajar' },
   'progress.learningPathSub': { English: 'How starter content opens up.', Indonesian: 'Cara konten awal terbuka bertahap.' },
+  'progress.morePacksInLibrary': {
+    English: 'More packs are available in Library.',
+    Indonesian: 'Paket lainnya tersedia di Library.',
+  },
   'progress.weakAreas': { English: 'Weak areas', Indonesian: 'Area lemah' },
   'progress.weakAreasSub': { English: 'Shown after enough reviews.', Indonesian: 'Muncul setelah review cukup.' },
   'settings.title': { English: 'Settings', Indonesian: 'Pengaturan' },

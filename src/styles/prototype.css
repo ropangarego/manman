@@ -908,6 +908,7 @@
 .intro-example b{font-size:42px;line-height:1.1}
 .intro-example small{color:var(--muted);font-size:12px;font-weight:800}
 .path-item.skipped .path-icon{background:var(--line);color:var(--muted)}
+.path-more-note{margin:10px 0 0;color:var(--muted);font-size:12px;font-weight:800;line-height:1.4}
 
 @media (max-width:767px){
   .auth-secondary-actions{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}

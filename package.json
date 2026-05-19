@@ -8,8 +8,11 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "typecheck": "tsc -b",
+    "packs:index": "tsx scripts/generate-pack-index.ts",
     "validate:packs": "tsx scripts/validate-packs.ts",
-    "seed:sql": "node scripts/generate-supabase-seed.cjs"
+    "seed:sql": "node scripts/generate-supabase-seed.cjs",
+    "content:check": "npm run packs:index && npm run validate:packs && npm run build",
+    "content:release": "npm run packs:index && npm run validate:packs && npm run seed:sql && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
