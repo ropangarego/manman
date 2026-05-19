@@ -40,7 +40,6 @@ type CopyKey =
   | 'auth.hasAccount'
   | 'auth.createAccount'
   | 'auth.useExisting'
-  | 'auth.passwordHint'
   | 'auth.working'
   | 'home.title'
   | 'home.subtitle'
@@ -308,10 +307,6 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'auth.hasAccount': { English: 'Already have an account?', Indonesian: 'Sudah punya akun?' },
   'auth.createAccount': { English: 'Create account', Indonesian: 'Buat akun' },
   'auth.useExisting': { English: 'Use existing account', Indonesian: 'Pakai akun yang ada' },
-  'auth.passwordHint': {
-    English: 'Use a real email and a password with at least 6 characters.',
-    Indonesian: 'Gunakan email asli dan password minimal 6 karakter.',
-  },
   'auth.working': { English: 'Working...', Indonesian: 'Memproses...' },
   'home.title': { English: 'Nǐ hǎo, Learner', Indonesian: 'Nǐ hǎo, Pelajar' },
   'home.subtitle': { English: 'Ready for today’s Mandarin?', Indonesian: 'Siap belajar Mandarin hari ini?' },

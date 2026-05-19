@@ -128,7 +128,6 @@ export function AuthScreen() {
             />
           </label>
 
-          <p className="auth-note">{t('auth.passwordHint')}</p>
           {authError ? (
             <p className="auth-note auth-error" role="alert">
               {authError}
