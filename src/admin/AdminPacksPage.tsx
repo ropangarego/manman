@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getQaReviews } from './adminApi';
-import { getAdminPacks, qaStatusLabel, reviewMap, statusForItem, type QaReview, type QaStatus } from './adminData';
+import { getAdminPacks, reviewMap, statusForItem, type QaReview, type QaStatus } from './adminData';
 import { navigateTo } from '../utils/navigation';
 
 function summarizeStatuses(packItems: ReturnType<typeof getAdminPacks>[number]['items'], reviews: Map<string, QaReview>) {
@@ -19,7 +19,7 @@ function summarizeStatuses(packItems: ReturnType<typeof getAdminPacks>[number]['
 }
 
 function summaryLabel(counts: Record<QaStatus, number>) {
-  return `${counts.ok} OK / ${counts.needs_fix} Fix / ${counts.rejected} Rejected / ${counts.unchecked} Unchecked`;
+  return `${counts.unchecked} unchecked · ${counts.ok} OK · ${counts.needs_fix} fix · ${counts.rejected} rejected`;
 }
 
 export default function AdminPacksPage() {
@@ -58,12 +58,9 @@ export default function AdminPacksPage() {
             <tr>
               <th>Pack</th>
               <th>Title</th>
-              <th>Hanzi</th>
-              <th>Words</th>
-              <th>Sentences</th>
-              <th>Patterns</th>
-              <th>Auto Issues</th>
-              <th>QA Summary</th>
+              <th>Items</th>
+              <th>Validation</th>
+              <th>QA</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -80,22 +77,20 @@ export default function AdminPacksPage() {
                     <b>{pack.title}</b>
                     {pack.isIntro ? <small>Introduction / Tutorial - Not counted in SRS</small> : <small>{pack.subtitle}</small>}
                   </td>
-                  <td>{pack.counts.hanzi}</td>
-                  <td>{pack.counts.words}</td>
-                  <td>{pack.counts.sentences}</td>
-                  <td>{pack.counts.patterns}</td>
                   <td>
-                    <span className={pack.autoIssues.length > 0 ? 'admin-badge danger' : 'admin-badge'}>
-                      {pack.autoIssues.length}
+                    <span className="admin-compact-metric">
+                      {pack.counts.hanzi}H · {pack.counts.words}W · {pack.counts.sentences}S · {pack.counts.patterns}P
                     </span>
                   </td>
                   <td>
+                    {pack.autoIssues.length > 0 ? (
+                      <span className="admin-badge danger">{pack.autoIssues.length} issues</span>
+                    ) : (
+                      <span className="admin-muted">0 issues</span>
+                    )}
+                  </td>
+                  <td>
                     <small>{summaryLabel(counts)}</small>
-                    <div className="admin-status-mini">
-                      {Object.entries(counts).map(([status, count]) => (
-                        <span key={status}>{qaStatusLabel(status as QaStatus)}: {count}</span>
-                      ))}
-                    </div>
                   </td>
                   <td>
                     <button className="secondary admin-small-btn" type="button" onClick={() => navigateTo(`/admin/packs/${pack.id}`)}>

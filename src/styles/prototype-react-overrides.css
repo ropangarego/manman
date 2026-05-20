@@ -501,10 +501,21 @@ html.dark textarea:focus-visible {
 .admin-header,
 .admin-page-head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+}
+
+.admin-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.admin-header-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .admin-header h1,
@@ -526,8 +537,8 @@ html.dark textarea:focus-visible {
   background: transparent;
   color: var(--text-muted);
   padding: 0;
-  margin-bottom: 10px;
   min-height: 32px;
+  font-weight: 800;
 }
 
 .admin-tabs,
@@ -548,6 +559,11 @@ html.dark textarea:focus-visible {
   font-weight: 700;
 }
 
+.admin-tabs button {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
 .admin-tabs button.active,
 .admin-segmented button.active {
   background: var(--ink);
@@ -561,7 +577,7 @@ html.dark textarea:focus-visible {
 
 .admin-page {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .admin-table-wrap {
@@ -574,14 +590,14 @@ html.dark textarea:focus-visible {
 
 .admin-table {
   width: 100%;
-  min-width: 980px;
+  min-width: 760px;
   border-collapse: collapse;
 }
 
 .admin-table th,
 .admin-table td {
   border-bottom: 1px solid var(--line);
-  padding: 12px;
+  padding: 10px 12px;
   text-align: left;
   vertical-align: top;
   font-size: 14px;
@@ -598,14 +614,21 @@ html.dark textarea:focus-visible {
 .admin-status-mini span {
   display: block;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .admin-item-table {
-  min-width: 1320px;
+  min-width: 860px;
 }
 
-.admin-item-table textarea,
+.admin-click-row {
+  cursor: pointer;
+}
+
+.admin-click-row:hover {
+  background: var(--surface-soft);
+}
+
 .admin-report-detail textarea {
   min-width: 180px;
   min-height: 72px;
@@ -615,7 +638,9 @@ html.dark textarea:focus-visible {
 .admin-table select,
 .admin-report-detail select,
 .admin-controls input,
-.admin-item-table textarea,
+.admin-control-select,
+.admin-field select,
+.admin-field textarea,
 .admin-report-detail textarea {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -629,23 +654,88 @@ html.dark textarea:focus-visible {
   gap: 12px;
 }
 
+.admin-controls.compact {
+  grid-template-columns: minmax(220px, 1fr) minmax(140px, 180px) minmax(110px, 140px) auto auto;
+  align-items: center;
+}
+
 .admin-controls input {
   min-height: 44px;
 }
 
+.admin-control-select {
+  min-height: 44px;
+}
+
+.admin-toggle,
+.admin-link-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  min-height: 36px;
+  padding: 0 12px;
+  font-weight: 800;
+}
+
+.admin-toggle.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.admin-link-btn {
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+  min-height: 30px;
+  padding: 0;
+}
+
 .admin-summary-grid,
-.admin-overview-grid {
+.admin-overview-grid,
+.admin-summary-panels {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 10px;
 }
 
 .admin-summary-grid span,
-.admin-card {
+.admin-card,
+.admin-summary-panels article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
   padding: 12px;
+}
+
+.admin-summary-panels article {
+  display: grid;
+  gap: 4px;
+}
+
+.admin-summary-panels h3,
+.admin-detail-section h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-summary-panels p,
+.admin-detail-section p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.admin-muted,
+.admin-compact-metric {
+  color: var(--text-muted);
+}
+
+.admin-note-preview {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .admin-badge {
@@ -686,6 +776,74 @@ html.dark textarea:focus-visible {
 .admin-small-btn,
 .admin-export-btn {
   min-height: 38px;
+}
+
+.admin-detail-body {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-detail-grid,
+.admin-detail-meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.admin-detail-grid div,
+.admin-detail-meta div {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.admin-detail-grid dt,
+.admin-detail-meta dt {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-detail-grid dd,
+.admin-detail-meta dd {
+  margin: 3px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-detail-section {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-detail-issues {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.admin-field {
+  display: grid;
+  gap: 6px;
+}
+
+.admin-field span {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .admin-highlight-row {
@@ -751,6 +909,22 @@ html.dark textarea:focus-visible {
   .admin-reports-layout {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .admin-header-main {
+    justify-content: space-between;
+  }
+
+  .admin-controls.compact {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-controls.compact input {
+    grid-column: 1 / -1;
+  }
+
+  .admin-summary-panels {
+    grid-template-columns: 1fr;
   }
 
   .admin-report-detail {

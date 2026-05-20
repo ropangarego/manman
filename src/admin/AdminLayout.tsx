@@ -7,12 +7,11 @@ export function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <section className="admin-shell">
       <header className="admin-header">
-        <div>
+        <div className="admin-header-main">
           <button className="admin-back" type="button" onClick={() => navigateTo('/')}>
-            ← Learner app
+            &larr; App
           </button>
-          <h1>Admin Panel</h1>
-          <p>Internal Mandarin pack QA and user reports.</p>
+          <h1>Admin</h1>
         </div>
         <nav className="admin-tabs" aria-label="Admin navigation">
           <button

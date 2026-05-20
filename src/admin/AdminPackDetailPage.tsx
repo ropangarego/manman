@@ -17,13 +17,13 @@ import {
   type QaReview,
   type QaStatus,
 } from './adminData';
+import { OptionSheet } from '../components/ui/OptionSheet';
 import { navigateTo } from '../utils/navigation';
 
-type DetailTab = 'overview' | AdminItemType | 'issues';
-type StatusFilter = 'all' | QaStatus | 'only_issues' | 'only_not_ok';
+type DetailTab = AdminItemType | 'issues';
+type StatusFilter = 'all' | QaStatus;
 
 const tabs: Array<{ id: DetailTab; label: string }> = [
-  { id: 'overview', label: 'Overview' },
   { id: 'hanzi', label: 'Hanzi' },
   { id: 'word', label: 'Words' },
   { id: 'sentence', label: 'Sentences' },
@@ -37,8 +37,6 @@ const statusFilters: Array<{ id: StatusFilter; label: string }> = [
   { id: 'ok', label: 'OK' },
   { id: 'needs_fix', label: 'Needs Fix' },
   { id: 'rejected', label: 'Rejected' },
-  { id: 'only_issues', label: 'Only Issues' },
-  { id: 'only_not_ok', label: 'Only Not OK' },
 ];
 
 function itemTypeLabel(type: AdminItemType) {
@@ -73,11 +71,11 @@ function matchesSearch(item: AdminPackItem, note: string, search: string) {
     .includes(query);
 }
 
-function matchesFilter(item: AdminPackItem, status: QaStatus, filter: StatusFilter) {
-  if (filter === 'all') return true;
-  if (filter === 'only_issues') return item.autoIssues.length > 0;
-  if (filter === 'only_not_ok') return status !== 'ok' || item.autoIssues.length > 0;
-  return status === filter;
+function matchesFilter(item: AdminPackItem, status: QaStatus, filter: StatusFilter, onlyIssues: boolean, onlyNotOk: boolean) {
+  if (filter !== 'all' && status !== filter) return false;
+  if (onlyIssues && item.autoIssues.length === 0) return false;
+  if (onlyNotOk && status === 'ok' && item.autoIssues.length === 0) return false;
+  return true;
 }
 
 function languageText(en: string, id: string, mode: AdminLanguageMode) {
@@ -132,6 +130,11 @@ function exportCsv(packTitle: string, packId: string, items: AdminPackItem[], re
   URL.revokeObjectURL(url);
 }
 
+function notePreview(note: string) {
+  if (!note.trim()) return '';
+  return note.length > 72 ? `${note.slice(0, 72)}...` : note;
+}
+
 function ItemTable({
   items,
   reviews,
@@ -139,6 +142,7 @@ function ItemTable({
   saving,
   saveFeedback,
   onSave,
+  onOpen,
   highlightedItemId,
 }: {
   items: AdminPackItem[];
@@ -147,90 +151,99 @@ function ItemTable({
   saving: Record<string, string>;
   saveFeedback: Record<string, string>;
   onSave: (item: AdminPackItem, status: QaStatus, note: string) => void;
+  onOpen: (item: AdminPackItem) => void;
   highlightedItemId: string;
 }) {
   return (
     <div className="admin-table-wrap">
-      <table className="admin-table admin-item-table">
+      <table className="admin-table admin-item-table compact">
         <thead>
           <tr>
             <th>Content</th>
             <th>Pinyin</th>
-            <th>Tone</th>
             <th>Meaning</th>
-            <th>Literal / Pattern</th>
-            <th>Components / Breakdown</th>
-            <th>Mnemonic / Examples</th>
-            <th>QA Status</th>
-            <th>Notes</th>
+            <th>QA</th>
+            <th>Note</th>
             <th>Issues</th>
-            <th>Meta</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => {
-            const key = reviewKey(item);
-            const review = reviews.get(key);
-            const status = review?.status ?? 'unchecked';
-            const note = review?.note ?? '';
+          {items.length === 0 ? (
+            <tr>
+              <td colSpan={7}>No items match the current filters.</td>
+            </tr>
+          ) : (
+            items.map((item) => {
+              const key = reviewKey(item);
+              const review = reviews.get(key);
+              const status = review?.status ?? 'unchecked';
+              const note = review?.note ?? '';
+              const preview = notePreview(note);
 
-            return (
-              <tr className={highlightedItemId === item.id ? 'admin-highlight-row' : ''} id={`qa-${item.type}-${item.id}`} key={key}>
-                <td>
-                  <strong>{item.content}</strong>
-                  <small>{itemTypeLabel(item.type)}</small>
-                </td>
-                <td>{item.pinyin}</td>
-                <td>{item.tone}</td>
-                <td>{languageText(item.meaningEn, item.meaningId, languageMode)}</td>
-                <td>{item.literal || item.pattern}</td>
-                <td>{item.components || item.breakdown}</td>
-                <td>{item.type === 'pattern' ? item.examples : item.mnemonic}</td>
-                <td>
-                  <select
-                    value={status}
-                    onChange={(event) => onSave(item, event.target.value as QaStatus, note)}
-                    aria-label={`QA status for ${item.id}`}
-                  >
-                    {qaStatuses.map((option) => (
-                      <option key={option} value={option}>
-                        {qaStatusLabel(option)}
-                      </option>
-                    ))}
-                  </select>
-                  <small>{saving[key] || saveFeedback[key]}</small>
-                </td>
-                <td>
-                  <textarea
-                    defaultValue={note}
-                    aria-label={`QA note for ${item.id}`}
-                    onBlur={(event) => {
-                      if (event.target.value !== note) {
-                        onSave(item, status, event.target.value);
-                      }
-                    }}
-                  />
-                </td>
-                <td>
-                  {item.autoIssues.length === 0 ? (
-                    <span className="admin-badge">0</span>
-                  ) : (
-                    item.autoIssues.map((issue) => (
-                      <span className={`admin-badge ${issue.severity === 'error' ? 'danger' : 'warn'}`} key={issue.issue}>
-                        {issue.issue}
-                      </span>
-                    ))
-                  )}
-                </td>
-                <td>
-                  <small>pack_id: {item.packId}</small>
-                  <small>item_id: {item.id}</small>
-                  <small>reviewer: {review?.reviewer_id ?? '—'}</small>
-                  <small>updated: {review?.updated_at ? new Date(review.updated_at).toLocaleString() : '—'}</small>
-                </td>
-              </tr>
-            );
-          })}
+              return (
+                <tr
+                  className={`${highlightedItemId === item.id ? 'admin-highlight-row ' : ''}admin-click-row`}
+                  id={`qa-${item.type}-${item.id}`}
+                  key={key}
+                  onClick={() => onOpen(item)}
+                >
+                  <td>
+                    <strong>{item.content}</strong>
+                    <small>{item.id}</small>
+                  </td>
+                  <td>{item.pinyin}</td>
+                  <td>{languageText(item.meaningEn, item.meaningId, languageMode)}</td>
+                  <td onClick={(event) => event.stopPropagation()}>
+                    <select
+                      value={status}
+                      onChange={(event) => onSave(item, event.target.value as QaStatus, note)}
+                      aria-label={`QA status for ${item.id}`}
+                    >
+                      {qaStatuses.map((option) => (
+                        <option key={option} value={option}>
+                          {qaStatusLabel(option)}
+                        </option>
+                      ))}
+                    </select>
+                    <small>{saving[key] || saveFeedback[key]}</small>
+                  </td>
+                  <td>
+                    {preview ? <small className="admin-note-preview">{preview}</small> : <small className="admin-muted">No note</small>}
+                    <button
+                      className="admin-link-btn"
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        onOpen(item);
+                      }}
+                    >
+                      {preview ? 'Edit' : 'Add note'}
+                    </button>
+                  </td>
+                  <td>
+                    {item.autoIssues.length === 0 ? (
+                      <span className="admin-muted">0</span>
+                    ) : (
+                      <span className="admin-badge warn">{item.autoIssues.length} issue{item.autoIssues.length === 1 ? '' : 's'}</span>
+                    )}
+                  </td>
+                  <td>
+                    <button
+                      className="secondary admin-small-btn"
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        onOpen(item);
+                      }}
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>
@@ -245,14 +258,14 @@ function IssueList({ issues }: { issues: AutoIssue[] }) {
           <tr>
             <th>Item Type</th>
             <th>Item</th>
-            <th>Issue</th>
+            <th>Validation Issue</th>
             <th>Severity</th>
           </tr>
         </thead>
         <tbody>
           {issues.length === 0 ? (
             <tr>
-              <td colSpan={4}>No automatic issues found.</td>
+              <td colSpan={4}>No validation issues found.</td>
             </tr>
           ) : (
             issues.map((issue) => (
@@ -275,17 +288,128 @@ function IssueList({ issues }: { issues: AutoIssue[] }) {
   );
 }
 
+function DetailRow({ label, value }: { label: string; value: string }) {
+  if (!value) return null;
+  return (
+    <div>
+      <dt>{label}</dt>
+      <dd>{value}</dd>
+    </div>
+  );
+}
+
+function ItemDetailModal({
+  item,
+  review,
+  saving,
+  saveFeedback,
+  onClose,
+  onSave,
+}: {
+  item: AdminPackItem | null;
+  review: QaReview | undefined;
+  saving: string;
+  saveFeedback: string;
+  onClose: () => void;
+  onSave: (item: AdminPackItem, status: QaStatus, note: string) => void;
+}) {
+  const [draftStatus, setDraftStatus] = useState<QaStatus>('unchecked');
+  const [draftNote, setDraftNote] = useState('');
+
+  useEffect(() => {
+    setDraftStatus(review?.status ?? 'unchecked');
+    setDraftNote(review?.note ?? '');
+  }, [item?.id, review?.note, review?.status]);
+
+  if (!item) return null;
+
+  const hasIssues = item.autoIssues.length > 0;
+
+  return (
+    <OptionSheet open={Boolean(item)} title={`${item.content || item.id} QA`} sub={`${itemTypeLabel(item.type)} - ${item.id}`} className="admin-item-sheet" onClose={onClose}>
+      <div className="admin-detail-body">
+        <dl className="admin-detail-grid">
+          <DetailRow label="Content" value={item.content} />
+          <DetailRow label="Pinyin / Structure" value={item.pinyin} />
+          <DetailRow label="Tone" value={item.tone} />
+          <DetailRow label="Meaning EN" value={item.meaningEn} />
+          <DetailRow label="Meaning ID" value={item.meaningId} />
+          <DetailRow label="Literal / Pattern" value={item.literal || item.pattern} />
+          <DetailRow label="Components / Breakdown" value={item.components || item.breakdown} />
+          <DetailRow label="Mnemonic / Explanation" value={item.mnemonic} />
+          <DetailRow label="Examples" value={item.examples} />
+        </dl>
+
+        <section className="admin-detail-section">
+          <h4>Validation</h4>
+          {hasIssues ? (
+            <ul className="admin-detail-issues">
+              {item.autoIssues.map((issue) => (
+                <li key={issue.issue}>
+                  <span className={`admin-badge ${issue.severity === 'error' ? 'danger' : 'warn'}`}>{issue.severity}</span>
+                  {issue.issue}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="admin-muted">No validation issues.</p>
+          )}
+        </section>
+
+        <section className="admin-detail-section">
+          <h4>QA Review</h4>
+          <label className="admin-field">
+            <span>Status</span>
+            <select value={draftStatus} onChange={(event) => setDraftStatus(event.target.value as QaStatus)}>
+              {qaStatuses.map((status) => (
+                <option key={status} value={status}>
+                  {qaStatusLabel(status)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="admin-field">
+            <span>Notes</span>
+            <textarea value={draftNote} onChange={(event) => setDraftNote(event.target.value)} placeholder="Add QA notes..." />
+          </label>
+          <div className="admin-detail-actions">
+            <button className="primary admin-small-btn" type="button" onClick={() => onSave(item, draftStatus, draftNote)}>
+              Save QA
+            </button>
+            <small>{saving || saveFeedback}</small>
+          </div>
+        </section>
+
+        <section className="admin-detail-section">
+          <h4>Metadata</h4>
+          <dl className="admin-detail-meta">
+            <DetailRow label="pack_id" value={item.packId} />
+            <DetailRow label="item_type" value={item.type} />
+            <DetailRow label="item_id" value={item.id} />
+            <DetailRow label="reviewer_id" value={review?.reviewer_id ?? ''} />
+            <DetailRow label="updated_at" value={review?.updated_at ? new Date(review.updated_at).toLocaleString() : ''} />
+          </dl>
+        </section>
+      </div>
+    </OptionSheet>
+  );
+}
+
 export default function AdminPackDetailPage({ packId }: { packId: string }) {
   const packs = useMemo(() => getAdminPacks(), []);
   const pack = packs.find((item) => item.id === packId);
   const query = new URLSearchParams(window.location.search);
   const queryType = query.get('type') as DetailTab | null;
   const queryItem = query.get('item') ?? '';
+  const initialTab = queryType && tabs.some((tab) => tab.id === queryType) ? queryType : 'hanzi';
   const [reviews, setReviews] = useState<QaReview[]>([]);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
+  const [onlyIssues, setOnlyIssues] = useState(false);
+  const [onlyNotOk, setOnlyNotOk] = useState(false);
   const [languageMode, setLanguageMode] = useState<AdminLanguageMode>('both');
-  const [activeTab, setActiveTab] = useState<DetailTab>(queryType && tabs.some((tab) => tab.id === queryType) ? queryType : 'overview');
+  const [activeTab, setActiveTab] = useState<DetailTab>(initialTab);
+  const [selectedItem, setSelectedItem] = useState<AdminPackItem | null>(null);
   const [saving, setSaving] = useState<Record<string, string>>({});
   const [saveFeedback, setSaveFeedback] = useState<Record<string, string>>({});
   const [error, setError] = useState('');
@@ -314,7 +438,7 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
     return (
       <section className="admin-page">
         <button className="admin-back" type="button" onClick={() => navigateTo('/admin/packs')}>
-          ← Back to packs
+          &larr; Back to packs
         </button>
         <h2>Pack not found</h2>
       </section>
@@ -322,15 +446,17 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
   }
 
   const reviewsByItem = reviewMap(reviews);
+  const selectedReview = selectedItem ? reviewsByItem.get(reviewKey(selectedItem)) : undefined;
+  const selectedKey = selectedItem ? reviewKey(selectedItem) : '';
   const statusCounts: Record<QaStatus, number> = { unchecked: 0, ok: 0, needs_fix: 0, rejected: 0 };
   for (const item of pack.items) {
     statusCounts[statusForItem(item, reviewsByItem)] += 1;
   }
 
-  const visibleBase = activeTab === 'overview' || activeTab === 'issues' ? pack.items : pack.items.filter((item) => item.type === activeTab);
+  const visibleBase = activeTab === 'issues' ? pack.items : pack.items.filter((item) => item.type === activeTab);
   const filteredItems = visibleBase.filter((item) => {
     const status = statusForItem(item, reviewsByItem);
-    return matchesFilter(item, status, statusFilter) && matchesSearch(item, noteForItem(item, reviewsByItem), search);
+    return matchesFilter(item, status, statusFilter, onlyIssues, onlyNotOk) && matchesSearch(item, noteForItem(item, reviewsByItem), search);
   });
 
   async function saveReview(item: AdminPackItem, status: QaStatus, note: string) {
@@ -360,12 +486,12 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
   return (
     <section className="admin-page">
       <button className="admin-back" type="button" onClick={() => navigateTo('/admin/packs')}>
-        ← Back to packs
+        &larr; Back to packs
       </button>
       <div className="admin-page-head">
         <div>
           <h2>
-            {pack.numberLabel} · {pack.title}
+            {pack.numberLabel} - {pack.title}
           </h2>
           <p>{pack.isIntro ? 'Introduction / Tutorial - Not counted in SRS' : pack.subtitle}</p>
         </div>
@@ -376,16 +502,23 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
 
       {error ? <p className="admin-error">Failed to load QA reviews: {error}</p> : null}
 
-      <div className="admin-summary-grid">
-        <span>Hanzi: {pack.counts.hanzi}</span>
-        <span>Words: {pack.counts.words}</span>
-        <span>Sentences: {pack.counts.sentences}</span>
-        <span>Patterns: {pack.counts.patterns}</span>
-        <span>Unchecked: {statusCounts.unchecked}</span>
-        <span>OK: {statusCounts.ok}</span>
-        <span>Needs Fix: {statusCounts.needs_fix}</span>
-        <span>Rejected: {statusCounts.rejected}</span>
-        <span>Auto Issues: {issueCount(pack.items)}</span>
+      <div className="admin-summary-panels" aria-label="Pack QA summary">
+        <article>
+          <h3>Content</h3>
+          <p>
+            {pack.counts.hanzi} Hanzi · {pack.counts.words} Words · {pack.counts.sentences} Sentences · {pack.counts.patterns} Patterns
+          </p>
+        </article>
+        <article>
+          <h3>QA</h3>
+          <p>
+            {statusCounts.unchecked} Unchecked · {statusCounts.ok} OK · {statusCounts.needs_fix} Needs Fix · {statusCounts.rejected} Rejected
+          </p>
+        </article>
+        <article>
+          <h3>Validation</h3>
+          <p>{issueCount(pack.items)} Issues</p>
+        </article>
       </div>
 
       <div className="admin-tabs compact" role="tablist" aria-label="Pack detail tabs">
@@ -396,38 +529,30 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
         ))}
       </div>
 
-      <div className="admin-controls">
+      <div className="admin-controls compact">
         <input value={search} placeholder="Search content, pinyin, meaning, note, item_id..." onChange={(event) => setSearch(event.target.value)} />
-        <div className="admin-segmented">
+        <select className="admin-control-select" value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as StatusFilter)}>
           {statusFilters.map((filter) => (
-            <button className={statusFilter === filter.id ? 'active' : ''} type="button" key={filter.id} onClick={() => setStatusFilter(filter.id)}>
+            <option key={filter.id} value={filter.id}>
               {filter.label}
-            </button>
+            </option>
           ))}
-        </div>
-        <div className="admin-segmented">
-          {(['en', 'id', 'both'] as AdminLanguageMode[]).map((mode) => (
-            <button className={languageMode === mode ? 'active' : ''} type="button" key={mode} onClick={() => setLanguageMode(mode)}>
-              {mode.toUpperCase()}
-            </button>
-          ))}
-        </div>
+        </select>
+        <select className="admin-control-select" value={languageMode} onChange={(event) => setLanguageMode(event.target.value as AdminLanguageMode)}>
+          <option value="en">EN</option>
+          <option value="id">ID</option>
+          <option value="both">Both</option>
+        </select>
+        <button className={`admin-toggle${onlyIssues ? ' active' : ''}`} type="button" onClick={() => setOnlyIssues((value) => !value)}>
+          Only Issues
+        </button>
+        <button className={`admin-toggle${onlyNotOk ? ' active' : ''}`} type="button" onClick={() => setOnlyNotOk((value) => !value)}>
+          Only Not OK
+        </button>
       </div>
 
       {activeTab === 'issues' ? (
         <IssueList issues={pack.autoIssues} />
-      ) : activeTab === 'overview' ? (
-        <div className="admin-overview-grid">
-          {(['hanzi', 'word', 'sentence', 'pattern'] as AdminItemType[]).map((type) => (
-            <article className="admin-card" key={type}>
-              <h3>{itemTypeLabel(type)}</h3>
-              <p>{pack.items.filter((item) => item.type === type).length} items</p>
-              <button type="button" className="secondary admin-small-btn" onClick={() => setActiveTab(type)}>
-                Open table
-              </button>
-            </article>
-          ))}
-        </div>
       ) : (
         <ItemTable
           items={filteredItems}
@@ -436,9 +561,19 @@ export default function AdminPackDetailPage({ packId }: { packId: string }) {
           saving={saving}
           saveFeedback={saveFeedback}
           onSave={saveReview}
+          onOpen={setSelectedItem}
           highlightedItemId={queryItem}
         />
       )}
+
+      <ItemDetailModal
+        item={selectedItem}
+        review={selectedReview}
+        saving={saving[selectedKey] ?? ''}
+        saveFeedback={saveFeedback[selectedKey] ?? ''}
+        onClose={() => setSelectedItem(null)}
+        onSave={saveReview}
+      />
     </section>
   );
 }
