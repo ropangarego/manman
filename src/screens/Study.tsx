@@ -149,7 +149,7 @@ export function StudyScreen() {
   const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
   const introStatus = useAppStore((state) => state.introStatus);
   const hints = useAppStore((state) => state.settings.hints);
-  const openSheet = useAppStore((state) => state.openSheet);
+  const openReport = useAppStore((state) => state.openReport);
   const setScreen = useAppStore((state) => state.setScreen);
   const completeIntroPack = useAppStore((state) => state.completeIntroPack);
   const syncStudyPosition = useAppStore((state) => state.syncStudyPosition);
@@ -331,7 +331,27 @@ export function StudyScreen() {
                 onPlay={() => speakMandarin(learnItem.title, speechRate)}
               />
             </div>
-            <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
+            <button
+              className="report-menu"
+              type="button"
+              aria-label="Report issue"
+              onClick={() =>
+                openReport({
+                  page: 'study',
+                  packId: learnItem.packId,
+                  itemType:
+                    learnItem.type === 'Hanzi'
+                      ? 'hanzi'
+                      : learnItem.type === 'Words'
+                        ? 'word'
+                        : learnItem.type === 'Sentences'
+                          ? 'sentence'
+                          : 'pattern',
+                  itemId: learnItem.id,
+                  metadata: { title: learnItem.title, step: 'practice' },
+                })
+              }
+            >
               ⋯
             </button>
           </div>
@@ -376,7 +396,27 @@ export function StudyScreen() {
                 onPlay={() => speakMandarin(reviewItem.title, speechRate)}
               />
             </div>
-            <button className="report-menu" type="button" aria-label="Report issue" onClick={() => openSheet('report')}>
+            <button
+              className="report-menu"
+              type="button"
+              aria-label="Report issue"
+              onClick={() =>
+                openReport({
+                  page: 'study',
+                  packId: reviewItem.packId,
+                  itemType:
+                    reviewItem.type === 'Hanzi'
+                      ? 'hanzi'
+                      : reviewItem.type === 'Words'
+                        ? 'word'
+                        : reviewItem.type === 'Sentences'
+                          ? 'sentence'
+                          : 'pattern',
+                  itemId: reviewItem.id,
+                  metadata: { title: reviewItem.title, step: 'review' },
+                })
+              }
+            >
               ⋯
             </button>
           </div>

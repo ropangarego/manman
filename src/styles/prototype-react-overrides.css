@@ -483,3 +483,272 @@ html.dark input:focus-visible,
 html.dark textarea:focus-visible {
   outline: 3px solid rgba(249, 115, 22, 0.42);
 }
+
+.admin-shell {
+  min-height: 100%;
+  width: 100%;
+  padding: 24px;
+  background: var(--app-bg);
+  color: var(--text-main);
+  overflow: auto;
+}
+
+.admin-header,
+.admin-page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-header h1,
+.admin-page h2,
+.admin-card h3,
+.admin-report-detail h3 {
+  margin: 0;
+  font-weight: 800;
+}
+
+.admin-header p,
+.admin-page-head p {
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.admin-back {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0;
+  margin-bottom: 10px;
+  min-height: 32px;
+}
+
+.admin-tabs,
+.admin-segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-tabs button,
+.admin-segmented button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  min-height: 40px;
+  padding: 0 14px;
+  font-weight: 700;
+}
+
+.admin-tabs button.active,
+.admin-segmented button.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.admin-tabs.compact {
+  margin: 18px 0;
+}
+
+.admin-page {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+.admin-table th {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-table td small,
+.admin-status-mini span {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.admin-item-table {
+  min-width: 1320px;
+}
+
+.admin-item-table textarea,
+.admin-report-detail textarea {
+  min-width: 180px;
+  min-height: 72px;
+  resize: vertical;
+}
+
+.admin-table select,
+.admin-report-detail select,
+.admin-controls input,
+.admin-item-table textarea,
+.admin-report-detail textarea {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--text-main);
+  padding: 9px 10px;
+}
+
+.admin-controls {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-controls input {
+  min-height: 44px;
+}
+
+.admin-summary-grid,
+.admin-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.admin-summary-grid span,
+.admin-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 12px;
+}
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 26px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text-main);
+  padding: 4px 9px;
+  margin: 2px 4px 2px 0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.admin-badge.warn {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.admin-badge.danger,
+.admin-badge.open {
+  background: var(--danger-soft);
+  color: #ef4444;
+}
+
+.admin-badge.reviewing {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.admin-badge.fixed {
+  background: var(--success-soft);
+  color: #059669;
+}
+
+.admin-small-btn,
+.admin-export-btn {
+  min-height: 38px;
+}
+
+.admin-highlight-row {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.admin-error {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  background: var(--danger-soft);
+  color: #ef4444;
+  padding: 10px 12px;
+}
+
+.admin-reports-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 16px;
+}
+
+.admin-report-detail {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  align-self: start;
+}
+
+.admin-report-detail dl {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.admin-report-detail dt {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-report-detail dd {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.admin-report-detail pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .admin-shell {
+    padding: 18px;
+  }
+
+  .admin-header,
+  .admin-page-head,
+  .admin-reports-layout {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .admin-report-detail {
+    grid-row: 1;
+  }
+}

@@ -17,11 +17,12 @@ import { AudioButton } from './AudioButton';
 import { Button } from './Button';
 import { OptionSheet, type SheetOption } from './OptionSheet';
 import { PasswordField } from './PasswordField';
-import { ReportIssueSheet } from '../study/ReportIssueSheet';
+import { ReportIssueModal } from '../report/ReportIssueModal';
 
 export function GlobalSheets() {
   const { language, t } = useTranslation();
   const activeSheet = useAppStore((state) => state.activeSheet);
+  const reportContext = useAppStore((state) => state.reportContext);
   const closeSheet = useAppStore((state) => state.closeSheet);
   const chooseSheetValue = useAppStore((state) => state.chooseSheetValue);
   const libraryStage = useAppStore((state) => state.libraryStage);
@@ -140,7 +141,7 @@ export function GlobalSheets() {
   };
 
   if (activeSheet === 'report') {
-    return <ReportIssueSheet open onClose={closeSheet} />;
+    return <ReportIssueModal open context={reportContext} onClose={closeSheet} />;
   }
 
   if (activeSheet === 'logout') {

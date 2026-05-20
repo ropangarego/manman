@@ -15,6 +15,7 @@ export interface ProfileRow {
   id: string;
   email: string | null;
   display_name: string | null;
+  role: 'user' | 'admin';
   onboarded: boolean;
   language: DbLanguage;
   script: DbScript;
@@ -58,6 +59,7 @@ export type ProfileUpdate = Partial<
 export interface AppProfileState {
   authName: string;
   authEmail: string;
+  role: 'user' | 'admin';
   onboarded: boolean;
   scriptChoice: ScriptChoice;
   sessionSize: SessionSize;
@@ -72,6 +74,7 @@ const profileColumns = [
   'id',
   'email',
   'display_name',
+  'role',
   'onboarded',
   'language',
   'script',
@@ -174,6 +177,7 @@ export function profileRowToAppState(row: ProfileRow, fallbackUser?: SupabaseUse
   return {
     authName: row.display_name?.trim() || (fallbackUser ? displayNameFromUser(fallbackUser) : 'Learner'),
     authEmail: row.email?.trim() || fallbackUser?.email || '',
+    role: row.role === 'admin' ? 'admin' : 'user',
     onboarded: row.onboarded === true,
     scriptChoice: scriptFromDb(row.script),
     sessionSize: sessionSizeFromDb(row.session_size),

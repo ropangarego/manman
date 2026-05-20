@@ -7,6 +7,7 @@ import { speakMandarin, speechRateForSpeed } from '../../utils/audio';
 import { Button } from '../ui/Button';
 import { AudioButton } from '../ui/AudioButton';
 import { ToneDots } from '../study/ToneDots';
+import { ReportIssueButton } from '../report/ReportIssueButton';
 
 interface LibraryDetailProps {
   item: ContentItem;
@@ -28,7 +29,6 @@ function sectionTitle(item: ContentItem, language: 'English' | 'Indonesian') {
 
 export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) {
   const { language, t } = useTranslation();
-  const openSheet = useAppStore((state) => state.openSheet);
   const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
   const speechRate = speechRateForSpeed(speechSpeed);
   const isPattern = item.type === 'Patterns';
@@ -121,9 +121,24 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
         <p>{item.nextReview}</p>
       </section>
 
-      <button className="report-link" type="button" onClick={() => openSheet('report')}>
-        {t('library.report')}
-      </button>
+      <ReportIssueButton
+        className="report-link"
+        label={t('library.report')}
+        context={{
+          page: 'library',
+          packId: item.packId,
+          itemId: item.id,
+          itemType:
+            item.type === 'Hanzi'
+              ? 'hanzi'
+              : item.type === 'Words'
+                ? 'word'
+                : item.type === 'Sentences'
+                  ? 'sentence'
+                  : 'pattern',
+          metadata: { title: item.title, meaning: item.meaning },
+        }}
+      />
     </aside>
   );
 }

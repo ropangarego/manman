@@ -46,6 +46,14 @@ export type SheetType =
   | 'report'
   | 'logout';
 
+export interface ReportContext {
+  page: string;
+  packId?: string;
+  itemType?: 'hanzi' | 'word' | 'sentence' | 'pattern';
+  itemId?: string;
+  metadata?: Record<string, unknown>;
+}
+
 export interface SettingsState {
   pinyinDisplay: PinyinDisplay;
   reviewStyle: ReviewStyle;
@@ -273,6 +281,7 @@ function toggleToast(key: ToggleSettingKey, enabled: boolean, language: AppLangu
 
 interface AppState {
   signedIn: boolean;
+  role: 'user' | 'admin';
   authMode: AuthMode;
   authName: string;
   authEmail: string;
@@ -294,6 +303,7 @@ interface AppState {
   selectedItemId: string | null;
   libraryLimit: number;
   activeSheet: SheetType | null;
+  reportContext: ReportContext | null;
   toast: string;
   settings: SettingsState;
   setAuthMode: (mode: AuthMode) => void;
@@ -312,6 +322,7 @@ interface AppState {
   completeIntroPack: () => void;
   syncStudyPosition: (sessionIndex: number) => void;
   openSheet: (sheet: SheetType) => void;
+  openReport: (context: ReportContext) => void;
   closeSheet: () => void;
   chooseSheetValue: (sheet: SheetType, value: string) => void;
   setLibrarySearch: (search: string) => void;
@@ -341,6 +352,7 @@ export const useAppStore = create<AppState>()(
   persist<AppState, [], [], PersistedAppState>(
     (set) => ({
   signedIn: false,
+  role: 'user',
   authMode: 'signin',
   authName: '',
   authEmail: '',
@@ -362,6 +374,7 @@ export const useAppStore = create<AppState>()(
   selectedItemId: null,
   libraryLimit: 5,
   activeSheet: null,
+  reportContext: null,
   toast: '',
   settings: {
     ...DEFAULT_SETTINGS,
@@ -371,6 +384,7 @@ export const useAppStore = create<AppState>()(
   completeAuth: ({ mode, name, email }) =>
     set((state) => ({
       signedIn: true,
+      role: 'user',
       authMode: mode,
       authName: name?.trim() || email.split('@')[0] || 'Learner',
       authEmail: email.trim(),
@@ -379,6 +393,7 @@ export const useAppStore = create<AppState>()(
   syncAuthenticatedUser: ({ name, email }) =>
     set({
       signedIn: true,
+      role: 'user',
       authMode: 'signin',
       authName: name?.trim() || email.split('@')[0] || 'Learner',
       authEmail: email.trim(),
@@ -389,6 +404,7 @@ export const useAppStore = create<AppState>()(
 
       return {
         signedIn: true,
+        role: profile.role,
         authMode: 'signin',
         authName: profile.authName || state.authName,
         authEmail: profile.authEmail || state.authEmail,
@@ -405,6 +421,7 @@ export const useAppStore = create<AppState>()(
   syncSignedOut: () =>
     set({
       signedIn: false,
+      role: 'user',
       authMode: 'signin',
       authName: '',
       authEmail: '',
@@ -530,6 +547,7 @@ export const useAppStore = create<AppState>()(
       return { currentPackId };
     }),
   openSheet: (activeSheet) => set({ activeSheet }),
+  openReport: (reportContext) => set({ activeSheet: 'report', reportContext }),
   closeSheet: () => set({ activeSheet: null }),
   chooseSheetValue: (sheet, value) =>
     set((state) => {
@@ -703,6 +721,7 @@ export const useAppStore = create<AppState>()(
     set({
       onboarded: false,
       signedIn: false,
+      role: 'user',
       authMode: 'signin',
       authName: '',
       authEmail: '',
@@ -723,6 +742,7 @@ export const useAppStore = create<AppState>()(
       selectedItemId: null,
       libraryLimit: 5,
       activeSheet: null,
+      reportContext: null,
       settings: { ...DEFAULT_SETTINGS },
       toast: translate('English', 'toast.logout'),
     });

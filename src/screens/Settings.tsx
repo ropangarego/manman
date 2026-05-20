@@ -5,6 +5,7 @@ import { PageHeader } from '../components/shell/PageHeader';
 import { SettingRow } from '../components/settings/SettingRow';
 import { SettingsGroup } from '../components/settings/SettingsGroup';
 import { useAppStore } from '../stores/appStore';
+import { navigateTo } from '../utils/navigation';
 
 export function SettingsScreen() {
   const { language, t } = useTranslation();
@@ -12,8 +13,10 @@ export function SettingsScreen() {
   const scriptChoice = useAppStore((state) => state.scriptChoice);
   const authName = useAppStore((state) => state.authName);
   const authEmail = useAppStore((state) => state.authEmail);
+  const role = useAppStore((state) => state.role);
   const settings = useAppStore((state) => state.settings);
   const openSheet = useAppStore((state) => state.openSheet);
+  const openReport = useAppStore((state) => state.openReport);
   const toggleSetting = useAppStore((state) => state.toggleSetting);
 
   return (
@@ -136,13 +139,30 @@ export function SettingsScreen() {
             />
           </SettingsGroup>
 
-          <SettingsGroup title={t('settings.account')}>
+          {role === 'admin' ? (
+            <SettingsGroup title="Developer / Admin">
+              <SettingRow title="Admin Panel" subtitle="Review content QA and user reports." onClick={() => navigateTo('/admin/packs')} />
+            </SettingsGroup>
+          ) : null}
+
+          <SettingsGroup title="Support">
+            <SettingRow
+              title="Report an issue"
+              subtitle="Send feedback about the app or your account."
+              onClick={() => openReport({ page: 'settings', metadata: { area: 'settings' } })}
+            />
+          </SettingsGroup>
+
+          <SettingsGroup title="Danger Zone">
             <SettingRow
               danger
               title={t('settings.resetLearningProgress')}
               subtitle={t('settings.resetLearningProgressSub')}
               onClick={() => openSheet('resetLearningProgress')}
             />
+          </SettingsGroup>
+
+          <SettingsGroup title={t('settings.account')}>
             <SettingRow
               danger
               title={t('common.logout')}
