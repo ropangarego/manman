@@ -135,6 +135,7 @@ export interface AdminPackItem {
   literal: string;
   components: string;
   mnemonic: string;
+  mnemonicId: string;
   pattern: string;
   breakdown: string;
   examples: string;
@@ -229,6 +230,7 @@ function validateItem(item: AdminPackItem, packScopedIds: Set<string>) {
     if (!item.meaningEn) addIssue(issues, item, 'Missing meaning_en', 'error');
     if (!item.meaningId) addIssue(issues, item, 'Missing meaning_id', 'error');
     if (!item.mnemonic) addIssue(issues, item, 'Missing mnemonic');
+    if (item.mnemonic && !item.mnemonicId) addIssue(issues, item, 'Missing mnemonic_id');
     if (!Array.isArray(raw.accepted_meanings) || raw.accepted_meanings.length === 0) {
       addIssue(issues, item, 'Missing accepted meanings');
     }
@@ -246,6 +248,7 @@ function validateItem(item: AdminPackItem, packScopedIds: Set<string>) {
     if (!item.meaningEn) addIssue(issues, item, 'Missing meaning_en', 'error');
     if (!item.meaningId) addIssue(issues, item, 'Missing meaning_id', 'error');
     if (!safeText(raw.explanation)) addIssue(issues, item, 'Missing explanation');
+    if (safeText(raw.explanation) && !safeText(raw.explanation_id)) addIssue(issues, item, 'Missing explanation_id');
     if (!Array.isArray(raw.examples) || raw.examples.length === 0) {
       addIssue(issues, item, 'Pattern missing examples', 'error');
     }
@@ -267,6 +270,7 @@ function learningItem(packId: string, type: AdminItemType, raw: RawLearningItem)
     literal: safeText(raw.literal_meaning),
     components: componentsText(raw),
     mnemonic: safeText(raw.mnemonic),
+    mnemonicId: safeText(raw.mnemonic_id),
     pattern: (raw.pattern_ids ?? []).join(' · '),
     breakdown: componentsText(raw),
     examples: readableExamplesText(raw.examples),
@@ -288,6 +292,7 @@ function patternItem(packId: string, raw: RawPattern): AdminPackItem {
     literal: '',
     components: '',
     mnemonic: safeText(raw.explanation),
+    mnemonicId: safeText(raw.explanation_id),
     pattern: safeText(raw.structure),
     breakdown: safeText(raw.explanation),
     examples: exampleText(raw),

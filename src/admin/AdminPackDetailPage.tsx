@@ -60,6 +60,7 @@ function matchesSearch(item: AdminPackItem, note: string, search: string) {
     item.meaningEn,
     item.meaningId,
     item.mnemonic,
+    item.mnemonicId,
     item.literal,
     item.components,
     item.pattern,
@@ -437,7 +438,8 @@ function ItemDetailModal({
           <DetailRow label="Meaning ID" value={item.meaningId} />
           <DetailRow label="Literal / Pattern" value={item.literal || item.pattern} />
           <DetailRow label="Components / Breakdown" value={item.components || item.breakdown} />
-          <DetailRow label="Mnemonic / Explanation" value={item.mnemonic} />
+          <DetailRow label="Mnemonic EN" value={item.mnemonic} />
+          <DetailRow label="Mnemonic ID" value={item.mnemonicId} />
         </dl>
 
         <ExamplesBlock item={item} />
