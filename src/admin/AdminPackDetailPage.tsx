@@ -298,6 +298,103 @@ function DetailRow({ label, value }: { label: string; value: string }) {
   );
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function textField(source: Record<string, unknown>, fields: string[]) {
+  for (const field of fields) {
+    const value = source[field];
+    if (typeof value === 'string' && value.trim()) return value.trim();
+  }
+  return '';
+}
+
+function stringList(value: unknown) {
+  if (Array.isArray(value)) return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0);
+  if (typeof value === 'string' && value.trim()) return [value.trim()];
+  return [];
+}
+
+function pairedList(primary: unknown, secondary: unknown) {
+  const first = stringList(primary);
+  const second = stringList(secondary);
+  const max = Math.max(first.length, second.length);
+  return Array.from({ length: max }, (_, index) => [first[index], second[index]].filter(Boolean).join(' / ')).filter(Boolean);
+}
+
+function pinyinSyllableList(value: unknown) {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((syllable) => {
+      if (!isRecord(syllable)) return '';
+      const text = textField(syllable, ['text', 'pinyin', 'syllable']);
+      const tone = syllable.tone;
+      const toneText = typeof tone === 'number' || typeof tone === 'string' ? `tone ${tone}` : '';
+      return [text, toneText].filter(Boolean).join(' - ');
+    })
+    .filter(Boolean);
+}
+
+function StructuredList({ title, values, emptyText }: { title: string; values: string[]; emptyText?: string }) {
+  if (values.length === 0 && !emptyText) return null;
+  return (
+    <section className="admin-detail-section">
+      <h4>{title}</h4>
+      {values.length > 0 ? (
+        <ul className="admin-readable-list">
+          {values.map((value, index) => (
+            <li key={`${value}-${index}`}>{value}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className="admin-muted">{emptyText}</p>
+      )}
+    </section>
+  );
+}
+
+function ExamplesBlock({ item }: { item: AdminPackItem }) {
+  const raw = item.raw as Record<string, unknown>;
+  const rawExamples = raw.examples;
+  const examples = Array.isArray(rawExamples) ? rawExamples : typeof rawExamples === 'string' ? [rawExamples] : [];
+
+  return (
+    <section className="admin-detail-section">
+      <h4>Examples</h4>
+      {examples.length === 0 ? (
+        <p className="admin-muted">No examples.</p>
+      ) : (
+        <ol className="admin-example-list">
+          {examples.map((example, index) => {
+            if (typeof example === 'string') {
+              return <li key={`${example}-${index}`}>{example}</li>;
+            }
+
+            if (!isRecord(example)) {
+              return <li key={index}>Unsupported example format.</li>;
+            }
+
+            const sentence = textField(example, ['simplified', 'traditional', 'text', 'sentence', 'content']);
+            const pinyin = textField(example, ['pinyin']);
+            const meaningEn = textField(example, ['meaning', 'meaning_en', 'translation']);
+            const meaningId = textField(example, ['meaning_id', 'translation_id']);
+
+            return (
+              <li key={`${sentence || meaningEn || index}-${index}`}>
+                {sentence ? <strong>{sentence}</strong> : null}
+                {pinyin ? <span>Pinyin: {pinyin}</span> : null}
+                {meaningEn ? <span>EN: {meaningEn}</span> : null}
+                {meaningId ? <span>ID: {meaningId}</span> : null}
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </section>
+  );
+}
+
 function ItemDetailModal({
   item,
   review,
@@ -324,6 +421,10 @@ function ItemDetailModal({
   if (!item) return null;
 
   const hasIssues = item.autoIssues.length > 0;
+  const raw = item.raw as Record<string, unknown>;
+  const acceptedMeanings = pairedList(raw.accepted_meanings, raw.accepted_meanings_id);
+  const blockedMeanings = pairedList(raw.blocked_meanings, raw.blocked_meanings_id);
+  const pinyinSyllables = pinyinSyllableList(raw.pinyin_syllables);
 
   return (
     <OptionSheet open={Boolean(item)} title={`${item.content || item.id} QA`} sub={`${itemTypeLabel(item.type)} - ${item.id}`} className="admin-item-sheet" onClose={onClose}>
@@ -337,8 +438,12 @@ function ItemDetailModal({
           <DetailRow label="Literal / Pattern" value={item.literal || item.pattern} />
           <DetailRow label="Components / Breakdown" value={item.components || item.breakdown} />
           <DetailRow label="Mnemonic / Explanation" value={item.mnemonic} />
-          <DetailRow label="Examples" value={item.examples} />
         </dl>
+
+        <ExamplesBlock item={item} />
+        <StructuredList title="Accepted meanings" values={acceptedMeanings} />
+        <StructuredList title="Blocked meanings" values={blockedMeanings} />
+        <StructuredList title="Pinyin syllables" values={pinyinSyllables} />
 
         <section className="admin-detail-section">
           <h4>Validation</h4>

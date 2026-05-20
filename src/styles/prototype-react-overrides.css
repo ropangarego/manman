@@ -823,6 +823,34 @@ html.dark textarea:focus-visible {
   list-style: none;
 }
 
+.admin-example-list,
+.admin-readable-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.admin-example-list li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-example-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.admin-example-list strong,
+.admin-example-list span {
+  display: block;
+}
+
+.admin-example-list span {
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
 .admin-field {
   display: grid;
   gap: 6px;

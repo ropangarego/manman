@@ -79,6 +79,8 @@ interface RawLearningItem {
   mnemonic_id?: string | null;
   accepted_meanings?: string[];
   accepted_meanings_id?: string[];
+  blocked_meanings?: string[];
+  blocked_meanings_id?: string[];
   components?: Array<{ id?: string; character?: string; meaning?: string; meaning_id?: string | null }> | null;
   hanzi_ids?: string[] | null;
   focus_word_ids?: string[] | null;
@@ -182,6 +184,24 @@ function exampleText(item: RawPattern) {
     .join(' · ');
 }
 
+function readableExampleText(example: unknown) {
+  if (typeof example === 'string') return example;
+  if (!example || typeof example !== 'object') return '';
+  const value = example as Record<string, unknown>;
+  return [
+    safeText(value.simplified) || safeText(value.traditional),
+    safeText(value.pinyin),
+    safeText(value.meaning) || safeText(value.meaning_en) || safeText(value.translation),
+    safeText(value.meaning_id) || safeText(value.translation_id),
+  ]
+    .filter(Boolean)
+    .join(' / ');
+}
+
+function readableExamplesText(examples: unknown[] | null | undefined) {
+  return (examples ?? []).map(readableExampleText).filter(Boolean).join(' · ');
+}
+
 function addIssue(issues: AutoIssue[], item: AdminPackItem, issue: string, severity: AutoIssueSeverity = 'warning') {
   issues.push({
     packId: item.packId,
@@ -249,7 +269,7 @@ function learningItem(packId: string, type: AdminItemType, raw: RawLearningItem)
     mnemonic: safeText(raw.mnemonic),
     pattern: (raw.pattern_ids ?? []).join(' · '),
     breakdown: componentsText(raw),
-    examples: (raw.examples ?? []).map((example) => (typeof example === 'string' ? example : JSON.stringify(example))).join(' · '),
+    examples: readableExamplesText(raw.examples),
     raw,
     autoIssues: [],
   };
