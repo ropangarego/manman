@@ -199,6 +199,10 @@ export function StudyScreen() {
   const practice = learnItem ? studyQuestionForItem(learnItem, t('study.quickPractice'), true, language) : null;
   const review = reviewItem ? studyQuestionForItem(reviewItem, t('study.reviewDue'), false, language) : null;
   const totalTasks = session.learnItems.length * 2 + session.reviewItems.length;
+  const hasNewLessons = session.learnItems.length > 0;
+  const hasDueReviews = session.reviewItems.length > 0;
+  const hasStudyTasks = totalTasks > 0;
+  const firstStudyStep = hasNewLessons ? 'learn' : hasDueReviews ? 'review' : 'summary';
   const completed = introActive
     ? step === 'learn'
       ? Math.min(learnIndex, introCards.length)
@@ -287,13 +291,27 @@ export function StudyScreen() {
             </p>
             <p>{session.introDescription}</p>
           </div>
+          <div className="session-state-list">
+            {!hasNewLessons ? (
+              <div className="session-state-note">
+                <b>{t('study.noNewLessons')}</b>
+                <small>{t('study.noNewLessonsSub')}</small>
+              </div>
+            ) : null}
+            {!hasDueReviews ? (
+              <div className="session-state-note">
+                <b>{t('study.noReviewsToday')}</b>
+                <small>{t('study.noReviewsTodaySub')}</small>
+              </div>
+            ) : null}
+          </div>
           <div className="intro-stats">
             <StatCard value={session.learnItems.length} label={t('study.new')} />
             <StatCard value={session.reviewItems.length} label={t('study.reviews')} />
             <StatCard value={plan.duration.replace('~', '')} label={t('home.duration')} />
           </div>
-          <Button type="button" onClick={() => setStep('learn')}>
-            {t('study.start')}
+          <Button type="button" onClick={() => (hasStudyTasks ? setStep(firstStudyStep) : setScreen('home'))}>
+            {hasStudyTasks ? t('study.start') : t('study.done')}
           </Button>
         </Card>
       ) : null}
@@ -483,7 +501,20 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {!introActive && step === 'summary' ? (
+      {!introActive && step === 'summary' && !hasStudyTasks ? (
+        <Card className="study-card">
+          <span className="pill">{t('study.noReviewsToday')}</span>
+          <div>
+            <h3>{t('study.noStudyTasksTitle')}</h3>
+            <p>{t('study.noStudyTasksSub')}</p>
+          </div>
+          <Button type="button" onClick={() => setScreen('home')}>
+            {t('study.done')}
+          </Button>
+        </Card>
+      ) : null}
+
+      {!introActive && step === 'summary' && hasStudyTasks ? (
         <Card className="study-card">
           <span className="pill jade">{t('study.complete')}</span>
           <div>

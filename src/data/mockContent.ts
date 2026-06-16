@@ -823,9 +823,11 @@ function plannedItemsForPack(packEntry: PackEntry) {
   const plannedItems =
     packEntry.raw.study_flow.new_items
       ?.map((id) => contentItemById.get(id))
-      .filter((item): item is ContentItem => Boolean(item)) ?? [];
+      .filter((item): item is ContentItem => {
+        return item !== undefined && item.reviewable && item.type !== 'Patterns';
+      }) ?? [];
 
-  return plannedItems.length > 0 ? plannedItems : packEntry.items.filter((item) => item.type === 'Words');
+  return plannedItems.length > 0 ? plannedItems : packEntry.items.filter((item) => item.type === 'Words' && item.reviewable);
 }
 
 export function nextSessionIndexForProgress(sessionIndex: number, progress: ProgressLookup) {

@@ -87,7 +87,7 @@ export const useProgressStore = create<ProgressState>()(
       ...resetState(),
       recordLearning: (item, correctFirstTry) =>
         set((state) => {
-          if (state.items[item.id]) {
+          if (state.items[item.id] || !item.reviewable || item.type === 'Patterns') {
             return state;
           }
 
@@ -122,8 +122,12 @@ export const useProgressStore = create<ProgressState>()(
         }),
       recordAnswer: (item, correct) =>
         set((state) => {
+          if (!state.items[item.id]) {
+            return state;
+          }
+
           const now = new Date();
-          const current = state.items[item.id] ?? initialProgressForItem(item, now);
+          const current = state.items[item.id];
           const nextStage = nextSrsStage(current.stage, correct);
           const dateKey = todayKey(now);
           const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey);

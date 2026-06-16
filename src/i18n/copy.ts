@@ -129,6 +129,12 @@ type CopyKey =
   | 'study.reviews'
   | 'study.start'
   | 'study.practiceThis'
+  | 'study.noNewLessons'
+  | 'study.noNewLessonsSub'
+  | 'study.noReviewsToday'
+  | 'study.noReviewsTodaySub'
+  | 'study.noStudyTasksTitle'
+  | 'study.noStudyTasksSub'
   | 'study.tip'
   | 'study.tipText'
   | 'study.buildGreeting'
@@ -429,6 +435,21 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'study.reviews': { English: 'Reviews', Indonesian: 'Review' },
   'study.start': { English: 'Start', Indonesian: 'Mulai' },
   'study.practiceThis': { English: 'Practice this', Indonesian: 'Latih ini' },
+  'study.noNewLessons': { English: 'No new lessons right now', Indonesian: 'Belum ada pelajaran baru sekarang' },
+  'study.noNewLessonsSub': {
+    English: 'You have introduced all new items in this pack.',
+    Indonesian: 'Kamu sudah mengenal semua item baru di paket ini.',
+  },
+  'study.noReviewsToday': { English: 'No reviews today', Indonesian: 'Tidak ada review hari ini' },
+  'study.noReviewsTodaySub': {
+    English: 'Learn new items now, then reviews will appear when they are due.',
+    Indonesian: 'Pelajari item baru sekarang, lalu review akan muncul saat jatuh tempo.',
+  },
+  'study.noStudyTasksTitle': { English: 'Nothing due right now', Indonesian: 'Belum ada yang perlu dikerjakan' },
+  'study.noStudyTasksSub': {
+    English: 'There are no new lessons or due reviews in this pack right now.',
+    Indonesian: 'Belum ada pelajaran baru atau review jatuh tempo di paket ini.',
+  },
   'study.tip': { English: 'Tip', Indonesian: 'Tip' },
   'study.tipText': {
     English: 'Colored dots under pinyin show the tone of each syllable.',

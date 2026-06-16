@@ -13,9 +13,9 @@ export function StudyProgress({
   completedLabel = 'completed',
   sessionLabel = 'Study session',
 }: StudyProgressProps) {
-  const safeTotal = Math.max(total, 1);
-  const safeCompleted = Math.min(completed, safeTotal);
-  const percent = Math.round((safeCompleted / safeTotal) * 100);
+  const safeTotal = Math.max(total, 0);
+  const safeCompleted = Math.min(Math.max(completed, 0), safeTotal);
+  const percent = safeTotal > 0 ? Math.round((safeCompleted / safeTotal) * 100) : 0;
 
   return (
     <section className="study-top" aria-label="Study progress">

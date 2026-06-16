@@ -167,6 +167,31 @@
   gap:14px;
 }
 
+.session-state-list{
+  display:grid;
+  gap:8px;
+}
+
+.session-state-note{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface-2);
+  padding:10px 12px;
+  display:grid;
+  gap:3px;
+}
+
+.session-state-note b{
+  font-size:13px;
+  color:var(--ink);
+}
+
+.session-state-note small{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.35;
+}
+
 .intro-stats{
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
   gap:8px;
