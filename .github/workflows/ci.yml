@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-test-build:
+    name: Validate, test, build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate pack index
+        run: npm run packs:index
+
+      - name: Ensure generated files are committed
+        run: git diff --exit-code -- src/data/packs/index.ts
+
+      - name: Validate content packs
+        run: npm run validate:packs
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build
