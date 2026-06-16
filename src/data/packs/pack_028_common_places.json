@@ -1,0 +1,958 @@
+{
+  "pack": {
+    "id": "pack_028_common_places",
+    "title": "Common Places",
+    "title_id": "Tempat Umum",
+    "subtitle": "Name common places like home, school, restaurant, shop, and hospital.",
+    "subtitle_id": "Menyebut tempat umum seperti rumah, sekolah, restoran, toko, dan rumah sakit.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "places",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 28,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Name common places like home, school, restaurant, shop, and hospital.",
+    "learning_goal_id": "Menyebut tempat umum seperti rumah, sekolah, restoran, toko, dan rumah sakit.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_dian_shop",
+      "type": "hanzi",
+      "simplified": "店",
+      "traditional": "店",
+      "meaning": "shop",
+      "meaning_id": "toko",
+      "accepted_meanings": [
+        "shop"
+      ],
+      "accepted_meanings_id": [
+        "toko"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "diàn",
+      "pinyin_numbered": "dian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "店",
+          "text": "diàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A shelter 广 with occupants — a *shop*, a place people occupy for business. diàn ≈ \"dyen!\" sharp. Tone 4 drops, like stepping into a shop.",
+      "mnemonic_id": "Tempat berlindung 广 dengan penghuninya — sebuah *toko*, tempat orang berjualan. diàn ≈ \"dyen!\" Nada 4 turun tajam, kayak masuk ke toko.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "商店在哪里？",
+          "pinyin": "Shāng diàn zài nǎ lǐ?",
+          "meaning": "Where is the shop?",
+          "meaning_id": "Tokonya di mana?"
+        },
+        {
+          "simplified": "饭店很好。",
+          "pinyin": "Fàn diàn hěn hǎo.",
+          "meaning": "The restaurant is good.",
+          "meaning_id": "Restorannya bagus."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "place",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_fan_restaurant",
+      "type": "hanzi",
+      "simplified": "饭",
+      "traditional": "飯",
+      "meaning": "meal / rice",
+      "meaning_id": "makanan / nasi",
+      "accepted_meanings": [
+        "meal / rice"
+      ],
+      "accepted_meanings_id": [
+        "makanan / nasi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fàn",
+      "pinyin_numbered": "fan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "饭",
+          "text": "fàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — *rice / meal*. In 饭店 it's the meal place — restaurant.",
+      "mnemonic_id": "Sudah dipelajari — *nasi / makan*. Dalam 饭店 berarti tempat makan — restoran.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "饭店在这里。",
+          "pinyin": "Fàn diàn zài zhè lǐ.",
+          "meaning": "The restaurant is here.",
+          "meaning_id": "Restorannya di sini."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "place",
+        "food",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_guan",
+      "type": "hanzi",
+      "simplified": "馆",
+      "traditional": "館",
+      "meaning": "building / place",
+      "meaning_id": "gedung / tempat",
+      "accepted_meanings": [
+        "building / place"
+      ],
+      "accepted_meanings_id": [
+        "gedung / tempat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "guǎn",
+      "pinyin_numbered": "guan3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "馆",
+          "text": "guǎn",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A building 食 that feeds and hosts — a *hall*, *restaurant*, or *venue*. guǎn ≈ \"gwahn\" dipping then rising. Tone 3 like a welcoming place.",
+      "mnemonic_id": "Gedung 食 yang memberi makan dan menjamu — sebuah *aula*, *restoran*, atau *tempat*. guǎn ≈ \"gwan\" turun terus naik. Nada 3 kayak tempat yang ramah.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "餐厅在哪里？",
+          "pinyin": "Cān tīng zài nǎ lǐ?",
+          "meaning": "Where is the restaurant?",
+          "meaning_id": "Restorannya di mana?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "place",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yi_medical",
+      "type": "hanzi",
+      "simplified": "医",
+      "traditional": "醫",
+      "meaning": "medical",
+      "meaning_id": "medis",
+      "accepted_meanings": [
+        "medical"
+      ],
+      "accepted_meanings_id": [
+        "medis"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī",
+      "pinyin_numbered": "yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "医",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Arrows in a quiver, tools of healing — *medicine*, the character for medical care. yī ≈ \"ee\" flat. Tone 1 high and steady, like a doctor's calm voice.",
+      "mnemonic_id": "Anak panah dalam tabung, alat penyembuhan — *kedokteran*, karakter untuk perawatan medis. yī ≈ \"yi\" flat. Nada 1 tinggi rata, kayak suara dokter yang tenang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "医院在哪里？",
+          "pinyin": "Yī yuàn zài nǎ lǐ?",
+          "meaning": "Where is the hospital?",
+          "meaning_id": "Rumah sakitnya di mana?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "place",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yuan_hospital",
+      "type": "hanzi",
+      "simplified": "院",
+      "traditional": "院",
+      "meaning": "institution / courtyard",
+      "meaning_id": "institusi / halaman",
+      "accepted_meanings": [
+        "institution / courtyard"
+      ],
+      "accepted_meanings_id": [
+        "institusi / halaman"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuàn",
+      "pinyin_numbered": "yuan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "院",
+          "text": "yuàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A walled compound 阝— an *institution*, a place enclosed for a purpose. yuàn ≈ \"ywhen!\" sharp. Tone 4 drops, like entering a gated compound.",
+      "mnemonic_id": "Kompleks bertembok 阝— sebuah *lembaga*, tempat yang terpagari untuk suatu tujuan. yuàn ≈ \"ywen!\" Nada 4 turun tajam, kayak masuk ke kompleks berpagar.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "医院很大。",
+          "pinyin": "Yī yuàn hěn dà.",
+          "meaning": "The hospital is very big.",
+          "meaning_id": "Rumah sakitnya sangat besar."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "place",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_chang_place",
+      "type": "hanzi",
+      "simplified": "场",
+      "traditional": "場",
+      "meaning": "place / field",
+      "meaning_id": "tempat / lapangan",
+      "accepted_meanings": [
+        "place / field"
+      ],
+      "accepted_meanings_id": [
+        "tempat / lapangan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chǎng",
+      "pinyin_numbered": "chang3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "场",
+          "text": "chǎng",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Earth 土 spread out wide — a *field*, a large open *place*. chǎng ≈ \"chahng\" dipping then rising. Tone 3 like the wide open space.",
+      "mnemonic_id": "Tanah 土 yang tersebar luas — sebuah *lapangan*, sebuah *tempat* yang luas. chǎng ≈ \"chang\" turun terus naik. Nada 3 kayak ruang terbuka yang luas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "机场在哪里？",
+          "pinyin": "Jī chǎng zài nǎ lǐ?",
+          "meaning": "Where is the airport?",
+          "meaning_id": "Bandara di mana?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "place",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_shangdian",
+      "type": "word",
+      "simplified": "商店",
+      "traditional": "商店",
+      "meaning": "shop",
+      "meaning_id": "toko",
+      "accepted_meanings": [
+        "shop"
+      ],
+      "accepted_meanings_id": [
+        "toko"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shāng diàn",
+      "pinyin_numbered": "shang1 dian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "商",
+          "text": "shāng",
+          "tone": 1
+        },
+        {
+          "hanzi": "店",
+          "text": "diàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_dian_shop"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "商 commerce + 店 shop — *shop / store*, where commerce happens.",
+      "mnemonic_id": "商 dagang + 店 toko — *toko*, tempat perdagangan berlangsung.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "商店在哪里？",
+          "pinyin": "Shāng diàn zài nǎ lǐ?",
+          "meaning": "Where is the shop?",
+          "meaning_id": "Tokonya di mana?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_fandian",
+      "type": "word",
+      "simplified": "饭店",
+      "traditional": "飯店",
+      "meaning": "restaurant / hotel",
+      "meaning_id": "restoran / hotel",
+      "accepted_meanings": [
+        "restaurant / hotel"
+      ],
+      "accepted_meanings_id": [
+        "restoran / hotel"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fàn diàn",
+      "pinyin_numbered": "fan4 dian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "饭",
+          "text": "fàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "店",
+          "text": "diàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_fan",
+        "hanzi_dian_shop"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "饭 meal + 店 place — *restaurant* (also hotel in some contexts).",
+      "mnemonic_id": "饭 makan + 店 tempat — *restoran* (juga bisa berarti hotel dalam beberapa konteks).",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "饭店 can mean restaurant or hotel. 餐厅 is more specifically a restaurant.",
+      "usage_note_id": "饭店 bisa berarti restoran atau hotel. 餐厅 lebih spesifik untuk restoran.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "饭店在这里。",
+          "pinyin": "Fàn diàn zài zhè lǐ.",
+          "meaning": "The restaurant is here.",
+          "meaning_id": "Restorannya di sini."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_canting",
+      "type": "word",
+      "simplified": "餐厅",
+      "traditional": "餐廳",
+      "meaning": "restaurant",
+      "meaning_id": "restoran",
+      "accepted_meanings": [
+        "restaurant"
+      ],
+      "accepted_meanings_id": [
+        "restoran"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "cān tīng",
+      "pinyin_numbered": "can1 ting1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "餐",
+          "text": "cān",
+          "tone": 1
+        },
+        {
+          "hanzi": "厅",
+          "text": "tīng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1",
+      "hanzi_ids": [],
+      "part_of_speech": "noun",
+      "mnemonic": "餐 meal + 厅 hall — *restaurant*, the dining hall.",
+      "mnemonic_id": "餐 makan + 厅 aula — *restoran*, aula makan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我在餐厅。",
+          "pinyin": "Wǒ zài cān tīng.",
+          "meaning": "I'm at the restaurant.",
+          "meaning_id": "Aku di restoran."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yiyuan",
+      "type": "word",
+      "simplified": "医院",
+      "traditional": "醫院",
+      "meaning": "hospital",
+      "meaning_id": "rumah sakit",
+      "accepted_meanings": [
+        "hospital"
+      ],
+      "accepted_meanings_id": [
+        "rumah sakit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī yuàn",
+      "pinyin_numbered": "yi1 yuan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "医",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "院",
+          "text": "yuàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_yi_medical",
+        "hanzi_yuan_hospital"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "医 medical + 院 institution — *hospital*, the medical institution.",
+      "mnemonic_id": "医 medis + 院 lembaga — *rumah sakit*, lembaga medis.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "医院在哪里？",
+          "pinyin": "Yī yuàn zài nǎ lǐ?",
+          "meaning": "Where is the hospital?",
+          "meaning_id": "Rumah sakitnya di mana?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xuexiao_place",
+      "type": "word",
+      "simplified": "学校",
+      "traditional": "學校",
+      "meaning": "school",
+      "meaning_id": "sekolah",
+      "accepted_meanings": [
+        "school"
+      ],
+      "accepted_meanings_id": [
+        "sekolah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xué xiào",
+      "pinyin_numbered": "xue2 xiao4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "学",
+          "text": "xué",
+          "tone": 2
+        },
+        {
+          "hanzi": "校",
+          "text": "xiào",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_xue",
+        "hanzi_xiao"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "Already learned — 学 study + 校 school. *School*.",
+      "mnemonic_id": "Sudah dipelajari — 学 belajar + 校 sekolah. *Sekolah*.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "学校在哪里？",
+          "pinyin": "Xué xiào zài nǎ lǐ?",
+          "meaning": "Where is the school?",
+          "meaning_id": "Sekolahnya di mana?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jichang",
+      "type": "word",
+      "simplified": "机场",
+      "traditional": "機場",
+      "meaning": "airport",
+      "meaning_id": "bandara",
+      "accepted_meanings": [
+        "airport"
+      ],
+      "accepted_meanings_id": [
+        "bandara"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jī chǎng",
+      "pinyin_numbered": "ji1 chang3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "机",
+          "text": "jī",
+          "tone": 1
+        },
+        {
+          "hanzi": "场",
+          "text": "chǎng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-3",
+      "hanzi_ids": [
+        "hanzi_chang_place"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "机 machine/plane + 场 field — *airport*, the field for planes.",
+      "mnemonic_id": "机 mesin/pesawat + 场 lapangan — *bandara*, lapangan untuk pesawat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "机场在哪里？",
+          "pinyin": "Jī chǎng zài nǎ lǐ?",
+          "meaning": "Where is the airport?",
+          "meaning_id": "Bandara di mana?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "places"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_zai_canting",
+      "type": "sentence",
+      "simplified": "我在餐厅。",
+      "traditional": "我在餐廳。",
+      "meaning": "I’m at the restaurant.",
+      "meaning_id": "Saya di restoran.",
+      "literal_meaning": "I at restaurant.",
+      "literal_meaning_id": "Aku di restoran.",
+      "pinyin": "wǒ zài cān tīng",
+      "pinyin_numbered": "wo3 zai4 can1 ting1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "在",
+          "text": "zài",
+          "tone": 4
+        },
+        {
+          "hanzi": "餐",
+          "text": "cān",
+          "tone": 1
+        },
+        {
+          "hanzi": "厅",
+          "text": "tīng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-4-1-1",
+      "focus_word_ids": [
+        "word_shangdian"
+      ],
+      "pattern_ids": [
+        "pattern_place_location"
+      ],
+      "notes": "在 + place — saying where you are right now.",
+      "notes_id": "在 + tempat — bilang di mana kamu berada sekarang.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "place",
+        "location",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_yiyuan_zai_nali",
+      "type": "sentence",
+      "simplified": "医院在哪里？",
+      "traditional": "醫院在哪裡？",
+      "meaning": "Where is the hospital?",
+      "meaning_id": "Rumah sakit di mana?",
+      "literal_meaning": "Hospital at where?",
+      "literal_meaning_id": "Rumah sakit ada di mana?",
+      "pinyin": "yī yuàn zài nǎ lǐ",
+      "pinyin_numbered": "yi1 yuan4 zai4 na3 li3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "医",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "院",
+          "text": "yuàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "在",
+          "text": "zài",
+          "tone": 4
+        },
+        {
+          "hanzi": "哪",
+          "text": "nǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "里",
+          "text": "lǐ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-4-4-3-3",
+      "focus_word_ids": [
+        "word_shangdian"
+      ],
+      "pattern_ids": [
+        "pattern_place_location"
+      ],
+      "notes": "Place + 在 + 哪里 — asking where something is located.",
+      "notes_id": "Tempat + 在 + 哪里 — menanyakan di mana sesuatu berada.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "place",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_place_location",
+      "type": "pattern",
+      "title": "Place + 在哪里?",
+      "title_id": "Tempat + 在哪里?",
+      "meaning": "asking where places are",
+      "meaning_id": "bertanya lokasi tempat",
+      "structure": "Place + 在哪里?",
+      "explanation": "Use 在哪里 to ask where a place is.",
+      "explanation_id": "Gunakan 在哪里 untuk bertanya lokasi tempat.",
+      "examples": [
+        {
+          "simplified": "医院在哪里？",
+          "traditional": "醫院在哪裡？",
+          "pinyin": "Yī yuàn zài nǎ lǐ?",
+          "meaning": "Where is the hospital?",
+          "meaning_id": "Rumah sakitnya di mana?"
+        },
+        {
+          "simplified": "商店在这里。",
+          "traditional": "商店在這裡。",
+          "pinyin": "Shāng diàn zài zhè lǐ.",
+          "meaning": "The shop is here.",
+          "meaning_id": "Tokonya di sini."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "place",
+        "location",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_chang_place",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_dian_shop",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_yuan_hospital",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_yi_medical",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_fandian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dian_shop",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jichang",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_chang_place",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shangdian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dian_shop",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yiyuan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yi_medical",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yiyuan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yuan_hospital",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "医院 means?",
+        "prompt_id": "Arti 医院?",
+        "answer": "hospital",
+        "answer_id": "rumah sakit"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "机场 means?",
+        "prompt_id": "Arti 机场?",
+        "answer": "airport",
+        "answer_id": "bandara"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "医院在__里？(Where is the hospital?)",
+        "answer": "哪"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我在餐厅。",
+        "answer": "I'm at the restaurant.",
+        "answer_id": "Aku di restoran."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_shangdian",
+      "word_fandian",
+      "word_canting",
+      "word_yiyuan",
+      "word_xuexiao_place",
+      "word_jichang"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_shangdian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_fandian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_canting",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_zai_canting",
+      "sentence_yiyuan_zai_nali"
+    ]
+  }
+}

@@ -3,12 +3,12 @@ import { createJSONStorage, persist, type PersistStorage } from 'zustand/middlew
 import type {
   Familiarity,
   IntroPathStatus,
+  LibraryStage,
   LibraryTab,
   PinyinDisplay,
   ReviewStyle,
   ScriptChoice,
   SessionSize,
-  Stage,
 } from '../data/mockContent';
 import { packIdForSessionIndex, recommendedSessionIndexForPlacement } from '../data/mockContent';
 import { optionLabel, translate, type AppLanguage } from '../i18n/copy';
@@ -298,7 +298,7 @@ interface AppState {
   currentPackId: string | null;
   introStatus: IntroPathStatus;
   libraryTab: LibraryTab;
-  libraryStage: Stage | 'All';
+  libraryStage: LibraryStage;
   librarySearch: string;
   selectedItemId: string | null;
   libraryLimit: number;
@@ -553,7 +553,7 @@ export const useAppStore = create<AppState>()(
     set((state) => {
       if (sheet === 'stage') {
         return {
-          libraryStage: value as Stage | 'All',
+          libraryStage: value as LibraryStage,
           libraryLimit: 5,
           selectedItemId: null,
           activeSheet: null,

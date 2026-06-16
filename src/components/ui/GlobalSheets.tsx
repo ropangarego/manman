@@ -80,7 +80,7 @@ export function GlobalSheets() {
       title: t('sheets.stageTitle'),
       sub: t('sheets.stageSub'),
       current: 'All',
-      options: ['All', 'Learning', 'Familiar', 'Strong', 'Mastered', 'Long-term'].map((value) => ({
+      options: ['All', 'Not started', 'Learning', 'Familiar', 'Strong', 'Mastered', 'Long-term'].map((value) => ({
         label: optionLabel(language, value),
         value,
       })),

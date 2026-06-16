@@ -64,7 +64,7 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
           <small>{t('common.type')}</small>
         </div>
         <div className="meta-chip">
-          <b>{optionLabel(language, item.stage)}</b>
+          <b>{optionLabel(language, item.started === false ? 'Not started' : item.stage)}</b>
           <small>{t('common.stage')}</small>
         </div>
         <div className="meta-chip">
@@ -118,7 +118,7 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
 
       <section className="detail-section">
         <h4>{language === 'Indonesian' ? 'Review berikutnya' : 'Next review'}</h4>
-        <p>{item.nextReview}</p>
+        <p>{item.started === false ? optionLabel(language, 'Not started') : item.nextReview}</p>
       </section>
 
       <ReportIssueButton

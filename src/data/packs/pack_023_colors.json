@@ -1,0 +1,996 @@
+{
+  "pack": {
+    "id": "pack_023_colors",
+    "title": "Colors",
+    "title_id": "Warna",
+    "subtitle": "Describe things using common colors.",
+    "subtitle_id": "Mendeskripsikan benda dengan warna umum.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "colors",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 23,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Describe things using common colors.",
+    "learning_goal_id": "Mendeskripsikan benda dengan warna umum.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_hong",
+      "type": "hanzi",
+      "simplified": "红",
+      "traditional": "紅",
+      "meaning": "red",
+      "meaning_id": "merah",
+      "accepted_meanings": [
+        "red"
+      ],
+      "accepted_meanings_id": [
+        "merah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hóng",
+      "pinyin_numbered": "hong2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "红",
+          "text": "hóng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Silk 纟 dyed deep red — the *red* of Chinese festivals and luck. hóng ≈ \"hong\" rising. Tone 2 goes up, bright and bold like red itself.",
+      "mnemonic_id": "Sutra 纟 yang dicelup merah tua — *merah* dari festival dan keberuntungan China. hóng ≈ \"hong\" naik. Nada 2 naik terus, cerah dan tegas seperti warna merah itu sendiri.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢红色。",
+          "pinyin": "Wǒ xǐ huān hóng sè.",
+          "meaning": "I like red.",
+          "meaning_id": "Aku suka merah."
+        },
+        {
+          "simplified": "这是红色的。",
+          "pinyin": "Zhè shì hóng sè de.",
+          "meaning": "This is red.",
+          "meaning_id": "Ini berwarna merah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "color",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_lan",
+      "type": "hanzi",
+      "simplified": "蓝",
+      "traditional": "藍",
+      "meaning": "blue",
+      "meaning_id": "biru",
+      "accepted_meanings": [
+        "blue"
+      ],
+      "accepted_meanings_id": [
+        "biru"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lán",
+      "pinyin_numbered": "lan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "蓝",
+          "text": "lán",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Indigo plants growing in a field — the deep *blue* of the sky after rain. lán ≈ \"lahn\" rising. Tone 2 goes up, like looking up at a blue sky.",
+      "mnemonic_id": "Tanaman indigo yang tumbuh di ladang — *biru* tua langit setelah hujan. lán ≈ \"lan\" naik. Nada 2 naik terus, kayak menatap langit biru.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢蓝色。",
+          "pinyin": "Wǒ xǐ huān lán sè.",
+          "meaning": "I like blue.",
+          "meaning_id": "Aku suka biru."
+        },
+        {
+          "simplified": "天是蓝色的。",
+          "pinyin": "Tiān shì lán sè de.",
+          "meaning": "The sky is blue.",
+          "meaning_id": "Langit berwarna biru."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "color",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_bai_color",
+      "type": "hanzi",
+      "simplified": "白",
+      "traditional": "白",
+      "meaning": "white",
+      "meaning_id": "putih",
+      "accepted_meanings": [
+        "white"
+      ],
+      "accepted_meanings_id": [
+        "putih"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bái",
+      "pinyin_numbered": "bai2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "白",
+          "text": "bái",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A sun rising over the horizon — pure *white* light flooding in. bái ≈ \"bye\" rising. Tone 2 goes up, bright and clean.",
+      "mnemonic_id": "Matahari yang terbit di cakrawala — cahaya *putih* murni yang membanjiri. bái ≈ \"bai\" naik. Nada 2 naik terus, cerah dan bersih.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢白色。",
+          "pinyin": "Wǒ xǐ huān bái sè.",
+          "meaning": "I like white.",
+          "meaning_id": "Aku suka putih."
+        },
+        {
+          "simplified": "这是白色的。",
+          "pinyin": "Zhè shì bái sè de.",
+          "meaning": "This is white.",
+          "meaning_id": "Ini berwarna putih."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "color",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_hei",
+      "type": "hanzi",
+      "simplified": "黑",
+      "traditional": "黑",
+      "meaning": "black",
+      "meaning_id": "hitam",
+      "accepted_meanings": [
+        "black"
+      ],
+      "accepted_meanings_id": [
+        "hitam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hēi",
+      "pinyin_numbered": "hei1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "黑",
+          "text": "hēi",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A face darkened by soot and smoke — *black*, the color of darkness. hēi ≈ \"hay\" flat. Tone 1 high and steady, like deep night.",
+      "mnemonic_id": "Wajah yang menghitam karena jelaga dan asap — *hitam*, warna kegelapan. hēi ≈ \"hey\" flat. Nada 1 tinggi rata, kayak malam yang pekat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个是黑色。",
+          "pinyin": "Zhè ge shì hēi sè.",
+          "meaning": "This one is black.",
+          "meaning_id": "Yang ini hitam."
+        },
+        {
+          "simplified": "我喜欢黑色。",
+          "pinyin": "Wǒ xǐ huān hēi sè.",
+          "meaning": "I like black.",
+          "meaning_id": "Aku suka hitam."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "color",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_lu",
+      "type": "hanzi",
+      "simplified": "绿",
+      "traditional": "綠",
+      "meaning": "green",
+      "meaning_id": "hijau",
+      "accepted_meanings": [
+        "green"
+      ],
+      "accepted_meanings_id": [
+        "hijau"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lǜ",
+      "pinyin_numbered": "lv4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "绿",
+          "text": "lǜ",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Silk 纟 the color of fresh leaves — *green*, the color of nature. lǜ ≈ \"lyoo!\" sharp. Tone 4 drops, like leaves falling.",
+      "mnemonic_id": "Sutra 纟 seindah warna daun segar — *hijau*, warna alam. lǜ ≈ \"lyu!\" Nada 4 turun tajam, kayak daun yang jatuh.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢绿色。",
+          "pinyin": "Wǒ xǐ huān lǜ sè.",
+          "meaning": "I like green.",
+          "meaning_id": "Aku suka hijau."
+        },
+        {
+          "simplified": "草是绿色的。",
+          "pinyin": "Cǎo shì lǜ sè de.",
+          "meaning": "Grass is green.",
+          "meaning_id": "Rumput berwarna hijau."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "color",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_se",
+      "type": "hanzi",
+      "simplified": "色",
+      "traditional": "色",
+      "meaning": "color",
+      "meaning_id": "warna",
+      "accepted_meanings": [
+        "color"
+      ],
+      "accepted_meanings_id": [
+        "warna"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "sè",
+      "pinyin_numbered": "se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person showing their face — the *color* or appearance of something. sè ≈ \"suh!\" sharp. Tone 4 drops, like pointing at a color directly.",
+      "mnemonic_id": "Seseorang yang menunjukkan wajahnya — *warna* atau penampilan sesuatu. sè ≈ \"se!\" Nada 4 turun tajam, kayak menunjuk langsung ke suatu warna.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢什么颜色？",
+          "pinyin": "Nǐ xǐ huān shén me yán sè?",
+          "meaning": "What color do you like?",
+          "meaning_id": "Kamu suka warna apa?"
+        },
+        {
+          "simplified": "什么颜色？",
+          "pinyin": "Shén me yán sè?",
+          "meaning": "What color?",
+          "meaning_id": "Warna apa?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "color",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_hongse",
+      "type": "word",
+      "simplified": "红色",
+      "traditional": "紅色",
+      "meaning": "red",
+      "meaning_id": "merah",
+      "accepted_meanings": [
+        "red"
+      ],
+      "accepted_meanings_id": [
+        "merah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hóng sè",
+      "pinyin_numbered": "hong2 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "红",
+          "text": "hóng",
+          "tone": 2
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_hong",
+        "hanzi_se"
+      ],
+      "part_of_speech": "color",
+      "mnemonic": "红 red + 色 color — *red*, the color of luck and celebration.",
+      "mnemonic_id": "红 merah + 色 warna — *merah*, warna keberuntungan dan perayaan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Add 色 after any color to be more specific. 红 alone works too in casual speech.",
+      "usage_note_id": "Tambah 色 setelah warna apapun untuk lebih spesifik. 红 sendiri juga bisa dalam percakapan santai.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢红色。",
+          "pinyin": "Wǒ xǐ huān hóng sè.",
+          "meaning": "I like red.",
+          "meaning_id": "Aku suka merah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_lanse",
+      "type": "word",
+      "simplified": "蓝色",
+      "traditional": "藍色",
+      "meaning": "blue",
+      "meaning_id": "biru",
+      "accepted_meanings": [
+        "blue"
+      ],
+      "accepted_meanings_id": [
+        "biru"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lán sè",
+      "pinyin_numbered": "lan2 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "蓝",
+          "text": "lán",
+          "tone": 2
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_lan",
+        "hanzi_se"
+      ],
+      "part_of_speech": "color",
+      "mnemonic": "蓝 blue + 色 color — *blue*, the color of the sky.",
+      "mnemonic_id": "蓝 biru + 色 warna — *biru*, warna langit.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "天是蓝色的。",
+          "pinyin": "Tiān shì lán sè de.",
+          "meaning": "The sky is blue.",
+          "meaning_id": "Langit berwarna biru."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_baise",
+      "type": "word",
+      "simplified": "白色",
+      "traditional": "白色",
+      "meaning": "white",
+      "meaning_id": "putih",
+      "accepted_meanings": [
+        "white"
+      ],
+      "accepted_meanings_id": [
+        "putih"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bái sè",
+      "pinyin_numbered": "bai2 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "白",
+          "text": "bái",
+          "tone": 2
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_bai",
+        "hanzi_se"
+      ],
+      "part_of_speech": "color",
+      "mnemonic": "白 white + 色 color — *white*, clean and pure.",
+      "mnemonic_id": "白 putih + 色 warna — *putih*, bersih dan murni.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这是白色的。",
+          "pinyin": "Zhè shì bái sè de.",
+          "meaning": "This is white.",
+          "meaning_id": "Ini berwarna putih."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_heise",
+      "type": "word",
+      "simplified": "黑色",
+      "traditional": "黑色",
+      "meaning": "black",
+      "meaning_id": "hitam",
+      "accepted_meanings": [
+        "black"
+      ],
+      "accepted_meanings_id": [
+        "hitam"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hēi sè",
+      "pinyin_numbered": "hei1 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "黑",
+          "text": "hēi",
+          "tone": 1
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_hei",
+        "hanzi_se"
+      ],
+      "part_of_speech": "color",
+      "mnemonic": "黑 black + 色 color — *black*, dark and bold.",
+      "mnemonic_id": "黑 hitam + 色 warna — *hitam*, gelap dan tegas.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这个是黑色。",
+          "pinyin": "Zhè ge shì hēi sè.",
+          "meaning": "This one is black.",
+          "meaning_id": "Yang ini hitam."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_lvse",
+      "type": "word",
+      "simplified": "绿色",
+      "traditional": "綠色",
+      "meaning": "green",
+      "meaning_id": "hijau",
+      "accepted_meanings": [
+        "green"
+      ],
+      "accepted_meanings_id": [
+        "hijau"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lǜ sè",
+      "pinyin_numbered": "lv4 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "绿",
+          "text": "lǜ",
+          "tone": 4
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_lu",
+        "hanzi_se"
+      ],
+      "part_of_speech": "color",
+      "mnemonic": "绿 green + 色 color — *green*, the color of nature.",
+      "mnemonic_id": "绿 hijau + 色 warna — *hijau*, warna alam.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "草是绿色的。",
+          "pinyin": "Cǎo shì lǜ sè de.",
+          "meaning": "Grass is green.",
+          "meaning_id": "Rumput berwarna hijau."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yanse",
+      "type": "word",
+      "simplified": "颜色",
+      "traditional": "顏色",
+      "meaning": "color",
+      "meaning_id": "warna",
+      "accepted_meanings": [
+        "color"
+      ],
+      "accepted_meanings_id": [
+        "warna"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yán sè",
+      "pinyin_numbered": "yan2 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "颜",
+          "text": "yán",
+          "tone": 2
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_se"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "颜 face/appearance + 色 color — *color*, asking about appearance.",
+      "mnemonic_id": "颜 wajah/penampilan + 色 warna — *warna*, menanyakan tentang penampilan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢什么颜色？",
+          "pinyin": "Nǐ xǐ huān shén me yán sè?",
+          "meaning": "What color do you like?",
+          "meaning_id": "Kamu suka warna apa?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "colors"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_xihuan_lanse",
+      "type": "sentence",
+      "simplified": "我喜欢蓝色。",
+      "traditional": "我喜歡藍色。",
+      "meaning": "I like blue.",
+      "meaning_id": "Saya suka warna biru.",
+      "literal_meaning": "I like blue color.",
+      "literal_meaning_id": "Aku suka warna biru.",
+      "pinyin": "wǒ xǐ huān lán sè",
+      "pinyin_numbered": "wo3 xi3 huan1 lan2 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "喜",
+          "text": "xǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "欢",
+          "text": "huān",
+          "tone": 1
+        },
+        {
+          "hanzi": "蓝",
+          "text": "lán",
+          "tone": 2
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-3-1-2-4",
+      "focus_word_ids": [
+        "word_hongse"
+      ],
+      "pattern_ids": [
+        "pattern_color_noun"
+      ],
+      "notes": "喜欢 + color — expressing color preference.",
+      "notes_id": "喜欢 + warna — mengungkapkan preferensi warna.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "color",
+        "preference",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_zhege_shi_heise",
+      "type": "sentence",
+      "simplified": "这个是黑色。",
+      "traditional": "這個是黑色。",
+      "meaning": "This one is black.",
+      "meaning_id": "Yang ini hitam.",
+      "literal_meaning": "This one is black color.",
+      "literal_meaning_id": "Yang ini berwarna hitam.",
+      "pinyin": "zhè ge shì hēi sè",
+      "pinyin_numbered": "zhe4 ge0 shi4 hei1 se4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        },
+        {
+          "hanzi": "个",
+          "text": "ge",
+          "tone": 0
+        },
+        {
+          "hanzi": "是",
+          "text": "shì",
+          "tone": 4
+        },
+        {
+          "hanzi": "黑",
+          "text": "hēi",
+          "tone": 1
+        },
+        {
+          "hanzi": "色",
+          "text": "sè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-0-4-1-4",
+      "focus_word_ids": [
+        "word_hongse"
+      ],
+      "pattern_ids": [
+        "pattern_color_noun"
+      ],
+      "notes": "这个 + 是 + color — identifying the color of something.",
+      "notes_id": "这个 + 是 + warna — mengidentifikasi warna sesuatu.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "color",
+        "description",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_color_noun",
+      "type": "pattern",
+      "title": "Color words",
+      "title_id": "Kata warna",
+      "meaning": "using colors",
+      "meaning_id": "memakai warna",
+      "structure": "Color + 的 + noun",
+      "explanation": "Use colors to describe things directly or with 的.",
+      "explanation_id": "Gunakan warna untuk mendeskripsikan benda langsung atau dengan 的.",
+      "examples": [
+        {
+          "simplified": "我喜欢蓝色。",
+          "traditional": "我喜歡藍色。",
+          "pinyin": "Wǒ xǐ huān lán sè.",
+          "meaning": "I like blue.",
+          "meaning_id": "Aku suka biru."
+        },
+        {
+          "simplified": "这个是黑色。",
+          "traditional": "這個是黑色。",
+          "pinyin": "Zhè ge shì hēi sè.",
+          "meaning": "This one is black.",
+          "meaning_id": "Yang ini hitam."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "color",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_bai",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_hong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_hei",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_bai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_baise",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_heise",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hei",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_hongse",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_lanse",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_lan",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_lvse",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_lu",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "红色 means?",
+        "prompt_id": "Arti 红色?",
+        "answer": "red",
+        "answer_id": "merah"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "颜色 means?",
+        "prompt_id": "Arti 颜色?",
+        "answer": "color",
+        "answer_id": "warna"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "天是__色的。(The sky is blue)",
+        "answer": "蓝"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "这个是黑色。",
+        "answer": "This one is black.",
+        "answer_id": "Yang ini hitam."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_hongse",
+      "word_lanse",
+      "word_baise",
+      "word_heise",
+      "word_lvse",
+      "word_yanse"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_hongse",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_lanse",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_baise",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_xihuan_lanse",
+      "sentence_zhege_shi_heise"
+    ]
+  }
+}

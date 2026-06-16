@@ -3,7 +3,7 @@ import type { ContentItem, Stage } from '../data/mockContent';
 export const srsStages: Stage[] = ['Learning', 'Familiar', 'Strong', 'Mastered', 'Long-term'];
 
 export const srsIntervalsDays: Record<Stage, number> = {
-  Learning: 0,
+  Learning: 1,
   Familiar: 1,
   Strong: 3,
   Mastered: 7,

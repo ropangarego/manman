@@ -32,6 +32,7 @@ interface ProgressState {
   sessionsCompleted: number;
   totalCorrect: number;
   totalAttempts: number;
+  recordLearning: (item: ContentItem, correctFirstTry: boolean) => void;
   recordAnswer: (item: ContentItem, correct: boolean) => void;
   completeSession: (minutes: number) => void;
   resetProgress: () => void;
@@ -84,6 +85,41 @@ export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
       ...resetState(),
+      recordLearning: (item, correctFirstTry) =>
+        set((state) => {
+          if (state.items[item.id]) {
+            return state;
+          }
+
+          const now = new Date();
+          const dateKey = todayKey(now);
+          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey);
+          const initial = initialProgressForItem(item, now);
+
+          return {
+            items: {
+              ...state.items,
+              [item.id]: {
+                ...initial,
+                dueAt: dueAtForStage('Learning', now),
+                correctCount: correctFirstTry ? 1 : 0,
+                incorrectCount: correctFirstTry ? 0 : 1,
+                streakCorrect: correctFirstTry ? 1 : 0,
+                totalReviews: 1,
+              },
+            },
+            dailyActivity: {
+              ...state.dailyActivity,
+              [dateKey]: {
+                ...day,
+                correct: day.correct + (correctFirstTry ? 1 : 0),
+                incorrect: day.incorrect + (correctFirstTry ? 0 : 1),
+              },
+            },
+            totalCorrect: state.totalCorrect + (correctFirstTry ? 1 : 0),
+            totalAttempts: state.totalAttempts + 1,
+          };
+        }),
       recordAnswer: (item, correct) =>
         set((state) => {
           const now = new Date();
@@ -151,7 +187,10 @@ export function withProgress(items: ContentItem[], progress: Record<string, Item
     const itemProgress = progress[item.id];
 
     if (itemProgress) {
-      return applySrsSnapshot(item, itemProgress);
+      return {
+        ...applySrsSnapshot(item, itemProgress),
+        started: true,
+      };
     }
 
     return {
@@ -159,6 +198,7 @@ export function withProgress(items: ContentItem[], progress: Record<string, Item
       stage: 'Learning' as const,
       accuracy: 0,
       nextReview: 'Not started',
+      started: false,
     };
   });
 }

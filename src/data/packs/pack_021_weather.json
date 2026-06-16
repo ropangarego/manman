@@ -1,0 +1,986 @@
+{
+  "pack": {
+    "id": "pack_021_weather",
+    "title": "Weather",
+    "title_id": "Cuaca",
+    "subtitle": "Talk about weather, rain, wind, sun, and temperature.",
+    "subtitle_id": "Bicara tentang cuaca, hujan, angin, matahari, dan suhu.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "weather",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 21,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about weather, rain, wind, sun, and temperature.",
+    "learning_goal_id": "Bicara tentang cuaca, hujan, angin, matahari, dan suhu.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_tian_weather",
+      "type": "hanzi",
+      "simplified": "天",
+      "traditional": "天",
+      "meaning": "sky / weather",
+      "meaning_id": "langit / cuaca",
+      "accepted_meanings": [
+        "sky / weather"
+      ],
+      "accepted_meanings_id": [
+        "langit / cuaca"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tiān",
+      "pinyin_numbered": "tian1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Already learned — the wide sky above, one full *day* or the *sky* itself. tiān ≈ \"tyen\" flat. Tone 1 high and steady.",
+      "mnemonic_id": "Sudah dipelajari — langit luas di atas, satu *hari* penuh atau *langit* itu sendiri. tiān flat. Nada 1 tinggi rata.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天天气很好。",
+          "pinyin": "Jīn tiān tiān qì hěn hǎo.",
+          "meaning": "The weather is good today.",
+          "meaning_id": "Hari ini cuacanya bagus."
+        },
+        {
+          "simplified": "明天下雨吗？",
+          "pinyin": "Míng tiān xià yǔ ma?",
+          "meaning": "Will it rain tomorrow?",
+          "meaning_id": "Besok hujan?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "time",
+        "weather",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_qi_weather",
+      "type": "hanzi",
+      "simplified": "气",
+      "traditional": "氣",
+      "meaning": "air / energy",
+      "meaning_id": "udara / energi",
+      "accepted_meanings": [
+        "air / energy"
+      ],
+      "accepted_meanings_id": [
+        "udara / energi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qì",
+      "pinyin_numbered": "qi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "气",
+          "text": "qì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Air swirling and rising — *air*, *energy*, the invisible force around us. qì ≈ \"chee!\" sharp. Tone 4 drops, like a gust hitting your face.",
+      "mnemonic_id": "Udara yang berputar dan naik — *udara*, *energi*, kekuatan tak kasat mata di sekitar kita. qì ≈ \"chi!\" Nada 4 turun tajam, kayak embusan angin yang menghantam wajah.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "天气很好。",
+          "pinyin": "Tiān qì hěn hǎo.",
+          "meaning": "The weather is good.",
+          "meaning_id": "Cuacanya bagus."
+        },
+        {
+          "simplified": "今天天气怎么样？",
+          "pinyin": "Jīn tiān tiān qì zěn me yàng?",
+          "meaning": "How is the weather today?",
+          "meaning_id": "Cuaca hari ini bagaimana?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "weather",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yu",
+      "type": "hanzi",
+      "simplified": "雨",
+      "traditional": "雨",
+      "meaning": "rain",
+      "meaning_id": "hujan",
+      "accepted_meanings": [
+        "rain"
+      ],
+      "accepted_meanings_id": [
+        "hujan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǔ",
+      "pinyin_numbered": "yu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "雨",
+          "text": "yǔ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A roof with drops falling underneath — *rain* coming down. yǔ ≈ \"yoo\" dipping then rising. Tone 3 like the rhythm of rain slowing then picking up.",
+      "mnemonic_id": "Atap dengan tetes-tetes yang jatuh di bawah — *hujan* yang turun. yǔ ≈ \"yu\" turun terus naik. Nada 3 kayak ritme hujan yang melambat lalu deras lagi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "下雨了。",
+          "pinyin": "Xià yǔ le.",
+          "meaning": "It started raining.",
+          "meaning_id": "Hujan turun."
+        },
+        {
+          "simplified": "明天下雨吗？",
+          "pinyin": "Míng tiān xià yǔ ma?",
+          "meaning": "Will it rain tomorrow?",
+          "meaning_id": "Besok hujan?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "weather",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_feng",
+      "type": "hanzi",
+      "simplified": "风",
+      "traditional": "風",
+      "meaning": "wind",
+      "meaning_id": "angin",
+      "accepted_meanings": [
+        "wind"
+      ],
+      "accepted_meanings_id": [
+        "angin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fēng",
+      "pinyin_numbered": "feng1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "风",
+          "text": "fēng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Something that swoops and flows — the invisible force of *wind*. fēng ≈ \"fung\" flat. Tone 1 high and steady, like a constant breeze.",
+      "mnemonic_id": "Sesuatu yang melayang dan mengalir — kekuatan tak kasat mata dari *angin*. fēng ≈ \"fung\" flat. Nada 1 tinggi rata, kayak angin yang terus berhembus.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天有风。",
+          "pinyin": "Jīn tiān yǒu fēng.",
+          "meaning": "It is windy today.",
+          "meaning_id": "Hari ini berangin."
+        },
+        {
+          "simplified": "风很大。",
+          "pinyin": "Fēng hěn dà.",
+          "meaning": "The wind is very strong.",
+          "meaning_id": "Anginnya sangat kencang."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "weather",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yang",
+      "type": "hanzi",
+      "simplified": "阳",
+      "traditional": "陽",
+      "meaning": "sun / yang",
+      "meaning_id": "matahari / yang",
+      "accepted_meanings": [
+        "sun / yang"
+      ],
+      "accepted_meanings_id": [
+        "matahari / yang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yáng",
+      "pinyin_numbered": "yang2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "阳",
+          "text": "yáng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "日 sun + rising energy — the bright positive *sun*, full of warmth. yáng ≈ \"yang\" rising. Tone 2 goes up, like sunlight climbing the sky.",
+      "mnemonic_id": "日 matahari + energi yang naik — *matahari* yang cerah dan penuh kehangatan. yáng ≈ \"yang\" naik. Nada 2 naik terus, kayak sinar matahari yang memanjat langit.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "太阳出来了。",
+          "pinyin": "Tài yáng chū lái le.",
+          "meaning": "The sun came out.",
+          "meaning_id": "Matahari keluar."
+        },
+        {
+          "simplified": "今天有太阳。",
+          "pinyin": "Jīn tiān yǒu tài yáng.",
+          "meaning": "There is sun today.",
+          "meaning_id": "Hari ini ada matahari."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "weather",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_du_temperature",
+      "type": "hanzi",
+      "simplified": "度",
+      "traditional": "度",
+      "meaning": "degree",
+      "meaning_id": "derajat",
+      "accepted_meanings": [
+        "degree"
+      ],
+      "accepted_meanings_id": [
+        "derajat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dù",
+      "pinyin_numbered": "du4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "度",
+          "text": "dù",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A measured unit inside a frame — *degree*, the precise measurement of temperature. dù ≈ \"doo!\" sharp. Tone 4 drops, like reading a number off a thermometer.",
+      "mnemonic_id": "Satuan terukur di dalam bingkai — *derajat*, pengukuran suhu yang presisi. dù ≈ \"du!\" Nada 4 turun tajam, kayak membaca angka dari termometer.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天三十度。",
+          "pinyin": "Jīn tiān sān shí dù.",
+          "meaning": "It is 30 degrees today.",
+          "meaning_id": "Hari ini tiga puluh derajat."
+        },
+        {
+          "simplified": "几度？",
+          "pinyin": "Jǐ dù?",
+          "meaning": "How many degrees?",
+          "meaning_id": "Berapa derajat?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "weather",
+        "measure",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_tianqi",
+      "type": "word",
+      "simplified": "天气",
+      "traditional": "天氣",
+      "meaning": "weather",
+      "meaning_id": "cuaca",
+      "accepted_meanings": [
+        "weather"
+      ],
+      "accepted_meanings_id": [
+        "cuaca"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tiān qì",
+      "pinyin_numbered": "tian1 qi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "气",
+          "text": "qì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_tian",
+        "hanzi_qi"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "天 sky + 气 air — *weather*, the sky's mood today.",
+      "mnemonic_id": "天 langit + 气 udara — *cuaca*, suasana hati langit hari ini.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天天气很好。",
+          "pinyin": "Jīn tiān tiān qì hěn hǎo.",
+          "meaning": "The weather is good today.",
+          "meaning_id": "Hari ini cuacanya bagus."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xiayu",
+      "type": "word",
+      "simplified": "下雨",
+      "traditional": "下雨",
+      "meaning": "rain / raining",
+      "meaning_id": "hujan",
+      "accepted_meanings": [
+        "rain / raining"
+      ],
+      "accepted_meanings_id": [
+        "hujan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xià yǔ",
+      "pinyin_numbered": "xia4 yu3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "下",
+          "text": "xià",
+          "tone": 4
+        },
+        {
+          "hanzi": "雨",
+          "text": "yǔ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_yu"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "下 fall + 雨 rain — *to rain*, rain falling down.",
+      "mnemonic_id": "下 turun + 雨 hujan — *hujan*, hujan yang jatuh ke bawah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "下雨 = raining. 下雪 = snowing. Same pattern with 下.",
+      "usage_note_id": "下雨 = hujan. 下雪 = salju. Pola 下 yang sama.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "明天下雨吗？",
+          "pinyin": "Míng tiān xià yǔ ma?",
+          "meaning": "Will it rain tomorrow?",
+          "meaning_id": "Besok hujan?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_you_feng",
+      "type": "word",
+      "simplified": "有风",
+      "traditional": "有風",
+      "meaning": "windy",
+      "meaning_id": "berangin",
+      "accepted_meanings": [
+        "windy"
+      ],
+      "accepted_meanings_id": [
+        "berangin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǒu fēng",
+      "pinyin_numbered": "you3 feng1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "有",
+          "text": "yǒu",
+          "tone": 3
+        },
+        {
+          "hanzi": "风",
+          "text": "fēng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1",
+      "hanzi_ids": [
+        "hanzi_feng"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "有 there is + 风 wind — *windy*, literally \"there is wind\".",
+      "mnemonic_id": "有 ada + 风 angin — *berangin*, harfiahnya \"ada angin\".",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天有风。",
+          "pinyin": "Jīn tiān yǒu fēng.",
+          "meaning": "It is windy today.",
+          "meaning_id": "Hari ini berangin."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_taiyang",
+      "type": "word",
+      "simplified": "太阳",
+      "traditional": "太陽",
+      "meaning": "sun",
+      "meaning_id": "matahari",
+      "accepted_meanings": [
+        "sun"
+      ],
+      "accepted_meanings_id": [
+        "matahari"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tài yáng",
+      "pinyin_numbered": "tai4 yang2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "太",
+          "text": "tài",
+          "tone": 4
+        },
+        {
+          "hanzi": "阳",
+          "text": "yáng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_yang"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "太 too/very + 阳 bright — *the sun*, so bright it's \"extremely yang\".",
+      "mnemonic_id": "太 sangat + 阳 terang — *matahari*, sangat terang hingga \"sangat yang\".",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天有太阳。",
+          "pinyin": "Jīn tiān yǒu tài yáng.",
+          "meaning": "It is sunny today.",
+          "meaning_id": "Hari ini ada matahari."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_re_weather",
+      "type": "word",
+      "simplified": "热",
+      "traditional": "熱",
+      "meaning": "hot",
+      "meaning_id": "panas",
+      "accepted_meanings": [
+        "hot"
+      ],
+      "accepted_meanings_id": [
+        "panas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "rè",
+      "pinyin_numbered": "re4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "热",
+          "text": "rè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_re"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "Already learned — *hot*. Used for weather too.",
+      "mnemonic_id": "Sudah dipelajari — *panas*. Juga dipakai untuk cuaca.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天很热。",
+          "pinyin": "Jīn tiān hěn rè.",
+          "meaning": "Today is very hot.",
+          "meaning_id": "Hari ini sangat panas."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_leng_weather",
+      "type": "word",
+      "simplified": "冷",
+      "traditional": "冷",
+      "meaning": "cold",
+      "meaning_id": "dingin",
+      "accepted_meanings": [
+        "cold"
+      ],
+      "accepted_meanings_id": [
+        "dingin"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lěng",
+      "pinyin_numbered": "leng3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "冷",
+          "text": "lěng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_leng"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "Already learned — *cold*. Used for weather too.",
+      "mnemonic_id": "Sudah dipelajari — *dingin*. Juga dipakai untuk cuaca.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天很冷。",
+          "pinyin": "Jīn tiān hěn lěng.",
+          "meaning": "Today is very cold.",
+          "meaning_id": "Hari ini sangat dingin."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "weather"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_jintian_tianqi_hen_hao",
+      "type": "sentence",
+      "simplified": "今天天气很好。",
+      "traditional": "今天天氣很好。",
+      "meaning": "The weather is good today.",
+      "meaning_id": "Cuaca hari ini bagus.",
+      "literal_meaning": "Today weather very good.",
+      "literal_meaning_id": "Hari ini cuaca sangat bagus.",
+      "pinyin": "jīn tiān tiān qì hěn hǎo",
+      "pinyin_numbered": "jin1 tian1 tian1 qi4 hen3 hao3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "气",
+          "text": "qì",
+          "tone": 4
+        },
+        {
+          "hanzi": "很",
+          "text": "hěn",
+          "tone": 3
+        },
+        {
+          "hanzi": "好",
+          "text": "hǎo",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-1-1-4-3-3",
+      "focus_word_ids": [
+        "word_tianqi"
+      ],
+      "pattern_ids": [
+        "pattern_weather_sentence"
+      ],
+      "notes": "Time word first, then subject 天气, then 很 + adjective.",
+      "notes_id": "Kata waktu di depan, lalu subjek 天气, lalu 很 + kata sifat.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "weather",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_mingtian_xiayu_ma",
+      "type": "sentence",
+      "simplified": "明天下雨吗？",
+      "traditional": "明天下雨嗎？",
+      "meaning": "Will it rain tomorrow?",
+      "meaning_id": "Besok hujan?",
+      "literal_meaning": "Tomorrow fall-rain?",
+      "literal_meaning_id": "Besok hujan?",
+      "pinyin": "míng tiān xià yǔ ma",
+      "pinyin_numbered": "ming2 tian1 xia4 yu3 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "明",
+          "text": "míng",
+          "tone": 2
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "下",
+          "text": "xià",
+          "tone": 4
+        },
+        {
+          "hanzi": "雨",
+          "text": "yǔ",
+          "tone": 3
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-1-4-3-0",
+      "focus_word_ids": [
+        "word_tianqi"
+      ],
+      "pattern_ids": [
+        "pattern_weather_sentence"
+      ],
+      "notes": "下雨 is a verb phrase — no subject needed for weather expressions.",
+      "notes_id": "下雨 adalah frasa kata kerja — tidak perlu subjek untuk ekspresi cuaca.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "weather",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_weather_sentence",
+      "type": "pattern",
+      "title": "Weather statement",
+      "title_id": "Kalimat cuaca",
+      "meaning": "talking about weather",
+      "meaning_id": "bicara tentang cuaca",
+      "structure": "Time + 天气 + adjective",
+      "explanation": "Use 天气 to talk about weather conditions.",
+      "explanation_id": "Gunakan 天气 untuk membicarakan kondisi cuaca.",
+      "examples": [
+        {
+          "simplified": "今天天气很好。",
+          "traditional": "今天天氣很好。",
+          "pinyin": "Jīn tiān tiān qì hěn hǎo.",
+          "meaning": "The weather is good today.",
+          "meaning_id": "Hari ini cuacanya bagus."
+        },
+        {
+          "simplified": "明天下雨吗？",
+          "traditional": "明天下雨嗎？",
+          "pinyin": "Míng tiān xià yǔ ma?",
+          "meaning": "Will it rain tomorrow?",
+          "meaning_id": "Besok hujan?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "weather",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_qi",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_tian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_yang",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ri",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_taiyang",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yang",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_tianqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_qi",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_tianqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_tian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xiayu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_you_feng",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_feng",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "天气 means?",
+        "prompt_id": "Arti 天气?",
+        "answer": "weather",
+        "answer_id": "cuaca"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "下雨 means?",
+        "prompt_id": "Arti 下雨?",
+        "answer": "to rain",
+        "answer_id": "hujan"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "今天__很好。(The weather is good today)",
+        "answer": "天气"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "明天下雨吗？",
+        "answer": "Will it rain tomorrow?",
+        "answer_id": "Besok hujan?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_tianqi",
+      "word_xiayu",
+      "word_you_feng",
+      "word_taiyang",
+      "word_re_weather",
+      "word_leng_weather"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_tianqi",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xiayu",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_you_feng",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_jintian_tianqi_hen_hao",
+      "sentence_mingtian_xiayu_ma"
+    ]
+  }
+}

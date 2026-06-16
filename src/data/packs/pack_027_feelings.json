@@ -1,0 +1,937 @@
+{
+  "pack": {
+    "id": "pack_027_feelings",
+    "title": "Feelings",
+    "title_id": "Perasaan",
+    "subtitle": "Say basic feelings like happy, tired, angry, and worried.",
+    "subtitle_id": "Mengatakan perasaan dasar seperti senang, capek, marah, dan khawatir.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "feelings",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 27,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Say basic feelings like happy, tired, angry, and worried.",
+    "learning_goal_id": "Mengatakan perasaan dasar seperti senang, capek, marah, dan khawatir.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_gao",
+      "type": "hanzi",
+      "simplified": "高",
+      "traditional": "高",
+      "meaning": "high / tall",
+      "meaning_id": "tinggi",
+      "accepted_meanings": [
+        "high / tall"
+      ],
+      "accepted_meanings_id": [
+        "tinggi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gāo",
+      "pinyin_numbered": "gao1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "高",
+          "text": "gāo",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A tall tower rising high — *tall*, *high*, elevated above everything. gāo ≈ \"gow\" flat. Tone 1 high and steady, like something standing tall.",
+      "mnemonic_id": "Menara tinggi yang menjulang — *tinggi*, di atas segalanya. gāo ≈ \"gao\" flat. Nada 1 tinggi rata, kayak sesuatu yang berdiri tegak.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很高兴！",
+          "pinyin": "Wǒ hěn gāo xìng!",
+          "meaning": "I am very happy!",
+          "meaning_id": "Aku sangat senang!"
+        },
+        {
+          "simplified": "你高兴吗？",
+          "pinyin": "Nǐ gāo xìng ma?",
+          "meaning": "Are you happy?",
+          "meaning_id": "Kamu senang?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "feeling",
+        "adjective",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xing_happy",
+      "type": "hanzi",
+      "simplified": "兴",
+      "traditional": "興",
+      "meaning": "excited part",
+      "meaning_id": "bagian senang",
+      "accepted_meanings": [
+        "excited part"
+      ],
+      "accepted_meanings_id": [
+        "bagian senang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xìng",
+      "pinyin_numbered": "xing4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "兴",
+          "text": "xìng",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Energy rising up from below — *excitement*, spirits lifted high. xìng ≈ \"shing!\" sharp. Tone 4 drops with a burst of energy.",
+      "mnemonic_id": "Energi yang naik dari bawah — *antusias*, semangat yang terangkat tinggi. xìng ≈ \"shing!\" Nada 4 turun dengan ledakan energi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很高兴见到你！",
+          "pinyin": "Wǒ hěn gāo xìng jiàn dào nǐ!",
+          "meaning": "I'm very happy to meet you!",
+          "meaning_id": "Senang sekali bertemu kamu!"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "feeling",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_lei",
+      "type": "hanzi",
+      "simplified": "累",
+      "traditional": "累",
+      "meaning": "tired",
+      "meaning_id": "lelah",
+      "accepted_meanings": [
+        "tired"
+      ],
+      "accepted_meanings_id": [
+        "lelah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lèi",
+      "pinyin_numbered": "lei4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "累",
+          "text": "lèi",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Fields piled on top of each other — work stacked so high you're *tired*. lèi ≈ \"lay!\" sharp. Tone 4 drops, like collapsing from exhaustion.",
+      "mnemonic_id": "Ladang yang bertumpuk-tumpuk — pekerjaan yang menumpuk hingga kamu *lelah*. lèi ≈ \"lay!\" Nada 4 turun tajam, kayak roboh kelelahan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很累。",
+          "pinyin": "Wǒ hěn lèi.",
+          "meaning": "I'm very tired.",
+          "meaning_id": "Aku sangat lelah."
+        },
+        {
+          "simplified": "今天很累。",
+          "pinyin": "Jīn tiān hěn lèi.",
+          "meaning": "Today I'm tired.",
+          "meaning_id": "Hari ini aku lelah."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "feeling",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_sheng_angry",
+      "type": "hanzi",
+      "simplified": "生",
+      "traditional": "生",
+      "meaning": "produce / life",
+      "meaning_id": "lahir / muncul",
+      "accepted_meanings": [
+        "produce / life"
+      ],
+      "accepted_meanings_id": [
+        "lahir / muncul"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shēng",
+      "pinyin_numbered": "sheng1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "生",
+          "text": "shēng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A plant sprouting from the ground — *life*, something *born* into the world. shēng ≈ \"shung\" flat. Tone 1 high and alive.",
+      "mnemonic_id": "Tanaman yang tumbuh dari tanah — *hidup*, sesuatu yang *lahir* ke dunia. shēng ≈ \"shung\" flat. Nada 1 tinggi dan hidup.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "他生气了。",
+          "pinyin": "Tā shēng qì le.",
+          "meaning": "He got angry.",
+          "meaning_id": "Dia marah."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "feeling",
+        "verb_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_qi_angry",
+      "type": "hanzi",
+      "simplified": "气",
+      "traditional": "氣",
+      "meaning": "anger / air",
+      "meaning_id": "marah / udara",
+      "accepted_meanings": [
+        "anger / air"
+      ],
+      "accepted_meanings_id": [
+        "marah / udara"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qì",
+      "pinyin_numbered": "qi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "气",
+          "text": "qì",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — *air / energy*. In 生气, it's anger energy rising up.",
+      "mnemonic_id": "Sudah dipelajari — *udara / energi*. Dalam 生气, itu adalah energi kemarahan yang naik.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你生气了吗？",
+          "pinyin": "Nǐ shēng qì le ma?",
+          "meaning": "Are you angry?",
+          "meaning_id": "Kamu marah?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "feeling",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_dan_worry",
+      "type": "hanzi",
+      "simplified": "担",
+      "traditional": "擔",
+      "meaning": "carry / worry part",
+      "meaning_id": "memikul / bagian khawatir",
+      "accepted_meanings": [
+        "carry / worry part"
+      ],
+      "accepted_meanings_id": [
+        "memikul / bagian khawatir"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dān",
+      "pinyin_numbered": "dan1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "担",
+          "text": "dān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A hand 扌 carrying a heavy burden — *carry*, and the weight of *worry*. dān ≈ \"dahn\" flat. Tone 1 high and steady like a constant worry.",
+      "mnemonic_id": "Tangan 扌 yang membawa beban berat — *membawa*, dan beban dari *kekhawatiran*. dān ≈ \"dan\" flat. Nada 1 tinggi rata kayak kekhawatiran yang terus ada.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很担心。",
+          "pinyin": "Wǒ hěn dān xīn.",
+          "meaning": "I'm very worried.",
+          "meaning_id": "Aku sangat khawatir."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "feeling",
+        "verb_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_gaoxing",
+      "type": "word",
+      "simplified": "高兴",
+      "traditional": "高興",
+      "meaning": "happy",
+      "meaning_id": "senang",
+      "accepted_meanings": [
+        "happy"
+      ],
+      "accepted_meanings_id": [
+        "senang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gāo xìng",
+      "pinyin_numbered": "gao1 xing4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "高",
+          "text": "gāo",
+          "tone": 1
+        },
+        {
+          "hanzi": "兴",
+          "text": "xìng",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_gao",
+        "hanzi_xing_happy"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "高 high + 兴 excitement — *happy*, spirits lifted high.",
+      "mnemonic_id": "高 tinggi + 兴 semangat — *senang*, semangat yang terangkat tinggi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很高兴！",
+          "pinyin": "Wǒ hěn gāo xìng!",
+          "meaning": "I am very happy!",
+          "meaning_id": "Aku sangat senang!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_lei",
+      "type": "word",
+      "simplified": "累",
+      "traditional": "累",
+      "meaning": "tired",
+      "meaning_id": "lelah",
+      "accepted_meanings": [
+        "tired"
+      ],
+      "accepted_meanings_id": [
+        "lelah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "lèi",
+      "pinyin_numbered": "lei4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "累",
+          "text": "lèi",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_lei"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "*Tired / exhausted* — physically or mentally drained.",
+      "mnemonic_id": "*Lelah / capek* — terkuras secara fisik atau mental.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很累。",
+          "pinyin": "Wǒ hěn lèi.",
+          "meaning": "I'm tired.",
+          "meaning_id": "Aku lelah."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shengqi",
+      "type": "word",
+      "simplified": "生气",
+      "traditional": "生氣",
+      "meaning": "angry",
+      "meaning_id": "marah",
+      "accepted_meanings": [
+        "angry"
+      ],
+      "accepted_meanings_id": [
+        "marah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shēng qì",
+      "pinyin_numbered": "sheng1 qi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "生",
+          "text": "shēng",
+          "tone": 1
+        },
+        {
+          "hanzi": "气",
+          "text": "qì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_sheng_angry",
+        "hanzi_qi"
+      ],
+      "part_of_speech": "adjective/verb",
+      "mnemonic": "生 produce + 气 energy — *angry*, energy produced from frustration.",
+      "mnemonic_id": "生 menghasilkan + 气 energi — *marah*, energi yang dihasilkan dari frustrasi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "生气 = angry. Don't confuse with 天气 (weather) — same 气, different context.",
+      "usage_note_id": "生气 = marah. Jangan bingung dengan 天气 (cuaca) — 气 yang sama, konteks berbeda.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "他生气了。",
+          "pinyin": "Tā shēng qì le.",
+          "meaning": "He got angry.",
+          "meaning_id": "Dia marah."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_danxin",
+      "type": "word",
+      "simplified": "担心",
+      "traditional": "擔心",
+      "meaning": "worried",
+      "meaning_id": "khawatir",
+      "accepted_meanings": [
+        "worried"
+      ],
+      "accepted_meanings_id": [
+        "khawatir"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dān xīn",
+      "pinyin_numbered": "dan1 xin1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "担",
+          "text": "dān",
+          "tone": 1
+        },
+        {
+          "hanzi": "心",
+          "text": "xīn",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1-1",
+      "hanzi_ids": [
+        "hanzi_dan_worry"
+      ],
+      "part_of_speech": "verb/adjective",
+      "mnemonic": "担 carry + 心 heart — *worried*, carrying something heavy in your heart.",
+      "mnemonic_id": "担 membawa + 心 hati — *khawatir*, membawa sesuatu yang berat di hatimu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很担心你。",
+          "pinyin": "Wǒ hěn dān xīn nǐ.",
+          "meaning": "I'm very worried about you.",
+          "meaning_id": "Aku sangat khawatir tentang kamu."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_nanguo",
+      "type": "word",
+      "simplified": "难过",
+      "traditional": "難過",
+      "meaning": "sad",
+      "meaning_id": "sedih",
+      "accepted_meanings": [
+        "sad"
+      ],
+      "accepted_meanings_id": [
+        "sedih"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "nán guò",
+      "pinyin_numbered": "nan2 guo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "难",
+          "text": "nán",
+          "tone": 2
+        },
+        {
+          "hanzi": "过",
+          "text": "guò",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [],
+      "part_of_speech": "adjective",
+      "mnemonic": "难 difficult + 过 pass through — *sad*, a difficult feeling to get through.",
+      "mnemonic_id": "难 sulit + 过 melewati — *sedih*, perasaan sulit yang harus dilewati.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我很难过。",
+          "pinyin": "Wǒ hěn nán guò.",
+          "meaning": "I'm very sad.",
+          "meaning_id": "Aku sangat sedih."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_meishi",
+      "type": "word",
+      "simplified": "没事",
+      "traditional": "沒事",
+      "meaning": "it's okay / no problem",
+      "meaning_id": "tidak apa-apa",
+      "accepted_meanings": [
+        "it's okay / no problem"
+      ],
+      "accepted_meanings_id": [
+        "tidak apa-apa"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "méi shì",
+      "pinyin_numbered": "mei2 shi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "没",
+          "text": "méi",
+          "tone": 2
+        },
+        {
+          "hanzi": "事",
+          "text": "shì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [],
+      "part_of_speech": "expression",
+      "mnemonic": "没 not + 事 matter — *it's okay / no problem*, nothing is the matter.",
+      "mnemonic_id": "没 tidak + 事 masalah — *tidak apa-apa*, tidak ada masalah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "没事 is a common reassurance phrase — don't worry about it.",
+      "usage_note_id": "没事 adalah frasa penghibur yang umum — tidak perlu khawatir.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "没事，没事。",
+          "pinyin": "Méi shì, méi shì.",
+          "meaning": "It's okay, it's okay.",
+          "meaning_id": "Tidak apa-apa."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "feelings"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_hen_lei",
+      "type": "sentence",
+      "simplified": "我很累。",
+      "traditional": "我很累。",
+      "meaning": "I’m tired.",
+      "meaning_id": "Saya lelah.",
+      "literal_meaning": "I very tired.",
+      "literal_meaning_id": "Aku sangat lelah.",
+      "pinyin": "wǒ hěn lèi",
+      "pinyin_numbered": "wo3 hen3 lei4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "很",
+          "text": "hěn",
+          "tone": 3
+        },
+        {
+          "hanzi": "累",
+          "text": "lèi",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-3-4",
+      "focus_word_ids": [
+        "word_gaoxing"
+      ],
+      "pattern_ids": [
+        "pattern_feeling_hen"
+      ],
+      "notes": "Subject + 很 + feeling adjective — the standard pattern for expressing feelings.",
+      "notes_id": "Subjek + 很 + kata sifat perasaan — pola standar untuk mengungkapkan perasaan.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "feeling",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_meishi_ma",
+      "type": "sentence",
+      "simplified": "你没事吗？",
+      "traditional": "你沒事嗎？",
+      "meaning": "Are you okay?",
+      "meaning_id": "Kamu tidak apa-apa?",
+      "literal_meaning": "You no-matter?",
+      "literal_meaning_id": "Kamu tidak apa-apa?",
+      "pinyin": "nǐ méi shì ma",
+      "pinyin_numbered": "ni3 mei2 shi4 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "没",
+          "text": "méi",
+          "tone": 2
+        },
+        {
+          "hanzi": "事",
+          "text": "shì",
+          "tone": 4
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-2-4-0",
+      "focus_word_ids": [
+        "word_gaoxing"
+      ],
+      "pattern_ids": [
+        "pattern_feeling_hen"
+      ],
+      "notes": "A caring way to check in — \"are you okay?\" Used when someone seems upset.",
+      "notes_id": "Cara peduli untuk mengecek keadaan seseorang — \"kamu baik-baik saja?\" Dipakai saat seseorang terlihat tidak baik.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "feeling",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_feeling_hen",
+      "type": "pattern",
+      "title": "很 + feeling",
+      "title_id": "很 + perasaan",
+      "meaning": "expressing feelings",
+      "meaning_id": "mengungkapkan perasaan",
+      "structure": "Subject + 很 + feeling adjective",
+      "explanation": "Use 很 before many feeling adjectives.",
+      "explanation_id": "Gunakan 很 sebelum banyak kata sifat perasaan.",
+      "examples": [
+        {
+          "simplified": "我很高兴！",
+          "traditional": "我很高興！",
+          "pinyin": "Wǒ hěn gāo xìng!",
+          "meaning": "I am very happy!",
+          "meaning_id": "Aku sangat senang!"
+        },
+        {
+          "simplified": "他很累。",
+          "traditional": "他很累。",
+          "pinyin": "Tā hěn lèi.",
+          "meaning": "He is tired.",
+          "meaning_id": "Dia lelah."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "feeling",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_xing_happy",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_gao",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_danxin",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dan_worry",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_gaoxing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_gao",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_gaoxing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xing_happy",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_lei",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_lei",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shengqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_sheng_angry",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "高兴 means?",
+        "prompt_id": "Arti 高兴?",
+        "answer": "happy",
+        "answer_id": "senang"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "没事 means?",
+        "prompt_id": "Arti 没事?",
+        "answer": "it's okay / no problem",
+        "answer_id": "tidak apa-apa"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我很__。(I'm tired)",
+        "answer": "累"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你没事吗？",
+        "answer": "Are you okay?",
+        "answer_id": "Kamu tidak apa-apa?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_gaoxing",
+      "word_lei",
+      "word_shengqi",
+      "word_danxin",
+      "word_nanguo",
+      "word_meishi"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_gaoxing",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_lei",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shengqi",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_hen_lei",
+      "sentence_ni_meishi_ma"
+    ]
+  }
+}

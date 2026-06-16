@@ -1,0 +1,952 @@
+{
+  "pack": {
+    "id": "pack_032_making_plans",
+    "title": "Making Plans",
+    "title_id": "Membuat Rencana",
+    "subtitle": "Make simple plans with time, place, and people.",
+    "subtitle_id": "Membuat rencana sederhana dengan waktu, tempat, dan orang.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "plans",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 32,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Make simple plans with time, place, and people.",
+    "learning_goal_id": "Membuat rencana sederhana dengan waktu, tempat, dan orang.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_jian_meet",
+      "type": "hanzi",
+      "simplified": "见",
+      "traditional": "見",
+      "meaning": "see / meet",
+      "meaning_id": "bertemu / melihat",
+      "accepted_meanings": [
+        "see / meet"
+      ],
+      "accepted_meanings_id": [
+        "bertemu / melihat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiàn",
+      "pinyin_numbered": "jian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "见",
+          "text": "jiàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — an eye finally *seeing*, two people *meeting*. jiàn ≈ \"jyen!\" Tone 4.",
+      "mnemonic_id": "Sudah dipelajari — mata yang akhirnya *melihat*, dua orang yang *bertemu*. jiàn ≈ \"jyen!\" Nada 4.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "明天见！",
+          "pinyin": "Míng tiān jiàn!",
+          "meaning": "See you tomorrow!",
+          "meaning_id": "Sampai jumpa besok!"
+        },
+        {
+          "simplified": "见面了！",
+          "pinyin": "Jiàn miàn le!",
+          "meaning": "We met!",
+          "meaning_id": "Kita ketemu!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "plans",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_mian_face",
+      "type": "hanzi",
+      "simplified": "面",
+      "traditional": "面",
+      "meaning": "face / meet part",
+      "meaning_id": "wajah / bagian temu",
+      "accepted_meanings": [
+        "face / meet part"
+      ],
+      "accepted_meanings_id": [
+        "wajah / bagian temu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "miàn",
+      "pinyin_numbered": "mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — a flat surface, a *face*. When combined with 见, it means *meeting* face to face. miàn ≈ \"myen!\" Tone 4.",
+      "mnemonic_id": "Sudah dipelajari — permukaan datar, sebuah *wajah*. Digabung dengan 见 berarti *bertemu* tatap muka. miàn ≈ \"myen!\" Nada 4.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们见面吧。",
+          "pinyin": "Wǒ men jiàn miàn ba.",
+          "meaning": "Let's meet up.",
+          "meaning_id": "Ayo kita ketemuan."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "plans",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yue_appointment",
+      "type": "hanzi",
+      "simplified": "约",
+      "traditional": "約",
+      "meaning": "make appointment",
+      "meaning_id": "janjian",
+      "accepted_meanings": [
+        "make appointment"
+      ],
+      "accepted_meanings_id": [
+        "janjian"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuē",
+      "pinyin_numbered": "yue1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "约",
+          "text": "yuē",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A thread 纟 tying two people together — *arrange*, making a date or appointment. yuē ≈ \"yweh\" flat. Tone 1 high and steady like a confirmed plan.",
+      "mnemonic_id": "Benang 纟 yang mengikat dua orang bersama — *membuat janji*, mengatur pertemuan. yuē ≈ \"yweh\" flat. Nada 1 tinggi rata kayak rencana yang sudah dikonfirmasi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我约你明天。",
+          "pinyin": "Wǒ yuē nǐ míng tiān.",
+          "meaning": "I'm asking you to meet tomorrow.",
+          "meaning_id": "Aku ajak kamu ketemuan besok."
+        },
+        {
+          "simplified": "你约我了吗？",
+          "pinyin": "Nǐ yuē wǒ le ma?",
+          "meaning": "Did you make plans with me?",
+          "meaning_id": "Kamu sudah ajak aku?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "plans",
+        "verb",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_deng_wait",
+      "type": "hanzi",
+      "simplified": "等",
+      "traditional": "等",
+      "meaning": "wait",
+      "meaning_id": "tunggu",
+      "accepted_meanings": [
+        "wait"
+      ],
+      "accepted_meanings_id": [
+        "tunggu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "děng",
+      "pinyin_numbered": "deng3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "等",
+          "text": "děng",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Equal bamboo tablets 竹 arranged in order — *wait*, everything lined up in sequence. děng ≈ \"dung\" dipping then rising. Tone 3 like the patience of waiting.",
+      "mnemonic_id": "Tablet bambu 竹 yang tersusun rapi — *menunggu*, semuanya berbaris berurutan. děng ≈ \"dung\" turun terus naik. Nada 3 kayak kesabaran menunggu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我等你。",
+          "pinyin": "Wǒ děng nǐ.",
+          "meaning": "I'll wait for you.",
+          "meaning_id": "Aku tunggu kamu."
+        },
+        {
+          "simplified": "等一下！",
+          "pinyin": "Děng yí xià!",
+          "meaning": "Wait a moment!",
+          "meaning_id": "Tunggu sebentar!"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "plans",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yiqi",
+      "type": "hanzi",
+      "simplified": "起",
+      "traditional": "起",
+      "meaning": "rise / together part",
+      "meaning_id": "bangun / bagian bersama",
+      "accepted_meanings": [
+        "rise / together part"
+      ],
+      "accepted_meanings_id": [
+        "bangun / bagian bersama"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qǐ",
+      "pinyin_numbered": "qi3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "起",
+          "text": "qǐ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Already learned — *rise*, *start*. In 一起 it means all rising together, doing things *together*. qǐ ≈ \"chi\" Tone 3.",
+      "mnemonic_id": "Sudah dipelajari — *bangkit*, *mulai*. Dalam 一起 berarti semuanya bangkit bersama, melakukan sesuatu *bersama*. qǐ ≈ \"chi\" Nada 3.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们一起去！",
+          "pinyin": "Wǒ men yì qǐ qù!",
+          "meaning": "Let's go together!",
+          "meaning_id": "Ayo pergi bersama!"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "plans",
+        "verb_part",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_hou_after",
+      "type": "hanzi",
+      "simplified": "后",
+      "traditional": "後",
+      "meaning": "after",
+      "meaning_id": "setelah",
+      "accepted_meanings": [
+        "after"
+      ],
+      "accepted_meanings_id": [
+        "setelah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "hòu",
+      "pinyin_numbered": "hou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "后",
+          "text": "hòu",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — steps slowing, looking *behind*. hòu ≈ \"ho!\" Tone 4. Used in 以后 meaning *after / later*.",
+      "mnemonic_id": "Sudah dipelajari — langkah melambat, melihat ke *belakang*. hòu ≈ \"ho!\" Nada 4. Dipakai dalam 以后 yang berarti *setelah / nanti*.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "以后见。",
+          "pinyin": "Yǐ hòu jiàn.",
+          "meaning": "See you later.",
+          "meaning_id": "Sampai jumpa nanti."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "plans",
+        "time",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_jianmian",
+      "type": "word",
+      "simplified": "见面",
+      "traditional": "見面",
+      "meaning": "meet",
+      "meaning_id": "bertemu",
+      "accepted_meanings": [
+        "meet"
+      ],
+      "accepted_meanings_id": [
+        "bertemu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiàn miàn",
+      "pinyin_numbered": "jian4 mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "见",
+          "text": "jiàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_jian_meet",
+        "hanzi_mian"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "见 see + 面 face — *meet*, seeing each other face to face.",
+      "mnemonic_id": "见 lihat + 面 wajah — *bertemu*, melihat satu sama lain bertatap muka.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们见面吧。",
+          "pinyin": "Wǒ men jiàn miàn ba.",
+          "meaning": "Let's meet up.",
+          "meaning_id": "Ayo ketemuan."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yue",
+      "type": "word",
+      "simplified": "约",
+      "traditional": "約",
+      "meaning": "make plans / invite",
+      "meaning_id": "janjian / ajak",
+      "accepted_meanings": [
+        "make plans / invite"
+      ],
+      "accepted_meanings_id": [
+        "janjian / ajak"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuē",
+      "pinyin_numbered": "yue1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "约",
+          "text": "yuē",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_yue"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Make plans / invite* — setting up a time to meet someone.",
+      "mnemonic_id": "*Buat janji / ajak* — mengatur waktu untuk bertemu seseorang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我约你明天见面。",
+          "pinyin": "Wǒ yuē nǐ míng tiān jiàn miàn.",
+          "meaning": "I'm asking you to meet tomorrow.",
+          "meaning_id": "Aku ajak kamu ketemuan besok."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_deng",
+      "type": "word",
+      "simplified": "等",
+      "traditional": "等",
+      "meaning": "wait",
+      "meaning_id": "tunggu",
+      "accepted_meanings": [
+        "wait"
+      ],
+      "accepted_meanings_id": [
+        "tunggu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "děng",
+      "pinyin_numbered": "deng3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "等",
+          "text": "děng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_deng_wait"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Wait* — staying in place until someone arrives.",
+      "mnemonic_id": "*Tunggu* — tetap di tempat sampai seseorang datang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "等一下 = wait a moment. 等我 = wait for me.",
+      "usage_note_id": "等一下 = tunggu sebentar. 等我 = tunggu aku.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我等你。",
+          "pinyin": "Wǒ děng nǐ.",
+          "meaning": "I'll wait for you.",
+          "meaning_id": "Aku tunggu kamu."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yiqi",
+      "type": "word",
+      "simplified": "一起",
+      "traditional": "一起",
+      "meaning": "together",
+      "meaning_id": "bersama",
+      "accepted_meanings": [
+        "together"
+      ],
+      "accepted_meanings_id": [
+        "bersama"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yì qǐ",
+      "pinyin_numbered": "yi4 qi3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "起",
+          "text": "qǐ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_yiqi"
+      ],
+      "part_of_speech": "adverb",
+      "mnemonic": "一 one + 起 rise — *together*, one group rising as one.",
+      "mnemonic_id": "一 satu + 起 bangkit — *bersama*, satu kelompok yang bangkit sebagai satu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们一起去！",
+          "pinyin": "Wǒ men yì qǐ qù!",
+          "meaning": "Let's go together!",
+          "meaning_id": "Ayo pergi bersama!"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yihou",
+      "type": "word",
+      "simplified": "以后",
+      "traditional": "以後",
+      "meaning": "later / after",
+      "meaning_id": "nanti / setelah",
+      "accepted_meanings": [
+        "later / after"
+      ],
+      "accepted_meanings_id": [
+        "nanti / setelah"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǐ hòu",
+      "pinyin_numbered": "yi3 hou4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "以",
+          "text": "yǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "后",
+          "text": "hòu",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-4",
+      "hanzi_ids": [
+        "hanzi_hou"
+      ],
+      "part_of_speech": "time word",
+      "mnemonic": "以 using / after + 后 behind — *later / after*, time that comes after now.",
+      "mnemonic_id": "以 setelah + 后 belakang — *nanti / setelah*, waktu yang datang setelah sekarang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "以后 = after / later (future). 以前 = before (past).",
+      "usage_note_id": "以后 = setelah / nanti (masa depan). 以前 = sebelum (masa lalu).",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "以后见。",
+          "pinyin": "Yǐ hòu jiàn.",
+          "meaning": "See you later.",
+          "meaning_id": "Sampai jumpa nanti."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jihua",
+      "type": "word",
+      "simplified": "计划",
+      "traditional": "計劃",
+      "meaning": "plan",
+      "meaning_id": "rencana",
+      "accepted_meanings": [
+        "plan"
+      ],
+      "accepted_meanings_id": [
+        "rencana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jì huà",
+      "pinyin_numbered": "ji4 hua4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "计",
+          "text": "jì",
+          "tone": 4
+        },
+        {
+          "hanzi": "划",
+          "text": "huà",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [],
+      "part_of_speech": "noun/verb",
+      "mnemonic": "计 calculate + 划 draw/plan — *plan*, calculated and drawn out in advance.",
+      "mnemonic_id": "计 hitung + 划 rencana — *rencana*, dihitung dan dirancang sebelumnya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你有计划吗？",
+          "pinyin": "Nǐ yǒu jì huà ma?",
+          "meaning": "Do you have a plan?",
+          "meaning_id": "Kamu ada rencana?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "plans"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_mingtian_jianmian",
+      "type": "sentence",
+      "simplified": "明天见面。",
+      "traditional": "明天見面。",
+      "meaning": "Meet tomorrow.",
+      "meaning_id": "Bertemu besok.",
+      "literal_meaning": "Tomorrow meet.",
+      "literal_meaning_id": "Besok bertemu.",
+      "pinyin": "míng tiān jiàn miàn",
+      "pinyin_numbered": "ming2 tian1 jian4 mian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "明",
+          "text": "míng",
+          "tone": 2
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "见",
+          "text": "jiàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "面",
+          "text": "miàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-1-4-4",
+      "focus_word_ids": [
+        "word_jianmian"
+      ],
+      "pattern_ids": [
+        "pattern_making_plans"
+      ],
+      "notes": "Time word + 见面 — setting up a meeting simply and directly.",
+      "notes_id": "Kata waktu + 见面 — mengatur pertemuan dengan sederhana dan langsung.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "plans",
+        "time",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_women_yiqi_qu",
+      "type": "sentence",
+      "simplified": "我们一起去。",
+      "traditional": "我們一起去。",
+      "meaning": "Let's go together.",
+      "meaning_id": "Kita pergi bersama.",
+      "literal_meaning": "We together go.",
+      "literal_meaning_id": "Kita pergi bersama.",
+      "pinyin": "wǒ men yì qǐ qù",
+      "pinyin_numbered": "wo3 men0 yi4 qi3 qu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "们",
+          "text": "men",
+          "tone": 0
+        },
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "起",
+          "text": "qǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "去",
+          "text": "qù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-0-4-3-4",
+      "focus_word_ids": [
+        "word_jianmian"
+      ],
+      "pattern_ids": [
+        "pattern_making_plans"
+      ],
+      "notes": "一起 goes before the verb — \"together do something\".",
+      "notes_id": "一起 diletakkan sebelum kata kerja — \"bersama melakukan sesuatu\".",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "plans",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_making_plans",
+      "type": "pattern",
+      "title": "Time + 一起 + action",
+      "title_id": "Waktu + 一起 + aksi",
+      "meaning": "making simple plans",
+      "meaning_id": "membuat rencana sederhana",
+      "structure": "Time + 一起 + verb",
+      "explanation": "Use 一起 for doing something together.",
+      "explanation_id": "Gunakan 一起 untuk melakukan sesuatu bersama.",
+      "examples": [
+        {
+          "simplified": "明天见面。",
+          "traditional": "明天見面。",
+          "pinyin": "Míng tiān jiàn miàn.",
+          "meaning": "Meet tomorrow.",
+          "meaning_id": "Ketemuan besok."
+        },
+        {
+          "simplified": "我们一起去！",
+          "traditional": "我們一起去！",
+          "pinyin": "Wǒ men yì qǐ qù!",
+          "meaning": "Let's go together!",
+          "meaning_id": "Ayo pergi bersama!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "plans",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_yue_appointment",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_jian_meet",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_deng",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_deng_wait",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jianmian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_jian_meet",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jianmian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_mian",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yihou",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_hou",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yiqi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yiqi",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "一起 means?",
+        "prompt_id": "Arti 一起?",
+        "answer": "together",
+        "answer_id": "bersama"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "以后 means?",
+        "prompt_id": "Arti 以后?",
+        "answer": "later / after",
+        "answer_id": "nanti / setelah"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__你。(I'll wait for you)",
+        "answer": "等"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我们一起去。",
+        "answer": "Let's go together.",
+        "answer_id": "Ayo pergi bersama."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_jianmian",
+      "word_yue",
+      "word_deng",
+      "word_yiqi",
+      "word_yihou",
+      "word_jihua"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_jianmian",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yue",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_deng",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_mingtian_jianmian",
+      "sentence_women_yiqi_qu"
+    ]
+  }
+}

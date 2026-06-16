@@ -1,4 +1,5 @@
 ﻿import { AnswerGrid } from '../components/study/AnswerGrid';
+import { useRef } from 'react';
 import { StudyItemCard } from '../components/study/StudyItemCard';
 import { StudyProgress } from '../components/study/StudyProgress';
 import { ToneDots } from '../components/study/ToneDots';
@@ -9,6 +10,7 @@ import { StatCard } from '../components/ui/StatCard';
 import {
   getIntroStudySession,
   getStarterStudySession,
+  nextSessionIndexForProgress,
   sessionPlans,
   studyQuestionForItem,
   typeLabel,
@@ -145,6 +147,7 @@ function completedCount(
 export function StudyScreen() {
   const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
+  const scriptChoice = useAppStore((state) => state.scriptChoice);
   const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
   const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
   const introStatus = useAppStore((state) => state.introStatus);
@@ -160,15 +163,19 @@ export function StudyScreen() {
   const sessionCorrect = useStudyStore((state) => state.sessionCorrect);
   const sessionAttempts = useStudyStore((state) => state.sessionAttempts);
   const selectedPractice = useStudyStore((state) => state.selectedPractice);
+  const practiceHadMistake = useStudyStore((state) => state.practiceHadMistake);
   const selectedReview = useStudyStore((state) => state.selectedReview);
   const feedback = useStudyStore((state) => state.feedback);
   const setStep = useStudyStore((state) => state.setStep);
-  const startNextSession = useStudyStore((state) => state.startNextSession);
+  const setSessionIndex = useStudyStore((state) => state.setSessionIndex);
   const choosePracticeAnswer = useStudyStore((state) => state.choosePracticeAnswer);
   const chooseReviewAnswer = useStudyStore((state) => state.chooseReviewAnswer);
   const finishPractice = useStudyStore((state) => state.finishPractice);
   const finishReview = useStudyStore((state) => state.finishReview);
   const startSession = useStudyStore((state) => state.startSession);
+  const progressItems = useProgressStore((state) => state.items);
+  const sessionProgressRef = useRef(progressItems);
+  const recordLearning = useProgressStore((state) => state.recordLearning);
   const recordAnswer = useProgressStore((state) => state.recordAnswer);
   const completeSession = useProgressStore((state) => state.completeSession);
   const plan = sessionPlans[sessionSize];
@@ -180,11 +187,17 @@ export function StudyScreen() {
   const showLearningPinyin = pinyinDisplay !== 'Hidden in review' && pinyinDisplay !== 'Off';
   const showReviewPinyin = pinyinDisplay === 'Always';
   const speechRate = speechRateForSpeed(speechSpeed);
-  const session = getStarterStudySession(sessionSize, sessionIndex, language);
+  const session = getStarterStudySession(
+    sessionSize,
+    sessionIndex,
+    language,
+    sessionProgressRef.current,
+    scriptChoice,
+  );
   const learnItem = session.learnItems[learnIndex] ?? session.learnItems[0];
   const reviewItem = session.reviewItems[reviewIndex] ?? session.reviewItems[0];
-  const practice = studyQuestionForItem(learnItem, t('study.quickPractice'), true, language);
-  const review = studyQuestionForItem(reviewItem, t('study.reviewDue'), false, language);
+  const practice = learnItem ? studyQuestionForItem(learnItem, t('study.quickPractice'), true, language) : null;
+  const review = reviewItem ? studyQuestionForItem(reviewItem, t('study.reviewDue'), false, language) : null;
   const totalTasks = session.learnItems.length * 2 + session.reviewItems.length;
   const completed = introActive
     ? step === 'learn'
@@ -194,6 +207,13 @@ export function StudyScreen() {
   const hasMoreLearnItems = learnIndex < session.learnItems.length - 1;
   const hasMoreReviewItems = reviewIndex < session.reviewItems.length - 1;
   const sessionAccuracy = sessionAttempts > 0 ? `${Math.round((sessionCorrect / sessionAttempts) * 100)}%` : '100%';
+  const advanceSession = () => {
+    const latestProgress = useProgressStore.getState().items;
+    const nextSessionIndex = nextSessionIndexForProgress(sessionIndex, latestProgress);
+    sessionProgressRef.current = latestProgress;
+    setSessionIndex(nextSessionIndex);
+    syncStudyPosition(nextSessionIndex);
+  };
 
   return (
     <div className="study-shell">
@@ -217,7 +237,12 @@ export function StudyScreen() {
             </p>
             <p>{introSession.introDescription}</p>
           </div>
-          <Button type="button" onClick={() => setStep('learn')}>
+          <Button
+            type="button"
+            onClick={() =>
+              setStep(session.learnItems.length > 0 ? 'learn' : session.reviewItems.length > 0 ? 'review' : 'summary')
+            }
+          >
             {t('study.start')}
           </Button>
         </Card>
@@ -273,7 +298,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {!introActive && step === 'learn' ? (
+      {!introActive && step === 'learn' && learnItem ? (
         <section className="study-card desktop-wide learn-layout">
           <StudyItemCard
             type={typeLabel(learnItem.type, language)}
@@ -316,7 +341,7 @@ export function StudyScreen() {
         </section>
       ) : null}
 
-      {!introActive && step === 'practice' ? (
+      {!introActive && step === 'practice' && practice && learnItem ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{practice.modeLabel}</p>
@@ -368,12 +393,20 @@ export function StudyScreen() {
                   practice.correctFeedback,
                   practice.wrongFeedback,
                 );
-                recordAnswer(learnItem, answer === practice.correctAnswer);
               }}
             />
             {feedback ? <div className={`feedback ${selectedPractice === practice.correctAnswer ? 'good' : 'bad'}`}>{feedback}</div> : null}
             {selectedPractice === practice.correctAnswer ? (
-              <Button type="button" onClick={() => finishPractice(hasMoreLearnItems)}>
+              <Button
+                type="button"
+                onClick={() => {
+                  recordLearning(learnItem, !practiceHadMistake);
+                  if (!hasMoreLearnItems && session.reviewItems.length === 0) {
+                    completeSession(plan.minutes);
+                  }
+                  finishPractice(hasMoreLearnItems, session.reviewItems.length > 0);
+                }}
+              >
                 {t('common.next')}
               </Button>
             ) : null}
@@ -381,7 +414,7 @@ export function StudyScreen() {
         </Card>
       ) : null}
 
-      {!introActive && step === 'review' ? (
+      {!introActive && step === 'review' && review && reviewItem ? (
         <Card className="study-card practice-layout">
           <div className="review-card">
             <p className="muted">{review.modeLabel}</p>
@@ -498,14 +531,18 @@ export function StudyScreen() {
           <div className="session-actions">
             <Button
               type="button"
-              onClick={() => {
-                startNextSession();
-                syncStudyPosition(sessionIndex + 1);
-              }}
+              onClick={advanceSession}
             >
               {t('study.another')}
             </Button>
-            <Button variant="secondary" type="button" onClick={() => setScreen('home')}>
+            <Button
+              variant="secondary"
+              type="button"
+              onClick={() => {
+                advanceSession();
+                setScreen('home');
+              }}
+            >
               {t('study.done')}
             </Button>
           </div>

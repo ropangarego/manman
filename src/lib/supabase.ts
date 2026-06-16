@@ -3,21 +3,6 @@ import { createClient, type SupabaseClient, type User } from '@supabase/supabase
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim() ?? '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim() ?? '';
 
-function hasPasswordRecoveryMarker() {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-
-  const recoveryText = `${window.location.search}&${window.location.hash}`;
-  return (
-    recoveryText.includes('type=recovery') ||
-    recoveryText.includes('PASSWORD_RECOVERY') ||
-    recoveryText.includes('recovery=1')
-  );
-}
-
-export const initialPasswordRecoveryUrl = hasPasswordRecoveryMarker();
-
 export const isSupabaseConfigured =
   supabaseUrl.length > 0 &&
   supabaseAnonKey.length > 0 &&

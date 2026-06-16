@@ -1,0 +1,973 @@
+{
+  "pack": {
+    "id": "pack_022_clothes",
+    "title": "Clothes",
+    "title_id": "Pakaian",
+    "subtitle": "Talk about basic clothes, wearing, and simple clothing needs.",
+    "subtitle_id": "Bicara tentang pakaian dasar, memakai, dan kebutuhan pakaian sederhana.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "clothes",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 22,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about basic clothes, wearing, and simple clothing needs.",
+    "learning_goal_id": "Bicara tentang pakaian dasar, memakai, dan kebutuhan pakaian sederhana.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_yi_clothes",
+      "type": "hanzi",
+      "simplified": "衣",
+      "traditional": "衣",
+      "meaning": "clothes",
+      "meaning_id": "pakaian",
+      "accepted_meanings": [
+        "clothes"
+      ],
+      "accepted_meanings_id": [
+        "pakaian"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī",
+      "pinyin_numbered": "yi1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "衣",
+          "text": "yī",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A garment laid flat — the shape of *clothing*. yī ≈ \"ee\" flat. Tone 1 high and steady, like a neatly folded shirt.",
+      "mnemonic_id": "Pakaian yang direntangkan datar — bentuk *pakaian*. yī ≈ \"yi\" flat. Nada 1 tinggi rata, kayak kemeja yang terlipat rapi.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我穿新衣服。",
+          "pinyin": "Wǒ chuān xīn yī fu.",
+          "meaning": "I wear new clothes.",
+          "meaning_id": "Aku memakai baju baru."
+        },
+        {
+          "simplified": "衣服多少钱？",
+          "pinyin": "Yī fu duō shao qián?",
+          "meaning": "How much are the clothes?",
+          "meaning_id": "Bajunya berapa?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "clothes",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_fu",
+      "type": "hanzi",
+      "simplified": "服",
+      "traditional": "服",
+      "meaning": "clothes / serve",
+      "meaning_id": "pakaian / melayani",
+      "accepted_meanings": [
+        "clothes / serve"
+      ],
+      "accepted_meanings_id": [
+        "pakaian / melayani"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fú",
+      "pinyin_numbered": "fu2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "服",
+          "text": "fú",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A person kneeling in submission — *serve*, *obey*, or *clothing* that serves your body. fú ≈ \"foo\" rising. Tone 2 goes up, like adjusting your outfit.",
+      "mnemonic_id": "Orang berlutut dalam kepatuhan — *melayani*, *patuh*, atau *pakaian* yang melayani tubuhmu. fú ≈ \"fu\" naik. Nada 2 naik terus, kayak merapikan pakaian.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "衣服很贵。",
+          "pinyin": "Yī fu hěn guì.",
+          "meaning": "The clothes are expensive.",
+          "meaning_id": "Bajunya mahal."
+        },
+        {
+          "simplified": "你的衣服很好看。",
+          "pinyin": "Nǐ de yī fu hěn hǎo kàn.",
+          "meaning": "Your clothes look great.",
+          "meaning_id": "Bajumu bagus."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "clothes",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ku",
+      "type": "hanzi",
+      "simplified": "裤",
+      "traditional": "褲",
+      "meaning": "pants",
+      "meaning_id": "celana",
+      "accepted_meanings": [
+        "pants"
+      ],
+      "accepted_meanings_id": [
+        "celana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kù",
+      "pinyin_numbered": "ku4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "裤",
+          "text": "kù",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Cloth 衤 covering the legs — *pants*, the garment for your lower half. kù ≈ \"koo!\" sharp. Tone 4 drops, like pulling pants on fast.",
+      "mnemonic_id": "Kain 衤 yang menutupi kaki — *celana*, pakaian untuk bagian bawah tubuhmu. kù ≈ \"ku!\" Nada 4 turun tajam, kayak cepat memakai celana.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这条裤子多少钱？",
+          "pinyin": "Zhè tiáo kù zi duō shao qián?",
+          "meaning": "How much are these pants?",
+          "meaning_id": "Celananya berapa?"
+        },
+        {
+          "simplified": "裤子很便宜。",
+          "pinyin": "Kù zi hěn pián yi.",
+          "meaning": "The pants are cheap.",
+          "meaning_id": "Celananya murah."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "clothes",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xie_shoes",
+      "type": "hanzi",
+      "simplified": "鞋",
+      "traditional": "鞋",
+      "meaning": "shoes",
+      "meaning_id": "sepatu",
+      "accepted_meanings": [
+        "shoes"
+      ],
+      "accepted_meanings_id": [
+        "sepatu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xié",
+      "pinyin_numbered": "xie2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "鞋",
+          "text": "xié",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Leather 革 shaped to fit the foot — *shoes*, the leather on your feet. xié ≈ \"syeh\" rising. Tone 2 goes up, like stepping up in new shoes.",
+      "mnemonic_id": "Kulit 革 yang dibentuk untuk kaki — *sepatu*, kulit di kakimu. xié ≈ \"syeh\" naik. Nada 2 naik terus, kayak melangkah dengan sepatu baru.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这双鞋很贵。",
+          "pinyin": "Zhè shuāng xié hěn guì.",
+          "meaning": "These shoes are expensive.",
+          "meaning_id": "Sepatunya mahal."
+        },
+        {
+          "simplified": "我买新鞋。",
+          "pinyin": "Wǒ mǎi xīn xié.",
+          "meaning": "I buy new shoes.",
+          "meaning_id": "Aku beli sepatu baru."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "clothes",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_chuan_wear",
+      "type": "hanzi",
+      "simplified": "穿",
+      "traditional": "穿",
+      "meaning": "wear / pass through",
+      "meaning_id": "memakai / menembus",
+      "accepted_meanings": [
+        "wear / pass through"
+      ],
+      "accepted_meanings_id": [
+        "memakai / menembus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chuān",
+      "pinyin_numbered": "chuan1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "穿",
+          "text": "chuān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Threading through a hole — *to wear*, putting things on your body. chuān ≈ \"chwahn\" flat. Tone 1 high and steady, like sliding into a comfortable shirt.",
+      "mnemonic_id": "Memasukkan benang melalui lubang — *memakai*, menaruh sesuatu di tubuhmu. chuān ≈ \"chwan\" flat. Nada 1 tinggi rata, kayak meluncur ke dalam kemeja yang nyaman.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你穿什么？",
+          "pinyin": "Nǐ chuān shén me?",
+          "meaning": "What are you wearing?",
+          "meaning_id": "Kamu pakai apa?"
+        },
+        {
+          "simplified": "我穿新衣服。",
+          "pinyin": "Wǒ chuān xīn yī fu.",
+          "meaning": "I wear new clothes.",
+          "meaning_id": "Aku pakai baju baru."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "clothes",
+        "verb",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xin_new",
+      "type": "hanzi",
+      "simplified": "新",
+      "traditional": "新",
+      "meaning": "new",
+      "meaning_id": "baru",
+      "accepted_meanings": [
+        "new"
+      ],
+      "accepted_meanings_id": [
+        "baru"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xīn",
+      "pinyin_numbered": "xin1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "新",
+          "text": "xīn",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "An axe cutting fresh wood — *new*, freshly made. xīn ≈ \"shin\" flat. Tone 1 high and clean, like something just unwrapped.",
+      "mnemonic_id": "Kapak yang memotong kayu segar — *baru*, yang baru dibuat. xīn ≈ \"shin\" flat. Nada 1 tinggi bersih, kayak sesuatu yang baru dibuka dari kemasan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我买新衣服。",
+          "pinyin": "Wǒ mǎi xīn yī fu.",
+          "meaning": "I buy new clothes.",
+          "meaning_id": "Aku beli baju baru."
+        },
+        {
+          "simplified": "这是新的。",
+          "pinyin": "Zhè shì xīn de.",
+          "meaning": "This is new.",
+          "meaning_id": "Ini yang baru."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "clothes",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_yifu",
+      "type": "word",
+      "simplified": "衣服",
+      "traditional": "衣服",
+      "meaning": "clothes",
+      "meaning_id": "pakaian",
+      "accepted_meanings": [
+        "clothes"
+      ],
+      "accepted_meanings_id": [
+        "pakaian"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yī fu",
+      "pinyin_numbered": "yi1 fu0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "衣",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "服",
+          "text": "fu",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "1-0",
+      "hanzi_ids": [
+        "hanzi_yi_clothes",
+        "hanzi_fu"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "衣 garment + 服 serve — *clothes*, what serves and covers your body.",
+      "mnemonic_id": "衣 pakaian + 服 melayani — *baju*, yang melayani dan menutupi tubuhmu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你的衣服很好看。",
+          "pinyin": "Nǐ de yī fu hěn hǎo kàn.",
+          "meaning": "Your clothes look great.",
+          "meaning_id": "Bajumu bagus."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_kuzi",
+      "type": "word",
+      "simplified": "裤子",
+      "traditional": "褲子",
+      "meaning": "pants",
+      "meaning_id": "celana",
+      "accepted_meanings": [
+        "pants"
+      ],
+      "accepted_meanings_id": [
+        "celana"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kù zi",
+      "pinyin_numbered": "ku4 zi0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "裤",
+          "text": "kù",
+          "tone": 4
+        },
+        {
+          "hanzi": "子",
+          "text": "zi",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "4-0",
+      "hanzi_ids": [
+        "hanzi_ku"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "裤 pants + 子 suffix — *pants/trousers*, the standard word.",
+      "mnemonic_id": "裤 celana + 子 akhiran — *celana*, kata standar untuk celana panjang.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "裤子很便宜。",
+          "pinyin": "Kù zi hěn pián yi.",
+          "meaning": "The pants are cheap.",
+          "meaning_id": "Celananya murah."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xiezi",
+      "type": "word",
+      "simplified": "鞋子",
+      "traditional": "鞋子",
+      "meaning": "shoes",
+      "meaning_id": "sepatu",
+      "accepted_meanings": [
+        "shoes"
+      ],
+      "accepted_meanings_id": [
+        "sepatu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xié zi",
+      "pinyin_numbered": "xie2 zi0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "鞋",
+          "text": "xié",
+          "tone": 2
+        },
+        {
+          "hanzi": "子",
+          "text": "zi",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-0",
+      "hanzi_ids": [
+        "hanzi_xie_shoes"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "鞋 shoe + 子 suffix — *shoes*, the pair on your feet.",
+      "mnemonic_id": "鞋 sepatu + 子 akhiran — *sepatu*, pasangan di kakimu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这双鞋子很贵。",
+          "pinyin": "Zhè shuāng xié zi hěn guì.",
+          "meaning": "These shoes are expensive.",
+          "meaning_id": "Sepatu ini mahal."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_chuan",
+      "type": "word",
+      "simplified": "穿",
+      "traditional": "穿",
+      "meaning": "wear",
+      "meaning_id": "memakai",
+      "accepted_meanings": [
+        "wear"
+      ],
+      "accepted_meanings_id": [
+        "memakai"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "chuān",
+      "pinyin_numbered": "chuan1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "穿",
+          "text": "chuān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_chuan_wear"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Wear* — putting on any item of clothing.",
+      "mnemonic_id": "*Memakai* — mengenakan pakaian apapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "穿 is used for clothes, shoes, socks — anything you put on your body.",
+      "usage_note_id": "穿 dipakai untuk baju, sepatu, kaus kaki — apapun yang kamu kenakan.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你穿什么？",
+          "pinyin": "Nǐ chuān shén me?",
+          "meaning": "What are you wearing?",
+          "meaning_id": "Kamu pakai apa?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xin",
+      "type": "word",
+      "simplified": "新",
+      "traditional": "新",
+      "meaning": "new",
+      "meaning_id": "baru",
+      "accepted_meanings": [
+        "new"
+      ],
+      "accepted_meanings_id": [
+        "baru"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xīn",
+      "pinyin_numbered": "xin1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "新",
+          "text": "xīn",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_xin_new"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "*New* — freshly bought, recently made, not used before.",
+      "mnemonic_id": "*Baru* — baru dibeli, baru dibuat, belum dipakai sebelumnya.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这是新的。",
+          "pinyin": "Zhè shì xīn de.",
+          "meaning": "This is new.",
+          "meaning_id": "Ini yang baru."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jiu_old",
+      "type": "word",
+      "simplified": "旧",
+      "traditional": "舊",
+      "meaning": "old / used",
+      "meaning_id": "lama / bekas",
+      "accepted_meanings": [
+        "old / used"
+      ],
+      "accepted_meanings_id": [
+        "lama / bekas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jiù",
+      "pinyin_numbered": "jiu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "旧",
+          "text": "jiù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [],
+      "part_of_speech": "adjective",
+      "mnemonic": "*Old / used* — the opposite of 新, something worn before.",
+      "mnemonic_id": "*Lama / bekas* — kebalikan dari 新, sesuatu yang pernah dipakai.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这是旧的。",
+          "pinyin": "Zhè shì jiù de.",
+          "meaning": "This is old/used.",
+          "meaning_id": "Ini yang lama."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "clothes"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_chuan_xin_yifu",
+      "type": "sentence",
+      "simplified": "我穿新衣服。",
+      "traditional": "我穿新衣服。",
+      "meaning": "I wear new clothes.",
+      "meaning_id": "Saya memakai pakaian baru.",
+      "literal_meaning": "I wear new clothes.",
+      "literal_meaning_id": "Aku memakai baju baru.",
+      "pinyin": "wǒ chuān xīn yī fu",
+      "pinyin_numbered": "wo3 chuan1 xin1 yi1 fu0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "穿",
+          "text": "chuān",
+          "tone": 1
+        },
+        {
+          "hanzi": "新",
+          "text": "xīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "衣",
+          "text": "yī",
+          "tone": 1
+        },
+        {
+          "hanzi": "服",
+          "text": "fu",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-1-1-1-0",
+      "focus_word_ids": [
+        "word_yifu"
+      ],
+      "pattern_ids": [
+        "pattern_wear_clothes"
+      ],
+      "notes": "穿 + clothing — the standard pattern for wearing clothes.",
+      "notes_id": "穿 + pakaian — pola standar untuk memakai pakaian.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "clothes",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_zhe_shuang_xie_hen_gui",
+      "type": "sentence",
+      "simplified": "这双鞋很贵。",
+      "traditional": "這雙鞋很貴。",
+      "meaning": "These shoes are expensive.",
+      "meaning_id": "Sepatu ini mahal.",
+      "literal_meaning": "This pair shoes very expensive.",
+      "literal_meaning_id": "Sepasang sepatu ini sangat mahal.",
+      "pinyin": "zhè shuāng xié hěn guì",
+      "pinyin_numbered": "zhe4 shuang1 xie2 hen3 gui4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "这",
+          "text": "zhè",
+          "tone": 4
+        },
+        {
+          "hanzi": "双",
+          "text": "shuāng",
+          "tone": 1
+        },
+        {
+          "hanzi": "鞋",
+          "text": "xié",
+          "tone": 2
+        },
+        {
+          "hanzi": "很",
+          "text": "hěn",
+          "tone": 3
+        },
+        {
+          "hanzi": "贵",
+          "text": "guì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-1-2-3-4",
+      "focus_word_ids": [
+        "word_yifu"
+      ],
+      "pattern_ids": [
+        "pattern_wear_clothes"
+      ],
+      "notes": "双 is the measure word for pairs (shoes, socks, hands). Subject + 很 + adjective.",
+      "notes_id": "双 adalah kata bantu bilangan untuk pasangan (sepatu, kaus kaki, tangan). Subjek + 很 + kata sifat.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "clothes",
+        "shopping",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_wear_clothes",
+      "type": "pattern",
+      "title": "穿 + clothes",
+      "title_id": "穿 + pakaian",
+      "meaning": "wearing clothes",
+      "meaning_id": "memakai pakaian",
+      "structure": "Subject + 穿 + clothes",
+      "explanation": "Use 穿 with clothes and shoes.",
+      "explanation_id": "Gunakan 穿 untuk pakaian dan sepatu.",
+      "examples": [
+        {
+          "simplified": "我穿新衣服。",
+          "traditional": "我穿新衣服。",
+          "pinyin": "Wǒ chuān xīn yī fu.",
+          "meaning": "I wear new clothes.",
+          "meaning_id": "Aku pakai baju baru."
+        },
+        {
+          "simplified": "你穿什么颜色？",
+          "traditional": "你穿什麼顏色？",
+          "pinyin": "Nǐ chuān shén me yán sè?",
+          "meaning": "What color are you wearing?",
+          "meaning_id": "Kamu pakai warna apa?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "clothes",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_fu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_yi_clothes",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_chuan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_chuan_wear",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kuzi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ku",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xiezi",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xie_shoes",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xin",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_xin_new",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yifu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_fu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yifu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yi_clothes",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "穿 means?",
+        "prompt_id": "Arti 穿?",
+        "answer": "wear",
+        "answer_id": "memakai"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "新 means?",
+        "prompt_id": "Arti 新?",
+        "answer": "new",
+        "answer_id": "baru"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我__新衣服。(I wear new clothes)",
+        "answer": "穿"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "这双鞋很贵。",
+        "answer": "These shoes are expensive.",
+        "answer_id": "Sepatu ini mahal."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_yifu",
+      "word_kuzi",
+      "word_xiezi",
+      "word_chuan",
+      "word_xin",
+      "word_jiu_old"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_yifu",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_kuzi",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xiezi",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_chuan_xin_yifu",
+      "sentence_zhe_shuang_xie_hen_gui"
+    ]
+  }
+}

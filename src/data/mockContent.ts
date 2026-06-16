@@ -7,6 +7,7 @@ export type Familiarity = 'beginner' | 'some';
 export type PinyinDisplay = 'Always' | 'Lesson only' | 'Hidden in review' | 'Off';
 export type ReviewStyle = 'Simple' | 'Mixed' | 'Typed';
 export type Stage = 'Learning' | 'Familiar' | 'Strong' | 'Mastered' | 'Long-term';
+export type LibraryStage = Stage | 'Not started' | 'All';
 export type ContentType = 'Hanzi' | 'Words' | 'Sentences' | 'Patterns';
 export type LibraryTab = 'All' | 'Hanzi' | 'Words' | 'Sentences';
 
@@ -26,14 +27,17 @@ export interface ContentItem {
   audioUrl?: string;
   components: [string, string][];
   componentsId?: [string, string][];
+  componentsTraditional?: [string, string][];
   mnemonic: string;
   mnemonicId?: string;
   related: string[];
   example: [string, string, string];
   exampleId?: [string, string, string];
+  exampleTraditional?: string;
   nextReview: string;
   orderIndex: number;
   reviewable: boolean;
+  started?: boolean;
 }
 
 export interface StudyQuestion {
@@ -475,6 +479,43 @@ function componentRowsId(item: RawLearningItem): [string, string][] {
   return uniqueRows([...directRows, ...hanziRows, ...focusRows, ...patternRows, ...characterRowsId(item.simplified)]).slice(0, 4);
 }
 
+function componentRowsTraditional(item: RawLearningItem): [string, string][] {
+  const directRows =
+    item.components?.map((component) => [
+      componentById.get(component.id)?.traditional ?? learningById.get(component.id)?.traditional ?? component.character,
+      component.meaning,
+    ] as [string, string]) ?? [];
+  const hanziRows =
+    item.hanzi_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.traditional, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const focusRows =
+    item.focus_word_ids
+      ?.map((id) => {
+        const row = learningById.get(id);
+        return row ? ([row.traditional, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const patternRows =
+    item.pattern_ids
+      ?.map((id) => {
+        const row = patternById.get(id);
+        return row ? ([row.title, row.meaning] as [string, string]) : null;
+      })
+      .filter((row): row is [string, string] => Boolean(row)) ?? [];
+  const characterRowsTraditional = Array.from(item.simplified)
+    .map((character) => {
+      const hanzi = hanziByCharacter.get(character);
+      return hanzi ? ([hanzi.traditional, hanzi.meaning] as [string, string]) : null;
+    })
+    .filter((row): row is [string, string] => Boolean(row));
+
+  return uniqueRows([...directRows, ...hanziRows, ...focusRows, ...patternRows, ...characterRowsTraditional]).slice(0, 4);
+}
+
 function firstExampleParts(item: RawLearningItem) {
   const firstExample = item.examples?.[0];
 
@@ -554,11 +595,16 @@ function toLearningContentItem(pack: RawContentPack, item: RawLearningItem, type
     audioUrl: optionalText(item.audio_url),
     components: componentRows(item).length > 0 ? componentRows(item) : prerequisiteRows(pack, item.id),
     componentsId: componentRowsId(item).length > 0 ? componentRowsId(item) : prerequisiteRowsId(pack, item.id),
+    componentsTraditional:
+      componentRowsTraditional(item).length > 0 ? componentRowsTraditional(item) : prerequisiteRows(pack, item.id),
     mnemonic: item.mnemonic ?? note ?? `${item.simplified} means ${item.meaning}.`,
     mnemonicId: optionalText(item.mnemonic_id ?? noteId),
     related: relatedForLearningItem(pack, item),
     example: exampleForLearningItem(item),
     exampleId: exampleForLearningItemId(item),
+    exampleTraditional:
+      item.examples?.find((example): example is RawLearningExample => typeof example === 'object' && example !== null)
+        ?.traditional ?? (item.examples?.length ? undefined : item.traditional),
     nextReview: nextReviewByStage[stage],
     orderIndex: item.order_index,
     reviewable: item.is_reviewable,
@@ -593,6 +639,7 @@ function toPatternContentItem(pack: RawContentPack, item: RawPattern): ContentIt
     exampleId: example
       ? [example.simplified, example.pinyin, example.meaning_id ?? example.meaning]
       : [item.structure, item.structure, item.meaning_id],
+    exampleTraditional: example?.traditional,
     nextReview: nextReviewByStage[stage],
     orderIndex: item.order_index,
     reviewable: item.is_reviewable ?? false,
@@ -632,23 +679,33 @@ function takeUniqueCycled<T>(items: T[], count: number, startIndex = 0) {
   return takeCycled(items, Math.min(count, items.length), startIndex);
 }
 
-export function localizeContentItem(item: ContentItem, language: AppLanguage): ContentItem {
+export function localizeContentItem(
+  item: ContentItem,
+  language: AppLanguage,
+  scriptChoice: ScriptChoice = 'Simplified',
+): ContentItem {
+  const useTraditional = effectiveScript(scriptChoice) === 'Traditional';
+
   return {
     ...item,
-    title: textFor(language, item.title, item.titleId),
+    title: useTraditional && item.traditionalTitle ? item.traditionalTitle : textFor(language, item.title, item.titleId),
     meaning: textFor(language, item.meaning, item.meaningId),
-    components: (item.componentsId ?? item.components).map(([label, value], index) => [
+    components: (useTraditional ? item.componentsTraditional ?? item.components : item.components).map(([label, value], index) => [
       label,
-      textFor(language, item.components[index]?.[1] ?? value, value),
+      textFor(language, item.components[index]?.[1] ?? value, item.componentsId?.[index]?.[1] ?? value),
     ]),
     mnemonic: textFor(language, item.mnemonic, item.mnemonicId),
     example: item.exampleId
       ? [
-          item.example[0],
+          useTraditional && item.exampleTraditional ? item.exampleTraditional : item.example[0],
           item.example[1],
           textFor(language, item.example[2], item.exampleId[2]),
         ]
-      : item.example,
+      : [
+          useTraditional && item.exampleTraditional ? item.exampleTraditional : item.example[0],
+          item.example[1],
+          item.example[2],
+        ],
   };
 }
 
@@ -702,7 +759,7 @@ function packForSession(sessionIndex: number) {
     return packEntries[0];
   }
 
-  return standardPackEntries[sessionIndex % standardPackEntries.length];
+  return standardPackEntries[Math.min(Math.max(0, sessionIndex), standardPackEntries.length - 1)];
 }
 
 export function sessionIndexForPackId(packId?: string | null) {
@@ -760,31 +817,53 @@ export function recommendedSessionIndexForPlacement(score: number, totalQuestion
   return nearestExistingSessionIndex(7);
 }
 
-function sessionCycle(sessionIndex: number) {
-  return standardPackEntries.length === 0 ? 0 : Math.floor(sessionIndex / standardPackEntries.length);
+type ProgressLookup = Record<string, { dueAt: string }>;
+
+function plannedItemsForPack(packEntry: PackEntry) {
+  const plannedItems =
+    packEntry.raw.study_flow.new_items
+      ?.map((id) => contentItemById.get(id))
+      .filter((item): item is ContentItem => Boolean(item)) ?? [];
+
+  return plannedItems.length > 0 ? plannedItems : packEntry.items.filter((item) => item.type === 'Words');
+}
+
+export function nextSessionIndexForProgress(sessionIndex: number, progress: ProgressLookup) {
+  const safeIndex = Math.min(Math.max(0, sessionIndex), Math.max(standardPackEntries.length - 1, 0));
+  const packEntry = standardPackEntries[safeIndex];
+
+  if (!packEntry) {
+    return 0;
+  }
+
+  const hasUnintroducedItems = plannedItemsForPack(packEntry).some((item) => !progress[item.id]);
+  return hasUnintroducedItems ? safeIndex : Math.min(safeIndex + 1, standardPackEntries.length - 1);
 }
 
 export function getStarterStudySession(
   sessionSize: SessionSize,
   sessionIndex: number,
   language: AppLanguage = 'English',
+  progress: ProgressLookup = {},
+  scriptChoice: ScriptChoice = 'Simplified',
 ): StarterStudySession {
   const plan = sessionPlans[sessionSize];
   const packEntry = packForSession(sessionIndex);
   const activePackIndex = Math.max(0, standardPackEntries.findIndex((entry) => entry.raw.pack.id === packEntry.raw.pack.id));
-  const cycle = sessionCycle(sessionIndex);
-  const plannedNewItems =
-    packEntry.raw.study_flow.new_items
-      ?.map((id) => contentItemById.get(id))
-      .filter((item): item is ContentItem => Boolean(item)) ?? [];
-  const packWords = packEntry.items.filter((item) => item.type === 'Words');
-  const newPool = plannedNewItems.length > 0 ? plannedNewItems : packWords;
+  const newPool = plannedItemsForPack(packEntry).filter((item) => !progress[item.id]);
   const newWordCount = Math.min(plan.newWords, newPool.length);
-  const learnItems = takeUniqueCycled(newPool, newWordCount, cycle * Math.max(newWordCount, 1));
+  const learnItems = newPool.slice(0, newWordCount);
   const learnIds = new Set(learnItems.map((item) => item.id));
   const availablePackIds = new Set(standardPackEntries.slice(0, activePackIndex + 1).map((entry) => entry.raw.pack.id));
+  const now = Date.now();
   const reviewPool = contentItems.filter(
-    (item) => availablePackIds.has(item.packId) && item.reviewable && item.type !== 'Patterns' && !learnIds.has(item.id),
+    (item) =>
+      availablePackIds.has(item.packId) &&
+      item.reviewable &&
+      item.type !== 'Patterns' &&
+      !learnIds.has(item.id) &&
+      Boolean(progress[item.id]) &&
+      new Date(progress[item.id].dueAt).getTime() <= now,
   );
   const reviewItems = takeUniqueCycled(reviewPool, plan.reviews, sessionIndex * plan.reviews);
   const unlocks =
@@ -811,9 +890,11 @@ export function getStarterStudySession(
     ),
     introDescription: textFor(language, packEntry.raw.pack.subtitle, packEntry.raw.pack.subtitle_id),
     dayGoal: textFor(language, packEntry.raw.pack.learning_goal, packEntry.raw.pack.learning_goal_id),
-    learnItems: learnItems.map((item) => localizeContentItem(item, language)),
-    reviewItems: reviewItems.map((item) => localizeContentItem(item, language)),
-    unlocks: (unlocks.length > 0 ? unlocks : fallbackUnlocks).map((item) => localizeContentItem(item, language)),
+    learnItems: learnItems.map((item) => localizeContentItem(item, language, scriptChoice)),
+    reviewItems: reviewItems.map((item) => localizeContentItem(item, language, scriptChoice)),
+    unlocks: (unlocks.length > 0 ? unlocks : fallbackUnlocks).map((item) =>
+      localizeContentItem(item, language, scriptChoice),
+    ),
   };
 }
 
@@ -961,8 +1042,13 @@ export const starterStats = {
   reviewsDone: 0,
 } as const;
 
-export function getCurrentFocus(language: AppLanguage = 'English', sessionIndex = 0) {
-  const session = getStarterStudySession('Standard', sessionIndex, language);
+export function getCurrentFocus(
+  language: AppLanguage = 'English',
+  sessionIndex = 0,
+  progress: ProgressLookup = {},
+  scriptChoice: ScriptChoice = 'Simplified',
+) {
+  const session = getStarterStudySession('Standard', sessionIndex, language, progress, scriptChoice);
   const focusItems = session.learnItems.length > 0 ? session.learnItems : contentItems.slice(0, 3);
 
   return focusItems.slice(0, 3).map((item) => item.meaning);

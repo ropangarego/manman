@@ -22,6 +22,18 @@ import pack017 from './pack_017_transport_basics.json';
 import pack018 from './pack_018_directions.json';
 import pack019 from './pack_019_simple_past_le.json';
 import pack020 from './pack_020_ability_hui_neng.json';
+import pack021 from './pack_021_weather.json';
+import pack022 from './pack_022_clothes.json';
+import pack023 from './pack_023_colors.json';
+import pack024 from './pack_024_body_health.json';
+import pack025 from './pack_025_work_study.json';
+import pack026 from './pack_026_hobbies.json';
+import pack027 from './pack_027_feelings.json';
+import pack028 from './pack_028_common_places.json';
+import pack029 from './pack_029_at_restaurant.json';
+import pack030 from './pack_030_at_shop.json';
+import pack031 from './pack_031_asking_for_help.json';
+import pack032 from './pack_032_making_plans.json';
 
 export const rawContentPacks = [
   pack000,
@@ -45,4 +57,16 @@ export const rawContentPacks = [
   pack018,
   pack019,
   pack020,
+  pack021,
+  pack022,
+  pack023,
+  pack024,
+  pack025,
+  pack026,
+  pack027,
+  pack028,
+  pack029,
+  pack030,
+  pack031,
+  pack032,
 ] as unknown[];

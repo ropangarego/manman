@@ -12,6 +12,7 @@ interface StudyState {
   sessionCorrect: number;
   sessionAttempts: number;
   selectedPractice: string | null;
+  practiceHadMistake: boolean;
   selectedReview: string | null;
   feedback: string;
   setSessionIndex: (sessionIndex: number) => void;
@@ -30,7 +31,7 @@ interface StudyState {
     correctFeedback: string,
     wrongFeedback: string,
   ) => void;
-  finishPractice: (hasMoreLearnItems: boolean) => void;
+  finishPractice: (hasMoreLearnItems: boolean, hasReviewItems?: boolean) => void;
   finishReview: (hasMoreReviewItems: boolean) => void;
   resetInteractions: () => void;
   resetStudyProgress: (sessionIndex?: number) => void;
@@ -46,6 +47,7 @@ export const useStudyStore = create<StudyState>()(
       sessionCorrect: 0,
       sessionAttempts: 0,
       selectedPractice: null,
+      practiceHadMistake: false,
       selectedReview: null,
       feedback: '',
       setSessionIndex: (sessionIndex) =>
@@ -57,6 +59,7 @@ export const useStudyStore = create<StudyState>()(
           sessionCorrect: 0,
           sessionAttempts: 0,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         }),
@@ -68,6 +71,7 @@ export const useStudyStore = create<StudyState>()(
           sessionCorrect: 0,
           sessionAttempts: 0,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         }),
@@ -80,6 +84,7 @@ export const useStudyStore = create<StudyState>()(
           sessionCorrect: 0,
           sessionAttempts: 0,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         })),
@@ -87,16 +92,27 @@ export const useStudyStore = create<StudyState>()(
         set({
           step,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         }),
       choosePracticeAnswer: (answer, correctAnswer, correctFeedback, wrongFeedback) =>
-        set((state) => ({
-          selectedPractice: answer,
-          feedback: answer === correctAnswer ? correctFeedback : wrongFeedback,
-          sessionAttempts: state.sessionAttempts + 1,
-          sessionCorrect: state.sessionCorrect + (answer === correctAnswer ? 1 : 0),
-        })),
+        set((state) => {
+          if (state.selectedPractice === correctAnswer) {
+            return state;
+          }
+
+          const firstAttempt = state.selectedPractice === null;
+          const correct = answer === correctAnswer;
+
+          return {
+            selectedPractice: answer,
+            practiceHadMistake: state.practiceHadMistake || !correct,
+            feedback: correct ? correctFeedback : wrongFeedback,
+            sessionAttempts: state.sessionAttempts + (firstAttempt ? 1 : 0),
+            sessionCorrect: state.sessionCorrect + (firstAttempt && correct ? 1 : 0),
+          };
+        }),
       chooseReviewAnswer: (answer, correctAnswer, correctFeedback, wrongFeedback) =>
         set((state) => {
           if (state.selectedReview) {
@@ -110,11 +126,12 @@ export const useStudyStore = create<StudyState>()(
             sessionCorrect: state.sessionCorrect + (answer === correctAnswer ? 1 : 0),
           };
         }),
-      finishPractice: (hasMoreLearnItems) =>
+      finishPractice: (hasMoreLearnItems, hasReviewItems = true) =>
         set((state) => ({
-          step: hasMoreLearnItems ? 'learn' : 'review',
+          step: hasMoreLearnItems ? 'learn' : hasReviewItems ? 'review' : 'summary',
           learnIndex: hasMoreLearnItems ? state.learnIndex + 1 : state.learnIndex,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         })),
@@ -128,6 +145,7 @@ export const useStudyStore = create<StudyState>()(
       resetInteractions: () =>
         set({
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         }),
@@ -140,6 +158,7 @@ export const useStudyStore = create<StudyState>()(
           sessionCorrect: 0,
           sessionAttempts: 0,
           selectedPractice: null,
+          practiceHadMistake: false,
           selectedReview: null,
           feedback: '',
         }),

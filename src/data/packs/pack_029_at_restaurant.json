@@ -1,0 +1,975 @@
+{
+  "pack": {
+    "id": "pack_029_at_restaurant",
+    "title": "At Restaurant",
+    "title_id": "Di Restoran",
+    "subtitle": "Order food and ask for simple restaurant needs.",
+    "subtitle_id": "Memesan makanan dan meminta kebutuhan sederhana di restoran.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "restaurant",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 29,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Order food and ask for simple restaurant needs.",
+    "learning_goal_id": "Memesan makanan dan meminta kebutuhan sederhana di restoran.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_dian_order",
+      "type": "hanzi",
+      "simplified": "点",
+      "traditional": "點",
+      "meaning": "order / point",
+      "meaning_id": "pesan / titik",
+      "accepted_meanings": [
+        "order / point"
+      ],
+      "accepted_meanings_id": [
+        "pesan / titik"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "diǎn",
+      "pinyin_numbered": "dian3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A small dot marking a spot — *point*, *order*, or a precise *moment*. diǎn ≈ \"dyen\" dipping then rising. Tone 3 like carefully placing your finger on the menu.",
+      "mnemonic_id": "Titik kecil yang menandai suatu tempat — *titik*, *pesan*, atau momen yang tepat. diǎn ≈ \"dyen\" turun terus naik. Nada 3 kayak hati-hati menunjuk menu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要点菜。",
+          "pinyin": "Wǒ yào diǎn cài.",
+          "meaning": "I want to order food.",
+          "meaning_id": "Aku mau pesan makanan."
+        },
+        {
+          "simplified": "你点了吗？",
+          "pinyin": "Nǐ diǎn le ma?",
+          "meaning": "Have you ordered?",
+          "meaning_id": "Kamu sudah pesan?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "restaurant",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_cai_dish",
+      "type": "hanzi",
+      "simplified": "菜",
+      "traditional": "菜",
+      "meaning": "dish",
+      "meaning_id": "hidangan",
+      "accepted_meanings": [
+        "dish"
+      ],
+      "accepted_meanings_id": [
+        "hidangan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "cài",
+      "pinyin_numbered": "cai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — plants picked by hand, *vegetables* or a *dish*. cài ≈ \"tsai!\" Tone 4.",
+      "mnemonic_id": "Sudah dipelajari — tanaman yang dipetik tangan, *sayuran* atau *hidangan*. cài ≈ \"tsai!\" Nada 4.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "有什么菜？",
+          "pinyin": "Yǒu shén me cài?",
+          "meaning": "What dishes are there?",
+          "meaning_id": "Ada hidangan apa?"
+        },
+        {
+          "simplified": "这个菜好吃。",
+          "pinyin": "Zhè ge cài hǎo chī.",
+          "meaning": "This dish is tasty.",
+          "meaning_id": "Hidangan ini enak."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "restaurant",
+        "food",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_dan_egg",
+      "type": "hanzi",
+      "simplified": "蛋",
+      "traditional": "蛋",
+      "meaning": "egg",
+      "meaning_id": "telur",
+      "accepted_meanings": [
+        "egg"
+      ],
+      "accepted_meanings_id": [
+        "telur"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dàn",
+      "pinyin_numbered": "dan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "蛋",
+          "text": "dàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Something round 虫 that hatches — an *egg*, the beginning of life. dàn ≈ \"dahn!\" sharp. Tone 4 drops, like cracking an egg.",
+      "mnemonic_id": "Sesuatu yang bulat 虫 yang menetas — sebuah *telur*, awal dari kehidupan. dàn ≈ \"dan!\" Nada 4 turun tajam, kayak memecahkan telur.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要鸡蛋。",
+          "pinyin": "Wǒ yào jī dàn.",
+          "meaning": "I want egg.",
+          "meaning_id": "Aku mau telur."
+        },
+        {
+          "simplified": "鸡蛋好吃吗？",
+          "pinyin": "Jī dàn hǎo chī ma?",
+          "meaning": "Is the egg tasty?",
+          "meaning_id": "Telurnya enak?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "restaurant",
+        "food",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_tang_soup",
+      "type": "hanzi",
+      "simplified": "汤",
+      "traditional": "湯",
+      "meaning": "soup",
+      "meaning_id": "sup",
+      "accepted_meanings": [
+        "soup"
+      ],
+      "accepted_meanings_id": [
+        "sup"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tāng",
+      "pinyin_numbered": "tang1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "汤",
+          "text": "tāng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Water 水 heated until steaming — *soup*, the warm liquid dish. tāng ≈ \"tahng\" flat. Tone 1 high and steady, like a simmering pot.",
+      "mnemonic_id": "Air 水 yang dipanaskan hingga menguap — *sup*, hidangan cair yang hangat. tāng ≈ \"tang\" flat. Nada 1 tinggi rata, kayak panci yang mendidih perlahan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要汤。",
+          "pinyin": "Wǒ yào tāng.",
+          "meaning": "I want soup.",
+          "meaning_id": "Aku mau sup."
+        },
+        {
+          "simplified": "汤很好喝。",
+          "pinyin": "Tāng hěn hǎo hē.",
+          "meaning": "The soup is very good.",
+          "meaning_id": "Supnya enak sekali."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "restaurant",
+        "food",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_kuai_fast",
+      "type": "hanzi",
+      "simplified": "快",
+      "traditional": "快",
+      "meaning": "fast",
+      "meaning_id": "cepat",
+      "accepted_meanings": [
+        "fast"
+      ],
+      "accepted_meanings_id": [
+        "cepat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kuài",
+      "pinyin_numbered": "kuai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "快",
+          "text": "kuài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A heart 忄 that moves at speed — *fast*, when your pulse races. kuài ≈ \"kwai!\" sharp. Tone 4 drops, like something zipping by.",
+      "mnemonic_id": "Hati 忄 yang bergerak cepat — *cepat*, saat nadimu berdetak kencang. kuài ≈ \"kwai!\" Nada 4 turun tajam, kayak sesuatu yang melesat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "快一点！",
+          "pinyin": "Kuài yì diǎn!",
+          "meaning": "A bit faster!",
+          "meaning_id": "Lebih cepat sedikit!"
+        },
+        {
+          "simplified": "你走很快。",
+          "pinyin": "Nǐ zǒu hěn kuài.",
+          "meaning": "You walk very fast.",
+          "meaning_id": "Kamu jalan sangat cepat."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "restaurant",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_man_slow_rest",
+      "type": "hanzi",
+      "simplified": "慢",
+      "traditional": "慢",
+      "meaning": "slow",
+      "meaning_id": "lambat",
+      "accepted_meanings": [
+        "slow"
+      ],
+      "accepted_meanings_id": [
+        "lambat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "màn",
+      "pinyin_numbered": "man4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "慢",
+          "text": "màn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A heart 忄 moving carefully, taking its time — *slow*, unhurried. màn ≈ \"mahn!\" sharp. Tone 4 drops, like brakes being applied.",
+      "mnemonic_id": "Hati 忄 yang bergerak hati-hati, tidak terburu-buru — *lambat*, santai. màn ≈ \"man!\" Nada 4 turun tajam, kayak rem yang diterapkan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "慢一点！",
+          "pinyin": "Màn yì diǎn!",
+          "meaning": "A bit slower!",
+          "meaning_id": "Pelan sedikit!"
+        },
+        {
+          "simplified": "你说得太慢了。",
+          "pinyin": "Nǐ shuō de tài màn le.",
+          "meaning": "You speak too slowly.",
+          "meaning_id": "Kamu bicara terlalu lambat."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "restaurant",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_diancai",
+      "type": "word",
+      "simplified": "点菜",
+      "traditional": "點菜",
+      "meaning": "order food",
+      "meaning_id": "pesan makanan",
+      "accepted_meanings": [
+        "order food"
+      ],
+      "accepted_meanings_id": [
+        "pesan makanan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "diǎn cài",
+      "pinyin_numbered": "dian3 cai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        },
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-4",
+      "hanzi_ids": [
+        "hanzi_dian_order",
+        "hanzi_cai"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "点 point + 菜 dish — *order food*, pointing at what you want.",
+      "mnemonic_id": "点 tunjuk + 菜 hidangan — *pesan makanan*, menunjuk apa yang kamu mau.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要点菜。",
+          "pinyin": "Wǒ yào diǎn cài.",
+          "meaning": "I want to order food.",
+          "meaning_id": "Aku mau pesan makanan."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_caidan",
+      "type": "word",
+      "simplified": "菜单",
+      "traditional": "菜單",
+      "meaning": "menu",
+      "meaning_id": "menu",
+      "accepted_meanings": [
+        "menu"
+      ],
+      "accepted_meanings_id": [
+        "menu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "cài dān",
+      "pinyin_numbered": "cai4 dan1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        },
+        {
+          "hanzi": "单",
+          "text": "dān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_cai"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "菜 dishes + 单 list — *menu*, the list of dishes.",
+      "mnemonic_id": "菜 hidangan + 单 daftar — *menu*, daftar hidangan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "有菜单吗？",
+          "pinyin": "Yǒu cài dān ma?",
+          "meaning": "Do you have a menu?",
+          "meaning_id": "Ada menu?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jidan",
+      "type": "word",
+      "simplified": "鸡蛋",
+      "traditional": "雞蛋",
+      "meaning": "egg",
+      "meaning_id": "telur",
+      "accepted_meanings": [
+        "egg"
+      ],
+      "accepted_meanings_id": [
+        "telur"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jī dàn",
+      "pinyin_numbered": "ji1 dan4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "鸡",
+          "text": "jī",
+          "tone": 1
+        },
+        {
+          "hanzi": "蛋",
+          "text": "dàn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_ji",
+        "hanzi_dan_egg"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "鸡 chicken + 蛋 egg — *egg*, literally \"chicken egg\".",
+      "mnemonic_id": "鸡 ayam + 蛋 telur — *telur*, harfiahnya \"telur ayam\".",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要鸡蛋。",
+          "pinyin": "Wǒ yào jī dàn.",
+          "meaning": "I want egg.",
+          "meaning_id": "Aku mau telur."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_tang",
+      "type": "word",
+      "simplified": "汤",
+      "traditional": "湯",
+      "meaning": "soup",
+      "meaning_id": "sup",
+      "accepted_meanings": [
+        "soup"
+      ],
+      "accepted_meanings_id": [
+        "sup"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tāng",
+      "pinyin_numbered": "tang1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "汤",
+          "text": "tāng",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "1",
+      "hanzi_ids": [
+        "hanzi_tang_soup"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Soup* — warm, liquid, comforting.",
+      "mnemonic_id": "*Sup* — hangat, cair, menghibur.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "汤很好喝。",
+          "pinyin": "Tāng hěn hǎo hē.",
+          "meaning": "The soup is delicious.",
+          "meaning_id": "Supnya enak."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_kuai_yidian",
+      "type": "word",
+      "simplified": "快一点",
+      "traditional": "快一點",
+      "meaning": "a bit faster",
+      "meaning_id": "sedikit lebih cepat",
+      "accepted_meanings": [
+        "a bit faster"
+      ],
+      "accepted_meanings_id": [
+        "sedikit lebih cepat"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kuài yì diǎn",
+      "pinyin_numbered": "kuai4 yi4 dian3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "快",
+          "text": "kuài",
+          "tone": 4
+        },
+        {
+          "hanzi": "一",
+          "text": "yì",
+          "tone": 4
+        },
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-4-3",
+      "hanzi_ids": [
+        "hanzi_kuai"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "快 fast + 一 one + 点 bit — *a bit faster*, nudging speed up slightly.",
+      "mnemonic_id": "快 cepat + 一 satu + 点 sedikit — *sedikit lebih cepat*, mendorong kecepatan sedikit.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "一点 after adjective = a little more. 慢一点 = a bit slower, 大一点 = a bit bigger.",
+      "usage_note_id": "一点 setelah kata sifat = sedikit lebih. 慢一点 = sedikit lebih lambat, 大一点 = sedikit lebih besar.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "快一点！",
+          "pinyin": "Kuài yì diǎn!",
+          "meaning": "A bit faster!",
+          "meaning_id": "Lebih cepat sedikit!"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_mantou",
+      "type": "word",
+      "simplified": "馒头",
+      "traditional": "饅頭",
+      "meaning": "steamed bun",
+      "meaning_id": "mantou / roti kukus",
+      "accepted_meanings": [
+        "steamed bun"
+      ],
+      "accepted_meanings_id": [
+        "mantou / roti kukus"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "mán tou",
+      "pinyin_numbered": "man2 tou0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "馒",
+          "text": "mán",
+          "tone": 2
+        },
+        {
+          "hanzi": "头",
+          "text": "tou",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "2-0",
+      "hanzi_ids": [],
+      "part_of_speech": "noun",
+      "mnemonic": "A fluffy rounded bun — *steamed bun*, the classic Chinese bread.",
+      "mnemonic_id": "Roti bulat yang lembut — *mantou*, roti kukus China yang klasik.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我要馒头。",
+          "pinyin": "Wǒ yào mán tou.",
+          "meaning": "I want a steamed bun.",
+          "meaning_id": "Aku mau mantou."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "restaurant"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_yao_diancai",
+      "type": "sentence",
+      "simplified": "我要点菜。",
+      "traditional": "我要點菜。",
+      "meaning": "I want to order food.",
+      "meaning_id": "Saya mau pesan makanan.",
+      "literal_meaning": "I want order dish.",
+      "literal_meaning_id": "Aku mau pesan makanan.",
+      "pinyin": "wǒ yào diǎn cài",
+      "pinyin_numbered": "wo3 yao4 dian3 cai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "要",
+          "text": "yào",
+          "tone": 4
+        },
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        },
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-4-3-4",
+      "focus_word_ids": [
+        "word_diancai"
+      ],
+      "pattern_ids": [
+        "pattern_restaurant_request"
+      ],
+      "notes": "我要 + verb — \"I want to do something\". Very useful for restaurants.",
+      "notes_id": "我要 + kata kerja — \"aku mau melakukan sesuatu\". Sangat berguna di restoran.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "restaurant",
+        "ordering",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_you_caidan_ma",
+      "type": "sentence",
+      "simplified": "有菜单吗？",
+      "traditional": "有菜單嗎？",
+      "meaning": "Do you have a menu?",
+      "meaning_id": "Ada menu?",
+      "literal_meaning": "Have menu?",
+      "literal_meaning_id": "Ada menu?",
+      "pinyin": "yǒu cài dān ma",
+      "pinyin_numbered": "you3 cai4 dan1 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "有",
+          "text": "yǒu",
+          "tone": 3
+        },
+        {
+          "hanzi": "菜",
+          "text": "cài",
+          "tone": 4
+        },
+        {
+          "hanzi": "单",
+          "text": "dān",
+          "tone": 1
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-4-1-0",
+      "focus_word_ids": [
+        "word_diancai"
+      ],
+      "pattern_ids": [
+        "pattern_restaurant_request"
+      ],
+      "notes": "有 + thing + 吗 — asking if something exists or is available.",
+      "notes_id": "有 + benda + 吗 — menanyakan apakah sesuatu ada atau tersedia.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "restaurant",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_restaurant_request",
+      "type": "pattern",
+      "title": "Restaurant request",
+      "title_id": "Permintaan restoran",
+      "meaning": "asking in restaurant",
+      "meaning_id": "meminta di restoran",
+      "structure": "我要 / 有...吗?",
+      "explanation": "Use 我要 to order and 有...吗 to ask if something is available.",
+      "explanation_id": "Gunakan 我要 untuk pesan dan 有...吗 untuk bertanya apakah sesuatu tersedia.",
+      "examples": [
+        {
+          "simplified": "我要点菜。",
+          "traditional": "我要點菜。",
+          "pinyin": "Wǒ yào diǎn cài.",
+          "meaning": "I want to order food.",
+          "meaning_id": "Aku mau pesan makanan."
+        },
+        {
+          "simplified": "有菜单吗？",
+          "traditional": "有菜單嗎？",
+          "pinyin": "Yǒu cài dān ma?",
+          "meaning": "Do you have a menu?",
+          "meaning_id": "Ada menu?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "restaurant",
+        "ordering",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_dan_egg",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ji",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_caidan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_cai",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_diancai",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dian_order",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jidan",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dan_egg",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kuai_yidian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_kuai",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "点菜 means?",
+        "prompt_id": "Arti 点菜?",
+        "answer": "order food",
+        "answer_id": "pesan makanan"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "汤 means?",
+        "prompt_id": "Arti 汤?",
+        "answer": "soup",
+        "answer_id": "sup"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "有__单吗？(Do you have a menu?)",
+        "answer": "菜"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我要点菜。",
+        "answer": "I want to order food.",
+        "answer_id": "Aku mau pesan makanan."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_diancai",
+      "word_caidan",
+      "word_jidan",
+      "word_tang",
+      "word_kuai_yidian",
+      "word_mantou"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_diancai",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_caidan",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_jidan",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_yao_diancai",
+      "sentence_you_caidan_ma"
+    ]
+  }
+}

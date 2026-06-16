@@ -1,0 +1,973 @@
+{
+  "pack": {
+    "id": "pack_026_hobbies",
+    "title": "Hobbies",
+    "title_id": "Hobi",
+    "subtitle": "Talk about things you like doing in free time.",
+    "subtitle_id": "Bicara tentang hal yang kamu suka lakukan di waktu luang.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "hobbies",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 26,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about things you like doing in free time.",
+    "learning_goal_id": "Bicara tentang hal yang kamu suka lakukan di waktu luang.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_wan_play",
+      "type": "hanzi",
+      "simplified": "玩",
+      "traditional": "玩",
+      "meaning": "play",
+      "meaning_id": "bermain",
+      "accepted_meanings": [
+        "play"
+      ],
+      "accepted_meanings_id": [
+        "bermain"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wán",
+      "pinyin_numbered": "wan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "玩",
+          "text": "wán",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A jade gem 玉 in hand — something you hold and enjoy, you *play* with it. wán ≈ \"wahn\" rising. Tone 2 goes up, like the joy of playing.",
+      "mnemonic_id": "Batu giok 玉 di tangan — sesuatu yang kamu pegang dan nikmati, kamu *bermain* dengannya. wán ≈ \"wan\" naik. Nada 2 naik terus, kayak kegembiraan bermain.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢玩吗？",
+          "pinyin": "Nǐ xǐ huān wán ma?",
+          "meaning": "Do you like to play?",
+          "meaning_id": "Kamu suka bermain?"
+        },
+        {
+          "simplified": "我们玩！",
+          "pinyin": "Wǒ men wán!",
+          "meaning": "Let's play!",
+          "meaning_id": "Ayo main!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "hobby",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yin_music",
+      "type": "hanzi",
+      "simplified": "音",
+      "traditional": "音",
+      "meaning": "sound",
+      "meaning_id": "suara",
+      "accepted_meanings": [
+        "sound"
+      ],
+      "accepted_meanings_id": [
+        "suara"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yīn",
+      "pinyin_numbered": "yin1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "音",
+          "text": "yīn",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Sound waves coming from the sun 日 — *sound*, the vibration of music. yīn ≈ \"yin\" flat. Tone 1 high and steady, like a held musical note.",
+      "mnemonic_id": "Gelombang suara yang keluar dari matahari 日 — *suara*, getaran musik. yīn ≈ \"yin\" flat. Nada 1 tinggi rata, kayak nada musik yang ditahan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢音乐吗？",
+          "pinyin": "Nǐ xǐ huān yīn yuè ma?",
+          "meaning": "Do you like music?",
+          "meaning_id": "Kamu suka musik?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "hobby",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yue_music",
+      "type": "hanzi",
+      "simplified": "乐",
+      "traditional": "樂",
+      "meaning": "music / happy",
+      "meaning_id": "musik / senang",
+      "accepted_meanings": [
+        "music / happy"
+      ],
+      "accepted_meanings_id": [
+        "musik / senang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuè",
+      "pinyin_numbered": "yue4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "乐",
+          "text": "yuè",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Strings stretched across a frame — a *musical* instrument, and the joy it brings. yuè ≈ \"yweh!\" sharp. Tone 4 drops, like the final note of a song.",
+      "mnemonic_id": "Senar yang direntangkan di atas bingkai — alat *musik*, dan kegembiraan yang dibawanya. yuè ≈ \"yweh!\" Nada 4 turun tajam, kayak nada terakhir sebuah lagu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢音乐。",
+          "pinyin": "Wǒ xǐ huān yīn yuè.",
+          "meaning": "I like music.",
+          "meaning_id": "Aku suka musik."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "hobby",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_dian_movie",
+      "type": "hanzi",
+      "simplified": "电",
+      "traditional": "電",
+      "meaning": "electric",
+      "meaning_id": "listrik",
+      "accepted_meanings": [
+        "electric"
+      ],
+      "accepted_meanings_id": [
+        "listrik"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "diàn",
+      "pinyin_numbered": "dian4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "电",
+          "text": "diàn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Lightning striking down — *electricity*, the power that runs everything. diàn ≈ \"dyen!\" sharp. Tone 4 drops, like a lightning bolt.",
+      "mnemonic_id": "Petir yang menyambar ke bawah — *listrik*, daya yang menjalankan segalanya. diàn ≈ \"dyen!\" Nada 4 turun tajam, kayak kilat.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢电影吗？",
+          "pinyin": "Nǐ xǐ huān diàn yǐng ma?",
+          "meaning": "Do you like movies?",
+          "meaning_id": "Kamu suka film?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "hobby",
+        "noun_part",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ying",
+      "type": "hanzi",
+      "simplified": "影",
+      "traditional": "影",
+      "meaning": "shadow / movie part",
+      "meaning_id": "bayangan / bagian film",
+      "accepted_meanings": [
+        "shadow / movie part"
+      ],
+      "accepted_meanings_id": [
+        "bayangan / bagian film"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǐng",
+      "pinyin_numbered": "ying3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "影",
+          "text": "yǐng",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A form casting a *shadow* — light and dark creating a *movie*. yǐng ≈ \"ying\" dipping then rising. Tone 3 like the flicker of film.",
+      "mnemonic_id": "Bentuk yang membuat *bayangan* — cahaya dan gelap menciptakan sebuah *film*. yǐng ≈ \"ying\" turun terus naik. Nada 3 kayak kedipan film.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢看电影。",
+          "pinyin": "Wǒ xǐ huān kàn diàn yǐng.",
+          "meaning": "I like watching movies.",
+          "meaning_id": "Aku suka nonton film."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "hobby",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shu_book",
+      "type": "hanzi",
+      "simplified": "书",
+      "traditional": "書",
+      "meaning": "book",
+      "meaning_id": "buku",
+      "accepted_meanings": [
+        "book"
+      ],
+      "accepted_meanings_id": [
+        "buku"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shū",
+      "pinyin_numbered": "shu1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "书",
+          "text": "shū",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A brush held upright, ready to write — a *book*, the result of that writing. shū ≈ \"shoo\" flat. Tone 1 high and steady, like pages turning calmly.",
+      "mnemonic_id": "Kuas yang berdiri tegak, siap menulis — sebuah *buku*, hasil dari tulisan itu. shū ≈ \"shu\" flat. Nada 1 tinggi rata, kayak halaman yang berbalik dengan tenang.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢看书。",
+          "pinyin": "Wǒ xǐ huān kàn shū.",
+          "meaning": "I like reading.",
+          "meaning_id": "Aku suka membaca."
+        },
+        {
+          "simplified": "你看书吗？",
+          "pinyin": "Nǐ kàn shū ma?",
+          "meaning": "Do you read?",
+          "meaning_id": "Kamu membaca?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "hobby",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_wan",
+      "type": "word",
+      "simplified": "玩",
+      "traditional": "玩",
+      "meaning": "play",
+      "meaning_id": "bermain",
+      "accepted_meanings": [
+        "play"
+      ],
+      "accepted_meanings_id": [
+        "bermain"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "wán",
+      "pinyin_numbered": "wan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "玩",
+          "text": "wán",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_wan_play"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Play* — having fun, games, hanging out.",
+      "mnemonic_id": "*Bermain* — bersenang-senang, main game, nongkrong.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我们玩！",
+          "pinyin": "Wǒ men wán!",
+          "meaning": "Let's play!",
+          "meaning_id": "Ayo main!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yinyue",
+      "type": "word",
+      "simplified": "音乐",
+      "traditional": "音樂",
+      "meaning": "music",
+      "meaning_id": "musik",
+      "accepted_meanings": [
+        "music"
+      ],
+      "accepted_meanings_id": [
+        "musik"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yīn yuè",
+      "pinyin_numbered": "yin1 yue4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "音",
+          "text": "yīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "乐",
+          "text": "yuè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_yin_music",
+        "hanzi_yue"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "音 sound + 乐 musical — *music*, organized beautiful sound.",
+      "mnemonic_id": "音 suara + 乐 musik — *musik*, suara yang terorganisir dan indah.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢音乐。",
+          "pinyin": "Wǒ xǐ huān yīn yuè.",
+          "meaning": "I like music.",
+          "meaning_id": "Aku suka musik."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_dianying",
+      "type": "word",
+      "simplified": "电影",
+      "traditional": "電影",
+      "meaning": "movie",
+      "meaning_id": "film",
+      "accepted_meanings": [
+        "movie"
+      ],
+      "accepted_meanings_id": [
+        "film"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "diàn yǐng",
+      "pinyin_numbered": "dian4 ying3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "电",
+          "text": "diàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "影",
+          "text": "yǐng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_dian_movie",
+        "hanzi_ying"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "电 electric + 影 shadow — *movie*, electric shadows on a screen.",
+      "mnemonic_id": "电 listrik + 影 bayangan — *film*, bayangan listrik di layar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢看电影。",
+          "pinyin": "Wǒ xǐ huān kàn diàn yǐng.",
+          "meaning": "I like watching movies.",
+          "meaning_id": "Aku suka nonton film."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_kanshu",
+      "type": "word",
+      "simplified": "看书",
+      "traditional": "看書",
+      "meaning": "read a book",
+      "meaning_id": "membaca buku",
+      "accepted_meanings": [
+        "read a book"
+      ],
+      "accepted_meanings_id": [
+        "membaca buku"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kàn shū",
+      "pinyin_numbered": "kan4 shu1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "看",
+          "text": "kàn",
+          "tone": 4
+        },
+        {
+          "hanzi": "书",
+          "text": "shū",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_kan",
+        "hanzi_shu_book"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "看 look + 书 book — *read a book*, eyes on the page.",
+      "mnemonic_id": "看 lihat + 书 buku — *membaca buku*, mata di halaman.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我喜欢看书。",
+          "pinyin": "Wǒ xǐ huān kàn shū.",
+          "meaning": "I like reading.",
+          "meaning_id": "Aku suka membaca."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yundong",
+      "type": "word",
+      "simplified": "运动",
+      "traditional": "運動",
+      "meaning": "exercise / sport",
+      "meaning_id": "olahraga",
+      "accepted_meanings": [
+        "exercise / sport"
+      ],
+      "accepted_meanings_id": [
+        "olahraga"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yùn dòng",
+      "pinyin_numbered": "yun4 dong4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "运",
+          "text": "yùn",
+          "tone": 4
+        },
+        {
+          "hanzi": "动",
+          "text": "dòng",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [],
+      "part_of_speech": "noun/verb",
+      "mnemonic": "运 move + 动 motion — *exercise / sport*, body in motion.",
+      "mnemonic_id": "运 bergerak + 动 gerak — *olahraga*, tubuh yang bergerak.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢运动吗？",
+          "pinyin": "Nǐ xǐ huān yùn dòng ma?",
+          "meaning": "Do you like sports?",
+          "meaning_id": "Kamu suka olahraga?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_youxi",
+      "type": "word",
+      "simplified": "游戏",
+      "traditional": "遊戲",
+      "meaning": "game",
+      "meaning_id": "game / permainan",
+      "accepted_meanings": [
+        "game"
+      ],
+      "accepted_meanings_id": [
+        "game / permainan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yóu xì",
+      "pinyin_numbered": "you2 xi4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "游",
+          "text": "yóu",
+          "tone": 2
+        },
+        {
+          "hanzi": "戏",
+          "text": "xì",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [],
+      "part_of_speech": "noun",
+      "mnemonic": "游 roam + 戏 play — *game*, roaming and playing freely.",
+      "mnemonic_id": "游 berkelana + 戏 bermain — *permainan/game*, berkelana dan bermain bebas.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你喜欢玩游戏吗？",
+          "pinyin": "Nǐ xǐ huān wán yóu xì ma?",
+          "meaning": "Do you like playing games?",
+          "meaning_id": "Kamu suka main game?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "hobbies"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_xihuan_yinyue",
+      "type": "sentence",
+      "simplified": "我喜欢音乐。",
+      "traditional": "我喜歡音樂。",
+      "meaning": "I like music.",
+      "meaning_id": "Saya suka musik.",
+      "literal_meaning": "I like music.",
+      "literal_meaning_id": "Aku suka musik.",
+      "pinyin": "wǒ xǐ huān yīn yuè",
+      "pinyin_numbered": "wo3 xi3 huan1 yin1 yue4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "喜",
+          "text": "xǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "欢",
+          "text": "huān",
+          "tone": 1
+        },
+        {
+          "hanzi": "音",
+          "text": "yīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "乐",
+          "text": "yuè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-3-1-1-4",
+      "focus_word_ids": [
+        "word_wan"
+      ],
+      "pattern_ids": [
+        "pattern_hobby_like"
+      ],
+      "notes": "喜欢 + hobby — the standard way to express what you enjoy.",
+      "notes_id": "喜欢 + hobi — cara standar mengungkapkan apa yang kamu sukai.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "hobby",
+        "preference",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_xihuan_wan_youxi_ma",
+      "type": "sentence",
+      "simplified": "你喜欢玩游戏吗？",
+      "traditional": "你喜歡玩遊戲嗎？",
+      "meaning": "Do you like playing games?",
+      "meaning_id": "Kamu suka main game?",
+      "literal_meaning": "You like play games?",
+      "literal_meaning_id": "Kamu suka main game?",
+      "pinyin": "nǐ xǐ huān wán yóu xì ma",
+      "pinyin_numbered": "ni3 xi3 huan1 wan2 you2 xi4 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "喜",
+          "text": "xǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "欢",
+          "text": "huān",
+          "tone": 1
+        },
+        {
+          "hanzi": "玩",
+          "text": "wán",
+          "tone": 2
+        },
+        {
+          "hanzi": "游",
+          "text": "yóu",
+          "tone": 2
+        },
+        {
+          "hanzi": "戏",
+          "text": "xì",
+          "tone": 4
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-3-1-2-2-4-0",
+      "focus_word_ids": [
+        "word_wan"
+      ],
+      "pattern_ids": [
+        "pattern_hobby_like"
+      ],
+      "notes": "喜欢 + verb phrase — you can follow 喜欢 with a verb directly.",
+      "notes_id": "喜欢 + frasa kata kerja — kamu bisa langsung ikuti 喜欢 dengan kata kerja.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "hobby",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_hobby_like",
+      "type": "pattern",
+      "title": "喜欢 + hobby",
+      "title_id": "喜欢 + hobi",
+      "meaning": "talking about hobbies",
+      "meaning_id": "bicara tentang hobi",
+      "structure": "喜欢 + noun/verb phrase",
+      "explanation": "Use 喜欢 to talk about hobbies and activities.",
+      "explanation_id": "Gunakan 喜欢 untuk bicara tentang hobi dan aktivitas.",
+      "examples": [
+        {
+          "simplified": "我喜欢音乐。",
+          "traditional": "我喜歡音樂。",
+          "pinyin": "Wǒ xǐ huān yīn yuè.",
+          "meaning": "I like music.",
+          "meaning_id": "Aku suka musik."
+        },
+        {
+          "simplified": "你喜欢看书吗？",
+          "traditional": "你喜歡看書嗎？",
+          "pinyin": "Nǐ xǐ huān kàn shū ma?",
+          "meaning": "Do you like reading?",
+          "meaning_id": "Kamu suka membaca?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "hobby",
+        "preference",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ying",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_dian_movie",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_yue",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_yin_music",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_dianying",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dian_movie",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_dianying",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ying",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_kanshu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_shu_book",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yinyue",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yin_music",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yinyue",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yue",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "电影 means?",
+        "prompt_id": "Arti 电影?",
+        "answer": "movie",
+        "answer_id": "film"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "音乐 means?",
+        "prompt_id": "Arti 音乐?",
+        "answer": "music",
+        "answer_id": "musik"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我喜欢看__。(I like reading)",
+        "answer": "书"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你喜欢玩游戏吗？",
+        "answer": "Do you like playing games?",
+        "answer_id": "Kamu suka main game?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_wan",
+      "word_yinyue",
+      "word_dianying",
+      "word_kanshu",
+      "word_yundong",
+      "word_youxi"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_wan",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yinyue",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_dianying",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_xihuan_yinyue",
+      "sentence_ni_xihuan_wan_youxi_ma"
+    ]
+  }
+}

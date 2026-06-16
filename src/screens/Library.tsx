@@ -5,7 +5,7 @@ import { LibraryItemCard } from '../components/library/LibraryItemCard';
 import { PageHeader } from '../components/shell/PageHeader';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { contentItems, localizeContentItem } from '../data/mockContent';
+import { contentItems, localizeContentItem, type ContentItem } from '../data/mockContent';
 import { useTranslation } from '../i18n/useTranslation';
 import { useAppStore } from '../stores/appStore';
 import { useProgressStore, withProgress } from '../stores/progressStore';
@@ -38,20 +38,53 @@ export function LibraryScreen() {
   const selectItem = useAppStore((state) => state.selectLibraryItem);
   const loadMore = useAppStore((state) => state.loadMoreLibraryItems);
   const pinyinDisplay = useAppStore((state) => state.settings.pinyinDisplay);
+  const scriptChoice = useAppStore((state) => state.scriptChoice);
   const progressItems = useProgressStore((state) => state.items);
   const showPinyin = pinyinDisplay !== 'Off';
   const itemsWithProgress = useMemo(
-    () => withProgress(contentItems.map((item) => localizeContentItem(item, language)), progressItems),
-    [language, progressItems],
+    () => withProgress(contentItems.map((item) => localizeContentItem(item, language, scriptChoice)), progressItems),
+    [language, progressItems, scriptChoice],
   );
 
   const filteredItems = useMemo(() => {
     const query = search.trim().toLowerCase();
+    const matchesSearch = (item: ContentItem) => {
+      if (!query) {
+        return true;
+      }
+
+      const fields = [
+        item.title,
+        item.traditionalTitle,
+        item.pinyin.join(' '),
+        item.meaning,
+        item.meaningId,
+        item.mnemonic,
+        item.mnemonicId,
+        item.id,
+        ...item.related,
+      ]
+        .filter((value): value is string => Boolean(value))
+        .map((value) => value.toLowerCase());
+      const isHanQuery = /[\u3400-\u9fff]/.test(query);
+
+      return fields.some((field) => {
+        if (isHanQuery || query.includes(' ')) {
+          return field.includes(query);
+        }
+
+        return field
+          .split(/[^\p{L}\p{N}]+/u)
+          .filter(Boolean)
+          .some((token) => token === query);
+      });
+    };
+
     return itemsWithProgress.filter((item) => {
       const matchesTab = tab === 'All' || item.type === tab;
-      const matchesStage = stage === 'All' || item.stage === stage;
-      const searchable = `${item.title} ${item.pinyin.join(' ')} ${item.meaning}`.toLowerCase();
-      return matchesTab && matchesStage && searchable.includes(query);
+      const matchesStage =
+        stage === 'All' || (stage === 'Not started' ? item.started === false : item.started !== false && item.stage === stage);
+      return matchesTab && matchesStage && matchesSearch(item);
     });
   }, [itemsWithProgress, search, stage, tab]);
 

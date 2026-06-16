@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 
 export interface SheetOption {
   label: string;
@@ -32,6 +32,50 @@ export function OptionSheet({
   onClose,
   onSelect,
 }: OptionSheetProps) {
+  const dialogRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!open) {
+      return undefined;
+    }
+
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const dialog = dialogRef.current;
+    const focusableSelector =
+      'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])';
+    const focusable = dialog ? Array.from(dialog.querySelectorAll<HTMLElement>(focusableSelector)) : [];
+    focusable[0]?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (event.key !== 'Tab' || focusable.length === 0) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      previousFocus?.focus();
+    };
+  }, [onClose, open]);
+
   if (!open) {
     return null;
   }
@@ -46,7 +90,13 @@ export function OptionSheet({
         }
       }}
     >
-      <section className={`option-sheet ${className}`.trim()} role="dialog" aria-modal="true" aria-label={title}>
+      <section
+        ref={dialogRef}
+        className={`option-sheet ${className}`.trim()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
+      >
         <div className="sheet-head">
           <div>
             <h3>{title}</h3>

@@ -10,7 +10,6 @@ import { fetchOrCreateProfile } from '../lib/profileSync';
 import { replaceWith } from '../utils/navigation';
 import {
   displayNameFromUser,
-  initialPasswordRecoveryUrl,
   isSupabaseConfigured,
   supabase,
   type SupabaseUser,
@@ -25,11 +24,18 @@ function isPasswordRecoveryUrl() {
 
   const recoveryText = `${window.location.search}&${window.location.hash}`;
   return (
-    initialPasswordRecoveryUrl ||
     recoveryText.includes('type=recovery') ||
     recoveryText.includes('PASSWORD_RECOVERY') ||
     recoveryText.includes('recovery=1')
   );
+}
+
+function clearPasswordRecoveryUrl() {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  window.history.replaceState(null, '', window.location.pathname || '/');
 }
 
 export function App() {
@@ -64,10 +70,18 @@ export function App() {
 
     let active = true;
     let recoveryRequested = isPasswordRecoveryUrl();
+    let recoveryHandled = false;
 
     async function restoreUser(user: SupabaseUser, options: { passwordRecovery?: boolean } = {}) {
+      const shouldOpenPasswordRecovery =
+        !recoveryHandled && (recoveryRequested || options.passwordRecovery === true);
+
+      if (shouldOpenPasswordRecovery) {
+        recoveryHandled = true;
+        recoveryRequested = false;
+      }
+
       try {
-        recoveryRequested = recoveryRequested || options.passwordRecovery === true;
         syncAuthenticatedUser({ name: displayNameFromUser(user), email: user.email ?? '' });
 
         const { profile } = await fetchOrCreateProfile(user);
@@ -76,7 +90,8 @@ export function App() {
           useStudyStore.getState().setSessionIndex(profile.currentSessionIndex);
         }
 
-        if (active && recoveryRequested) {
+        if (active && shouldOpenPasswordRecovery) {
+          clearPasswordRecoveryUrl();
           openSheet('updatePassword');
         }
       } finally {
@@ -91,9 +106,8 @@ export function App() {
     } = supabase.auth.onAuthStateChange((event, session) => {
       const user = session?.user;
       if (user?.email) {
-        recoveryRequested = recoveryRequested || event === 'PASSWORD_RECOVERY';
         setAuthReady(false);
-        void restoreUser(user, { passwordRecovery: recoveryRequested });
+        void restoreUser(user, { passwordRecovery: event === 'PASSWORD_RECOVERY' });
       } else {
         syncSignedOut();
         setAuthReady(true);
@@ -135,7 +149,7 @@ export function App() {
   const loadingState = (
     <div className="app-loading">
       <div className="brand auth-brand">
-        <span className="brand-mark">æ±‰</span>
+        <span className="brand-mark">&#x6C49;</span>
         <strong>Manman!</strong>
       </div>
       <p>{language === 'Indonesian' ? 'Menyiapkan ruang belajarmu...' : 'Loading your learning space...'}</p>
@@ -164,12 +178,12 @@ export function App() {
   );
 
   return (
-    <main className="prototype-stage">
+    <div className="prototype-stage">
       <section className="app-frame" aria-live="polite">
         {content}
       </section>
       <GlobalSheets />
       <Toast />
-    </main>
+    </div>
   );
 }

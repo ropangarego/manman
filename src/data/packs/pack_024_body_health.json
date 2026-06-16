@@ -1,0 +1,957 @@
+{
+  "pack": {
+    "id": "pack_024_body_health",
+    "title": "Body & Health Basics",
+    "title_id": "Tubuh & Kesehatan Dasar",
+    "subtitle": "Talk about body parts, pain, and feeling unwell.",
+    "subtitle_id": "Bicara tentang bagian tubuh, sakit, dan kondisi kurang sehat.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "health",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 24,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about body parts, pain, and feeling unwell.",
+    "learning_goal_id": "Bicara tentang bagian tubuh, sakit, dan kondisi kurang sehat.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_tou",
+      "type": "hanzi",
+      "simplified": "头",
+      "traditional": "頭",
+      "meaning": "head",
+      "meaning_id": "kepala",
+      "accepted_meanings": [
+        "head"
+      ],
+      "accepted_meanings_id": [
+        "kepala"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tóu",
+      "pinyin_numbered": "tou2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "头",
+          "text": "tóu",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A rounded top sitting on a body — the *head*, everything above the neck. tóu ≈ \"toh\" rising. Tone 2 goes up, like nodding upward.",
+      "mnemonic_id": "Bagian bulat di atas tubuh — *kepala*, segalanya di atas leher. tóu ≈ \"tou\" naik. Nada 2 naik terus, kayak mengangguk ke atas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我头疼。",
+          "pinyin": "Wǒ tóu téng.",
+          "meaning": "My head hurts.",
+          "meaning_id": "Kepalaku sakit."
+        },
+        {
+          "simplified": "头很大。",
+          "pinyin": "Tóu hěn dà.",
+          "meaning": "The head is big.",
+          "meaning_id": "Kepalanya besar."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "body",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shou",
+      "type": "hanzi",
+      "simplified": "手",
+      "traditional": "手",
+      "meaning": "hand",
+      "meaning_id": "tangan",
+      "accepted_meanings": [
+        "hand"
+      ],
+      "accepted_meanings_id": [
+        "tangan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shǒu",
+      "pinyin_numbered": "shou3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "手",
+          "text": "shǒu",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Five fingers spread out — a *hand*, ready to reach and hold. shǒu ≈ \"show\" dipping then rising. Tone 3 like the careful motion of a hand.",
+      "mnemonic_id": "Lima jari yang membuka lebar — sebuah *tangan*, siap meraih dan memegang. shǒu ≈ \"show\" turun terus naik. Nada 3 kayak gerakan tangan yang hati-hati.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "手很冷。",
+          "pinyin": "Shǒu hěn lěng.",
+          "meaning": "My hands are cold.",
+          "meaning_id": "Tanganku dingin."
+        },
+        {
+          "simplified": "你的手很大。",
+          "pinyin": "Nǐ de shǒu hěn dà.",
+          "meaning": "Your hands are big.",
+          "meaning_id": "Tanganmu besar."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "body",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yan",
+      "type": "hanzi",
+      "simplified": "眼",
+      "traditional": "眼",
+      "meaning": "eye",
+      "meaning_id": "mata",
+      "accepted_meanings": [
+        "eye"
+      ],
+      "accepted_meanings_id": [
+        "mata"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǎn",
+      "pinyin_numbered": "yan3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "眼",
+          "text": "yǎn",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "An eye 目 with detail — *eye*, the one that sees everything. yǎn ≈ \"yen\" dipping then rising. Tone 3 like blinking slowly.",
+      "mnemonic_id": "Mata 目 dengan detail — *mata*, yang melihat segalanya. yǎn ≈ \"yen\" turun terus naik. Nada 3 kayak berkedip pelan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "眼睛很大。",
+          "pinyin": "Yǎn jing hěn dà.",
+          "meaning": "The eyes are big.",
+          "meaning_id": "Matanya besar."
+        },
+        {
+          "simplified": "我眼睛疼。",
+          "pinyin": "Wǒ yǎn jing téng.",
+          "meaning": "My eyes hurt.",
+          "meaning_id": "Mataku sakit."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "body",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_kou_body",
+      "type": "hanzi",
+      "simplified": "口",
+      "traditional": "口",
+      "meaning": "mouth",
+      "meaning_id": "mulut",
+      "accepted_meanings": [
+        "mouth"
+      ],
+      "accepted_meanings_id": [
+        "mulut"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kǒu",
+      "pinyin_numbered": "kou3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "口",
+          "text": "kǒu",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Already learned — the open square *mouth*. kǒu ≈ \"koh\" dipping then rising. Tone 3.",
+      "mnemonic_id": "Sudah dipelajari — kotak terbuka yang merupakan *mulut*. kǒu ≈ \"ko\" turun terus naik. Nada 3.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "口很大。",
+          "pinyin": "Kǒu hěn dà.",
+          "meaning": "The mouth is big.",
+          "meaning_id": "Mulutnya besar."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "body",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_teng",
+      "type": "hanzi",
+      "simplified": "疼",
+      "traditional": "疼",
+      "meaning": "hurt / pain",
+      "meaning_id": "sakit / nyeri",
+      "accepted_meanings": [
+        "hurt / pain"
+      ],
+      "accepted_meanings_id": [
+        "sakit / nyeri"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "téng",
+      "pinyin_numbered": "teng2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "疼",
+          "text": "téng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A sickness 疒 that pierces through — *pain*, the sharp ache that won't stop. téng ≈ \"tung\" rising. Tone 2 goes up, like a pain shooting through.",
+      "mnemonic_id": "Penyakit 疒 yang menusuk — *sakit/nyeri*, rasa sakit tajam yang tidak berhenti. téng ≈ \"tung\" naik. Nada 2 naik terus, kayak rasa sakit yang menjalar.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我头疼。",
+          "pinyin": "Wǒ tóu téng.",
+          "meaning": "My head hurts.",
+          "meaning_id": "Kepalaku sakit."
+        },
+        {
+          "simplified": "手疼吗？",
+          "pinyin": "Shǒu téng ma?",
+          "meaning": "Does your hand hurt?",
+          "meaning_id": "Tanganmu sakit?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "health",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_bing_health",
+      "type": "hanzi",
+      "simplified": "病",
+      "traditional": "病",
+      "meaning": "illness",
+      "meaning_id": "penyakit / sakit",
+      "accepted_meanings": [
+        "illness"
+      ],
+      "accepted_meanings_id": [
+        "penyakit / sakit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bìng",
+      "pinyin_numbered": "bing4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "病",
+          "text": "bìng",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person lying sick under a roof 疒 — *illness*, being confined to bed. bìng ≈ \"bing!\" sharp. Tone 4 drops, like suddenly feeling unwell.",
+      "mnemonic_id": "Seseorang yang berbaring sakit di bawah atap 疒 — *sakit/penyakit*, terbaring di tempat tidur. bìng ≈ \"bing!\" Nada 4 turun tajam, kayak tiba-tiba merasa tidak enak badan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我生病了。",
+          "pinyin": "Wǒ shēng bìng le.",
+          "meaning": "I got sick.",
+          "meaning_id": "Aku sakit."
+        },
+        {
+          "simplified": "他病了吗？",
+          "pinyin": "Tā bìng le ma?",
+          "meaning": "Did he get sick?",
+          "meaning_id": "Dia sakit?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "health",
+        "noun",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_tou",
+      "type": "word",
+      "simplified": "头",
+      "traditional": "頭",
+      "meaning": "head",
+      "meaning_id": "kepala",
+      "accepted_meanings": [
+        "head"
+      ],
+      "accepted_meanings_id": [
+        "kepala"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "tóu",
+      "pinyin_numbered": "tou2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "头",
+          "text": "tóu",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_tou"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Head* — everything above the neck, where your brain lives.",
+      "mnemonic_id": "*Kepala* — segalanya di atas leher, tempat otakmu berada.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我头疼。",
+          "pinyin": "Wǒ tóu téng.",
+          "meaning": "My head hurts.",
+          "meaning_id": "Kepalaku sakit."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shou",
+      "type": "word",
+      "simplified": "手",
+      "traditional": "手",
+      "meaning": "hand",
+      "meaning_id": "tangan",
+      "accepted_meanings": [
+        "hand"
+      ],
+      "accepted_meanings_id": [
+        "tangan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shǒu",
+      "pinyin_numbered": "shou3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "手",
+          "text": "shǒu",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3",
+      "hanzi_ids": [
+        "hanzi_shou"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "*Hand* — for reaching, holding, and gesturing.",
+      "mnemonic_id": "*Tangan* — untuk meraih, memegang, dan memberi isyarat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "手很冷。",
+          "pinyin": "Shǒu hěn lěng.",
+          "meaning": "Hands are cold.",
+          "meaning_id": "Tangan dingin."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yanjing",
+      "type": "word",
+      "simplified": "眼睛",
+      "traditional": "眼睛",
+      "meaning": "eyes",
+      "meaning_id": "mata",
+      "accepted_meanings": [
+        "eyes"
+      ],
+      "accepted_meanings_id": [
+        "mata"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yǎn jing",
+      "pinyin_numbered": "yan3 jing0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "眼",
+          "text": "yǎn",
+          "tone": 3
+        },
+        {
+          "hanzi": "睛",
+          "text": "jing",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-0",
+      "hanzi_ids": [
+        "hanzi_yan"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "眼 eye + 睛 pupil — *eyes*, the complete pair.",
+      "mnemonic_id": "眼 mata + 睛 pupil — *mata*, pasangan yang lengkap.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "眼睛很大。",
+          "pinyin": "Yǎn jing hěn dà.",
+          "meaning": "The eyes are big.",
+          "meaning_id": "Matanya besar."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_teng",
+      "type": "word",
+      "simplified": "疼",
+      "traditional": "疼",
+      "meaning": "hurt / ache",
+      "meaning_id": "sakit / nyeri",
+      "accepted_meanings": [
+        "hurt / ache"
+      ],
+      "accepted_meanings_id": [
+        "sakit / nyeri"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "téng",
+      "pinyin_numbered": "teng2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "疼",
+          "text": "téng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_teng"
+      ],
+      "part_of_speech": "verb/adjective",
+      "mnemonic": "*Hurt / ache* — body part + 疼 = that part hurts.",
+      "mnemonic_id": "*Sakit / nyeri* — bagian tubuh + 疼 = bagian itu sakit.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "Pattern: [body part] + 疼 = [body part] hurts.",
+      "usage_note_id": "Pola: [bagian tubuh] + 疼 = [bagian tubuh] sakit.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我头疼。",
+          "pinyin": "Wǒ tóu téng.",
+          "meaning": "My head hurts.",
+          "meaning_id": "Kepalaku sakit."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shengbing",
+      "type": "word",
+      "simplified": "生病",
+      "traditional": "生病",
+      "meaning": "be sick",
+      "meaning_id": "sakit",
+      "accepted_meanings": [
+        "be sick"
+      ],
+      "accepted_meanings_id": [
+        "sakit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shēng bìng",
+      "pinyin_numbered": "sheng1 bing4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "生",
+          "text": "shēng",
+          "tone": 1
+        },
+        {
+          "hanzi": "病",
+          "text": "bìng",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_bing"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "生 born/happen + 病 illness — *get sick*, when illness happens to you.",
+      "mnemonic_id": "生 terjadi + 病 sakit — *jatuh sakit*, ketika penyakit menimpa kamu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我生病了。",
+          "pinyin": "Wǒ shēng bìng le.",
+          "meaning": "I got sick.",
+          "meaning_id": "Aku sakit."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_buyao",
+      "type": "word",
+      "simplified": "不要",
+      "traditional": "不要",
+      "meaning": "do not want / don't",
+      "meaning_id": "jangan / tidak mau",
+      "accepted_meanings": [
+        "do not want / don't"
+      ],
+      "accepted_meanings_id": [
+        "jangan / tidak mau"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bú yào",
+      "pinyin_numbered": "bu2 yao4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "不",
+          "text": "bú",
+          "tone": 2
+        },
+        {
+          "hanzi": "要",
+          "text": "yào",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "2-4",
+      "hanzi_ids": [
+        "hanzi_bu"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "不 not + 要 want — *don't want* / *don't* — a useful phrase for refusals.",
+      "mnemonic_id": "不 tidak + 要 mau — *tidak mau* / *jangan* — frasa berguna untuk penolakan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "不要 = don't want / don't do it. A strong refusal.",
+      "usage_note_id": "不要 = tidak mau / jangan lakukan. Penolakan yang tegas.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "不要！",
+          "pinyin": "Bú yào!",
+          "meaning": "Don't! / I don't want it!",
+          "meaning_id": "Jangan! / Aku tidak mau!"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "health"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_tou_teng",
+      "type": "sentence",
+      "simplified": "我头疼。",
+      "traditional": "我頭疼。",
+      "meaning": "My head hurts.",
+      "meaning_id": "Kepala saya sakit.",
+      "literal_meaning": "My head hurts.",
+      "literal_meaning_id": "Kepalaku sakit.",
+      "pinyin": "wǒ tóu téng",
+      "pinyin_numbered": "wo3 tou2 teng2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "头",
+          "text": "tóu",
+          "tone": 2
+        },
+        {
+          "hanzi": "疼",
+          "text": "téng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "3-2-2",
+      "focus_word_ids": [
+        "word_tou"
+      ],
+      "pattern_ids": [
+        "pattern_body_hurts"
+      ],
+      "notes": "Body part + 疼 — the pattern for saying something hurts. No verb needed.",
+      "notes_id": "Bagian tubuh + 疼 — pola untuk bilang sesuatu sakit. Tidak perlu kata kerja.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "health",
+        "body",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_wo_shengbing_le",
+      "type": "sentence",
+      "simplified": "我生病了。",
+      "traditional": "我生病了。",
+      "meaning": "I got sick.",
+      "meaning_id": "Saya sakit.",
+      "literal_meaning": "I got sick [completed].",
+      "literal_meaning_id": "Aku jatuh sakit.",
+      "pinyin": "wǒ shēng bìng le",
+      "pinyin_numbered": "wo3 sheng1 bing4 le0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "生",
+          "text": "shēng",
+          "tone": 1
+        },
+        {
+          "hanzi": "病",
+          "text": "bìng",
+          "tone": 4
+        },
+        {
+          "hanzi": "了",
+          "text": "le",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-1-4-0",
+      "focus_word_ids": [
+        "word_tou"
+      ],
+      "pattern_ids": [
+        "pattern_body_hurts"
+      ],
+      "notes": "生病了 — 了 marks that the sickness has happened. A common way to say you're sick.",
+      "notes_id": "生病了 — 了 menandai bahwa sakitnya sudah terjadi. Cara umum bilang kamu sakit.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "health",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_body_hurts",
+      "type": "pattern",
+      "title": "Body part + 疼",
+      "title_id": "Bagian tubuh + 疼",
+      "meaning": "saying something hurts",
+      "meaning_id": "mengatakan bagian tubuh sakit",
+      "structure": "Body part + 疼",
+      "explanation": "Use 疼 after a body part to say it hurts.",
+      "explanation_id": "Gunakan 疼 setelah bagian tubuh untuk mengatakan sakit.",
+      "examples": [
+        {
+          "simplified": "我头疼。",
+          "traditional": "我頭疼。",
+          "pinyin": "Wǒ tóu téng.",
+          "meaning": "My head hurts.",
+          "meaning_id": "Kepalaku sakit."
+        },
+        {
+          "simplified": "我手疼。",
+          "traditional": "我手疼。",
+          "pinyin": "Wǒ shǒu téng.",
+          "meaning": "My hand hurts.",
+          "meaning_id": "Tanganku sakit."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "health",
+        "body",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_shou",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_tou",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_teng",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_bing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_yan",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_shou",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_buyao",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shengbing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bing",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_teng",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_teng",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_yanjing",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_yan",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "疼 means?",
+        "prompt_id": "Arti 疼?",
+        "answer": "hurt / ache",
+        "answer_id": "sakit / nyeri"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "生病 means?",
+        "prompt_id": "Arti 生病?",
+        "answer": "get sick",
+        "answer_id": "jatuh sakit"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我头__。(My head hurts)",
+        "answer": "疼"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我生病了。",
+        "answer": "I got sick.",
+        "answer_id": "Aku sakit."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_tou",
+      "word_shou",
+      "word_yanjing",
+      "word_teng",
+      "word_shengbing",
+      "word_buyao"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_tou",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shou",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yanjing",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_tou_teng",
+      "sentence_wo_shengbing_le"
+    ]
+  }
+}

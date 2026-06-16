@@ -1,0 +1,967 @@
+{
+  "pack": {
+    "id": "pack_031_asking_for_help",
+    "title": "Asking for Help",
+    "title_id": "Meminta Bantuan",
+    "subtitle": "Ask for help, say you do not understand, and request repetition.",
+    "subtitle_id": "Meminta bantuan, bilang tidak mengerti, dan minta diulang.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "help",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 31,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Ask for help, say you do not understand, and request repetition.",
+    "learning_goal_id": "Meminta bantuan, bilang tidak mengerti, dan minta diulang.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_bang",
+      "type": "hanzi",
+      "simplified": "帮",
+      "traditional": "幫",
+      "meaning": "help",
+      "meaning_id": "bantu",
+      "accepted_meanings": [
+        "help"
+      ],
+      "accepted_meanings_id": [
+        "bantu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bāng",
+      "pinyin_numbered": "bang1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "帮",
+          "text": "bāng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Two hands on either side — someone reaching out, offering *help*. bāng ≈ \"bahng\" flat. Tone 1 high and steady, like a reliable friend always there.",
+      "mnemonic_id": "Dua tangan di kedua sisi — seseorang yang mengulurkan tangan, menawarkan *bantuan*. bāng ≈ \"bang\" flat. Nada 1 tinggi rata, kayak teman yang selalu ada.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请帮我！",
+          "pinyin": "Qǐng bāng wǒ!",
+          "meaning": "Please help me!",
+          "meaning_id": "Tolong bantu aku!"
+        },
+        {
+          "simplified": "你能帮我吗？",
+          "pinyin": "Nǐ néng bāng wǒ ma?",
+          "meaning": "Can you help me?",
+          "meaning_id": "Kamu bisa bantu aku?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "help",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zhu",
+      "type": "hanzi",
+      "simplified": "助",
+      "traditional": "助",
+      "meaning": "assist",
+      "meaning_id": "membantu",
+      "accepted_meanings": [
+        "assist"
+      ],
+      "accepted_meanings_id": [
+        "membantu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zhù",
+      "pinyin_numbered": "zhu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "助",
+          "text": "zhù",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Strength 力 lending a hand — *assist*, giving your strength to help. zhù ≈ \"joo!\" sharp. Tone 4 drops, like a decisive helping hand.",
+      "mnemonic_id": "Kekuatan 力 yang mengulurkan tangan — *membantu*, memberikan kekuatanmu untuk menolong. zhù ≈ \"ju!\" Nada 4 turun tajam, kayak tangan bantuan yang tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "谢谢你的帮助！",
+          "pinyin": "Xiè xie nǐ de bāng zhù!",
+          "meaning": "Thank you for your help!",
+          "meaning_id": "Terima kasih atas bantuanmu!"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "help",
+        "verb_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_dong",
+      "type": "hanzi",
+      "simplified": "懂",
+      "traditional": "懂",
+      "meaning": "understand",
+      "meaning_id": "mengerti",
+      "accepted_meanings": [
+        "understand"
+      ],
+      "accepted_meanings_id": [
+        "mengerti"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "dǒng",
+      "pinyin_numbered": "dong3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "懂",
+          "text": "dǒng",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "A heart 忄 that has moved and grasped — finally *understand*, it clicks. dǒng ≈ \"dong\" dipping then rising. Tone 3 like the moment of comprehension.",
+      "mnemonic_id": "Hati 忄 yang bergerak dan menangkap — akhirnya *mengerti*, langsung nyambung. dǒng ≈ \"dong\" turun terus naik. Nada 3 kayak momen pemahaman yang tiba-tiba.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我不懂。",
+          "pinyin": "Wǒ bù dǒng.",
+          "meaning": "I don't understand.",
+          "meaning_id": "Aku tidak mengerti."
+        },
+        {
+          "simplified": "你懂吗？",
+          "pinyin": "Nǐ dǒng ma?",
+          "meaning": "Do you understand?",
+          "meaning_id": "Kamu mengerti?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "help",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zai_again",
+      "type": "hanzi",
+      "simplified": "再",
+      "traditional": "再",
+      "meaning": "again",
+      "meaning_id": "lagi",
+      "accepted_meanings": [
+        "again"
+      ],
+      "accepted_meanings_id": [
+        "lagi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zài",
+      "pinyin_numbered": "zai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "再",
+          "text": "zài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — *again*, doing something one more time. zài ≈ \"zai!\" Tone 4.",
+      "mnemonic_id": "Sudah dipelajari — *lagi*, melakukan sesuatu sekali lagi. zài ≈ \"zai!\" Nada 4.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "再说一次。",
+          "pinyin": "Zài shuō yí cì.",
+          "meaning": "Say it again.",
+          "meaning_id": "Ulangi lagi."
+        },
+        {
+          "simplified": "再慢一点。",
+          "pinyin": "Zài màn yì diǎn.",
+          "meaning": "A bit slower again.",
+          "meaning_id": "Lebih pelan lagi."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "help",
+        "adverb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_shuo_say",
+      "type": "hanzi",
+      "simplified": "说",
+      "traditional": "說",
+      "meaning": "say / speak",
+      "meaning_id": "bicara / bilang",
+      "accepted_meanings": [
+        "say / speak"
+      ],
+      "accepted_meanings_id": [
+        "bicara / bilang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shuō",
+      "pinyin_numbered": "shuo1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "说",
+          "text": "shuō",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "Already learned — 讠 speech flowing freely, *speak* or *say*. shuō flat. Tone 1.",
+      "mnemonic_id": "Sudah dipelajari — 讠 ucapan yang mengalir bebas, *bicara* atau *bilang*. shuō flat. Nada 1.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "再说一次！",
+          "pinyin": "Zài shuō yí cì!",
+          "meaning": "Say it again!",
+          "meaning_id": "Ulangi lagi!"
+        },
+        {
+          "simplified": "你说什么？",
+          "pinyin": "Nǐ shuō shén me?",
+          "meaning": "What did you say?",
+          "meaning_id": "Kamu bilang apa?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "help",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_man_slow_help",
+      "type": "hanzi",
+      "simplified": "慢",
+      "traditional": "慢",
+      "meaning": "slow",
+      "meaning_id": "pelan",
+      "accepted_meanings": [
+        "slow"
+      ],
+      "accepted_meanings_id": [
+        "pelan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "màn",
+      "pinyin_numbered": "man4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "慢",
+          "text": "màn",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "Already learned — a careful heart, *slow* and unhurried. màn ≈ \"man!\" Tone 4.",
+      "mnemonic_id": "Sudah dipelajari — hati yang berhati-hati, *lambat* dan tidak terburu-buru. màn ≈ \"man!\" Nada 4.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请说慢点。",
+          "pinyin": "Qǐng shuō màn diǎn.",
+          "meaning": "Please speak more slowly.",
+          "meaning_id": "Tolong berbicara lebih pelan."
+        },
+        {
+          "simplified": "慢一点！",
+          "pinyin": "Màn yì diǎn!",
+          "meaning": "A bit slower!",
+          "meaning_id": "Pelan sedikit!"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "help",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_bangzhu",
+      "type": "word",
+      "simplified": "帮助",
+      "traditional": "幫助",
+      "meaning": "help",
+      "meaning_id": "bantuan / membantu",
+      "accepted_meanings": [
+        "help"
+      ],
+      "accepted_meanings_id": [
+        "bantuan / membantu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bāng zhù",
+      "pinyin_numbered": "bang1 zhu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "帮",
+          "text": "bāng",
+          "tone": 1
+        },
+        {
+          "hanzi": "助",
+          "text": "zhù",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_bang",
+        "hanzi_zhu"
+      ],
+      "part_of_speech": "noun/verb",
+      "mnemonic": "帮 help + 助 assist — *help*, two characters reinforcing the same meaning.",
+      "mnemonic_id": "帮 bantu + 助 membantu — *bantuan*, dua karakter yang memperkuat makna yang sama.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "帮助 is the noun (help) and verb (to help).",
+      "usage_note_id": "帮助 adalah kata benda (bantuan) dan kata kerja (membantu).",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "谢谢你的帮助！",
+          "pinyin": "Xiè xie nǐ de bāng zhù!",
+          "meaning": "Thank you for your help!",
+          "meaning_id": "Terima kasih atas bantuanmu!"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_bang_wo",
+      "type": "word",
+      "simplified": "帮我",
+      "traditional": "幫我",
+      "meaning": "help me",
+      "meaning_id": "bantu saya",
+      "accepted_meanings": [
+        "help me"
+      ],
+      "accepted_meanings_id": [
+        "bantu saya"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bāng wǒ",
+      "pinyin_numbered": "bang1 wo3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "帮",
+          "text": "bāng",
+          "tone": 1
+        },
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-3",
+      "hanzi_ids": [
+        "hanzi_bang",
+        "hanzi_wo"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "帮 help + 我 me — *help me*, the most direct request.",
+      "mnemonic_id": "帮 bantu + 我 aku — *bantu aku*, permintaan paling langsung.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请帮我！",
+          "pinyin": "Qǐng bāng wǒ!",
+          "meaning": "Please help me!",
+          "meaning_id": "Tolong bantu aku!"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_budong",
+      "type": "word",
+      "simplified": "不懂",
+      "traditional": "不懂",
+      "meaning": "do not understand",
+      "meaning_id": "tidak mengerti",
+      "accepted_meanings": [
+        "do not understand"
+      ],
+      "accepted_meanings_id": [
+        "tidak mengerti"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bù dǒng",
+      "pinyin_numbered": "bu4 dong3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "不",
+          "text": "bù",
+          "tone": 4
+        },
+        {
+          "hanzi": "懂",
+          "text": "dǒng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_bu",
+        "hanzi_dong"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "不 not + 懂 understand — *don't understand*, the honest admission.",
+      "mnemonic_id": "不 tidak + 懂 mengerti — *tidak mengerti*, pengakuan yang jujur.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我不懂。",
+          "pinyin": "Wǒ bù dǒng.",
+          "meaning": "I don't understand.",
+          "meaning_id": "Aku tidak mengerti."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_zaishuo",
+      "type": "word",
+      "simplified": "再说",
+      "traditional": "再說",
+      "meaning": "say again",
+      "meaning_id": "bilang lagi",
+      "accepted_meanings": [
+        "say again"
+      ],
+      "accepted_meanings_id": [
+        "bilang lagi"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zài shuō",
+      "pinyin_numbered": "zai4 shuo1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "再",
+          "text": "zài",
+          "tone": 4
+        },
+        {
+          "hanzi": "说",
+          "text": "shuō",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_zai",
+        "hanzi_shuo"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "再 again + 说 say — *say again*, repeat what was just said.",
+      "mnemonic_id": "再 lagi + 说 bilang — *ulangi*, ulangi apa yang baru saja dikatakan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请再说一次。",
+          "pinyin": "Qǐng zài shuō yí cì.",
+          "meaning": "Please say it again.",
+          "meaning_id": "Tolong ulangi lagi."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_mandian",
+      "type": "word",
+      "simplified": "慢点",
+      "traditional": "慢點",
+      "meaning": "slower",
+      "meaning_id": "pelan sedikit",
+      "accepted_meanings": [
+        "slower"
+      ],
+      "accepted_meanings_id": [
+        "pelan sedikit"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "màn diǎn",
+      "pinyin_numbered": "man4 dian3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "慢",
+          "text": "màn",
+          "tone": 4
+        },
+        {
+          "hanzi": "点",
+          "text": "diǎn",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-3",
+      "hanzi_ids": [
+        "hanzi_man_slow_help"
+      ],
+      "part_of_speech": "phrase",
+      "mnemonic": "慢 slow + 点 a bit — *a bit slower*, asking someone to slow down.",
+      "mnemonic_id": "慢 lambat + 点 sedikit — *sedikit lebih lambat*, meminta seseorang untuk melambat.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请说慢点。",
+          "pinyin": "Qǐng shuō màn diǎn.",
+          "meaning": "Please speak slowly.",
+          "meaning_id": "Tolong berbicara pelan."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_qingwen",
+      "type": "word",
+      "simplified": "请问",
+      "traditional": "請問",
+      "meaning": "excuse me / may I ask",
+      "meaning_id": "permisi / mau tanya",
+      "accepted_meanings": [
+        "excuse me / may I ask"
+      ],
+      "accepted_meanings_id": [
+        "permisi / mau tanya"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "qǐng wèn",
+      "pinyin_numbered": "qing3 wen4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "请",
+          "text": "qǐng",
+          "tone": 3
+        },
+        {
+          "hanzi": "问",
+          "text": "wèn",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "3-4",
+      "hanzi_ids": [
+        "hanzi_qing"
+      ],
+      "part_of_speech": "polite phrase",
+      "mnemonic": "请 please + 问 ask — *excuse me / may I ask*, the polite opener before any question.",
+      "mnemonic_id": "请 tolong + 问 tanya — *permisi / boleh tanya*, pembuka sopan sebelum pertanyaan apapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "请问 at the start softens any question — use it when asking strangers.",
+      "usage_note_id": "请问 di awal melembutkan pertanyaan apapun — gunakan saat bertanya pada orang asing.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "请问，医院在哪里？",
+          "pinyin": "Qǐng wèn, yī yuàn zài nǎ lǐ?",
+          "meaning": "Excuse me, where is the hospital?",
+          "meaning_id": "Permisi, rumah sakit di mana?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "help"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_qing_bang_wo",
+      "type": "sentence",
+      "simplified": "请帮我。",
+      "traditional": "請幫我。",
+      "meaning": "Please help me.",
+      "meaning_id": "Tolong bantu saya.",
+      "literal_meaning": "Please help me.",
+      "literal_meaning_id": "Tolong bantu aku.",
+      "pinyin": "qǐng bāng wǒ",
+      "pinyin_numbered": "qing3 bang1 wo3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "请",
+          "text": "qǐng",
+          "tone": 3
+        },
+        {
+          "hanzi": "帮",
+          "text": "bāng",
+          "tone": 1
+        },
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-1-3",
+      "focus_word_ids": [
+        "word_bangzhu"
+      ],
+      "pattern_ids": [
+        "pattern_help_requests"
+      ],
+      "notes": "请 + verb = polite request. The most essential help phrase.",
+      "notes_id": "请 + kata kerja = permintaan sopan. Frasa minta tolong yang paling penting.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "help",
+        "polite",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_wo_budong",
+      "type": "sentence",
+      "simplified": "我不懂。",
+      "traditional": "我不懂。",
+      "meaning": "I don't understand.",
+      "meaning_id": "Saya tidak mengerti.",
+      "literal_meaning": "I not understand.",
+      "literal_meaning_id": "Aku tidak mengerti.",
+      "pinyin": "wǒ bù dǒng",
+      "pinyin_numbered": "wo3 bu4 dong3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "不",
+          "text": "bù",
+          "tone": 4
+        },
+        {
+          "hanzi": "懂",
+          "text": "dǒng",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "3-4-3",
+      "focus_word_ids": [
+        "word_bangzhu"
+      ],
+      "pattern_ids": [
+        "pattern_help_requests"
+      ],
+      "notes": "A key survival phrase — admit you don't understand and ask for help.",
+      "notes_id": "Frasa bertahan hidup yang penting — akui kamu tidak mengerti dan minta bantuan.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "help",
+        "communication",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_help_requests",
+      "type": "pattern",
+      "title": "Help requests",
+      "title_id": "Permintaan bantuan",
+      "meaning": "asking for help",
+      "meaning_id": "meminta bantuan",
+      "structure": "请 + request",
+      "explanation": "Use 请 to make help requests polite.",
+      "explanation_id": "Gunakan 请 agar permintaan bantuan terdengar sopan.",
+      "examples": [
+        {
+          "simplified": "请帮我。",
+          "traditional": "請幫我。",
+          "pinyin": "Qǐng bāng wǒ.",
+          "meaning": "Please help me.",
+          "meaning_id": "Tolong bantu aku."
+        },
+        {
+          "simplified": "请再说一次。",
+          "traditional": "請再說一次。",
+          "pinyin": "Qǐng zài shuō yí cì.",
+          "meaning": "Please say it again.",
+          "meaning_id": "Tolong ulangi lagi."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "help",
+        "polite",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_zhu",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_bang",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_bang_wo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bang",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_bangzhu",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_bang",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_budong",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_dong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_mandian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_man_slow_help",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_zaishuo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_shuo",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "不懂 means?",
+        "prompt_id": "Arti 不懂?",
+        "answer": "don't understand",
+        "answer_id": "tidak mengerti"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "请问 means?",
+        "prompt_id": "Arti 请问?",
+        "answer": "excuse me / may I ask",
+        "answer_id": "permisi / boleh tanya"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "请__我。(Please help me)",
+        "answer": "帮"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "我不懂。",
+        "answer": "I don't understand.",
+        "answer_id": "Aku tidak mengerti."
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_bangzhu",
+      "word_bang_wo",
+      "word_budong",
+      "word_zaishuo",
+      "word_mandian",
+      "word_qingwen"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_bangzhu",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_bang_wo",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_budong",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_qing_bang_wo",
+      "sentence_wo_budong"
+    ]
+  }
+}

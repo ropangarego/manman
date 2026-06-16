@@ -18,7 +18,8 @@ export function LibraryItemCard({ item, active, showPinyin, onSelect }: LibraryI
         <span className="item-text">
           <h4 className="mandarin-text">{item.title}</h4>
           <p>
-            {showPinyin ? `${item.pinyin.join(' ')} · ` : ''}{item.meaning}
+            {showPinyin ? `${item.pinyin.join(' ')} · ` : ''}
+            {item.meaning}
           </p>
         </span>
       </button>

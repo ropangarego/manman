@@ -1,0 +1,964 @@
+{
+  "pack": {
+    "id": "pack_030_at_shop",
+    "title": "At Shop",
+    "title_id": "Di Toko",
+    "subtitle": "Ask price, size, payment, and buying needs.",
+    "subtitle_id": "Bertanya harga, ukuran, pembayaran, dan kebutuhan belanja.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "shop",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 30,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Ask price, size, payment, and buying needs.",
+    "learning_goal_id": "Bertanya harga, ukuran, pembayaran, dan kebutuhan belanja.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_mai_sell",
+      "type": "hanzi",
+      "simplified": "卖",
+      "traditional": "賣",
+      "meaning": "sell",
+      "meaning_id": "jual",
+      "accepted_meanings": [
+        "sell"
+      ],
+      "accepted_meanings_id": [
+        "jual"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "mài",
+      "pinyin_numbered": "mai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "卖",
+          "text": "mài",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A cross at the top, a merchant below — someone pushing goods, *selling*. mài ≈ \"my!\" sharp. Tone 4 drops, like a hawker calling out prices.",
+      "mnemonic_id": "Tanda silang di atas, pedagang di bawah — seseorang yang menjajakan barang, *menjual*. mài ≈ \"mai!\" Nada 4 turun tajam, kayak pedagang yang berteriak harga.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这里卖什么？",
+          "pinyin": "Zhè lǐ mài shén me?",
+          "meaning": "What do they sell here?",
+          "meaning_id": "Di sini jual apa?"
+        },
+        {
+          "simplified": "我卖书。",
+          "pinyin": "Wǒ mài shū.",
+          "meaning": "I sell books.",
+          "meaning_id": "Aku jual buku."
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "shop",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_jia_price",
+      "type": "hanzi",
+      "simplified": "价",
+      "traditional": "價",
+      "meaning": "price",
+      "meaning_id": "harga",
+      "accepted_meanings": [
+        "price"
+      ],
+      "accepted_meanings_id": [
+        "harga"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jià",
+      "pinyin_numbered": "jia4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "价",
+          "text": "jià",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person 亻 setting a value — the *price*, what a person decides something is worth. jià ≈ \"jyah!\" sharp. Tone 4 drops, like stamping a price tag.",
+      "mnemonic_id": "Seseorang 亻 yang menetapkan nilai — *harga*, apa yang seseorang putuskan sebagai nilai sesuatu. jià ≈ \"jya!\" Nada 4 turun tajam, kayak menempel label harga.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "价格多少？",
+          "pinyin": "Jià gé duō shao?",
+          "meaning": "How much is the price?",
+          "meaning_id": "Harganya berapa?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "shop",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ge_price",
+      "type": "hanzi",
+      "simplified": "格",
+      "traditional": "格",
+      "meaning": "standard / grid",
+      "meaning_id": "standar / kotak",
+      "accepted_meanings": [
+        "standard / grid"
+      ],
+      "accepted_meanings_id": [
+        "standar / kotak"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gé",
+      "pinyin_numbered": "ge2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "格",
+          "text": "gé",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A tree 木 in a grid — a *standard*, a *grid*, the structure of a *price*. gé ≈ \"guh\" rising. Tone 2 goes up, like asking about a price.",
+      "mnemonic_id": "Pohon 木 dalam kotak grid — sebuah *standar*, sebuah *grid*, struktur dari sebuah *harga*. gé ≈ \"ge\" naik. Nada 2 naik terus, kayak bertanya tentang harga.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "价格多少？",
+          "pinyin": "Jià gé duō shao?",
+          "meaning": "How much is the price?",
+          "meaning_id": "Harganya berapa?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "shop",
+        "noun_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_yuan_money",
+      "type": "hanzi",
+      "simplified": "元",
+      "traditional": "元",
+      "meaning": "yuan / dollar unit",
+      "meaning_id": "yuan / satuan uang",
+      "accepted_meanings": [
+        "yuan / dollar unit"
+      ],
+      "accepted_meanings_id": [
+        "yuan / satuan uang"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuán",
+      "pinyin_numbered": "yuan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "元",
+          "text": "yuán",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "The first stroke — the *origin*, the *yuan*, China's basic currency unit. yuán ≈ \"ywhen\" rising. Tone 2 goes up, like the value climbing.",
+      "mnemonic_id": "Goresan pertama — *asal*, *yuan*, satuan mata uang dasar China. yuán ≈ \"ywen\" naik. Nada 2 naik terus, kayak nilai yang naik.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "五十元。",
+          "pinyin": "Wǔ shí yuán.",
+          "meaning": "Fifty yuan.",
+          "meaning_id": "Lima puluh yuan."
+        },
+        {
+          "simplified": "一元。",
+          "pinyin": "Yì yuán.",
+          "meaning": "One yuan.",
+          "meaning_id": "Satu yuan."
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "shop",
+        "money",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ka_card",
+      "type": "hanzi",
+      "simplified": "卡",
+      "traditional": "卡",
+      "meaning": "card",
+      "meaning_id": "kartu",
+      "accepted_meanings": [
+        "card"
+      ],
+      "accepted_meanings_id": [
+        "kartu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kǎ",
+      "pinyin_numbered": "ka3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "卡",
+          "text": "kǎ",
+          "tone": 3
+        }
+      ],
+      "tone_number": 3,
+      "components": [],
+      "mnemonic": "Something that gets stuck or caught — a *card*, what gets swiped or stuck in a reader. kǎ ≈ \"kah\" dipping then rising. Tone 3 like sliding a card through.",
+      "mnemonic_id": "Sesuatu yang tersangkut atau tertahan — sebuah *kartu*, yang digesek atau dimasukkan ke pembaca. kǎ ≈ \"ka\" turun terus naik. Nada 3 kayak menggesek kartu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "可以刷卡吗？",
+          "pinyin": "Kě yǐ shuā kǎ ma?",
+          "meaning": "Can I pay by card?",
+          "meaning_id": "Bisa bayar pakai kartu?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "shop",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_fu_pay",
+      "type": "hanzi",
+      "simplified": "付",
+      "traditional": "付",
+      "meaning": "pay",
+      "meaning_id": "bayar",
+      "accepted_meanings": [
+        "pay"
+      ],
+      "accepted_meanings_id": [
+        "bayar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fù",
+      "pinyin_numbered": "fu4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "付",
+          "text": "fù",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person 亻 handing something over — *pay*, giving money across the counter. fù ≈ \"foo!\" sharp. Tone 4 drops, like handing over cash decisively.",
+      "mnemonic_id": "Seseorang 亻 yang menyerahkan sesuatu — *bayar*, memberikan uang di atas meja kasir. fù ≈ \"fu!\" Nada 4 turun tajam, kayak menyerahkan uang dengan tegas.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我付钱。",
+          "pinyin": "Wǒ fù qián.",
+          "meaning": "I pay.",
+          "meaning_id": "Aku bayar."
+        },
+        {
+          "simplified": "你付了吗？",
+          "pinyin": "Nǐ fù le ma?",
+          "meaning": "Did you pay?",
+          "meaning_id": "Kamu sudah bayar?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "shop",
+        "verb",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_mai_sell",
+      "type": "word",
+      "simplified": "卖",
+      "traditional": "賣",
+      "meaning": "sell",
+      "meaning_id": "jual",
+      "accepted_meanings": [
+        "sell"
+      ],
+      "accepted_meanings_id": [
+        "jual"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "mài",
+      "pinyin_numbered": "mai4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "卖",
+          "text": "mài",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4",
+      "hanzi_ids": [
+        "hanzi_mai_sell"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "*Sell* — the shopkeeper's side of the transaction.",
+      "mnemonic_id": "*Jual* — sisi penjual dalam transaksi.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "卖 sell vs 买 buy — mirror characters with opposite meanings.",
+      "usage_note_id": "卖 jual vs 买 beli — karakter cerminan dengan arti berlawanan.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "这里卖什么？",
+          "pinyin": "Zhè lǐ mài shén me?",
+          "meaning": "What do they sell here?",
+          "meaning_id": "Di sini jual apa?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_jiage",
+      "type": "word",
+      "simplified": "价格",
+      "traditional": "價格",
+      "meaning": "price",
+      "meaning_id": "harga",
+      "accepted_meanings": [
+        "price"
+      ],
+      "accepted_meanings_id": [
+        "harga"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "jià gé",
+      "pinyin_numbered": "jia4 ge2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "价",
+          "text": "jià",
+          "tone": 4
+        },
+        {
+          "hanzi": "格",
+          "text": "gé",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_jia",
+        "hanzi_ge"
+      ],
+      "part_of_speech": "noun",
+      "mnemonic": "价 price + 格 standard — *price*, the official stated amount.",
+      "mnemonic_id": "价 harga + 格 standar — *harga*, jumlah resmi yang dinyatakan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "价格多少？",
+          "pinyin": "Jià gé duō shao?",
+          "meaning": "How much is the price?",
+          "meaning_id": "Harganya berapa?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_yuan",
+      "type": "word",
+      "simplified": "元",
+      "traditional": "元",
+      "meaning": "yuan / dollar",
+      "meaning_id": "yuan / dolar",
+      "accepted_meanings": [
+        "yuan / dollar"
+      ],
+      "accepted_meanings_id": [
+        "yuan / dolar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "yuán",
+      "pinyin_numbered": "yuan2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "元",
+          "text": "yuán",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_yuan_money"
+      ],
+      "part_of_speech": "measure",
+      "mnemonic": "*Yuan* — the formal written unit of Chinese currency.",
+      "mnemonic_id": "*Yuan* — satuan mata uang China yang formal dalam tulisan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "元 is formal/written. 块 is spoken. Both mean yuan.",
+      "usage_note_id": "元 adalah formal/tulisan. 块 adalah lisan. Keduanya berarti yuan.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "五十元。",
+          "pinyin": "Wǔ shí yuán.",
+          "meaning": "Fifty yuan.",
+          "meaning_id": "Lima puluh yuan."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shuaka",
+      "type": "word",
+      "simplified": "刷卡",
+      "traditional": "刷卡",
+      "meaning": "pay by card",
+      "meaning_id": "bayar pakai kartu",
+      "accepted_meanings": [
+        "pay by card"
+      ],
+      "accepted_meanings_id": [
+        "bayar pakai kartu"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shuā kǎ",
+      "pinyin_numbered": "shua1 ka3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "刷",
+          "text": "shuā",
+          "tone": 1
+        },
+        {
+          "hanzi": "卡",
+          "text": "kǎ",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "1-3",
+      "hanzi_ids": [
+        "hanzi_ka"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "刷 swipe + 卡 card — *pay by card*, swiping a card.",
+      "mnemonic_id": "刷 gesek + 卡 kartu — *bayar pakai kartu*, menggesek kartu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "可以刷卡吗？",
+          "pinyin": "Kě yǐ shuā kǎ ma?",
+          "meaning": "Can I pay by card?",
+          "meaning_id": "Bisa bayar pakai kartu?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_fuqian",
+      "type": "word",
+      "simplified": "付钱",
+      "traditional": "付錢",
+      "meaning": "pay money",
+      "meaning_id": "bayar",
+      "accepted_meanings": [
+        "pay money"
+      ],
+      "accepted_meanings_id": [
+        "bayar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "fù qián",
+      "pinyin_numbered": "fu4 qian2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "付",
+          "text": "fù",
+          "tone": 4
+        },
+        {
+          "hanzi": "钱",
+          "text": "qián",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "4-2",
+      "hanzi_ids": [
+        "hanzi_fu",
+        "hanzi_qian"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "付 pay + 钱 money — *pay money*, the act of paying.",
+      "mnemonic_id": "付 bayar + 钱 uang — *bayar*, tindakan membayar.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我付钱。",
+          "pinyin": "Wǒ fù qián.",
+          "meaning": "I'll pay.",
+          "meaning_id": "Aku yang bayar."
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_keyi_shuaka_ma",
+      "type": "word",
+      "simplified": "可以刷卡吗",
+      "traditional": "可以刷卡嗎",
+      "meaning": "can I pay by card?",
+      "meaning_id": "bisa bayar pakai kartu?",
+      "accepted_meanings": [
+        "can I pay by card?"
+      ],
+      "accepted_meanings_id": [
+        "bisa bayar pakai kartu?"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kě yǐ shuā kǎ ma",
+      "pinyin_numbered": "ke3 yi3 shua1 ka3 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "可",
+          "text": "kě",
+          "tone": 3
+        },
+        {
+          "hanzi": "以",
+          "text": "yǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "刷",
+          "text": "shuā",
+          "tone": 1
+        },
+        {
+          "hanzi": "卡",
+          "text": "kǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-3-1-3-0",
+      "hanzi_ids": [
+        "hanzi_ka"
+      ],
+      "part_of_speech": "question phrase",
+      "mnemonic": "可以 can + 刷卡 pay by card + 吗 question — *Can I pay by card?* — essential phrase at any shop.",
+      "mnemonic_id": "可以 bisa + 刷卡 bayar kartu + 吗 tanya — *Bisa bayar pakai kartu?* — frasa penting di toko manapun.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "可以刷卡吗？",
+          "pinyin": "Kě yǐ shuā kǎ ma?",
+          "meaning": "Can I pay by card?",
+          "meaning_id": "Bisa bayar pakai kartu?"
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "shop"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_jiage_duoshao",
+      "type": "sentence",
+      "simplified": "价格多少？",
+      "traditional": "價格多少？",
+      "meaning": "How much is the price?",
+      "meaning_id": "Harganya berapa?",
+      "literal_meaning": "Price how much?",
+      "literal_meaning_id": "Harganya berapa?",
+      "pinyin": "jià gé duō shǎo",
+      "pinyin_numbered": "jia4 ge2 duo1 shao3",
+      "pinyin_syllables": [
+        {
+          "hanzi": "价",
+          "text": "jià",
+          "tone": 4
+        },
+        {
+          "hanzi": "格",
+          "text": "gé",
+          "tone": 2
+        },
+        {
+          "hanzi": "多",
+          "text": "duō",
+          "tone": 1
+        },
+        {
+          "hanzi": "少",
+          "text": "shǎo",
+          "tone": 3
+        }
+      ],
+      "tone_pattern": "4-2-1-3",
+      "focus_word_ids": [
+        "word_mai_sell"
+      ],
+      "pattern_ids": [
+        "pattern_shop_questions"
+      ],
+      "notes": "Same as 多少钱 but more formal — used when asking about listed prices.",
+      "notes_id": "Sama seperti 多少钱 tapi lebih formal — dipakai saat menanyakan harga yang tertera.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "shop",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_keyi_shuaka_ma",
+      "type": "sentence",
+      "simplified": "可以刷卡吗？",
+      "traditional": "可以刷卡嗎？",
+      "meaning": "Can I pay by card?",
+      "meaning_id": "Bisa bayar pakai kartu?",
+      "literal_meaning": "Can swipe card?",
+      "literal_meaning_id": "Bisa gesek kartu?",
+      "pinyin": "kě yǐ shuā kǎ ma",
+      "pinyin_numbered": "ke3 yi3 shua1 ka3 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "可",
+          "text": "kě",
+          "tone": 3
+        },
+        {
+          "hanzi": "以",
+          "text": "yǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "刷",
+          "text": "shuā",
+          "tone": 1
+        },
+        {
+          "hanzi": "卡",
+          "text": "kǎ",
+          "tone": 3
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-3-1-3-0",
+      "focus_word_ids": [
+        "word_mai_sell"
+      ],
+      "pattern_ids": [
+        "pattern_shop_questions"
+      ],
+      "notes": "可以 + action + 吗 — asking permission. One of the most useful travel phrases.",
+      "notes_id": "可以 + aksi + 吗 — meminta izin. Salah satu frasa perjalanan paling berguna.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "shop",
+        "payment",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_shop_questions",
+      "type": "pattern",
+      "title": "Shop questions",
+      "title_id": "Pertanyaan toko",
+      "meaning": "asking price/payment",
+      "meaning_id": "bertanya harga/pembayaran",
+      "structure": "价格多少？/ 可以刷卡吗？",
+      "explanation": "Use short direct questions for shopping.",
+      "explanation_id": "Gunakan pertanyaan pendek dan langsung untuk belanja.",
+      "examples": [
+        {
+          "simplified": "价格多少？",
+          "traditional": "價格多少？",
+          "pinyin": "Jià gé duō shao?",
+          "meaning": "How much is the price?",
+          "meaning_id": "Harganya berapa?"
+        },
+        {
+          "simplified": "可以刷卡吗？",
+          "traditional": "可以刷卡嗎？",
+          "pinyin": "Kě yǐ shuā kǎ ma?",
+          "meaning": "Can I pay by card?",
+          "meaning_id": "Bisa bayar pakai kartu?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "shop",
+        "payment",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ge",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_jia",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_fuqian",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_fu",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jiage",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ge",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_jiage",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_jia",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shuaka",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ka",
+      "prerequisite_item_type": "hanzi"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "卖 means?",
+        "prompt_id": "Arti 卖?",
+        "answer": "sell",
+        "answer_id": "jual"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "付钱 means?",
+        "prompt_id": "Arti 付钱?",
+        "answer": "pay money",
+        "answer_id": "bayar uang"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "可以__卡吗？(Can I pay by card?)",
+        "answer": "刷"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "价格多少？",
+        "answer": "How much is the price?",
+        "answer_id": "Harganya berapa?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_mai_sell",
+      "word_jiage",
+      "word_yuan",
+      "word_shuaka",
+      "word_fuqian",
+      "word_keyi_shuaka_ma"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_mai_sell",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_jiage",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_yuan",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_jiage_duoshao",
+      "sentence_keyi_shuaka_ma"
+    ]
+  }
+}

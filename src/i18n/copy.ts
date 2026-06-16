@@ -639,6 +639,7 @@ export function optionLabel(language: AppLanguage, value: string) {
     English: { English: 'English', Indonesian: 'Inggris' },
     Indonesian: { English: 'Indonesian', Indonesian: 'Indonesia' },
     Learning: { English: 'Learning', Indonesian: 'Belajar' },
+    'Not started': { English: 'Not started', Indonesian: 'Belum dimulai' },
     Familiar: { English: 'Familiar', Indonesian: 'Familiar' },
     Strong: { English: 'Strong', Indonesian: 'Kuat' },
     Mastered: { English: 'Mastered', Indonesian: 'Dikuasai' },

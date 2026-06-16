@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card';
 import { StatCard } from '../components/ui/StatCard';
 import { contentItems, getCurrentFocus } from '../data/mockContent';
 import { useTranslation } from '../i18n/useTranslation';
+import { useAppStore } from '../stores/appStore';
 import {
   progressStats,
   useProgressStore,
@@ -16,6 +17,7 @@ import { useStudyStore } from '../stores/studyStore';
 
 export function ProgressScreen() {
   const { language, t } = useTranslation();
+  const scriptChoice = useAppStore((state) => state.scriptChoice);
   const sessionIndex = useStudyStore((state) => state.sessionIndex);
   const progressItems = useProgressStore((state) => state.items);
   const totalCorrect = useProgressStore((state) => state.totalCorrect);
@@ -24,7 +26,7 @@ export function ProgressScreen() {
   const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
   const weeklyActivity = weeklyActivityFromProgress(dailyActivity);
   const wordStrength = wordStrengthFromProgress(contentItems, progressItems);
-  const currentFocus = getCurrentFocus(language, sessionIndex);
+  const currentFocus = getCurrentFocus(language, sessionIndex, progressItems, scriptChoice);
   const showWeakAreas = totalAttempts >= 8;
 
   return (

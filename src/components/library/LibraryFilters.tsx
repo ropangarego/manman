@@ -1,4 +1,4 @@
-﻿import type { LibraryTab, Stage } from '../../data/mockContent';
+import type { LibraryStage, LibraryTab } from '../../data/mockContent';
 import { optionLabel } from '../../i18n/copy';
 import { useTranslation } from '../../i18n/useTranslation';
 import { useAppStore } from '../../stores/appStore';
@@ -8,7 +8,7 @@ const tabs: LibraryTab[] = ['All', 'Hanzi', 'Words', 'Sentences'];
 interface LibraryFiltersProps {
   search: string;
   tab: LibraryTab;
-  stage: Stage | 'All';
+  stage: LibraryStage;
   onSearch: (value: string) => void;
   onTabChange: (tab: LibraryTab) => void;
 }
@@ -43,7 +43,7 @@ export function LibraryFilters({ search, tab, stage, onSearch, onTabChange }: Li
 
       <button className="picker-row" type="button" onClick={() => openSheet('stage')}>
         <b>{t('common.stage')}</b>
-        <span>{optionLabel(language, stage)} ›</span>
+        <span>{optionLabel(language, stage)} &rsaquo;</span>
       </button>
     </>
   );

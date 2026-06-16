@@ -1,0 +1,979 @@
+{
+  "pack": {
+    "id": "pack_025_work_study",
+    "title": "Work & Study",
+    "title_id": "Kerja & Belajar",
+    "subtitle": "Talk about work, study, school, and simple tasks.",
+    "subtitle_id": "Bicara tentang kerja, belajar, sekolah, dan tugas sederhana.",
+    "level": 2,
+    "phase": "mvp",
+    "theme": "work_study",
+    "script_priority": "simplified",
+    "estimated_days": 2,
+    "estimated_minutes_per_day": 5,
+    "order_index": 25,
+    "pack_type": "standard",
+    "is_srs_enabled": true,
+    "learning_goal": "Talk about work, study, school, and simple tasks.",
+    "learning_goal_id": "Bicara tentang kerja, belajar, sekolah, dan tugas sederhana.",
+    "content_summary": {
+      "components": 0,
+      "hanzi": 6,
+      "words": 6,
+      "sentences": 2,
+      "patterns": 1
+    }
+  },
+  "tone_system": {
+    "0": {
+      "name": "neutral tone",
+      "name_id": "nada netral",
+      "shape": ".",
+      "description": "light and short",
+      "description_id": "ringan dan pendek"
+    },
+    "1": {
+      "name": "first tone",
+      "name_id": "nada pertama",
+      "shape": "-",
+      "description": "high and flat",
+      "description_id": "tinggi dan rata"
+    },
+    "2": {
+      "name": "second tone",
+      "name_id": "nada kedua",
+      "shape": "/",
+      "description": "rising",
+      "description_id": "naik"
+    },
+    "3": {
+      "name": "third tone",
+      "name_id": "nada ketiga",
+      "shape": "v",
+      "description": "low dip",
+      "description_id": "turun rendah lalu naik sedikit"
+    },
+    "4": {
+      "name": "fourth tone",
+      "name_id": "nada keempat",
+      "shape": "\\",
+      "description": "sharp falling",
+      "description_id": "turun tegas"
+    }
+  },
+  "components": [],
+  "hanzi": [
+    {
+      "id": "hanzi_gong_work",
+      "type": "hanzi",
+      "simplified": "工",
+      "traditional": "工",
+      "meaning": "work",
+      "meaning_id": "kerja",
+      "accepted_meanings": [
+        "work"
+      ],
+      "accepted_meanings_id": [
+        "kerja"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gōng",
+      "pinyin_numbered": "gong1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "工",
+          "text": "gōng",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "A tool between two surfaces — a worker's instrument, the character for *work*. gōng ≈ \"gong\" flat. Tone 1 high and steady, like a machine running.",
+      "mnemonic_id": "Alat di antara dua permukaan — instrumen pekerja, karakter untuk *kerja*. gōng ≈ \"gong\" flat. Nada 1 tinggi rata, kayak mesin yang berjalan.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我工作。",
+          "pinyin": "Wǒ gōng zuò.",
+          "meaning": "I work.",
+          "meaning_id": "Aku bekerja."
+        },
+        {
+          "simplified": "你工作吗？",
+          "pinyin": "Nǐ gōng zuò ma?",
+          "meaning": "Do you work?",
+          "meaning_id": "Kamu bekerja?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "work",
+        "noun_part",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_zuo_work",
+      "type": "hanzi",
+      "simplified": "作",
+      "traditional": "作",
+      "meaning": "do / work part",
+      "meaning_id": "melakukan / bagian kerja",
+      "accepted_meanings": [
+        "do / work part"
+      ],
+      "accepted_meanings_id": [
+        "melakukan / bagian kerja"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "zuò",
+      "pinyin_numbered": "zuo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "作",
+          "text": "zuò",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "A person 亻 doing something actively — *do*, *make*, the act of producing. zuò ≈ \"dzwoh!\" sharp. Tone 4 drops, like getting something done.",
+      "mnemonic_id": "Seseorang 亻 yang aktif melakukan sesuatu — *melakukan*, *membuat*, aksi menghasilkan sesuatu. zuò ≈ \"dzwo!\" Nada 4 turun tajam, kayak menyelesaikan sesuatu.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你工作吗？",
+          "pinyin": "Nǐ gōng zuò ma?",
+          "meaning": "Do you work?",
+          "meaning_id": "Kamu bekerja?"
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "work",
+        "verb_part",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_xue_study",
+      "type": "hanzi",
+      "simplified": "学",
+      "traditional": "學",
+      "meaning": "study",
+      "meaning_id": "belajar",
+      "accepted_meanings": [
+        "study"
+      ],
+      "accepted_meanings_id": [
+        "belajar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xué",
+      "pinyin_numbered": "xue2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "学",
+          "text": "xué",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "Already learned — hands writing, mind focused, *study*. xué ≈ \"syueh\" rising. Tone 2.",
+      "mnemonic_id": "Sudah dipelajari — tangan menulis, pikiran fokus, *belajar*. xué ≈ \"syueh\" naik. Nada 2.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我学习中文。",
+          "pinyin": "Wǒ xué xí zhōng wén.",
+          "meaning": "I study Chinese.",
+          "meaning_id": "Aku belajar bahasa Mandarin."
+        },
+        {
+          "simplified": "你学什么？",
+          "pinyin": "Nǐ xué shén me?",
+          "meaning": "What do you study?",
+          "meaning_id": "Kamu belajar apa?"
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "study",
+        "verb",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ban",
+      "type": "hanzi",
+      "simplified": "班",
+      "traditional": "班",
+      "meaning": "class / shift",
+      "meaning_id": "kelas / shift",
+      "accepted_meanings": [
+        "class / shift"
+      ],
+      "accepted_meanings_id": [
+        "kelas / shift"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "bān",
+      "pinyin_numbered": "ban1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "班",
+          "text": "bān",
+          "tone": 1
+        }
+      ],
+      "tone_number": 1,
+      "components": [],
+      "mnemonic": "People organized in a row, working in shifts — a *class* or *work shift*. bān ≈ \"bahn\" flat. Tone 1 high and steady, like the regularity of a schedule.",
+      "mnemonic_id": "Orang yang diatur berbaris, bekerja secara bergilir — sebuah *kelas* atau *giliran kerja*. bān ≈ \"ban\" flat. Nada 1 tinggi rata, kayak keteraturan jadwal.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我今天上班。",
+          "pinyin": "Wǒ jīn tiān shàng bān.",
+          "meaning": "I work today.",
+          "meaning_id": "Hari ini aku kerja."
+        },
+        {
+          "simplified": "你几点下班？",
+          "pinyin": "Nǐ jǐ diǎn xià bān?",
+          "meaning": "What time do you finish work?",
+          "meaning_id": "Kamu pulang kerja jam berapa?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "work",
+        "study",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_ke_class",
+      "type": "hanzi",
+      "simplified": "课",
+      "traditional": "課",
+      "meaning": "lesson / class",
+      "meaning_id": "pelajaran / kelas",
+      "accepted_meanings": [
+        "lesson / class"
+      ],
+      "accepted_meanings_id": [
+        "pelajaran / kelas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "kè",
+      "pinyin_numbered": "ke4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "课",
+          "text": "kè",
+          "tone": 4
+        }
+      ],
+      "tone_number": 4,
+      "components": [],
+      "mnemonic": "讠 speech flowing in a structured session — a *lesson*, where knowledge is spoken. kè ≈ \"kuh!\" sharp. Tone 4 drops, like a class ending abruptly.",
+      "mnemonic_id": "讠 ucapan yang mengalir dalam sesi terstruktur — sebuah *pelajaran*, di mana pengetahuan disampaikan. kè ≈ \"ke!\" Nada 4 turun tajam, kayak kelas yang tiba-tiba berakhir.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我上课了。",
+          "pinyin": "Wǒ shàng kè le.",
+          "meaning": "I'm in class.",
+          "meaning_id": "Aku masuk kelas."
+        },
+        {
+          "simplified": "今天有课吗？",
+          "pinyin": "Jīn tiān yǒu kè ma?",
+          "meaning": "Is there class today?",
+          "meaning_id": "Hari ini ada pelajaran?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "study",
+        "noun",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "hanzi_mang",
+      "type": "hanzi",
+      "simplified": "忙",
+      "traditional": "忙",
+      "meaning": "busy",
+      "meaning_id": "sibuk",
+      "accepted_meanings": [
+        "busy"
+      ],
+      "accepted_meanings_id": [
+        "sibuk"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "máng",
+      "pinyin_numbered": "mang2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "忙",
+          "text": "máng",
+          "tone": 2
+        }
+      ],
+      "tone_number": 2,
+      "components": [],
+      "mnemonic": "A heart 忄 that has forgotten itself — too *busy* to stop and breathe. máng ≈ \"mang\" rising. Tone 2 goes up, like a workload piling higher.",
+      "mnemonic_id": "Hati 忄 yang lupa pada dirinya sendiri — terlalu *sibuk* untuk berhenti dan bernapas. máng ≈ \"mang\" naik. Nada 2 naik terus, kayak pekerjaan yang terus menumpuk.",
+      "tone_mnemonic": null,
+      "tone_mnemonic_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你忙吗？",
+          "pinyin": "Nǐ máng ma?",
+          "meaning": "Are you busy?",
+          "meaning_id": "Kamu sibuk?"
+        },
+        {
+          "simplified": "今天很忙。",
+          "pinyin": "Jīn tiān hěn máng.",
+          "meaning": "Today is very busy.",
+          "meaning_id": "Hari ini sangat sibuk."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "work",
+        "adjective",
+        "beginner",
+        "high_frequency"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "words": [
+    {
+      "id": "word_gongzuo",
+      "type": "word",
+      "simplified": "工作",
+      "traditional": "工作",
+      "meaning": "work / job",
+      "meaning_id": "kerja / pekerjaan",
+      "accepted_meanings": [
+        "work / job"
+      ],
+      "accepted_meanings_id": [
+        "kerja / pekerjaan"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "gōng zuò",
+      "pinyin_numbered": "gong1 zuo4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "工",
+          "text": "gōng",
+          "tone": 1
+        },
+        {
+          "hanzi": "作",
+          "text": "zuò",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "1-4",
+      "hanzi_ids": [
+        "hanzi_gong",
+        "hanzi_zuo_work"
+      ],
+      "part_of_speech": "noun/verb",
+      "mnemonic": "工 work + 作 do — *work / job*, doing the work.",
+      "mnemonic_id": "工 kerja + 作 lakukan — *kerja / pekerjaan*, melakukan pekerjaan.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "工作 is both the noun (job) and verb (to work).",
+      "usage_note_id": "工作 bisa jadi kata benda (pekerjaan) dan kata kerja (bekerja).",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你工作吗？",
+          "pinyin": "Nǐ gōng zuò ma?",
+          "meaning": "Do you work?",
+          "meaning_id": "Kamu bekerja?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xuexi",
+      "type": "word",
+      "simplified": "学习",
+      "traditional": "學習",
+      "meaning": "study / learn",
+      "meaning_id": "belajar",
+      "accepted_meanings": [
+        "study / learn"
+      ],
+      "accepted_meanings_id": [
+        "belajar"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xué xí",
+      "pinyin_numbered": "xue2 xi2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "学",
+          "text": "xué",
+          "tone": 2
+        },
+        {
+          "hanzi": "习",
+          "text": "xí",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2-2",
+      "hanzi_ids": [
+        "hanzi_xue"
+      ],
+      "part_of_speech": "verb",
+      "mnemonic": "学 study + 习 practice — *study / learn*, combining theory and practice.",
+      "mnemonic_id": "学 belajar + 习 berlatih — *belajar*, menggabungkan teori dan praktik.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我学习中文。",
+          "pinyin": "Wǒ xué xí zhōng wén.",
+          "meaning": "I study Chinese.",
+          "meaning_id": "Aku belajar bahasa Mandarin."
+        }
+      ],
+      "order_index": 2,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shangban",
+      "type": "word",
+      "simplified": "上班",
+      "traditional": "上班",
+      "meaning": "go to work",
+      "meaning_id": "masuk kerja",
+      "accepted_meanings": [
+        "go to work"
+      ],
+      "accepted_meanings_id": [
+        "masuk kerja"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shàng bān",
+      "pinyin_numbered": "shang4 ban1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "上",
+          "text": "shàng",
+          "tone": 4
+        },
+        {
+          "hanzi": "班",
+          "text": "bān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_ban"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "上 go up/on + 班 shift — *go to work*, getting on your shift.",
+      "mnemonic_id": "上 naik + 班 giliran — *pergi kerja*, masuk ke giliran kerjamu.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": "上班 go to work, 下班 finish work — same 班 pattern.",
+      "usage_note_id": "上班 pergi kerja, 下班 pulang kerja — pola 班 yang sama.",
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "我今天上班。",
+          "pinyin": "Wǒ jīn tiān shàng bān.",
+          "meaning": "I go to work today.",
+          "meaning_id": "Hari ini aku kerja."
+        }
+      ],
+      "order_index": 3,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_xiaban",
+      "type": "word",
+      "simplified": "下班",
+      "traditional": "下班",
+      "meaning": "finish work",
+      "meaning_id": "pulang kerja",
+      "accepted_meanings": [
+        "finish work"
+      ],
+      "accepted_meanings_id": [
+        "pulang kerja"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "xià bān",
+      "pinyin_numbered": "xia4 ban1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "下",
+          "text": "xià",
+          "tone": 4
+        },
+        {
+          "hanzi": "班",
+          "text": "bān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "4-1",
+      "hanzi_ids": [
+        "hanzi_ban"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "下 come off + 班 shift — *finish work*, stepping off the shift.",
+      "mnemonic_id": "下 turun + 班 giliran — *pulang kerja*, keluar dari giliran kerja.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "你几点下班？",
+          "pinyin": "Nǐ jǐ diǎn xià bān?",
+          "meaning": "When do you finish work?",
+          "meaning_id": "Kamu pulang kerja jam berapa?"
+        }
+      ],
+      "order_index": 4,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_shangke",
+      "type": "word",
+      "simplified": "上课",
+      "traditional": "上課",
+      "meaning": "attend class",
+      "meaning_id": "masuk kelas",
+      "accepted_meanings": [
+        "attend class"
+      ],
+      "accepted_meanings_id": [
+        "masuk kelas"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "shàng kè",
+      "pinyin_numbered": "shang4 ke4",
+      "pinyin_syllables": [
+        {
+          "hanzi": "上",
+          "text": "shàng",
+          "tone": 4
+        },
+        {
+          "hanzi": "课",
+          "text": "kè",
+          "tone": 4
+        }
+      ],
+      "tone_pattern": "4-4",
+      "hanzi_ids": [
+        "hanzi_ke"
+      ],
+      "part_of_speech": "verb phrase",
+      "mnemonic": "上 on + 课 lesson — *attend class*, being in a lesson.",
+      "mnemonic_id": "上 masuk + 课 pelajaran — *masuk kelas*, berada dalam pelajaran.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天有课吗？",
+          "pinyin": "Jīn tiān yǒu kè ma?",
+          "meaning": "Is there class today?",
+          "meaning_id": "Hari ini ada kelas?"
+        }
+      ],
+      "order_index": 5,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    },
+    {
+      "id": "word_mang",
+      "type": "word",
+      "simplified": "忙",
+      "traditional": "忙",
+      "meaning": "busy",
+      "meaning_id": "sibuk",
+      "accepted_meanings": [
+        "busy"
+      ],
+      "accepted_meanings_id": [
+        "sibuk"
+      ],
+      "blocked_meanings": [],
+      "blocked_meanings_id": [],
+      "pinyin": "máng",
+      "pinyin_numbered": "mang2",
+      "pinyin_syllables": [
+        {
+          "hanzi": "忙",
+          "text": "máng",
+          "tone": 2
+        }
+      ],
+      "tone_pattern": "2",
+      "hanzi_ids": [
+        "hanzi_mang"
+      ],
+      "part_of_speech": "adjective",
+      "mnemonic": "*Busy* — too much to do, not enough time.",
+      "mnemonic_id": "*Sibuk* — terlalu banyak yang harus dilakukan, waktu tidak cukup.",
+      "tone_note": null,
+      "tone_note_id": null,
+      "usage_note": null,
+      "usage_note_id": null,
+      "audio_url": null,
+      "examples": [
+        {
+          "simplified": "今天很忙。",
+          "pinyin": "Jīn tiān hěn máng.",
+          "meaning": "Today is very busy.",
+          "meaning_id": "Hari ini sangat sibuk."
+        }
+      ],
+      "order_index": 6,
+      "tags": [
+        "work_study"
+      ],
+      "is_core_word": true,
+      "is_reviewable": true
+    }
+  ],
+  "sentences": [
+    {
+      "id": "sentence_wo_jintian_shangban",
+      "type": "sentence",
+      "simplified": "我今天上班。",
+      "traditional": "我今天上班。",
+      "meaning": "I work today.",
+      "meaning_id": "Saya masuk kerja hari ini.",
+      "literal_meaning": "I today go-to-work.",
+      "literal_meaning_id": "Aku hari ini kerja.",
+      "pinyin": "wǒ jīn tiān shàng bān",
+      "pinyin_numbered": "wo3 jin1 tian1 shang4 ban1",
+      "pinyin_syllables": [
+        {
+          "hanzi": "我",
+          "text": "wǒ",
+          "tone": 3
+        },
+        {
+          "hanzi": "今",
+          "text": "jīn",
+          "tone": 1
+        },
+        {
+          "hanzi": "天",
+          "text": "tiān",
+          "tone": 1
+        },
+        {
+          "hanzi": "上",
+          "text": "shàng",
+          "tone": 4
+        },
+        {
+          "hanzi": "班",
+          "text": "bān",
+          "tone": 1
+        }
+      ],
+      "tone_pattern": "3-1-1-4-1",
+      "focus_word_ids": [
+        "word_gongzuo"
+      ],
+      "pattern_ids": [
+        "pattern_work_study_actions"
+      ],
+      "notes": "Time word 今天 before subject — standard word order.",
+      "notes_id": "Kata waktu 今天 sebelum subjek — urutan kata standar.",
+      "audio_url": null,
+      "order_index": 1,
+      "tags": [
+        "work",
+        "beginner"
+      ],
+      "is_reviewable": true
+    },
+    {
+      "id": "sentence_ni_mang_ma",
+      "type": "sentence",
+      "simplified": "你忙吗？",
+      "traditional": "你忙嗎？",
+      "meaning": "Are you busy?",
+      "meaning_id": "Kamu sibuk?",
+      "literal_meaning": "You busy?",
+      "literal_meaning_id": "Kamu sibuk?",
+      "pinyin": "nǐ máng ma",
+      "pinyin_numbered": "ni3 mang2 ma0",
+      "pinyin_syllables": [
+        {
+          "hanzi": "你",
+          "text": "nǐ",
+          "tone": 3
+        },
+        {
+          "hanzi": "忙",
+          "text": "máng",
+          "tone": 2
+        },
+        {
+          "hanzi": "吗",
+          "text": "ma",
+          "tone": 0
+        }
+      ],
+      "tone_pattern": "3-2-0",
+      "focus_word_ids": [
+        "word_gongzuo"
+      ],
+      "pattern_ids": [
+        "pattern_work_study_actions"
+      ],
+      "notes": "A common opener in Chinese conversation — checking in on someone.",
+      "notes_id": "Pembuka yang umum dalam percakapan Mandarin — mengecek kondisi seseorang.",
+      "audio_url": null,
+      "order_index": 2,
+      "tags": [
+        "work",
+        "question",
+        "beginner"
+      ],
+      "is_reviewable": true
+    }
+  ],
+  "patterns": [
+    {
+      "id": "pattern_work_study_actions",
+      "type": "pattern",
+      "title": "Work/study actions",
+      "title_id": "Aksi kerja/belajar",
+      "meaning": "work and study verbs",
+      "meaning_id": "kata kerja kerja/belajar",
+      "structure": "上班 / 下班 / 上课",
+      "explanation": "Use 上/下 with work and class routines.",
+      "explanation_id": "Gunakan 上/下 untuk rutinitas kerja dan kelas.",
+      "examples": [
+        {
+          "simplified": "我今天上班。",
+          "traditional": "我今天上班。",
+          "pinyin": "Wǒ jīn tiān shàng bān.",
+          "meaning": "I work today.",
+          "meaning_id": "Hari ini aku kerja."
+        },
+        {
+          "simplified": "你学习什么？",
+          "traditional": "你學習什麼？",
+          "pinyin": "Nǐ xué xí shén me?",
+          "meaning": "What do you study?",
+          "meaning_id": "Kamu belajar apa?"
+        }
+      ],
+      "order_index": 1,
+      "tags": [
+        "work",
+        "study",
+        "beginner"
+      ],
+      "is_reviewable": false
+    }
+  ],
+  "item_prerequisites": [
+    {
+      "item_id": "hanzi_ban",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_gong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_ke",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_ban",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "hanzi_zuo_work",
+      "item_type": "hanzi",
+      "prerequisite_item_id": "hanzi_gong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_gongzuo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_gong",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_gongzuo",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_zuo_work",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shangban",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ban",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_shangke",
+      "item_type": "word",
+      "prerequisite_item_id": "hanzi_ke",
+      "prerequisite_item_type": "hanzi"
+    },
+    {
+      "item_id": "word_xiaban",
+      "item_type": "word",
+      "prerequisite_item_id": "word_shangban",
+      "prerequisite_item_type": "word"
+    }
+  ],
+  "unlock_rules": [
+    {
+      "id": "unlock_after_prerequisites_familiar",
+      "rule": "unlock_after_prerequisites_familiar",
+      "description": "Unlock items when prerequisites reach Familiar.",
+      "description_id": "Buka item saat prasyarat mencapai tahap Familiar."
+    }
+  ],
+  "review_blueprint": {
+    "question_types": [
+      "meaning_choice",
+      "pinyin_choice",
+      "tone_choice",
+      "sentence_meaning"
+    ],
+    "examples": [
+      {
+        "type": "meaning_choice",
+        "prompt": "工作 means?",
+        "prompt_id": "Arti 工作?",
+        "answer": "work / job",
+        "answer_id": "kerja / pekerjaan"
+      },
+      {
+        "type": "meaning_choice",
+        "prompt": "忙 means?",
+        "prompt_id": "Arti 忙?",
+        "answer": "busy",
+        "answer_id": "sibuk"
+      },
+      {
+        "type": "fill_blank",
+        "prompt": "我今天__班。(I work today)",
+        "answer": "上"
+      },
+      {
+        "type": "sentence_meaning",
+        "prompt": "你忙吗？",
+        "answer": "Are you busy?",
+        "answer_id": "Kamu sibuk?"
+      }
+    ]
+  },
+  "study_flow": {
+    "intro_only": false,
+    "creates_srs_items": true,
+    "new_items": [
+      "word_gongzuo",
+      "word_xuexi",
+      "word_shangban",
+      "word_xiaban",
+      "word_shangke",
+      "word_mang"
+    ],
+    "quick_practice": [
+      {
+        "item_id": "word_gongzuo",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_xuexi",
+        "question_type": "meaning_choice"
+      },
+      {
+        "item_id": "word_shangban",
+        "question_type": "meaning_choice"
+      }
+    ],
+    "unlock_items": [
+      "sentence_wo_jintian_shangban",
+      "sentence_ni_mang_ma"
+    ]
+  }
+}

@@ -11,6 +11,7 @@ import { useStudyStore } from '../stores/studyStore';
 export function HomeScreen() {
   const { language, t } = useTranslation();
   const sessionSize = useAppStore((state) => state.sessionSize);
+  const scriptChoice = useAppStore((state) => state.scriptChoice);
   const introStatus = useAppStore((state) => state.introStatus);
   const setScreen = useAppStore((state) => state.setScreen);
   const startSession = useStudyStore((state) => state.startSession);
@@ -22,9 +23,9 @@ export function HomeScreen() {
   const plan = sessionPlans[sessionSize];
   const introActive = introStatus === 'required' || introStatus === 'optional';
   const introPreview = getIntroStudySession(language);
-  const sessionPreview = getStarterStudySession(sessionSize, sessionIndex, language);
+  const sessionPreview = getStarterStudySession(sessionSize, sessionIndex, language, progressItems, scriptChoice);
   const stats = progressStats(contentItems, progressItems, totalCorrect, totalAttempts, dailyActivity);
-  const currentFocus = getCurrentFocus(language, sessionIndex);
+  const currentFocus = getCurrentFocus(language, sessionIndex, progressItems, scriptChoice);
 
   return (
     <>
