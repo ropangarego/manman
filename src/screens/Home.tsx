@@ -21,6 +21,7 @@ export function HomeScreen() {
   const totalAttempts = useProgressStore((state) => state.totalAttempts);
   const dailyActivity = useProgressStore((state) => state.dailyActivity);
   const plan = sessionPlans[sessionSize];
+  const durationLabel = language === 'Indonesian' ? plan.duration.replace('min', 'menit') : plan.duration;
   const introActive = introStatus === 'required' || introStatus === 'optional';
   const introPreview = getIntroStudySession(language);
   const sessionPreview = getStarterStudySession(sessionSize, sessionIndex, language, progressItems, scriptChoice);
@@ -42,7 +43,7 @@ export function HomeScreen() {
                 ? `${sessionPreview.learnItems.length} kata baru · ${sessionPreview.reviewItems.length} review`
                 : `${sessionPreview.learnItems.length} new words · ${sessionPreview.reviewItems.length} reviews`}
           </h2>
-          <p className="duration-line">{t('home.duration')}: {introActive ? '~5 min' : plan.duration}</p>
+          <p className="duration-line">{t('home.duration')}: {introActive ? (language === 'Indonesian' ? '~5 menit' : '~5 min') : durationLabel}</p>
           <p>{introActive && introPreview ? introPreview.introDescription : t('home.description')}</p>
         </div>
         <Button

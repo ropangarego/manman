@@ -32,6 +32,14 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
   const speechSpeed = useAppStore((state) => state.settings.speechSpeed);
   const speechRate = speechRateForSpeed(speechSpeed);
   const isPattern = item.type === 'Patterns';
+  const displaySizeClass =
+    item.type === 'Hanzi'
+      ? 'detail-main-hanzi'
+      : item.type === 'Words'
+        ? 'detail-main-word'
+        : item.type === 'Sentences'
+          ? 'detail-main-sentence'
+          : 'detail-main-pattern';
 
   return (
     <aside className={`detail-panel${isPattern ? ' pattern-detail' : ''}`}>
@@ -41,7 +49,7 @@ export function LibraryDetail({ item, showPinyin, onBack }: LibraryDetailProps) 
 
       <div className="detail-head">
         <div className="pronunciation-stack detail-pronunciation">
-          <div className="detail-main-char mandarin-text">{item.title}</div>
+          <div className={`detail-main-char ${displaySizeClass} mandarin-text`}>{item.title}</div>
           {showPinyin ? (
             <>
               <div className="detail-pinyin">{item.pinyin.join(' ')}</div>

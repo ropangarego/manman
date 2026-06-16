@@ -70,12 +70,6 @@ export function SettingsScreen() {
 
           <SettingsGroup title={t('settings.study')}>
             <SettingRow
-              title={t('settings.reviewStyle')}
-              subtitle={t('settings.reviewStyleSub')}
-              value={optionLabel(language, settings.reviewStyle)}
-              onClick={() => openSheet('reviewStyle')}
-            />
-            <SettingRow
               title={t('settings.sound')}
               subtitle={t('settings.soundSub')}
               toggle={{
@@ -118,20 +112,7 @@ export function SettingsScreen() {
             />
           </SettingsGroup>
 
-          <SettingsGroup title={t('settings.offline')}>
-            <SettingRow
-              title={t('settings.offlineMode')}
-              subtitle={t('settings.offlineModeSub')}
-              toggle={{
-                checked: settings.offline,
-                onChange: () => toggleSetting('offline'),
-              }}
-            />
-            <SettingRow
-              title={t('settings.downloads')}
-              subtitle={t('settings.downloadsSub')}
-              onClick={() => openSheet('downloads')}
-            />
+          <SettingsGroup title={t('settings.app')}>
             <SettingRow
               title={t('settings.installApp')}
               subtitle={t('settings.installAppSub')}
@@ -140,20 +121,20 @@ export function SettingsScreen() {
           </SettingsGroup>
 
           {role === 'admin' ? (
-            <SettingsGroup title="Developer / Admin">
-              <SettingRow title="Admin Panel" subtitle="Review content QA and user reports." onClick={() => navigateTo('/admin/packs')} />
+            <SettingsGroup title={t('settings.admin')}>
+              <SettingRow title={t('settings.adminPanel')} subtitle={t('settings.adminPanelSub')} onClick={() => navigateTo('/admin/packs')} />
             </SettingsGroup>
           ) : null}
 
-          <SettingsGroup title="Support">
+          <SettingsGroup title={t('settings.support')}>
             <SettingRow
-              title="Report an issue"
-              subtitle="Send feedback about the app or your account."
+              title={t('settings.reportIssue')}
+              subtitle={t('settings.reportIssueSub')}
               onClick={() => openReport({ page: 'settings', metadata: { area: 'settings' } })}
             />
           </SettingsGroup>
 
-          <SettingsGroup title="Danger Zone">
+          <SettingsGroup title={t('settings.dangerZone')}>
             <SettingRow
               danger
               title={t('settings.resetLearningProgress')}

@@ -6,7 +6,8 @@ interface WeeklyActivityProps {
 }
 
 export function WeeklyActivity({ activity }: WeeklyActivityProps) {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
+  const minuteUnit = language === 'Indonesian' ? ' mnt' : 'm';
 
   return (
     <Card>
@@ -19,7 +20,7 @@ export function WeeklyActivity({ activity }: WeeklyActivityProps) {
       <div className="bars readable-bars">
         {activity.map((day, index) => (
           <div className="bar-wrap" key={`${day.day}-${index}`}>
-            <span className="bar-value">{day.minutes}m</span>
+            <span className="bar-value">{day.minutes}{minuteUnit}</span>
             <div className="bar" aria-hidden="true">
               <i style={{ height: `${day.minutes * 3.2}px` }} />
             </div>

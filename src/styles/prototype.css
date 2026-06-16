@@ -982,3 +982,24 @@
 .item-main-button:focus-visible{outline:3px solid rgba(249,115,22,.28);outline-offset:3px;border-radius:10px;}
 .item-actions{display:flex;align-items:center;gap:8px;justify-self:end;}
 .item-actions em{white-space:nowrap;}
+
+/* Library detail display sizing */
+.detail-main-char{
+  overflow-wrap:anywhere;
+  word-break:normal;
+  max-width:min(100%,720px);
+  margin-inline:auto;
+}
+.detail-main-hanzi{font-size:72px!important;line-height:1!important;}
+.detail-main-word{font-size:48px!important;line-height:1.05!important;}
+.detail-main-sentence{font-size:34px!important;line-height:1.12!important;}
+.detail-main-pattern{font-size:30px!important;line-height:1.12!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-weight:800!important;letter-spacing:0!important;}
+@media (min-width:768px){
+  .detail-main-hanzi{font-size:88px!important;}
+  .detail-main-word{font-size:64px!important;}
+  .detail-main-sentence{font-size:48px!important;max-width:640px;}
+  .detail-main-pattern{font-size:42px!important;max-width:620px;}
+}
+@media (min-width:1200px){
+  .detail-main-sentence{font-size:56px!important;}
+}

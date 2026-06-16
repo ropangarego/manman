@@ -12,8 +12,16 @@
 
         if (rawPreferences) {
           var preferences = JSON.parse(rawPreferences);
-          prefersDark = preferences && preferences.version >= 2 && preferences.state && preferences.state.settings && preferences.state.settings.dark === true;
-        } else {
+          var state = preferences && preferences.state;
+          var settings = state && state.settings;
+          prefersDark =
+            (settings && settings.dark === true) ||
+            (settings && settings.darkMode === true) ||
+            (state && state.dark === true) ||
+            (state && state.darkMode === true);
+        }
+
+        if (!prefersDark) {
           prefersDark = localStorage.getItem('mandarin-theme') === 'dark';
         }
 

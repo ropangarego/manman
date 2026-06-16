@@ -179,6 +179,7 @@ export function StudyScreen() {
   const recordAnswer = useProgressStore((state) => state.recordAnswer);
   const completeSession = useProgressStore((state) => state.completeSession);
   const plan = sessionPlans[sessionSize];
+  const durationLabel = language === 'Indonesian' ? plan.duration.replace('min', 'menit') : plan.duration;
   const introActive = introStatus === 'required' || introStatus === 'optional';
   const introSession = getIntroStudySession(language);
   const introCards = introSession?.cards ?? [];
@@ -237,7 +238,7 @@ export function StudyScreen() {
             <p>
               {introCards.length} {language === 'Indonesian' ? 'kartu pengenalan' : 'intro cards'}
               <br />
-              <span className="duration-line">{t('home.duration')}: ~5 min</span>
+              <span className="duration-line">{t('home.duration')}: {language === 'Indonesian' ? '~5 menit' : '~5 min'}</span>
             </p>
             <p>{introSession.introDescription}</p>
           </div>
@@ -287,7 +288,7 @@ export function StudyScreen() {
                 ? `${session.learnItems.length} kata baru · ${session.reviewItems.length} review`
                 : `${session.learnItems.length} new words · ${session.reviewItems.length} reviews`}
               <br />
-              <span className="duration-line">{t('home.duration')}: {plan.duration}</span>
+              <span className="duration-line">{t('home.duration')}: {durationLabel}</span>
             </p>
             <p>{session.introDescription}</p>
           </div>
@@ -308,7 +309,7 @@ export function StudyScreen() {
           <div className="intro-stats">
             <StatCard value={session.learnItems.length} label={t('study.new')} />
             <StatCard value={session.reviewItems.length} label={t('study.reviews')} />
-            <StatCard value={plan.duration.replace('~', '')} label={t('home.duration')} />
+            <StatCard value={durationLabel.replace('~', '')} label={t('home.duration')} />
           </div>
           <Button type="button" onClick={() => (hasStudyTasks ? setStep(firstStudyStep) : setScreen('home'))}>
             {hasStudyTasks ? t('study.start') : t('study.done')}

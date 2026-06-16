@@ -89,8 +89,16 @@ type CopyKey =
   | 'settings.learning'
   | 'settings.study'
   | 'settings.display'
+  | 'settings.app'
   | 'settings.offline'
   | 'settings.account'
+  | 'settings.admin'
+  | 'settings.adminPanel'
+  | 'settings.adminPanelSub'
+  | 'settings.support'
+  | 'settings.reportIssue'
+  | 'settings.reportIssueSub'
+  | 'settings.dangerZone'
   | 'settings.sessionSize'
   | 'settings.script'
   | 'settings.scriptSub'
@@ -367,14 +375,14 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'progress.learningPathSub': { English: 'How starter content opens up.', Indonesian: 'Cara konten awal terbuka bertahap.' },
   'progress.morePacksInLibrary': {
     English: 'More packs are available in Library.',
-    Indonesian: 'Paket lainnya tersedia di Library.',
+    Indonesian: 'Paket lainnya tersedia di Koleksi.',
   },
   'progress.weakAreas': { English: 'Weak areas', Indonesian: 'Area lemah' },
   'progress.weakAreasSub': { English: 'Shown after enough reviews.', Indonesian: 'Muncul setelah review cukup.' },
   'settings.title': { English: 'Settings', Indonesian: 'Pengaturan' },
   'settings.subtitle': {
-    English: 'Tune study, display, offline, and account options.',
-    Indonesian: 'Atur belajar, tampilan, offline, dan akun.',
+    English: 'Tune study, display, app, and account options.',
+    Indonesian: 'Atur belajar, tampilan, aplikasi, dan akun.',
   },
   'settings.profile': { English: 'Profile', Indonesian: 'Profil' },
   'settings.profileDetails': { English: 'Name & email', Indonesian: 'Nama & email' },
@@ -392,8 +400,22 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.learning': { English: 'Learning', Indonesian: 'Belajar' },
   'settings.study': { English: 'Study', Indonesian: 'Sesi' },
   'settings.display': { English: 'Display', Indonesian: 'Tampilan' },
+  'settings.app': { English: 'App', Indonesian: 'Aplikasi' },
   'settings.offline': { English: 'Offline', Indonesian: 'Offline' },
   'settings.account': { English: 'Account & data', Indonesian: 'Akun & data' },
+  'settings.admin': { English: 'Developer / Admin', Indonesian: 'Developer / Admin' },
+  'settings.adminPanel': { English: 'Admin Panel', Indonesian: 'Panel Admin' },
+  'settings.adminPanelSub': {
+    English: 'Review content QA and user reports.',
+    Indonesian: 'Periksa QA konten dan laporan pengguna.',
+  },
+  'settings.support': { English: 'Support', Indonesian: 'Dukungan' },
+  'settings.reportIssue': { English: 'Report an issue', Indonesian: 'Laporkan masalah' },
+  'settings.reportIssueSub': {
+    English: 'Send feedback about the app or your account.',
+    Indonesian: 'Kirim masukan tentang aplikasi atau akunmu.',
+  },
+  'settings.dangerZone': { English: 'Danger Zone', Indonesian: 'Area Berisiko' },
   'settings.sessionSize': { English: 'Session size', Indonesian: 'Ukuran sesi' },
   'settings.script': { English: 'Script', Indonesian: 'Aksara' },
   'settings.scriptSub': { English: 'Chinese character set.', Indonesian: 'Pilihan aksara Mandarin.' },
@@ -402,7 +424,7 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.toneColors': { English: 'Tone colors', Indonesian: 'Warna nada' },
   'settings.toneColorsSub': { English: 'Show tone dots and tone hints.', Indonesian: 'Tampilkan titik nada dan petunjuk nada.' },
   'settings.reviewStyle': { English: 'Review style', Indonesian: 'Gaya review' },
-  'settings.reviewStyleSub': { English: 'Choose how reviews feel.', Indonesian: 'Pilih rasa sesi review.' },
+  'settings.reviewStyleSub': { English: 'Choose how reviews feel. Coming later.', Indonesian: 'Pilih gaya review. Segera hadir.' },
   'settings.sound': { English: 'Sound', Indonesian: 'Suara' },
   'settings.soundSub': { English: 'Play pronunciation audio.', Indonesian: 'Putar audio pelafalan.' },
   'settings.speechSpeed': { English: 'Speech speed', Indonesian: 'Kecepatan suara' },
@@ -420,8 +442,8 @@ const copy: Record<CopyKey, Record<AppLanguage, string>> = {
   'settings.offlineModeSub': { English: 'Keep starter content available on this device.', Indonesian: 'Simpan konten awal di perangkat ini.' },
   'settings.downloads': { English: 'Manage downloads', Indonesian: 'Kelola unduhan' },
   'settings.downloadsSub': { English: 'Refresh the saved starter pack.', Indonesian: 'Segarkan starter pack tersimpan.' },
-  'settings.installApp': { English: 'Add app shortcut', Indonesian: 'Tambah shortcut app' },
-  'settings.installAppSub': { English: 'Open Manman! from your home screen.', Indonesian: 'Buka Manman! dari home screen.' },
+  'settings.installApp': { English: 'Add app shortcut', Indonesian: 'Tambah pintasan aplikasi' },
+  'settings.installAppSub': { English: 'Open Manman! from your home screen.', Indonesian: 'Buka Manman! dari layar utama.' },
   'settings.logoutSub': { English: 'Sign out on this device.', Indonesian: 'Keluar dari perangkat ini.' },
   'study.session': { English: 'Study session', Indonesian: 'Sesi belajar' },
   'study.sessionPlan': { English: 'Session plan', Indonesian: 'Rencana sesi' },

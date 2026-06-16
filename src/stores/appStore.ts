@@ -90,7 +90,7 @@ const DEFAULT_SETTINGS: SettingsState = {
   hints: true,
   language: 'English',
   dark: false,
-  offline: true,
+  offline: false,
 };
 
 interface PersistedAppState {
