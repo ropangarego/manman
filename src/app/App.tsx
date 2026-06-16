@@ -5,8 +5,10 @@ import { Toast } from '../components/ui/Toast';
 import { AuthScreen } from '../screens/Auth';
 import { OnboardingScreen } from '../screens/Onboarding';
 import { useAppStore } from '../stores/appStore';
+import { useProgressStore } from '../stores/progressStore';
 import { useStudyStore } from '../stores/studyStore';
 import { fetchOrCreateProfile } from '../lib/profileSync';
+import { restoreProgressForUser } from '../lib/progress/progressSync';
 import { replaceWith } from '../utils/navigation';
 import {
   displayNameFromUser,
@@ -84,10 +86,25 @@ export function App() {
       try {
         syncAuthenticatedUser({ name: displayNameFromUser(user), email: user.email ?? '' });
 
-        const { profile } = await fetchOrCreateProfile(user);
+        const currentProgress = useProgressStore.getState();
+        const [{ profile }, { snapshot: mergedProgress }] = await Promise.all([
+          fetchOrCreateProfile(user),
+          restoreProgressForUser(user.id, {
+            items: currentProgress.items,
+            dailyActivity: currentProgress.dailyActivity,
+            sessionsCompleted: currentProgress.sessionsCompleted,
+            totalCorrect: currentProgress.totalCorrect,
+            totalAttempts: currentProgress.totalAttempts,
+          }),
+        ]);
+
         if (active && profile) {
           applyRemoteProfile(profile);
           useStudyStore.getState().setSessionIndex(profile.currentSessionIndex);
+        }
+
+        if (active) {
+          useProgressStore.getState().hydrateProgress(mergedProgress);
         }
 
         if (active && shouldOpenPasswordRecovery) {
@@ -110,6 +127,11 @@ export function App() {
         void restoreUser(user, { passwordRecovery: event === 'PASSWORD_RECOVERY' });
       } else {
         syncSignedOut();
+        void restoreProgressForUser(null).then(({ snapshot }) => {
+          if (active) {
+            useProgressStore.getState().hydrateProgress(snapshot);
+          }
+        });
         setAuthReady(true);
       }
     });
@@ -125,6 +147,11 @@ export function App() {
         void restoreUser(user, { passwordRecovery: recoveryRequested });
       } else {
         syncSignedOut();
+        void restoreProgressForUser(null).then(({ snapshot }) => {
+          if (active) {
+            useProgressStore.getState().hydrateProgress(snapshot);
+          }
+        });
         setAuthReady(true);
       }
     });

@@ -23,6 +23,7 @@ import {
   type AppProfileState,
   type ProfileUpdate,
 } from '../lib/profileSync';
+import { clearAllStoredProgressSnapshots } from '../lib/progress/progressStorage';
 import type { SpeechSpeed } from '../utils/audio';
 
 export type Screen = 'home' | 'study' | 'library' | 'progress' | 'settings';
@@ -71,7 +72,6 @@ type ToggleSettingKey = 'toneColors' | 'sound' | 'hints' | 'dark' | 'offline';
 export const PREFERENCES_STORAGE_KEY = 'mandarin-app-preferences';
 const PREFERENCES_VERSION = 3;
 const LEGACY_THEME_STORAGE_KEY = 'mandarin-theme';
-const PROGRESS_STORAGE_KEY = 'mandarin-learning-progress';
 const STUDY_STORAGE_KEY = 'mandarin-study-position';
 
 const SESSION_SIZES = ['Light', 'Standard', 'Intense'] as const;
@@ -215,8 +215,8 @@ function clearStoredPreferences() {
   try {
     window.localStorage.removeItem(PREFERENCES_STORAGE_KEY);
     window.localStorage.removeItem(LEGACY_THEME_STORAGE_KEY);
-    window.localStorage.removeItem(PROGRESS_STORAGE_KEY);
     window.localStorage.removeItem(STUDY_STORAGE_KEY);
+    clearAllStoredProgressSnapshots();
   } catch {
     // Storage can be unavailable in private or restricted browser contexts.
   }

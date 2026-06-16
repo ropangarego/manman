@@ -1,187 +1,185 @@
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
-import type { ContentItem, Stage } from '../data/mockContent';
+import { persist } from 'zustand/middleware';
+import type { ContentItem } from '../data/mockContent';
+import { createProgressPersistStorage, PROGRESS_STORAGE_PREFIX } from '../lib/progress/progressStorage';
+import {
+  createEmptyProgressSnapshot,
+  emptyDay,
+  initialProgressForItem,
+  normalizeProgressSnapshot,
+  todayKey,
+  type DailyActivity,
+  type ItemProgress,
+  type ProgressSnapshot,
+} from '../lib/progress/progressState';
+import { syncProgressMutation } from '../lib/progress/progressSync';
 import { applySrsSnapshot, dueAtForStage, nextSrsStage, srsStageColors, srsStages } from '../utils/srs';
 
-export const PROGRESS_STORAGE_KEY = 'mandarin-learning-progress';
+export const PROGRESS_STORAGE_KEY = PROGRESS_STORAGE_PREFIX;
 
-export interface ItemProgress {
-  itemId: string;
-  itemType: ContentItem['type'];
-  stage: Stage;
-  dueAt: string;
-  lastReviewedAt: string;
-  correctCount: number;
-  incorrectCount: number;
-  streakCorrect: number;
-  totalReviews: number;
-}
-
-export interface DailyActivity {
-  date: string;
-  minutes: number;
-  sessions: number;
-  reviews: number;
-  correct: number;
-  incorrect: number;
-}
-
-interface ProgressState {
-  items: Record<string, ItemProgress>;
-  dailyActivity: Record<string, DailyActivity>;
-  sessionsCompleted: number;
-  totalCorrect: number;
-  totalAttempts: number;
+interface ProgressState extends ProgressSnapshot {
   recordLearning: (item: ContentItem, correctFirstTry: boolean) => void;
   recordAnswer: (item: ContentItem, correct: boolean) => void;
   completeSession: (minutes: number) => void;
+  hydrateProgress: (snapshot: ProgressSnapshot) => void;
   resetProgress: () => void;
 }
 
-function todayKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-
-  return `${year}-${month}-${day}`;
-}
-
-function emptyDay(date = todayKey()): DailyActivity {
-  return {
-    date,
-    minutes: 0,
-    sessions: 0,
-    reviews: 0,
-    correct: 0,
-    incorrect: 0,
-  };
-}
-
-function initialProgressForItem(item: ContentItem, now: Date): ItemProgress {
-  return {
-    itemId: item.id,
-    itemType: item.type,
-    stage: 'Learning',
-    dueAt: now.toISOString(),
-    lastReviewedAt: now.toISOString(),
-    correctCount: 0,
-    incorrectCount: 0,
-    streakCorrect: 0,
-    totalReviews: 0,
-  };
-}
-
 function resetState() {
-  return {
-    items: {},
-    dailyActivity: {},
-    sessionsCompleted: 0,
-    totalCorrect: 0,
-    totalAttempts: 0,
-  };
+  return createEmptyProgressSnapshot();
 }
 
 export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
       ...resetState(),
-      recordLearning: (item, correctFirstTry) =>
+      recordLearning: (item, correctFirstTry) => {
+        let syncedItem: ItemProgress | undefined;
+        let syncedDay: DailyActivity | undefined;
+
         set((state) => {
           if (state.items[item.id] || !item.reviewable || item.type === 'Patterns') {
             return state;
           }
 
           const now = new Date();
+          const nowIso = now.toISOString();
           const dateKey = todayKey(now);
-          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey);
+          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey, nowIso);
           const initial = initialProgressForItem(item, now);
+          const nextItem: ItemProgress = {
+            ...initial,
+            dueAt: dueAtForStage('Learning', now),
+            correctCount: correctFirstTry ? 1 : 0,
+            incorrectCount: correctFirstTry ? 0 : 1,
+            streakCorrect: correctFirstTry ? 1 : 0,
+            totalReviews: 1,
+            updatedAt: nowIso,
+          };
+          const nextDay: DailyActivity = {
+            ...day,
+            correct: day.correct + (correctFirstTry ? 1 : 0),
+            incorrect: day.incorrect + (correctFirstTry ? 0 : 1),
+            updatedAt: nowIso,
+          };
+
+          syncedItem = nextItem;
+          syncedDay = nextDay;
 
           return {
             items: {
               ...state.items,
-              [item.id]: {
-                ...initial,
-                dueAt: dueAtForStage('Learning', now),
-                correctCount: correctFirstTry ? 1 : 0,
-                incorrectCount: correctFirstTry ? 0 : 1,
-                streakCorrect: correctFirstTry ? 1 : 0,
-                totalReviews: 1,
-              },
+              [item.id]: nextItem,
             },
             dailyActivity: {
               ...state.dailyActivity,
-              [dateKey]: {
-                ...day,
-                correct: day.correct + (correctFirstTry ? 1 : 0),
-                incorrect: day.incorrect + (correctFirstTry ? 0 : 1),
-              },
+              [dateKey]: nextDay,
             },
             totalCorrect: state.totalCorrect + (correctFirstTry ? 1 : 0),
             totalAttempts: state.totalAttempts + 1,
           };
-        }),
-      recordAnswer: (item, correct) =>
+        });
+
+        if (syncedItem || syncedDay) {
+          syncProgressMutation({ item: syncedItem, day: syncedDay });
+        }
+      },
+      recordAnswer: (item, correct) => {
+        let syncedItem: ItemProgress | undefined;
+        let syncedDay: DailyActivity | undefined;
+
         set((state) => {
           if (!state.items[item.id]) {
             return state;
           }
 
           const now = new Date();
+          const nowIso = now.toISOString();
           const current = state.items[item.id];
           const nextStage = nextSrsStage(current.stage, correct);
           const dateKey = todayKey(now);
-          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey);
+          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey, nowIso);
+          const nextItem: ItemProgress = {
+            ...current,
+            stage: nextStage,
+            dueAt: dueAtForStage(nextStage, now),
+            lastReviewedAt: nowIso,
+            updatedAt: nowIso,
+            correctCount: current.correctCount + (correct ? 1 : 0),
+            incorrectCount: current.incorrectCount + (correct ? 0 : 1),
+            streakCorrect: correct ? current.streakCorrect + 1 : 0,
+            totalReviews: current.totalReviews + 1,
+          };
+          const nextDay: DailyActivity = {
+            ...day,
+            reviews: day.reviews + 1,
+            correct: day.correct + (correct ? 1 : 0),
+            incorrect: day.incorrect + (correct ? 0 : 1),
+            updatedAt: nowIso,
+          };
+
+          syncedItem = nextItem;
+          syncedDay = nextDay;
 
           return {
             items: {
               ...state.items,
-              [item.id]: {
-                ...current,
-                stage: nextStage,
-                dueAt: dueAtForStage(nextStage, now),
-                lastReviewedAt: now.toISOString(),
-                correctCount: current.correctCount + (correct ? 1 : 0),
-                incorrectCount: current.incorrectCount + (correct ? 0 : 1),
-                streakCorrect: correct ? current.streakCorrect + 1 : 0,
-                totalReviews: current.totalReviews + 1,
-              },
+              [item.id]: nextItem,
             },
             dailyActivity: {
               ...state.dailyActivity,
-              [dateKey]: {
-                ...day,
-                reviews: day.reviews + 1,
-                correct: day.correct + (correct ? 1 : 0),
-                incorrect: day.incorrect + (correct ? 0 : 1),
-              },
+              [dateKey]: nextDay,
             },
             totalCorrect: state.totalCorrect + (correct ? 1 : 0),
             totalAttempts: state.totalAttempts + 1,
           };
-        }),
-      completeSession: (minutes) =>
+        });
+
+        if (syncedItem || syncedDay) {
+          syncProgressMutation({ item: syncedItem, day: syncedDay });
+        }
+      },
+      completeSession: (minutes) => {
+        let syncedDay: DailyActivity | undefined;
+
         set((state) => {
-          const dateKey = todayKey();
-          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey);
+          const now = new Date();
+          const nowIso = now.toISOString();
+          const dateKey = todayKey(now);
+          const day = state.dailyActivity[dateKey] ?? emptyDay(dateKey, nowIso);
+          const nextDay: DailyActivity = {
+            ...day,
+            minutes: day.minutes + minutes,
+            sessions: day.sessions + 1,
+            updatedAt: nowIso,
+          };
+
+          syncedDay = nextDay;
 
           return {
             dailyActivity: {
               ...state.dailyActivity,
-              [dateKey]: {
-                ...day,
-                minutes: day.minutes + minutes,
-                sessions: day.sessions + 1,
-              },
+              [dateKey]: nextDay,
             },
             sessionsCompleted: state.sessionsCompleted + 1,
           };
-        }),
+        });
+
+        if (syncedDay) {
+          syncProgressMutation({ day: syncedDay });
+        }
+      },
+      hydrateProgress: (snapshot) => set(normalizeProgressSnapshot(snapshot)),
       resetProgress: () => set(resetState()),
     }),
     {
       name: PROGRESS_STORAGE_KEY,
-      version: 1,
-      storage: createJSONStorage(() => window.localStorage),
+      version: 2,
+      storage: createProgressPersistStorage(),
+      merge: (persistedState, currentState) => ({
+        ...currentState,
+        ...normalizeProgressSnapshot((persistedState as { state?: unknown } | undefined)?.state ?? persistedState),
+      }),
     },
   ),
 );
@@ -288,3 +286,5 @@ function streakFromActivity(dailyActivity: Record<string, DailyActivity>) {
 
   return streak;
 }
+
+export type { DailyActivity, ItemProgress, ProgressSnapshot };

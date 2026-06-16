@@ -3,6 +3,7 @@ import { sessionPlanDescription } from '../../data/mockContent';
 import { useInstallPrompt } from '../../hooks/useInstallPrompt';
 import { optionLabel } from '../../i18n/copy';
 import { useTranslation } from '../../i18n/useTranslation';
+import { resetProgressForCurrentUser } from '../../lib/progress/progressSync';
 import { isSupabaseConfigured, supabase } from '../../lib/supabase';
 import { useAppStore, type SheetType } from '../../stores/appStore';
 import { useProgressStore } from '../../stores/progressStore';
@@ -194,7 +195,8 @@ export function GlobalSheets() {
             <Button
               variant="danger"
               type="button"
-              onClick={() => {
+              onClick={async () => {
+                await resetProgressForCurrentUser();
                 resetProgress();
                 resetStudyProgress(recommendedSessionIndex);
                 showToast(t('toast.learningProgressReset'));
